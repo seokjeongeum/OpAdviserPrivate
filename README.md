@@ -1,36 +1,15 @@
-# DBTune: Customized and Efficient Database Tuning System
+# OpAdviser: An Efficient Transfer Learning Based Configuration Adviser for Database Tuning
 
-**DBTune** is a customized and efficient database tuning system that can automatically find good configuration knobs for a database system. It supports multiple tuning scenarios, including performance tuning, resource-oriented tuning or multiple-objective tuning defined by the users. DBTune is equipped with state-of-the-art techniques for tuning a database. DBTune is designed and developed by the database team from the <a href="https://cuibinpku.github.io/index.html" target="_blank" rel="nofollow">DAIR Lab</a> at Peking University.
-
-
+**OpAdviser** is a customized and efficient tuning system that  addresses the search space construction and the search optimizer selection  problems for database configuration tuning
 
 
-
-## Why DBTune?
-- **Optimized for database tuning:** DBTune has customized functions and user-friendly interfaces for tuning the DBMSs. Users can conduct performance tuning, resource tuning or multiple-objective tuning by simply setting their tuning objectives.
-
-- **Comprehensive technique supports and automatic selection:** DBTune is equipped with state-of-the-art tuning techniques.
-It automatically chooses the proper algorithms for a specific tuning task to separate algorithm selection complexity  away from the user.
-
-- **Performance boosted by transfer learning:** DBTune extracts knowledge from historical tuning tasks to speed up the current tuning. The more users utilize DBTune, the faster the tuning will be. 
-
-### Overview of Supported Techniques 
-DBTune e supports the whole pipeline of configuration tuning, including knob selection, configuration tuning and knowledge transfer. 
-Each module is equipped with multiple algorithm choices.
-For a given tuning task, DBTune automatically selects a proper solution path among the choices.
-
-<p align="middle">
-<img src="documents/image/techniques.jpg"  width="70%">
-</p>
 
 ## Installation 
 Installation Requirements:
 - Python >= 3.6 
 
-### Manual Installation from Source
-To install the newest DBTune package, type the following scripts on the command line:
  ```shell
-   git clone git@github.com:Blairruc-pku/DBTuner.git && cd DBTune
+   git clone git@github.com:Blairruc-pku/OpAdviser.git && cd OpAdviser
    pip install -r requirements.txt
    pip install .
    ```
@@ -40,8 +19,7 @@ To install the newest DBTune package, type the following scripts on the command 
 
 ## Preparation 
 ####  Workload Preparation 
-DBTune currently supports three database benchmarks:  <a href="https://github.com/oltpbenchmark/oltpbench.git" target="_blank" rel="nofollow">OLTP\-Bench</a>,  <a href="https://github.com/akopytov/sysbench.git" target="_blank" rel="nofollow">SYSBENCH</a>  and <a href="https://github.com/winkyao/join-order-benchmark" target="_blank" rel="nofollow">JOB</a>. 
-Please reffer to the <a href="https://github.com/Blairruc-pku/DBTuner/blob/main/workload_prepare.md" target="_blank" rel="nofollow">details instuction</a>  for preparing the workloads.
+Please reffer to the <a href="https://github.com/Blairruc-pku/OpAdviser/blob/main/documents/workload_prepare.md" target="_blank" rel="nofollow">details instuction</a>  for preparing the workloads.
 ####  Database Connection Setup
 To provide the database connection information, the users need to edit the `config_auto.ini`.
 ```ini
@@ -51,12 +29,6 @@ port = 3306
 user = root
 passwd =
   ```
-DBTune currently supports to be deployed on MySQL and PostgreSQL using an integrated framework.
-It provides several settings for database connections, including 
- <a href="https://github.com/Blairruc-pku/DBTuner/blob/main/documents/database_setting.md#remote--local-database" target="_blank" rel="nofollow"> remote/local database connection</a>,
-<a href="https://github.com/Blairruc-pku/DBTuner/blob/main/documents/database_setting.md#tuning-non-dynamic-knobs" target="_blank" rel="nofollow">tuning non-dynamic knobs with restarts</a>, 
-and <a href="https://github.com/Blairruc-pku/DBTuner/blob/main/documents/database_setting.md#tuning-with-resource-isolation" target="_blank" rel="nofollow">tuning with resource isolation</a>.
-Please reffer to the <a href="https://github.com/Blairruc-pku/DBTuner/blob/main/documents/database_setting.md" target="_blank" rel="nofollow">details configurations</a>  for more information.
 
 ## Quick Start
 
