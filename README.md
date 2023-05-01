@@ -42,55 +42,28 @@ passwd =
     performance_metric = ['tps']
     ```
     
-    Resource-oriented tuning, e.g., minimizing  cpu resource while throughputs > 200 txn/s and 95th percentile latency < 60 sec.
-
+    Setup automatic space construction and optimizer recommendation
     ```ini
-    task_id = resource1
-    performance_metric = ['-cpu']
-    #constraints: Non-positive constraint values (”<=0”) imply feasibility.
-    constraints = ["200 - tps", "latency - 60"]
+    ##path of data repository
+    data_repo = ../repo
+    ##Turn on space construction
+    space_transfer = True
+    only_knob = False
+    only_range = False
+    ##Turn on optimizer recommendation
+    auto_optimizer = True
+    auto_optimizer_type = learned
     ```
-
-    Multiple objective tuning, e.g., maximizing throughput and minimizing I/O.
-    ```ini
-    task_id = mutiple1
-    performance_metric = ['tps', '-cpu]
-    reference_point = [0, 100]
-   ```
 
 2. Conduct Tuning.
     ```bash
     cd scripts
-    python optimize.py  --config=config_performance.ini
+    python optimize.py  --config=config_auto.ini
     ```
-
-    For more information, please refer to the <a href="https://github.com/Blairruc-pku/DBTuner/blob/main/documents/tuning_setting.md#specific-tuning-setting" target="_blank" rel="nofollow">specific tuning settings </a>. 
-    
-    
-## Related Publications
-
-**Facilitating Database Tuning with Hyper-Parameter Optimization: A Comprehensive Experimental Evaluation**[[PDF](https://arxiv.org/abs/2110.12654)]<br>
-Xinyi Zhang, Zhuo Chang, Yang Li, Hong Wu, Jian Tan, Feifei Li, Bin Cui.<br>
-The 48th International Conference on Very Large Data Bases .<br>
-***VLDB 2022, CCF-A</font></b>***
-
-**Towards Dynamic and Safe Configuration Tuning for Cloud Databases**[[PDF](https://arxiv.org/abs/2203.14473)]<br>
-Xinyi Zhang, Hong Wu, Yang Li, Jian Tan, Feifei Li, Bin Cui.<br>
-ACM Conference on Management of Data .<br>
-***SIGMOD 2022, CCF-A</font></b>***
-
-**ResTune: Resource Oriented Tuning Boosted by Meta-Learning
-for Cloud Databases**[[PDF](https://dl.acm.org/doi/10.1145/3448016.3457291)]<br>
-Xinyi Zhang, Hong Wu, Zhuo Chang, Shuowei Jin, Jian Tan, Feifei Li,
-Tieying Zhang, and Bin Cui.<br>
-ACM Conference on Management of Data .<br>
-***SIGMOD 2021, CCF-A</font></b>***
+ 
 
 ## Contact
 
 If you have any technical questions, please submit new issues.
 
-If you have any other questions, please contact Xinyi Zhang[zhang_xinyi@pku.edu.cn] and Zhuo Chang[z.chang@pku.edu.cn].
-## **License**
-
-The entire codebase is under [MIT license](LICENSE).
+If you have any other questions, please contact Xinyi Zhang[zhang_xinyi@pku.edu.cn].
