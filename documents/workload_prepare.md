@@ -85,12 +85,4 @@ git clone https://github.com/oltpbenchmark/oltpbench.git
 
 
 
-## Join-Order-Benchmark (JOB)
-
-Download IMDB Data Set from http://homepages.cwi.nl/~boncz/job/imdb.tgz.
-
-Follow the instructions of https://github.com/winkyao/join-order-benchmark to load data into MySQL.
-
-
-
 

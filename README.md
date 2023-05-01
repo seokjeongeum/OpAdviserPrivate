@@ -1,6 +1,6 @@
 # OpAdviser: An Efficient Transfer Learning Based Configuration Adviser for Database Tuning
 
-**OpAdviser** is a customized and efficient tuning system that  addresses the search space construction and the search optimizer selection  problems for database configuration tuning
+**OpAdviser** is a customized and efficient tuning system that  addresses the search space construction and the search optimizer selection  problems for database configuration tuning.
 
 
 
@@ -38,7 +38,7 @@ passwd =
 
     Performance tuning, e.g., maximizing throughputs.
     ```ini
-    task_id = performance1
+    task_id = op1
     performance_metric = ['tps']
     ```
     
