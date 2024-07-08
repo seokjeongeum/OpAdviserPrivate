@@ -101,7 +101,7 @@ class MysqlDB:
                 continue
             cnf_parser.set(key, knobs[key])
 
-        cnf_parser.replace('/data2/ruike/tmpdir/mysql.cnf')
+        cnf_parser.replace('tmpdir/mysql.cnf')
 
         if self.remote_mode:
             ssh = paramiko.SSHClient()

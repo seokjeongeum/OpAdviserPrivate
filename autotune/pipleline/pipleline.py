@@ -142,7 +142,7 @@ class PipleLine(BOBase):
                 with open("tools/{}_best_optimizer.pkl".format(hold_out_workload), 'rb') as f:
                     self.best_method_id_list = pickle.load(f)
 
-        self.logger.info("Total space size:{}".format(estimate_size(self.config_space, '/data2/ruike/DBTune/scripts/experiment/gen_knobs/mysql_all_197_32G.json')))
+        self.logger.info("Total space size:{}".format(estimate_size(self.config_space, 'experiment/gen_knobs/mysql_all_197_32G.json')))
         advisor_kwargs = advisor_kwargs or {}
         # init history container
         if self.num_objs == 1:
