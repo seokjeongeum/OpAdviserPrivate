@@ -102,7 +102,7 @@ def get_knob_feature(file, knob_config_file):
 
 if __name__ == '__main__':
     history_path = '/data2/ruike/DBTune/scripts/DBTune_history/repo3'
-    knob_config_file = '/data2/ruike/DBTune/scripts/experiment/gen_knobs/mysql_all_197_32G.json'
+    knob_config_file = '../experiment/gen_knobs/mysql_all_197_32G.json'
     workloadL = [ 'sysbench', 'twitter', 'job', 'tpch']
     #workloadL.remove(test_workload)
     task = [ 'smac', 'mbo', 'ddpg', 'ga']
