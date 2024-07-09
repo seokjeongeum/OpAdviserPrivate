@@ -28,3 +28,4 @@ lightgbm
 paramiko==2.8
 xgboost
 dill
+terminaltables
