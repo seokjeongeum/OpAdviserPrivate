@@ -441,7 +441,7 @@ class PipleLine(BOBase):
         return config, trial_state, constraints, objs
 
     def save_history(self):
-        dir_path = os.path.join('DBTune_history')
+        dir_path = os.path.join('../repo')
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
         file_name = 'history_%s.json' % self.task_id
@@ -449,7 +449,7 @@ class PipleLine(BOBase):
 
     def load_history(self):
         # TODO: check info
-        fn = os.path.join('DBTune_history', 'history_%s.json' % self.task_id)
+        fn = os.path.join('../', 'history_%s.json' % self.task_id)
         if not os.path.exists(fn):
             self.logger.info('Start new DBTune task')
         else:
