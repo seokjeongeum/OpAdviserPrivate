@@ -6,7 +6,7 @@ printf "query\tlat(ms)\n" > $3
 while read a
   do
   {
-  tmp=$(mysql -uroot -S$4 tpch < $2/$a | tail -n 1 )
+  tmp=$(mysql -uroot -ppassword -S$4 tpch < $2/$a | tail -n 1 )
   query=`echo $tmp | awk '{print $1}'`
   lat=`echo $tmp | awk '{print $2}'`
 
