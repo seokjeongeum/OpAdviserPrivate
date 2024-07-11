@@ -1,4 +1,3 @@
-import glob
 import os
 import sys
 import json
@@ -104,8 +103,7 @@ def get_knob_feature(file, knob_config_file):
 if __name__ == '__main__':
     history_path = '../../repo'
     knob_config_file = '../experiment/gen_knobs/mysql_all_197_32G.json'
-    # workloadL = [ 'sysbench', 'twitter', 'job', 'tpch']
-    workloadL = [f'task{i}'for i in range(1,48+1)]
+    workloadL = [ 'sysbench', 'twitter', 'job', 'tpch']
     #workloadL.remove(test_workload)
     task = [ 'smac', 'mbo', 'ddpg', 'ga']
     spaceL = [197, 100, 50, 25, 12, 6]
@@ -116,22 +114,31 @@ if __name__ == '__main__':
     ###setup source workload
         sourceL = list()
         for workload in workloadL:
-            fileL = list()
-            for method in task:
-                # for knob_num in spaceL:
-                file = 'history_{}_{}.json'.format(workload, method)
-                file = os.path.join(history_path, file)
-                fileL.append(file)
-            history_container = load_history(fileL, config_space)
+            # fileL = list()
+            # for method in task:
+            #     for knob_num in spaceL:
+            #         file = 'history_{}_{}_{}.json'.format(workload, method, knob_num)
+            #         file = os.path.join(history_path, file)
+            #         fileL.append(file)
+            history_container = load_history(
+                [
+                    os.path.join(history_path, 'history_{}_{}.json'.format(workload, method))
+                    for workload
+                    in [f'task{i}'for i in range(1,48+1)]
+                    for method
+                    in task
+                ],
+                config_space,
+            )
             sourceL.append(history_container)
         rng = check_random_state(100)
         seed = rng.randint(MAXINT)
         rgpe = RGPE(config_space, sourceL, seed, num_src_hpo_trial=-1, only_source=False)
 
     import matplotlib.pyplot as plt
-    df = pd.DataFrame(columns=task + workloadL + ['target', 'id', 'rank'] + ['knob_num', 'integer', 'enum' ,'iteration'])
+    df = pd.DataFrame(columns=task + [ 'sysbench', 'twitter', 'job', 'tpch'] + ['target', 'id', 'rank'] + ['knob_num', 'integer', 'enum' ,'iteration'])
     id = 0
-    for workload in workloadL:
+    for workload in [f'task{i}'for i in range(1,48+1)]:
     #     for knob_num in spaceL:
         y_incumbs = list()
         file = 'history_{}_{}.json'.format(workload, task[0])
