@@ -1,23 +1,21 @@
 # License: MIT
+import collections
+import json
 import os
-import pdb
 import sys
 import time
-import json
-import collections
-from typing import List, Union
+from typing import List
+
 import numpy as np
-from ConfigSpace.hyperparameters import CategoricalHyperparameter, \
-    UniformFloatHyperparameter, UniformIntegerHyperparameter, Constant, \
-    OrdinalHyperparameter
-from autotune.utils.constants import MAXINT, SUCCESS
+from ConfigSpace.hyperparameters import CategoricalHyperparameter
+from openbox.utils.config_space.util import convert_configurations_to_array
+
 from autotune.utils.config_space import Configuration, ConfigurationSpace
+from autotune.utils.constants import MAXINT, SUCCESS
 from autotune.utils.logging_utils import get_logger
 from autotune.utils.multi_objective import Hypervolume, get_pareto_front
-from autotune.utils.config_space.space_utils import get_config_from_dict
+from autotune.utils.transform import get_transform_function
 from autotune.utils.visualization.plot_convergence import plot_convergence
-from autotune.utils.transform import  get_transform_function
-from openbox.utils.config_space.util import convert_configurations_to_array
 
 Perf = collections.namedtuple(
     'perf', ['cost', 'time', 'status', 'additional_info'])
@@ -33,7 +31,7 @@ def detect_valid_history_file(dir):
     valid_files = []
     for f in files:
         try:
-            with open(fn) as fp:
+            with open(os.path.join(dir,f)) as fp:
                 all_data = json.load(fp)
         except Exception as e:
             continue

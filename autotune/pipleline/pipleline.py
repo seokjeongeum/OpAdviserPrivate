@@ -1,45 +1,33 @@
 # License: MIT
 
-import os
-import abc
-import numpy as np
-import sys
-import time
-import traceback
-import math
-import random
-import pickle
-import pandas as pd
-from typing import List
-import xgboost as xgb
 import json
+import os
+import pickle
+import random
+import time
 from collections import OrderedDict, defaultdict
+from typing import List
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
 from tqdm import tqdm
-from autotune.utils.util_funcs import check_random_state
-from autotune.utils.logging_utils import get_logger
-from autotune.utils.history_container import HistoryContainer, MOHistoryContainer
-from autotune.utils.constants import MAXINT, SUCCESS
-from autotune.utils.samplers import SobolSampler, LatinHypercubeSampler
-from autotune.utils.multi_objective import get_chebyshev_scalarization, NondominatedPartitioning
-from autotune.utils.config_space.util import convert_configurations_to_array, impute_incumb_values, max_min_distance
-from autotune.utils.history_container import Observation
-from autotune.pipleline.base import BOBase
-from autotune.utils.constants import MAXINT, SUCCESS, FAILED, TIMEOUT
-from autotune.utils.limit import time_limit, TimeoutException, no_time_limit_func
-from autotune.utils.util_funcs import get_result
-from autotune.utils.config_space import ConfigurationSpace
-from autotune.utils.config_space.space_utils import estimate_size, get_space_feature
-from autotune.selector.selector import KnobSelector
-from autotune.optimizer.surrogate.core import build_surrogate, surrogate_switch
-from autotune.optimizer.core import build_acq_func, build_optimizer
-from autotune.transfer.tlbo.rgpe import RGPE
-from autotune.utils.util_funcs import check_random_state
-from autotune.utils.config_space import ConfigurationSpace, UniformIntegerHyperparameter, CategoricalHyperparameter, UniformFloatHyperparameter
-from autotune.optimizer.ga_optimizer import GA_Optimizer
+
+from autotune.knobs import logger
 from autotune.optimizer.bo_optimizer import BO_Optimizer
 from autotune.optimizer.ddpg_optimizer import DDPG_Optimizer
-import pdb
-from autotune.knobs import ts, logger
+from autotune.optimizer.ga_optimizer import GA_Optimizer
+from autotune.pipleline.base import BOBase
+from autotune.selector.selector import KnobSelector
+from autotune.transfer.tlbo.rgpe import RGPE
+from autotune.utils.config_space import ConfigurationSpace, UniformIntegerHyperparameter, CategoricalHyperparameter
+from autotune.utils.config_space.space_utils import estimate_size, get_space_feature
+from autotune.utils.config_space.util import impute_incumb_values, max_min_distance
+from autotune.utils.constants import MAXINT, SUCCESS, FAILED
+from autotune.utils.history_container import HistoryContainer, MOHistoryContainer
+from autotune.utils.history_container import Observation
+from autotune.utils.util_funcs import check_random_state
+
 
 class PipleLine(BOBase):
     """
@@ -135,7 +123,7 @@ class PipleLine(BOBase):
                 n_estimators=110,
                 subsample=0.75
                 )
-                self.ranker.load_model("tools/xgboost_test_{}.json".format(hold_out_workload))
+                self.ranker.load_model("tools/xgboost_test_all.json".format(hold_out_workload))
                 self.history_workload_data =  history_workload_data
             elif auto_optimizer_type == 'best':
                 # self.best_method_id_list = [3] * 50 + [1] * 150
