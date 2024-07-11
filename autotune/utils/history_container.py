@@ -402,7 +402,7 @@ class HistoryContainer(object):
                 self.failed_index.append(cur_idx)
 
     def get_objs(self, res, y_variables):
-        try:
+        if all([y_variable.strip().strip('-')in res for y_variable in y_variables]):
             objs = []
             for y_variable in y_variables:
                 key = y_variable.strip().strip('-')
@@ -410,7 +410,7 @@ class HistoryContainer(object):
                 if not y_variable.strip()[0] == '-':
                     value = - value
                 objs.append(value)
-        except:
+        else:
             objs = [MAXINT] * self.num_objs
 
         return objs

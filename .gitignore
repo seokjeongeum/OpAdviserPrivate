@@ -10,7 +10,4 @@ train_user_*.py
 *.png
 scripts/log/
 .vscode/
-/scripts/tools/GEN_RANK
 /scripts/results/
-/scripts/tmpdir/
-/TPC-H V3.0.1/
