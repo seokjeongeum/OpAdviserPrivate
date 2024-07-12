@@ -1,33 +1,45 @@
 # License: MIT
 
-import json
 import os
-import pickle
-import random
-import time
-from collections import OrderedDict, defaultdict
-from typing import List
-
+import abc
 import numpy as np
+import sys
+import time
+import traceback
+import math
+import random
+import pickle
 import pandas as pd
+from typing import List
 import xgboost as xgb
+import json
+from collections import OrderedDict, defaultdict
 from tqdm import tqdm
-
-from autotune.knobs import logger
+from autotune.utils.util_funcs import check_random_state
+from autotune.utils.logging_utils import get_logger
+from autotune.utils.history_container import HistoryContainer, MOHistoryContainer
+from autotune.utils.constants import MAXINT, SUCCESS
+from autotune.utils.samplers import SobolSampler, LatinHypercubeSampler
+from autotune.utils.multi_objective import get_chebyshev_scalarization, NondominatedPartitioning
+from autotune.utils.config_space.util import convert_configurations_to_array, impute_incumb_values, max_min_distance
+from autotune.utils.history_container import Observation
+from autotune.pipleline.base import BOBase
+from autotune.utils.constants import MAXINT, SUCCESS, FAILED, TIMEOUT
+from autotune.utils.limit import time_limit, TimeoutException, no_time_limit_func
+from autotune.utils.util_funcs import get_result
+from autotune.utils.config_space import ConfigurationSpace
+from autotune.utils.config_space.space_utils import estimate_size, get_space_feature
+from autotune.selector.selector import KnobSelector
+from autotune.optimizer.surrogate.core import build_surrogate, surrogate_switch
+from autotune.optimizer.core import build_acq_func, build_optimizer
+from autotune.transfer.tlbo.rgpe import RGPE
+from autotune.utils.util_funcs import check_random_state
+from autotune.utils.config_space import ConfigurationSpace, UniformIntegerHyperparameter, CategoricalHyperparameter, UniformFloatHyperparameter
+from autotune.optimizer.ga_optimizer import GA_Optimizer
 from autotune.optimizer.bo_optimizer import BO_Optimizer
 from autotune.optimizer.ddpg_optimizer import DDPG_Optimizer
-from autotune.optimizer.ga_optimizer import GA_Optimizer
-from autotune.pipleline.base import BOBase
-from autotune.selector.selector import KnobSelector
-from autotune.transfer.tlbo.rgpe import RGPE
-from autotune.utils.config_space import ConfigurationSpace, UniformIntegerHyperparameter, CategoricalHyperparameter
-from autotune.utils.config_space.space_utils import estimate_size, get_space_feature
-from autotune.utils.config_space.util import impute_incumb_values, max_min_distance
-from autotune.utils.constants import MAXINT, SUCCESS, FAILED
-from autotune.utils.history_container import HistoryContainer, MOHistoryContainer
-from autotune.utils.history_container import Observation
-from autotune.utils.util_funcs import check_random_state
-
+import pdb
+from autotune.knobs import ts, logger
 
 class PipleLine(BOBase):
     """
@@ -109,8 +121,8 @@ class PipleLine(BOBase):
         if auto_optimizer:
             self.auto_optimizer_type = auto_optimizer_type
             if auto_optimizer_type == 'learned':
-                self.source_workloadL = ['sysbench', 'oltpbench_twitter', 'job', 'tpch']
-                self.source_workloadL.remove(hold_out_workload)
+                self.source_workloadL = ['sysbench', 'twitter', 'job', 'tpch']
+                # self.source_workloadL.remove(hold_out_workload)
                 self.ranker = xgb.XGBRanker(
                 # tree_method='gpu_hist',
                 booster='gbtree',
@@ -251,7 +263,11 @@ class PipleLine(BOBase):
 
     def get_max_distence_best(self):
         default_config = self.config_space.get_default_configuration()
-        candidate_configs = [history_container.incumbents[0][0] for history_container in self.history_bo_data]
+        candidate_configs = list()
+        for  history_container in self.history_bo_data:
+            if len(history_container.incumbents):
+                candidate_configs.append(history_container.incumbents[0][0])
+
         return  max_min_distance(default_config=default_config, src_configs=candidate_configs, num=self.init_num)
 
     def get_history(self):
@@ -429,7 +445,7 @@ class PipleLine(BOBase):
         return config, trial_state, constraints, objs
 
     def save_history(self):
-        dir_path = os.path.join('DBTune_history')
+        dir_path = os.path.join('../repo')
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
         file_name = 'history_%s.json' % self.task_id
@@ -437,7 +453,7 @@ class PipleLine(BOBase):
 
     def load_history(self):
         # TODO: check info
-        fn = os.path.join('DBTune_history', 'history_%s.json' % self.task_id)
+        fn = os.path.join('../repo', 'history_%s.json' % self.task_id)
         if not os.path.exists(fn):
             self.logger.info('Start new DBTune task')
         else:

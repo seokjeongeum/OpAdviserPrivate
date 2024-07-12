@@ -208,7 +208,7 @@ def plot_rank(file_dict, type='one-workload', keyword='', iter=200, figname='plo
 
 
 if __name__ == '__main__':
-    history_path = '../DBTune_history/'
+    history_path = '../../repo/'
 
     #######90:Twitter#################
     file_dict_twitter = {

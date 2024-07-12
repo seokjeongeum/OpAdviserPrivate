@@ -128,15 +128,15 @@ if __name__ == '__main__':
                     for method
                     in task
                 ],
-                config_space,
-            )
+                config_space)
             sourceL.append(history_container)
+
         rng = check_random_state(100)
         seed = rng.randint(MAXINT)
         rgpe = RGPE(config_space, sourceL, seed, num_src_hpo_trial=-1, only_source=False)
 
     import matplotlib.pyplot as plt
-    df = pd.DataFrame(columns=task + [ 'sysbench', 'twitter', 'job', 'tpch'] + ['target', 'id', 'rank'] + ['knob_num', 'integer', 'enum' ,'iteration'])
+    df = pd.DataFrame(columns=task + workloadL + ['target', 'id', 'rank'] + ['knob_num', 'integer', 'enum' ,'iteration'])
     id = 0
     for workload in [f'task{i}'for i in range(1,48+1)]:
     #     for knob_num in spaceL:
