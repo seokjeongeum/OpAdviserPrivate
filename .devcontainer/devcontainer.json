@@ -5,7 +5,6 @@
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:latest": {},
     "ghcr.io/devcontainers/features/git:latest": {},
     "ghcr.io/devcontainers/features/java:latest": {},
     "ghcr.io/devcontainers/features/python:latest": {}
