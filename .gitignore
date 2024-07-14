@@ -7,7 +7,6 @@
 *.out
 train_user_*.py
 *.res
-*.png
 scripts/log/
 .vscode/
 /scripts/results/
