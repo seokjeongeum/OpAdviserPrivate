@@ -3,7 +3,6 @@
 	"name": "OpAdviser",
 	"service": "opadviser",
 	"dockerComposeFile": "docker-compose.yml",
-	"remoteUser": "user",
 
 
   "customizations" : {
