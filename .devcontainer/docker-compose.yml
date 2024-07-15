@@ -11,6 +11,8 @@ services:
   backend:
     depends_on:
       - db
+    build:
+      context: .
 
 volumes:
   mysqldb-data:
