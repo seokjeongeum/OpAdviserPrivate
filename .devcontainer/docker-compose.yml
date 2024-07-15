@@ -8,11 +8,13 @@ services:
     volumes:
       - mysqldb-data:/var/lib/mysql
 
-  backend:
-    depends_on:
-      - db
+  OpAdviser:
     build:
       context: .
+    command: sleep infinity
+    depends_on:
+      - db
+#    image: jeongeumseok/OpAdviser:latest
 
 volumes:
   mysqldb-data:
