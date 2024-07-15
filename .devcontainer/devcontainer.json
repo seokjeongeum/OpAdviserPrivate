@@ -1,0 +1,15 @@
+// More info: https://containers.dev/implementors/json_reference/
+{
+	"name": "OpAdviser",
+	"service": "backend",
+	"dockerComposeFile": "docker-compose.yml",
+	"remoteUser": "user",
+
+
+  "customizations" : {
+    "jetbrains" : {
+      "backend" : "PyCharm"
+    }
+  }
+
+}

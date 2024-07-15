@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysqldb-data:/var/lib/mysql
+
+  backend:
+    depends_on:
+      - db
+
+volumes:
+  mysqldb-data:
