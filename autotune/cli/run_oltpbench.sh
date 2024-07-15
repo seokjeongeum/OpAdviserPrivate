@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-/home/jeongeum/OpAdviser/oltpbench/oltpbenchmark -b ${1} -c ${2} --execute=true -s 1 -o ${3}
+/IdeaProjects/OpAdviser/oltpbench/oltpbenchmark -b ${1} -c ${2} --execute=true -s 1 -o ${3}
