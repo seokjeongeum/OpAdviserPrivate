@@ -8,7 +8,7 @@ services:
     volumes:
       - mysqldb-data:/var/lib/mysql
 
-  OpAdviser:
+  opadviser:
     build:
       context: .
     command: sleep infinity
