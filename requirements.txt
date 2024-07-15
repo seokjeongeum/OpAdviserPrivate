@@ -29,3 +29,4 @@ paramiko==2.8
 xgboost
 dill
 terminaltables
+dask[dataframe]
