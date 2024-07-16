@@ -1,0 +1,3 @@
+#!/bin/bash
+OLTPBENCH_HOME=/oltpbench
+java -Xmx8G -cp `$OLTPBENCH_HOME/classpath.sh bin` -Dlog4j.configuration=$OLTPBENCH_HOME/log4j.properties com.oltpbenchmark.DBWorkload $@

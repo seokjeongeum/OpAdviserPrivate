@@ -1,14 +1,16 @@
 services:
-    web:
-        build: .
+    opadviser:
+        build:
+            .
         volumes:
             - .:/app
         links:
             - db
-
+        stdin_open: true
+        tty: true
     db:
         image: "mysql:5.7"
         ports:
             - "3306:3306"
         environment:
-            POSTGRES_PASSWORD: hunter2
+            MYSQL_ROOT_PASSWORD: password
