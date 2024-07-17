@@ -18,7 +18,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     sudo
 
 RUN addgroup --gid 1000 devcontainer && \
-    adduser --uid 1000 --gid 1000--disabled-password --gecos "" devcontainer && \
+    adduser --uid 1000 --gid 1000 --disabled-password --gecos "" devcontainer && \
     echo 'devcontainer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 COPY mysqld.cnf /etc/mysql/mysql.conf.d
