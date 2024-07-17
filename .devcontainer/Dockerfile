@@ -13,7 +13,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     python3.8-venv  \
     python3-pip  \
     python3-setuptools  \
-    build-essential
+    build-essential \
+    openssh-client
 
 RUN service mysql start && \
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';" && \
@@ -30,10 +31,9 @@ RUN ant bootstrap
 RUN ant resolve
 RUN ant build
 
-RUN mysql -ppassword -e"set global max_connections=500;"
-RUN /oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
-
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 RUN python -m pip install pip
 RUN python -m pip install --upgrade pip
+
+ENTRYPOINT ["service mysql start"]
