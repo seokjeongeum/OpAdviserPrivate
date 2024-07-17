@@ -1,13 +1,6 @@
-mysql -hdb -ppassword -e"drop database sbrw;"
-mysql -hdb -ppassword -e"drop database sbread;"
-mysql -hdb -ppassword -e"drop database sbwrite;"
-mysql -hdb -ppassword -e"create database sbrw;"
-mysql -hdb -ppassword -e"create database sbread;"
-mysql -hdb -ppassword -e"create database sbwrite;"
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=db  \
-    --mysql-socket=$SOCK  \
+    --mysql-host=localhost  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
@@ -18,10 +11,10 @@ sysbench  \
     --mysql-db=sbrw  \
     oltp_read_write  \
     prepare
+
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=db  \
-    --mysql-socket=$SOCK  \
+    --mysql-host=localhost  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
@@ -32,10 +25,10 @@ sysbench  \
     --mysql-db=sbread  \
     oltp_read_only  \
     prepare
+
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=db  \
-    --mysql-socket=$SOCK  \
+    --mysql-host=localhost  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
@@ -46,7 +39,3 @@ sysbench  \
     --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare
-
-mysql -hdb -ppassword -e"create database twitter;"
-mysql -hdb -ppassword -e"set global max_connections=500;"
-/oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
