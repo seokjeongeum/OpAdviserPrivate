@@ -15,7 +15,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     python3-setuptools  \
     build-essential \
     openssh-client \
-    sudo
+    sudo \
+    cgroup-tools
 
 RUN addgroup --gid 1000 devcontainer && \
     adduser --uid 1000 --gid 1000 --disabled-password --gecos "" devcontainer && \
@@ -35,6 +36,7 @@ WORKDIR /oltpbench
 RUN ant bootstrap
 RUN ant resolve
 RUN ant build
+COPY /oltpbench ~/oltpbench
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
