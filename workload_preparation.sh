@@ -1,3 +1,7 @@
+sudo service mysql start
+sudo mysql -ppassword -e"set global max_connections=500;"
+/oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
+
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
@@ -40,5 +44,3 @@ sysbench  \
     oltp_write_only  \
     prepare
 
-mysql -ppassword -e"set global max_connections=500;"
-/oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true

@@ -21,8 +21,6 @@ RUN addgroup --gid 1000 devcontainer && \
     adduser --uid 1000 --gid 1000 --disabled-password --gecos "" devcontainer && \
     echo 'devcontainer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-COPY mysqld.cnf /etc/mysql/mysql.conf.d
-
 RUN service mysql start && \
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';" && \
 mysql -ppassword -e"create database twitter;" && \
