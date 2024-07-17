@@ -30,9 +30,6 @@ RUN ant bootstrap
 RUN ant resolve
 RUN ant build
 
-RUN mysql -ppassword -e"set global max_connections=500;"
-RUN /oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
-
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 RUN python -m pip install pip
