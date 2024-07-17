@@ -43,9 +43,4 @@ RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 RUN python -m pip install pip
 RUN python -m pip install --upgrade pip
 
-# Create user home directory - This is needed for aicrowd submissions
-ENV USER_NAME devcontainer
-ENV HOME_DIR /home/$USER_NAME
-COPY --chown=1001:1001 . ${HOME_DIR}
-
 ENTRYPOINT ["service mysql start"]
