@@ -1,3 +1,23 @@
+# OpAdviser
+## Create Dev Container
+### JetBrains Gateway/PyCharm
+https://www.jetbrains.com/help/pycharm/connect-to-devcontainer.html
+### Visual Studio Code
+https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume
+## Create venv
+### JetBrains Gateway/PyCharm
+https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html
+### Visual Studio Code
+https://code.visualstudio.com/docs/python/environments
+## Prepare workload
+```shell
+bash ./workload_preparation.sh
+```
+## Starting point
+Run scripts/optimize.py
+
+Below is original README.md
+---
 # OpAdviser: An Efficient Transfer Learning Based Configuration Adviser for Database Tuning
 
 **OpAdviser** is a customized and efficient tuning system that  addresses the search space construction and the search optimizer selection  problems for database configuration tuning.

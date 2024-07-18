@@ -1,5 +1,5 @@
-sudo service mysql start
-sudo mysql -ppassword -e"set global max_connections=500;"
+service mysql start
+mysql -ppassword -e"set global max_connections=500;"
 /oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
 
 sysbench  \
