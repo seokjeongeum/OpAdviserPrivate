@@ -14,14 +14,10 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     python3-setuptools  \
     build-essential \
     openssh-client \
-    cgroup-tools 
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-  --mount=type=cache,target=/var/lib/apt,sharing=locked \
-  apt update && apt-get --no-install-recommends install -y  \
+    cgroup-tools \
     mysql-server-5.7
 
-RUN echo systemctl status mysql
-RUN systemctl start mysql && \
+RUN service mysql start && \
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';" && \
 mysql -ppassword -e"create database twitter;" && \
 mysql -ppassword -e"create database sbrw;" && \
