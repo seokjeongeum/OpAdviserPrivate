@@ -15,7 +15,12 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     build-essential \
     openssh-client \
     cgroup-tools \
-    mysql-server-5.7
+    libaio1 \
+    libaio-dev 
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+  --mount=type=cache,target=/var/lib/apt,sharing=locked \
+  apt update && apt-get --no-install-recommends install -y  \
+    mysql-server-5.7 
 
 RUN service mysql start && \
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';" && \
