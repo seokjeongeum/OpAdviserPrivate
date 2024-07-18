@@ -14,8 +14,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     python3-setuptools  \
     build-essential \
     openssh-client \
-    cgroup-tools \
-    systemctl
+    cgroup-tools 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
   apt update && apt-get --no-install-recommends install -y  \
