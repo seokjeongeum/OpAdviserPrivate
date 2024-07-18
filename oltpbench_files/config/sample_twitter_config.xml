@@ -13,7 +13,7 @@
     <uploadUrl></uploadUrl>
           
     <!-- Scalefactor in Twitter scales by *500 the number of users-->
-    <scalefactor>100</scalefactor>
+    <scalefactor>3000</scalefactor>
     
     
 	<!-- Trace files for Twitter -->
