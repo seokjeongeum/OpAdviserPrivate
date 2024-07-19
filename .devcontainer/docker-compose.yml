@@ -17,7 +17,5 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysql:/var/lib/mysql:delegated
-      - var/run/mysqld:/var/run/mysqld:delegated
-  volumes:
-    var/run/mysqld:
+      - /mysql:/var/lib/mysql:delegated
+      - /var/run/mysqld:/var/run/mysqld:delegated
