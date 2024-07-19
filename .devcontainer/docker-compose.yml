@@ -20,4 +20,4 @@ services:
       - /mysql:/var/lib/mysql:delegated
       - /var/run/mysqld:/var/run/mysqld:delegated
   volumes:
-    /var/run/mysqld
+    /var/run/mysqld:
