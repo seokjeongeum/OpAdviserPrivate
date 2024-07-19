@@ -1,4 +1,4 @@
-cp -r /oltpbench_files /oltpbench
+cp -r -v oltpbench_files/. /oltpbench
 cd /oltpbench
 ant bootstrap
 ant resolve
