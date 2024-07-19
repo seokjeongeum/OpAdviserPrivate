@@ -9,6 +9,7 @@ services:
     volumes:
       - mysql:/var/lib/mysql
       - mysqld:/var/run/mysqld
+      - etc:/etc
   db:
     command:
       - --skip-name-resolve
@@ -20,6 +21,8 @@ services:
     volumes:
       - mysql:/var/lib/mysql:delegated
       - mysqld:/var/run/mysqld:delegated
+      - etc:/etc
 volumes:
   mysql:
   mysqld:
+  etc:
