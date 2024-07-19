@@ -3,7 +3,11 @@ cd /oltpbench
 ant bootstrap
 ant resolve
 ant build
-mysql -hdb -ppassword -e"set global max_connections=500;"
+mysql -hdb -ppassword -e"create database twitter;" 
+mysql -hdb -ppassword -e"create database sbrw;" 
+mysql -hdb -ppassword -e"create database sbread;" 
+mysql -hdb -ppassword -e"create database sbwrite;"
+# mysql -hdb -ppassword -e"set global max_connections=500;"
 /oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
 
 sysbench  \
