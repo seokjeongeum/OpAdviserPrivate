@@ -9,10 +9,20 @@ services:
     volumes:
       - mysql:/var/lib/mysql
       - mysqld:/var/run/mysqld
-      - etc:/etc
   db:
     command:
       - --skip-name-resolve
+      - --innodb_read_io_threads=4
+      - --innodb_write_io_threads=8
+      - --innodb_buffer_pool_size=20G
+      - --innodb_buffer_pool_load_at_startup=ON
+      - --innodb_log_file_size=32M
+      - --innodb_log_files_in_group=2
+      - --innodb_file_per_table=1
+      - --innodb_log_buffer_size=8M
+      - --innodb_flush_method=O_DIRECT
+      - --innodb_flush_log_at_trx_commit=0
+      - --skip-innodb_doublewrite
     environment:
       MYSQL_ROOT_PASSWORD: password
     image: "mysql:5.7"
@@ -21,8 +31,6 @@ services:
     volumes:
       - mysql:/var/lib/mysql:delegated
       - mysqld:/var/run/mysqld:delegated
-      - etc:/etc
 volumes:
   mysql:
   mysqld:
-  etc:

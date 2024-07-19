@@ -1,15 +1,3 @@
-echo "innodb_read_io_threads=4" >> /etc/my.cnf
-echo "innodb_write_io_threads=8" >> /etc/my.cnf #To stress the double write buffer
-echo "innodb_buffer_pool_size=20G" >> /etc/my.cnf # 70-80% available Memory
-echo "innodb_buffer_pool_load_at_startup=ON" >> /etc/my.cnf
-echo "innodb_log_file_size = 32M" >> /etc/my.cnf #Small log files, more page flush
-echo "innodb_log_files_in_group=2" >> /etc/my.cnf
-echo "innodb_file_per_table=1" >> /etc/my.cnf
-echo "innodb_log_buffer_size=8M" >> /etc/my.cnf
-echo "innodb_flush_method=O_DIRECT" >> /etc/my.cnf
-echo "innodb_flush_log_at_trx_commit=0" >> /etc/my.cnf
-echo "skip-innodb_doublewrite" >> /etc/my.cnf #commented or not depending on test
-
 mysql -hdb -ppassword -e"create database twitter;"
 mysql -hdb -ppassword -e"drop database sbrw;"
 mysql -hdb -ppassword -e"drop database sbread;"
