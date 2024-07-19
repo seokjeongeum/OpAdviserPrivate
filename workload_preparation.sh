@@ -3,7 +3,10 @@ cd /oltpbench
 ant bootstrap
 ant resolve
 ant build
-mysql -hdb -ppassword -e"create database twitter;" 
+mysql -hdb -ppassword -e"create database twitter;"
+mysql -hdb -ppassword -e"drop database sbrw;"
+mysql -hdb -ppassword -e"drop database sbread;"
+mysql -hdb -ppassword -e"drop database sbwrite;"
 mysql -hdb -ppassword -e"create database sbrw;" 
 mysql -hdb -ppassword -e"create database sbread;" 
 mysql -hdb -ppassword -e"create database sbwrite;"

@@ -6,6 +6,9 @@ services:
     command:
       - sleep infinity
     shm_size: 4gb
+    volumes:
+      - ~/mysql:/var/lib/mysql
+      - ~/mysqld:/var/run/mysqld
   db:
     command:
       - --skip-name-resolve
@@ -15,5 +18,8 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - /var/lib/mysql:/var/lib/mysql:delegated
-      - /var/run/mysqld:/var/run/mysqld:delegated
+      - ~/mysql:/var/lib/mysql:delegated
+      - ~/mysqld:/var/run/mysqld:delegated
+volumes:
+  ~/mysql:
+  ~/mysqld:
