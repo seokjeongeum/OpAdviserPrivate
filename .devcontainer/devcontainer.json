@@ -2,8 +2,8 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
   "name": "OpAdviser",
-  dockerComposeFile: 'docker-compose.yml',
-  service: "opadviser",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "opadviser",
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
 
