@@ -1,3 +1,8 @@
+cp -r /oltpbench_files /oltpbench
+cd /oltpbench
+ant bootstrap
+ant resolve
+ant build
 mysql -hdb -ppassword -e"set global max_connections=500;"
 /oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
 
