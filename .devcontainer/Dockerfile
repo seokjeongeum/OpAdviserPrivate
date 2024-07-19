@@ -20,14 +20,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
   apt update && apt-get --no-install-recommends install -y  \
-    mysql-server-5.7 
-
-RUN service mysql start && \
-mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';" && \
-mysql -ppassword -e"create database twitter;" && \
-mysql -ppassword -e"create database sbrw;" && \
-mysql -ppassword -e"create database sbread;" && \
-mysql -ppassword -e"create database sbwrite;"
+    mysql-client-5.7 
 
 RUN rm -rf oltpbench
 RUN git clone https://github.com/oltpbenchmark/oltpbench.git
