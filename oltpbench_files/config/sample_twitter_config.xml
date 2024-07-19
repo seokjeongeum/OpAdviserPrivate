@@ -4,7 +4,7 @@
     <!-- Connection details -->
     <dbtype>mysql</dbtype>
     <driver>com.mysql.jdbc.Driver</driver>
-    <DBUrl>jdbc:mysql://127.0.0.1:3306/twitter?useSSL=false</DBUrl>
+    <DBUrl>jdbc:mysql://db:3306/twitter?useSSL=false</DBUrl>
     <username>root</username>
     <password>password</password>
 

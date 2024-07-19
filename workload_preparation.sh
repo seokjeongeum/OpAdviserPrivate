@@ -1,10 +1,9 @@
-service mysql start
-mysql -ppassword -e"set global max_connections=500;"
+mysql -hdb -ppassword -e"set global max_connections=500;"
 /oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
 
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=localhost  \
+    --mysql-host=db  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
@@ -18,7 +17,7 @@ sysbench  \
 
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=localhost  \
+    --mysql-host=db  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
@@ -32,7 +31,7 @@ sysbench  \
 
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=localhost  \
+    --mysql-host=db  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
@@ -43,4 +42,3 @@ sysbench  \
     --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare
-
