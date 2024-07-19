@@ -7,13 +7,6 @@ mysql -hdb -ppassword -e"create database sbread;"
 mysql -hdb -ppassword -e"create database sbwrite;"
 mysql -hdb -ppassword -e"set global max_connections=500;"
 
-cp -r -v oltpbench_files/. /oltpbench
-cd /oltpbench||exit
-ant bootstrap
-ant resolve
-ant build
-/oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
-
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=db  \
@@ -55,3 +48,10 @@ sysbench  \
     --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare
+
+cp -r -v oltpbench_files/. /oltpbench
+cd /oltpbench||exit
+ant bootstrap
+ant resolve
+ant build
+./oltpbenchmark -b twitter -c config/sample_twitter_config.xml  --create=true --load=true
