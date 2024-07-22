@@ -7,8 +7,8 @@ services:
       - sleep infinity
     shm_size: 4gb
     volumes:
-      - mysql:/var/lib/mysql
-      - mysqld:/var/run/mysqld
+      - /mnt/sdd/jeseok/mysql:/var/lib/mysql
+      - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
   db:
     command:
       - --skip-name-resolve
@@ -29,8 +29,8 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysql:/var/lib/mysql
-      - mysqld:/var/run/mysqld
+      - /mnt/sdd/jeseok/mysql:/var/lib/mysql
+      - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
 volumes:
-  mysql:
-  mysqld:
+  /mnt/sdd/jeseok/mysql:
+  /mnt/sdd/jeseok/mysqld:
