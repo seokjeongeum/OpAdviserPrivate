@@ -10,7 +10,7 @@ services:
       - /mnt/sdd/jeseok/opadviser:/opadviser
       - /mnt/sdd/jeseok/mysql:/var/lib/mysql
       - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
-      - /mnt/sdd/jeseok/sbin:/usr/sbin:ro
+      - sbin:/usr/sbin
   db:
     environment:
       MYSQL_ROOT_PASSWORD: password
@@ -20,4 +20,6 @@ services:
     volumes:
       - /mnt/sdd/jeseok/mysql:/var/lib/mysql
       - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
-      - /mnt/sdd/jeseok/sbin:/usr/sbin
+      - sbin:/usr/sbin
+volumes:
+  sbin
