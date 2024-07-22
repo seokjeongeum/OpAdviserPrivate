@@ -1,14 +1,4 @@
 services:
-  db:
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-    image: "mysql:5.7"
-    ports:
-      - "3306:3306"
-    volumes:
-      - /mnt/sdd/jeseok/mysql:/var/lib/mysql
-      - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
-      - sbin:/usr/sbin
   opadviser:
     build:
       context: .
@@ -19,7 +9,3 @@ services:
     volumes:
       - /mnt/sdd/jeseok/opadviser:/opadviser
       - /mnt/sdd/jeseok/mysql:/var/lib/mysql
-      - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
-      - sbin:/usr/sbin
-volumes:
-  sbin:

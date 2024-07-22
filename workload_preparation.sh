@@ -1,11 +1,11 @@
-mysql -hdb -ppassword -e"create database twitter;"
-#mysql -hdb -ppassword -e"drop database sbrw;"
-#mysql -hdb -ppassword -e"drop database sbread;"
-#mysql -hdb -ppassword -e"drop database sbwrite;"
-mysql -hdb -ppassword -e"create database sbrw;"
-mysql -hdb -ppassword -e"create database sbread;"
-mysql -hdb -ppassword -e"create database sbwrite;"
-mysql -hdb -ppassword -e"set global max_connections=500;"
+mysql -ppassword -e"create database twitter;"
+#mysql -ppassword -e"drop database sbrw;"
+#mysql -ppassword -e"drop database sbread;"
+#mysql -ppassword -e"drop database sbwrite;"
+mysql -ppassword -e"create database sbrw;"
+mysql -ppassword -e"create database sbread;"
+mysql -ppassword -e"create database sbwrite;"
+mysql -ppassword -e"set global max_connections=500;"
 
 sysbench  \
     --db-driver=mysql  \
