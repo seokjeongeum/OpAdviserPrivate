@@ -7,9 +7,10 @@ services:
       - sleep infinity
     shm_size: 4gb
     volumes:
-      - /mnt/sdd/jeseok/opadviser:/IdeaProjects
+      - /mnt/sdd/jeseok/opadviser:/IdeaProjects/OpAdviserPrivate
       - /mnt/sdd/jeseok/mysql:/var/lib/mysql
       - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
+      - /mnt/sdd/jeseok/sbin:/usr/sbin
   db:
     environment:
       MYSQL_ROOT_PASSWORD: password
@@ -19,3 +20,4 @@ services:
     volumes:
       - /mnt/sdd/jeseok/mysql:/var/lib/mysql
       - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
+      - /mnt/sdd/jeseok/sbin:/usr/sbin
