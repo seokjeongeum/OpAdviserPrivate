@@ -14,7 +14,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libaio-dev \
     mysql-client \
     python-is-python3 \
-    python3-venv
+    python3-venv \
+    python3.8-dev
 
 RUN rm -rf oltpbench
 RUN git clone https://github.com/oltpbenchmark/oltpbench.git
