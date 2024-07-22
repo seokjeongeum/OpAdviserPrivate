@@ -20,6 +20,6 @@ services:
     volumes:
       - /mnt/sdd/jeseok/mysql:/var/lib/mysql
       - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
-      - type: volume
+      - type: bind
         source: /mnt/sdd/jeseok/sbin
         target: /usr/sbin
