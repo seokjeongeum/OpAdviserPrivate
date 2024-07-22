@@ -5,7 +5,7 @@ SYSBENCH_WORKLOAD = {
     'name': 'sysbench',
     'type': 'read',
     # bash run_sysbench.sh write localhost 3318 root ''  theads table   32 150 output.log sbtest
-    'cmd': 'bash {} {} {} {} {} 1234567 {} {} {} {} {} {} {}'
+    'cmd': 'bash {} {} {} {} {} password {} {} {} {} {} {} {}'
 }
 
 
