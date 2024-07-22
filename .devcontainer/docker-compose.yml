@@ -7,7 +7,7 @@ services:
       - sleep infinity
     shm_size: 4gb
     volumes:
-      - /mnt/sdd/jeseok/opadviser:/
+      - /mnt/sdd/jeseok/opadviser:/IdeaProjects
       - /mnt/sdd/jeseok/mysql:/var/lib/mysql
       - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
   db:
