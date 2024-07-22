@@ -16,7 +16,7 @@
       "backend": "PyCharm"
     }
   },
-  "workspaceMount": "source=/mnt/sdd/jeseok/opadviser,target=/IdeaProjects/OpAdviserPrivate"
+  "workspaceFolder": "/IdeaProjects/OpAdviserPrivate"
   // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
   //	 "remoteUser": "devcontainer"
 }
