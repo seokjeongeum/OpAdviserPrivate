@@ -8,7 +8,7 @@ services:
     volumes:
       - /mnt/sdd/jeseok/mysql:/var/lib/mysql
       - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
-      - sbin:/usr/sbin
+      - sbin:/usr/sbin:ro
   opadviser:
     build:
       context: .
