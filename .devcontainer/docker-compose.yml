@@ -22,4 +22,4 @@ services:
       - /mnt/sdd/jeseok/mysqld:/var/run/mysqld
       - sbin:/usr/sbin
 volumes:
-  sbin
+  sbin:
