@@ -16,11 +16,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     python3.8-dev  \
     python3.8-venv  \
     python3-pip  \
-    python3-setuptools
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-  --mount=type=cache,target=/var/lib/apt,sharing=locked \
-  apt update && apt-get --no-install-recommends install -y  \
+    python3-setuptools  \
     mysql-server-5.7
+
 RUN service mysql start && \
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 
