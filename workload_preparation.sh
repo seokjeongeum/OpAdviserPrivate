@@ -49,5 +49,9 @@ sysbench  \
     oltp_write_only  \
     prepare
 
-cd /oltpbench||exit
+cp -r -v oltpbench_files/. /oltpbench
+cd /oltpbench || exit
+ant bootstrap
+ant resolve
+ant build
 ./oltpbenchmark -b twitter -c config/sample_twitter_config.xml  --create=true --load=true
