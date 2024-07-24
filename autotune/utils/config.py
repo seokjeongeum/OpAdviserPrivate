@@ -34,7 +34,7 @@ default_value = {
 'tr_init': 'True',
 'batch_size':16,
 'transfer_framework':'auto',
-'data_repo': 'DBTune_history'
+'data_repo': 'OpAdviser_history'
 }
 
 auto_setting = ['knob_num', 'initial_tunable_knob_num', 'incremental_every',  'transfer_framework']
