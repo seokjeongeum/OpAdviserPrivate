@@ -10,7 +10,7 @@ mysql -ppassword -e"set global max_connections=500;"
 
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=db  \
+    --mysql-host=localhost  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
@@ -24,7 +24,7 @@ sysbench  \
 
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=db  \
+    --mysql-host=localhost  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
@@ -38,7 +38,7 @@ sysbench  \
 
 sysbench  \
     --db-driver=mysql  \
-    --mysql-host=db  \
+    --mysql-host=localhost  \
     --mysql-port=3306  \
     --mysql-user=root  \
     --mysql-password=password  \
