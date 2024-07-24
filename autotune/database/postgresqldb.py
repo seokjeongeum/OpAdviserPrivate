@@ -190,7 +190,7 @@ class PostgresqlDB:
             proc = subprocess.Popen([self.postgres, '--config_file={}'.format(self.pgcnf), '-D',  self.pgdata])
             self.pid = proc.pid
             if self.isolation_mode:
-                command = 'sudo cgclassify -g memory,cpuset:server ' + str(self.pid)
+                command = 'cgclassify -g memory,cpuset:server ' + str(self.pid)
                 p = os.system(command)
                 if not p:
                     logger.info('add {} to memory,cpuset:server'.format(self.pid))

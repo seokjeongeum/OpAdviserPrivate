@@ -2,9 +2,11 @@ services:
   opadviser:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-
+    cgroup: host
     command:
       - sleep infinity
+    privileged: true
     shm_size: 4gb
     volumes:
       - /mnt/sdd/jeseok/opadviser:/opadviser
