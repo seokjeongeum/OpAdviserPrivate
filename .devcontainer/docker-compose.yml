@@ -6,14 +6,6 @@ services:
     command:
       - sleep infinity
     shm_size: 4gb
-  db:
-    command:
-      - --skip-name-resolve
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-    image: "mysql:5.7"
-    ports:
-      - "3306:3306"
     volumes:
-      - /var/lib/mysql:/var/lib/mysql:delegated
-      - /var/run/mysqld:/var/run/mysqld:delegated
+      - /mnt/sdd/jeseok/opadviser:/opadviser
+      - /mnt/sdd/jeseok/mysql:/var/lib/mysql

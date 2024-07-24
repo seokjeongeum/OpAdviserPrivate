@@ -1,14 +1,11 @@
-cp -r -v oltpbench_files/. /oltpbench
-cd /oltpbench
-ant bootstrap
-ant resolve
-ant build
-mysql -hdb -ppassword -e"create database twitter;" 
-mysql -hdb -ppassword -e"create database sbrw;" 
-mysql -hdb -ppassword -e"create database sbread;" 
-mysql -hdb -ppassword -e"create database sbwrite;"
-# mysql -hdb -ppassword -e"set global max_connections=500;"
-/oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
+mysql -ppassword -e"create database twitter;"
+#mysql -ppassword -e"drop database sbrw;"
+#mysql -ppassword -e"drop database sbread;"
+#mysql -ppassword -e"drop database sbwrite;"
+mysql -ppassword -e"create database sbrw;"
+mysql -ppassword -e"create database sbread;"
+mysql -ppassword -e"create database sbwrite;"
+mysql -ppassword -e"set global max_connections=500;"
 
 sysbench  \
     --db-driver=mysql  \
@@ -51,3 +48,6 @@ sysbench  \
     --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare
+
+cd /oltpbench||exit
+./oltpbenchmark -b twitter -c config/sample_twitter_config.xml  --create=true --load=true
