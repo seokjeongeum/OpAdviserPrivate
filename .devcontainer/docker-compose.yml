@@ -2,7 +2,7 @@ services:
   opadviser:
     build:
       context: .
-      dockerfile: Dockerfile-
+      dockerfile: Dockerfile
     cgroup: host
     command:
       - sleep infinity

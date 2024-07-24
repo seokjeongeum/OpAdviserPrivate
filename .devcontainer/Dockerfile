@@ -28,3 +28,5 @@ RUN git clone https://github.com/oltpbenchmark/oltpbench.git
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 RUN python -m pip install pip
+
+RUN mkdir /opadviser
