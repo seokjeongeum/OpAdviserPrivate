@@ -54,4 +54,9 @@ cd /oltpbench || exit
 ant bootstrap
 ant resolve
 ant build
+./oltpbenchmark -b twitter -c config/sample_tatp_config.xml  --create=true --load=true
+./oltpbenchmark -b twitter -c config/sample_tpcc_config.xml  --create=true --load=true
 ./oltpbenchmark -b twitter -c config/sample_twitter_config.xml  --create=true --load=true
+./oltpbenchmark -b twitter -c config/sample_voter_config.xml  --create=true --load=true
+./oltpbenchmark -b twitter -c config/sample_wikipedia_config.xml  --create=true --load=true
+./oltpbenchmark -b twitter -c config/sample_ycsb_config.xml  --create=true --load=true
