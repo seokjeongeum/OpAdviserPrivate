@@ -1,21 +1,23 @@
 # License: MIT
-import collections
-import json
 import os
+import pdb
 import sys
 import time
-from typing import List
-
+import json
+import collections
+from typing import List, Union
 import numpy as np
-from ConfigSpace.hyperparameters import CategoricalHyperparameter
-from openbox.utils.config_space.util import convert_configurations_to_array
-
-from autotune.utils.config_space import Configuration, ConfigurationSpace
+from ConfigSpace.hyperparameters import CategoricalHyperparameter, \
+    UniformFloatHyperparameter, UniformIntegerHyperparameter, Constant, \
+    OrdinalHyperparameter
 from autotune.utils.constants import MAXINT, SUCCESS
+from autotune.utils.config_space import Configuration, ConfigurationSpace
 from autotune.utils.logging_utils import get_logger
 from autotune.utils.multi_objective import Hypervolume, get_pareto_front
-from autotune.utils.transform import get_transform_function
+from autotune.utils.config_space.space_utils import get_config_from_dict
 from autotune.utils.visualization.plot_convergence import plot_convergence
+from autotune.utils.transform import  get_transform_function
+from openbox.utils.config_space.util import convert_configurations_to_array
 
 Perf = collections.namedtuple(
     'perf', ['cost', 'time', 'status', 'additional_info'])
@@ -330,8 +332,10 @@ class HistoryContainer(object):
                 config_dict.pop(knob)
             for knob in knobs_add:
                 config_dict[knob] = knobs_default[knob]
-
-            config = Configuration(self.config_space, config_dict)
+            try:
+                config = Configuration(self.config_space, config_dict)
+            except:
+                continue
             em = tmp['external_metrics']
             im = tmp['internal_metrics']
             resource = tmp['resource']
@@ -402,7 +406,7 @@ class HistoryContainer(object):
                 self.failed_index.append(cur_idx)
 
     def get_objs(self, res, y_variables):
-        if all([y_variable.strip().strip('-')in res for y_variable in y_variables]):
+        try:
             objs = []
             for y_variable in y_variables:
                 key = y_variable.strip().strip('-')
@@ -410,7 +414,7 @@ class HistoryContainer(object):
                 if not y_variable.strip()[0] == '-':
                     value = - value
                 objs.append(value)
-        else:
+        except:
             objs = [MAXINT] * self.num_objs
 
         return objs

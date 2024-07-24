@@ -66,7 +66,7 @@ def load_history(fileL, config_space):
         data = all_data["data"]
         data_mutipleL = data_mutipleL + data
 
-    knob_num=len(data_mutipleL[0]['configuration'])
+
     file_out = 'history_{}_{}.json'.format(workload, knob_num)
     with open(file_out, "w") as fp:
         json.dump({"info": info, "data": data_mutipleL}, fp, indent=2)
@@ -101,7 +101,7 @@ def get_knob_feature(file, knob_config_file):
     return  [integer/(integer+cateratory), cateratory/(integer+cateratory)]
 
 if __name__ == '__main__':
-    history_path = '../../repo'
+    history_path = '../OpAdviser_history'
     knob_config_file = '../experiment/gen_knobs/mysql_all_197_32G.json'
     workloadL = [ 'sysbench', 'twitter', 'job', 'tpch']
     #workloadL.remove(test_workload)
@@ -114,21 +114,13 @@ if __name__ == '__main__':
     ###setup source workload
         sourceL = list()
         for workload in workloadL:
-            # fileL = list()
-            # for method in task:
-            #     for knob_num in spaceL:
-            #         file = 'history_{}_{}_{}.json'.format(workload, method, knob_num)
-            #         file = os.path.join(history_path, file)
-            #         fileL.append(file)
-            history_container = load_history(
-                [
-                    os.path.join(history_path, 'history_{}_{}.json'.format(workload, method))
-                    for workload
-                    in [f'task{i}'for i in range(1,48+1)]
-                    for method
-                    in task
-                ],
-                config_space)
+            fileL = list()
+            for method in task:
+                for knob_num in spaceL:
+                    file = 'history_{}_{}_{}.json'.format(workload, method, knob_num)
+                    file = os.path.join(history_path, file)
+                    fileL.append(file)
+            history_container = load_history(fileL, config_space)
             sourceL.append(history_container)
 
         rng = check_random_state(100)
@@ -138,67 +130,62 @@ if __name__ == '__main__':
     import matplotlib.pyplot as plt
     df = pd.DataFrame(columns=task + workloadL + ['target', 'id', 'rank'] + ['knob_num', 'integer', 'enum' ,'iteration'])
     id = 0
-    for workload in [f'task{i}'for i in range(1,48+1)]:
-    #     for knob_num in spaceL:
-        y_incumbs = list()
-        file = 'history_{}_{}.json'.format(workload, task[0])
-        file = os.path.join(history_path, file)
-        knob_feature = get_knob_feature(file, knob_config_file)
-        knob_num=len(
-            json.load(
-                open(os.path.join(history_path, 'history_{}_{}.json'.format(workload, task[0])))
-            )['data'][0]['configuration']
-        )
-        for method in task:
-            file = 'history_{}_{}.json'.format(workload, method)
+    for workload in workloadL:
+        for knob_num in spaceL:
+            y_incumbs = list()
+            file = 'history_{}_{}_{}.json'.format(workload, task[0], knob_num)
             file = os.path.join(history_path, file)
-            task_id = '{}_{}_{}'.format(workload, knob_num, method)
-            print('load history from {}'.format(file))
-            history_container = HistoryContainer(task_id, config_space=config_space)
-            history_container.load_history_from_json(file)
-            ys = history_container.get_transformed_perfs()
-
-            y_incumb = list()
-            best_y = 1e9
-            for y_ in ys:
-                if best_y > y_:
-                    best_y = y_
-                y_incumb.append(best_y)
-            y_incumbs.append(y_incumb)
-            plt.plot(y_incumb, label=method)
-
-        plt.legend()
-        plt.savefig("plot/rank_{}_{}.png".format(workload, knob_num))
-        plt.close()
-        n_range = min([len(ys) for ys in y_incumbs])
-        if use_rgpe:
-            rgpe.iteration_id = 0
-        for i in range(n_range):
-            # get rank
-            perfs = [y[i] for y in y_incumbs ]
-            perfs = pd.Series(perfs)
-            rank = perfs.rank().values   # the smaller, the better
-            if use_rgpe:
-            #get workload feature
+            knob_feature = get_knob_feature(file, knob_config_file)
+            for method in task:
+                file = 'history_{}_{}_{}.json'.format(workload, method, knob_num)
+                file = os.path.join(history_path, file)
+                task_id = '{}_{}_{}'.format(workload, knob_num, method)
+                print('load history from {}'.format(file))
                 history_container = HistoryContainer(task_id, config_space=config_space)
-                history_container.load_history_from_json(file, load_num=i+1)
-                #rgpe.train(history_container, weight_dilution=False)
-                rank_loss = rgpe.get_ranking_loss(history_container)
-            for j in range(len(task)):
-                if not use_rgpe:
-                #onehot
-                    temp = [0] * (len(task) + len(workloadL))
-                    temp[j] = 1
-                    temp[len(task) + workloadL.index(workload)] = 1
-                else:
-                # #similarity
-                    temp = [0] * len(task)
-                    temp[j] = 1
-                    #temp = temp + rgpe.w[:-1]
-                    temp = temp + rank_loss
+                history_container.load_history_from_json(file)
+                ys = history_container.get_transformed_perfs()
 
-                df.loc[len(df)] = temp + [id, rank[j]] + [knob_num] + knob_feature + [i]
-            id = id + 1
+                y_incumb = list()
+                best_y = 1e9
+                for y_ in ys:
+                    if best_y > y_:
+                        best_y = y_
+                    y_incumb.append(best_y)
+                y_incumbs.append(y_incumb)
+                plt.plot(y_incumb, label=method)
+
+            plt.legend()
+            plt.savefig("plot/rank_{}_{}.png".format(workload, knob_num))
+            plt.close()
+            n_range = min([len(ys) for ys in y_incumbs])
+            if use_rgpe:
+                rgpe.iteration_id = 0
+            for i in range(n_range):
+                # get rank
+                perfs = [y[i] for y in y_incumbs ]
+                perfs = pd.Series(perfs)
+                rank = perfs.rank().values   # the smaller, the better
+                if use_rgpe:
+                #get workload feature
+                    history_container = HistoryContainer(task_id, config_space=config_space)
+                    history_container.load_history_from_json(file, load_num=i+1)
+                    #rgpe.train(history_container, weight_dilution=False)
+                    rank_loss = rgpe.get_ranking_loss(history_container)
+                for j in range(len(task)):
+                    if not use_rgpe:
+                    #onehot
+                        temp = [0] * (len(task) + len(workloadL))
+                        temp[j] = 1
+                        temp[len(task) + workloadL.index(workload)] = 1
+                    else:
+                    # #similarity
+                        temp = [0] * len(task)
+                        temp[j] = 1
+                        #temp = temp + rgpe.w[:-1]
+                        temp = temp + rank_loss
+
+                    df.loc[len(df)] = temp + [id, rank[j]] + [knob_num] + knob_feature + [i]
+                id = id + 1
 
     df.to_csv("{}_train_data.csv".format(test_workload))
     df = pd.read_csv("{}_train_data.csv".format(test_workload), index_col=[0])

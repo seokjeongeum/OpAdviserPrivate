@@ -7,8 +7,6 @@
 *.out
 train_user_*.py
 *.res
-/scripts/results/
-history_job.json
-history_sysbench.json
-history_tpch.json
-history_twitter.json
+*.png
+scripts/log/
+.vscode/

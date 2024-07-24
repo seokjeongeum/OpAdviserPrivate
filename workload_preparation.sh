@@ -1,3 +1,4 @@
+service mysql start
 mysql -ppassword -e"create database twitter;"
 #mysql -ppassword -e"drop database sbrw;"
 #mysql -ppassword -e"drop database sbread;"
