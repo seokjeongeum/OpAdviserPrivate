@@ -32,7 +32,7 @@ RUN git clone https://github.com/akopytov/sysbench.git
 
 RUN rm -rf oltpbench
 RUN git clone https://github.com/oltpbenchmark/oltpbench.git
-COPY ./oltpbench_files /oltpbench
+COPY oltpbench_files /oltpbench
 WORKDIR /oltpbench
 RUN ant bootstrap
 RUN ant resolve
