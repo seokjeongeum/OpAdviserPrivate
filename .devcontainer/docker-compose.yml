@@ -23,4 +23,4 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/mnt/sdc/jeseok/mysql'
+      device: '/mnt/sdc/jeseok/mysql2'
