@@ -24,9 +24,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     mysql-server-5.7
 
 RUN rm -rf oltpbench && \
-    git clone https://github.com/oltpbenchmark/oltpbench.git&& \
-    cp -r -v oltpbench_files/. /oltpbench&& \
-    cd /oltpbench && \
+    git clone https://github.com/oltpbenchmark/oltpbench.git
+COPY oltpbench_files /oltpbench
+RUN cd /oltpbench && \
     ant bootstrap&& \
     ant resolve&& \
     ant build
