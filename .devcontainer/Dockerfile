@@ -31,9 +31,9 @@ RUN rm -rf sysbench
 RUN git clone https://github.com/akopytov/sysbench.git
 
 RUN rm -rf oltpbench
-RUN git clone https://github.com/oltpbenchmark/oltpbench.git
-COPY oltpbench_files /oltpbench
-WORKDIR /oltpbench
-RUN ant bootstrap
-RUN ant resolve
-RUN ant build
+RUN git clone https://github.com/oltpbenchmark/oltpbench.git&& \
+    cp -r -v oltpbench_files/. /oltpbench&& \
+    cd /oltpbench || exit&& \
+    ant bootstrap&& \
+    ant resolve&& \
+    ant build
