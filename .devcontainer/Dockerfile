@@ -25,7 +25,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 
 RUN rm -rf oltpbench && \
     git clone https://github.com/oltpbenchmark/oltpbench.git
-COPY ../oltpbench_files /oltpbench
+COPY --from=parent oltpbench_files /oltpbench
 RUN cd /oltpbench && \
     ant bootstrap&& \
     ant resolve&& \
