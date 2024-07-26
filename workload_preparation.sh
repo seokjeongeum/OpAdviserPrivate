@@ -13,6 +13,12 @@ mysql -ppassword -e"create database sbread;"
 mysql -ppassword -e"create database sbwrite;"
 mysql -ppassword -e"set global max_connections=500;"
 
+cd /sysbench || exit
+git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c
+./autogen.sh
+./configure
+make && make install
+
 cp -r -v oltpbench_files/. /oltpbench
 cd /oltpbench || exit
 ant bootstrap

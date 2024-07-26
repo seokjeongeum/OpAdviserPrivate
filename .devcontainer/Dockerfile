@@ -19,14 +19,11 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     autoconf \
     pkg-config \
     libtool \
-    libmysqlclient-dev
+    libmysqlclient-dev \
+    automake
 
-RUN git clone https://github.com/akopytov/sysbench.git &&  \
-    cd sysbench && \
-    git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c &&  \
-    ./autogen.sh && \
-    ./configure && \
-    make && make install
+RUN rm -rf sysbench
+RUN git clone https://github.com/akopytov/sysbench.git
 
 RUN rm -rf oltpbench
 RUN git clone https://github.com/oltpbenchmark/oltpbench.git
