@@ -1,4 +1,5 @@
-apt update && apt-get --no-install-recommends install -y mysql-server-5.7
+apt update
+apt-get --no-install-recommends install -y mysql-server-5.7
 service mysql start
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"create database tatp;"
@@ -33,7 +34,7 @@ sysbench  \
     --table_size=800000  \
     --tables=300  \
     --events=0  \
-    --threads=32  \
+    --threads=64  \
     --mysql-db=sbrw  \
     oltp_read_write  \
     prepare
@@ -47,7 +48,7 @@ sysbench  \
     --table_size=800000  \
     --tables=300  \
     --events=0  \
-    --threads=32  \
+    --threads=64  \
     --mysql-db=sbread  \
     oltp_read_only  \
     prepare
@@ -61,7 +62,7 @@ sysbench  \
     --table_size=800000  \
     --tables=300  \
     --events=0  \
-    --threads=32  \
+    --threads=64  \
     --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare

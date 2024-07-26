@@ -3,7 +3,6 @@ RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloa
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
   apt update && apt-get --no-install-recommends install -y  \
-    sysbench \
     git  \
     default-jdk \
     ant \
@@ -16,7 +15,18 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     python3.8-dev  \
     python3.8-venv  \
     python3-pip  \
-    python3-setuptools
+    python3-setuptools \
+    autoconf \
+    pkg-config \
+    libtool \
+    libmysqlclient-dev
+
+RUN git clone https://github.com/akopytov/sysbench.git &&  \
+    cd sysbench && \
+    git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c &&  \
+    ./autogen.sh && \
+    ./configure && \
+    make && make install
 
 RUN rm -rf oltpbench
 RUN git clone https://github.com/oltpbenchmark/oltpbench.git

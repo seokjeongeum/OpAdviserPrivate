@@ -135,7 +135,7 @@ class PipleLine(BOBase):
                 n_estimators=110,
                 subsample=0.75
                 )
-                self.ranker.load_model("tools/xgboost_test_all.json".format(hold_out_workload))
+                self.ranker.load_model("tools/xgboost_test_{}.json".format(hold_out_workload))
                 self.history_workload_data =  history_workload_data
             elif auto_optimizer_type == 'best':
                 # self.best_method_id_list = [3] * 50 + [1] * 150
