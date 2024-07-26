@@ -9,5 +9,5 @@ services:
     privileged: true
     shm_size: 4gb
     volumes:
-      - /mnt/sdc/jeseok/opadviser:/opadviser:delegated
-      - /mnt/sdc/jeseok/mysql2:/var/lib/mysql:delegated
+      - /mnt/sdc/jeseok/opadviser:/opadviser
+      - /mnt/sdc/jeseok/mysql2:/var/lib/mysql
