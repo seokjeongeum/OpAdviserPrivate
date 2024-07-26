@@ -2,12 +2,10 @@
 *.log
 *.idea
 *.pkl
-*.png
 *.DS_Store
 *.out
 train_user_*.py
 *.res
-*.png
 scripts/log/
 .vscode/
 /scripts/results/

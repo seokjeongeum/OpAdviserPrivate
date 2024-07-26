@@ -1,5 +1,3 @@
-apt update
-apt-get --no-install-recommends install -y mysql-server-5.7
 service mysql start
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"create database tatp;"
@@ -19,11 +17,7 @@ git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c
 ./configure
 make && make install
 
-cp -r -v oltpbench_files/. /oltpbench
 cd /oltpbench || exit
-ant bootstrap
-ant resolve
-ant build
 ./oltpbenchmark -b tatp -c config/sample_tatp_config.xml  --create=true --load=true
 ./oltpbenchmark -b tpcc -c config/sample_tpcc_config.xml  --create=true --load=true
 ./oltpbenchmark -b twitter -c config/sample_twitter_config.xml  --create=true --load=true
