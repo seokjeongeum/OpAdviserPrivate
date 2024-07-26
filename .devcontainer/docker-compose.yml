@@ -8,4 +8,4 @@ services:
     shm_size: 4gb
     volumes:
       - /mnt/sdc/jeseok2/opadviser:/opadviser
-      - /mnt/sdc/jeseok2/mysql:/var/lib/mysql
+      - /mnt/sdc/jeseok2/mysql2:/var/lib/mysql
