@@ -9,5 +9,18 @@ services:
     privileged: true
     shm_size: 4gb
     volumes:
-      - /mnt/sdc/jeseok/opadviser:/opadviser
-#      - /mnt/sdc/jeseok/mysql2:/var/lib/mysql
+      - opadviser:/opadviser:delegated
+      - mysql:/var/lib/mysql:delegated
+volumes:
+  opadviser:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/mnt/sdc/jeseok/opadviser'#this path must be exist in host
+  mysql:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/mnt/sdc/jeseok/mysql2'#this path must be exist in host
