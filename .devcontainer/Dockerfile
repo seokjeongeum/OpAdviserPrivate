@@ -28,11 +28,6 @@ RUN git clone https://github.com/akopytov/sysbench.git
 
 RUN rm -rf oltpbench
 RUN git clone https://github.com/oltpbenchmark/oltpbench.git
-RUN cp -r -v oltpbench_files/. /oltpbench
-RUN cd /oltpbench || exit
-RUN ant bootstrap
-RUN ant resolve
-RUN ant build
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
