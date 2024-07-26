@@ -23,12 +23,17 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     automake \
     mysql-server-5.7
 
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+RUN python -m pip install pip
+
 RUN rm -rf sysbench
 RUN git clone https://github.com/akopytov/sysbench.git
 
 RUN rm -rf oltpbench
 RUN git clone https://github.com/oltpbenchmark/oltpbench.git
-
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
-RUN python -m pip install pip
+COPY /oltpbench_files /oltpbench
+WORKDIR /oltpbench
+RUN ant bootstrap
+RUN ant resolve
+RUN ant build
