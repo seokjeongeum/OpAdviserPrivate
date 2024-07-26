@@ -3,10 +3,8 @@ services:
     build:
       context: ../
       dockerfile: .devcontainer/Dockerfile
-    cgroup: host
     command:
       - sleep infinity
-    privileged: true
     shm_size: 4gb
     volumes:
       - /mnt/sdc/jeseok2/opadviser:/opadviser
