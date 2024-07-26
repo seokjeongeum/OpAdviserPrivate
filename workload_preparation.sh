@@ -1,4 +1,5 @@
 # Run "docker cp devcontainer-opadviser-1:/var/lib/mysql /mnt/sdc/jeseok2/mysql" in host
+chown -R mysql:mysql /var/lib/mysql
 service mysql start
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"create database tatp;"
@@ -12,12 +13,7 @@ mysql -ppassword -e"create database sbread;"
 mysql -ppassword -e"create database sbwrite;"
 mysql -ppassword -e"set global max_connections=500;"
 
-cd /sysbench || exit
-git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c
-./autogen.sh
-./configure
-make && make install
-
+cp -r -v oltpbench_files/. /oltpbench
 cd /oltpbench || exit
 ./oltpbenchmark -b tatp -c config/sample_tatp_config.xml  --create=true --load=true
 ./oltpbenchmark -b tpcc -c config/sample_tpcc_config.xml  --create=true --load=true
