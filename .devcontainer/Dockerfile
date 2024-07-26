@@ -19,7 +19,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     autoconf \
     pkg-config \
     libtool \
-    libmysqlclient-dev
+    libmysqlclient-dev \
+    automake
 
 RUN git clone https://github.com/akopytov/sysbench.git &&  \
     cd sysbench && \
