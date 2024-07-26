@@ -1,8 +1,7 @@
 # Run "docker cp devcontainer-opadviser-1:/var/lib/mysql /mnt/sdc/jeseok2/mysql2" in host
-#chown -R mysql:mysql /var/lib/mysql
+chown -R mysql:mysql /var/lib/mysql
 service mysql start
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
-mysql -ppassword -e"create database tatp;"
 mysql -ppassword -e"create database tpcc;"
 mysql -ppassword -e"create database twitter;"
 mysql -ppassword -e"create database voter;"
@@ -15,6 +14,11 @@ mysql -ppassword -e"set global max_connections=500;"
 
 cp -r -v oltpbench_files/. /oltpbench
 cd /oltpbench || exit
+ant bootstrap
+ant resolve
+ant build
+mysql -ppassword -e"drop database tatp;"
+mysql -ppassword -e"create database tatp;"
 ./oltpbenchmark -b tatp -c config/sample_tatp_config.xml  --create=true --load=true
 ./oltpbenchmark -b tpcc -c config/sample_tpcc_config.xml  --create=true --load=true
 ./oltpbenchmark -b twitter -c config/sample_twitter_config.xml  --create=true --load=true
