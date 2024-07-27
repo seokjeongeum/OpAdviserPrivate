@@ -1,5 +1,5 @@
-# Run "docker cp devcontainer-opadviser-1:/var/lib/mysql /mnt/sdc/jeseok2/mysql2" in host
-chown -R mysql:mysql /var/lib/mysql
+#If /var/lib/mysql is bind mounted to the host, populate it first.
+#chown -R mysql:mysql /var/lib/mysql
 service mysql start
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"set global max_connections=500;"
