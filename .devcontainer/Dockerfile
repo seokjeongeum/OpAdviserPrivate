@@ -20,13 +20,19 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     pkg-config \
     libtool \
     libmysqlclient-dev \
-    automake
+    automake \
+    mysql-server-5.7
+
+RUN rm -rf oltpbench && \
+    git clone https://github.com/oltpbenchmark/oltpbench.git
 
 RUN rm -rf sysbench
-RUN git clone https://github.com/akopytov/sysbench.git
-
-RUN rm -rf oltpbench
-RUN git clone https://github.com/oltpbenchmark/oltpbench.git
+RUN git clone https://github.com/akopytov/sysbench.git && \
+    cd /sysbench && \
+    git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c && \
+    ./autogen.sh && \
+    ./configure && \
+    make && make install
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
