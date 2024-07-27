@@ -28,50 +28,50 @@ mysql -ppassword -e"drop database ycsb;"
 mysql -ppassword -e"create database ycsb;"
 ./oltpbenchmark -b ycsb -c config/sample_ycsb_config.xml  --create=true --load=true
 
-mysql -ppassword -e"drop database sbrw;"
-mysql -ppassword -e"create database sbrw;"
-sysbench  \
-    --db-driver=mysql  \
-    --mysql-host=localhost  \
-    --mysql-port=3306  \
-    --mysql-user=root  \
-    --mysql-password=password  \
-    --table_size=800000  \
-    --tables=300  \
-    --events=0  \
-    --threads=64  \
-    --mysql-db=sbrw  \
-    oltp_read_write  \
-    prepare
-
-mysql -ppassword -e"drop database sbread;"
-mysql -ppassword -e"create database sbread;"
-sysbench  \
-    --db-driver=mysql  \
-    --mysql-host=localhost  \
-    --mysql-port=3306  \
-    --mysql-user=root  \
-    --mysql-password=password  \
-    --table_size=800000  \
-    --tables=300  \
-    --events=0  \
-    --threads=64  \
-    --mysql-db=sbread  \
-    oltp_read_only  \
-    prepare
-
-mysql -ppassword -e"drop database sbwrite;"
-mysql -ppassword -e"create database sbwrite;"
-sysbench  \
-    --db-driver=mysql  \
-    --mysql-host=localhost  \
-    --mysql-port=3306  \
-    --mysql-user=root  \
-    --mysql-password=password  \
-    --table_size=800000  \
-    --tables=300  \
-    --events=0  \
-    --threads=64  \
-    --mysql-db=sbwrite  \
-    oltp_write_only  \
-    prepare
+#mysql -ppassword -e"drop database sbrw;"
+#mysql -ppassword -e"create database sbrw;"
+#sysbench  \
+#    --db-driver=mysql  \
+#    --mysql-host=localhost  \
+#    --mysql-port=3306  \
+#    --mysql-user=root  \
+#    --mysql-password=password  \
+#    --table_size=800000  \
+#    --tables=300  \
+#    --events=0  \
+#    --threads=64  \
+#    --mysql-db=sbrw  \
+#    oltp_read_write  \
+#    prepare
+#
+#mysql -ppassword -e"drop database sbread;"
+#mysql -ppassword -e"create database sbread;"
+#sysbench  \
+#    --db-driver=mysql  \
+#    --mysql-host=localhost  \
+#    --mysql-port=3306  \
+#    --mysql-user=root  \
+#    --mysql-password=password  \
+#    --table_size=800000  \
+#    --tables=300  \
+#    --events=0  \
+#    --threads=64  \
+#    --mysql-db=sbread  \
+#    oltp_read_only  \
+#    prepare
+#
+#mysql -ppassword -e"drop database sbwrite;"
+#mysql -ppassword -e"create database sbwrite;"
+#sysbench  \
+#    --db-driver=mysql  \
+#    --mysql-host=localhost  \
+#    --mysql-port=3306  \
+#    --mysql-user=root  \
+#    --mysql-password=password  \
+#    --table_size=800000  \
+#    --tables=300  \
+#    --events=0  \
+#    --threads=64  \
+#    --mysql-db=sbwrite  \
+#    oltp_write_only  \
+#    prepare
