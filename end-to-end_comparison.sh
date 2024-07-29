@@ -1,3 +1,4 @@
+mkdir /opadviser/
 export PYTHONPATH=$PWD
 cd scripts || exit
 python optimize.py --config=config_sysbenchrw.ini
