@@ -120,24 +120,24 @@ class DBTuner:
             self.history_workload_data = self.load_workload_data()
 
     def load_workload_data(self):
+        file_dict = defaultdict(list)
         history_workload_data = list()
         workloadL= [ 'sysbench', 'twitter', 'job', 'tpch']
-        # workloadL.remove(self.args_db['workload'] if '_' not in self.args_db['workload'] else self.args_db['workload'].split('_')[1] )
-        file_dict = defaultdict(list,{k:[]for k in workloadL})
+        workloadL.remove(self.args_db['workload'] if '_' not in self.args_db['workload'] else self.args_db['workload'].split('_')[1] )
         files = os.listdir(self.hc_path)
         config_space = self.setup_configuration_space(self.args_db['knob_config_file'], int(self.args_db['knob_num']))
-        # for f in files:
-        #         task_id = f.split('.')[0]
-        #         for workload in workloadL:
-        #             if workload in task_id:
-        #                 break
-        #         if not workload in task_id:
-        #             continue
-        #         fn = os.path.join(self.hc_path, f)
-        #         file_dict[workload].append(fn)
+        for f in files:
+                task_id = f.split('.')[0]
+                for workload in workloadL:
+                    if workload in task_id:
+                        break
+                if not workload in task_id:
+                    continue
+                fn = os.path.join(self.hc_path, f)
+                file_dict[workload].append(fn)
 
         for workload in file_dict.keys():
-            history_container = load_history_from_filelist(workload, [os.path.join(self.hc_path, f)for f in files], config_space)
+            history_container = load_history_from_filelist(workload, file_dict[workload], config_space)
             history_workload_data.append(history_container)
 
         return history_workload_data
