@@ -27,7 +27,9 @@ services:
 volumes:
   mysql:
     driver_opts:
+      type: none
       device: "/mnt/nvme2n1/jeseok/mysql"
   opadviser:
     driver_opts:
+      type: none
       device: "/mnt/nvme2n1/jeseok/opadviser"
