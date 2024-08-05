@@ -26,14 +26,20 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
 volumes:
   workspaces:
+    driver: local
     driver_opts:
-      type: none
-      device: "/dev/nvme2n1"
+      type: 'none'
+      o: 'bind'
+      device: "/dev/nvme2n1/jeseok/workspaces"
   mysql:
+    driver: local
     driver_opts:
-      type: none
-      device: "/dev/nvme2n1"
+      type: 'none'
+      o: 'bind'
+      device: "/dev/nvme2n1/jeseok/mysql"
   opadviser:
+    driver: local
     driver_opts:
-      type: none
-      device: "/dev/nvme2n1"
+      type: 'none'
+      o: 'bind'
+      device: "/dev/nvme2n1/jeseok/opadviser"
