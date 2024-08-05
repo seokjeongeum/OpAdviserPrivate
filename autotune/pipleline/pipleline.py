@@ -294,6 +294,16 @@ class PipleLine(BOBase):
                     f = open('space.record','a')
                     time_b = time.time()
                     compact_space = self.get_compact_space()
+                    # addition
+                    for key in compact_space:
+                        p=compact_space[key]
+                        lower=p.lower
+                        upper=p.upper
+                        ranges[key].append({
+                            'lower':lower,
+                            'upper':upper,
+                        })
+                    # addition
                     f.write(str(time.time() - time_b)+'\n')
                     f.close()
 
@@ -348,7 +358,10 @@ class PipleLine(BOBase):
             # recode the step in the space
             if self.space_transfer or self.auto_optimizer:
                 self.space_step += 1
-
+        # addition
+        with open('ranges.json','w') as f:
+            f.write(json.dumps(ranges))
+        # addition
         return self.get_history()
 
     def knob_selection(self):

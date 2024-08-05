@@ -26,4 +26,8 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
 volumes:
   mysql:
+    driver_opts:
+      device: "/mnt/nvme2n1/jeseok/mysql"
   opadviser:
+    driver_opts:
+      device: "/mnt/nvme2n1/jeseok/opadviser"
