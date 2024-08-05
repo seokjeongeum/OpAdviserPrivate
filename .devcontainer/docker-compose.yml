@@ -28,12 +28,12 @@ volumes:
   workspaces:
     driver_opts:
       type: none
-      device: "/mnt/nvme2n1/jeseok/workspaces"
+      device: "/dev/nvme2n1"
   mysql:
     driver_opts:
       type: none
-      device: "/mnt/nvme2n1/jeseok/mysql"
+      device: "/dev/nvme2n1"
   opadviser:
     driver_opts:
       type: none
-      device: "/mnt/nvme2n1/jeseok/opadviser"
+      device: "/dev/nvme2n1"
