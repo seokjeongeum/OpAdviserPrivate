@@ -20,8 +20,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     pkg-config \
     libtool \
     libmysqlclient-dev \
-    automake \
-    mysql-server-5.7
+    automake
 
 RUN rm -rf oltpbench && \
     git clone https://github.com/oltpbenchmark/oltpbench.git
