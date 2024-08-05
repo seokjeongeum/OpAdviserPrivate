@@ -12,9 +12,9 @@ services:
 
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
-      - /mnt/nvme2n1/jeseok/workspaces:/workspaces:cached
-      - /mnt/nvme2n1/jeseok/mysql:/var/lib/mysql
-      - /mnt/nvme2n1/jeseok/opadviser:/opadviser
+      - workspaces:/workspaces:cached
+      - mysql:/var/lib/mysql
+      - opadviser:/opadviser
 
     # Uncomment the next four lines if you will use a ptrace-based debugger like C++, Go, and Rust.
     # cap_add:
@@ -24,16 +24,16 @@ services:
 
     # Overrides default command so things don't shut down after the process ends.
     command: /bin/sh -c "while sleep 1000; do :; done"
-#volumes:
-#  workspaces:
-#    driver_opts:
-#      type: none
-#      device: "/mnt/nvme2n1/jeseok/workspaces"
-#  mysql:
-#    driver_opts:
-#      type: none
-#      device: "/mnt/nvme2n1/jeseok/mysql"
-#  opadviser:
-#    driver_opts:
-#      type: none
-#      device: "/mnt/nvme2n1/jeseok/opadviser"
+volumes:
+  workspaces:
+    driver_opts:
+      type: none
+      device: "/mnt/nvme2n1/jeseok/workspaces"
+  mysql:
+    driver_opts:
+      type: none
+      device: "/mnt/nvme2n1/jeseok/mysql"
+  opadviser:
+    driver_opts:
+      type: none
+      device: "/mnt/nvme2n1/jeseok/opadviser"
