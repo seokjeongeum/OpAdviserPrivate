@@ -1,13 +1,10 @@
+apt update
 apt install mysql-server-5.7
 service mysql start
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"set global max_connections=500;"
 
-cp -r -v oltpbench_files/. /oltpbench
-cd /oltpbench || exit
-ant bootstrap
-ant resolve
-ant build
+
 mysql -ppassword -e"drop database tatp;"
 mysql -ppassword -e"create database tatp;"
 ./oltpbenchmark -b tatp -c config/sample_tatp_config.xml  --create=true --load=true
@@ -38,7 +35,7 @@ sysbench  \
     --table_size=800000  \
     --tables=300  \
     --events=0  \
-    --threads=64  \
+    --threads=80  \
     --mysql-db=sbrw  \
     oltp_read_write  \
     prepare
@@ -54,7 +51,7 @@ sysbench  \
     --table_size=800000  \
     --tables=300  \
     --events=0  \
-    --threads=64  \
+    --threads=80  \
     --mysql-db=sbread  \
     oltp_read_only  \
     prepare
@@ -70,7 +67,7 @@ sysbench  \
     --table_size=800000  \
     --tables=300  \
     --events=0  \
-    --threads=64  \
+    --threads=80  \
     --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare

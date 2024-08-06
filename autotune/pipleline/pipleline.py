@@ -280,6 +280,9 @@ class PipleLine(BOBase):
 
     def run(self):
         compact_space = None
+        # addition
+        ranges=defaultdict(list)
+        # addition
         for _ in tqdm(range(self.iteration_id, self.max_iterations)):
             if self.budget_left < 0:
                 self.logger.info('Time %f elapsed!' % self.runtime_limit)
@@ -359,8 +362,8 @@ class PipleLine(BOBase):
             if self.space_transfer or self.auto_optimizer:
                 self.space_step += 1
         # addition
-        with open('ranges.json','w') as f:
-            f.write(json.dumps(ranges))
+        # with open('ranges.json','w') as f:
+        #     f.write(json.dumps(ranges))
         # addition
         return self.get_history()
 

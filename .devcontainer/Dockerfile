@@ -23,7 +23,12 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     automake
 
 RUN rm -rf oltpbench && \
-    git clone https://github.com/oltpbenchmark/oltpbench.git
+    git clone https://github.com/oltpbenchmark/oltpbench.git && \
+    cp -r -v oltpbench_files/. /oltpbench && \
+    cd /oltpbench && \
+    ant bootstrap && \
+    ant resolve && \
+    ant build
 
 RUN rm -rf sysbench
 RUN git clone https://github.com/akopytov/sysbench.git && \
