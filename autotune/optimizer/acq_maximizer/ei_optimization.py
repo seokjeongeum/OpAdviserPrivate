@@ -289,7 +289,9 @@ class LocalSearch(AcquisitionFunctionMaximizer):
                 start_point, **kwargs)
 
             configuration.origin = "Local Search"
-            acq_configs.append((acq_val, configuration))
+            #jeseok
+            acq_configs.append((acq_val[0], configuration))
+            #jeseok
 
         # shuffle for random tie-break
         self.rng.shuffle(acq_configs)
@@ -550,6 +552,11 @@ class InterleavedLocalAndRandomSearch(AcquisitionFunctionMaximizer):
             "First 10 acq func (origin) values of selected configurations: %s",
             str([[_[0], _[1].origin] for _ in next_configs_by_acq_value[:10]])
         )
+        # jeseok
+        with open('acq_value','a')as f:
+            f.write(f'''{next_configs_by_acq_value[0][0]} {next_configs_by_acq_value[-1][0]} {next_configs_by_acq_value[0][0]-next_configs_by_acq_value[-1][0]} 
+''')
+        # jeseok
         next_configs_by_acq_value = [_[1] for _ in next_configs_by_acq_value]
 
         challengers = ChallengerList(next_configs_by_acq_value,
