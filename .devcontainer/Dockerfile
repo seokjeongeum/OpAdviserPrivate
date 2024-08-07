@@ -22,14 +22,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libmysqlclient-dev \
     automake
 
-RUN rm -rf oltpbench && \
-    git clone https://github.com/oltpbenchmark/oltpbench.git && \
-    cp -r -v oltpbench_files/. /oltpbench && \
-    cd /oltpbench && \
-    ant bootstrap && \
-    ant resolve && \
-    ant build
-
 RUN rm -rf sysbench
 RUN git clone https://github.com/akopytov/sysbench.git && \
     cd /sysbench && \
@@ -37,6 +29,14 @@ RUN git clone https://github.com/akopytov/sysbench.git && \
     ./autogen.sh && \
     ./configure && \
     make && make install
+
+RUN rm -rf oltpbench && \
+    git clone https://github.com/oltpbenchmark/oltpbench.git && \
+COPY /oltpbench_files /oltpbench
+WORKDIR /oltpbench
+RUN ant bootstrap
+RUN ant resolve
+RUN ant build
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
