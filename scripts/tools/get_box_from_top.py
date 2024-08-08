@@ -86,7 +86,7 @@ def setup_configuration_space(knob_config_file, knob_num):
 
 
 if __name__ == '__main__':
-    history_path = '../OpAdviser_history'
+    history_path = '../../repo'
     knob_config_file = '/data2/ruike/DBTune/scripts/experiment/gen_knobs/mysql_all_197_32G.json'
     knob_details = initialize_knobs(knob_config_file, -1)
     workloadL = [ 'sysbench', 'twitter', 'job', 'tpch']

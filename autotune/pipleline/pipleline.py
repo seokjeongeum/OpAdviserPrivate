@@ -122,7 +122,7 @@ class PipleLine(BOBase):
             self.auto_optimizer_type = auto_optimizer_type
             if auto_optimizer_type == 'learned':
                 self.source_workloadL = ['sysbench', 'twitter', 'job', 'tpch']
-                # self.source_workloadL.remove(hold_out_workload)
+                self.source_workloadL.remove(hold_out_workload)
                 self.ranker = xgb.XGBRanker(
                 # tree_method='gpu_hist',
                 booster='gbtree',
@@ -281,7 +281,7 @@ class PipleLine(BOBase):
     def run(self):
         compact_space = None
         # jeseok
-        ranges=defaultdict(list)
+        # ranges=defaultdict(list)
         # jeseok
         for _ in tqdm(range(self.iteration_id, self.max_iterations)):
             if self.budget_left < 0:
@@ -298,14 +298,14 @@ class PipleLine(BOBase):
                     time_b = time.time()
                     compact_space = self.get_compact_space()
                     # jeseok
-                    for key in compact_space:
-                        p=compact_space[key]
-                        lower=p.lower
-                        upper=p.upper
-                        ranges[key].append({
-                            'lower':lower,
-                            'upper':upper,
-                        })
+                    # for key in compact_space:
+                    #     p=compact_space[key]
+                    #     lower=p.lower
+                    #     upper=p.upper
+                    #     ranges[key].append({
+                    #         'lower':lower,
+                    #         'upper':upper,
+                    #     })
                     # jeseok
                     f.write(str(time.time() - time_b)+'\n')
                     f.close()
@@ -466,11 +466,17 @@ class PipleLine(BOBase):
 
 
     def iterate(self, compact_space=None):
+        """
+        Modified to use list
+        """
         self.knob_selection()
         #get configuration suggestion
         if self.space_transfer and len(self.history_container.configurations) < self.init_num:
             #space transfer: use best source config to init
-            config = self.initial_configurations[len(self.history_container.configurations)]
+            config = [
+                self.initial_configurations[len(self.history_container.configurations)],
+                self.initial_configurations[len(self.history_container.configurations)+1],
+            ]
         else:
             config = self.optimizer.get_suggestion(history_container=self.history_container, compact_space=compact_space)
         if self.space_transfer:
@@ -479,11 +485,15 @@ class PipleLine(BOBase):
             else:
                 config = impute_incumb_values(config, self.config_space.get_default_configuration())
 
-        _, trial_state, constraints, objs = self.evaluate(config)
-        return config, trial_state, constraints, objs
+        _, trial_state, constraints, objs = self.evaluate(config[0])
+        _, trial_state2, constraints2, objs2 = self.evaluate(config[1])
+        with open('objectives','a')as f:
+            f.write(f'''{objs} {objs2} {config[0]==config[1]}
+''')
+        return config[0], trial_state, constraints, objs
 
     def save_history(self):
-        dir_path = os.path.join('OpAdviser_history')
+        dir_path = os.path.join('../repo')
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
         file_name = 'history_%s.json' % self.task_id
@@ -491,7 +501,7 @@ class PipleLine(BOBase):
 
     def load_history(self):
         # TODO: check info
-        fn = os.path.join('OpAdviser_history', 'history_%s.json' % self.task_id)
+        fn = os.path.join('../repo', 'history_%s.json' % self.task_id)
         if not os.path.exists(fn):
             self.logger.info('Start new DBTune task')
         else:

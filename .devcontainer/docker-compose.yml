@@ -14,7 +14,6 @@ services:
       # Update this to wherever you want VS Code to mount the folder of your project
       - /mnt/nvme2n1/jeseok/workspaces:/workspaces:cached
       - /mnt/nvme2n1/jeseok/mysql:/var/lib/mysql
-      - /mnt/nvme2n1/jeseok/opadviser:/opadviser
 
     # Uncomment the next four lines if you will use a ptrace-based debugger like C++, Go, and Rust.
     # cap_add:

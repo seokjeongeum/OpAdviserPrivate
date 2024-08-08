@@ -26,9 +26,10 @@ RUN rm -rf oltpbench && \
     git clone https://github.com/oltpbenchmark/oltpbench.git 
 COPY /oltpbench_files /oltpbench
 RUN cd /oltpbench && \
- ant bootstrap && \
- ant resolve && \
- ant build
+    ant bootstrap && \
+    ant resolve && \
+    ant build && \
+    chmod 777 /oltpbench/*
 
 RUN rm -rf sysbench
 RUN git clone https://github.com/akopytov/sysbench.git && \

@@ -290,7 +290,7 @@ class LocalSearch(AcquisitionFunctionMaximizer):
 
             configuration.origin = "Local Search"
             #jeseok
-            acq_configs.append((acq_val[0], configuration))
+            acq_configs.append((acq_val, configuration))
             #jeseok
 
         # shuffle for random tie-break
@@ -357,7 +357,7 @@ class LocalSearch(AcquisitionFunctionMaximizer):
 
             for neighbor in all_neighbors:
                 s_time = time.time()
-                acq_val = self.acquisition_function([neighbor], **kwargs)
+                acq_val = self.acquisition_function([neighbor], **kwargs)[0]
                 neighbors_looked_at += 1
                 time_n.append(time.time() - s_time)
 
@@ -554,7 +554,7 @@ class InterleavedLocalAndRandomSearch(AcquisitionFunctionMaximizer):
         )
         # jeseok
         with open('acq_value','a')as f:
-            f.write(f'''{next_configs_by_acq_value[0][0]} {next_configs_by_acq_value[-1][0]} {next_configs_by_acq_value[0][0]-next_configs_by_acq_value[-1][0]} 
+            f.write(f'''{next_configs_by_acq_value[0][0]} {next_configs_by_acq_value[1][0]} {next_configs_by_acq_value[0][0]-next_configs_by_acq_value[1][0]}
 ''')
         # jeseok
         next_configs_by_acq_value = [_[1] for _ in next_configs_by_acq_value]

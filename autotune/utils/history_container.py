@@ -65,7 +65,7 @@ def load_history_from_filelist(task_id, fileL, config_space):
         data_mutipleL = data_mutipleL + data
 
 
-    file_out = '/opadviser/history_{}.json'.format(task_id)
+    file_out = 'history_{}.json'.format(task_id)
     with open(file_out, "w") as fp:
         json.dump({"info": info, "data": data_mutipleL}, fp, indent=2)
 
