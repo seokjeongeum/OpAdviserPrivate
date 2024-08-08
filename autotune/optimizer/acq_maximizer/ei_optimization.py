@@ -289,9 +289,7 @@ class LocalSearch(AcquisitionFunctionMaximizer):
                 start_point, **kwargs)
 
             configuration.origin = "Local Search"
-            #jeseok
             acq_configs.append((acq_val, configuration))
-            #jeseok
 
         # shuffle for random tie-break
         self.rng.shuffle(acq_configs)

@@ -488,7 +488,7 @@ class PipleLine(BOBase):
         _, trial_state, constraints, objs = self.evaluate(config[0])
         _, trial_state2, constraints2, objs2 = self.evaluate(config[1])
         with open('objectives','a')as f:
-            f.write(f'''{objs} {objs2} {config[0]==config[1]}
+            f.write(f'''{objs} {objs2}
 ''')
         return config[0], trial_state, constraints, objs
 
