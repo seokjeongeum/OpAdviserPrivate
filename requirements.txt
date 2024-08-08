@@ -23,7 +23,7 @@ smac==1.2
 dynaconf==3.2.5
 shap==0.44.1
 lightgbm==4.4.0
-paramiko==2.8
+paramiko==3.4.0
 xgboost==2.1.0
 dill==0.3.8
 terminaltables==3.1.10
