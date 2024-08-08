@@ -3,31 +3,31 @@ apt install mysql-server-5.7
 echo "[mysqld]
 innodb_log_checksums = 0">>/etc/my.cnf
 service mysql start
-mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
-mysql -ppassword -e"set global max_connections=500;"
+mysql -uroot -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
+mysql -uroot -ppassword -e"set global max_connections=500;"
 
 
-mysql -ppassword -e"drop database tatp;"
-mysql -ppassword -e"create database tatp;"
-./oltpbenchmark -b tatp -c config/sample_tatp_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database tpcc;"
-mysql -ppassword -e"create database tpcc;"
-./oltpbenchmark -b tpcc -c config/sample_tpcc_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database twitter;"
-mysql -ppassword -e"create database twitter;"
-./oltpbenchmark -b twitter -c config/sample_twitter_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database voter;"
-mysql -ppassword -e"create database voter;"
-./oltpbenchmark -b voter -c config/sample_voter_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database wikipedia;"
-mysql -ppassword -e"create database wikipedia;"
-./oltpbenchmark -b wikipedia -c config/sample_wikipedia_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database ycsb;"
-mysql -ppassword -e"create database ycsb;"
-./oltpbenchmark -b ycsb -c config/sample_ycsb_config.xml  --create=true --load=true
+mysql -uroot -ppassword -e"drop database tatp;"
+mysql -uroot -ppassword -e"create database tatp;"
+/oltpbench/oltpbenchmark -b tatp -c /oltpbench/config/sample_tatp_config.xml  --create=true --load=true
+mysql -uroot -ppassword -e"drop database tpcc;"
+mysql -uroot -ppassword -e"create database tpcc;"
+/oltpbench/oltpbenchmark -b tpcc -c /oltpbench/config/sample_tpcc_config.xml  --create=true --load=true
+mysql -uroot -ppassword -e"drop database twitter;"
+mysql -uroot -ppassword -e"create database twitter;"
+/oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
+mysql -uroot -ppassword -e"drop database voter;"
+mysql -uroot -ppassword -e"create database voter;"
+/oltpbench/oltpbenchmark -b voter -c /oltpbench/config/sample_voter_config.xml  --create=true --load=true
+mysql -uroot -ppassword -e"drop database wikipedia;"
+mysql -uroot -ppassword -e"create database wikipedia;"
+/oltpbench/oltpbenchmark -b wikipedia -c /oltpbench/config/sample_wikipedia_config.xml  --create=true --load=true
+mysql -uroot -ppassword -e"drop database ycsb;"
+mysql -uroot -ppassword -e"create database ycsb;"
+/oltpbench/oltpbenchmark -b ycsb -c /oltpbench/config/sample_ycsb_config.xml  --create=true --load=true
 
-mysql -ppassword -e"drop database sbrw;"
-mysql -ppassword -e"create database sbrw;"
+mysql -uroot -ppassword -e"drop database sbrw;"
+mysql -uroot -ppassword -e"create database sbrw;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
@@ -42,8 +42,8 @@ sysbench  \
     oltp_read_write  \
     prepare
 
-mysql -ppassword -e"drop database sbread;"
-mysql -ppassword -e"create database sbread;"
+mysql -uroot -ppassword -e"drop database sbread;"
+mysql -uroot -ppassword -e"create database sbread;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
@@ -58,8 +58,8 @@ sysbench  \
     oltp_read_only  \
     prepare
 
-mysql -ppassword -e"drop database sbwrite;"
-mysql -ppassword -e"create database sbwrite;"
+mysql -uroot -ppassword -e"drop database sbwrite;"
+mysql -uroot -ppassword -e"create database sbwrite;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
