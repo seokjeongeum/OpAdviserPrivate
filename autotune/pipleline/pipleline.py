@@ -280,9 +280,6 @@ class PipleLine(BOBase):
 
     def run(self):
         compact_space = None
-        # jeseok
-        # ranges=defaultdict(list)
-        # jeseok
         for _ in tqdm(range(self.iteration_id, self.max_iterations)):
             if self.budget_left < 0:
                 self.logger.info('Time %f elapsed!' % self.runtime_limit)
@@ -297,16 +294,6 @@ class PipleLine(BOBase):
                     f = open('space.record','a')
                     time_b = time.time()
                     compact_space = self.get_compact_space()
-                    # jeseok
-                    # for key in compact_space:
-                    #     p=compact_space[key]
-                    #     lower=p.lower
-                    #     upper=p.upper
-                    #     ranges[key].append({
-                    #         'lower':lower,
-                    #         'upper':upper,
-                    #     })
-                    # jeseok
                     f.write(str(time.time() - time_b)+'\n')
                     f.close()
 
@@ -361,10 +348,6 @@ class PipleLine(BOBase):
             # recode the step in the space
             if self.space_transfer or self.auto_optimizer:
                 self.space_step += 1
-        # jeseok
-        # with open('ranges.json','w') as f:
-        #     f.write(json.dumps(ranges))
-        # jeseok
         return self.get_history()
 
     def knob_selection(self):
@@ -482,9 +465,18 @@ class PipleLine(BOBase):
         if self.space_transfer:
             if len(self.history_container.get_incumbents()):
                 config = impute_incumb_values(config, self.history_container.get_incumbents()[0][0])
+                config_space = self.history_container.get_incumbents()[0][0].configuration_space
             else:
                 config = impute_incumb_values(config, self.config_space.get_default_configuration())
-
+                config_space = self.config_space.get_default_configuration().configuration_space
+            if isinstance(self.optimizer, DDPG_Optimizer):
+                self.optimizer = DDPG_Optimizer(config_space,
+                                                self.history_container,
+                                                metrics_num=self.num_metrics,
+                                                task_id=self.history_container.task_id,
+                                                params=self.optimizer.params,
+                                                batch_size=self.optimizer.batch_size,
+                                                mean_var_file=self.optimizer.mean_var_file)
         _, trial_state, constraints, objs = self.evaluate(config[0])
         _, trial_state2, constraints2, objs2 = self.evaluate(config[1])
         with open('objectives','a')as f:
