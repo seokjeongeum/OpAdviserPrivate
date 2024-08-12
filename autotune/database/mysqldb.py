@@ -183,7 +183,7 @@ class MysqlDB:
             proc = subprocess.Popen([self.mysqld, '--defaults-file={}'.format(self.mycnf)])
             self.pid = proc.pid
             if self.isolation_mode:
-                command = 'cgclassify -g memory,cpuset:server ' + str(self.pid)
+                command = 'sudo cgclassify -g memory,cpuset:server ' + str(self.pid)
                 p = os.system(command)
                 if not p:
                     logger.info('add {} to memory,cpuset:server'.format(self.pid))
