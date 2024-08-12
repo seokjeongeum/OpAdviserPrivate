@@ -332,6 +332,9 @@ class PipleLine(BOBase):
             if self.space_transfer:
                 space = compact_space if not compact_space is None else self.config_space
                 self.logger.info("[Iteration {}] [{},{}] Total space size:{}".format(self.iteration_id,self.space_step , self.space_step_limit, estimate_size(space, self.knob_config_file)))
+                with open('space', 'a') as f:
+                    f.write(f'''{estimate_size(space, self.knob_config_file)}
+''')
 
             f = open('all.record', 'a')
             _ , _, _, objs = self.iterate(compact_space)
@@ -348,6 +351,7 @@ class PipleLine(BOBase):
             # recode the step in the space
             if self.space_transfer or self.auto_optimizer:
                 self.space_step += 1
+
         return self.get_history()
 
     def knob_selection(self):
@@ -449,17 +453,15 @@ class PipleLine(BOBase):
 
 
     def iterate(self, compact_space=None):
-        """
-        Modified to use list
-        """
         self.knob_selection()
         #get configuration suggestion
         if self.space_transfer and len(self.history_container.configurations) < self.init_num:
             #space transfer: use best source config to init
-            config = [
-                self.initial_configurations[len(self.history_container.configurations)],
-                self.initial_configurations[len(self.history_container.configurations)+1],
-            ]
+            config = self.initial_configurations[len(self.history_container.configurations)]
+            # config = [
+            #     self.initial_configurations[len(self.history_container.configurations)],
+            #     self.initial_configurations[len(self.history_container.configurations)+1],
+            # ]
         else:
             config = self.optimizer.get_suggestion(history_container=self.history_container, compact_space=compact_space)
         if self.space_transfer:
@@ -477,12 +479,16 @@ class PipleLine(BOBase):
                                                 params=self.optimizer.params,
                                                 batch_size=self.optimizer.batch_size,
                                                 mean_var_file=self.optimizer.mean_var_file)
-        _, trial_state, constraints, objs = self.evaluate(config[0])
-        _, trial_state2, constraints2, objs2 = self.evaluate(config[1])
+        _, trial_state, constraints, objs = self.evaluate(config)
+        # _, trial_state, constraints, objs = self.evaluate(config[0])
+        # _, trial_state2, constraints2, objs2 = self.evaluate(config[1])
         with open('objectives','a')as f:
-            f.write(f'''{objs} {objs2}
+            f.write(f'''{objs} 
 ''')
-        return config[0], trial_state, constraints, objs
+#             f.write(f'''{objs} {objs2}
+# ''')
+        return config, trial_state, constraints, objs
+        # return config[0], trial_state, constraints, objs
 
     def save_history(self):
         dir_path = os.path.join('../repo')
