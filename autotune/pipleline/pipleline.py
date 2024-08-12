@@ -332,8 +332,11 @@ class PipleLine(BOBase):
             if self.space_transfer:
                 space = compact_space if not compact_space is None else self.config_space
                 self.logger.info("[Iteration {}] [{},{}] Total space size:{}".format(self.iteration_id,self.space_step , self.space_step_limit, estimate_size(space, self.knob_config_file)))
-                with open('space', 'a') as f:
+                with open('space_sizes', 'a') as f:
                     f.write(f'''{estimate_size(space, self.knob_config_file)}
+''')
+                with open('spaces', 'a') as f:
+                    f.write(f'''{space}
 ''')
 
             f = open('all.record', 'a')
