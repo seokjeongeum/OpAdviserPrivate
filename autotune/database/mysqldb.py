@@ -120,8 +120,8 @@ class MysqlDB:
         return knobs_not_in_cnf
 
     def _kill_mysqld(self):
-        mysqladmin = os.path.dirname(self.mysqld) + '/mysqladmin'
-        kill_cmd = '{} -u{} -S {} shutdown'.format(mysqladmin, self.user, self.sock)
+        mysqladmin = 'mysqladmin'
+        kill_cmd = '{} -u{} -S {} -ppassword shutdown'.format(mysqladmin, self.user, self.sock)
         force_kill_cmd1 = "ps aux|grep '" + self.sock + "'|awk '{print $2}'|xargs kill -9"
         force_kill_cmd2 = "ps aux|grep '" + self.mycnf + "'|awk '{print $2}'|xargs kill -9"
 
