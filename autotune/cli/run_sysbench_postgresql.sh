@@ -10,7 +10,7 @@ else
     run_script="oltp_read_write"
 fi
 
-${SYSBENCH_BIN} ${run_script} \
+sysbench ${run_script} \
         --pgsql-host=$2 \
         --pgsql-port=$3 \
         --pgsql-user=$4 \

@@ -461,10 +461,10 @@ class PipleLine(BOBase):
         if self.space_transfer and len(self.history_container.configurations) < self.init_num:
             #space transfer: use best source config to init
             config = self.initial_configurations[len(self.history_container.configurations)]
-            # config = [
-            #     self.initial_configurations[len(self.history_container.configurations)],
-            #     self.initial_configurations[len(self.history_container.configurations)+1],
-            # ]
+            config = [
+                self.initial_configurations[len(self.history_container.configurations)],
+                self.initial_configurations[len(self.history_container.configurations)+1],
+            ]
         else:
             config = self.optimizer.get_suggestion(history_container=self.history_container, compact_space=compact_space)
         if self.space_transfer:
@@ -482,16 +482,16 @@ class PipleLine(BOBase):
                                                 params=self.optimizer.params,
                                                 batch_size=self.optimizer.batch_size,
                                                 mean_var_file=self.optimizer.mean_var_file)
-        _, trial_state, constraints, objs = self.evaluate(config)
-        # _, trial_state, constraints, objs = self.evaluate(config[0])
-        # _, trial_state2, constraints2, objs2 = self.evaluate(config[1])
+        # _, trial_state, constraints, objs = self.evaluate(config)
+        _, trial_state, constraints, objs = self.evaluate(config[0])
+        _, trial_state2, constraints2, objs2 = self.evaluate(config[1])
         with open('objectives','a')as f:
-            f.write(f'''{objs} 
-''')
-#             f.write(f'''{objs} {objs2}
+#             f.write(f'''{objs}
 # ''')
-        return config, trial_state, constraints, objs
-        # return config[0], trial_state, constraints, objs
+            f.write(f'''{objs} {objs2}
+''')
+        # return config, trial_state, constraints, objs
+        return config[0], trial_state, constraints, objs
 
     def save_history(self):
         dir_path = os.path.join('../repo')

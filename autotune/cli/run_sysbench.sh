@@ -26,6 +26,7 @@ sysbench ${run_script} \
         --table-size=$7 \
         --db-ps-mode=disable \
         --report-interval=10 \
+        --warmup-time=$8 \
         --threads=$9 \
         --time=${10} \
         --db-ps-mode=disable \
