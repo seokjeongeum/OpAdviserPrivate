@@ -534,7 +534,7 @@ class PipleLine(BOBase):
             self.reset_context(np.array(im))
 
         observation = Observation(
-            config=config, objs=objs, constraints=constraints,
+            config=config[0], objs=objs, constraints=constraints,
             trial_state=trial_state, elapsed_time=elapsed_time, iter_time=iter_time, EM=em, resource=resource, IM=im, info=info, context=self.current_context
         )
         self.history_container.update_observation(observation)
