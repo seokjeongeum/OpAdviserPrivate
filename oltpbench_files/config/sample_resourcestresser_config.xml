@@ -4,44 +4,46 @@
     <!-- Connection details -->
     <dbtype>mysql</dbtype>
     <driver>com.mysql.jdbc.Driver</driver>
-    <DBUrl>jdbc:mysql://localhost:3306/ycsb?useSSL=false</DBUrl>
+    <DBUrl>jdbc:mysql://localhost:3306/resourcestresser?useSSL=false</DBUrl>
     <username>root</username>
     <password>password</password>
     <isolation>TRANSACTION_SERIALIZABLE</isolation>
     <uploadCode></uploadCode>
     <uploadUrl></uploadUrl>
-    <!-- Scalefactor in YCSB is *1000 the number of rows in the USERTABLE-->
-    <scalefactor>16000</scalefactor>
+
+    <!-- Scalefactor in ResourceStresser scales by *100 the number of employees -->
+    <scalefactor>2</scalefactor>
     
-    <!-- The workload -->
-    <terminals>50</terminals>
+    <!-- The workload -->   
+    <terminals>2</terminals>    
     <works>
         <work>
-          <time>180</time>
-          <rate>100000</rate>
-          <weights>50,5,15,10,10,10</weights>
+            <time>300</time>
+            <rate>10000</rate>
+            <weights>16.66,16.66,16.66,16.66,16.66,16.7</weights>
         </work>
     </works>
-
-    <!-- YCSB Procedures declaration -->
+    
+    <!-- R/S Procedures declaration -->
     <transactiontypes>
         <transactiontype>
-                <name>ReadRecord</name>
+            <name>CPU1</name>
         </transactiontype>
         <transactiontype>
-                <name>InsertRecord</name>
+            <name>CPU2</name>
         </transactiontype>
         <transactiontype>
-                <name>ScanRecord</name>
+            <name>IO1</name>
         </transactiontype>
         <transactiontype>
-                <name>UpdateRecord</name>
+            <name>IO2</name>
         </transactiontype>
         <transactiontype>
-                <name>DeleteRecord</name>
+            <name>Contention1</name>
         </transactiontype>
         <transactiontype>
-                <name>ReadModifyWriteRecord</name>
+            <name>Contention2</name>
         </transactiontype>
     </transactiontypes>
+
 </parameters>

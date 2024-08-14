@@ -482,16 +482,8 @@ class PipleLine(BOBase):
                                                 params=self.optimizer.params,
                                                 batch_size=self.optimizer.batch_size,
                                                 mean_var_file=self.optimizer.mean_var_file)
-        # _, trial_state, constraints, objs = self.evaluate(config)
-        _, trial_state, constraints, objs = self.evaluate(config[0])
-        _, trial_state2, constraints2, objs2 = self.evaluate(config[1])
-        with open('objectives','a')as f:
-#             f.write(f'''{objs}
-# ''')
-            f.write(f'''{objs} {objs2}
-''')
-        # return config, trial_state, constraints, objs
-        return config[0], trial_state, constraints, objs
+        _, trial_state, constraints, objs = self.evaluate(config)
+        return config, trial_state, constraints, objs
 
     def save_history(self):
         dir_path = os.path.join('../repo')
@@ -523,7 +515,14 @@ class PipleLine(BOBase):
         iter_time = time.time() - self.iter_begin_time
         trial_state = SUCCESS
         start_time = time.time()
-        objs, constraints, em, resource, im, info, trial_state = self.objective_function(config)
+        d=dict()
+        objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[1])
+        d['Second best']=objs
+        objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[0])
+        d['Best']=objs
+        with open('objectives', 'a') as f:
+            f.write(f'''{d}
+''')
         if trial_state == FAILED :
             objs = self.FAILED_PERF
 
@@ -556,6 +555,7 @@ class PipleLine(BOBase):
         else:
             #self.logger.info('Iteration %d, objective value: %s ,improvement,: :.2%' % (self.iteration_id, objs, (objs-self.default_obj))/self.default_obj)
             self.logger.info('Iteration %d, objective value: %s.' % (self.iteration_id, objs))
+
         return config, trial_state, constraints, objs
 
 
