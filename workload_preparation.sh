@@ -12,6 +12,11 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';
 FLUSH PRIVILEGES;"
 
+cp -r -v oltpbench_files/. /oltpbench/
+cd /oltpbench || exit
+ant bootstrap
+ant resolve
+ant build
 mysql -ppassword -e"drop database resourcestresser;"
 mysql -ppassword -e"create database resourcestresser;"
 /oltpbench/oltpbenchmark -b resourcestresser -c /oltpbench/config/sample_resourcestresser_config.xml  --create=true --load=true

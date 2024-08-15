@@ -12,7 +12,7 @@
     <uploadUrl></uploadUrl>
     
     <!-- Scale factor is the number of warehouses in TPCC -->
-    <scalefactor>14</scalefactor>
+    <scalefactor>175</scalefactor>
     
     <!-- The workload -->
     <terminals>2</terminals>

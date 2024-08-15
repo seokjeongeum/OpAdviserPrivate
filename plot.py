@@ -1,3 +1,5 @@
+import sys
+
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -51,10 +53,9 @@ if __name__ == '__main__':
                 e = eval(a[i].split()[2])
                 if e == 0 or e == [0] or e == [[0]]:
                     continue
-                o1.append(eval(o[i].split()[0])[0])
-                o2.append(eval(o[i].split()[1])[0])
+                j = eval(o[i])
+                o1.append(j['Best'][0] if j['Best'] else sys.maxsize)
+                o2.append(j['Second best'][0] if j['Second best'] else sys.maxsize)
             f(o1, 'Best')
             f(o2, 'Second best')
-            print(len(o1))
-            print(len(o2))
             plt.savefig('.png')
