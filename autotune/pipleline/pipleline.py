@@ -461,10 +461,10 @@ class PipleLine(BOBase):
         if self.space_transfer and len(self.history_container.configurations) < self.init_num:
             #space transfer: use best source config to init
             config = self.initial_configurations[len(self.history_container.configurations)]
-            config = [
-                self.initial_configurations[len(self.history_container.configurations)],
-                self.initial_configurations[len(self.history_container.configurations)+1],
-            ]
+            # config = [
+            #     self.initial_configurations[len(self.history_container.configurations)],
+            #     self.initial_configurations[len(self.history_container.configurations)+1],
+            # ]
         else:
             config = self.optimizer.get_suggestion(history_container=self.history_container, compact_space=compact_space)
         if self.space_transfer:
@@ -515,14 +515,15 @@ class PipleLine(BOBase):
         iter_time = time.time() - self.iter_begin_time
         trial_state = SUCCESS
         start_time = time.time()
-        d=dict()
-        objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[1])
-        d['Second best']=objs
-        objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[0])
-        d['Best']=objs
-        with open('objectives', 'a') as f:
-            f.write(f'''{d}
-''')
+        objs, constraints, em, resource, im, info, trial_state = self.objective_function(config)
+#         d=dict()
+#         objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[1])
+#         d['Second best']=objs
+#         objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[0])
+#         d['Best']=objs
+#         with open('objectives', 'a') as f:
+#             f.write(f'''{d}
+# ''')
         if trial_state == FAILED :
             objs = self.FAILED_PERF
 
@@ -534,7 +535,8 @@ class PipleLine(BOBase):
             self.reset_context(np.array(im))
 
         observation = Observation(
-            config=config[0], objs=objs, constraints=constraints,
+            # config=config[0],
+            config=config, objs=objs, constraints=constraints,
             trial_state=trial_state, elapsed_time=elapsed_time, iter_time=iter_time, EM=em, resource=resource, IM=im, info=info, context=self.current_context
         )
         self.history_container.update_observation(observation)
@@ -555,7 +557,6 @@ class PipleLine(BOBase):
         else:
             #self.logger.info('Iteration %d, objective value: %s ,improvement,: :.2%' % (self.iteration_id, objs, (objs-self.default_obj))/self.default_obj)
             self.logger.info('Iteration %d, objective value: %s.' % (self.iteration_id, objs))
-
         return config, trial_state, constraints, objs
 
 

@@ -309,17 +309,20 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
 
         return X, Y, cY
 
-    def get_suggestion(self, history_container: HistoryContainer, return_list=True, compact_space=None):
+    def get_suggestion(self, history_container: HistoryContainer,
+                       return_list=False,
+                       # return_list=True,
+                       compact_space=None):
         # if have enough data, get_suggorate
         num_config_evaluated = len(history_container.configurations)
         num_config_successful = len(history_container.successful_perfs)
 
         if num_config_evaluated < self.init_num:
-            # return self.initial_configurations[num_config_evaluated]
-            return [
-                self.initial_configurations[num_config_evaluated],
-                self.initial_configurations[num_config_evaluated],
-            ]
+            return self.initial_configurations[num_config_evaluated]
+            # return [
+            #     self.initial_configurations[num_config_evaluated],
+            #     self.initial_configurations[num_config_evaluated],
+            # ]
 
         X, Y, cY = self.get_surrogate(history_container)
 

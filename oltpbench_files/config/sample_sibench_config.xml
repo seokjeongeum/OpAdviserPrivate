@@ -11,7 +11,7 @@
     <uploadCode></uploadCode>
     <uploadUrl></uploadUrl>
     
-    <scalefactor>441</scalefactor>
+    <scalefactor>925</scalefactor>
     
     <!-- The workload -->
     <terminals>2</terminals>
