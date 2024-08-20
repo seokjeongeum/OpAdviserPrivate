@@ -1,5 +1,5 @@
-pandas==1.4.4
 numpy<1.20.0
+pandas==1.4.4
 scikit_learn==0.22.2.post1
 torch>=1.5.0
 mysql-connector-python-rf==2.2.2

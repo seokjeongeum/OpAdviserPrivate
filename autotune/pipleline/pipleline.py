@@ -521,9 +521,9 @@ class PipleLine(BOBase):
 #         d['Second best']=objs
 #         objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[0])
 #         d['Best']=objs
-#         with open('objectives', 'a') as f:
-#             f.write(f'''{d}
-# ''')
+        with open('objectives', 'a') as f:
+            f.write(f'''{objs}
+''')
         if trial_state == FAILED :
             objs = self.FAILED_PERF
 
