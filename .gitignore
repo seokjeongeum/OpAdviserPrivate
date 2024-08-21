@@ -1,5 +1,4 @@
 *.pyc
-*.log
 *.idea
 *.pkl
 *.DS_Store
