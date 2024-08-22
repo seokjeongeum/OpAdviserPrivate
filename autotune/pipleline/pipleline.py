@@ -332,12 +332,7 @@ class PipleLine(BOBase):
             if self.space_transfer:
                 space = compact_space if not compact_space is None else self.config_space
                 self.logger.info("[Iteration {}] [{},{}] Total space size:{}".format(self.iteration_id,self.space_step , self.space_step_limit, estimate_size(space, self.knob_config_file)))
-                with open('space_sizes', 'a') as f:
-                    f.write(f'''{estimate_size(space, self.knob_config_file)}
-''')
-                with open('spaces', 'a') as f:
-                    f.write(f'''{space}
-''')
+
 
             f = open('all.record', 'a')
             _ , _, _, objs = self.iterate(compact_space)
@@ -516,14 +511,7 @@ class PipleLine(BOBase):
         trial_state = SUCCESS
         start_time = time.time()
         objs, constraints, em, resource, im, info, trial_state = self.objective_function(config)
-#         d=dict()
-#         objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[1])
-#         d['Second best']=objs
-#         objs, constraints, em, resource, im, info, trial_state = self.objective_function(config[0])
-#         d['Best']=objs
-        with open('objectives', 'a') as f:
-            f.write(f'''{objs}
-''')
+
         if trial_state == FAILED :
             objs = self.FAILED_PERF
 
