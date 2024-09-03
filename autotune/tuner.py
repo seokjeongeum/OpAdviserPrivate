@@ -32,6 +32,9 @@ class DBTuner:
         else:
             self.constraints = eval(args_tune['constraints'])
         self.config_space = self.setup_configuration_space(args_db['knob_config_file'], int(args_db['knob_num']))
+
+        self.acq_optimizer_type=self.args_tune['acq_optimizer_type']
+
         self.setup_transfer()
 
 
@@ -151,7 +154,7 @@ class DBTuner:
                        max_runs=int(self.args_tune['max_runs']),
                        surrogate_type=self.surrogate_type,
                        history_bo_data=self.hcL,
-                       acq_optimizer_type='local_random',  # 'random_scipy',#
+                       acq_optimizer_type=self.acq_optimizer_type,  # 'random_scipy',#
                        selector_type=self.args_tune['selector_type'],
                        initial_runs=int(self.args_tune['initial_runs']),
                        incremental=self.args_tune['incremental'],
