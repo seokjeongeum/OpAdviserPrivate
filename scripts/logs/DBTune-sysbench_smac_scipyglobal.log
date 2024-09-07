@@ -1,0 +1,6 @@
+[INFO] [2024-09-04 03:26:54,841] [DBTune-sysbench_smac_scipyglobal] Total space size:5.885367239708822e+297
+[INFO] [2024-09-04 03:26:54,841] [DBTune-sysbench_smac_scipyglobal] Start new DBTune task
+[INFO] [2024-09-04 03:26:56,035] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-09-04 13:44:59,995] [DBTune-sysbench_smac_scipyglobal] Total space size:5.885367239708822e+297
+[INFO] [2024-09-04 13:44:59,995] [DBTune-sysbench_smac_scipyglobal] Start new DBTune task
+[INFO] [2024-09-04 13:45:01,099] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
