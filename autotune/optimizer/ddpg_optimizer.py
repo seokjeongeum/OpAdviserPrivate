@@ -158,29 +158,18 @@ class DDPG_Optimizer:
             init_config = self.initial_configurations[self.init_step]
             self.init_step += 1
             return init_config
-            # init_config2 = self.initial_configurations[self.init_step]
-            # self.init_step += 1
-            # return [init_config, init_config2]
 
         if self.episode_init:
             self.t = 0
             self.score = 0
             return self.config_space.get_default_configuration()
-            # return [self.config_space.get_default_configuration(), self.config_space.get_default_configuration()]
 
         if np.random.random() < 0.7:  # avoid too nus reward in the fisrt 100 step
-            # self.model.ouprocess=False
             X_next = self.model.choose_action(self.state, 1 / (self.global_t + 1))
-            # self.model.ouprocess=True
-            # X_next2 = self.model.choose_action(self.state, 1 / (self.global_t + 1))
         else:
-            # self.model.ouprocess=False
             X_next = self.model.choose_action(self.state, 1)
-            # self.model.ouprocess=True
-            # X_next2 = self.model.choose_action(self.state, 1)
 
         return action2config(X_next, self.config_space)
-        # return [action2config(X_next, self.config_space), action2config(X_next2, self.config_space)]
 
     def update(self, observation: Observation):
         if self.model is None:

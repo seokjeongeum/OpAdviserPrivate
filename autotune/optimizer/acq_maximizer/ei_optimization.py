@@ -550,9 +550,6 @@ class InterleavedLocalAndRandomSearch(AcquisitionFunctionMaximizer):
             "First 10 acq func (origin) values of selected configurations: %s",
             str([[_[0], _[1].origin] for _ in next_configs_by_acq_value[:10]])
         )
-        with open('acq_value','a')as f:
-            f.write(f'''{next_configs_by_acq_value[0][0]} {next_configs_by_acq_value[1][0]} {next_configs_by_acq_value[0][0]-next_configs_by_acq_value[1][0]}
-''')
         next_configs_by_acq_value = [_[1] for _ in next_configs_by_acq_value]
 
         challengers = ChallengerList(next_configs_by_acq_value,

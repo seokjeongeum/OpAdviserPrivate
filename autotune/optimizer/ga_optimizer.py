@@ -88,20 +88,14 @@ class GA_Optimizer(object, metaclass=abc.ABCMeta):
         if len(self.population) < self.population_size:
             # Initialize population
             next_config = self.sample_random_config(excluded_configs=self.all_configs)
-            # next_config = [
-            #     self.sample_random_config(excluded_configs=self.all_configs),
-            #     self.sample_random_config(excluded_configs=self.all_configs),
-            # ]
         else:
             # Select a parent by subset tournament and epsilon greedy
             if self.rng.random() < self.epsilon:
                 parent_config = random.sample(self.population, 1)[0]['config']
-                # parent_config = random.sample(self.population, 2)[0]['config']
             else:
                 subset = random.sample(self.population, self.subset_size)
                 subset.sort(key=lambda x: x['perf'])    # minimize
                 parent_config = subset[0]['config']
-                # parent_config = [subset[0]['config'],subset[1]['config']]
 
             # Mutation to 1-step neighbors
             next_config = None
@@ -112,15 +106,6 @@ class GA_Optimizer(object, metaclass=abc.ABCMeta):
                     break
             if next_config is None:  # If all the neighors are evaluated, sample randomly!
                 next_config = self.sample_random_config(excluded_configs=self.all_configs)
-            # next_config = []
-            # for pc in parent_config:
-            #     neighbors_gen = get_one_exchange_neighbourhood(pc, seed=self.rng.randint(MAXINT))
-            #     for neighbor in neighbors_gen:
-            #         if neighbor not in self.all_configs:
-            #             next_config.append(neighbor)
-            #             break
-            # while len(next_config) < 2:  # If all the neighors are evaluated, sample randomly!
-            #     next_config.append(self.sample_random_config(excluded_configs=self.all_configs))
 
         return next_config
 
