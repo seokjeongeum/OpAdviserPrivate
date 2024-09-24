@@ -142,7 +142,7 @@ class PipleLine(BOBase):
                 with open("tools/{}_best_optimizer.pkl".format(hold_out_workload), 'rb') as f:
                     self.best_method_id_list = pickle.load(f)
 
-        self.logger.info("Total space size:{}".format(estimate_size(self.config_space, 'experiment/gen_knobs/mysql_all_197_32G.json')))
+        self.logger.info("Total space size:{}".format(estimate_size(self.config_space, 'scripts/experiment/gen_knobs/mysql_all_197_32G.json')))
         self.iter_begin_time = time.time()
         advisor_kwargs = advisor_kwargs or {}
         # init history container
@@ -481,7 +481,7 @@ class PipleLine(BOBase):
         return config, trial_state, constraints, objs
 
     def save_history(self):
-        dir_path = os.path.join('../repo')
+        dir_path = os.path.join('repo')
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
         file_name = 'history_%s.json' % self.task_id
@@ -489,7 +489,7 @@ class PipleLine(BOBase):
 
     def load_history(self):
         # TODO: check info
-        fn = os.path.join('../repo', 'history_%s.json' % self.task_id)
+        fn = os.path.join('repo', 'history_%s.json' % self.task_id)
         if not os.path.exists(fn):
             self.logger.info('Start new DBTune task')
         else:

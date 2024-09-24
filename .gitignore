@@ -7,4 +7,5 @@ train_user_*.py
 *.res
 scripts/log/
 .vscode/
-/scripts/results/
+.venv
+log/

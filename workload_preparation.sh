@@ -17,21 +17,21 @@ cd /oltpbench || exit
 ant bootstrap
 ant resolve
 ant build
-mysql -ppassword -e"drop database resourcestresser;"
-mysql -ppassword -e"create database resourcestresser;"
-/oltpbench/oltpbenchmark -b resourcestresser -c /oltpbench/config/sample_resourcestresser_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database seats;"
-mysql -ppassword -e"create database seats;"
-/oltpbench/oltpbenchmark -b seats -c /oltpbench/config/sample_seats_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database sibench;"
-mysql -ppassword -e"create database sibench;"
-/oltpbench/oltpbenchmark -b sibench -c /oltpbench/config/sample_sibench_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database smallbank;"
-mysql -ppassword -e"create database smallbank;"
-/oltpbench/oltpbenchmark -b smallbank -c /oltpbench/config/sample_smallbank_config.xml  --create=true --load=true
-mysql -ppassword -e"drop database tatp;"
-mysql -ppassword -e"create database tatp;"
-/oltpbench/oltpbenchmark -b tatp -c /oltpbench/config/sample_tatp_config.xml  --create=true --load=true
+# mysql -ppassword -e"drop database resourcestresser;"
+# mysql -ppassword -e"create database resourcestresser;"
+# /oltpbench/oltpbenchmark -b resourcestresser -c /oltpbench/config/sample_resourcestresser_config.xml  --create=true --load=true
+# mysql -ppassword -e"drop database seats;"
+# mysql -ppassword -e"create database seats;"
+# /oltpbench/oltpbenchmark -b seats -c /oltpbench/config/sample_seats_config.xml  --create=true --load=true
+# mysql -ppassword -e"drop database sibench;"
+# mysql -ppassword -e"create database sibench;"
+# /oltpbench/oltpbenchmark -b sibench -c /oltpbench/config/sample_sibench_config.xml  --create=true --load=true
+# mysql -ppassword -e"drop database smallbank;"
+# mysql -ppassword -e"create database smallbank;"
+# /oltpbench/oltpbenchmark -b smallbank -c /oltpbench/config/sample_smallbank_config.xml  --create=true --load=true
+# mysql -ppassword -e"drop database tatp;"
+# mysql -ppassword -e"create database tatp;"
+# /oltpbench/oltpbenchmark -b tatp -c /oltpbench/config/sample_tatp_config.xml  --create=true --load=true
 mysql -ppassword -e"drop database tpcc;"
 mysql -ppassword -e"create database tpcc;"
 /oltpbench/oltpbenchmark -b tpcc -c /oltpbench/config/sample_tpcc_config.xml  --create=true --load=true
