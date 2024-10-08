@@ -13,7 +13,7 @@ python -m pip install -r requirements.txt
 python -m pip install .
 ```
 # Run Experiments
-End-to-end Comparison (Figure 7 in the paper)
+End-to-end Comparison (OpAdviser-w/o-Optimizer (Orange Line) in Figure 7 in the paper)
 ```shell
 python scripts/optimize.py --config=scripts/sysbench_rw.ini
 python scripts/optimize.py --config=scripts/sysbench_wo.ini
