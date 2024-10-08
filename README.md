@@ -6,12 +6,11 @@ Fix volumes attribute in .devcontainer/docker-compose.yml to mount directories t
 ```shell
 bash ./workload_preparation.sh
 ```
-# Create Virtual Environment
+# Setup Python Environment
 ```shell
-python -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip install .
 ```
 # Run Experiments
 End-to-end Comparison (Figure 7 in the paper)
