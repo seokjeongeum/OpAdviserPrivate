@@ -1,10 +1,17 @@
-# Environment Setup
+# Setup Dev Container
 Setup dev container using .devcontainer/devcontainer.json
 
 Fix volumes attribute in .devcontainer/docker-compose.yml to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
 # Prepare workload
 ```shell
 bash ./workload_preparation.sh
+```
+# Create Virtual Environment
+```shell
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
 # Run Experiments
 End-to-end Comparison (Figure 7 in the paper)
