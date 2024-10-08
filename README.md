@@ -1,20 +1,19 @@
-# OpAdviser
-## Create Dev Container
-### JetBrains Gateway/PyCharm
-https://www.jetbrains.com/help/pycharm/connect-to-devcontainer.html
-### Visual Studio Code
-https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume
-## Create venv
-### JetBrains Gateway/PyCharm
-https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html
-### Visual Studio Code
-https://code.visualstudio.com/docs/python/environments
-## Prepare workload
+# Environment Setup
+Setup dev container using .devcontainer/devcontainer.json
+
+Fix volumes attribute in .devcontainer/docker-compose.yml to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
+# Prepare workload
 ```shell
 bash ./workload_preparation.sh
 ```
-## Starting point
-Run scripts/optimize.py
+# Run Experiments
+End-to-end Comparison (Figure 7 in the paper)
+```shell
+python scripts/optimize.py --config=scripts/sysbench_rw.ini
+python scripts/optimize.py --config=scripts/sysbench_wo.ini
+python scripts/optimize.py --config=scripts/sysbench_ro.ini
+python scripts/optimize.py --config=scripts/twitter.ini
+```
 
 Below is original README.md
 ---
