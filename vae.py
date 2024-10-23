@@ -8,6 +8,7 @@ import torch
 import torch.nn as nn
 import torch.utils.data as data
 import torch.optim as optim
+from torch.distributions import Normal
 
 
 def train(model, train_loader, optimizer, epoch, quiet, grad_clip=None):
@@ -118,14 +119,7 @@ class FullyConnectedVAE(nn.Module):
         z = torch.randn_like(mu_z) * log_std_z.exp() + mu_z
         mu_x, log_std_x = self.decoder(z).chunk(2, dim=1)
 
-        # Compute reconstruction loss - Note that it may be easier for you
-        # to use torch.distributions.normal to compute the log_prob
-        recon_loss = (
-            0.5 * np.log(2 * np.pi)
-            + log_std_x
-            + (x - mu_x) ** 2 * torch.exp(-2 * log_std_x) * 0.5
-        )
-        recon_loss = recon_loss.sum(1).mean()
+        recon_loss = -Normal(mu_x, torch.exp(log_std_x)).log_prob(x).sum(1).mean()
 
         # Compute KL
         kl_loss = -log_std_z - 0.5 + (torch.exp(2 * log_std_z) + mu_z**2) * 0.5
@@ -137,7 +131,7 @@ class FullyConnectedVAE(nn.Module):
 
     def sample(self, n, noise=True):
         with torch.no_grad():
-            z = torch.randn(n, self.latent_dim).cuda()
+            z = torch.randn(n, self.latent_dim)
             mu, log_std = self.decoder(z).chunk(2, dim=1)
             if noise:
                 z = torch.randn_like(mu) * log_std.exp() + mu
@@ -158,25 +152,30 @@ class CustomDataset(data.Dataset):
 
 
 if __name__ == "__main__":
-    model = FullyConnectedVAE(291, 291, [128, 128], [128, 128])
-    df = CustomDataset(pd.read_csv("transformed.csv"))
+    df = CustomDataset(pd.read_csv("transformed.csv", index_col=0))
     train_data, test_data = train_test_split(df)
     train_loader = data.DataLoader(train_data, batch_size=128, shuffle=True)
     test_loader = data.DataLoader(test_data, batch_size=128)
-    train_losses, test_losses = train_epochs(
-        model,
-        train_loader,
-        test_loader,
-        dict(epochs=10, lr=1e-3),
-        quiet=False,
-    )
-    train_losses = np.stack(
-        (train_losses["loss"], train_losses["recon_loss"], train_losses["kl_loss"]),
-        axis=1,
-    )
-    test_losses = np.stack(
-        (test_losses["loss"], test_losses["recon_loss"], test_losses["kl_loss"]), axis=1
-    )
+    for latent_dim in [1, 20, 290]:
+        model = FullyConnectedVAE(290, latent_dim, [128, 128], [128, 128])
+        train_losses, test_losses = train_epochs(
+            model,
+            train_loader,
+            test_loader,
+            dict(epochs=200_000, lr=1e-3),
+            quiet=False,
+        )
+        torch.save(model.state_dict(), f"dim{latent_dim}.pth")
+        # Convert losses to DataFrames
+        df_train = pd.DataFrame(
+            train_losses, columns=["train_loss", "recon_loss", "kl_loss"]
+        )
+        df_test = pd.DataFrame(
+            test_losses, columns=["test_loss", "recon_loss", "kl_loss"]
+        )
 
-    samples_noise = model.sample(1000, noise=True)
-    samples_nonoise = model.sample(1000, noise=False)
+        # Concatenate train and test losses
+        df_combined = pd.concat([df_train, df_test], axis=1)
+        print(df_combined)
+        # Save to CSV
+        df_combined.to_csv(f"loss{latent_dim}.csv", index=False)
