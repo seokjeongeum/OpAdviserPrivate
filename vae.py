@@ -1,5 +1,7 @@
 from collections import OrderedDict
+import os
 from typing import Any
+from matplotlib import pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
@@ -9,6 +11,7 @@ import torch.nn as nn
 import torch.utils.data as data
 import torch.optim as optim
 from torch.distributions import Normal
+import torch.nn.functional as F
 
 
 def train(model, train_loader, optimizer, epoch, quiet, grad_clip=None):
@@ -118,8 +121,8 @@ class FullyConnectedVAE(nn.Module):
         mu_z, log_std_z = self.encoder(x).chunk(2, dim=1)
         z = torch.randn_like(mu_z) * log_std_z.exp() + mu_z
         mu_x, log_std_x = self.decoder(z).chunk(2, dim=1)
-
-        recon_loss = -Normal(mu_x, torch.exp(log_std_x)).log_prob(x).sum(1).mean()
+        std_x = torch.exp(log_std_x) + 1e-6
+        recon_loss = -Normal(mu_x, std_x).log_prob(x).sum(1).mean()
 
         # Compute KL
         kl_loss = -log_std_z - 0.5 + (torch.exp(2 * log_std_z) + mu_z**2) * 0.5
@@ -151,6 +154,48 @@ class CustomDataset(data.Dataset):
         return torch.tensor(self.dataframe.iloc[index].values.astype("float32"))
 
 
+def plot_losses(train_losses, test_losses, latent_dim, save_dir="plots"):
+    """
+    Plot and save training and testing losses for total loss, reconstruction loss, and KL loss.
+
+    Parameters:
+    - train_losses: OrderedDict containing lists of training losses (loss, recon_loss, kl_loss).
+    - test_losses: OrderedDict containing lists of testing losses (loss, recon_loss, kl_loss).
+    - latent_dim: The dimension of the latent space (for plot title).
+    - save_dir: Directory to save plots. Defaults to "plots".
+    """
+    epochs = range(len(test_losses["loss"]))  # Test losses recorded once per epoch
+
+    # Create output directory if it doesn't exist
+    os.makedirs(save_dir, exist_ok=True)
+
+    # Create a figure with 3 subplots: Total Loss, Reconstruction Loss, KL Loss
+    fig, axs = plt.subplots(1, 3, figsize=(18, 5))
+    loss_names = ["loss", "recon_loss", "kl_loss"]
+
+    for i, loss_name in enumerate(loss_names):
+        # Plot training and testing losses
+        axs[i].plot(train_losses[loss_name], label=f"Train {loss_name}", alpha=0.7)
+        axs[i].plot(
+            epochs, test_losses[loss_name], label=f"Test {loss_name}", alpha=0.7
+        )
+
+        axs[i].set_title(f"{loss_name.capitalize()} (Latent dim: {latent_dim})")
+        axs[i].set_xlabel("Epoch")
+        axs[i].set_ylabel("Loss")
+        axs[i].legend()
+        axs[i].grid(True)
+
+    plt.tight_layout()
+
+    # Save the plot to a file
+    plot_filename = os.path.join(save_dir, f"loss_plot_latent{latent_dim}.png")
+    plt.savefig(plot_filename)
+    print(f"Saved plot to {plot_filename}")
+
+    plt.close()  # Close the figure to free up memory
+
+
 if __name__ == "__main__":
     df = CustomDataset(pd.read_csv("transformed.csv", index_col=0))
     train_data, test_data = train_test_split(df)
@@ -162,20 +207,8 @@ if __name__ == "__main__":
             model,
             train_loader,
             test_loader,
-            dict(epochs=200_000, lr=1e-3),
+            dict(epochs=200, lr=1e-3),
             quiet=False,
         )
         torch.save(model.state_dict(), f"dim{latent_dim}.pth")
-        # Convert losses to DataFrames
-        df_train = pd.DataFrame(
-            train_losses, columns=["train_loss", "recon_loss", "kl_loss"]
-        )
-        df_test = pd.DataFrame(
-            test_losses, columns=["test_loss", "recon_loss", "kl_loss"]
-        )
-
-        # Concatenate train and test losses
-        df_combined = pd.concat([df_train, df_test], axis=1)
-        print(df_combined)
-        # Save to CSV
-        df_combined.to_csv(f"loss{latent_dim}.csv", index=False)
+        plot_losses(train_losses, test_losses, latent_dim)
