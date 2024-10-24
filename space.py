@@ -30,12 +30,12 @@ HYPERPARAMETER_PATTERN = re.compile(
     r"\s*(\w+), Type: (\w+), Range: \[(\d+), (\d+)\], Default: (\d+)"
 )
 if __name__ == "__main__":
-    s = "sbrw_smac"
-    with open(f"repo/history_{s}.json") as f:
+    with open(f"repo/history_sysbench_smac.json") as f:
         j = json.load(f)["data"]
         c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
-        pprint.pprint(c)
-    with open(f"repo/history_sysbench_smac.json") as f:
+        pprint.pprint(c["external_metrics"])
+    s = "sbrw_smac"
+    with open(f"repo/history_{s}.json") as f:
         j = json.load(f)["data"]
         c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
         pprint.pprint(c["external_metrics"])
@@ -66,3 +66,4 @@ if __name__ == "__main__":
     pprint.pprint(
         dict(map(lambda x: (x[0], (len(x[1]), sum(x[1]) / len(x[1]))), d.items()))
     )
+    print(d)
