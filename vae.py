@@ -64,10 +64,19 @@ def eval_loss(model, data_loader, quiet):
 
 def train_epochs(model, train_loader, test_loader, train_args, quiet=False):
     epochs, lr = train_args["epochs"], train_args["lr"]
-    grad_clip = train_args.get("grad_clip", None)
+    grad_clip = train_args.get("grad_clip", 1.0)
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
     train_losses, test_losses = OrderedDict(), OrderedDict()
+    best_loss = float("inf")  # Initialize with infinity
+    best_model_path = f"dim{model.latent_dim}.pth"  # Path to save the best model
+    epoch = 0
+    if os.path.exists(best_model_path):
+        checkpoint = torch.load(best_model_path)
+        model.load_state_dict(checkpoint["model_state_dict"])
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        epoch = checkpoint["epoch"]
+        best_loss = checkpoint["loss"]
     for epoch in range(epochs):
         model.train()
         train_loss = train(model, train_loader, optimizer, epoch, quiet, grad_clip)
@@ -79,6 +88,17 @@ def train_epochs(model, train_loader, test_loader, train_args, quiet=False):
                 test_losses[k] = []
             train_losses[k].extend(train_loss[k])
             test_losses[k].append(test_loss[k])
+        if test_loss["loss"] < best_loss:
+            best_loss = test_loss["loss"]
+            torch.save(
+                {
+                    "epoch": epoch,
+                    "model_state_dict": model.state_dict(),
+                    "optimizer_state_dict": optimizer.state_dict(),
+                    "loss": test_loss["loss"],
+                },
+                best_model_path,
+            )
     return train_losses, test_losses
 
 
@@ -210,5 +230,4 @@ if __name__ == "__main__":
             dict(epochs=200, lr=1e-3),
             quiet=False,
         )
-        torch.save(model.state_dict(), f"dim{latent_dim}.pth")
         plot_losses(train_losses, test_losses, latent_dim)
