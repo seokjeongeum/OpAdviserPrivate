@@ -30,15 +30,16 @@ HYPERPARAMETER_PATTERN = re.compile(
     r"\s*(\w+), Type: (\w+), Range: \[(\d+), (\d+)\], Default: (\d+)"
 )
 if __name__ == "__main__":
-    with open(f"repo/history_sysbench_smac.json") as f:
-        j = json.load(f)["data"]
-        c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
-        pprint.pprint(c["external_metrics"])
     s = "sbrw_smac"
     with open(f"repo/history_{s}.json") as f:
         j = json.load(f)["data"]
         c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
         pprint.pprint(c["external_metrics"])
+    with open(f"repo/history_sysbench_smac.json") as f:
+        j = json.load(f)["data"]
+        c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
+        pprint.pprint(c["external_metrics"])
+        # pprint.pprint(list(map(lambda x: x["external_metrics"].get("tps", 0),j)))
     with open(f"logs/DBTune-{s}.log") as f:
         c = c["configuration"]
         config_text = f.read()
