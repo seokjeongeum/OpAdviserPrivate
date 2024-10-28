@@ -39,7 +39,6 @@ if __name__ == "__main__":
         j = json.load(f)["data"]
         c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
         pprint.pprint(c["external_metrics"])
-        # pprint.pprint(list(map(lambda x: x["external_metrics"].get("tps", 0),j)))
     with open(f"logs/DBTune-{s}.log") as f:
         c = c["configuration"]
         config_text = f.read()
@@ -65,6 +64,14 @@ if __name__ == "__main__":
                 )
             # pprint.pprint(hyperparameters)
     pprint.pprint(
-        dict(map(lambda x: (x[0], (len(x[1]), sum(x[1]) / len(x[1]))), d.items()))
+        sorted(
+            map(lambda x: (x[0], (len(x[1]), sum(x[1]) / len(x[1]))), d.items()),
+            key=lambda x: x[1],
+        )
     )
     print(d)
+    pprint.pprint(
+        list(
+            map(lambda x: (x[0], x[1]["external_metrics"].get("tps", 0)), enumerate(j))
+        )
+    )
