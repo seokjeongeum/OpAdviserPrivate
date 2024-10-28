@@ -1,5 +1,7 @@
 from collections import OrderedDict
+import os
 from typing import Any
+from matplotlib import pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
@@ -8,6 +10,8 @@ import torch
 import torch.nn as nn
 import torch.utils.data as data
 import torch.optim as optim
+from torch.distributions import Normal
+import torch.nn.functional as F
 
 
 def train(model, train_loader, optimizer, epoch, quiet, grad_clip=None):
@@ -60,10 +64,19 @@ def eval_loss(model, data_loader, quiet):
 
 def train_epochs(model, train_loader, test_loader, train_args, quiet=False):
     epochs, lr = train_args["epochs"], train_args["lr"]
-    grad_clip = train_args.get("grad_clip", None)
+    grad_clip = train_args.get("grad_clip", 1.0)
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
     train_losses, test_losses = OrderedDict(), OrderedDict()
+    best_loss = float("inf")  # Initialize with infinity
+    best_model_path = f"dim{model.latent_dim}.pth"  # Path to save the best model
+    epoch = 0
+    if os.path.exists(best_model_path):
+        checkpoint = torch.load(best_model_path)
+        model.load_state_dict(checkpoint["model_state_dict"])
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        epoch = checkpoint["epoch"]
+        best_loss = checkpoint["loss"]
     for epoch in range(epochs):
         model.train()
         train_loss = train(model, train_loader, optimizer, epoch, quiet, grad_clip)
@@ -75,6 +88,17 @@ def train_epochs(model, train_loader, test_loader, train_args, quiet=False):
                 test_losses[k] = []
             train_losses[k].extend(train_loss[k])
             test_losses[k].append(test_loss[k])
+        if test_loss["loss"] < best_loss:
+            best_loss = test_loss["loss"]
+            torch.save(
+                {
+                    "epoch": epoch,
+                    "model_state_dict": model.state_dict(),
+                    "optimizer_state_dict": optimizer.state_dict(),
+                    "loss": test_loss["loss"],
+                },
+                best_model_path,
+            )
     return train_losses, test_losses
 
 
@@ -117,15 +141,8 @@ class FullyConnectedVAE(nn.Module):
         mu_z, log_std_z = self.encoder(x).chunk(2, dim=1)
         z = torch.randn_like(mu_z) * log_std_z.exp() + mu_z
         mu_x, log_std_x = self.decoder(z).chunk(2, dim=1)
-
-        # Compute reconstruction loss - Note that it may be easier for you
-        # to use torch.distributions.normal to compute the log_prob
-        recon_loss = (
-            0.5 * np.log(2 * np.pi)
-            + log_std_x
-            + (x - mu_x) ** 2 * torch.exp(-2 * log_std_x) * 0.5
-        )
-        recon_loss = recon_loss.sum(1).mean()
+        std_x = torch.exp(log_std_x) + 1e-6
+        recon_loss = -Normal(mu_x, std_x).log_prob(x).sum(1).mean()
 
         # Compute KL
         kl_loss = -log_std_z - 0.5 + (torch.exp(2 * log_std_z) + mu_z**2) * 0.5
@@ -137,7 +154,7 @@ class FullyConnectedVAE(nn.Module):
 
     def sample(self, n, noise=True):
         with torch.no_grad():
-            z = torch.randn(n, self.latent_dim).cuda()
+            z = torch.randn(n, self.latent_dim)
             mu, log_std = self.decoder(z).chunk(2, dim=1)
             if noise:
                 z = torch.randn_like(mu) * log_std.exp() + mu
@@ -157,26 +174,60 @@ class CustomDataset(data.Dataset):
         return torch.tensor(self.dataframe.iloc[index].values.astype("float32"))
 
 
+def plot_losses(train_losses, test_losses, latent_dim, save_dir="plots"):
+    """
+    Plot and save training and testing losses for total loss, reconstruction loss, and KL loss.
+
+    Parameters:
+    - train_losses: OrderedDict containing lists of training losses (loss, recon_loss, kl_loss).
+    - test_losses: OrderedDict containing lists of testing losses (loss, recon_loss, kl_loss).
+    - latent_dim: The dimension of the latent space (for plot title).
+    - save_dir: Directory to save plots. Defaults to "plots".
+    """
+    epochs = range(len(test_losses["loss"]))  # Test losses recorded once per epoch
+
+    # Create output directory if it doesn't exist
+    os.makedirs(save_dir, exist_ok=True)
+
+    # Create a figure with 3 subplots: Total Loss, Reconstruction Loss, KL Loss
+    fig, axs = plt.subplots(1, 3, figsize=(18, 5))
+    loss_names = ["loss", "recon_loss", "kl_loss"]
+
+    for i, loss_name in enumerate(loss_names):
+        # Plot training and testing losses
+        axs[i].plot(train_losses[loss_name], label=f"Train {loss_name}", alpha=0.7)
+        axs[i].plot(
+            epochs, test_losses[loss_name], label=f"Test {loss_name}", alpha=0.7
+        )
+
+        axs[i].set_title(f"{loss_name.capitalize()} (Latent dim: {latent_dim})")
+        axs[i].set_xlabel("Epoch")
+        axs[i].set_ylabel("Loss")
+        axs[i].legend()
+        axs[i].grid(True)
+
+    plt.tight_layout()
+
+    # Save the plot to a file
+    plot_filename = os.path.join(save_dir, f"loss_plot_latent{latent_dim}.png")
+    plt.savefig(plot_filename)
+    print(f"Saved plot to {plot_filename}")
+
+    plt.close()  # Close the figure to free up memory
+
+
 if __name__ == "__main__":
-    model = FullyConnectedVAE(291, 291, [128, 128], [128, 128])
-    df = CustomDataset(pd.read_csv("transformed.csv"))
+    df = CustomDataset(pd.read_csv("transformed.csv", index_col=0))
     train_data, test_data = train_test_split(df)
     train_loader = data.DataLoader(train_data, batch_size=128, shuffle=True)
     test_loader = data.DataLoader(test_data, batch_size=128)
-    train_losses, test_losses = train_epochs(
-        model,
-        train_loader,
-        test_loader,
-        dict(epochs=10, lr=1e-3),
-        quiet=False,
-    )
-    train_losses = np.stack(
-        (train_losses["loss"], train_losses["recon_loss"], train_losses["kl_loss"]),
-        axis=1,
-    )
-    test_losses = np.stack(
-        (test_losses["loss"], test_losses["recon_loss"], test_losses["kl_loss"]), axis=1
-    )
-
-    samples_noise = model.sample(1000, noise=True)
-    samples_nonoise = model.sample(1000, noise=False)
+    for latent_dim in [1, 20, 290]:
+        model = FullyConnectedVAE(290, latent_dim, [128, 128], [128, 128])
+        train_losses, test_losses = train_epochs(
+            model,
+            train_loader,
+            test_loader,
+            dict(epochs=200, lr=1e-3),
+            quiet=False,
+        )
+        plot_losses(train_losses, test_losses, latent_dim)
