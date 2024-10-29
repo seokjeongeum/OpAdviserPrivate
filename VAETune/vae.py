@@ -12,14 +12,14 @@ import torch.utils.data as data
 import torch.optim as optim
 
 
-def train(model, train_loader, optimizer, epoch, quiet, grad_clip=None):
+def train(model, train_loader, optimizer, epoch, quiet, beta, grad_clip=None):
     model.train()
 
     if not quiet:
         pbar = tqdm(total=len(train_loader.dataset))
     losses = OrderedDict()
     for x in train_loader:
-        out = model.loss(x)
+        out = model.loss(x, beta)
         optimizer.zero_grad()
         out["loss"].backward()
         if grad_clip:
@@ -42,12 +42,12 @@ def train(model, train_loader, optimizer, epoch, quiet, grad_clip=None):
     return losses
 
 
-def eval_loss(model, data_loader, quiet):
+def eval_loss(model, data_loader, quiet, beta):
     model.eval()
     total_losses = OrderedDict()
     with torch.no_grad():
         for x in data_loader:
-            out = model.loss(x)
+            out = model.loss(x, beta)
             for k, v in out.items():
                 total_losses[k] = total_losses.get(k, 0) + v.item() * x.shape[0]
 
@@ -62,14 +62,16 @@ def eval_loss(model, data_loader, quiet):
 
 def train_epochs(model, train_loader, test_loader, train_args, quiet=False):
     epochs, lr = train_args["epochs"], train_args["lr"]
-    grad_clip = train_args.get("grad_clip", None)
-    optimizer = optim.Adam(model.parameters(), lr=lr)
+    # Remove warmup_epochs and beta_max
+    # beta = 1.0  # Keep beta constant throughout training
+
+    optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
+    scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, epochs)
 
     train_losses, test_losses = OrderedDict(), OrderedDict()
-    best_loss = float("inf")  # Initialize with infinity
-    best_model_path = (
-        f"VAETune/dim{model.latent_dim}.pth"  # Path to save the best model
-    )
+    best_loss = float("inf")
+    best_model_path = f"VAETune/dim{model.latent_dim}.pth"
+
     epoch = 0
     if os.path.exists(best_model_path):
         checkpoint = torch.load(best_model_path)
@@ -77,10 +79,11 @@ def train_epochs(model, train_loader, test_loader, train_args, quiet=False):
         optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
         epoch = checkpoint["epoch"]
         best_loss = checkpoint["loss"]
+
     for epoch in range(epoch, epochs):
-        model.train()
-        train_loss = train(model, train_loader, optimizer, epoch, quiet, grad_clip)
-        test_loss = eval_loss(model, test_loader, quiet)
+        # Remove beta warmup, use constant beta=1.0
+        train_loss = train(model, train_loader, optimizer, epoch, quiet, beta=1.0)
+        test_loss = eval_loss(model, test_loader, quiet, beta=1.0)
 
         for k in train_loss.keys():
             if k not in train_losses:
@@ -135,50 +138,60 @@ class FullyConnectedVAE(nn.Module):
         self,
         input_dim,
         latent_dim,
-        enc_hidden_sizes=[512, 256],
-        dec_hidden_sizes=[256, 512],
+        enc_hidden_sizes=[512, 384, 256],
+        dec_hidden_sizes=[256, 384, 512],
     ):
         super().__init__()
         self.latent_dim = latent_dim
+
+        # Initialize with proper scaling
         self.encoder = MLP(input_dim, 2 * latent_dim, enc_hidden_sizes)
         self.decoder = MLP(latent_dim, 2 * input_dim, dec_hidden_sizes)
+
+        # Initialize weights properly
+        self.apply(self._init_weights)
+
+    def _init_weights(self, m):
+        if isinstance(m, nn.Linear):
+            nn.init.xavier_normal_(m.weight, gain=0.01)
+            nn.init.zeros_(m.bias)
 
     def loss(self, x, beta=1.0):
         # Encode to latent space
         mu_z, log_std_z = self.encoder(x).chunk(2, dim=1)
-        z = torch.randn_like(mu_z) * log_std_z.exp() + mu_z
 
-        # Decode back to input space
+        # Use reparameterization trick
+        std_z = torch.exp(log_std_z.clamp(-20, 2))
+        z = mu_z + std_z * torch.randn_like(mu_z)
+
+        # Decode
         mu_x, log_std_x = self.decoder(z).chunk(2, dim=1)
-        std_x = torch.exp(log_std_x) + 1e-6
-        x_recon = torch.normal(mu_x, std_x)
+        x_recon = mu_x
 
-        # Reconstruction loss (normalized)
+        # Calculate reconstruction loss
         categorical_recon_loss = 0
         i = 0
-        cross_entropy_loss = nn.CrossEntropyLoss()
         with open("VAETune/categories") as f:
             for category in f:
                 n = len(eval(eval(category)))
-                categorical_recon_loss += cross_entropy_loss(
-                    x_recon[:, i : i + n],
-                    x[:, i : i + n],
+                categorical_recon_loss += nn.CrossEntropyLoss()(
+                    x_recon[:, i : i + n], x[:, i : i + n].argmax(dim=1)
                 )
                 i += n
-        l1_loss = nn.L1Loss()
-        numerical_recon_loss = l1_loss(x_recon[:, i:], x[:, i:])
+
+        numerical_recon_loss = nn.MSELoss()(x_recon[:, i:], x[:, i:])
+
+        # Combine reconstruction losses
         recon_loss = categorical_recon_loss + numerical_recon_loss
 
-        # KL Divergence loss
+        # KL divergence with proper scaling
         kl_loss = (
-            -0.5
-            * torch.sum(
-                1 + 2 * log_std_z - mu_z.pow(2) - (2 * log_std_z).exp(), dim=1
-            ).mean()
+            0.5
+            * torch.sum(mu_z.pow(2) + std_z.pow(2) - 2 * log_std_z - 1, dim=1).mean()
         )
 
-        # Total VAE loss with beta weight on KL
-        total_loss = recon_loss + beta * kl_loss
+        # Use constant beta=1.0 for balanced optimization
+        total_loss = recon_loss + kl_loss  # Remove beta multiplication
 
         return OrderedDict(loss=total_loss, recon_loss=recon_loss, kl_loss=kl_loss)
 
@@ -266,7 +279,7 @@ if __name__ == "__main__":
             model,
             train_loader,
             test_loader,
-            dict(epochs=200, lr=1e-3),
+            dict(epochs=20, lr=1e-3),
             quiet=False,
         )
         plot_losses(train_losses, test_losses, latent_dim)
