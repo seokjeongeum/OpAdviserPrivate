@@ -21,11 +21,23 @@ python scripts/optimize.py --config=scripts/sysbench_wo.ini
 python scripts/optimize.py --config=scripts/sysbench_ro.ini
 python scripts/optimize.py --config=scripts/twitter.ini
 ```
+### Find ground truth
+sbrw
+```shell
+python scripts/optimize.py --config=scripts/sysbench_rw.ini
+python scripts/optimize.py --config=scripts/sysbench_rw_ground_truth.ini
+```
+```shell
+python scripts/optimize.py --config=scripts/sysbench_wo.ini
+python scripts/optimize.py --config=scripts/sysbench_wo_ground_truth.ini
+```
+```shell
+python scripts/optimize.py --config=scripts/sysbench_ro.ini
+python scripts/optimize.py --config=scripts/sysbench_ro_ground_truth.ini
+```
 ```shell
 python scripts/optimize.py --config=scripts/twitter.ini
-python scripts/optimize.py --config=scripts/dim290.ini
-python scripts/optimize.py --config=scripts/dim20.ini
-python scripts/optimize.py --config=scripts/dim1.ini
+python scripts/optimize.py --config=scripts/twitter_ground_truth.ini
 ```
 
 Below is original README.md
