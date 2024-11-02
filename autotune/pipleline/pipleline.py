@@ -81,7 +81,7 @@ class PipleLine(BOBase):
                  only_knob = False,
                  only_range = False,
                  advisor_kwargs: dict = None,
-                 latent_dim=0,
+                #  latent_dim=0,
                  **kwargs
                  ):
 
@@ -143,7 +143,7 @@ class PipleLine(BOBase):
                 with open("tools/{}_best_optimizer.pkl".format(hold_out_workload), 'rb') as f:
                     self.best_method_id_list = pickle.load(f)
 
-        self.logger.info("Total space size:{}".format(estimate_size(self.config_space, 'scripts/experiment/gen_knobs/mysql_all_197_32G.json')))
+        # self.logger.info("Total space size:{}".format(estimate_size(self.config_space, 'scripts/experiment/gen_knobs/mysql_all_197_32G.json')))
         self.iter_begin_time = time.time()
         advisor_kwargs = advisor_kwargs or {}
         # init history container
@@ -174,7 +174,7 @@ class PipleLine(BOBase):
                                               ref_point=ref_point,
                                               history_bo_data=history_bo_data,
                                               random_state=random_state,
-                                              latent_dim=latent_dim,
+                                            #   latent_dim=latent_dim,
                                               **advisor_kwargs)
 
             elif optimizer_type == 'TPE':
@@ -229,7 +229,7 @@ class PipleLine(BOBase):
                                 ref_point=ref_point,
                                 history_bo_data=history_bo_data,
                                 random_state=random_state,
-                                              latent_dim=latent_dim,
+                                            #   latent_dim=latent_dim,
                                 **advisor_kwargs)
             MBO = BO_Optimizer(config_space,
                                self.history_container,
@@ -244,7 +244,7 @@ class PipleLine(BOBase):
                                ref_point=ref_point,
                                history_bo_data=history_bo_data,
                                random_state=random_state,
-                                              latent_dim=latent_dim,
+                                            #   latent_dim=latent_dim,
                                **advisor_kwargs)
 
             GA = GA_Optimizer(config_space,
@@ -335,7 +335,7 @@ class PipleLine(BOBase):
 
             if self.space_transfer:
                 space = compact_space if not compact_space is None else self.config_space
-                self.logger.info("[Iteration {}] [{},{}] Total space size:{}".format(self.iteration_id,self.space_step , self.space_step_limit, estimate_size(space, self.knob_config_file)))
+                # self.logger.info("[Iteration {}] [{},{}] Total space size:{}".format(self.iteration_id,self.space_step , self.space_step_limit, estimate_size(space, self.knob_config_file)))
 
 
             f = open('all.record', 'a')

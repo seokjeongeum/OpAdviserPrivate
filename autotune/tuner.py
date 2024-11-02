@@ -8,7 +8,7 @@ from .knobs import ts, logger, initialize_knobs
 from .utils.parser import  get_hist_json
 from autotune.utils.history_container import HistoryContainer, load_history_from_filelist
 import pdb
-
+from ConfigSpace.hyperparameters import NormalFloatHyperparameter
 class DBTuner:
     def __init__(self, args_db, args_tune, env):
         self.env = env
@@ -31,6 +31,9 @@ class DBTuner:
             self.constraints = []
         else:
             self.constraints = eval(args_tune['constraints'])
+
+        # self.latent_dim=int(args_tune['latent_dim'])
+
         self.config_space = self.setup_configuration_space(args_db['knob_config_file'], int(args_db['knob_num']))
 
         self.acq_optimizer_type=self.args_tune['acq_optimizer_type']
@@ -39,6 +42,14 @@ class DBTuner:
 
 
     def setup_configuration_space(self, knob_config_file, knob_num):
+        # if self.latent_dim!=0:
+        #     config_space = ConfigurationSpace()
+        #     l=[]
+        #     for i in range(self.latent_dim):
+        #         l.append(NormalFloatHyperparameter(f'dim{i}',mu=0,sigma=1,lower=-1,upper=1))
+        #     config_space.add_hyperparameters(l)
+        #     return config_space
+
         KNOBS = initialize_knobs(knob_config_file, knob_num)
         knobs_list = []
         config_space = ConfigurationSpace()
@@ -177,7 +188,7 @@ class DBTuner:
                        history_workload_data=self.history_workload_data,
                        only_knob=eval(self.args_tune['only_knob']),
                        only_range=eval(self.args_tune['only_range']),
-                       latent_dim=int(self.args_tune['latent_dim'])
+                    #    latent_dim=int(self.args_tune['latent_dim'])
                        )
         history = bo.run()
         if history.num_objs == 1:

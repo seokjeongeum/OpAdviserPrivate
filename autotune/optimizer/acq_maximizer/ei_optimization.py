@@ -6,22 +6,14 @@
 # Author: Aaron Klein, Marius Lindauer
 
 import abc
-import json
 import logging
-import os
-import pprint
-import sys
 import time
 from typing import Iterable, List, Union, Tuple, Optional
 
 import random
-import pandas as pd
 import scipy
 import numpy as np
-import torch
 
-from VAETune.preprocess import create_transformer
-from VAETune.vae import FullyConnectedVAE
 from autotune.optimizer.acquisition_function.acquisition import AbstractAcquisitionFunction
 from autotune.utils.config_space import get_one_exchange_neighbourhood, \
     Configuration, ConfigurationSpace
@@ -51,8 +43,7 @@ class AcquisitionFunctionMaximizer(object, metaclass=abc.ABCMeta):
             self,
             acquisition_function: AbstractAcquisitionFunction,
             config_space: ConfigurationSpace,
-            rng: Union[bool, np.random.RandomState] = None,
-            latent_dim=0,
+            rng: Union[bool, np.random.RandomState] = None
     ):
         self.logger = logging.getLogger(
             self.__module__ + "." + self.__class__.__name__
@@ -65,8 +56,6 @@ class AcquisitionFunctionMaximizer(object, metaclass=abc.ABCMeta):
             self.rng = np.random.RandomState(seed=1)
         else:
             self.rng = rng
-
-        self.latent_dim=latent_dim
 
     def maximize(
             self,
@@ -165,10 +154,8 @@ class CMAESOptimizer(AcquisitionFunctionMaximizer):
             config_space: ConfigurationSpace,
             rng: Union[bool, np.random.RandomState] = None,
             rand_prob=0.25,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
 
     def _maximize(
@@ -255,10 +242,8 @@ class LocalSearch(AcquisitionFunctionMaximizer):
             rng: Union[bool, np.random.RandomState] = None,
             max_steps: Optional[int] = None,
             n_steps_plateau_walk: int = 10,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.max_steps = max_steps
         self.n_steps_plateau_walk = n_steps_plateau_walk
 
@@ -406,26 +391,6 @@ class RandomSearch(AcquisitionFunctionMaximizer):
 
     rng : np.random.RandomState or int, optional
     """
-    def __init__(self,acquisition_function,
-            config_space,
-            rng,
-            latent_dim=0,
-            ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
-        if latent_dim!=0:
-            self.model = FullyConnectedVAE(290, latent_dim)
-            best_model_path = f"VAETune/dim{latent_dim}.pth"
-            if os.path.exists(best_model_path):
-                checkpoint = torch.load(best_model_path,weights_only=False)
-                self.model.load_state_dict(checkpoint["model_state_dict"])
-            self.model.eval()
-
-            self.transformer,_=create_transformer()
-            with open("scripts/experiment/gen_knobs/mysql_all_197_32G.json") as f:
-                self.all = json.load(f)
-                self.categorical_keys=[k for k, v in self.all.items() if v["type"] == "enum"]
-                self.numerical_keys=[k for k, v in self.all.items() if v["type"] == "integer"]
 
     def _maximize(
             self,
@@ -453,27 +418,6 @@ class RandomSearch(AcquisitionFunctionMaximizer):
             An iterable consistng of
             tuple(acqusition_value, :class:`autotune.config_space.Configuration`).
         """
-        if self.latent_dim!=0:
-            samples = self.model.sample(num_points)
-            inverse=self.transformer.inverse_transform(samples)       
-            inverse=pd.DataFrame(inverse,columns=self.categorical_keys+self.numerical_keys)    
-            inverse[[x for x in inverse if self.all[x]['type']=='integer']]=pd.DataFrame(
-                [
-                    np.clip(inverse[x],self.all[x].get('min',None),min(self.all[x].get('max',None),2**63-1)).astype(np.int64)
-                    for x in inverse if self.all[x]['type']=='integer']
-                ).T
-            columns=[x for x in inverse if self.all[x]['type']=='integer'and self.all[x]['max']> sys.maxsize]
-            inverse[columns]=inverse[columns]//1000
-            rand_configs=[ Configuration(self.config_space,values=random_point.to_dict())for _,random_point in inverse.iterrows()] 
-            if _sorted:
-                for i in range(len(rand_configs)):
-                    rand_configs[i].origin = 'Random Search (sorted)'
-                return self._sort_configs_by_acq_value(rand_configs)
-            else:
-                for i in range(len(rand_configs)):
-                    rand_configs[i].origin = 'Random Search'
-                return [(0, rand_configs[i]) for i in range(len(rand_configs))]
-        
 
         if num_points > 1:
             rand_configs = self.config_space.sample_configuration(
@@ -525,16 +469,13 @@ class InterleavedLocalAndRandomSearch(AcquisitionFunctionMaximizer):
             max_steps: Optional[int] = None,
             n_steps_plateau_walk: int = 10,
             n_sls_iterations: int = 10,
-            rand_prob=0.25,
-            latent_dim=0,
+            rand_prob=0.25
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.random_search = RandomSearch(
             acquisition_function=acquisition_function,
             config_space=config_space,
-            rng=rng,
-            latent_dim=latent_dim,
+            rng=rng
         )
         self.local_search = LocalSearch(
             acquisition_function=acquisition_function,
@@ -651,10 +592,8 @@ class ScipyOptimizer(AcquisitionFunctionMaximizer):
             config_space: ConfigurationSpace,
             rand_prob: float = 0.0,
             rng: Union[bool, np.random.RandomState] = None,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
 
         types, bounds = get_types(self.config_space)    # todo: support constant hp in scipy optimizer
@@ -734,10 +673,8 @@ class RandomScipyOptimizer(AcquisitionFunctionMaximizer):
             config_space: ConfigurationSpace,
             rand_prob: float = 0.0,
             rng: Union[bool, np.random.RandomState] = None,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
 
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
 
@@ -820,10 +757,8 @@ class ScipyGlobalOptimizer(AcquisitionFunctionMaximizer):
             config_space: ConfigurationSpace,
             rand_prob: float = 0.0,
             rng: Union[bool, np.random.RandomState] = None,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
 
         types, bounds = get_types(self.config_space)
@@ -908,10 +843,8 @@ class StagedBatchScipyOptimizer(AcquisitionFunctionMaximizer):
             scipy_maxiter: int = 200,
             rand_prob: float = 0.0,
             rng: Union[bool, np.random.RandomState] = None,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.num_random = num_random
         self.num_restarts = num_restarts
         self.raw_samples = raw_samples
@@ -1049,10 +982,8 @@ class MESMO_Optimizer(AcquisitionFunctionMaximizer):
             num_mc=1000,
             num_opt=1000,
             rand_prob=0.0,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
         self.num_mc = num_mc
         self.num_opt = num_opt
@@ -1154,10 +1085,8 @@ class USeMO_Optimizer(AcquisitionFunctionMaximizer):
             config_space: ConfigurationSpace,
             rng: Union[bool, np.random.RandomState] = None,
             rand_prob=0.0,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
 
     def maximize(
@@ -1225,10 +1154,8 @@ class batchMCOptimizer(AcquisitionFunctionMaximizer):
             rng: Union[bool, np.random.RandomState] = None,
             batch_size=None,
             rand_prob=0.0,
-            latent_dim=0,
     ):
-        super().__init__(acquisition_function, config_space, rng,
-            latent_dim)
+        super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
 
         if batch_size is None:

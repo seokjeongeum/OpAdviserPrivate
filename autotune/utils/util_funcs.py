@@ -10,6 +10,7 @@ from ConfigSpace.hyperparameters import CategoricalHyperparameter, \
     OrdinalHyperparameter
 from autotune.utils.constants import MAXINT
 
+from ConfigSpace.hyperparameters import NormalFloatHyperparameter
 
 def get_types(config_space, instance_features=None):
     """TODO"""
@@ -41,6 +42,8 @@ def get_types(config_space, instance_features=None):
         elif isinstance(param, UniformIntegerHyperparameter):
             # bounds[i] = (int(param.lower), int(param.upper))
             bounds[i] = (0.0, 1.0)
+        elif isinstance(param,NormalFloatHyperparameter ):
+            bounds[i] = (-1, 1)
         elif not isinstance(param, (UniformFloatHyperparameter,
                                     UniformIntegerHyperparameter,
                                     OrdinalHyperparameter)):

@@ -41,7 +41,9 @@ def build_acq_func(func_str='ei', model=None, constraint_models=None, **kwargs):
 
 
 
-def build_optimizer(func_str='local_random', acq_func=None, config_space=None, rng=None,latent_dim=0):
+def build_optimizer(func_str='local_random', acq_func=None, config_space=None, rng=None,
+                    # latent_dim=0
+                    ):
     assert config_space is not None
     func_str = func_str.lower()
 
@@ -75,7 +77,7 @@ def build_optimizer(func_str='local_random', acq_func=None, config_space=None, r
     return optimizer(acquisition_function=acq_func,
                      config_space=config_space,
                      rng=rng,
-                     latent_dim=latent_dim,
+                    #  latent_dim=latent_dim,
                      )
 
 

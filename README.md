@@ -1,24 +1,31 @@
-# Setup Dev Container
+# VAETune
+## Setup Dev Container
 Setup dev container using .devcontainer/devcontainer.json
 
 Fix volumes attribute in .devcontainer/docker-compose.yml to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
-# Prepare workload
+## Prepare workload
 ```shell
 bash ./workload_preparation.sh
 ```
-# Setup Python Environment
+## Setup Python Environment
 ```shell
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pip install .
 ```
-# Run Experiments
-End-to-end Comparison (OpAdviser-w/o-Optimizer (Orange Line) in Figure 7 in the paper)
+## Run Experiments
+End-to-end Comparison (OpAdviser-w/o-Optimizer (Orange Line) in Figure 7 in the OpAdviser paper)
 ```shell
 python scripts/optimize.py --config=scripts/sysbench_rw.ini
 python scripts/optimize.py --config=scripts/sysbench_wo.ini
 python scripts/optimize.py --config=scripts/sysbench_ro.ini
 python scripts/optimize.py --config=scripts/twitter.ini
+```
+```shell
+python scripts/optimize.py --config=scripts/twitter.ini
+python scripts/optimize.py --config=scripts/dim290.ini
+python scripts/optimize.py --config=scripts/dim20.ini
+python scripts/optimize.py --config=scripts/dim1.ini
 ```
 
 Below is original README.md

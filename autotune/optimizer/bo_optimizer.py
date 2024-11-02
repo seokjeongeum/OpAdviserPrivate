@@ -34,7 +34,7 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
                  num_constraints=0,
                  initial_trials=3,
                  rand_prob=0.1,
-                 latent_dim=0,
+                #  latent_dim=0,
                  ):
 
         # Create output (logging) directory.
@@ -77,10 +77,12 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
         self.optimizer = None
         self.auto_alter_model = False
         self.algo_auto_selection()
-        self.setup_bo_basics(self.config_space,latent_dim)
+        self.setup_bo_basics(self.config_space,
+                            #  latent_dim,
+                             )
         self.check_setup()
 
-        self.latent_dim=latent_dim
+        # self.latent_dim=latent_dim
 
 
     def algo_auto_selection(self):
@@ -209,7 +211,9 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
             if 'ehvi' in self.acq_type and self.ref_point is None:
                 raise ValueError('Must provide reference point to use EHVI method!')
 
-    def setup_bo_basics(self, config_space: None,latent_dim):
+    def setup_bo_basics(self, config_space: None,
+                        # latent_dim
+                        ):
         """
                 Prepare the basic BO components.
                 Returns
@@ -256,7 +260,7 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
                                          acq_func=self.acquisition_function,
                                          config_space=config_space,
                                          rng=self.rng,
-                                         latent_dim=latent_dim,
+                                        #  latent_dim=latent_dim,
                                          )
 
     def create_initial_design(self, init_strategy='default', excluded_configs=None):
@@ -376,14 +380,14 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
                                                      incumbent=history_container.get_incumbents()[0][0]
                                                      )
 
-            if self.latent_dim!=0:
-                challengers = self.optimizer.maximize(runhistory=history_container, num_points=5000)
-                for config in challengers.challengers:
-                    if config not in history_container.configurations:
-                        return config
-                self.logger.warning('Cannot get non duplicate configuration from BO candidates (len=%d). '
-                                    'Sample random config.' % (len(challengers.challengers), ))
-                return self.sample_random_configs(num_configs=1, excluded_configs=history_container.configurations)[0]
+            # if self.latent_dim!=0:
+            #     challengers = self.optimizer.maximize(runhistory=history_container, num_points=5000)
+            #     for config in challengers.challengers:
+            #         if config not in history_container.configurations:
+            #             return config
+            #     self.logger.warning('Cannot get non duplicate configuration from BO candidates (len=%d). '
+            #                         'Sample random config.' % (len(challengers.challengers), ))
+            #     return self.sample_random_configs(num_configs=1, excluded_configs=history_container.configurations)[0]
 
             # optimize acquisition function
             if not compact_space is None:

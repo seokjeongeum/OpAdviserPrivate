@@ -1,3 +1,4 @@
+import json
 import os
 import pdb
 import time
@@ -6,6 +7,11 @@ import numpy as np
 from multiprocessing import Manager
 from multiprocessing.connection import Client
 import sys
+
+import torch
+
+from VAETune.preprocess import create_transformer
+from VAETune.vae import FullyConnectedVAE
 from .knobs import logger
 from .utils.parser import parse_sysbench, parse_oltpbench, parse_job
 from .knobs import initialize_knobs, get_default_knobs
@@ -52,6 +58,22 @@ class DBEnv:
             'objs': self.y_variable,
             'constraints': self.constraints
         }
+
+        # latent_dim=int(args_tune['latent_dim'])
+        # self.latent_dim=latent_dim
+        # if latent_dim!=0:
+        #     self.model = FullyConnectedVAE(290, latent_dim)
+        #     best_model_path = f"VAETune/dim{latent_dim}.pth"
+        #     if os.path.exists(best_model_path):
+        #         checkpoint = torch.load(best_model_path,weights_only=False)
+        #         self.model.load_state_dict(checkpoint["model_state_dict"])
+        #     self.model.eval()
+
+        #     self.transformer,_=create_transformer()
+        #     with open("scripts/experiment/gen_knobs/mysql_all_197_32G.json") as f:
+        #         self.all = json.load(f)
+        #         self.categorical_keys=[k for k, v in self.all.items() if v["type"] == "enum"]
+        #         self.numerical_keys=[k for k, v in self.all.items() if v["type"] == "integer"]
 
     def generate_reference_point(self, user_defined_reference_point):
         if len(self.y_variable) <= 1:
@@ -382,9 +404,30 @@ class DBEnv:
 
         return constraintL
 
-    def step(self, config):
+    def step(self, config):        
+        # if self.latent_dim!=0:
+        #     samples = self.model.sample(num_points)
+        #     inverse=self.transformer.inverse_transform(samples)       
+        #     inverse=pd.DataFrame(inverse,columns=self.categorical_keys+self.numerical_keys)    
+        #     inverse[[x for x in inverse if self.all[x]['type']=='integer']]=pd.DataFrame(
+        #         [
+        #             np.clip(inverse[x],self.all[x].get('min',None),min(self.all[x].get('max',None),2**63-1)).astype(np.int64)
+        #             for x in inverse if self.all[x]['type']=='integer']
+        #         ).T
+        #     columns=[x for x in inverse if self.all[x]['type']=='integer'and self.all[x]['max']> sys.maxsize]
+        #     inverse[columns]=inverse[columns]//1000
+        #     rand_configs=[ Configuration(self.config_space,values=random_point.to_dict())for _,random_point in inverse.iterrows()] 
+        #     if _sorted:
+        #         for i in range(len(rand_configs)):
+        #             rand_configs[i].origin = 'Random Search (sorted)'
+        #         return self._sort_configs_by_acq_value(rand_configs)
+        #     else:
+        #         for i in range(len(rand_configs)):
+        #             rand_configs[i].origin = 'Random Search'
+        #         return [(0, rand_configs[i]) for i in range(len(rand_configs))]
 
         knobs = config.get_dictionary().copy()
+
         for k in self.knobs_detail.keys():
             if k in knobs.keys():
                 if self.knobs_detail[k]['type'] == 'integer' and self.knobs_detail[k]['max'] > sys.maxsize:
