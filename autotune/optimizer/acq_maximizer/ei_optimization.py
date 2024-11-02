@@ -6,14 +6,22 @@
 # Author: Aaron Klein, Marius Lindauer
 
 import abc
+import json
 import logging
+import os
+import pprint
+import sys
 import time
 from typing import Iterable, List, Union, Tuple, Optional
 
 import random
+import pandas as pd
 import scipy
 import numpy as np
+import torch
 
+from VAETune.preprocess import create_transformer
+from VAETune.vae import FullyConnectedVAE
 from autotune.optimizer.acquisition_function.acquisition import AbstractAcquisitionFunction
 from autotune.utils.config_space import get_one_exchange_neighbourhood, \
     Configuration, ConfigurationSpace
@@ -391,6 +399,23 @@ class RandomSearch(AcquisitionFunctionMaximizer):
 
     rng : np.random.RandomState or int, optional
     """
+    def __init__(self,acquisition_function,
+            config_space,
+            rng):
+        super().__init__(acquisition_function, config_space, rng)
+        latent_dim = 1
+        self.model = FullyConnectedVAE(290, latent_dim)
+        best_model_path = f"VAETune/dim{latent_dim}.pth"
+        if os.path.exists(best_model_path):
+            checkpoint = torch.load(best_model_path)
+            self.model.load_state_dict(checkpoint["model_state_dict"])
+        self.model.eval()
+
+        self.transformer,_=create_transformer()
+        with open("scripts/experiment/gen_knobs/mysql_all_197_32G.json") as f:
+            self.all = json.load(f)
+            self.categorical_keys=[k for k, v in self.all.items() if v["type"] == "enum"]
+            self.numerical_keys=[k for k, v in self.all.items() if v["type"] == "integer"]
 
     def _maximize(
             self,
@@ -418,6 +443,26 @@ class RandomSearch(AcquisitionFunctionMaximizer):
             An iterable consistng of
             tuple(acqusition_value, :class:`autotune.config_space.Configuration`).
         """
+        samples = self.model.sample(num_points)
+        inverse=self.transformer.inverse_transform(samples)       
+        inverse=pd.DataFrame(inverse,columns=self.categorical_keys+self.numerical_keys)    
+        inverse[[x for x in inverse if self.all[x]['type']=='integer']]=pd.DataFrame(
+            [
+                np.clip(inverse[x],self.all[x].get('min',None),min(self.all[x].get('max',None),2**63-1)).astype(np.int64)
+                for x in inverse if self.all[x]['type']=='integer']
+            ).T
+        columns=[x for x in inverse if self.all[x]['type']=='integer'and self.all[x]['max']> sys.maxsize]
+        inverse[columns]=inverse[columns]//1000
+        rand_configs=[ Configuration(self.config_space,values=random_point.to_dict())for _,random_point in inverse.iterrows()] 
+        if _sorted:
+            for i in range(len(rand_configs)):
+                rand_configs[i].origin = 'Random Search (sorted)'
+            return self._sort_configs_by_acq_value(rand_configs)
+        else:
+            for i in range(len(rand_configs)):
+                rand_configs[i].origin = 'Random Search'
+            return [(0, rand_configs[i]) for i in range(len(rand_configs))]
+        
 
         if num_points > 1:
             rand_configs = self.config_space.sample_configuration(

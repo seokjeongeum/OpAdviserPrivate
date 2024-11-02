@@ -173,7 +173,7 @@ class FullyConnectedVAE(nn.Module):
         i = 0
         with open("VAETune/categories") as f:
             for category in f:
-                n = len(eval(eval(category)))
+                n = len(eval(category))
                 categorical_recon_loss += nn.CrossEntropyLoss()(
                     x_recon[:, i : i + n], x[:, i : i + n].argmax(dim=1)
                 )
@@ -203,7 +203,7 @@ class FullyConnectedVAE(nn.Module):
                 z = torch.randn_like(mu) * log_std.exp() + mu
             else:
                 z = mu
-        return z.cpu().numpy()
+        return torch.clamp(z, -1, 1).cpu().numpy()
 
 
 class CustomDataset(data.Dataset):

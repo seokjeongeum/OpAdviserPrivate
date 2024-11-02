@@ -370,6 +370,13 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
                                                      incumbent=history_container.get_incumbents()[0][0]
                                                      )
 
+            challengers = self.optimizer.maximize(runhistory=history_container, num_points=5000)
+            for config in challengers.challengers:
+                if config not in history_container.configurations:
+                    return config
+            self.logger.warning('Cannot get non duplicate configuration from BO candidates (len=%d). '
+                                'Sample random config.' % (len(challengers.challengers), ))
+            return self.sample_random_configs(num_configs=1, excluded_configs=history_container.configurations)[0]
 
             # optimize acquisition function
             if not compact_space is None:
