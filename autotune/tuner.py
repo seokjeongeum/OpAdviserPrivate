@@ -176,7 +176,9 @@ class DBTuner:
                        hold_out_workload=self.args_db['workload'],
                        history_workload_data=self.history_workload_data,
                        only_knob=eval(self.args_tune['only_knob']),
-                       only_range=eval(self.args_tune['only_range']))
+                       only_range=eval(self.args_tune['only_range']),
+                       latent_dim=int(self.args_tune['latent_dim'])
+                       )
         history = bo.run()
         if history.num_objs == 1:
             import matplotlib.pyplot as plt

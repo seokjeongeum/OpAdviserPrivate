@@ -81,6 +81,7 @@ class PipleLine(BOBase):
                  only_knob = False,
                  only_range = False,
                  advisor_kwargs: dict = None,
+                 latent_dim=0,
                  **kwargs
                  ):
 
@@ -173,6 +174,7 @@ class PipleLine(BOBase):
                                               ref_point=ref_point,
                                               history_bo_data=history_bo_data,
                                               random_state=random_state,
+                                              latent_dim=latent_dim,
                                               **advisor_kwargs)
 
             elif optimizer_type == 'TPE':
@@ -227,6 +229,7 @@ class PipleLine(BOBase):
                                 ref_point=ref_point,
                                 history_bo_data=history_bo_data,
                                 random_state=random_state,
+                                              latent_dim=latent_dim,
                                 **advisor_kwargs)
             MBO = BO_Optimizer(config_space,
                                self.history_container,
@@ -241,6 +244,7 @@ class PipleLine(BOBase):
                                ref_point=ref_point,
                                history_bo_data=history_bo_data,
                                random_state=random_state,
+                                              latent_dim=latent_dim,
                                **advisor_kwargs)
 
             GA = GA_Optimizer(config_space,
