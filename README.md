@@ -43,6 +43,10 @@ python scripts/optimize.py --config=scripts/twitter_ground_truth.ini
 python scripts/optimize.py --config=scripts/tpcc.ini
 python scripts/optimize.py --config=scripts/tpcc_ground_truth.ini
 ```
+```shell
+python scripts/optimize.py --config=scripts/ycsb.ini
+python scripts/optimize.py --config=scripts/ycsb_ground_truth.ini
+```
 
 Below is original README.md
 ---
