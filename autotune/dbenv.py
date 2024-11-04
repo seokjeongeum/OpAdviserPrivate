@@ -1,4 +1,3 @@
-import json
 import os
 import pdb
 import time
@@ -7,11 +6,6 @@ import numpy as np
 from multiprocessing import Manager
 from multiprocessing.connection import Client
 import sys
-
-import torch
-
-from VAETune.preprocess import create_transformer
-from VAETune.vae import FullyConnectedVAE
 from .knobs import logger
 from .utils.parser import parse_sysbench, parse_oltpbench, parse_job
 from .knobs import initialize_knobs, get_default_knobs
@@ -427,7 +421,6 @@ class DBEnv:
         #         return [(0, rand_configs[i]) for i in range(len(rand_configs))]
 
         knobs = config.get_dictionary().copy()
-
         for k in self.knobs_detail.keys():
             if k in knobs.keys():
                 if self.knobs_detail[k]['type'] == 'integer' and self.knobs_detail[k]['max'] > sys.maxsize:
