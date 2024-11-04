@@ -35,7 +35,7 @@ if __name__ == "__main__":
         j = json.load(f)["data"]
         c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
         pprint.pprint(c["external_metrics"])
-    with open(f"repo/history_sysbench_smac.json") as f:
+    with open(f"repo/history_{s}_ground_truth.json") as f:
         j = json.load(f)["data"]
         c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
         pprint.pprint(c["external_metrics"])
