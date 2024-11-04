@@ -421,7 +421,6 @@ class DBEnv:
         #         return [(0, rand_configs[i]) for i in range(len(rand_configs))]
 
         knobs = config.get_dictionary().copy()
-
         for k in self.knobs_detail.keys():
             if k in knobs.keys():
                 if self.knobs_detail[k]['type'] == 'integer' and self.knobs_detail[k]['max'] > sys.maxsize:
