@@ -44,6 +44,10 @@ python scripts/optimize.py --config=scripts/tpcc.ini
 python scripts/optimize.py --config=scripts/tpcc_ground_truth.ini
 ```
 ```shell
+mysql -ppassword -e"set global max_connections=500;"
+mysql -ppassword -e"drop database ycsb;"
+mysql -ppassword -e"create database ycsb;"
+/oltpbench/oltpbenchmark -b ycsb -c /oltpbench/config/sample_ycsb_config.xml  --create=true --load=true
 python scripts/optimize.py --config=scripts/ycsb.ini
 python scripts/optimize.py --config=scripts/ycsb_ground_truth.ini
 ```
