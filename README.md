@@ -51,6 +51,10 @@ python scripts/optimize.py --config=scripts/ycsb_ground_truth.ini
 python scripts/optimize.py --config=scripts/wikipedia.ini
 python scripts/optimize.py --config=scripts/wikipedia_ground_truth.ini
 ```
+```shell
+python scripts/optimize.py --config=scripts/tatp.ini
+python scripts/optimize.py --config=scripts/tatp_ground_truth.ini
+```
 
 Below is original README.md
 ---
