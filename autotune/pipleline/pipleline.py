@@ -593,8 +593,8 @@ class PipleLine(BOBase):
         quantile_min = 1 / 1e9
         quantile_max = 1 - 1 / 1e9
         for j in range(len(surrogate_list)):
-            if not j in sample_list:
-                continue
+            # if not j in sample_list:
+            #     continue
             quantile = quantile_max - (1 - 2 * max(similarity_list[j] - 0.5, 0)) * (quantile_max - quantile_min)
             ys_source = - surrogate_list[j].get_transformed_perfs()
             performance_threshold = np.quantile(ys_source, quantile)
@@ -613,6 +613,20 @@ class PipleLine(BOBase):
                         # print((key,pruned_space[key] ))
                         important_dict[key] = important_dict[key] + similarity_list[j] / sum(
                             [similarity_list[i] for i in sample_list])
+
+        spaces=np.array(pruned_space_list)
+        sampled=spaces[sample_list]
+        not_sampled=spaces[~sample_list]        
+        with open(
+            f"/workspaces/OpAdviserPrivate/repo/history_{self.task_id}_smac_ground_truth.json"
+        ) as f:
+            j = json.load(f)["data"]
+            c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]['configuration']
+            for knob in c:
+                transform = self.config_space.get_hyperparameters_dict()[knob]._transform
+                for sample in sampled:
+                    pass
+                
 
         # remove unimportant knobs
         if self.only_range:

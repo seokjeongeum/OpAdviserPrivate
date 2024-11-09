@@ -1,7 +1,13 @@
+import json
 import os
 import sys
 from collections import  defaultdict
+
+import numpy as np
+from autotune.transfer.tlbo.rgpe import RGPE
 from autotune.utils.config_space import ConfigurationSpace, UniformIntegerHyperparameter, CategoricalHyperparameter, UniformFloatHyperparameter
+from autotune.utils.config_space.util import convert_configurations_to_array
+from autotune.utils.util_funcs import check_random_state
 from autotune.workload_map import WorkloadMapping
 from autotune.pipleline.pipleline import PipleLine
 from .knobs import ts, logger, initialize_knobs
@@ -9,6 +15,7 @@ from .utils.parser import  get_hist_json
 from autotune.utils.history_container import HistoryContainer, load_history_from_filelist
 import pdb
 from ConfigSpace.hyperparameters import NormalFloatHyperparameter
+from autotune.utils.config_space import Configuration
 class DBTuner:
     def __init__(self, args_db, args_tune, env):
         self.env = env
@@ -190,6 +197,40 @@ class DBTuner:
                        only_range=eval(self.args_tune['only_range']),
                     #    latent_dim=int(self.args_tune['latent_dim'])
                        )
+        
+        id=self.args_tune['task_id']
+        s=''
+        s+=f's = "{id}"'
+        s+='''
+'''
+        bo.rgpe = RGPE(bo.config_space, bo.history_bo_data, check_random_state(100).randint(2 ** 31 - 1), num_src_hpo_trial=-1, only_source=False)
+        similarity_list =[1 - i for i in bo.rgpe.get_ranking_loss(bo.history_container)]
+        s+=(f'similarity_list = {similarity_list}')
+        s+=('''
+''')
+        with open(f"repo/history_{self.args_tune['task_id']}_ground_truth.json") as f2:
+            j = json.load(f2)["data"]
+            c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
+        c = c["configuration"]
+        c=Configuration(self.config_space, c)
+        c=convert_configurations_to_array([c])
+        Y=[x.get_transformed_perfs() for x in self.hcL+[bo.history_container]]
+        ranks=[]
+        for i,surrogate in enumerate(bo.rgpe.source_surrogates+[bo.rgpe.target_surrogate]):
+            mu,var=surrogate.predict(c)         
+            number=np.random.normal(mu, var)
+            temp_list=np.concatenate((Y[i],number.reshape(-1))) 
+            sorted_list=sorted(temp_list)
+            rank=sorted_list.index(number.item())
+            ranks.append( (len(temp_list)-rank)/len(temp_list))
+        s+=(f'ranks = {ranks}')    
+        s+=('''
+plt.scatter(similarity_list, ranks)
+plt.title(s)
+plt.show()
+''')
+        print(s)
+
         history = bo.run()
         if history.num_objs == 1:
             import matplotlib.pyplot as plt

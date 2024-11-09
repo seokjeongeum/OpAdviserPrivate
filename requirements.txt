@@ -32,3 +32,4 @@ dask[dataframe]==2023.2.0
 ipympl==0.9.3
 jupyter
 cma
+hiplot
