@@ -942,6 +942,9 @@ config2,
                 d=it-(max_index+min_index)/2
                 lower=transform(min_index+d)
                 upper=transform(max_index+d)
+                if lower==upper:
+                    lower-=1
+                    upper+=1
                 target_space2.add_hyperparameter(UniformIntegerHyperparameter(
                     knob,
                     lower,
