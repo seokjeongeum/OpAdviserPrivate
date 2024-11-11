@@ -523,6 +523,7 @@ compact_space2=None,
             if len(self.history_container.get_incumbents()):
                 config = impute_incumb_values(config, self.history_container.get_incumbents()[0][0])
 #2024-11-11: code for experiment
+            if len(self.history_container2.get_incumbents()):
                 config2 = impute_incumb_values(config2, self.history_container2.get_incumbents()[0][0])
 #2024-11-11: code for experiment
                 config_space = self.history_container.get_incumbents()[0][0].configuration_space
