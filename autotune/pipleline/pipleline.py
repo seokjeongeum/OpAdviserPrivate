@@ -939,7 +939,7 @@ config2,
 #2024-11-11: code for experiment
                 it=self.config_space.get_hyperparameters_dict()[knob]._inverse_transform(ground_truth[knob])
                 r=max_index-min_index
-                target_space2.add_hyperparameter(UniformIntegerHyperparameter(knob,transform(it-r/2),transform(it+r/2,knob_add.default_value)))
+                target_space2.add_hyperparameter(UniformIntegerHyperparameter(knob,transform(it-r/2),transform(it+r/2),knob_add.default_value))
 #2024-11-11: code for experiment
 
         self.logger.info(target_space)
