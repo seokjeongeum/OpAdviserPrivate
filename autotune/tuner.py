@@ -198,38 +198,38 @@ class DBTuner:
                     #    latent_dim=int(self.args_tune['latent_dim'])
                        )
         
-        id=self.args_tune['task_id']
-        s=''
-        s+=f's = "{id}"'
-        s+='''
-'''
-        bo.rgpe = RGPE(bo.config_space, bo.history_bo_data, check_random_state(100).randint(2 ** 31 - 1), num_src_hpo_trial=-1, only_source=False)
-        similarity_list =[1 - i for i in bo.rgpe.get_ranking_loss(bo.history_container)]
-        s+=(f'similarity_list = {similarity_list}')
-        s+=('''
-''')
-        with open(f"repo/history_{self.args_tune['task_id']}_ground_truth.json") as f2:
-            j = json.load(f2)["data"]
-            c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
-        c = c["configuration"]
-        c=Configuration(self.config_space, c)
-        c=convert_configurations_to_array([c])
-        Y=[x.get_transformed_perfs() for x in self.hcL+[bo.history_container]]
-        ranks=[]
-        for i,surrogate in enumerate(bo.rgpe.source_surrogates+[bo.rgpe.target_surrogate]):
-            mu,var=surrogate.predict(c)         
-            number=np.random.normal(mu, var)
-            temp_list=np.concatenate((Y[i],number.reshape(-1))) 
-            sorted_list=sorted(temp_list)
-            rank=sorted_list.index(number.item())
-            ranks.append( (len(temp_list)-rank)/len(temp_list))
-        s+=(f'ranks = {ranks}')    
-        s+=('''
-plt.scatter(similarity_list, ranks)
-plt.title(s)
-plt.show()
-''')
-        print(s)
+#         id=self.args_tune['task_id']
+#         s=''
+#         s+=f's = "{id}"'
+#         s+='''
+# '''
+#         bo.rgpe = RGPE(bo.config_space, bo.history_bo_data, check_random_state(100).randint(2 ** 31 - 1), num_src_hpo_trial=-1, only_source=False)
+#         similarity_list =[1 - i for i in bo.rgpe.get_ranking_loss(bo.history_container)]
+#         s+=(f'similarity_list = {similarity_list}')
+#         s+=('''
+# ''')
+#         with open(f"repo/history_{self.args_tune['task_id']}_ground_truth.json") as f2:
+#             j = json.load(f2)["data"]
+#             c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
+#         c = c["configuration"]
+#         c=Configuration(self.config_space, c)
+#         c=convert_configurations_to_array([c])
+#         Y=[x.get_transformed_perfs() for x in self.hcL+[bo.history_container]]
+#         ranks=[]
+#         for i,surrogate in enumerate(bo.rgpe.source_surrogates+[bo.rgpe.target_surrogate]):
+#             mu,var=surrogate.predict(c)         
+#             number=np.random.normal(mu, var)
+#             temp_list=np.concatenate((Y[i],number.reshape(-1))) 
+#             sorted_list=sorted(temp_list)
+#             rank=sorted_list.index(number.item())
+#             ranks.append( (len(temp_list)-rank)/len(temp_list))
+#         s+=(f'ranks = {ranks}')    
+#         s+=('''
+# plt.scatter(similarity_list, ranks)
+# plt.title(s)
+# plt.show()
+# ''')
+#         print(s)
 
         history = bo.run()
         if history.num_objs == 1:
@@ -245,3 +245,50 @@ plt.show()
             if not os.path.exists(folder):
                 os.mkdir(folder)
 
+#code for error case analysis
+    def f(self):
+        for task_id in [
+            'oltpbench_tatp_smac',
+            'oltpbench_tpcc_smac',
+            # 'oltpbench_wikipedia_smac',
+            'oltpbench_ycsb_smac',
+            'sbread_smac',
+            'sbrw_smac',
+            'sbwrite_smac',
+            'twitter_smac',
+            ]:
+            bo = PipleLine(self.env.step,
+                        self.config_space,
+                        num_objs=len(self.objs),
+                        num_constraints=len(self.constraints),
+                        optimizer_type=self.method,
+                        max_runs=int(self.args_tune['max_runs']),
+                        surrogate_type=self.surrogate_type,
+                        history_bo_data=self.hcL,
+                        acq_optimizer_type=self.acq_optimizer_type,  # 'random_scipy',#
+                        selector_type=self.args_tune['selector_type'],
+                        initial_runs=int(self.args_tune['initial_runs']),
+                        incremental=self.args_tune['incremental'],
+                        incremental_every=int(self.args_tune['incremental_every']),
+                        incremental_num=int(self.args_tune['incremental_num']),
+                        init_strategy='random_explore_first',
+                        ref_point= self.env.reference_point,
+                        task_id=task_id,
+                        time_limit_per_trial=60 * 200,
+                        num_hps_init=int(self.args_tune['initial_tunable_knob_num']),
+                        num_metrics=self.env.db.num_metrics,
+                        mean_var_file=self.args_tune['mean_var_file'],
+                        batch_size=int(self.args_tune['batch_size']),
+                        params=self.model_params_path,
+                        space_transfer=self.space_transfer,
+                        knob_config_file=self.args_db['knob_config_file'],
+                        auto_optimizer=self.auto_optimizer,
+                        auto_optimizer_type= self.args_tune['auto_optimizer_type'],
+                        hold_out_workload=self.args_db['workload'],
+                        history_workload_data=self.history_workload_data,
+                        only_knob=eval(self.args_tune['only_knob']),
+                        only_range=eval(self.args_tune['only_range']),
+                        #    latent_dim=int(self.args_tune['latent_dim'])
+                        )
+            bo.get_compact_space()
+#code for error case analysis

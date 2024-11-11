@@ -606,6 +606,10 @@ class PipleLine(BOBase):
             pruned_space = surrogate_list[j].get_promising_space(quantile)
             self.logger.info(pruned_space)
             pruned_space_list.append(pruned_space)
+#code for error case analysis
+            if not j in sample_list:
+                continue
+#code for error case analysis
             total_imporve = sum([pruned_space[key][2] for key in list(pruned_space.keys())])
             for key in pruned_space.keys():
                 if not pruned_space[key][0] == pruned_space[key][1]:
@@ -614,19 +618,73 @@ class PipleLine(BOBase):
                         important_dict[key] = important_dict[key] + similarity_list[j] / sum(
                             [similarity_list[i] for i in sample_list])
 
-        spaces=np.array(pruned_space_list)
-        sampled=spaces[sample_list]
-        not_sampled=spaces[~sample_list]        
+#code for error case analysis
         with open(
-            f"/workspaces/OpAdviserPrivate/repo/history_{self.task_id}_smac_ground_truth.json"
+            f"repo/history_{self.task_id}_ground_truth.json"
         ) as f:
             j = json.load(f)["data"]
             c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]['configuration']
-            for knob in c:
-                transform = self.config_space.get_hyperparameters_dict()[knob]._transform
-                for sample in sampled:
-                    pass
-                
+        mask=np.ones(len(pruned_space_list),bool)
+        mask[sample_list]=False
+
+        knobs=np.zeros(len(pruned_space_list))
+        for k in c:
+            knob=self.config_space_all.get_hyperparameters_dict()[k]
+            transform = knob._transform
+            for i in range(len(pruned_space_list)):
+                space=pruned_space_list[i]
+                s=space[k]
+                if isinstance(knob,CategoricalHyperparameter):
+                    if c[k] in s[0]:
+                        knobs[i]+=1
+                else:
+                    if transform(s[0])<=c[k]<=transform(s[1]):
+                        knobs[i]+=1     
+        sampled=knobs[sample_list]
+        not_sampled=knobs[mask]
+        sl=np.array(similarity_list)
+        st=''
+        st+=(f'''s="{self.task_id}"
+''')
+        st+=(f'''sampled_similarities={sl[sample_list].tolist()}
+''')
+        st+=(f'''sampled_spaces={sampled.tolist()}
+''')
+        st+=(f'''not_sampled_similarities={sl[mask].tolist()}
+''')
+        st+=(f'''not_sampled_spaces={not_sampled.tolist()}
+''')
+        effective_regions_x={}
+        effective_regions_y={}
+        for k in c:
+            if pruned_space_list[0][k][1] is None:
+                continue
+            index_list = set()
+            for space in pruned_space_list:
+                info = space[k]
+                if not info[0] == info[1]:
+                    index_list.add(info[0])
+                    index_list.add(info[1])
+            index_list = sorted(index_list)
+            count_array = np.array([index_list[:-1], index_list[1:]]).T
+            count_array = np.hstack((count_array, np.zeros((count_array.shape[0], 1))))
+            for space in pruned_space_list:
+                if not info[0] == info[1]:
+                    for i in range(count_array.shape[0]):
+                        if count_array[i][0] >= info[0] and count_array[i][1] <= info[1]:
+                            count_array[i][2] += 1
+            effective_regions_x[k]=[]
+            effective_regions_y[k]=[]
+            for i in range(count_array.shape[0]):
+                effective_regions_x[k].append(count_array[i][0])
+                effective_regions_x[k].append(count_array[i][1])
+                effective_regions_y[k].append(count_array[i][2])
+                effective_regions_y[k].append(count_array[i][2])
+        st+=(f'''effective_regions_x={effective_regions_x}
+''')
+        st+=(f'''effective_regions_y={effective_regions_y}
+''')
+#code for error case analysis
 
         # remove unimportant knobs
         if self.only_range:
@@ -648,15 +706,48 @@ class PipleLine(BOBase):
         default_array = self.config_space.get_default_configuration().get_array()
         default_knobs = self.config_space.get_hyperparameter_names()
         target_space = ConfigurationSpace()
+
+#code for error case analysis
+        ik=np.zeros(len(pruned_space_list))
+        for k in important_knobs:
+            knob=self.config_space_all.get_hyperparameters_dict()[k]
+            transform = knob._transform
+            for i in range(len(pruned_space_list)):
+                space=pruned_space_list[i]
+                s=space[k]
+                if isinstance(knob,CategoricalHyperparameter):
+                    if c[k] in s[0]:
+                        ik[i]+=1
+                else:
+                    if transform(s[0])<=c[k]<=transform(s[1]):
+                        ik[i]+=1     
+        # not_sampled=ik[mask]
+        st+=(f'''sampled_spaces_scaled={(sampled/len(c)).tolist()}
+''')
+        st+=(f'''sampled_important_spaces={(ik[sample_list]/len(important_knobs)).tolist()}
+''')
+#         st+=(f'''not_sampled_important_spaces={not_sampled.tolist()}
+# ''')        
+        pruned_space_list=np.array(pruned_space_list)[sample_list].tolist()
+        count_arrays={}
+        count_arrays2={}
+        values_dicts={}
+#code for error case analysis
         for knob in important_knobs:
             # CategoricalHyperparameter
             if isinstance(self.config_space.get_hyperparameters_dict()[knob], CategoricalHyperparameter):
+#code for error case analysis
+                values_dicts[knob]=0
+#code for error case analysis
                 values_dict = defaultdict(int)
                 for space in pruned_space_list:
                     values = space[knob][0]
                     for v in values:
                         values_dict[v] += similarity_list[sample_list[pruned_space_list.index(space)]] / sum(
                             [similarity_list[t] for t in sample_list])
+#code for error case analysis
+                values_dicts[knob]=values_dict[c[k]]
+#code for error case analysis
 
                 feasible_value = list()
                 for v in values_dict.keys():
@@ -691,6 +782,10 @@ class PipleLine(BOBase):
                                 [similarity_list[t] for t in sample_list])
 
             max_index, min_index = 0, 1
+#code for error case analysis
+            count_arrays[knob]=0
+            count_arrays2[knob]=count_array.tolist()
+#code for error case analysis
             # vote
             for i in range(count_array.shape[0]):
                 if count_array[i][2] > 1/3 :
@@ -699,6 +794,11 @@ class PipleLine(BOBase):
                     if count_array[i][1] > max_index:
                         max_index = count_array[i][1]
 
+#code for error case analysis
+                transform = self.config_space.get_hyperparameters_dict()[knob]._transform   
+                if transform(count_array[i][0])<=c[knob]<=transform(count_array[i][1]):
+                    count_arrays[knob]=count_array[i][2]
+#code for error case analysis
             if max_index == 0 and min_index == 1:
                 continue
             default = default_array[default_knobs.index(knob)]
@@ -727,4 +827,66 @@ class PipleLine(BOBase):
                 target_space.add_hyperparameter(knob_add)
 
         self.logger.info(target_space)
+#code for error case analysis
+        # samples={}
+        # target={}
+        ground_truth_in_target_range=[]
+        ground_truth_not_in_target_range=[]
+        vectors_in_ground_truth=[]
+        vectors_not_in_ground_truth=[]
+        vectors={}
+        for k in target_space:
+            knob=self.config_space_all.get_hyperparameters_dict()[k]
+            transform = knob._transform
+            t=target_space[k]
+            vector=knob._inverse_transform(c[k])
+            # count=0
+            if isinstance(knob,CategoricalHyperparameter):
+                # for i in sample_list:
+                #     space=pruned_space_list[i]
+                #     s=space[k]
+                #     if c[k] in s[0]:
+                #         count+=1
+                # target[k]=c[k] in t.choices
+                if c[k] in t.choices:
+                    ground_truth_in_target_range.append(count_arrays[k])
+                    vectors_in_ground_truth.append(vector)
+                else:
+                    ground_truth_not_in_target_range.append(count_arrays[k])
+                    vectors_not_in_ground_truth.append(vector)
+            else:
+                # count=0
+                # for i in sample_list:
+                #     space=pruned_space_list[i]
+                #     s=space[k]
+                #     if transform(s[0])<=c[k]<=transform(s[1]):
+                #         count+=1   
+                # target[k]=t.lower<=c[k]<=t.upper
+                if t.lower<=c[k]<=t.upper:
+                    ground_truth_in_target_range.append(count_arrays[k])
+                    vectors_in_ground_truth.append(vector)
+                else:
+                    ground_truth_not_in_target_range.append(count_arrays[k])
+                    vectors_not_in_ground_truth.append(vector)
+            vectors[k]=vector
+            # samples[k]=count
+        # print(f'effective_regions={samples}')
+        st+=(f'''ground_truth_in_target_range={ground_truth_in_target_range}
+''')
+        st+=f'''ground_truth_not_in_target_range={ground_truth_not_in_target_range}
+'''
+        st+=f'''vectors_in_ground_truth={vectors_in_ground_truth}
+'''
+        st+=f'''vectors_not_in_ground_truth={vectors_not_in_ground_truth}
+'''
+        st+=f'''count_arrays2={count_arrays2}
+'''
+        st+=f'''vectors={vectors}
+'''
+        st+=f'''count_arrays={count_arrays}
+'''
+        print(st)
+        with open(self.task_id,'w')as f:
+            f.write(st)
+#code for error case analysis
         return target_space
