@@ -28,6 +28,9 @@ class BOBase(object, metaclass=abc.ABCMeta):
         self.rng = check_random_state(random_state)
 
         self.config_space = config_space
+#2024-11-11: code for experiment
+        self.config_space2 = config_space
+#2024-11-11: code for experiment
         self.objective_function = objective_function
         self.init_num = initial_runs
         self.max_iterations = int(1e10) if max_runs is None else max_runs

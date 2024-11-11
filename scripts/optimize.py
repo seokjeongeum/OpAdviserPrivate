@@ -7,7 +7,7 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='scripts/config.ini', help='config file')
+    parser.add_argument('--config', type=str, default='scripts/sysbench_ro.ini', help='config file')
     opt = parser.parse_args()
 
 
@@ -20,8 +20,8 @@ if __name__ == '__main__':
 
     env = DBEnv(args_db, args_tune, db)
     tuner = DBTuner(args_db, args_tune, env)
-    # tuner.tune()
+    tuner.tune()
 #code for error case analysis
-    tuner.f()
+    # tuner.f()
 #code for error case analysis
 
