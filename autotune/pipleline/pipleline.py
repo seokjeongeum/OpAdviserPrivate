@@ -553,7 +553,14 @@ compact_space2=None,
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
         file_name = 'history_%s.json' % self.task_id
-        return self.history_container.save_json(os.path.join(dir_path, file_name))
+        # return self.history_container.save_json(os.path.join(dir_path, file_name))
+#2024-11-11: code for experiment
+        return (
+            self.history_container.save_json(os.path.join(dir_path, file_name)),
+            self.history_container2.save_json(os.path.join(dir_path, f'{self.task_id}_ground_truth')),
+            )
+#2024-11-11: code for experiment
+
 
     def load_history(self):
         # TODO: check info
