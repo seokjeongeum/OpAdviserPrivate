@@ -12,6 +12,7 @@ bash ./workload_preparation.sh
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pip install .
+python scripts/optimize.py
 ```
 ## Run Experiments
 End-to-end Comparison (OpAdviser-w/o-Optimizer (Orange Line) in Figure 7 in the OpAdviser paper)
