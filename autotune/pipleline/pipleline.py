@@ -949,7 +949,7 @@ config2,
                     knob,
                     lower,
                     upper,
-                    max(lower, min(transform(default+d), upper)),
+                    max(lower+1, min(transform(default+d), upper-1)),
                               ))
 #2024-11-11: code for experiment
 
