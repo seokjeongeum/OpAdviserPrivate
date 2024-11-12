@@ -557,7 +557,7 @@ compact_space2=None,
 #2024-11-11: code for experiment
         return (
             self.history_container.save_json(os.path.join(dir_path, file_name)),
-            self.history_container2.save_json(os.path.join(dir_path, f'{self.task_id}_ground_truth')),
+            self.history_container2.save_json(os.path.join(dir_path, f'history_{self.task_id}_ground_truth.json')),
             )
 #2024-11-11: code for experiment
 
@@ -573,6 +573,13 @@ compact_space2=None,
             if self.space_transfer:
                 self.space_step = self.space_step_limit
             self.logger.info('Load {} iterations from {}'.format(self.iteration_id, fn))
+#2024-11-11: code for experiment
+        fn = os.path.join('repo', 'history_%s_ground_truth.json' % self.task_id)
+        if not os.path.exists(fn):
+            self.logger.info('Start new DBTune task')
+        else:
+            self.history_container2.load_history_from_json(fn)
+#2024-11-11: code for experiment
 
 
     def reset_context(self, context):
