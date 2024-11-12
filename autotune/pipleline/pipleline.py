@@ -152,7 +152,7 @@ class PipleLine(BOBase):
                                                       num_constraints=self.num_constraints,
                                                       config_space=self.config_space)
 #2024-11-11: code for experiment
-            self.history_container2 = HistoryContainer(task_id=f'{self.task_id}_ground_truth',
+            self.history_container2 = HistoryContainer(task_id=f'{self.task_id}_ground_truth2',
                                                       num_constraints=self.num_constraints,
                                                       config_space=self.config_space2)
 #2024-11-11: code for experiment
@@ -298,11 +298,9 @@ class PipleLine(BOBase):
         return  max_min_distance(default_config=default_config, src_configs=candidate_configs, num=self.init_num)
 
     def get_history(self):
-        return self.history_container
-    
+        # return self.history_container
 #2024-11-11: code for experiment
-    def get_history2(self):
-        return self.history_container2
+        return self.history_container,self.history_container2
 #2024-11-11: code for experiment
 
     def get_incumbent(self):
@@ -390,10 +388,7 @@ class PipleLine(BOBase):
             if self.space_transfer or self.auto_optimizer:
                 self.space_step += 1
 
-        # return self.get_history()
-#2024-11-11: code for experiment
-        return self.get_history(),self.get_history2()
-#2024-11-11: code for experiment
+        return self.get_history()
 
     def knob_selection(self):
         assert self.num_objs == 1
@@ -512,6 +507,8 @@ compact_space2=None,
             #space transfer: use best source config to init
             config = self.initial_configurations[len(self.history_container.configurations)]
 #2024-11-11: code for experiment
+        if self.space_transfer and len(self.history_container2.configurations) < self.init_num:
+            #space transfer: use best source config to init
             config2 = self.initial_configurations[len(self.history_container2.configurations)]
 #2024-11-11: code for experiment
         else:
@@ -557,7 +554,7 @@ compact_space2=None,
 #2024-11-11: code for experiment
         return (
             self.history_container.save_json(os.path.join(dir_path, file_name)),
-            self.history_container2.save_json(os.path.join(dir_path, f'history_{self.task_id}_ground_truth.json')),
+            self.history_container2.save_json(os.path.join(dir_path, f'history_{self.task_id}_ground_truth2.json')),
             )
 #2024-11-11: code for experiment
 
@@ -574,7 +571,7 @@ compact_space2=None,
                 self.space_step = self.space_step_limit
             self.logger.info('Load {} iterations from {}'.format(self.iteration_id, fn))
 #2024-11-11: code for experiment
-        fn = os.path.join('repo', 'history_%s_ground_truth.json' % self.task_id)
+        fn = os.path.join('repo', 'history_%s_ground_truth2.json' % self.task_id)
         if not os.path.exists(fn):
             self.logger.info('Start new DBTune task')
         else:
