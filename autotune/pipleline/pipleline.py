@@ -942,15 +942,23 @@ config2,
                 d=it-(max_index+min_index)/2
                 lower=transform(min_index+d)
                 upper=transform(max_index+d)
+                default_value=transform(default+d)
                 if lower==upper:
                     lower-=1
                     upper+=1
-                target_space2.add_hyperparameter(UniformIntegerHyperparameter(
-                    knob,
-                    lower,
-                    upper,
-                    max(lower+1, min(transform(default+d), upper-1)),
-                              ))
+                retry = True
+                i = 1
+                while retry:
+                    try:
+                        if default_value - 2 * i < lower:
+                            break
+                        knob_add = UniformIntegerHyperparameter(knob, lower, upper, default_value - 2 * i )
+                        i += 1
+                        retry = False
+                    except:
+                        retry = True
+                if not retry:
+                    target_space2.add_hyperparameter(knob_add)
 #2024-11-11: code for experiment
 
         self.logger.info(target_space)
