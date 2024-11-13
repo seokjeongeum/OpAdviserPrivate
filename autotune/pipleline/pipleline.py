@@ -651,7 +651,7 @@ config2,
     def get_compact_space(self):
 #2024-11-11: code for experiment
         with open(
-            f"repo/history_{self.task_id}_ground_truth.json"
+            f"repo_backup/history_{self.task_id}_ground_truth.json"
         ) as f:
             ground_truth = sorted(json.load(f)["data"], key=lambda x: x["external_metrics"].get("tps", 0))[-1]['configuration']
 #2024-11-11: code for experiment
