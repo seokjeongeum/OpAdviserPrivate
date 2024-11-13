@@ -268,7 +268,7 @@ class MESMO(AbstractAcquisitionFunction):
                  model: List[AbstractModel],
                  config_space,
                  sample_num=1,
-                 random_state=1,
+                 random_state=42,
                  **kwargs):
         """Constructor
 
@@ -288,9 +288,9 @@ class MESMO(AbstractAcquisitionFunction):
         super(MESMO, self).__init__(model)
         self.long_name = 'Multi-Objective Max-value Entropy Search'
         self.sample_num = sample_num
-        self.random_state = random_state
-        self.rng = np.random.RandomState(self.random_state)
-        random.seed(self.rng.randint(MAXINT))
+        self.random_state = 42
+        self.rng = np.random.RandomState(42)
+        random.seed(42)
         self.config_space = config_space
         self.X = None
         self.Y = None
@@ -376,7 +376,7 @@ class MESMOC(AbstractAcquisitionFunction):
                  constraint_models: List[AbstractModel],
                  config_space,
                  sample_num=1,
-                 random_state=1,
+                 random_state=42,
                  **kwargs):
         """Constructor
 
@@ -399,9 +399,9 @@ class MESMOC(AbstractAcquisitionFunction):
         super(MESMOC, self).__init__(model)
         self.long_name = 'Multi-Objective Max-value Entropy Search with Constraints'
         self.sample_num = sample_num
-        self.random_state = random_state
-        self.rng = np.random.RandomState(random_state)
-        random.seed(self.rng.randint(MAXINT))
+        self.random_state = 42
+        self.rng = np.random.RandomState(42)
+        random.seed(42)
         self.config_space = config_space
         self.constraint_models = constraint_models
         self.num_constraints = len(constraint_models)
@@ -516,7 +516,7 @@ class MESMOC2(MESMO):
                  constraint_models: List[AbstractModel],
                  config_space,
                  sample_num=1,
-                 random_state=1,
+                 random_state=42,
                  **kwargs):
         """Constructor
 
@@ -573,7 +573,7 @@ class USeMO(AbstractAcquisitionFunction):
     def __init__(self,
                  model: List[AbstractModel],
                  config_space,
-                 random_state=1,
+                 random_state=42,
                  acq_type='ei',
                  **kwargs):
         """Constructor
@@ -593,8 +593,8 @@ class USeMO(AbstractAcquisitionFunction):
 
         super(USeMO, self).__init__(model)
         self.long_name = 'Uncertainty-Aware Search'
-        self.rng = np.random.RandomState(random_state)
-        random.seed(self.rng.randint(MAXINT))
+        self.rng = np.random.RandomState(42)
+        random.seed(42)
         self.config_space = config_space
         from autotune.core.base import build_acq_func
         self.single_acq = [build_acq_func(func_str=acq_type, model=m) for m in model]

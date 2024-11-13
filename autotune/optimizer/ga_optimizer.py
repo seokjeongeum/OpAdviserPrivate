@@ -33,8 +33,8 @@ class GA_Optimizer(object, metaclass=abc.ABCMeta):
         self.output_dir = output_dir
         self.rng = check_random_state(random_state)
         self.config_space = config_space
-        self.config_space_seed = self.rng.randint(MAXINT)
-        self.config_space.seed(self.config_space_seed)
+        self.config_space_seed = 42
+        self.config_space.seed(42)
         self.logger = get_logger(self.__class__.__name__)
 
         # Basic components in Advisor.
@@ -99,7 +99,7 @@ class GA_Optimizer(object, metaclass=abc.ABCMeta):
 
             # Mutation to 1-step neighbors
             next_config = None
-            neighbors_gen = get_one_exchange_neighbourhood(parent_config, seed=self.rng.randint(MAXINT))
+            neighbors_gen = get_one_exchange_neighbourhood(parent_config, seed=42)
             for neighbor in neighbors_gen:
                 if neighbor not in self.all_configs:
                     next_config = neighbor

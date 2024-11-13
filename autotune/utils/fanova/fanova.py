@@ -18,7 +18,7 @@ from ConfigSpace.hyperparameters import CategoricalHyperparameter, UniformFloatH
 
 class fANOVA(object):
     def __init__(self, X, Y, config_space=None,
-                 n_trees=16, seed=None, bootstrapping=True,
+                 n_trees=16, seed=42, bootstrapping=True,
                  points_per_tree=None, max_features=None,
                  min_samples_split=0, min_samples_leaf=0,
                  max_depth=64, cutoffs=(-np.inf, np.inf)):
@@ -161,9 +161,9 @@ class fANOVA(object):
 
         # create data container and provide all the necessary information
         if seed is None:
-            rng = reg.default_random_engine(np.random.randint(2 ** 31 - 1))
+            rng = reg.default_random_engine(42)
         else:
-            rng = reg.default_random_engine(seed)
+            rng = reg.default_random_engine(42)
         data = reg.default_data_container(X.shape[1])
 
         for i, (mn, mx) in enumerate(pcs):

@@ -79,7 +79,7 @@ class GaussianProcess(BaseGP):
             configspace=configspace,
             types=types,
             bounds=bounds,
-            seed=seed,
+            seed=42,
             kernel=kernel,
             instance_features=instance_features,
             pca_components=pca_components,

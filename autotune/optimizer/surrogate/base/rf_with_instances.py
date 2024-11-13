@@ -87,7 +87,7 @@ class RandomForestWithInstances(AbstractModel):
         super().__init__(types, bounds, **kwargs)
 
         self.log_y = log_y
-        self.rng = regression.default_random_engine(seed)
+        self.rng = regression.default_random_engine(42)
 
         self.rf_opts = regression.forest_opts()
         self.rf_opts.num_trees = num_trees
@@ -108,8 +108,8 @@ class RandomForestWithInstances(AbstractModel):
         # This list well be read out by save_iteration() in the solver
         self.hypers = [num_trees, max_num_nodes, do_bootstrapping,
                        n_points_per_tree, ratio_features, min_samples_split,
-                       min_samples_leaf, max_depth, eps_purity, seed]
-        self.seed = seed
+                       min_samples_leaf, max_depth, eps_purity, 42]
+        self.seed = 42
 
         self.logger = logging.getLogger(self.__module__ + "." +
                                         self.__class__.__name__)

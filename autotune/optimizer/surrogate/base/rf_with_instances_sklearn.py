@@ -117,7 +117,7 @@ class skRandomForestWithInstances(AbstractModel):
         self.log_y = log_y
         if self.log_y:
             raise NotImplementedError
-        self.rng = np.random.RandomState(seed)
+        self.rng = np.random.RandomState(42)
 
         self.num_trees = num_trees
         self.do_bootstrapping = do_bootstrapping

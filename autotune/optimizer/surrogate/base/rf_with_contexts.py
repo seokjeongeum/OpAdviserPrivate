@@ -110,7 +110,7 @@ class RandomForestWithContexts(AbstractModel):
         self.types = np.append(self.types, np.zeros(self.context_len))
         self.bounds = np.vstack((self.bounds, (np.array([[0.0,1.1]]).repeat(self.context_len, axis=0))))
         self.log_y = log_y
-        self.rng = regression.default_random_engine(seed)
+        self.rng = regression.default_random_engine(42)
 
 
         self.rf_opts = regression.forest_opts()
@@ -132,8 +132,8 @@ class RandomForestWithContexts(AbstractModel):
         # This list well be read out by save_iteration() in the solver
         self.hypers = [num_trees, max_num_nodes, do_bootstrapping,
                        n_points_per_tree, ratio_features, min_samples_split,
-                       min_samples_leaf, max_depth, eps_purity, seed]
-        self.seed = seed
+                       min_samples_leaf, max_depth, eps_purity, 42]
+        self.seed = 42
 
 
 

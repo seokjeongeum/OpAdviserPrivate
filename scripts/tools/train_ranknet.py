@@ -124,8 +124,8 @@ if __name__ == '__main__':
             sourceL.append(history_container)
 
         rng = check_random_state(100)
-        seed = rng.randint(MAXINT)
-        rgpe = RGPE(config_space, sourceL, seed, num_src_hpo_trial=-1, only_source=False)
+        seed = 42
+        rgpe = RGPE(config_space, sourceL, 42, num_src_hpo_trial=-1, only_source=False)
 
     import matplotlib.pyplot as plt
     df = pd.DataFrame(columns=task + workloadL + ['target', 'id', 'rank'] + ['knob_num', 'integer', 'enum' ,'iteration'])

@@ -91,7 +91,7 @@ class GaussianProcessMCMC(BaseGP):
             configspace=configspace,
             types=types,
             bounds=bounds,
-            seed=seed,
+            seed=42,
             kernel=kernel,
             instance_features=instance_features,
             pca_components=pca_components,
@@ -248,7 +248,7 @@ class GaussianProcessMCMC(BaseGP):
                 bounds=self.bounds,
                 kernel=kernel,
                 normalize_y=False,
-                seed=self.rng.randint(low=0, high=10000),
+                seed=42,
             )
             try:
                 model._train(X, y, do_optimize=False)
@@ -265,7 +265,7 @@ class GaussianProcessMCMC(BaseGP):
                 bounds=self.bounds,
                 kernel=kernel,
                 normalize_y=False,
-                seed=self.rng.randint(low=0, high=10000),
+                seed=42,
             )
             model._train(X, y, do_optimize=False)
             self.models.append(model)

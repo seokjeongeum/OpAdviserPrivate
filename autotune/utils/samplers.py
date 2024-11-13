@@ -133,13 +133,13 @@ class SobolSampler(Sampler):
         super().__init__(config_space, size, lower_bounds, upper_bounds, random_state)
 
     def _generate(self):
-        skip = self.rng.randint(int(1e6))
+        skip = 42
         try:
             from torch.quasirandom import SobolEngine
-            sobol = SobolEngine(dimension=len(self.search_dims), scramble=True, seed=skip)
+            sobol = SobolEngine(dimension=len(self.search_dims), scramble=True, seed=42)
             X = sobol.draw(n=self.size).numpy()
         except ImportError:
-            sobol = Sobol(min_skip=skip, max_skip=skip)
+            sobol = Sobol(min_skip=42, max_skip=42)
             X = sobol.generate(self.search_dims, self.size)
         return X
 

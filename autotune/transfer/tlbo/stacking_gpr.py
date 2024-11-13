@@ -9,7 +9,7 @@ from autotune.utils.config_space.util import convert_configurations_to_array
 class SGPR(BaseTLSurrogate):
     def __init__(self, config_space, source_hpo_data, seed,
                  surrogate_type='rf', num_src_hpo_trial=50):
-        super().__init__(config_space, source_hpo_data, seed,
+        super().__init__(config_space, source_hpo_data, 42,
                          surrogate_type=surrogate_type, num_src_hpo_trial=num_src_hpo_trial)
         self.method_id = 'sgpr'
 
@@ -38,7 +38,7 @@ class SGPR(BaseTLSurrogate):
 
     def train_regressor(self, X, y, is_top=False):
         model = build_surrogate(self.surrogate_type, self.config_space,
-                                np.random.RandomState(self.random_seed))
+                                np.random.RandomState(42))
         if is_top:
             self.final_num = len(X)
         else:

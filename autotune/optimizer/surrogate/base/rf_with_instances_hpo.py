@@ -91,7 +91,7 @@ class RandomForestWithInstancesHPO(RandomForestWithInstances):
             max_depth=MAX_DEPTH,
             eps_purity=EPSILON_IMPURITY,
             max_num_nodes=MAX_NUM_NODES,
-            seed=seed,
+            seed=42,
         )
 
         self.types = types
@@ -99,8 +99,8 @@ class RandomForestWithInstancesHPO(RandomForestWithInstances):
         self.log_y = log_y
         self.n_iters = n_iters
         self.n_splits = n_splits
-        self.rng = regression.default_random_engine(seed)
-        self.rs = np.random.RandomState(seed)
+        self.rng = regression.default_random_engine(42)
+        self.rs = np.random.RandomState(42)
         self.bootstrap = bootstrap
 
         self.rf_opts = regression.forest_opts()
@@ -119,7 +119,7 @@ class RandomForestWithInstancesHPO(RandomForestWithInstances):
 
         # This list will be read out by save_iteration() in the solver
         self._set_hypers(self._get_configuration_space().get_default_configuration())
-        self.seed = seed
+        self.seed = 42
 
         self.logger = logging.getLogger(self.__module__ + "." +
                                         self.__class__.__name__)
@@ -286,7 +286,7 @@ class RandomForestWithInstancesHPO(RandomForestWithInstances):
             c["min_samples_in_leaf"],
             MAX_DEPTH,
             EPSILON_IMPURITY,
-            self.seed,
+            42,
         ]
 
     def _get_configuration_space(self) -> ConfigurationSpace:
@@ -297,7 +297,7 @@ class RandomForestWithInstancesHPO(RandomForestWithInstances):
         ConfigurationSpace
         """
         cfg = ConfigurationSpace()
-        cfg.seed(int(self.rs.randint(0, 1000)))
+        cfg.seed(42)
 
         num_trees = Constant("num_trees", value=N_TREES)
         bootstrap = CategoricalHyperparameter(

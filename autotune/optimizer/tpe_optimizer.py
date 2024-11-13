@@ -23,7 +23,7 @@ class TPE_Optimizer:
                  random_state=None):
         self.rng = check_random_state(random_state)
         self.config_space = config_space
-        self.config_space.seed(self.rng.randint(100000))
+        self.config_space.seed(42)
 
         self.top_n_percent = top_n_percent
         self.bw_factor = bandwidth_factor

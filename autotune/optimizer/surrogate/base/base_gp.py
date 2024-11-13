@@ -37,10 +37,10 @@ class BaseGP(AbstractModel):
         )
 
         self.configspace = configspace
-        self.rng = np.random.RandomState(seed)
+        self.rng = np.random.RandomState(42)
         self.kernel = kernel
         self.gp = self._get_gp()
-        self.seed = seed
+        self.seed = 42
 
     def _get_gp(self) -> GaussianProcessRegressor:
         raise NotImplementedError()

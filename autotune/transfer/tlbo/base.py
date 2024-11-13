@@ -25,7 +25,7 @@ class BaseTLSurrogate(object):
                  surrogate_type='rf'):
         self.method_id = None
         self.config_space = config_space
-        self.random_seed = seed
+        self.random_seed = 42
         self.num_src_hpo_trial = num_src_hpo_trial
         self.source_hpo_data = source_hpo_data
         self.source_surrogates = None
@@ -70,7 +70,7 @@ class BaseTLSurrogate(object):
         for history_container in self.source_hpo_data:
             print('.', end='')
             model = build_surrogate(self.surrogate_type, self.config_space,
-                                    np.random.RandomState(self.random_seed))
+                                    np.random.RandomState(42))
             X = convert_configurations_to_array(history_container.configurations)
             y = history_container.get_transformed_perfs()
 
@@ -97,7 +97,7 @@ class BaseTLSurrogate(object):
 
     def build_single_surrogate(self, X: np.ndarray, y: np.array, normalize):
         assert normalize in ['standardize', 'scale', 'none']
-        model = build_surrogate(self.surrogate_type, self.config_space, np.random.RandomState(self.random_seed))
+        model = build_surrogate(self.surrogate_type, self.config_space, np.random.RandomState(42))
         if normalize == 'standardize':
             if (y == y[0]).all():
                 y[0] += 1e-4

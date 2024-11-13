@@ -256,8 +256,8 @@ class TURBO_Optimizer:
         ub = np.clip(x_center + weights * length / 2.0, 0.0, 1.0)
 
         # Draw a Sobolev sequence in [lb, ub]
-        seed = np.random.randint(int(1e6))
-        sobol = SobolEngine(self.dim, scramble=True, seed=seed)
+        seed = 42
+        sobol = SobolEngine(self.dim, scramble=True, seed=42)
         pert = sobol.draw(self.n_cand).to(dtype=dtype, device=device).cpu().detach().numpy()
         pert = lb + (ub - lb) * pert
 

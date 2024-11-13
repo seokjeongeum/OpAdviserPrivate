@@ -29,7 +29,7 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
                  initial_configurations=None,
                  ref_point=None,
                  history_bo_data: List[OrderedDict] = None,
-                 random_state=None,
+                 random_state=np.random.RandomState(42),
                  num_objs=1,
                  num_constraints=0,
                  initial_trials=3,
@@ -58,8 +58,8 @@ class BO_Optimizer(object, metaclass=abc.ABCMeta):
         self.acq_optimizer_type = acq_optimizer_type
         self.init_num = initial_trials
         self.config_space = config_space
-        self.config_space_seed = self.rng.randint(MAXINT)
-        self.config_space.seed(self.config_space_seed)
+        self.config_space_seed = 42
+        self.config_space.seed(42)
         self.ref_point = ref_point
         self.current_context = None
 

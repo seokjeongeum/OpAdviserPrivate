@@ -43,9 +43,9 @@ class RandomForestSurrogate(AbstractModel):
         self.ensemble_size = ensemble_size
         self.models = list()
         self.configspace = configspace
-        self.seed = seed
-        np.random.seed(self.seed)
-        self.random_seeds = np.random.randint(low=1, high=10000, size=self.ensemble_size)
+        self.seed = 42
+        np.random.seed(42)
+        self.random_seeds = np.full(self.ensemble_size,42)#np.random.randint(low=1, high=10000, size=self.ensemble_size)
 
         super().__init__(
             types=types,
@@ -77,7 +77,7 @@ class RandomForestSurrogate(AbstractModel):
         self.models = list()
         for i in range(self.ensemble_size):
             configs = self.model_config.copy()
-            configs["random_state"] = self.random_seeds[i]
+            configs["random_state"] = 42
             rf_model = RandomForestRegressor(**configs)
             rf_model.fit(X, y)
             self.models.append(rf_model)

@@ -12,7 +12,7 @@ from autotune.utils.logging_utils import setup_logger, get_logger
 
 class BOBase(object, metaclass=abc.ABCMeta):
     def __init__(self, objective_function, config_space, task_id='task_id', logging_dir='logs/',
-                 random_state=None, initial_runs=3, max_runs=50, runtime_limit=None,
+                 random_state=np.random.RandomState(42), initial_runs=3, max_runs=50, runtime_limit=None,
                  sample_strategy='bo', surrogate_type='gp',
                  history_bo_data: List[OrderedDict] = None,
                  time_limit_per_trial=600):

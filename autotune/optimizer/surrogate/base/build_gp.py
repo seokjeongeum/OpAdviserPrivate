@@ -68,7 +68,7 @@ def create_gp_model(model_type, config_space, types, bounds, rng):
             chain_length=250,
             burnin_steps=250,
             normalize_y=True,
-            seed=rng.randint(low=0, high=10000),
+            seed=42,
         )
     elif model_type == 'gp':
         model = GaussianProcess(
@@ -77,7 +77,7 @@ def create_gp_model(model_type, config_space, types, bounds, rng):
             bounds=bounds,
             kernel=kernel,
             normalize_y=True,
-            seed=rng.randint(low=0, high=10000),
+            seed=42,
         )
     elif model_type == 'gp_rbf':
         rbf_kernel = RBF(
@@ -91,7 +91,7 @@ def create_gp_model(model_type, config_space, types, bounds, rng):
             alpha=1e-10,    # Fix RBF kernel error  # todo: might conflict with restart training
             kernel=rbf_kernel,  # todo: add white kernel and check MESMO
             normalize_y=False,  # todo confirm
-            seed=rng.randint(low=0, high=10000),
+            seed=42,
         )
     else:
         raise ValueError("Invalid surrogate str %s!" % model_type)

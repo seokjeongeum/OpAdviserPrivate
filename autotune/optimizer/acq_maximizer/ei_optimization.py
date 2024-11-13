@@ -52,8 +52,8 @@ class AcquisitionFunctionMaximizer(object, metaclass=abc.ABCMeta):
         self.config_space = config_space
 
         if rng is None:
-            self.logger.debug('no rng given, using default seed of 1')
-            self.rng = np.random.RandomState(seed=1)
+            self.logger.debug('no rng given, using default seed of 42')
+            self.rng = np.random.RandomState(seed=42)
         else:
             self.rng = rng
 
@@ -351,7 +351,7 @@ class LocalSearch(AcquisitionFunctionMaximizer):
             # Get one exchange neighborhood returns an iterator (in contrast of
             # the previously returned list).
             all_neighbors = get_one_exchange_neighbourhood(
-                incumbent, seed=self.rng.randint(MAXINT))
+                incumbent, seed=42)
 
             for neighbor in all_neighbors:
                 s_time = time.time()
@@ -1196,7 +1196,7 @@ class batchMCOptimizer(AcquisitionFunctionMaximizer):
 
         cur_idx = 0
         config_acq = list()
-        weight_seed = self.rng.randint(0, int(1e8))  # The same weight seed each iteration
+        weight_seed = 42  # The same weight seed each iteration
 
         while cur_idx < num_points:
             batch_size = min(self.batch_size, num_points - cur_idx)
@@ -1218,7 +1218,7 @@ class batchMCOptimizer(AcquisitionFunctionMaximizer):
                                          lower_bounds, upper_bounds,
                                          random_state=self.rng.randint(0, int(1e8)))
             _configs = sobol_sampler.generate(return_config=True)
-            _acq_values = self.acquisition_function(_configs, seed=weight_seed)
+            _acq_values = self.acquisition_function(_configs, seed=42)
             config_acq.extend([(_configs[idx], _acq_values[idx]) for idx in range(len(_configs))])
 
             cur_idx += self.batch_size

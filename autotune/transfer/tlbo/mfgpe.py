@@ -12,7 +12,7 @@ _scale_method = 'standardize'
 class MFGPE(BaseTLSurrogate):
     def __init__(self, config_space, source_hpo_data, seed,
                  surrogate_type='rf', num_src_hpo_trial=-1, only_source=False):
-        super().__init__(config_space, source_hpo_data, seed,
+        super().__init__(config_space, source_hpo_data, 42,
                          surrogate_type=surrogate_type, num_src_hpo_trial=num_src_hpo_trial)
         self.method_id = 'mfgpe'
         self.only_source = only_source

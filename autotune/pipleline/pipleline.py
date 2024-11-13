@@ -65,7 +65,7 @@ class PipleLine(BOBase):
                  history_bo_data: List[OrderedDict] = None,
                  logging_dir='logs',
                  task_id='default_task_id',
-                 random_state=None,
+                 random_state=np.random.RandomState(42),
                  selector_type='shap',
                  incremental='decrease',
                  incremental_every=4,
@@ -478,8 +478,8 @@ class PipleLine(BOBase):
         # feature needed: smac, mbo, ddpg, ga, sysbench, twitter, tpch, target, knob_num, integer, enum, iteration
         if not hasattr(self, 'rgpe_op'):
             rng = check_random_state(100)
-            seed = rng.randint(MAXINT)
-            self.rgpe_op = RGPE(self.config_space, self.history_workload_data, seed, num_src_hpo_trial=-1, only_source=False)
+            seed = 42
+            self.rgpe_op = RGPE(self.config_space, self.history_workload_data, 42, num_src_hpo_trial=-1, only_source=False)
 
         feature_name = optimizer_name + self.source_workloadL + ['target', 'knob_num', 'integer', 'enum', 'iteration']
         df = pd.DataFrame(columns=feature_name)
@@ -657,8 +657,8 @@ config2,
 #2024-11-11: code for experiment
         if not hasattr(self, 'rgpe'):
             rng = check_random_state(100)
-            seed = rng.randint(MAXINT)
-            self.rgpe = RGPE(self.config_space, self.history_bo_data, seed, num_src_hpo_trial=-1, only_source=False)
+            seed = 42
+            self.rgpe = RGPE(self.config_space, self.history_bo_data, 42, num_src_hpo_trial=-1, only_source=False)
 
         rank_loss_list = self.rgpe.get_ranking_loss(self.history_container)
         similarity_list = [1 - i for i in rank_loss_list]

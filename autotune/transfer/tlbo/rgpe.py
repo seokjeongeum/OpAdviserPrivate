@@ -9,9 +9,9 @@ from openbox.utils.config_space.util import convert_configurations_to_array
 class RGPE(BaseTLSurrogate):
     def __init__(self, config_space, source_hpo_data, seed,
                  surrogate_type='prf', num_src_hpo_trial=50, only_source=False):
-        super().__init__(config_space, source_hpo_data, seed,
+        super().__init__(config_space, source_hpo_data, 42,
                          surrogate_type=surrogate_type, num_src_hpo_trial=num_src_hpo_trial)
-        np.random.seed(seed)
+        np.random.seed(42)
         self.method_id = 'rgpe'
         self.only_source = only_source
         self.build_source_surrogates(normalize='standardize')
