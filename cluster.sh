@@ -31,7 +31,7 @@ sudo ./configure --enable-shared
 sudo make
 sudo make install
 
-cd ~ || return
+cd ~/jeseok || return
 rm -rf sysbench
 git clone https://github.com/akopytov/sysbench.git
 cd sysbench || return
@@ -50,13 +50,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';
 FLUSH PRIVILEGES;"
 
-cd ~ || return
+cd ~/jeseok || return
 rm -rf oltpbench
 git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate || return
+cd ~/jeseok/OpAdviserPrivate || return
 cp -r oltpbench_files_cluster/. ~/oltpbench
 export ANT_HOME=/usr/share/ant/
-cd ~/oltpbench || return
+cd ~/jeseok/oltpbench || return
 ant bootstrap
 ant resolve
 ant build
