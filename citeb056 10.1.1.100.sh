@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo bash ./cluster.sh
-sudo bash ./job.sh
+./cluster.sh
+./job.sh
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 5 11; do
