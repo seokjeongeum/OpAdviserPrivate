@@ -42,7 +42,7 @@ class InvertableColumnTransformer(ColumnTransformer):
 
         arrays = []
         i = 0
-        with open("VAETune/categories") as f:
+        with open("OpAdviserPlus/categories") as f:
             for category in f:
                 n = len(eval(category))
                 logits = X[:, i : i + n]
@@ -128,5 +128,5 @@ if __name__ == "__main__":
     transformed_data = pd.DataFrame(
         transformed_data, columns=transformer.get_feature_names_out()
     )
-    transformed_data.to_csv("VAETune/transformed.csv")
+    transformed_data.to_csv("OpAdviserPlus/transformed.csv")
     print(transformed_data.describe())

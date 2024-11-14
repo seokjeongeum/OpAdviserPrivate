@@ -57,7 +57,7 @@ class DBEnv:
         # self.latent_dim=latent_dim
         # if latent_dim!=0:
         #     self.model = FullyConnectedVAE(290, latent_dim)
-        #     best_model_path = f"VAETune/dim{latent_dim}.pth"
+        #     best_model_path = f"OpAdviserPlus/dim{latent_dim}.pth"
         #     if os.path.exists(best_model_path):
         #         checkpoint = torch.load(best_model_path,weights_only=False)
         #         self.model.load_state_dict(checkpoint["model_state_dict"])

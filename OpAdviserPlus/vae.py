@@ -70,7 +70,7 @@ def train_epochs(model, train_loader, test_loader, train_args, quiet=False):
 
     train_losses, test_losses = OrderedDict(), OrderedDict()
     best_loss = float("inf")
-    best_model_path = f"VAETune/dim{model.latent_dim}.pth"
+    best_model_path = f"OpAdviserPlus/dim{model.latent_dim}.pth"
 
     epoch = 0
     if os.path.exists(best_model_path):
@@ -171,7 +171,7 @@ class FullyConnectedVAE(nn.Module):
         # Calculate reconstruction loss
         categorical_recon_loss = 0
         i = 0
-        with open("VAETune/categories") as f:
+        with open("OpAdviserPlus/categories") as f:
             for category in f:
                 n = len(eval(category))
                 categorical_recon_loss += nn.CrossEntropyLoss()(
@@ -217,7 +217,7 @@ class CustomDataset(data.Dataset):
         return torch.tensor(self.dataframe.iloc[index].values.astype("float32"))
 
 
-def plot_losses(train_losses, test_losses, latent_dim, save_dir="VAETune/plots"):
+def plot_losses(train_losses, test_losses, latent_dim, save_dir="OpAdviserPlus/plots"):
     """
     Plot and save training and testing losses for total loss, reconstruction loss, and KL loss.
 
@@ -269,7 +269,7 @@ def plot_losses(train_losses, test_losses, latent_dim, save_dir="VAETune/plots")
 
 
 if __name__ == "__main__":
-    df = CustomDataset(pd.read_csv("VAETune/transformed.csv", index_col=0))
+    df = CustomDataset(pd.read_csv("OpAdviserPlus/transformed.csv", index_col=0))
     train_data, test_data = train_test_split(df)
     train_loader = data.DataLoader(train_data, batch_size=128, shuffle=True)
     test_loader = data.DataLoader(test_data, batch_size=128)
