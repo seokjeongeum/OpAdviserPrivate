@@ -1,3 +1,6 @@
+mkdir jeseok
+cd jeseok || return
+
 sudo yum update
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql
 sudo wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-mysql https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
