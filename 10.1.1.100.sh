@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ./cluster.sh
 ./job.sh
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do

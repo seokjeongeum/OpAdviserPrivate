@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir jeseok
 cd jeseok || return
 
@@ -60,3 +62,23 @@ cd ~/jeseok/oltpbench || return
 ant bootstrap
 ant resolve
 ant build
+
+# Backup existing sshd_config
+bak_file="/etc/ssh/sshd_config.bak"
+if [ -f /etc/ssh/sshd_config ]; then
+    cp /etc/ssh/sshd_config $bak_file
+fi
+
+# Remove or comment out existing timeout settings
+sed -i.bak -e 's/^ClientAliveInterval/# ClientAliveInterval/' \
+           -e 's/^ClientAliveCountMax/# ClientAliveCountMax/' \
+           -e 's/^TCPKeepAlive/# TCPKeepAlive/' \
+           /etc/ssh/sshd_config
+
+# Add new timeout settings (if desired)
+echo 'ClientAliveInterval 300' >> /etc/ssh/sshd_config
+echo 'ClientAliveCountMax 3' >> /etc/ssh/sshd_config
+echo 'TCPKeepAlive yes' >> /etc/ssh/sshd_config
+
+# Notify user
+echo "SSH server configuration modified to remove timeout settings."

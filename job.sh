@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd ~/jeseok || return
 rm -r join-order-benchmark
 git clone https://github.com/seokjeongeum/join-order-benchmark.git
