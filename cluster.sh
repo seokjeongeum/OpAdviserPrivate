@@ -74,9 +74,9 @@ sed -i.bak -e 's/^ClientAliveInterval/# ClientAliveInterval/' \
            /etc/ssh/sshd_config
 
 # Add new timeout settings (if desired)
-echo 'ClientAliveInterval 300' >> /etc/ssh/sshd_config
-echo 'ClientAliveCountMax 3' >> /etc/ssh/sshd_config
-echo 'TCPKeepAlive yes' >> /etc/ssh/sshd_config
+sudo echo 'ClientAliveInterval 300' >> /etc/ssh/sshd_config
+sudo echo 'ClientAliveCountMax 3' >> /etc/ssh/sshd_config
+sudo echo 'TCPKeepAlive yes' >> /etc/ssh/sshd_config
 
 # Notify user
 echo "SSH server configuration modified to remove timeout settings."
