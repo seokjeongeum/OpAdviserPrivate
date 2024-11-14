@@ -23,6 +23,7 @@ python scripts/optimize.py --config=scripts/twitter.ini
 ```
 ### Find ground truth
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database sbrw;"
 mysql -ppassword -e"create database sbrw;"
@@ -41,9 +42,11 @@ sysbench  \
     prepare
 python scripts/optimize.py --config=scripts/sysbench_rw.ini
 python scripts/optimize.py --config=scripts/sysbench_rw_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database sbwrite;"
 mysql -ppassword -e"create database sbwrite;"
@@ -62,9 +65,11 @@ sysbench  \
     prepare
 python scripts/optimize.py --config=scripts/sysbench_wo.ini
 python scripts/optimize.py --config=scripts/sysbench_wo_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database sbread;"
 mysql -ppassword -e"create database sbread;"
@@ -83,63 +88,77 @@ sysbench  \
     prepare
 python scripts/optimize.py --config=scripts/sysbench_ro.ini
 python scripts/optimize.py --config=scripts/sysbench_ro_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database twitter;"
 mysql -ppassword -e"create database twitter;"
 ~/jeseok/oltpbench/oltpbenchmark -b twitter -c ~/jeseok/oltpbench/config/sample_twitter_config.xml  --create=true --load=true
 python scripts/optimize.py --config=scripts/twitter.ini
 python scripts/optimize.py --config=scripts/twitter_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database tpcc;"
 mysql -ppassword -e"create database tpcc;"
 ~/jeseok/oltpbench/oltpbenchmark -b tpcc -c ~/jeseok/oltpbench/config/sample_tpcc_config.xml  --create=true --load=true
 python scripts/optimize.py --config=scripts/tpcc.ini
 python scripts/optimize.py --config=scripts/tpcc_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database ycsb;"
 mysql -ppassword -e"create database ycsb;"
 ~/jeseok/oltpbench/oltpbenchmark -b ycsb -c ~/jeseok/oltpbench/config/sample_ycsb_config.xml  --create=true --load=true
 python scripts/optimize.py --config=scripts/ycsb.ini
 python scripts/optimize.py --config=scripts/ycsb_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database wikipedia;"
 mysql -ppassword -e"create database wikipedia;"
 ~/jeseok/oltpbench/oltpbenchmark -b wikipedia -c ~/jeseok/oltpbench/config/sample_wikipedia_config.xml  --create=true --load=true
 python scripts/optimize.py --config=scripts/wikipedia.ini
 python scripts/optimize.py --config=scripts/wikipedia_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database tatp;"
 mysql -ppassword -e"create database tatp;"
 ~/jeseok/oltpbench/oltpbenchmark -b tatp -c ~/jeseok/oltpbench/config/sample_tatp_config.xml  --create=true --load=true
 python scripts/optimize.py --config=scripts/tatp.ini
 python scripts/optimize.py --config=scripts/tatp_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 mysql -ppassword -e"drop database voter;"
 mysql -ppassword -e"create database voter;"
 ~/jeseok/oltpbench/oltpbenchmark -b voter -c ~/jeseok/oltpbench/config/sample_voter_config.xml  --create=true --load=true
 python scripts/optimize.py --config=scripts/voter.ini
 python scripts/optimize.py --config=scripts/voter_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 git clone https://github.com/seokjeongeum/queries-tpch-dbgen-mysql.git
 cd queries-tpch-dbgen-mysql || exit
@@ -263,13 +282,16 @@ ADD FOREIGN KEY LINEITEM_FK2 (L_PARTKEY,L_SUPPKEY) references PARTSUPP(PS_PARTKE
 "
 python scripts/optimize.py --config=scripts/tpch.ini
 python scripts/optimize.py --config=scripts/tpch_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 ```shell
+chmod +x ./cluster.sh
 bash ./cluster.sh
 bash ./job.sh
 python scripts/optimize.py --config=scripts/job.ini
 python scripts/optimize.py --config=scripts/job_ground_truth.ini
+chmod +x ./cluster2.sh
 bash ./cluster2.sh
 ```
 Below is original README.md
