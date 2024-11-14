@@ -1,3 +1,6 @@
+#!/bin/bash
+cd ~/jeseok || exit
+
 sudo yum update
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql
 sudo wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-mysql https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
@@ -20,18 +23,18 @@ libaio-devel \
 postgresql-devel \
 
 
-cd /opt || return
+cd /opt || exit
 sudo curl -O https://www.python.org/ftp/python/3.8.20/Python-3.8.20.tgz
 sudo tar -zxvf Python-3.8.20.tgz
-cd Python-3.8.20 || return
+cd Python-3.8.20 || exit
 sudo ./configure --enable-shared
 sudo make
 sudo make install
 
-cd ~ || return
+cd ~/jeseok || exit
 rm -rf sysbench
 git clone https://github.com/akopytov/sysbench.git
-cd sysbench || return
+cd sysbench || exit
 git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c
 ./autogen.sh
 sudo ./configure
@@ -47,18 +50,40 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';
 FLUSH PRIVILEGES;"
 
-cd ~ || return
+cd ~/jeseok || exit
 rm -rf oltpbench
 git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate || return
+cd ~/jeseok/OpAdviserPrivate || exit
 cp -r oltpbench_files_cluster/. ~/oltpbench
 export ANT_HOME=/usr/share/ant/
-cd ~/oltpbench || return
+cd ~/jeseok/oltpbench || exit
 ant bootstrap
 ant resolve
 ant build
 
-mysql -ppassword -e"drop database twitter;"
-mysql -ppassword -e"create database twitter;"
-~/oltpbench/oltpbenchmark -b twitter -c ~/oltpbench/config/sample_twitter_config.xml  --create=true --load=true
+# Backup existing sshd_config
+bak_file="/etc/ssh/sshd_config.bak"
+if [ -f /etc/ssh/sshd_config ]; then
+    cp /etc/ssh/sshd_config $bak_file
+fi
+
+# Remove or comment out existing timeout settings
+sed -i.bak -e 's/^ClientAliveInterval/# ClientAliveInterval/' \
+           -e 's/^ClientAliveCountMax/# ClientAliveCountMax/' \
+           -e 's/^TCPKeepAlive/# TCPKeepAlive/' \
+           /etc/ssh/sshd_config
+
+# Add new timeout settings (if desired)
+sudo echo 'ClientAliveInterval 300' >> /etc/ssh/sshd_config
+sudo echo 'ClientAliveCountMax 3' >> /etc/ssh/sshd_config
+sudo echo 'TCPKeepAlive yes' >> /etc/ssh/sshd_config
+
+# Notify user
+echo "SSH server configuration modified to remove timeout settings."
+
+cd ~/jeseok/OpAdviserPrivate || exit
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+python3 -m pip install .
+
 

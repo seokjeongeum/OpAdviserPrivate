@@ -23,7 +23,6 @@ python scripts/optimize.py --config=scripts/sysbench_ro.ini
 python scripts/optimize.py --config=scripts/twitter.ini
 ```
 ### Find ground truth
-sbrw
 ```shell
 python scripts/optimize.py --config=scripts/sysbench_rw.ini
 python scripts/optimize.py --config=scripts/sysbench_rw_ground_truth.ini
