@@ -8,6 +8,6 @@ mv ./csv_files/schematext.sql ./csv_files/schematext_backup.sql
 wget http://homepages.cwi.nl/~boncz/job/imdb.tgz
 sudo tar -zxvf imdb.tgz -C csv_files
 mv ./csv_files/schematext_backup.sql ./csv_files/schematext.sql
-mysql -u username -ppassword imdbload < csv_files/schematext.sql
-mysql -u username -ppassword imdbload < csv_files/fkindexes.sql
+mysql -u root -ppassword imdbload < csv_files/schematext.sql
+mysql -u root -ppassword imdbload < csv_files/fkindexes.sql
 ./load_data_mysql.sh
