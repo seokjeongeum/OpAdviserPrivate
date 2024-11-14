@@ -57,8 +57,3 @@ cd ~/oltpbench || return
 ant bootstrap
 ant resolve
 ant build
-
-mysql -ppassword -e"drop database twitter;"
-mysql -ppassword -e"create database twitter;"
-~/oltpbench/oltpbenchmark -b twitter -c ~/oltpbench/config/sample_twitter_config.xml  --create=true --load=true
-
