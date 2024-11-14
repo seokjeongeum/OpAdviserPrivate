@@ -20,8 +20,8 @@ if __name__ == '__main__':
 
     env = DBEnv(args_db, args_tune, db)
     tuner = DBTuner(args_db, args_tune, env)
-    # tuner.tune()
+    tuner.tune()
 #code for error case analysis
-    tuner.f()
+    # tuner.f()
 #code for error case analysis
 
