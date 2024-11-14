@@ -31,7 +31,7 @@ sudo make install
 cd ~ || return
 rm -rf sysbench
 git clone https://github.com/akopytov/sysbench.git
-cd ~/sysbench || return
+cd sysbench || return
 git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c
 ./autogen.sh
 sudo ./configure
@@ -47,17 +47,18 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';
 FLUSH PRIVILEGES;"
 
-cp -r oltpbench_files_cluster/. ~/oltpbench
 cd ~ || return
 rm -rf oltpbench
 git clone https://github.com/oltpbenchmark/oltpbench.git
+cd ~/OpAdviserPrivate || return
+cp -r oltpbench_files_cluster/. ~/oltpbench
 export ANT_HOME=/usr/share/ant/
 cd ~/oltpbench || return
 ant bootstrap
 ant resolve
 ant build
 
-mysql -ppassword -e"drop database resourcestresser;"
-mysql -ppassword -e"create database resourcestresser;"
+mysql -ppassword -e"drop database twitter;"
+mysql -ppassword -e"create database twitter;"
 ~/oltpbench/oltpbenchmark -b twitter -c ~/oltpbench/config/sample_twitter_config.xml  --create=true --load=true
 
