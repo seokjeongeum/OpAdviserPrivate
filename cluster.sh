@@ -82,3 +82,8 @@ echo 'TCPKeepAlive yes' >> /etc/ssh/sshd_config
 
 # Notify user
 echo "SSH server configuration modified to remove timeout settings."
+
+cd ~/jeseok/OpAdviserPrivate || return
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+python3 -m pip install .
