@@ -1,7 +1,5 @@
 #!/bin/bash
-
-cd ~ || exit
-mkdir jeseok
+cd ~/jeseok || exit
 
 sudo yum update
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql
