@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cd ~/jeseok || return
+cd ~/jeseok || exit
 rm -r join-order-benchmark
 git clone https://github.com/seokjeongeum/join-order-benchmark.git
-cd join-order-benchmark || return
+cd join-order-benchmark || exit
 mv ./csv_files/schematext.sq ./csv_files/schematext_backup.sq
 wget http://homepages.cwi.nl/~boncz/job/imdb.tgz
 sudo tar -zxvf imdb.tgz -C csv_files

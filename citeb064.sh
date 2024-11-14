@@ -5,7 +5,7 @@ chmod +x ./job.sh
 ./job.sh
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
-  for knob_num in 74 84; do
+  for knob_num in 86 19 26; do
 
     python3 scripts/optimize.py \
     --config=scripts/cluster.ini \

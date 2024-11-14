@@ -1,7 +1,7 @@
 #!/bin/bash
 
+cd ~ || exit
 mkdir jeseok
-cd jeseok || return
 
 sudo yum update
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql
@@ -25,18 +25,18 @@ libaio-devel \
 postgresql-devel \
 
 
-cd /opt || return
+cd /opt || exit
 sudo curl -O https://www.python.org/ftp/python/3.8.20/Python-3.8.20.tgz
 sudo tar -zxvf Python-3.8.20.tgz
-cd Python-3.8.20 || return
+cd Python-3.8.20 || exit
 sudo ./configure --enable-shared
 sudo make
 sudo make install
 
-cd ~/jeseok || return
+cd ~/jeseok || exit
 rm -rf sysbench
 git clone https://github.com/akopytov/sysbench.git
-cd sysbench || return
+cd sysbench || exit
 git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c
 ./autogen.sh
 sudo ./configure
@@ -52,13 +52,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';
 FLUSH PRIVILEGES;"
 
-cd ~/jeseok || return
+cd ~/jeseok || exit
 rm -rf oltpbench
 git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/jeseok/OpAdviserPrivate || return
+cd ~/jeseok/OpAdviserPrivate || exit
 cp -r oltpbench_files_cluster/. ~/oltpbench
 export ANT_HOME=/usr/share/ant/
-cd ~/jeseok/oltpbench || return
+cd ~/jeseok/oltpbench || exit
 ant bootstrap
 ant resolve
 ant build
@@ -83,7 +83,9 @@ echo 'TCPKeepAlive yes' >> /etc/ssh/sshd_config
 # Notify user
 echo "SSH server configuration modified to remove timeout settings."
 
-cd ~/jeseok/OpAdviserPrivate || return
+cd ~/jeseok/OpAdviserPrivate || exit
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
 python3 -m pip install .
+
+
