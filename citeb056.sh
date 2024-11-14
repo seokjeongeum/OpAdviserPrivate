@@ -17,3 +17,5 @@ for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
     --optimize_method="$optimize_method"
   done
 done
+chmod +x ./cluster2.sh
+./cluster2.sh
