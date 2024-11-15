@@ -10,3 +10,9 @@ sudo usermod -a -G docker $USER
 newgrp docker
 sudo systemctl start docker
 docker load < ubuntu.tar.gz
+echo '{
+  "storage-driver": "devicemapper",
+  "storage-opts": [
+    "dm.min_free_space=5%"
+  }
+}' | sudo tee /etc/docker/daemon.json
