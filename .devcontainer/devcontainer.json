@@ -38,8 +38,7 @@
   },
   "runArgs": [
     "--memory=64gb",
-    "--dns=8.8.8.8",
-    "--dns=1.1.1.1"
+    "--pull=never"
   ],
   "containerEnv": {
     "DOCKER_CLI_EXPERIMENTAL": "enabled"
