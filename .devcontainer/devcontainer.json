@@ -15,7 +15,8 @@
   //  "service": "opadviser",
   // The optional 'workspaceFolder' property is the path VS Code should open by default when
   // connected. This is typically a file mount in .devcontainer/docker-compose.yml
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
 
@@ -38,6 +39,9 @@
   },
   "runArgs": [
     "--memory=64gb"
+  ],
+  "mounts": [
+    "source=/var/lib/mysql,target=/mnt/sdd1/jeseok/mysql,type=bind,consistency=cached"
   ],
   "containerEnv": {
     "DOCKER_CLI_EXPERIMENTAL": "enabled"
