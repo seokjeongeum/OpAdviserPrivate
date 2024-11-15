@@ -5,7 +5,18 @@ Setup dev container using .devcontainer/devcontainer.json
 Fix volumes attribute in .devcontainer/docker-compose.yml to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
 ## Prepare workload
 ```shell
-bash ./workload_preparation.sh
+apt update
+apt install mysql-server-5.7 -y
+echo "[mysqld]
+innodb_log_checksums = 0">>/etc/my.cnf
+service mysql start
+mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
+mysql -ppassword -e"set global max_connections=500;"
+mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';
+CREATE USER 'root'@'::1' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';
+FLUSH PRIVILEGES;"
 ```
 ## Setup Python Environment
 ```shell
