@@ -329,7 +329,7 @@ python scripts/optimize.py --config=scripts/tpch_ground_truth.ini
 ```
 ```shell
 chmod +x ./job.sh
-bash ./job.sh
+./job.sh
 python scripts/optimize.py --config=scripts/job.ini
 python scripts/optimize.py --config=scripts/job_ground_truth.ini
 ```
