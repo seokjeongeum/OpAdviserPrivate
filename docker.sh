@@ -7,6 +7,7 @@ echo '{
   "experimental": "enabled"
 }' > ~/.docker/config.json
 sudo usermod -a -G docker $USER
+newgrp docker
 sudo systemctl start docker
 docker load < ubuntu.tar.gz
 git fetch
