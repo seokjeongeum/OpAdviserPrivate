@@ -1,8 +1,4 @@
 FROM ubuntu:18.04
-# Create custom resolv.conf during build
-RUN echo "nameserver 141.223.1.2" > /etc/resolv.conf.override && \
-    echo "nameserver 1.0.0.1" >> /etc/resolv.conf.override && \
-    cat /etc/resolv.conf.override > /etc/resolv.conf
 RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
 RUN apt update && apt-get --no-install-recommends install -y  \
     git  \
