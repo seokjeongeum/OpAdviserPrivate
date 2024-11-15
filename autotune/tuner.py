@@ -246,49 +246,49 @@ class DBTuner:
                 os.mkdir(folder)
 
 #code for error case analysis
-    def f(self):
-        for task_id in [
-            'oltpbench_tatp_smac',
-            'oltpbench_tpcc_smac',
-            # 'oltpbench_wikipedia_smac',
-            'oltpbench_ycsb_smac',
-            'sbread_smac',
-            'sbrw_smac',
-            'sbwrite_smac',
-            'twitter_smac',
-            ]:
-            bo = PipleLine(self.env.step,
-                        self.config_space,
-                        num_objs=len(self.objs),
-                        num_constraints=len(self.constraints),
-                        optimizer_type=self.method,
-                        max_runs=int(self.args_tune['max_runs']),
-                        surrogate_type=self.surrogate_type,
-                        history_bo_data=self.hcL,
-                        acq_optimizer_type=self.acq_optimizer_type,  # 'random_scipy',#
-                        selector_type=self.args_tune['selector_type'],
-                        initial_runs=int(self.args_tune['initial_runs']),
-                        incremental=self.args_tune['incremental'],
-                        incremental_every=int(self.args_tune['incremental_every']),
-                        incremental_num=int(self.args_tune['incremental_num']),
-                        init_strategy='random_explore_first',
-                        ref_point= self.env.reference_point,
-                        task_id=task_id,
-                        time_limit_per_trial=60 * 200,
-                        num_hps_init=int(self.args_tune['initial_tunable_knob_num']),
-                        num_metrics=self.env.db.num_metrics,
-                        mean_var_file=self.args_tune['mean_var_file'],
-                        batch_size=int(self.args_tune['batch_size']),
-                        params=self.model_params_path,
-                        space_transfer=self.space_transfer,
-                        knob_config_file=self.args_db['knob_config_file'],
-                        auto_optimizer=self.auto_optimizer,
-                        auto_optimizer_type= self.args_tune['auto_optimizer_type'],
-                        hold_out_workload=self.args_db['workload'],
-                        history_workload_data=self.history_workload_data,
-                        only_knob=eval(self.args_tune['only_knob']),
-                        only_range=eval(self.args_tune['only_range']),
-                        #    latent_dim=int(self.args_tune['latent_dim'])
-                        )
-            bo.get_compact_space()
+    # def f(self):
+    #     for task_id in [
+    #         'oltpbench_tatp_smac',
+    #         'oltpbench_tpcc_smac',
+    #         # 'oltpbench_wikipedia_smac',
+    #         'oltpbench_ycsb_smac',
+    #         'sbread_smac',
+    #         'sbrw_smac',
+    #         'sbwrite_smac',
+    #         'twitter_smac',
+    #         ]:
+    #         bo = PipleLine(self.env.step,
+    #                     self.config_space,
+    #                     num_objs=len(self.objs),
+    #                     num_constraints=len(self.constraints),
+    #                     optimizer_type=self.method,
+    #                     max_runs=int(self.args_tune['max_runs']),
+    #                     surrogate_type=self.surrogate_type,
+    #                     history_bo_data=self.hcL,
+    #                     acq_optimizer_type=self.acq_optimizer_type,  # 'random_scipy',#
+    #                     selector_type=self.args_tune['selector_type'],
+    #                     initial_runs=int(self.args_tune['initial_runs']),
+    #                     incremental=self.args_tune['incremental'],
+    #                     incremental_every=int(self.args_tune['incremental_every']),
+    #                     incremental_num=int(self.args_tune['incremental_num']),
+    #                     init_strategy='random_explore_first',
+    #                     ref_point= self.env.reference_point,
+    #                     task_id=task_id,
+    #                     time_limit_per_trial=60 * 200,
+    #                     num_hps_init=int(self.args_tune['initial_tunable_knob_num']),
+    #                     num_metrics=self.env.db.num_metrics,
+    #                     mean_var_file=self.args_tune['mean_var_file'],
+    #                     batch_size=int(self.args_tune['batch_size']),
+    #                     params=self.model_params_path,
+    #                     space_transfer=self.space_transfer,
+    #                     knob_config_file=self.args_db['knob_config_file'],
+    #                     auto_optimizer=self.auto_optimizer,
+    #                     auto_optimizer_type= self.args_tune['auto_optimizer_type'],
+    #                     hold_out_workload=self.args_db['workload'],
+    #                     history_workload_data=self.history_workload_data,
+    #                     only_knob=eval(self.args_tune['only_knob']),
+    #                     only_range=eval(self.args_tune['only_range']),
+    #                     #    latent_dim=int(self.args_tune['latent_dim'])
+    #                     )
+    #         bo.get_compact_space()
 #code for error case analysis
