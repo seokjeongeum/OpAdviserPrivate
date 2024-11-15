@@ -23,16 +23,16 @@ RUN apt update && apt-get --no-install-recommends install -y  \
 
 RUN rm -rf oltpbench && \
     git clone https://github.com/oltpbenchmark/oltpbench.git 
-COPY /oltpbench_files /oltpbench
-RUN cd /oltpbench && \
+COPY oltpbench_files oltpbench
+RUN cd oltpbench && \
     ant bootstrap && \
     ant resolve && \
     ant build && \
-    chmod 777 /oltpbench/*
+    chmod 777 oltpbench/*
 
 RUN rm -rf sysbench
 RUN git clone https://github.com/akopytov/sysbench.git && \
-    cd /sysbench && \
+    cd sysbench && \
     git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c && \
     ./autogen.sh && \
     ./configure && \
