@@ -200,15 +200,18 @@ python scripts/optimize.py --config=scripts/voter.ini
 python scripts/optimize.py --config=scripts/voter_ground_truth.ini
 ```
 ```shell
+cd /workspaces/OpAdviserPrivate
+rm -rf queries-tpch-dbgen-mysql 
 git clone https://github.com/seokjeongeum/queries-tpch-dbgen-mysql.git
-cd queries-tpch-dbgen-mysql || exit
+cd queries-tpch-dbgen-mysql 
+apt install unzip
 unzip TPC-H\ V3.0.1.zip
-cd dbgen || exit
+cd dbgen 
 make
 ./dbgen -s 10
+mysql -ppassword -e"DROP DATABASE tpch;"
+mysql -ppassword -e"CREATE DATABASE tpch;"
 mysql -ppassword -e"
-DROP DATABASE tpch;
-CREATE DATABASE tpch;
 USE tpch;
 
 CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,
@@ -320,6 +323,7 @@ ADD FOREIGN KEY LINEITEM_FK1 (L_ORDERKEY)  references ORDERS(O_ORDERKEY);
 ALTER TABLE LINEITEM
 ADD FOREIGN KEY LINEITEM_FK2 (L_PARTKEY,L_SUPPKEY) references PARTSUPP(PS_PARTKEY, PS_SUPPKEY);
 "
+cd /workspaces/OpAdviserPrivate
 python scripts/optimize.py --config=scripts/tpch.ini
 python scripts/optimize.py --config=scripts/tpch_ground_truth.ini
 ```
