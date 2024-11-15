@@ -12,7 +12,7 @@ docker load < ubuntu.tar.gz
 echo '{
   "storage-driver": "devicemapper",
   "storage-opts": [
-    "dm.min_free_space=5%"
+    "dm.min_free_space=0%"
   ]
 }' | sudo tee /etc/docker/daemon.json
 sudo usermod -a -G docker $USER
