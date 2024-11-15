@@ -20,6 +20,7 @@ FLUSH PRIVILEGES;"
 ```
 ## Setup Python Environment
 ```shell
+pip install --ignore-installed setuptools
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pip install .
