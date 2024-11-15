@@ -3,7 +3,7 @@
 {
     "name": "OpAdviser",
     "build": {
-        "dockerfile": "Dockerfile",
+        "dockerfile": ".devcontainer/Dockerfile",
         "context": ".."
     },
     // Update the 'dockerComposeFile' list if you have more compose files or use different names.
@@ -38,7 +38,7 @@
         "backend": "PyCharm"
       }
     },
-    "runArgs": ["--memory=6gb"]
+    "runArgs": ["--memory=64gb"]
     // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "devcontainer"
 }
