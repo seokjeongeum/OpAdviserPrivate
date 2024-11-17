@@ -7,7 +7,7 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='cluster.ini', help='config file')
+    parser.add_argument('--config', type=str, default='scripts/sysbench_rw.ini', help='config file')
     # 2024-11-14 code for clusters
     parser.add_argument('--knob_config_file', type=str,default='scripts/experiment/gen_knobs/JOB_shap.json')
     parser.add_argument('--knob_num', type=int,default=5)
