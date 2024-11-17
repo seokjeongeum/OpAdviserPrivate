@@ -42,14 +42,18 @@ if __name__ == "__main__":
         # "sbwrite",
         # "twitter",
     ]:
-        with open(f"repo/history_{s}_smac.json") as f:
+        with open(f"repo_backup/history_{s}_smac.json") as f:
             j = json.load(f)["data"]
             c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
-            pprint.pprint((c["configuration"], c["external_metrics"]))
-        with open(f"repo/history_{s}_smac_ground_truth.json") as f:
+            pprint.pprint((
+                # c["configuration"], 
+                c["external_metrics"]))
+        with open(f"repo_backup/history_{s}_ground_truth.json") as f:
             j = json.load(f)["data"]
             c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]
-            pprint.pprint((c["configuration"], c["external_metrics"]))
+            pprint.pprint((
+                # c["configuration"], 
+                           c["external_metrics"]))
         c = c["configuration"]
         l = []
         with open(f"scripts/experiment/gen_knobs/mysql_all_197_32G.json") as f:
@@ -89,8 +93,8 @@ if __name__ == "__main__":
             columns=["key", "times", "proportion"],
         ).to_csv(f"{s}.csv", index=False)
         # print(d)
-        pprint.pprint(
-            list(
-                map(lambda x: (x[0], x[1]["external_metrics"].get("tps", 0)), enumerate(j))
-            )
-        )
+        # pprint.pprint(
+        #     list(
+        #         map(lambda x: (x[0], x[1]["external_metrics"].get("tps", 0)), enumerate(j))
+        #     )
+        # )
