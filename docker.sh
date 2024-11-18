@@ -11,7 +11,10 @@ sudo systemctl start docker
 echo '{
   "storage-driver": "devicemapper",
   "storage-opts": [
-    "dm.min_free_space=0%"
+    "dm.thinp_percent=95",
+    "dm.thinp_metapercent=1",
+    "dm.thinp_autoextend_threshold=80",
+    "dm.thinp_autoextend_percent=20"
   ]
 }' | sudo tee /etc/docker/daemon.json
 sudo usermod -a -G docker $USER
