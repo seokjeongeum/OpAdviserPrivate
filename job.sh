@@ -1,6 +1,5 @@
 #!/bin/bash
-rm -r join-order-benchmark
-git clone https://github.com/seokjeongeum/join-order-benchmark.git
+cd join-order-benchmark || git clone https://github.com/seokjeongeum/join-order-benchmark.git
 cd join-order-benchmark || exit
 mv -f ./csv_files/schematext.sql ./csv_files/schematext_backup.sql
 apt install wget
