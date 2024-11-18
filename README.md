@@ -7,8 +7,6 @@ Fix volumes attribute in .devcontainer/docker-compose.yml to mount directories t
 ```shell
 apt update
 apt install mysql-server-5.7 -y
-echo "[mysqld]
-innodb_log_checksums = 0">>/etc/my.cnf
 service mysql start
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"set global max_connections=500;"
