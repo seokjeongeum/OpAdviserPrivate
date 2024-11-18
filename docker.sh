@@ -19,5 +19,5 @@ echo '{
 }' | sudo tee /etc/docker/daemon.json
 sudo usermod -a -G docker $USER
 sudo chmod 666 /var/run/docker.sock
-docker image rm ubuntu:18.04
+docker load < ubuntu.tar.gz
 newgrp docker
