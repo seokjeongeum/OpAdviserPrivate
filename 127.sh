@@ -1,13 +1,11 @@
 #!/bin/bash
-chmod +x ./cluster.sh
-./cluster.sh
-workload="ycsb"
+workload="voter"
 mysql -ppassword -e"drop database ${workload};"
 mysql -ppassword -e"create database ${workload};"
 ~/jeseok/oltpbench/oltpbenchmark -b $workload -c ~/jeseok/oltpbench/config/sample_${workload}_config.xml  --create=true --load=true
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
-  for knob_num in 174 84; do
+  for knob_num in 80 67; do
     python3 scripts/optimize.py \
     --config=scripts/cluster.ini \
     --knob_config_file=scripts/experiment/gen_knobs/moreworkloads/${workload}_shap.json \
@@ -19,6 +17,3 @@ for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
     --optimize_method="$optimize_method"
   done
 done
-chmod +x ./cluster2.sh
-./cluster2.sh
-

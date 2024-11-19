@@ -1,6 +1,4 @@
 #!/bin/bash
-chmod +x ./cluster.sh
-./cluster.sh
 git clone https://github.com/seokjeongeum/queries-tpch-dbgen-mysql.git
 cd queries-tpch-dbgen-mysql || exit
 unzip TPC-H\ V3.0.1.zip
@@ -135,6 +133,3 @@ for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
     --optimize_method="$optimize_method"
   done
 done
-chmod +x ./cluster2.sh
-./cluster2.sh
-

@@ -1,6 +1,4 @@
 #!/bin/bash
-chmod +x ./cluster.sh
-./cluster.sh
 workload="twitter"
 mysql -ppassword -e"drop database ${workload};"
 mysql -ppassword -e"create database ${workload};"
@@ -19,6 +17,3 @@ for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
     --optimize_method="$optimize_method"
   done
 done
-chmod +x ./cluster2.sh
-./cluster2.sh
-
