@@ -1,4 +1,6 @@
 #!/bin/bash
+chmod +x ./cluster.sh
+./cluster.sh
 workload="ycsb"
 cd /
 rm -rf oltpbench && \
@@ -14,13 +16,6 @@ mysql -ppassword -e"drop database ${workload};"
 mysql -ppassword -e"create database ${workload};"
 /oltpbench/oltpbenchmark -b $workload -c /oltpbench/config/sample_${workload}_config.xml  --create=true --load=true
 cd ~/OpAdviserPrivate
-update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
-python -m pip install --upgrade pip
-pip install --user --upgrade setuptools
-pip install --upgrade wheel
-python -m pip install -r requirements.txt
-python -m pip install .
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 57; do

@@ -1,4 +1,6 @@
 #!/bin/bash
+chmod +x ./cluster.sh
+./cluster.sh
 chmod +x ./tpch.sh
 ./tpch.sh
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
