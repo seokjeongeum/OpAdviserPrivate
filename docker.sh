@@ -11,10 +11,25 @@ sudo systemctl start docker
 echo '{
   "storage-driver": "devicemapper",
   "storage-opts": [
-    "dm.min_free_space=0%"
-  ]
+    "dm.thinp_percent=95",
+    "dm.thinp_metapercent=1",
+    "dm.thinp_autoextend_threshold=80",
+    "dm.thinp_autoextend_percent=20"
+  ],
+  "dns": [
+        "141.223.1.2",
+        "1.0.0.1"
+    ]
 }' | sudo tee /etc/docker/daemon.json
 sudo usermod -a -G docker $USER
 sudo chmod 666 /var/run/docker.sock
-docker image rm ubuntu:18.04
+sudo yum install -y git-lfs 
+git config --global user.email "jeseok@dblab.postech.ac.kr"
+git config --global user.name "Seok, Jeongeum"
+git lfs pull
+docker load < ubuntu.tar.gz
+mkdir /mnt/nvme0n1/jeseok
+mkdir /mnt/nvme0n1/jeseok/OpAdviser
+mkdir /mnt/nvme0n1/jeseok/mysql
+mkdir /mnt/nvme0n1/jeseok/lib
 newgrp docker
