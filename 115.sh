@@ -26,6 +26,7 @@ sysbench  \
     prepare
 cd ~/OpAdviserPrivate
 python -m pip install .
+db="write"
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 49 96; do

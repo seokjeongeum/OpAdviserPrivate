@@ -17,6 +17,7 @@ mysql -ppassword -e"create database ${workload};"
 /oltpbench/oltpbenchmark -b $workload -c /oltpbench/config/sample_${workload}_config.xml  --create=true --load=true
 cd ~/OpAdviserPrivate
 python -m pip install .
+workload="ycsb"
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 174 84; do
