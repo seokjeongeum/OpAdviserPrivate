@@ -23,13 +23,12 @@ echo '{
 }' | sudo tee /etc/docker/daemon.json
 sudo usermod -a -G docker $USER
 sudo chmod 666 /var/run/docker.sock
-sudo yum install -y git-lfs 
 git config --global user.email "jeseok@dblab.postech.ac.kr"
 git config --global user.name "Seok, Jeongeum"
-git lfs pull
+cat ubuntu.tar.gz.part* > ubuntu.tar.gz
 docker load < ubuntu.tar.gz
-mkdir /mnt/nvme0n1/jeseok
-mkdir /mnt/nvme0n1/jeseok/OpAdviser
-mkdir /mnt/nvme0n1/jeseok/mysql
-mkdir /mnt/nvme0n1/jeseok/lib
+mkdir /mnt/sdd1/jeseok
+mkdir /mnt/sdd1/jeseok/OpAdviser
+mkdir /mnt/sdd1/jeseok/mysql
+mkdir /mnt/sdd1/jeseok/lib
 newgrp docker
