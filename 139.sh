@@ -121,7 +121,7 @@ ADD FOREIGN KEY LINEITEM_FK2 (L_PARTKEY,L_SUPPKEY) references PARTSUPP(PS_PARTKE
 "
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
-  for knob_num in 50 139; do
+  for knob_num in 40; do
     python3 scripts/optimize.py \
     --config=scripts/cluster.ini \
     --knob_config_file=scripts/experiment/gen_knobs/OLTP.json \
