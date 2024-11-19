@@ -2,6 +2,7 @@
 git clone https://github.com/seokjeongeum/queries-tpch-dbgen-mysql.git
 cd queries-tpch-dbgen-mysql || exit
 rm -rf dbgen
+apt install unzip
 unzip -o TPC-H\ V3.0.1.zip
 cd dbgen || exit
 make
