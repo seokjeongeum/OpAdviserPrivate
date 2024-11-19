@@ -1,8 +1,8 @@
 #!/bin/bash
 git clone https://github.com/seokjeongeum/queries-tpch-dbgen-mysql.git
 cd queries-tpch-dbgen-mysql || exit
-unzip -o TPC-H\ V3.0.1.zip
 rm -rf dbgen
+unzip -o TPC-H\ V3.0.1.zip
 cd dbgen || exit
 make
 ./dbgen -s 10
@@ -120,6 +120,7 @@ ADD FOREIGN KEY LINEITEM_FK1 (L_ORDERKEY)  references ORDERS(O_ORDERKEY);
 ALTER TABLE LINEITEM
 ADD FOREIGN KEY LINEITEM_FK2 (L_PARTKEY,L_SUPPKEY) references PARTSUPP(PS_PARTKEY, PS_SUPPKEY);
 "
+cd ~/OpAdviserPrivate
 update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 python -m pip install --upgrade pip
