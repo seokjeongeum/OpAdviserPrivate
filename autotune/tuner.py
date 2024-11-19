@@ -231,19 +231,19 @@ class DBTuner:
 # ''')
 #         print(s)
 
-        # history = bo.run()
+        history = bo.run()
 #2024-11-11: code for experiment
-        history,history2 = bo.run()
+        # history,history2 = bo.run()
 #2024-11-11: code for experiment
         if history.num_objs == 1:
             import matplotlib.pyplot as plt
             history.plot_convergence()
             plt.savefig('%s.png' % history.task_id)
 #2024-11-11: code for experiment
-        if history2.num_objs == 1:
-            import matplotlib.pyplot as plt
-            history2.plot_convergence()
-            plt.savefig('%s.png' % history2.task_id)
+        # if history2.num_objs == 1:
+        #     import matplotlib.pyplot as plt
+        #     history2.plot_convergence()
+        #     plt.savefig('%s.png' % history2.task_id)
 #2024-11-11: code for experiment
 
 

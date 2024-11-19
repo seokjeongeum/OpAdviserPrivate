@@ -29,7 +29,7 @@ class BOBase(object, metaclass=abc.ABCMeta):
 
         self.config_space = config_space
 #2024-11-11: code for experiment
-        self.config_space2 = config_space
+        # self.config_space2 = config_space
 #2024-11-11: code for experiment
         self.objective_function = objective_function
         self.init_num = initial_runs
