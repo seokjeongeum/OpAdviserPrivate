@@ -727,7 +727,7 @@
     "max_binlog_cache_size": {
         "default": 18446744073709500416,
         "dynamic": "Yes",
-        "max": 4294967296,
+        "max": 18446744073709551615,
         "min": 4096,
         "scope": "Global",
         "type": "integer"
