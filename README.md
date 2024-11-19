@@ -1,13 +1,35 @@
-# VAETune
+# OpAdviserPlus
 ## Setup Dev Container
 Setup dev container using .devcontainer/devcontainer.json
 
-Fix volumes attribute in .devcontainer/docker-compose.yml to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
+Fix workspaceMount attribute and mounts attribute in .devcontainer/devcontainer.json to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
 ## Prepare workload
 ```shell
 apt update
-apt install mysql-server-5.7 -y
-service mysql start
+apt install -y mysql-server-5.7 \
+    git  \
+    default-jdk \
+    ant \
+    build-essential \
+    openssh-client \
+    cgroup-tools \
+    libaio1 \
+    libaio-dev \
+    python3.8  \
+    python3.8-dev  \
+    python3.8-venv  \
+    python3-pip  \
+    python3-setuptools \
+    autoconf \
+    pkg-config \
+    libtool \
+    libmysqlclient-dev \
+    automake \
+    sudo \
+    git-lfs
+```
+```shell
+service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"set global max_connections=500;"
 mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';
@@ -18,6 +40,9 @@ FLUSH PRIVILEGES;"
 ```
 ## Setup Python Environment
 ```shell
+update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+python -m pip install pip
 pip install --ignore-installed setuptools
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
@@ -33,6 +58,13 @@ python scripts/optimize.py --config=scripts/twitter.ini
 ```
 ### Find ground truth
 ```shell
+rm -rf sysbench
+git clone https://github.com/akopytov/sysbench.git && \
+    cd sysbench && \
+    git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c && \
+    ./autogen.sh && \
+    ./configure && \
+    make && make install
 mysql -ppassword -e"drop database sbrw;"
 mysql -ppassword -e"create database sbrw;"
 sysbench  \
@@ -48,10 +80,12 @@ sysbench  \
     --mysql-db=sbrw  \
     oltp_read_write  \
     prepare
+cd /workspaces/OpAdviserPrivate
 python scripts/optimize.py --config=scripts/sysbench_rw.ini
 python scripts/optimize.py --config=scripts/sysbench_rw_ground_truth.ini
 ```
 ```shell
+
 mysql -ppassword -e"drop database sbwrite;"
 mysql -ppassword -e"create database sbwrite;"
 sysbench  \
@@ -67,6 +101,7 @@ sysbench  \
     --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare
+cd /workspaces/OpAdviserPrivate
 python scripts/optimize.py --config=scripts/sysbench_wo.ini
 python scripts/optimize.py --config=scripts/sysbench_wo_ground_truth.ini
 ```
@@ -86,6 +121,7 @@ sysbench  \
     --mysql-db=sbread  \
     oltp_read_only  \
     prepare
+cd /workspaces/OpAdviserPrivate
 python scripts/optimize.py --config=scripts/sysbench_ro.ini
 python scripts/optimize.py --config=scripts/sysbench_ro_ground_truth.ini
 ```
