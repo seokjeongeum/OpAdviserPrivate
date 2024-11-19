@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod +x ./job.sh
 ./job.sh
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
