@@ -29,7 +29,7 @@ apt install -y mysql-server-5.7 \
 ```
 ```shell
 echo '[mysqld]
-port=3307' | sudo tee -a /etc/docker/daemon.json
+port=3307' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"set global max_connections=500;"
