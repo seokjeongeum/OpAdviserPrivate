@@ -15,9 +15,9 @@ make
 
 ./dbgen -s 10
 
-mysql -ppassword -e"
-DROP DATABASE tpch;
-CREATE DATABASE tpch;
+mysql -ppassword -e"DROP DATABASE tpch;"
+
+mysql -ppassword -e"CREATE DATABASE tpch;
 USE tpch;
 
 CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,
