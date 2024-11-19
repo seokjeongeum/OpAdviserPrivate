@@ -24,4 +24,8 @@ echo '{
 sudo usermod -a -G docker $USER
 sudo chmod 666 /var/run/docker.sock
 docker load < ubuntu.tar.gz
+mkdir /mnt/sdd1/jeseok
+mkdir /mnt/sdd1/jeseok/OpAdviser
+mkdir /mnt/sdd1/jeseok/mysql
+mkdir /mnt/sdd1/jeseok/lib
 newgrp docker
