@@ -28,6 +28,8 @@ apt install -y mysql-server-5.7 \
     sudo 
 ```
 ```shell
+echo '[mysqld]
+port=3307' | sudo tee -a /etc/docker/daemon.json
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"set global max_connections=500;"
@@ -69,7 +71,7 @@ mysql -ppassword -e"create database sbrw;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3306  \
+    --mysql-port=3307  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -90,7 +92,7 @@ mysql -ppassword -e"create database sbwrite;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3306  \
+    --mysql-port=3307  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -110,7 +112,7 @@ mysql -ppassword -e"create database sbread;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3306  \
+    --mysql-port=3307  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \

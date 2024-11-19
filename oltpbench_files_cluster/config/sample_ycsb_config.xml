@@ -4,7 +4,7 @@
     <!-- Connection details -->
     <dbtype>mysql</dbtype>
     <driver>com.mysql.jdbc.Driver</driver>
-    <DBUrl>jdbc:mysql://localhost:3306/ycsb?useSSL=false</DBUrl>
+    <DBUrl>jdbc:mysql://localhost:3307/ycsb?useSSL=false</DBUrl>
     <username>root</username>
     <password>password</password>
     <isolation>TRANSACTION_SERIALIZABLE</isolation>
