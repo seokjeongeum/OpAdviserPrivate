@@ -23,6 +23,13 @@ sysbench  \
     oltp_${db}_only  \
     prepare
 cd ~/OpAdviserPrivate
+update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+python -m pip install --upgrade pip
+pip install --user --upgrade setuptools
+pip install --upgrade wheel
+python -m pip install -r requirements.txt
+python -m pip install .
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 74 40; do
