@@ -19,7 +19,7 @@ from autotune.workload_map import WorkloadMapping
 HOST='localhost'
 THREADS=64
 PASSWD=''
-PORT=3306
+PORT=3307
 USER='root'
 SOCK=os.environ.get("MYSQL_SOCK")
 LOG_PATH="./log"
