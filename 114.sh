@@ -1,5 +1,12 @@
 #!/bin/bash
 db="read"
+rm -rf sysbench
+git clone https://github.com/akopytov/sysbench.git && \
+    cd sysbench && \
+    git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c && \
+    ./autogen.sh && \
+    ./configure && \
+    make && make install
 mysql -ppassword -e"drop database sb${db};"
 mysql -ppassword -e"create database sb${db};"
 sysbench  \
