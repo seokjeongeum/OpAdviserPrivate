@@ -496,9 +496,9 @@ class PipleLine(BOBase):
         return self.optimizer_list[idx]
 
 
-    def iterate(self, compact_space=None,
+    def iterate(self, compact_space=None
 #2024-11-11: code for experiment
-compact_space2=None,
+,compact_space2=None,
 #2024-11-11: code for experiment                
                 ):
         self.knob_selection()
@@ -585,9 +585,9 @@ compact_space2=None,
         if self.optimizer.surrogate_model:
             self.optimizer.surrogate_model.current_context =  context
 
-    def evaluate(self, config,
+    def evaluate(self, config
 #2024-11-11: code for experiment
-config2,
+,config2,
 #2024-11-11: code for experiment   
 ):
         iter_time = time.time() - self.iter_begin_time
@@ -734,7 +734,7 @@ config2,
 #             c = sorted(j, key=lambda x: x["external_metrics"].get("tps", 0))[-1]['configuration']
 #         mask=np.ones(len(pruned_space_list),bool)
 #         mask[sample_list]=False
-
+#
 #         knobs=np.zeros(len(pruned_space_list))
 #         for k in c:
 #             knob=self.config_space_all.get_hyperparameters_dict()[k]
@@ -747,7 +747,7 @@ config2,
 #                         knobs[i]+=1
 #                 else:
 #                     if transform(s[0])<=c[k]<=transform(s[1]):
-#                         knobs[i]+=1     
+#                         knobs[i]+=1
 #         sampled=knobs[sample_list]
 #         not_sampled=knobs[mask]
 #         sl=np.array(similarity_list)
@@ -828,14 +828,14 @@ config2,
 #                         ik[i]+=1
 #                 else:
 #                     if transform(s[0])<=c[k]<=transform(s[1]):
-#                         ik[i]+=1     
+#                         ik[i]+=1
 #         # not_sampled=ik[mask]
 #         st+=(f'''sampled_spaces_scaled={(sampled/len(c)).tolist()}
 # ''')
 #         st+=(f'''sampled_important_spaces={(ik[sample_list]/len(important_knobs)).tolist()}
 # ''')
 # #         st+=(f'''not_sampled_important_spaces={not_sampled.tolist()}
-# # ''')        
+# # ''')
 #         pruned_space_list=np.array(pruned_space_list)[sample_list].tolist()
 #         count_arrays={}
 #         count_arrays2={}
@@ -918,7 +918,7 @@ config2,
                         max_index = count_array[i][1]
 
 #code for error case analysis
-                # transform = self.config_space.get_hyperparameters_dict()[knob]._transform   
+                # transform = self.config_space.get_hyperparameters_dict()[knob]._transform
                 # if transform(count_array[i][0])<=c[knob]<=transform(count_array[i][1]):
                 #     count_arrays[knob]=count_array[i][2]
 #code for error case analysis
