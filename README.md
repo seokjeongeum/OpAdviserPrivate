@@ -25,7 +25,8 @@ apt install -y mysql-server-5.7 \
     libtool \
     libmysqlclient-dev \
     automake \
-    sudo
+    sudo \
+    git-lfs
 ```
 ```shell
 service mysql start 
