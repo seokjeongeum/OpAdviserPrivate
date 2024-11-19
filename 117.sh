@@ -22,6 +22,7 @@ sysbench  \
     --mysql-db=sb${db}  \
     oltp_${db}_only  \
     prepare
+cd ~/OpAdviserPrivate
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 96 170; do
