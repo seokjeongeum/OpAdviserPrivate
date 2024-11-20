@@ -80,17 +80,10 @@ def get_default_dict(dic):
 
     return config_dic
 
-def parse_args(file
-    # 2024-11-19 code for clusters
-               ,knob_config_file
-    # 2024-11-19 code for clusters
-               ):
+def parse_args(file):
     cf = DictParser()
     cf.read(file, encoding="utf-8")
     config_dict = cf.read_dict()
-    # 2024-11-19 code for clusters
-    config_dict['database']['knob_config_file'] = knob_config_file
-    # 2024-11-19 code for clusters
     global knob_config
     f = open(config_dict['database']['knob_config_file'])
     knob_config = json.load(f)
