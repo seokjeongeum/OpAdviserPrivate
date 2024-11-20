@@ -47,7 +47,6 @@ python -m pip install --upgrade pip
 pip install --user --upgrade setuptools
 pip install --upgrade wheel
 python -m pip install -r requirements.txt
-python -m pip install .
 ```
 ## Run Experiments
 End-to-end Comparison (OpAdviser-w/o-Optimizer (Orange Line) in Figure 7 in the OpAdviser paper)
@@ -82,6 +81,7 @@ sysbench  \
     oltp_read_write  \
     prepare
 cd /workspaces/OpAdviserPrivate
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/sysbench_rw.ini
 python scripts/optimize.py --config=scripts/sysbench_rw_ground_truth.ini
 ```
@@ -103,6 +103,7 @@ sysbench  \
     oltp_write_only  \
     prepare
 cd /workspaces/OpAdviserPrivate
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/sysbench_wo.ini
 python scripts/optimize.py --config=scripts/sysbench_wo_ground_truth.ini
 ```
@@ -123,6 +124,7 @@ sysbench  \
     oltp_read_only  \
     prepare
 cd /workspaces/OpAdviserPrivate
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/sysbench_ro.ini
 python scripts/optimize.py --config=scripts/sysbench_ro_ground_truth.ini
 ```
@@ -141,6 +143,7 @@ cd /workspaces/OpAdviserPrivate
 mysql -ppassword -e"drop database twitter;"
 mysql -ppassword -e"create database twitter;"
 /oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/twitter.ini
 python scripts/optimize.py --config=scripts/twitter_ground_truth.ini
 ```
@@ -159,6 +162,7 @@ cd /workspaces/OpAdviserPrivate
 mysql -ppassword -e"drop database tpcc;"
 mysql -ppassword -e"create database tpcc;"
 /oltpbench/oltpbenchmark -b tpcc -c /oltpbench/config/sample_tpcc_config.xml  --create=true --load=true
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/tpcc.ini
 python scripts/optimize.py --config=scripts/tpcc_ground_truth.ini
 ```
@@ -177,6 +181,7 @@ cd /workspaces/OpAdviserPrivate
 mysql -ppassword -e"drop database ycsb;"
 mysql -ppassword -e"create database ycsb;"
 /oltpbench/oltpbenchmark -b ycsb -c /oltpbench/config/sample_ycsb_config.xml  --create=true --load=true
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/ycsb.ini
 python scripts/optimize.py --config=scripts/ycsb_ground_truth.ini
 ```
@@ -195,6 +200,7 @@ cd /workspaces/OpAdviserPrivate
 mysql -ppassword -e"drop database wikipedia;"
 mysql -ppassword -e"create database wikipedia;"
 /oltpbench/oltpbenchmark -b wikipedia -c /oltpbench/config/sample_wikipedia_config.xml  --create=true --load=true
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/wikipedia.ini
 python scripts/optimize.py --config=scripts/wikipedia_ground_truth.ini
 ```
@@ -213,6 +219,7 @@ cd /workspaces/OpAdviserPrivate
 mysql -ppassword -e"drop database tatp;"
 mysql -ppassword -e"create database tatp;"
 /oltpbench/oltpbenchmark -b tatp -c /oltpbench/config/sample_tatp_config.xml  --create=true --load=true
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/tatp.ini
 python scripts/optimize.py --config=scripts/tatp_ground_truth.ini
 ```
@@ -231,6 +238,7 @@ cd /workspaces/OpAdviserPrivate
 mysql -ppassword -e"drop database voter;"
 mysql -ppassword -e"create database voter;"
 /oltpbench/oltpbenchmark -b voter -c /oltpbench/config/sample_voter_config.xml  --create=true --load=true
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/voter.ini
 python scripts/optimize.py --config=scripts/voter_ground_truth.ini
 ```
@@ -359,12 +367,14 @@ ALTER TABLE LINEITEM
 ADD FOREIGN KEY LINEITEM_FK2 (L_PARTKEY,L_SUPPKEY) references PARTSUPP(PS_PARTKEY, PS_SUPPKEY);
 "
 cd /workspaces/OpAdviserPrivate
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/tpch.ini
 python scripts/optimize.py --config=scripts/tpch_ground_truth.ini
 ```
 ```shell
 chmod +x ./job.sh
 ./job.sh
+export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/job.ini
 python scripts/optimize.py --config=scripts/job_ground_truth.ini
 ```
