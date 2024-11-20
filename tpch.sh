@@ -17,8 +17,9 @@ make
 
 mysql -ppassword -e"DROP DATABASE tpch;"
 
-mysql -ppassword -e"CREATE DATABASE tpch;
-USE tpch;
+mysql -ppassword -e"CREATE DATABASE tpch;"
+
+mysql -ppassword --local-infile -e"USE tpch;
 
 CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,
                             N_NAME       CHAR(25) NOT NULL,
