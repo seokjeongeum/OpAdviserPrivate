@@ -128,7 +128,7 @@ for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
     --knob_num=$knob_num \
     --dbname=tpch \
     --workload=tpch \
-    --oltpbench_config_xml=~/jeseok/oltpbench/config/sample_tpcc_config.xml \
+    --oltpbench_config_xml=/oltpbench/config/sample_tpcc_config.xml \
     --task_id="tpch_${lowercase}_${knob_num}" \
     --optimize_method="$optimize_method"
   done
