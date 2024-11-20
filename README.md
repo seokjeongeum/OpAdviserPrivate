@@ -58,6 +58,7 @@ python scripts/optimize.py --config=scripts/twitter.ini
 ```
 ### Find ground truth
 ```shell
+cd /
 rm -rf sysbench
 git clone https://github.com/akopytov/sysbench.git && \
     cd sysbench && \
@@ -80,13 +81,20 @@ sysbench  \
     --mysql-db=sbrw  \
     oltp_read_write  \
     prepare
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/sysbench_rw.ini
 python scripts/optimize.py --config=scripts/sysbench_rw_ground_truth.ini
 ```
 ```shell
-
+cd /
+rm -rf sysbench
+git clone https://github.com/akopytov/sysbench.git && \
+    cd sysbench && \
+    git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c && \
+    ./autogen.sh && \
+    ./configure && \
+    make && make install
 mysql -ppassword -e"drop database sbwrite;"
 mysql -ppassword -e"create database sbwrite;"
 sysbench  \
@@ -102,12 +110,20 @@ sysbench  \
     --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/sysbench_wo.ini
 python scripts/optimize.py --config=scripts/sysbench_wo_ground_truth.ini
 ```
 ```shell
+cd /
+rm -rf sysbench
+git clone https://github.com/akopytov/sysbench.git && \
+    cd sysbench && \
+    git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c && \
+    ./autogen.sh && \
+    ./configure && \
+    make && make install
 mysql -ppassword -e"drop database sbread;"
 mysql -ppassword -e"create database sbread;"
 sysbench  \
@@ -123,7 +139,7 @@ sysbench  \
     --mysql-db=sbread  \
     oltp_read_only  \
     prepare
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/sysbench_ro.ini
 python scripts/optimize.py --config=scripts/sysbench_ro_ground_truth.ini
@@ -132,14 +148,14 @@ python scripts/optimize.py --config=scripts/sysbench_ro_ground_truth.ini
 cd /
 rm -rf oltpbench && \
   git clone https://github.com/oltpbenchmark/oltpbench.git
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 cp -r oltpbench_files/. /oltpbench
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
     ant build && \
     chmod 777 /oltpbench/*
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 mysql -ppassword -e"drop database twitter;"
 mysql -ppassword -e"create database twitter;"
 /oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
@@ -151,14 +167,14 @@ python scripts/optimize.py --config=scripts/twitter_ground_truth.ini
 cd /
 rm -rf oltpbench && \
   git clone https://github.com/oltpbenchmark/oltpbench.git
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 cp -r oltpbench_files/. /oltpbench
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
     ant build && \
     chmod 777 /oltpbench/*
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 mysql -ppassword -e"drop database tpcc;"
 mysql -ppassword -e"create database tpcc;"
 /oltpbench/oltpbenchmark -b tpcc -c /oltpbench/config/sample_tpcc_config.xml  --create=true --load=true
@@ -170,14 +186,14 @@ python scripts/optimize.py --config=scripts/tpcc_ground_truth.ini
 cd /
 rm -rf oltpbench && \
   git clone https://github.com/oltpbenchmark/oltpbench.git
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 cp -r oltpbench_files/. /oltpbench
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
     ant build && \
     chmod 777 /oltpbench/*
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 mysql -ppassword -e"drop database ycsb;"
 mysql -ppassword -e"create database ycsb;"
 /oltpbench/oltpbenchmark -b ycsb -c /oltpbench/config/sample_ycsb_config.xml  --create=true --load=true
@@ -189,14 +205,14 @@ python scripts/optimize.py --config=scripts/ycsb_ground_truth.ini
 cd /
 rm -rf oltpbench && \
   git clone https://github.com/oltpbenchmark/oltpbench.git
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 cp -r oltpbench_files/. /oltpbench
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
     ant build && \
     chmod 777 /oltpbench/*
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 mysql -ppassword -e"drop database wikipedia;"
 mysql -ppassword -e"create database wikipedia;"
 /oltpbench/oltpbenchmark -b wikipedia -c /oltpbench/config/sample_wikipedia_config.xml  --create=true --load=true
@@ -208,14 +224,14 @@ python scripts/optimize.py --config=scripts/wikipedia_ground_truth.ini
 cd /
 rm -rf oltpbench && \
   git clone https://github.com/oltpbenchmark/oltpbench.git
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 cp -r oltpbench_files/. /oltpbench
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
     ant build && \
     chmod 777 /oltpbench/*
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 mysql -ppassword -e"drop database tatp;"
 mysql -ppassword -e"create database tatp;"
 /oltpbench/oltpbenchmark -b tatp -c /oltpbench/config/sample_tatp_config.xml  --create=true --load=true
@@ -227,14 +243,14 @@ python scripts/optimize.py --config=scripts/tatp_ground_truth.ini
 cd /
 rm -rf oltpbench && \
   git clone https://github.com/oltpbenchmark/oltpbench.git
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 cp -r oltpbench_files/. /oltpbench
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
     ant build && \
     chmod 777 /oltpbench/*
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 mysql -ppassword -e"drop database voter;"
 mysql -ppassword -e"create database voter;"
 /oltpbench/oltpbenchmark -b voter -c /oltpbench/config/sample_voter_config.xml  --create=true --load=true
@@ -243,7 +259,7 @@ python scripts/optimize.py --config=scripts/voter.ini
 python scripts/optimize.py --config=scripts/voter_ground_truth.ini
 ```
 ```shell
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 rm -rf queries-tpch-dbgen-mysql 
 git clone https://github.com/seokjeongeum/queries-tpch-dbgen-mysql.git
 cd queries-tpch-dbgen-mysql 
@@ -366,7 +382,7 @@ ADD FOREIGN KEY LINEITEM_FK1 (L_ORDERKEY)  references ORDERS(O_ORDERKEY);
 ALTER TABLE LINEITEM
 ADD FOREIGN KEY LINEITEM_FK2 (L_PARTKEY,L_SUPPKEY) references PARTSUPP(PS_PARTKEY, PS_SUPPKEY);
 "
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/tpch.ini
 python scripts/optimize.py --config=scripts/tpch_ground_truth.ini
