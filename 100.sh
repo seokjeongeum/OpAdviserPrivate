@@ -4,6 +4,7 @@ chmod +x ./cluster.sh
 chmod +x ./job.sh
 ./job.sh
 export PYTHONPATH="."
+service mysql start
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 5 11; do
