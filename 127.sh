@@ -5,7 +5,7 @@ workload="voter"
 cd /
 rm -rf oltpbench && \
   git clone https://github.com/oltpbenchmark/oltpbench.git
-cd /workspaces/OpAdviserPrivate
+cd ~/OpAdviserPrivate
 cp -r oltpbench_files/. /oltpbench
 cd /oltpbench && \
     ant bootstrap && \
