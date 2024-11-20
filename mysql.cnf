@@ -3,7 +3,6 @@ socket		= /var/run/mysqld/mysqld.sock
 nice		= 0
 
 [mysqld]
-innodb_force_recovery = 1
 #
 # * Basic Settings
 #
