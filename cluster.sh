@@ -36,4 +36,3 @@ python -m pip install --upgrade pip
 pip install --user --upgrade setuptools
 pip install --upgrade wheel
 python -m pip install -r requirements.txt
-python -m pip install .

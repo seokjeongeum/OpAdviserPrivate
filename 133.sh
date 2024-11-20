@@ -3,7 +3,7 @@ chmod +x ./cluster.sh
 ./cluster.sh
 chmod +x ./tpch.sh
 ./tpch.sh
-python -m pip install .
+export PYTHONPATH="."
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 50 139; do

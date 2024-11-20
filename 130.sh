@@ -25,7 +25,7 @@ sysbench  \
     oltp_read_write  \
     prepare
 cd ~/OpAdviserPrivate
-python -m pip install .
+export PYTHONPATH="."
 db="rw"
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
