@@ -151,7 +151,7 @@ class DBEnv:
                 print("benchmark result file does not exist!")
             result = parse_sysbench(filename)
         elif self.workload['name'] == 'oltpbench':
-            for _ in range(60):
+            for _ in range(120):
                 if os.path.exists('results/{}.summary'.format(filename)):
                     break
                 time.sleep(1)
