@@ -41,7 +41,7 @@
 	"mounts": [
 		"source=/mnt/sdd/jeseok/mysql,target=/var/lib/mysql,type=bind,consistency=cached",
 		"source=/mnt/sdd/jeseok/lib,target=/usr/local/lib,type=bind,consistency=cached",
-		"source=/mnt/sdd/jeseok/root,target=/root,type=bind,consistency=cached"
+		"source=/mnt/sdd/jeseok/root/PyCharmProjects,target=/root/PyCharmProjects,type=bind,consistency=cached"
 	],
 	"containerEnv": {
 		"DOCKER_CLI_EXPERIMENTAL": "enabled"
