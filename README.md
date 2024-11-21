@@ -5,6 +5,7 @@ Setup dev container using .devcontainer/devcontainer.json
 Fix workspaceMount attribute and mounts attribute in .devcontainer/devcontainer.json to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
 ## Prepare workload
 ```shell
+rm -rf /var/lib/mysql/*
 apt update
 apt install -y mysql-server-5.7 \
     git  \
@@ -29,10 +30,10 @@ apt install -y mysql-server-5.7 \
 ```
 ```shell
 echo '[mysqld]
-port=3307' | sudo tee -a /etc/mysql/my.cnf
+port=3307
+skip-grant-tables' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
-mysql -ppassword -e"set global max_connections=500;"
 mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';
 CREATE USER 'root'@'::1' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
@@ -47,7 +48,6 @@ python -m pip install --upgrade pip
 pip install --user --upgrade setuptools
 pip install --upgrade wheel
 python -m pip install -r requirements.txt
-python -m pip install .
 ```
 ## Run Experiments
 End-to-end Comparison (OpAdviser-w/o-Optimizer (Orange Line) in Figure 7 in the OpAdviser paper)
