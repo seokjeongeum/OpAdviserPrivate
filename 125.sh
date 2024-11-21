@@ -4,9 +4,8 @@ chmod +x ./cluster.sh
 workload="twitter"
 cd /
 rm -rf oltpbench && \
-  git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate
-cp -r oltpbench_files/. /oltpbench
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
@@ -17,7 +16,6 @@ mysql -ppassword -e"create database ${workload};"
 /oltpbench/oltpbenchmark -b $workload -c /oltpbench/config/sample_${workload}_config.xml  --create=true --load=true
 cd ~/OpAdviserPrivate
 export PYTHONPATH="."
-service mysql start
 workload="twitter"
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"

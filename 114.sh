@@ -26,7 +26,6 @@ sysbench  \
     prepare
 cd ~/OpAdviserPrivate
 export PYTHONPATH="."
-service mysql start
 db="read"
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
