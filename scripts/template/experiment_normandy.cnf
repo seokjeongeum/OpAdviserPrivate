@@ -3,6 +3,7 @@ socket		= /var/run/mysqld/mysqld.sock
 nice		= 0
 
 [mysqld]
+skip_networking=0
 #
 # * Basic Settings
 #
