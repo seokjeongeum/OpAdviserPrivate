@@ -23,8 +23,6 @@ echo '{
 }' | sudo tee /etc/docker/daemon.json
 sudo usermod -a -G docker $USER
 sudo chmod 666 /var/run/docker.sock
-git config --global user.email "jeseok@dblab.postech.ac.kr"
-git config --global user.name "Seok, Jeongeum"
 cat ubuntu.tar.gz.part* > ubuntu.tar.gz
 docker load < ubuntu.tar.gz
 mkdir /mnt/nvme0n1/jeseok
