@@ -40,7 +40,7 @@ from autotune.optimizer.bo_optimizer import BO_Optimizer
 from autotune.optimizer.ddpg_optimizer import DDPG_Optimizer
 import pdb
 from autotune.knobs import ts, logger
-
+from scipy.special import softmax
 class PipleLine(BOBase):
     """
     Basic Advisor Class, which adopts a policy to sample a configuration.
@@ -81,7 +81,10 @@ class PipleLine(BOBase):
                  only_knob = False,
                  only_range = False,
                  advisor_kwargs: dict = None,
-                #  latent_dim=0,
+                 #  latent_dim=0,
+                 #2024-11-22 softmax weight
+                 softmax_weight=False,
+                 #2024-11-22 softmax weight
                  **kwargs
                  ):
 
@@ -289,6 +292,9 @@ class PipleLine(BOBase):
                                   )
             self.optimizer_list = [SMAC, MBO, DDPG, GA]
             self.optimizer = SMAC
+    #2024-11-22 softmax weight
+            self.softmax_weight=softmax_weight
+    #2024-11-22 softmax weight
 
 
     def get_max_distence_best(self):
@@ -675,7 +681,12 @@ class PipleLine(BOBase):
             if similarity_list[i] > similarity_threhold:
                 candidate_list.append(i)
                 weight.append(similarity_list[i] / sum(similarity_list))
-
+    #2024-11-22 softmax weight
+        print(weight)
+        if self.softmax_weight:
+            weight=softmax(similarity_list)
+            print(weight)
+    #2024-11-22 softmax weight
         if not len(candidate_list):
             self.logger.info("Remain the space:{}".format(self.config_space))
             return self.config_space
