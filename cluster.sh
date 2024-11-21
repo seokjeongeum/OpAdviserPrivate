@@ -24,12 +24,12 @@ port=3307
 innodb_log_checksums = 0' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
-mysql -ppassword -e"set global max_connections=500;"
-mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';
-CREATE USER 'root'@'::1' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';
-FLUSH PRIVILEGES;"
+mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';"
+mysql -ppassword -e"CREATE USER 'root'@'::1' IDENTIFIED BY 'password';"
+mysql -ppassword -e"GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';"
+mysql -ppassword -e"GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';"
+mysql -ppassword -e"FLUSH PRIVILEGES;"
+mysql -ppassword -e"set global max_connections=100000;"
 update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 python -m pip install --upgrade pip
