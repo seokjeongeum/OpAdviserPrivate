@@ -2,7 +2,7 @@
 workload="ycsb"
 mysql -ppassword -e"drop database ${workload};"
 mysql -ppassword -e"create database ${workload};"
-~/jeseok/oltpbench/oltpbenchmark -b $workload -c ~/jeseok/oltpbench/config/sample_${workload}_config.xml  --create=true --load=true
+/oltpbench/oltpbenchmark -b $workload -c /oltpbench/config/sample_${workload}_config.xml  --create=true --load=true
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
   for knob_num in 57 26 144; do
@@ -12,7 +12,7 @@ for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
     --knob_num=$knob_num \
     --dbname=${workload} \
     --workload=oltpbench_${workload} \
-    --oltpbench_config_xml=~/jeseok/oltpbench/config/sample_${workload}_config.xml \
+    --oltpbench_config_xml=/oltpbench/config/sample_${workload}_config.xml \
     --task_id="${workload}_${lowercase}_${knob_num}" \
     --optimize_method="$optimize_method"
   done
