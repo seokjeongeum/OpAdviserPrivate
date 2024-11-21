@@ -22,6 +22,11 @@ apt install -y mysql-server-5.7 \
 echo '[mysqld]
 port=3307
 innodb_log_checksums = 0' | sudo tee -a /etc/mysql/my.cnf
+mkdir /var/lib/mysql-files
+mkdir /var/log/mysql
+touch /var/log/mysql/error.log
+sudo chmod 777 /var/log/mysql
+sudo chmod 777 /var/log/mysql/error.log
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';"
