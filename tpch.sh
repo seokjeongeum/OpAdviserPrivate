@@ -132,15 +132,3 @@ ADD FOREIGN KEY LINEITEM_FK2 (L_PARTKEY,L_SUPPKEY) references PARTSUPP(PS_PARTKE
 "
 
 cd ~/OpAdviserPrivate
-
-update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
-
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
-
-python -m pip install --upgrade pip
-
-pip install --user --upgrade setuptools
-
-pip install --upgrade wheel
-
-python -m pip install -r requirements.txt
