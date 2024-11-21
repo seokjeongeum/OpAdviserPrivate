@@ -4,9 +4,8 @@ chmod +x ./cluster.sh
 workload="twitter"
 cd /
 rm -rf oltpbench && \
-  git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate
-cp -r oltpbench_files/. /oltpbench
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \

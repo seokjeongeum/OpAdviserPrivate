@@ -33,11 +33,12 @@ echo '[mysqld]
 port=3307' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
-mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';
-CREATE USER 'root'@'::1' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';
-FLUSH PRIVILEGES;"
+mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';"
+mysql -ppassword -e"CREATE USER 'root'@'::1' IDENTIFIED BY 'password';"
+mysql -ppassword -e"GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1';"
+mysql -ppassword -e"GRANT ALL PRIVILEGES ON *.* TO 'root'@'::1';"
+mysql -ppassword -e"FLUSH PRIVILEGES;"
+mysql -ppassword -e"set global max_connections=100000;"
 mkdir /var/log/mysql/base
 touch /var/log/mysql/base/mysql-slow.log
 ```
@@ -149,9 +150,8 @@ python scripts/optimize.py --config=scripts/sysbench_ro_ground_truth.ini
 ```shell
 cd /
 rm -rf oltpbench && \
-  git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate
-cp -r oltpbench_files/. /oltpbench
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
@@ -168,9 +168,8 @@ python scripts/optimize.py --config=scripts/twitter_ground_truth.ini
 ```shell
 cd /
 rm -rf oltpbench && \
-  git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate
-cp -r oltpbench_files/. /oltpbench
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
@@ -185,9 +184,8 @@ python scripts/optimize.py --config=scripts/tpcc_ground_truth.ini
 ```shell
 cd /
 rm -rf oltpbench && \
-  git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate
-cp -r oltpbench_files/. /oltpbench
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
@@ -204,9 +202,8 @@ python scripts/optimize.py --config=scripts/ycsb_ground_truth.ini
 ```shell
 cd /
 rm -rf oltpbench && \
-  git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate
-cp -r oltpbench_files/. /oltpbench
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
@@ -223,9 +220,8 @@ python scripts/optimize.py --config=scripts/wikipedia_ground_truth.ini
 ```shell
 cd /
 rm -rf oltpbench && \
-  git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate
-cp -r oltpbench_files/. /oltpbench
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
@@ -242,9 +238,8 @@ python scripts/optimize.py --config=scripts/tatp_ground_truth.ini
 ```shell
 cd /
 rm -rf oltpbench && \
-  git clone https://github.com/oltpbenchmark/oltpbench.git
-cd ~/OpAdviserPrivate
-cp -r oltpbench_files/. /oltpbench
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
 cd /oltpbench && \
     ant bootstrap && \
     ant resolve && \
