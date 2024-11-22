@@ -39,9 +39,9 @@
 		"--dns=1.0.0.1"
 	],
 	"mounts": [
-		"source=/mnt/sdb1/jeseok/mysql,target=/var/lib/mysql,type=bind,consistency=cached",
-		"source=/mnt/sdb1/jeseok/lib,target=/usr/local/lib,type=bind,consistency=cached",
-		"source=/mnt/sdb1/jeseok/root/PyCharmProjects,target=/root/PyCharmProjects,type=bind,consistency=cached"
+		"source=/mnt/sdc/jeseok/mysql,target=/var/lib/mysql,type=bind,consistency=cached",
+		"source=/mnt/sdc/jeseok/lib,target=/usr/local/lib,type=bind,consistency=cached",
+		"source=/mnt/sdc/jeseok/root/PyCharmProjects,target=/root/PyCharmProjects,type=bind,consistency=cached"
 	],
 	"containerEnv": {
 		"DOCKER_CLI_EXPERIMENTAL": "enabled"
