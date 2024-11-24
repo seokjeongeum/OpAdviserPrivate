@@ -1,3 +1,4 @@
+rm -rf /var/lib/mysql
 apt update
 apt install -y mysql-server-5.7 \
     git  \
