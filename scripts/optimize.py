@@ -13,7 +13,7 @@ if __name__ == '__main__':
         ('sbrw','sysbench','readwrite'),
         ('tatp','oltpbench_tatp',''),
         ('tpcc','oltpbench_tpcc',''),
-        ('twitter','oltpbench_twitter',''),
+        # ('twitter','oltpbench_twitter',''),
         ('voter','oltpbench_voter',''),
         ('wikipedia','oltpbench_wikipedia',''),
         ('ycsb','oltpbench_ycsb',''),
