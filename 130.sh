@@ -37,6 +37,7 @@ for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
     --dbname=sb${db} \
     --workload=sysbench \
     --task_id="sysbench_${lowercase}_${knob_num}" \
-    --optimize_method="$optimize_method"
+    --optimize_method="$optimize_method" \
+    --workload_type=readwrite
   done
 done
