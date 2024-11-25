@@ -293,7 +293,7 @@ class PipleLine(BOBase):
             self.optimizer_list = [SMAC, MBO, DDPG, GA]
             self.optimizer = SMAC
     #2024-11-22 softmax weight
-            self.softmax_weight=softmax_weight
+        self.softmax_weight=softmax_weight
     #2024-11-22 softmax weight
 
 
@@ -677,16 +677,24 @@ class PipleLine(BOBase):
         similarity_threhold = np.quantile(similarity_list, 0.5)
         candidate_list, weight = list(), list()
         surrogate_list = self.history_bo_data + [self.history_container]
+        #2024-11-22 softmax weight
+        softmax_weight=list()
+        #2024-11-22 softmax weight
         for i in range(len(surrogate_list)):
             if similarity_list[i] > similarity_threhold:
                 candidate_list.append(i)
                 weight.append(similarity_list[i] / sum(similarity_list))
-    #2024-11-22 softmax weight
-        print(weight)
+                #2024-11-22 softmax weight
+                softmax_weight.append(similarity_list[i])
+                #2024-11-22 softmax weight
+        #2024-11-22 softmax weight
+        with open(f'{self.task_id}_weights','a')as f:
+            f.write(f'{weight}')
         if self.softmax_weight:
-            weight=softmax(similarity_list)
-            print(weight)
-    #2024-11-22 softmax weight
+            weight=softmax(softmax_weight).tolist()
+            with open(f'{self.task_id}_softmax_weights','a')as f:
+                f.write(f'{weight}')
+        #2024-11-22 softmax weight
         if not len(candidate_list):
             self.logger.info("Remain the space:{}".format(self.config_space))
             return self.config_space
@@ -715,8 +723,10 @@ class PipleLine(BOBase):
         quantile_min = 1 / 1e9
         quantile_max = 1 - 1 / 1e9
         for j in range(len(surrogate_list)):
-            if not j in sample_list:
-                continue
+            #2024-11-22 softmax weight
+            # if not j in sample_list:
+            #     continue
+            #2024-11-22 softmax weight
             quantile = quantile_max - (1 - 2 * max(similarity_list[j] - 0.5, 0)) * (quantile_max - quantile_min)
             ys_source = - surrogate_list[j].get_transformed_perfs()
             performance_threshold = np.quantile(ys_source, quantile)
@@ -729,8 +739,8 @@ class PipleLine(BOBase):
             self.logger.info(pruned_space)
             pruned_space_list.append(pruned_space)
 #code for error case analysis
-            # if not j in sample_list:
-            #     continue
+            if not j in sample_list:
+                continue
 #code for error case analysis
             total_imporve = sum([pruned_space[key][2] for key in list(pruned_space.keys())])
             for key in pruned_space.keys():
@@ -739,6 +749,13 @@ class PipleLine(BOBase):
                         # print((key,pruned_space[key] ))
                         important_dict[key] = important_dict[key] + similarity_list[j] / sum(
                             [similarity_list[i] for i in sample_list])
+
+        #2024-11-22 softmax weight
+        with open(f'{self.task_id}_sample_list','a')as f:
+            f.write(f'{sample_list}')
+        with open(f'{self.task_id}_pruned_space_list','a')as f:
+            f.write(f'{pruned_space_list}')
+        #2024-11-22 softmax weight
 
 #code for error case analysis
 #         with open(
@@ -850,7 +867,7 @@ class PipleLine(BOBase):
 # ''')
 # #         st+=(f'''not_sampled_important_spaces={not_sampled.tolist()}
 # # ''')
-#         pruned_space_list=np.array(pruned_space_list)[sample_list].tolist()
+        pruned_space_list=np.array(pruned_space_list)[sample_list].tolist()
 #         count_arrays={}
 #         count_arrays2={}
 #         values_dicts={}
