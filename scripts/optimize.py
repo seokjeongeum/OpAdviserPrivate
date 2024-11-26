@@ -8,14 +8,14 @@ import argparse
 if __name__ == '__main__':
     #2024-11-22 softmax weight
     for dbname,workload,workload_type in [
-        ('sbread','sysbench','read'),
+        # ('sbread','sysbench','read'),
         ('sbwrite','sysbench','write'),
         ('sbrw','sysbench','readwrite'),
         ('tatp','oltpbench_tatp',''),
         ('tpcc','oltpbench_tpcc',''),
         # ('twitter','oltpbench_twitter',''),
         ('voter','oltpbench_voter',''),
-        ('wikipedia','oltpbench_wikipedia',''),
+        # ('wikipedia','oltpbench_wikipedia',''),
         ('ycsb','oltpbench_ycsb',''),
     ]:
         #2024-11-22 softmax weight
