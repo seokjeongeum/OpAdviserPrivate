@@ -689,11 +689,13 @@ class PipleLine(BOBase):
                 #2024-11-22 softmax weight
         #2024-11-22 softmax weight
         with open(f'{self.task_id}_weights','a')as f:
-            f.write(f'{weight}')
+            f.write(f'''{weight}
+''')
         if self.softmax_weight:
             weight=softmax(softmax_weight).tolist()
             with open(f'{self.task_id}_softmax_weights','a')as f:
-                f.write(f'{weight}')
+                f.write(f'''{weight}
+''')
         #2024-11-22 softmax weight
         if not len(candidate_list):
             self.logger.info("Remain the space:{}".format(self.config_space))
@@ -752,9 +754,11 @@ class PipleLine(BOBase):
 
         #2024-11-22 softmax weight
         with open(f'{self.task_id}_sample_list','a')as f:
-            f.write(f'{sample_list}')
+            f.write(f'''{sample_list}
+''')
         with open(f'{self.task_id}_pruned_space_list','a')as f:
-            f.write(f'{pruned_space_list}')
+            f.write(f'''{pruned_space_list}
+''')
         #2024-11-22 softmax weight
 
 #code for error case analysis

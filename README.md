@@ -171,6 +171,8 @@ cd /oltpbench && \
     ant build && \
     chmod 777 /oltpbench/*
 cd ~/OpAdviserPrivate
+mysql -ppassword -e"drop database tpcc;"
+mysql -ppassword -e"create database tpcc;"
 /oltpbench/oltpbenchmark -b tpcc -c /oltpbench/config/sample_tpcc_config.xml  --create=true --load=true
 export PYTHONPATH="."
 python scripts/optimize.py --config=scripts/tpcc.ini
