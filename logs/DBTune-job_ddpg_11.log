@@ -1,0 +1,335 @@
+[INFO] [2024-11-24 06:01:44,931] [DBTune-job_ddpg_11] Start new DBTune task
+[INFO] [2024-11-24 06:01:45,474] [DDPG_Optimizer] Load state mean and var.
+[INFO] [2024-11-24 06:01:51,193] [DDPG] Finish Initializing Networks
+[INFO] [2024-11-24 06:01:51,209] [DDPG] DDPG Initialzed!
+[INFO] [2024-11-24 06:01:51,246] [autotune] [step 1] generate knobs: {'innodb_adaptive_hash_index_parts': 8, 'innodb_compression_failure_threshold_pct': 5, 'innodb_online_alter_log_max_size': 134217000, 'innodb_open_files': 2000, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 20, 'max_heap_table_size': 16777216, 'query_alloc_block_size': 8192, 'table_open_cache': 2000}
+
+[INFO] [2024-11-24 06:01:56,447] [autotune] Close db successfully
+[INFO] [2024-11-24 06:01:56,447] [autotune] mysql is shut down
+[INFO] [2024-11-24 06:01:56,452] [autotune] generated config file done
+[INFO] [2024-11-24 06:01:56,494] [autotune] wait for connection
+[INFO] [2024-11-24 06:01:58,504] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 06:01:58,505] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 06:01:58,505] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 06:01:58,505] [autotune] mysql is up
+[INFO] [2024-11-24 06:01:58,505] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 06:02:03,887] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732428123.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 06:05:16,260] [autotune] internal metrics: [3695301.5714285714, 13614813.2, 2167440764.3428574, 0.0, 0.0, 132303.88571428572, 0.0, 4063830718.1714287, 0.0, 248036.54285714286, 0.0, 398374.6857142857, 8908.8, 655320.0, 4538.885714285714, 0.0, 66353915.71428572, 127765.0, 10737418240.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 0.0, 479218.8, 0.0, 0.0, 0.0, 0.0, 0.0, 3026203.9714285713, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 132301.91428571427, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-24 06:05:16,282] [DDPG_Optimizer] New Episode-1, initialize
+[INFO] [2024-11-24 06:05:16,305] [DBTune-job_ddpg_11] Iteration 1, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:13:02,267] [DBTune-job_ddpg_11] Load 1 iterations from repo/history_job_ddpg_11.json
+[INFO] [2024-11-24 08:13:02,686] [DDPG_Optimizer] Load state mean and var.
+[INFO] [2024-11-24 08:13:07,529] [DDPG] Finish Initializing Networks
+[INFO] [2024-11-24 08:13:07,530] [DDPG] DDPG Initialzed!
+[INFO] [2024-11-24 08:13:07,530] [DDPG_Optimizer] New Episode-1, initialize
+[INFO] [2024-11-24 08:13:07,594] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:13:07,598] [autotune] [step 1] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:13:12,793] [autotune] Close db successfully
+[INFO] [2024-11-24 08:13:12,794] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:13:12,796] [autotune] generated config file done
+[INFO] [2024-11-24 08:13:12,829] [autotune] wait for connection
+[INFO] [2024-11-24 08:13:14,841] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:13:14,841] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:13:14,841] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:13:14,841] [autotune] mysql is up
+[INFO] [2024-11-24 08:13:14,842] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:13:20,277] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732436000.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:16:32,700] [autotune] internal metrics: [4683857.342857143, 14444208.971428571, 2064662528.0, 2196392.2285714285, 1.9714285714285715, 126028.82857142857, 134.05714285714285, 3858577583.542857, 49152.0, 235508.88571428572, 3.0, 409731.02857142856, 10080.085714285715, 655320.0, 4892.428571428572, 0.0, 72600633.57142857, 121136.4, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 118.28571428571429, 0.0, 0.0, 16384.0, 0.0, 559197.0285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 2795616.4857142856, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 126020.94285714286, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-24 08:16:32,919] [DBTune-job_ddpg_11] Iteration 2, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:16:33,024] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:16:33,026] [autotune] [step 2] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:16:38,246] [autotune] Close db successfully
+[INFO] [2024-11-24 08:16:38,247] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:16:38,249] [autotune] generated config file done
+[INFO] [2024-11-24 08:16:38,293] [autotune] wait for connection
+[INFO] [2024-11-24 08:16:40,301] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:16:40,302] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:16:40,302] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:16:40,302] [autotune] mysql is up
+[INFO] [2024-11-24 08:16:40,302] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:16:45,765] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732436205.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:19:58,211] [autotune] internal metrics: [4914030.171428571, 14734503.142857144, 2243722327.7714286, 2196392.2285714285, 1.9714285714285715, 136960.4, 134.05714285714285, 3787766403.6571426, 49152.0, 231186.91428571427, 3.0, 414025.3714285714, 10067.714285714286, 655280.0, 5259.114285714286, 0.0, 74331027.4, 131699.3142857143, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 112.37142857142857, 0.0, 0.0, 16384.0, 0.0, 579527.0571428571, 0.0, 0.0, 0.0, 0.0, 0.0, 2781539.8285714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136955.8, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:19:58,220] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:19:58,420] [DBTune-job_ddpg_11] Iteration 3, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:19:58,505] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:19:58,505] [autotune] [step 3] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:20:03,729] [autotune] Close db successfully
+[INFO] [2024-11-24 08:20:03,729] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:20:03,733] [autotune] generated config file done
+[INFO] [2024-11-24 08:20:03,772] [autotune] wait for connection
+[INFO] [2024-11-24 08:20:05,782] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:20:05,782] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:20:05,783] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:20:05,783] [autotune] mysql is up
+[INFO] [2024-11-24 08:20:05,783] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:20:11,602] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732436411.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:23:23,932] [autotune] internal metrics: [4886141.685714286, 14503875.57142857, 2231728303.542857, 2196392.2285714285, 1.9714285714285715, 136223.08571428573, 134.05714285714285, 3756754300.3428574, 49152.0, 229294.08571428573, 3.0, 416241.4857142857, 9784.42857142857, 655320.0, 5254.5142857142855, 0.0, 73455679.6, 130965.94285714286, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 126.17142857142858, 0.0, 0.0, 16384.0, 0.0, 566380.9142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 2892499.057142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136219.8, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:23:23,934] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:23:24,155] [DBTune-job_ddpg_11] Iteration 4, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:23:24,217] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:23:24,217] [autotune] [step 4] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:23:29,519] [autotune] Close db successfully
+[INFO] [2024-11-24 08:23:29,519] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:23:29,522] [autotune] generated config file done
+[INFO] [2024-11-24 08:23:29,567] [autotune] wait for connection
+[INFO] [2024-11-24 08:23:31,577] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:23:31,578] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:23:31,578] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:23:31,579] [autotune] mysql is up
+[INFO] [2024-11-24 08:23:31,579] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:23:37,297] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732436617.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:26:49,422] [autotune] internal metrics: [5037558.571428572, 14942584.142857144, 2244820523.885714, 2196392.2285714285, 1.9714285714285715, 137020.2, 134.05714285714285, 3792138591.0857143, 49152.0, 231453.77142857143, 3.0, 413758.1142857143, 10068.085714285715, 655280.0, 5201.942857142857, 0.0, 75571786.05714285, 131788.6857142857, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 126.17142857142858, 0.0, 0.0, 16384.0, 0.0, 574007.0571428571, 0.0, 0.0, 0.0, 0.0, 0.0, 2847013.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 137018.88571428572, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:26:49,429] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:26:49,636] [DBTune-job_ddpg_11] Iteration 5, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:26:49,713] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:26:49,729] [autotune] [step 5] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:26:54,893] [autotune] Close db successfully
+[INFO] [2024-11-24 08:26:54,893] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:26:54,896] [autotune] generated config file done
+[INFO] [2024-11-24 08:26:54,937] [autotune] wait for connection
+[INFO] [2024-11-24 08:26:56,952] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:26:56,953] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:26:56,953] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:26:56,953] [autotune] mysql is up
+[INFO] [2024-11-24 08:26:56,953] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:27:02,654] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732436822.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:30:14,933] [autotune] internal metrics: [4890030.657142857, 14448101.228571428, 2211185576.2285714, 2196392.2285714285, 1.9714285714285715, 134970.57142857142, 134.05714285714285, 3823186271.0857143, 49152.0, 233348.77142857143, 3.0, 411703.28571428574, 10267.914285714285, 655320.0, 4948.942857142857, 0.0, 73275997.68571429, 130019.65714285715, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 114.34285714285714, 0.0, 0.0, 16384.0, 0.0, 570837.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2800790.1714285715, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 134966.62857142856, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:30:14,949] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:30:15,549] [DDPG_Optimizer] Save model_params to job_ddpg_11_5
+[INFO] [2024-11-24 08:30:15,549] [DBTune-job_ddpg_11] Iteration 6, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:30:15,586] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:30:15,586] [autotune] [step 6] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:30:20,743] [autotune] Close db successfully
+[INFO] [2024-11-24 08:30:20,743] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:30:20,746] [autotune] generated config file done
+[INFO] [2024-11-24 08:30:20,787] [autotune] wait for connection
+[INFO] [2024-11-24 08:30:22,798] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:30:22,799] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:30:22,799] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:30:22,799] [autotune] mysql is up
+[INFO] [2024-11-24 08:30:22,800] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:30:28,286] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732437028.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:33:40,537] [autotune] internal metrics: [4899298.342857143, 14761229.142857144, 2200645046.857143, 2217925.4857142856, 1.9714285714285715, 134328.54285714286, 135.37142857142857, 3767173588.114286, 49152.0, 229930.0, 3.0, 415458.2, 9891.771428571428, 655280.0, 5236.114285714286, 0.0, 74525243.34285714, 129058.25714285714, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 113.02857142857142, 0.0, 0.0, 16384.0, 0.0, 560703.2, 0.0, 0.0, 0.0, 0.0, 0.0, 2854747.5142857144, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 134325.91428571427, 135.37142857142857, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:33:40,556] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:33:40,713] [DBTune-job_ddpg_11] Iteration 7, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:33:40,773] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:33:40,774] [autotune] [step 7] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:33:46,024] [autotune] Close db successfully
+[INFO] [2024-11-24 08:33:46,024] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:33:46,029] [autotune] generated config file done
+[INFO] [2024-11-24 08:33:46,078] [autotune] wait for connection
+[INFO] [2024-11-24 08:33:48,091] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:33:48,092] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:33:48,092] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:33:48,092] [autotune] mysql is up
+[INFO] [2024-11-24 08:33:48,093] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:33:53,543] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732437233.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:37:06,877] [autotune] internal metrics: [4860005.8, 14660182.257142857, 2198190255.542857, 2217925.4857142856, 1.9714285714285715, 134176.74285714285, 135.37142857142857, 3854546183.3142858, 49152.0, 235262.82857142857, 3.0, 409822.22857142857, 10194.942857142858, 655280.0, 5097.457142857143, 0.0, 73900681.62857144, 129078.62857142858, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 103.17142857142858, 0.0, 0.0, 16384.0, 0.0, 571442.8857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 2811213.1142857145, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 134175.42857142858, 135.37142857142857, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:37:06,885] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:37:07,141] [DBTune-job_ddpg_11] Iteration 8, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:37:07,199] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:37:07,200] [autotune] [step 8] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:37:12,313] [autotune] Close db successfully
+[INFO] [2024-11-24 08:37:12,314] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:37:12,318] [autotune] generated config file done
+[INFO] [2024-11-24 08:37:12,372] [autotune] wait for connection
+[INFO] [2024-11-24 08:37:14,379] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:37:14,380] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:37:14,380] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:37:14,380] [autotune] mysql is up
+[INFO] [2024-11-24 08:37:14,380] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:37:19,931] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732437439.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:40:32,222] [autotune] internal metrics: [4963946.742857143, 14832947.742857143, 2229779543.7714286, 2196392.2285714285, 1.9714285714285715, 136106.77142857143, 134.05714285714285, 3817310968.6857142, 49152.0, 232990.17142857143, 3.0, 412051.0571428572, 10238.714285714286, 655280.0, 5242.028571428571, 0.0, 74932592.4, 130864.08571428571, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 106.45714285714286, 0.0, 0.0, 16384.0, 0.0, 570731.8571428572, 0.0, 0.0, 0.0, 0.0, 0.0, 2830912.942857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136105.45714285714, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:40:32,226] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:40:32,493] [DBTune-job_ddpg_11] Iteration 9, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:40:32,560] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:40:32,561] [autotune] [step 9] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:40:37,863] [autotune] Close db successfully
+[INFO] [2024-11-24 08:40:37,866] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:40:37,870] [autotune] generated config file done
+[INFO] [2024-11-24 08:40:37,909] [autotune] wait for connection
+[INFO] [2024-11-24 08:40:39,921] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:40:39,922] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:40:39,922] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:40:39,922] [autotune] mysql is up
+[INFO] [2024-11-24 08:40:39,923] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:40:45,376] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732437645.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:43:57,980] [autotune] internal metrics: [4804018.542857143, 14564650.771428572, 2235776555.885714, 2196392.2285714285, 1.9714285714285715, 136471.48571428572, 134.05714285714285, 3780783074.742857, 49152.0, 230760.6857142857, 3.0, 414662.3142857143, 9897.0, 655320.0, 5200.628571428571, 0.0, 73317333.94285715, 131268.88571428572, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 118.28571428571429, 0.0, 0.0, 16384.0, 0.0, 561359.0285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 2890642.6285714284, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136467.54285714286, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:43:58,013] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:43:58,224] [DBTune-job_ddpg_11] Iteration 10, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:43:58,282] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:43:58,284] [autotune] [step 10] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:44:03,524] [autotune] Close db successfully
+[INFO] [2024-11-24 08:44:03,526] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:44:03,532] [autotune] generated config file done
+[INFO] [2024-11-24 08:44:03,588] [autotune] wait for connection
+[INFO] [2024-11-24 08:44:05,600] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:44:05,600] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:44:05,600] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:44:05,601] [autotune] mysql is up
+[INFO] [2024-11-24 08:44:05,601] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:44:11,133] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732437851.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:47:24,055] [autotune] internal metrics: [4829549.857142857, 14869164.857142856, 2234581460.114286, 2196392.2285714285, 1.9714285714285715, 136398.54285714286, 134.05714285714285, 3805583301.4857144, 49152.0, 232274.34285714285, 3.0, 413016.6285714286, 9989.028571428571, 655280.0, 5135.571428571428, 0.0, 74739150.57142857, 131249.82857142857, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 118.28571428571429, 0.0, 0.0, 16384.0, 0.0, 563935.0285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 2837867.4857142856, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136365.6857142857, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:47:24,068] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:47:24,329] [DDPG_Optimizer] Save model_params to job_ddpg_11_10
+[INFO] [2024-11-24 08:47:24,380] [DBTune-job_ddpg_11] Iteration 11, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:47:24,492] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:47:24,495] [autotune] [step 11] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:47:29,711] [autotune] Close db successfully
+[INFO] [2024-11-24 08:47:29,712] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:47:29,716] [autotune] generated config file done
+[INFO] [2024-11-24 08:47:29,766] [autotune] wait for connection
+[INFO] [2024-11-24 08:47:31,775] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:47:31,776] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:47:31,776] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:47:31,776] [autotune] mysql is up
+[INFO] [2024-11-24 08:47:31,777] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:47:37,475] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732438057.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:50:49,753] [autotune] internal metrics: [4616760.428571428, 14401907.371428572, 2206749725.257143, 2196392.2285714285, 1.9714285714285715, 134699.17142857143, 134.05714285714285, 3860541322.9714284, 49152.0, 235628.7142857143, 3.0, 409663.9142857143, 10027.285714285714, 655320.0, 4899.0, 0.0, 72191356.45714286, 129799.5142857143, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 117.62857142857143, 0.0, 0.0, 16384.0, 0.0, 559681.3428571429, 0.0, 0.0, 0.0, 0.0, 0.0, 2866852.0857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 134694.57142857142, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:50:49,770] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:50:49,971] [DBTune-job_ddpg_11] Iteration 12, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:50:50,030] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:50:50,030] [autotune] [step 12] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:50:54,197] [autotune] Close db successfully
+[INFO] [2024-11-24 08:50:54,198] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:50:54,200] [autotune] generated config file done
+[INFO] [2024-11-24 08:50:54,237] [autotune] wait for connection
+[INFO] [2024-11-24 08:50:56,254] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:50:56,255] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:50:56,255] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:50:56,256] [autotune] mysql is up
+[INFO] [2024-11-24 08:50:56,256] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:51:01,926] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732438261.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:54:13,705] [autotune] internal metrics: [4824307.171428571, 14702932.028571429, 2244206826.0571427, 2207158.8571428573, 1.9714285714285715, 136988.65714285715, 134.71428571428572, 3700331549.257143, 49152.0, 225850.3142857143, 3.0, 419616.45714285714, 9813.228571428572, 655280.0, 5291.314285714286, 0.0, 74057201.22857143, 131696.0285714286, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 110.4, 0.0, 0.0, 16384.0, 0.0, 557644.8571428572, 0.0, 0.0, 0.0, 0.0, 0.0, 2814221.5142857144, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136982.08571428573, 134.71428571428572, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:54:13,711] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:54:13,903] [DBTune-job_ddpg_11] Iteration 13, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:54:13,946] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:54:13,947] [autotune] [step 13] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:54:19,095] [autotune] Close db successfully
+[INFO] [2024-11-24 08:54:19,100] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:54:19,105] [autotune] generated config file done
+[INFO] [2024-11-24 08:54:19,166] [autotune] wait for connection
+[INFO] [2024-11-24 08:54:21,180] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:54:21,181] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:54:21,181] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:54:21,181] [autotune] mysql is up
+[INFO] [2024-11-24 08:54:21,181] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:54:27,060] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732438467.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 08:57:39,264] [autotune] internal metrics: [4842496.885714286, 14608246.942857143, 2237531516.3428574, 2196392.2285714285, 1.9714285714285715, 136579.25714285715, 134.05714285714285, 3778027754.0571427, 49152.0, 230592.51428571428, 3.0, 414874.17142857146, 9853.285714285714, 655320.0, 5003.4857142857145, 0.0, 73592153.05714285, 131574.45714285714, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 113.02857142857142, 0.0, 0.0, 16384.0, 0.0, 569211.8857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 2871093.285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136575.9714285714, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 08:57:39,297] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 08:57:39,484] [DBTune-job_ddpg_11] Iteration 14, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 08:57:39,523] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 08:57:39,523] [autotune] [step 14] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 08:57:44,823] [autotune] Close db successfully
+[INFO] [2024-11-24 08:57:44,824] [autotune] mysql is shut down
+[INFO] [2024-11-24 08:57:44,827] [autotune] generated config file done
+[INFO] [2024-11-24 08:57:44,868] [autotune] wait for connection
+[INFO] [2024-11-24 08:57:46,878] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 08:57:46,878] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 08:57:46,878] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 08:57:46,878] [autotune] mysql is up
+[INFO] [2024-11-24 08:57:46,879] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 08:57:52,599] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732438672.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 09:01:04,661] [autotune] internal metrics: [4649438.171428571, 14517217.542857142, 2224773061.4857144, 2196392.2285714285, 1.9714285714285715, 135802.51428571428, 134.05714285714285, 3785526944.9142857, 49152.0, 231050.22857142857, 3.0, 414521.34285714285, 9708.4, 655280.0, 4980.4857142857145, 0.0, 72730789.25714286, 130821.37142857142, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 118.28571428571429, 0.0, 0.0, 16384.0, 0.0, 553755.8857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 2870380.285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 135799.22857142857, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 09:01:04,674] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 09:01:04,833] [DBTune-job_ddpg_11] Iteration 15, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 09:01:04,893] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 09:01:04,893] [autotune] [step 15] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 09:01:10,031] [autotune] Close db successfully
+[INFO] [2024-11-24 09:01:10,036] [autotune] mysql is shut down
+[INFO] [2024-11-24 09:01:10,041] [autotune] generated config file done
+[INFO] [2024-11-24 09:01:10,097] [autotune] wait for connection
+[INFO] [2024-11-24 09:01:12,109] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 09:01:12,110] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 09:01:12,110] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 09:01:12,111] [autotune] mysql is up
+[INFO] [2024-11-24 09:01:12,111] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 09:01:18,026] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732438878.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 09:04:30,523] [autotune] internal metrics: [4605427.342857143, 14294016.342857143, 2228584448.0, 2196392.2285714285, 1.9714285714285715, 136035.8, 134.05714285714285, 3699632186.5142856, 49152.0, 225807.62857142856, 3.0, 420176.4, 9335.942857142858, 655320.0, 4985.742857142857, 0.0, 71774741.68571429, 131048.74285714286, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 123.54285714285714, 0.0, 0.0, 16384.0, 0.0, 543493.9428571429, 0.0, 0.0, 0.0, 0.0, 0.0, 2872573.8285714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136033.82857142857, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 09:04:30,525] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 09:04:31,744] [DDPG_Optimizer] Save model_params to job_ddpg_11_15
+[INFO] [2024-11-24 09:04:31,745] [DBTune-job_ddpg_11] Iteration 16, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 09:04:31,806] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 09:04:31,807] [autotune] [step 16] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 09:04:36,962] [autotune] Close db successfully
+[INFO] [2024-11-24 09:04:36,963] [autotune] mysql is shut down
+[INFO] [2024-11-24 09:04:36,966] [autotune] generated config file done
+[INFO] [2024-11-24 09:04:37,013] [autotune] wait for connection
+[INFO] [2024-11-24 09:04:39,024] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 09:04:39,025] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 09:04:39,025] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 09:04:39,025] [autotune] mysql is up
+[INFO] [2024-11-24 09:04:39,025] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 09:04:44,602] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732439084.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 09:07:56,885] [autotune] internal metrics: [4939915.685714286, 14884442.771428572, 2242527232.0, 2217925.4857142856, 1.9714285714285715, 136884.17142857143, 135.37142857142857, 3800839431.3142858, 49152.0, 231984.82857142857, 3.0, 413082.71428571426, 10252.42857142857, 655320.0, 5113.885714285714, 0.0, 74962469.4, 131769.62857142856, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 113.02857142857142, 0.0, 0.0, 16384.0, 0.0, 574081.9714285714, 0.0, 0.0, 0.0, 0.0, 0.0, 2856844.4571428574, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 136882.85714285713, 135.37142857142857, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 09:07:56,889] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 09:07:57,077] [DBTune-job_ddpg_11] Iteration 17, objective value: [-35.68421052631579].
+[INFO] [2024-11-24 09:07:57,205] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 09:07:57,218] [autotune] [step 17] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 09:08:02,404] [autotune] Close db successfully
+[INFO] [2024-11-24 09:08:02,405] [autotune] mysql is shut down
+[INFO] [2024-11-24 09:08:02,409] [autotune] generated config file done
+[INFO] [2024-11-24 09:08:02,460] [autotune] wait for connection
+[INFO] [2024-11-24 09:08:04,471] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 09:08:04,472] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 09:08:04,472] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 09:08:04,472] [autotune] mysql is up
+[INFO] [2024-11-24 09:08:04,473] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 09:08:09,949] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732439289.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 09:11:23,890] [autotune] internal metrics: [4727812.971428571, 14542211.314285714, 2203541269.9428573, 2196392.2285714285, 1.9714285714285715, 134505.3142857143, 134.05714285714285, 3891926981.4857144, 49152.0, 237544.37142857144, 3.0, 407810.6, 9925.028571428571, 655280.0, 5011.371428571429, 0.0, 73167536.91428572, 129493.94285714286, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 123.54285714285714, 0.0, 0.0, 16384.0, 0.0, 566847.4857142858, 0.0, 0.0, 0.0, 0.0, 0.0, 2772310.257142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 134499.4, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 09:11:23,892] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,454] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,460] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,461] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,465] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,472] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,473] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,483] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,487] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,489] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,494] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,500] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,505] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,510] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,511] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-24 22:57:32,516] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-24 22:57:32,522] [DBTune-job_ddpg_11] Load 17 iterations from repo/history_job_ddpg_11.json
+[INFO] [2024-11-24 22:57:33,177] [DDPG_Optimizer] Load state mean and var.
+[INFO] [2024-11-24 22:57:37,019] [DDPG] Finish Initializing Networks
+[INFO] [2024-11-24 22:57:37,022] [DDPG] DDPG Initialzed!
+[INFO] [2024-11-24 22:57:37,054] [DDPG_Optimizer] New Episode-1, initialize
+[INFO] [2024-11-24 22:57:37,961] [DDPG_Optimizer] Save model_params to job_ddpg_11_5
+[INFO] [2024-11-24 22:57:38,841] [DDPG_Optimizer] Save model_params to job_ddpg_11_10
+[INFO] [2024-11-24 22:57:39,677] [DDPG_Optimizer] Save model_params to job_ddpg_11_15
+[INFO] [2024-11-24 22:57:39,894] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-24 22:57:39,895] [autotune] [step 1] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 1024, 'table_open_cache': 1}
+
+[INFO] [2024-11-24 22:57:44,990] [autotune] Close db successfully
+[INFO] [2024-11-24 22:57:44,991] [autotune] mysql is shut down
+[INFO] [2024-11-24 22:57:44,994] [autotune] generated config file done
+[INFO] [2024-11-24 22:57:45,039] [autotune] wait for connection
+[INFO] [2024-11-24 22:57:47,050] [autotune] Connected to MySQL db
+[INFO] [2024-11-24 22:57:47,051] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-24 22:57:47,051] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-24 22:57:47,052] [autotune] mysql is up
+[INFO] [2024-11-24 22:57:47,052] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-24 22:57:52,434] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732489072.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-24 23:01:04,220] [autotune] internal metrics: [4858805.2, 15492523.342857143, 2008449960.2285714, 2196392.2285714285, 1.9714285714285715, 122591.31428571428, 134.05714285714285, 3841557416.2285714, 49152.0, 234470.05714285714, 3.0, 410807.45714285714, 10002.485714285714, 655280.0, 4385.114285714286, 0.0, 77687354.31428571, 118204.22857142857, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 91.34285714285714, 0.0, 0.0, 16384.0, 0.0, 552828.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2980044.285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 122590.0, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[WARNING] [2024-11-24 23:01:04,227] [HistoryContainer] Repeated configuration detected!
