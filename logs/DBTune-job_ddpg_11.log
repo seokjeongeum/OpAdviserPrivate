@@ -333,3 +333,1312 @@
 [INFO] [2024-11-24 22:57:52,434] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732489072.log /var/run/mysqld/mysqld.sock
 [INFO] [2024-11-24 23:01:04,220] [autotune] internal metrics: [4858805.2, 15492523.342857143, 2008449960.2285714, 2196392.2285714285, 1.9714285714285715, 122591.31428571428, 134.05714285714285, 3841557416.2285714, 49152.0, 234470.05714285714, 3.0, 410807.45714285714, 10002.485714285714, 655280.0, 4385.114285714286, 0.0, 77687354.31428571, 118204.22857142857, 10737418240.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 91.34285714285714, 0.0, 0.0, 16384.0, 0.0, 552828.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2980044.285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 122590.0, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
 [WARNING] [2024-11-24 23:01:04,227] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,390] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,391] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,391] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,392] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,393] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,394] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,395] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,395] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,396] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,397] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,398] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,399] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,400] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,400] [HistoryContainer] Repeated configuration detected!
+[WARNING] [2024-11-26 11:48:17,401] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-26 11:48:17,402] [DBTune-job_ddpg_11] Load 17 iterations from repo/history_job_ddpg_11.json
+[INFO] [2024-11-26 11:48:17,473] [DDPG_Optimizer] Load state mean and var.
+[INFO] [2024-11-26 11:48:18,369] [DDPG] Finish Initializing Networks
+[INFO] [2024-11-26 11:48:18,370] [DDPG] DDPG Initialzed!
+[INFO] [2024-11-26 11:48:18,380] [DDPG_Optimizer] New Episode-1, initialize
+[INFO] [2024-11-26 11:48:18,433] [DDPG_Optimizer] Save model_params to job_ddpg_11_5
+[INFO] [2024-11-26 11:48:18,471] [DDPG_Optimizer] Save model_params to job_ddpg_11_10
+[INFO] [2024-11-26 11:48:18,517] [DDPG_Optimizer] Save model_params to job_ddpg_11_15
+[INFO] [2024-11-26 11:48:18,525] [autotune] [step 1] generate knobs: {'innodb_adaptive_hash_index_parts': 251, 'innodb_compression_failure_threshold_pct': 50, 'innodb_online_alter_log_max_size': 9015913333386216000, 'innodb_open_files': 332160, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 514, 'max_delayed_threads': 7896, 'max_heap_table_size': 527212339, 'query_alloc_block_size': 72696541, 'table_open_cache': 135135}
+
+[INFO] [2024-11-26 11:48:18,557] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:48:18,557] [autotune] modify innodb_thread_concurrency
+[INFO] [2024-11-26 11:48:18,560] [autotune] generated config file done
+[INFO] [2024-11-26 11:48:18,585] [autotune] wait for connection
+[INFO] [2024-11-26 11:48:20,594] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 11:48:20,595] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 11:48:20,595] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 11:48:20,595] [autotune] mysql is up
+[INFO] [2024-11-26 11:48:20,595] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 11:48:25,622] [autotune] [2024-11-26 11:48:25] Knobs applied online!
+[INFO] [2024-11-26 11:48:25,932] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732621705.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 11:51:36,605] [autotune] internal metrics: [12285568.285714285, 39463359.91428571, 1220644981.0285714, 0.0, 0.0, 74504.88571428572, 0.0, 3719230259.2, 0.0, 227003.77142857143, 0.0, 595152.4571428571, 29811.742857142857, 851968.0, 15922.57142857143, 0.0, 187642619.74285713, 58579.02857142857, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3090896.4, 3485473.8857142855, 0.0, 0.0, 0.0, 0.0, 853541.1714285715, 16356692905.62857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 74498.31428571428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 11:51:39,381] [DBTune-job_ddpg_11] Iteration 18, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 11:51:39,392] [autotune] [step 2] generate knobs: {'innodb_adaptive_hash_index_parts': 260, 'innodb_compression_failure_threshold_pct': 50, 'innodb_online_alter_log_max_size': 9246059258902104000, 'innodb_open_files': 324481, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 502, 'max_delayed_threads': 7751, 'max_heap_table_size': 516190684, 'query_alloc_block_size': 75499856, 'table_open_cache': 134521}
+
+[INFO] [2024-11-26 11:51:44,427] [autotune] Close db successfully
+[INFO] [2024-11-26 11:51:44,428] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:51:44,428] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:51:44,429] [DBTune-job_ddpg_11] Iteration 19, objective value: [2147483647].
+[INFO] [2024-11-26 11:51:44,440] [autotune] [step 3] generate knobs: {'innodb_adaptive_hash_index_parts': 259, 'innodb_compression_failure_threshold_pct': 50, 'innodb_online_alter_log_max_size': 8977474498719011000, 'innodb_open_files': 326244, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 518, 'max_delayed_threads': 7863, 'max_heap_table_size': 526326465, 'query_alloc_block_size': 73909900, 'table_open_cache': 139638}
+
+[INFO] [2024-11-26 11:51:44,482] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:51:44,482] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:51:44,484] [DBTune-job_ddpg_11] Iteration 20, objective value: [2147483647].
+[INFO] [2024-11-26 11:51:44,498] [autotune] [step 4] generate knobs: {'innodb_adaptive_hash_index_parts': 262, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9045511016178164000, 'innodb_open_files': 330151, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 522, 'max_delayed_threads': 7942, 'max_heap_table_size': 515757282, 'query_alloc_block_size': 71196481, 'table_open_cache': 138704}
+
+[INFO] [2024-11-26 11:51:44,535] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:51:44,535] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:51:44,537] [DBTune-job_ddpg_11] Iteration 21, objective value: [2147483647].
+[INFO] [2024-11-26 11:51:44,548] [autotune] [step 5] generate knobs: {'innodb_adaptive_hash_index_parts': 266, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 8899340090596710000, 'innodb_open_files': 329310, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 497, 'max_delayed_threads': 8118, 'max_heap_table_size': 535116795, 'query_alloc_block_size': 73981628, 'table_open_cache': 138658}
+
+[INFO] [2024-11-26 11:51:44,578] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:51:44,578] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:51:44,579] [DBTune-job_ddpg_11] Iteration 22, objective value: [2147483647].
+[INFO] [2024-11-26 11:51:44,588] [autotune] [step 6] generate knobs: {'innodb_adaptive_hash_index_parts': 261, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9229720555150540000, 'innodb_open_files': 332006, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 495, 'max_delayed_threads': 8269, 'max_heap_table_size': 527144757, 'query_alloc_block_size': 74333673, 'table_open_cache': 135668}
+
+[INFO] [2024-11-26 11:51:44,617] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:51:44,617] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:51:44,619] [DBTune-job_ddpg_11] Iteration 23, objective value: [2147483647].
+[INFO] [2024-11-26 11:51:44,631] [autotune] [step 7] generate knobs: {'innodb_adaptive_hash_index_parts': 258, 'innodb_compression_failure_threshold_pct': 50, 'innodb_online_alter_log_max_size': 9277961512559684000, 'innodb_open_files': 325523, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 489, 'max_delayed_threads': 8286, 'max_heap_table_size': 535096155, 'query_alloc_block_size': 73063155, 'table_open_cache': 135106}
+
+[INFO] [2024-11-26 11:51:44,663] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:51:44,666] [autotune] generated config file done
+[INFO] [2024-11-26 11:51:44,694] [autotune] wait for connection
+[INFO] [2024-11-26 11:51:46,703] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 11:51:46,703] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 11:51:46,703] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 11:51:46,703] [autotune] mysql is up
+[INFO] [2024-11-26 11:51:46,704] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 11:51:52,002] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732621912.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 11:55:02,721] [autotune] internal metrics: [11987251.714285715, 39230330.48571429, 1255098192.4571428, 0.0, 0.0, 76611.02857142857, 0.0, 3678340476.3428574, 0.0, 224508.08571428573, 0.0, 597757.8285714285, 29702.085714285713, 851968.0, 15889.057142857142, 0.0, 185810736.1142857, 60720.0, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3088026.0, 3481495.5428571426, 0.0, 0.0, 0.0, 0.0, 844383.8857142857, 16179243833.971428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 76609.71428571429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 11:55:05,328] [DBTune-job_ddpg_11] Iteration 24, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 11:55:05,339] [autotune] [step 8] generate knobs: {'innodb_adaptive_hash_index_parts': 251, 'innodb_compression_failure_threshold_pct': 49, 'innodb_online_alter_log_max_size': 9251362190812858000, 'innodb_open_files': 343941, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 503, 'max_delayed_threads': 8310, 'max_heap_table_size': 521599625, 'query_alloc_block_size': 71402159, 'table_open_cache': 134547}
+
+[INFO] [2024-11-26 11:55:10,374] [autotune] Close db successfully
+[INFO] [2024-11-26 11:55:10,377] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:55:10,377] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:55:10,379] [DBTune-job_ddpg_11] Iteration 25, objective value: [2147483647].
+[INFO] [2024-11-26 11:55:10,400] [autotune] [step 9] generate knobs: {'innodb_adaptive_hash_index_parts': 301, 'innodb_compression_failure_threshold_pct': 49, 'innodb_online_alter_log_max_size': 15117065689015400000, 'innodb_open_files': 338265, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 489, 'max_delayed_threads': 7577, 'max_heap_table_size': 865402987, 'query_alloc_block_size': 130670324, 'table_open_cache': 192970}
+
+[INFO] [2024-11-26 11:55:10,455] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:55:10,458] [autotune] generated config file done
+[INFO] [2024-11-26 11:55:10,487] [autotune] wait for connection
+[INFO] [2024-11-26 11:55:13,501] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 11:55:13,502] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 11:55:13,502] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 11:55:13,502] [autotune] mysql is up
+[INFO] [2024-11-26 11:55:13,503] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 11:55:19,019] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732622119.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 11:58:29,844] [autotune] internal metrics: [12330607.542857142, 33429117.37142857, 1366920396.8, 0.0, 0.0, 83432.82857142857, 0.0, 4108436392.2285714, 0.0, 250759.05714285714, 0.0, 570276.0857142857, 30932.85714285714, 851968.0, 7697.771428571428, 0.0, 165397592.1142857, 75730.45714285714, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3193116.942857143, 3621305.314285714, 0.0, 0.0, 0.0, 0.0, 969634.6571428571, 18625873451.714287, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 83429.54285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 11:58:32,435] [DBTune-job_ddpg_11] Iteration 26, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 11:58:32,448] [autotune] [step 10] generate knobs: {'innodb_adaptive_hash_index_parts': 290, 'innodb_compression_failure_threshold_pct': 79, 'innodb_online_alter_log_max_size': 13124910410374422000, 'innodb_open_files': 320990, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 576, 'max_delayed_threads': 10846, 'max_heap_table_size': 944227321, 'query_alloc_block_size': 95115195, 'table_open_cache': 236062}
+
+[INFO] [2024-11-26 11:58:37,488] [autotune] Close db successfully
+[INFO] [2024-11-26 11:58:37,489] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:58:37,490] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:58:37,492] [DBTune-job_ddpg_11] Iteration 27, objective value: [2147483647].
+[INFO] [2024-11-26 11:58:37,509] [autotune] [step 11] generate knobs: {'innodb_adaptive_hash_index_parts': 256, 'innodb_compression_failure_threshold_pct': 50, 'innodb_online_alter_log_max_size': 9139233163404498000, 'innodb_open_files': 340568, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 511, 'max_delayed_threads': 8717, 'max_heap_table_size': 537528438, 'query_alloc_block_size': 71756525, 'table_open_cache': 131180}
+
+[INFO] [2024-11-26 11:58:37,552] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:58:37,552] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:58:37,553] [DBTune-job_ddpg_11] Iteration 28, objective value: [2147483647].
+[INFO] [2024-11-26 11:58:37,561] [autotune] [step 12] generate knobs: {'innodb_adaptive_hash_index_parts': 438, 'innodb_compression_failure_threshold_pct': 64, 'innodb_online_alter_log_max_size': 9426456800168784000, 'innodb_open_files': 296551, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 603, 'max_delayed_threads': 10272, 'max_heap_table_size': 820711701, 'query_alloc_block_size': 110259343, 'table_open_cache': 119054}
+
+[INFO] [2024-11-26 11:58:37,607] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:58:37,607] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 11:58:37,608] [DBTune-job_ddpg_11] Iteration 29, objective value: [2147483647].
+[INFO] [2024-11-26 11:58:37,616] [autotune] [step 13] generate knobs: {'innodb_adaptive_hash_index_parts': 259, 'innodb_compression_failure_threshold_pct': 50, 'innodb_online_alter_log_max_size': 8934164289423857000, 'innodb_open_files': 344113, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 484, 'max_delayed_threads': 8514, 'max_heap_table_size': 517038863, 'query_alloc_block_size': 70618461, 'table_open_cache': 127013}
+
+[INFO] [2024-11-26 11:58:37,657] [autotune] mysql is shut down
+[INFO] [2024-11-26 11:58:37,660] [autotune] generated config file done
+[INFO] [2024-11-26 11:58:37,693] [autotune] wait for connection
+[INFO] [2024-11-26 11:58:39,701] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 11:58:39,702] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 11:58:39,702] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 11:58:39,702] [autotune] mysql is up
+[INFO] [2024-11-26 11:58:39,703] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 11:58:45,311] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732622325.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:01:55,984] [autotune] internal metrics: [12052957.457142858, 39113633.08571429, 1235998193.3714285, 0.0, 0.0, 75444.6, 0.0, 3687231839.0857143, 0.0, 225050.74285714285, 0.0, 597441.2, 29372.0, 851864.0, 16018.514285714286, 0.0, 185406229.2, 59423.45714285714, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3082719.5714285714, 3479240.2285714285, 0.0, 0.0, 0.0, 0.0, 850423.0285714286, 16300384324.028572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 75428.17142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:01:58,762] [DDPG_Optimizer] Save model_params to job_ddpg_11_20
+[INFO] [2024-11-26 12:01:58,763] [DBTune-job_ddpg_11] Iteration 30, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:01:58,776] [autotune] [step 14] generate knobs: {'innodb_adaptive_hash_index_parts': 380, 'innodb_compression_failure_threshold_pct': 65, 'innodb_online_alter_log_max_size': 4293414423161794000, 'innodb_open_files': 311043, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 220, 'max_delayed_threads': 13989, 'max_heap_table_size': 216916322, 'query_alloc_block_size': 50627394, 'table_open_cache': 120801}
+
+[INFO] [2024-11-26 12:02:03,811] [autotune] Close db successfully
+[INFO] [2024-11-26 12:02:03,811] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:02:03,816] [autotune] generated config file done
+[INFO] [2024-11-26 12:02:03,857] [autotune] wait for connection
+[INFO] [2024-11-26 12:02:06,877] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:02:06,878] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:02:06,878] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:02:06,878] [autotune] mysql is up
+[INFO] [2024-11-26 12:02:06,879] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:02:12,286] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732622532.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:05:23,020] [autotune] internal metrics: [10116640.685714286, 30993444.971428573, 1350307488.9142857, 0.0, 0.0, 82420.17142857143, 0.0, 3965504248.6857142, 0.0, 242035.17142857143, 0.0, 581567.1428571428, 28261.657142857144, 851864.0, 7955.371428571429, 0.0, 149708512.74285713, 74458.88571428572, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3030309.8, 3425094.942857143, 0.0, 0.0, 0.0, 0.0, 920687.3714285714, 17679815546.514286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 82418.85714285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:05:25,569] [DBTune-job_ddpg_11] Iteration 31, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:05:25,580] [autotune] [step 15] generate knobs: {'innodb_adaptive_hash_index_parts': 431, 'innodb_compression_failure_threshold_pct': 73, 'innodb_online_alter_log_max_size': 7234435524138848000, 'innodb_open_files': 375829, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 482, 'max_delayed_threads': 11070, 'max_heap_table_size': 290171412, 'query_alloc_block_size': 49765296, 'table_open_cache': 141744}
+
+[INFO] [2024-11-26 12:05:30,613] [autotune] Close db successfully
+[INFO] [2024-11-26 12:05:30,614] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:05:30,618] [autotune] generated config file done
+[INFO] [2024-11-26 12:05:30,649] [autotune] wait for connection
+[INFO] [2024-11-26 12:05:33,668] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:05:33,669] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:05:33,670] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:05:33,670] [autotune] mysql is up
+[INFO] [2024-11-26 12:05:33,670] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:05:39,060] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732622739.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:08:49,894] [autotune] internal metrics: [9945539.742857143, 31055401.714285713, 1359276090.5142858, 0.0, 0.0, 82969.54285714286, 0.0, 3972762828.8, 0.0, 242478.2, 0.0, 581158.6571428571, 28227.114285714284, 851864.0, 8144.628571428571, 0.0, 149455230.82857144, 74820.31428571428, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2995438.5142857144, 3392134.6285714284, 0.0, 0.0, 0.0, 0.0, 923457.8857142857, 17736418861.942856, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 82964.94285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:08:52,323] [DBTune-job_ddpg_11] Iteration 32, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:08:52,333] [autotune] [step 16] generate knobs: {'innodb_adaptive_hash_index_parts': 406, 'innodb_compression_failure_threshold_pct': 42, 'innodb_online_alter_log_max_size': 9706850287020236000, 'innodb_open_files': 271778, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 647, 'max_delayed_threads': 11114, 'max_heap_table_size': 48154461, 'query_alloc_block_size': 46727703, 'table_open_cache': 128988}
+
+[INFO] [2024-11-26 12:08:57,370] [autotune] Close db successfully
+[INFO] [2024-11-26 12:08:57,371] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:08:57,371] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:08:57,372] [DBTune-job_ddpg_11] Iteration 33, objective value: [2147483647].
+[INFO] [2024-11-26 12:08:57,386] [autotune] [step 17] generate knobs: {'innodb_adaptive_hash_index_parts': 377, 'innodb_compression_failure_threshold_pct': 70, 'innodb_online_alter_log_max_size': 10569893384546068000, 'innodb_open_files': 430474, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 671, 'max_delayed_threads': 10793, 'max_heap_table_size': 629435516, 'query_alloc_block_size': 88297919, 'table_open_cache': 166690}
+
+[INFO] [2024-11-26 12:08:57,422] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:08:57,423] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:08:57,424] [DBTune-job_ddpg_11] Iteration 34, objective value: [2147483647].
+[INFO] [2024-11-26 12:08:57,435] [autotune] [step 18] generate knobs: {'innodb_adaptive_hash_index_parts': 452, 'innodb_compression_failure_threshold_pct': 84, 'innodb_online_alter_log_max_size': 8061916652298011000, 'innodb_open_files': 293331, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 723, 'max_delayed_threads': 13999, 'max_heap_table_size': 268149844, 'query_alloc_block_size': 34618512, 'table_open_cache': 81600}
+
+[INFO] [2024-11-26 12:08:57,469] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:08:57,470] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:08:57,471] [DBTune-job_ddpg_11] Iteration 35, objective value: [2147483647].
+[INFO] [2024-11-26 12:08:57,482] [autotune] [step 19] generate knobs: {'innodb_adaptive_hash_index_parts': 478, 'innodb_compression_failure_threshold_pct': 74, 'innodb_online_alter_log_max_size': 9463548736310036000, 'innodb_open_files': 203993, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 847, 'max_delayed_threads': 12180, 'max_heap_table_size': 301522439, 'query_alloc_block_size': 52341773, 'table_open_cache': 55392}
+
+[INFO] [2024-11-26 12:08:57,517] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:08:57,517] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:08:57,518] [DBTune-job_ddpg_11] Iteration 36, objective value: [2147483647].
+[INFO] [2024-11-26 12:08:57,539] [autotune] [step 20] generate knobs: {'innodb_adaptive_hash_index_parts': 385, 'innodb_compression_failure_threshold_pct': 71, 'innodb_online_alter_log_max_size': 10870531031119850000, 'innodb_open_files': 434604, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 675, 'max_delayed_threads': 10671, 'max_heap_table_size': 638487858, 'query_alloc_block_size': 91908467, 'table_open_cache': 163919}
+
+[INFO] [2024-11-26 12:08:57,576] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:08:57,577] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:08:57,578] [DBTune-job_ddpg_11] Iteration 37, objective value: [2147483647].
+[INFO] [2024-11-26 12:08:57,589] [autotune] [step 21] generate knobs: {'innodb_adaptive_hash_index_parts': 382, 'innodb_compression_failure_threshold_pct': 71, 'innodb_online_alter_log_max_size': 10986490747886922000, 'innodb_open_files': 428702, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 674, 'max_delayed_threads': 10691, 'max_heap_table_size': 624696580, 'query_alloc_block_size': 91648357, 'table_open_cache': 165175}
+
+[INFO] [2024-11-26 12:08:57,625] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:08:57,626] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:08:57,626] [DBTune-job_ddpg_11] Iteration 38, objective value: [2147483647].
+[INFO] [2024-11-26 12:08:57,638] [autotune] [step 22] generate knobs: {'innodb_adaptive_hash_index_parts': 512, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 10669430834877518000, 'innodb_open_files': 266941, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 385, 'max_delayed_threads': 7072, 'max_heap_table_size': 345149421, 'query_alloc_block_size': 80552074, 'table_open_cache': 101122}
+
+[INFO] [2024-11-26 12:08:57,670] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:08:57,673] [autotune] generated config file done
+[INFO] [2024-11-26 12:08:57,697] [autotune] wait for connection
+[INFO] [2024-11-26 12:08:59,709] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:08:59,709] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 12:08:59,710] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:08:59,710] [autotune] mysql is up
+[INFO] [2024-11-26 12:08:59,710] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:09:05,137] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732622945.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:12:15,906] [autotune] internal metrics: [7360672.257142857, 29958168.971428573, 1081335573.942857, 0.0, 0.0, 66002.11428571428, 0.0, 3263806083.6571426, 0.0, 199206.91428571427, 0.0, 630352.9142857143, 22408.17142857143, 851968.0, 13554.228571428572, 0.0, 136522421.5142857, 52444.6, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2308612.5142857144, 2579348.8, 0.0, 0.0, 0.0, 0.0, 707521.4, 13560294251.685715, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 65994.88571428572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:12:18,386] [DBTune-job_ddpg_11] Iteration 39, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:12:18,397] [autotune] [step 23] generate knobs: {'innodb_adaptive_hash_index_parts': 409, 'innodb_compression_failure_threshold_pct': 75, 'innodb_online_alter_log_max_size': 12640479938739558000, 'innodb_open_files': 475611, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 731, 'max_delayed_threads': 11848, 'max_heap_table_size': 722596654, 'query_alloc_block_size': 95857301, 'table_open_cache': 177965}
+
+[INFO] [2024-11-26 12:12:23,432] [autotune] Close db successfully
+[INFO] [2024-11-26 12:12:23,433] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:23,433] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:23,435] [DBTune-job_ddpg_11] Iteration 40, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:23,453] [autotune] [step 24] generate knobs: {'innodb_adaptive_hash_index_parts': 405, 'innodb_compression_failure_threshold_pct': 75, 'innodb_online_alter_log_max_size': 12714254793673774000, 'innodb_open_files': 484421, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 738, 'max_delayed_threads': 11828, 'max_heap_table_size': 733544711, 'query_alloc_block_size': 94898844, 'table_open_cache': 175694}
+
+[INFO] [2024-11-26 12:12:23,492] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:23,493] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:23,494] [DBTune-job_ddpg_11] Iteration 41, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:23,511] [autotune] [step 25] generate knobs: {'innodb_adaptive_hash_index_parts': 512, 'innodb_compression_failure_threshold_pct': 78, 'innodb_online_alter_log_max_size': 13446048402267712000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 895, 'max_delayed_threads': 6268, 'max_heap_table_size': 472397912, 'query_alloc_block_size': 72729637, 'table_open_cache': 97846}
+
+[INFO] [2024-11-26 12:12:23,553] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:23,554] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:23,555] [DBTune-job_ddpg_11] Iteration 42, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:23,576] [autotune] [step 26] generate knobs: {'innodb_adaptive_hash_index_parts': 396, 'innodb_compression_failure_threshold_pct': 77, 'innodb_online_alter_log_max_size': 12356105129796288000, 'innodb_open_files': 476336, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 756, 'max_delayed_threads': 11668, 'max_heap_table_size': 725311941, 'query_alloc_block_size': 94319713, 'table_open_cache': 177007}
+
+[INFO] [2024-11-26 12:12:23,629] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:23,630] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:23,631] [DBTune-job_ddpg_11] Iteration 43, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:23,646] [autotune] [step 27] generate knobs: {'innodb_adaptive_hash_index_parts': 375, 'innodb_compression_failure_threshold_pct': 63, 'innodb_online_alter_log_max_size': 5767625646069691000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 750, 'max_delayed_threads': 4477, 'max_heap_table_size': 309195634, 'query_alloc_block_size': 46395350, 'table_open_cache': 191935}
+
+[INFO] [2024-11-26 12:12:23,684] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:23,685] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:23,686] [DBTune-job_ddpg_11] Iteration 44, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:23,699] [autotune] [step 28] generate knobs: {'innodb_adaptive_hash_index_parts': 358, 'innodb_compression_failure_threshold_pct': 76, 'innodb_online_alter_log_max_size': 7930572055837550000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 731, 'max_delayed_threads': 6929, 'max_heap_table_size': 384948846, 'query_alloc_block_size': 58857475, 'table_open_cache': 205340}
+
+[INFO] [2024-11-26 12:12:23,736] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:23,737] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:23,739] [DBTune-job_ddpg_11] Iteration 45, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:23,755] [autotune] [step 29] generate knobs: {'innodb_adaptive_hash_index_parts': 394, 'innodb_compression_failure_threshold_pct': 77, 'innodb_online_alter_log_max_size': 12549930974489470000, 'innodb_open_files': 492678, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 738, 'max_delayed_threads': 11625, 'max_heap_table_size': 750515012, 'query_alloc_block_size': 94618342, 'table_open_cache': 179619}
+
+[INFO] [2024-11-26 12:12:23,797] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:23,798] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:23,799] [DBTune-job_ddpg_11] Iteration 46, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:24,003] [autotune] [step 30] generate knobs: {'innodb_adaptive_hash_index_parts': 396, 'innodb_compression_failure_threshold_pct': 76, 'innodb_online_alter_log_max_size': 12768737663680334000, 'innodb_open_files': 496015, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 733, 'max_delayed_threads': 11470, 'max_heap_table_size': 751763057, 'query_alloc_block_size': 95493528, 'table_open_cache': 179928}
+
+[INFO] [2024-11-26 12:12:24,044] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:24,045] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:24,046] [DBTune-job_ddpg_11] Iteration 47, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:24,065] [autotune] [step 31] generate knobs: {'innodb_adaptive_hash_index_parts': 389, 'innodb_compression_failure_threshold_pct': 76, 'innodb_online_alter_log_max_size': 12948327065831442000, 'innodb_open_files': 499057, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 733, 'max_delayed_threads': 11438, 'max_heap_table_size': 743570990, 'query_alloc_block_size': 96202746, 'table_open_cache': 179533}
+
+[INFO] [2024-11-26 12:12:24,105] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:24,108] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:24,109] [DBTune-job_ddpg_11] Iteration 48, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:24,124] [autotune] [step 32] generate knobs: {'innodb_adaptive_hash_index_parts': 388, 'innodb_compression_failure_threshold_pct': 77, 'innodb_online_alter_log_max_size': 12918801950633546000, 'innodb_open_files': 492089, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 734, 'max_delayed_threads': 11718, 'max_heap_table_size': 737229455, 'query_alloc_block_size': 97472649, 'table_open_cache': 179882}
+
+[INFO] [2024-11-26 12:12:24,155] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:24,155] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:12:24,156] [DBTune-job_ddpg_11] Iteration 49, objective value: [2147483647].
+[INFO] [2024-11-26 12:12:24,168] [autotune] [step 33] generate knobs: {'innodb_adaptive_hash_index_parts': 259, 'innodb_compression_failure_threshold_pct': 85, 'innodb_online_alter_log_max_size': 17278650906640296000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 284, 'max_delayed_threads': 5601, 'max_heap_table_size': 539248156, 'query_alloc_block_size': 134217728, 'table_open_cache': 112692}
+
+[INFO] [2024-11-26 12:12:24,204] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:12:24,207] [autotune] generated config file done
+[INFO] [2024-11-26 12:12:24,237] [autotune] wait for connection
+[INFO] [2024-11-26 12:12:27,248] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:12:27,248] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:12:27,248] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:12:27,248] [autotune] mysql is up
+[INFO] [2024-11-26 12:12:27,249] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:12:32,589] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732623152.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:15:43,252] [autotune] internal metrics: [13994411.114285715, 35371932.62857143, 1404366730.9714286, 0.0, 0.0, 85722.31428571428, 0.0, 4170697932.8, 0.0, 254559.17142857143, 0.0, 564619.1142857143, 32789.68571428571, 851968.0, 8073.0, 0.0, 177599406.22857141, 77644.05714285714, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3259377.9714285713, 3712204.6, 0.0, 0.0, 0.0, 0.0, 991128.4857142858, 19033342488.685715, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 85719.02857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:15:45,937] [DBTune-job_ddpg_11] Iteration 50, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:15:45,948] [autotune] [step 34] generate knobs: {'innodb_adaptive_hash_index_parts': 415, 'innodb_compression_failure_threshold_pct': 91, 'innodb_online_alter_log_max_size': 17033197616815572000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 92, 'max_delayed_threads': 2634, 'max_heap_table_size': 556231897, 'query_alloc_block_size': 134217728, 'table_open_cache': 87708}
+
+[INFO] [2024-11-26 12:15:50,983] [autotune] Close db successfully
+[INFO] [2024-11-26 12:15:50,984] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:15:50,989] [autotune] generated config file done
+[INFO] [2024-11-26 12:15:51,028] [autotune] wait for connection
+[INFO] [2024-11-26 12:15:54,041] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:15:54,041] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:15:54,041] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:15:54,042] [autotune] mysql is up
+[INFO] [2024-11-26 12:15:54,042] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:15:59,535] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732623359.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:19:10,132] [autotune] internal metrics: [24332761.285714287, 29426663.942857143, 1244363863.7714286, 0.0, 0.0, 75951.91428571429, 0.0, 3863380436.114286, 0.0, 235802.0285714286, 0.0, 586043.1714285715, 30018.8, 851864.0, 14862.6, 0.0, 162296993.65714285, 61089.31428571429, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 41.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2809911.314285714, 3289863.4857142856, 0.0, 0.0, 0.0, 0.0, 905496.8571428572, 17343112101.914288, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 75951.25714285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:19:13,034] [DDPG_Optimizer] Save model_params to job_ddpg_11_25
+[INFO] [2024-11-26 12:19:13,034] [DBTune-job_ddpg_11] Iteration 51, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:19:13,048] [autotune] [step 35] generate knobs: {'innodb_adaptive_hash_index_parts': 294, 'innodb_compression_failure_threshold_pct': 59, 'innodb_online_alter_log_max_size': 8700189873567258000, 'innodb_open_files': 343332, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 514, 'max_delayed_threads': 7542, 'max_heap_table_size': 506543823, 'query_alloc_block_size': 72757349, 'table_open_cache': 129847}
+
+[INFO] [2024-11-26 12:19:18,099] [autotune] Close db successfully
+[INFO] [2024-11-26 12:19:18,099] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:19:18,100] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:19:18,101] [DBTune-job_ddpg_11] Iteration 52, objective value: [2147483647].
+[INFO] [2024-11-26 12:19:18,116] [autotune] [step 36] generate knobs: {'innodb_adaptive_hash_index_parts': 292, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 8860449357730184000, 'innodb_open_files': 330374, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 517, 'max_delayed_threads': 7609, 'max_heap_table_size': 498466858, 'query_alloc_block_size': 73486783, 'table_open_cache': 130402}
+
+[INFO] [2024-11-26 12:19:18,154] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:19:18,154] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:19:18,155] [DBTune-job_ddpg_11] Iteration 53, objective value: [2147483647].
+[INFO] [2024-11-26 12:19:18,171] [autotune] [step 37] generate knobs: {'innodb_adaptive_hash_index_parts': 291, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 8758303872048889000, 'innodb_open_files': 329989, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 508, 'max_delayed_threads': 7669, 'max_heap_table_size': 503253409, 'query_alloc_block_size': 73281777, 'table_open_cache': 130754}
+
+[INFO] [2024-11-26 12:19:18,207] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:19:18,208] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:19:18,209] [DBTune-job_ddpg_11] Iteration 54, objective value: [2147483647].
+[INFO] [2024-11-26 12:19:18,223] [autotune] [step 38] generate knobs: {'innodb_adaptive_hash_index_parts': 290, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 8729874417570268000, 'innodb_open_files': 323095, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 518, 'max_delayed_threads': 7675, 'max_heap_table_size': 512694993, 'query_alloc_block_size': 74017635, 'table_open_cache': 130434}
+
+[INFO] [2024-11-26 12:19:18,261] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:19:18,262] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:19:18,262] [DBTune-job_ddpg_11] Iteration 55, objective value: [2147483647].
+[INFO] [2024-11-26 12:19:18,276] [autotune] [step 39] generate knobs: {'innodb_adaptive_hash_index_parts': 178, 'innodb_compression_failure_threshold_pct': 68, 'innodb_online_alter_log_max_size': 12485569016110918000, 'innodb_open_files': 386792, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 4282, 'max_heap_table_size': 767775357, 'query_alloc_block_size': 112827716, 'table_open_cache': 126058}
+
+[INFO] [2024-11-26 12:19:18,313] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:19:18,316] [autotune] generated config file done
+[INFO] [2024-11-26 12:19:18,345] [autotune] wait for connection
+[INFO] [2024-11-26 12:19:21,363] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:19:21,364] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:19:21,364] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:19:21,364] [autotune] mysql is up
+[INFO] [2024-11-26 12:19:21,365] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:19:27,029] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732623567.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:22:37,770] [autotune] internal metrics: [15874694.628571428, 44698260.45714286, 1238496051.2, 0.0, 0.0, 75593.11428571428, 0.0, 4007773564.3428574, 0.0, 244615.08571428573, 0.0, 573219.1142857143, 34029.8, 851864.0, 16294.514285714286, 0.0, 218705980.77142859, 59293.34285714286, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3373237.1714285715, 3867885.685714286, 0.0, 0.0, 0.0, 0.0, 902015.9714285714, 17280231030.45714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 75589.17142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:22:40,108] [DBTune-job_ddpg_11] Iteration 56, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:22:40,122] [autotune] [step 40] generate knobs: {'innodb_adaptive_hash_index_parts': 270, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 8034214523023404000, 'innodb_open_files': 287607, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 465, 'max_delayed_threads': 6642, 'max_heap_table_size': 453508952, 'query_alloc_block_size': 69351119, 'table_open_cache': 122707}
+
+[INFO] [2024-11-26 12:22:45,157] [autotune] Close db successfully
+[INFO] [2024-11-26 12:22:45,159] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:22:45,162] [autotune] generated config file done
+[INFO] [2024-11-26 12:22:45,188] [autotune] wait for connection
+[INFO] [2024-11-26 12:22:48,200] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:22:48,201] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:22:48,201] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:22:48,201] [autotune] mysql is up
+[INFO] [2024-11-26 12:22:48,201] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:22:53,607] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732623773.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:26:04,334] [autotune] internal metrics: [11904624.542857142, 38415886.02857143, 1228300053.942857, 0.0, 0.0, 74973.42857142857, 0.0, 3711900525.714286, 0.0, 226556.37142857144, 0.0, 596351.7428571428, 29059.8, 851968.0, 15860.8, 0.0, 182020203.37142858, 59108.02857142857, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3017216.8857142855, 3404670.942857143, 0.0, 0.0, 0.0, 0.0, 837209.8571428572, 16042435985.085714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 74971.45714285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:26:06,678] [DBTune-job_ddpg_11] Iteration 57, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:26:06,693] [autotune] [step 41] generate knobs: {'innodb_adaptive_hash_index_parts': 286, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 9282263891279730000, 'innodb_open_files': 313780, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 516, 'max_delayed_threads': 7281, 'max_heap_table_size': 550112438, 'query_alloc_block_size': 74039219, 'table_open_cache': 138726}
+
+[INFO] [2024-11-26 12:26:11,748] [autotune] Close db successfully
+[INFO] [2024-11-26 12:26:11,749] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:11,749] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:11,750] [DBTune-job_ddpg_11] Iteration 58, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:11,767] [autotune] [step 42] generate knobs: {'innodb_adaptive_hash_index_parts': 296, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 9230407748276028000, 'innodb_open_files': 311963, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 517, 'max_delayed_threads': 7395, 'max_heap_table_size': 549876986, 'query_alloc_block_size': 72549479, 'table_open_cache': 139947}
+
+[INFO] [2024-11-26 12:26:11,807] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:11,808] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:11,809] [DBTune-job_ddpg_11] Iteration 59, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,066] [autotune] [step 43] generate knobs: {'innodb_adaptive_hash_index_parts': 298, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 9249539204889568000, 'innodb_open_files': 304271, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 528, 'max_delayed_threads': 7728, 'max_heap_table_size': 548945672, 'query_alloc_block_size': 71820804, 'table_open_cache': 141385}
+
+[INFO] [2024-11-26 12:26:12,098] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,099] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,100] [DBTune-job_ddpg_11] Iteration 60, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,114] [autotune] [step 44] generate knobs: {'innodb_adaptive_hash_index_parts': 296, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 9104003795510562000, 'innodb_open_files': 303006, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 526, 'max_delayed_threads': 7835, 'max_heap_table_size': 555167145, 'query_alloc_block_size': 73131370, 'table_open_cache': 138736}
+
+[INFO] [2024-11-26 12:26:12,146] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,146] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,147] [DBTune-job_ddpg_11] Iteration 61, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,161] [autotune] [step 45] generate knobs: {'innodb_adaptive_hash_index_parts': 293, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 9210497289535436000, 'innodb_open_files': 306577, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 524, 'max_delayed_threads': 7830, 'max_heap_table_size': 550642734, 'query_alloc_block_size': 72576030, 'table_open_cache': 142050}
+
+[INFO] [2024-11-26 12:26:12,194] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,194] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,195] [DBTune-job_ddpg_11] Iteration 62, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,206] [autotune] [step 46] generate knobs: {'innodb_adaptive_hash_index_parts': 293, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 9168403686949642000, 'innodb_open_files': 302435, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 532, 'max_delayed_threads': 7603, 'max_heap_table_size': 545657466, 'query_alloc_block_size': 73284665, 'table_open_cache': 142843}
+
+[INFO] [2024-11-26 12:26:12,244] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,245] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,245] [DBTune-job_ddpg_11] Iteration 63, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,256] [autotune] [step 47] generate knobs: {'innodb_adaptive_hash_index_parts': 286, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9276186905032428000, 'innodb_open_files': 295156, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 538, 'max_delayed_threads': 7660, 'max_heap_table_size': 535204890, 'query_alloc_block_size': 71799548, 'table_open_cache': 142626}
+
+[INFO] [2024-11-26 12:26:12,289] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,290] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,291] [DBTune-job_ddpg_11] Iteration 64, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,302] [autotune] [step 48] generate knobs: {'innodb_adaptive_hash_index_parts': 288, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 9224971775776180000, 'innodb_open_files': 292195, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 531, 'max_delayed_threads': 7614, 'max_heap_table_size': 541694327, 'query_alloc_block_size': 73243321, 'table_open_cache': 143945}
+
+[INFO] [2024-11-26 12:26:12,343] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,343] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,344] [DBTune-job_ddpg_11] Iteration 65, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,355] [autotune] [step 49] generate knobs: {'innodb_adaptive_hash_index_parts': 271, 'innodb_compression_failure_threshold_pct': 26, 'innodb_online_alter_log_max_size': 10131029864430456000, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 648, 'max_delayed_threads': 0, 'max_heap_table_size': 743907369, 'query_alloc_block_size': 85625851, 'table_open_cache': 250000}
+
+[INFO] [2024-11-26 12:26:12,398] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,398] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,399] [DBTune-job_ddpg_11] Iteration 66, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,410] [autotune] [step 50] generate knobs: {'innodb_adaptive_hash_index_parts': 407, 'innodb_compression_failure_threshold_pct': 11, 'innodb_online_alter_log_max_size': 8835364059877430000, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 639, 'max_delayed_threads': 0, 'max_heap_table_size': 1073741824, 'query_alloc_block_size': 74694974, 'table_open_cache': 245267}
+
+[INFO] [2024-11-26 12:26:12,452] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,452] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,453] [DBTune-job_ddpg_11] Iteration 67, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,464] [autotune] [step 51] generate knobs: {'innodb_adaptive_hash_index_parts': 329, 'innodb_compression_failure_threshold_pct': 44, 'innodb_online_alter_log_max_size': 10798669321846988000, 'innodb_open_files': 200824, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 828, 'max_delayed_threads': 0, 'max_heap_table_size': 972663623, 'query_alloc_block_size': 100918406, 'table_open_cache': 250000}
+
+[INFO] [2024-11-26 12:26:12,501] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,502] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,502] [DBTune-job_ddpg_11] Iteration 68, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,514] [autotune] [step 52] generate knobs: {'innodb_adaptive_hash_index_parts': 295, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 9031028833374414000, 'innodb_open_files': 298334, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 538, 'max_delayed_threads': 7382, 'max_heap_table_size': 557129611, 'query_alloc_block_size': 73913964, 'table_open_cache': 140504}
+
+[INFO] [2024-11-26 12:26:12,553] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,554] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,554] [DBTune-job_ddpg_11] Iteration 69, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,566] [autotune] [step 53] generate knobs: {'innodb_adaptive_hash_index_parts': 289, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 8895751293218170000, 'innodb_open_files': 292320, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 540, 'max_delayed_threads': 7484, 'max_heap_table_size': 567791976, 'query_alloc_block_size': 73642214, 'table_open_cache': 140810}
+
+[INFO] [2024-11-26 12:26:12,597] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,598] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,598] [DBTune-job_ddpg_11] Iteration 70, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,610] [autotune] innodb_online_alter_log_max_size with value of is smaller than min, adjusted
+[INFO] [2024-11-26 12:26:12,610] [autotune] [step 54] generate knobs: {'innodb_adaptive_hash_index_parts': 182, 'innodb_compression_failure_threshold_pct': 87, 'innodb_online_alter_log_max_size': 65536, 'innodb_open_files': 28636, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 805, 'max_delayed_threads': 2079, 'max_heap_table_size': 1073741824, 'query_alloc_block_size': 82551794, 'table_open_cache': 201108}
+
+[INFO] [2024-11-26 12:26:12,646] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,647] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:26:12,648] [DBTune-job_ddpg_11] Iteration 71, objective value: [2147483647].
+[INFO] [2024-11-26 12:26:12,659] [autotune] [step 55] generate knobs: {'innodb_adaptive_hash_index_parts': 272, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 1194331069321246000, 'innodb_open_files': 147683, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 349, 'max_delayed_threads': 3743, 'max_heap_table_size': 1073741824, 'query_alloc_block_size': 72147226, 'table_open_cache': 153411}
+
+[INFO] [2024-11-26 12:26:12,699] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:26:12,703] [autotune] generated config file done
+[INFO] [2024-11-26 12:26:12,737] [autotune] wait for connection
+[INFO] [2024-11-26 12:26:15,751] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:26:15,752] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:26:15,752] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:26:15,752] [autotune] mysql is up
+[INFO] [2024-11-26 12:26:15,753] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:26:21,510] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732623981.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:29:32,193] [autotune] internal metrics: [4973209.171428571, 22763692.742857143, 974078420.1142857, 0.0, 0.0, 59454.34285714286, 0.0, 2687239548.3428574, 0.0, 164016.08571428573, 0.0, 673262.1714285715, 14585.714285714286, 851864.0, 11986.285714285714, 0.0, 102745207.02857143, 47466.74285714285, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2956496.8857142855, 3090199.1714285715, 0.0, 0.0, 0.0, 0.0, 1023393.5428571429, 19597357906.857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 59453.68571428571, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:29:34,584] [DBTune-job_ddpg_11] Iteration 72, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:29:34,598] [autotune] [step 56] generate knobs: {'innodb_adaptive_hash_index_parts': 315, 'innodb_compression_failure_threshold_pct': 63, 'innodb_online_alter_log_max_size': 9847600633227854000, 'innodb_open_files': 322142, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 568, 'max_delayed_threads': 8140, 'max_heap_table_size': 617778990, 'query_alloc_block_size': 78208979, 'table_open_cache': 145870}
+
+[INFO] [2024-11-26 12:29:39,634] [autotune] Close db successfully
+[INFO] [2024-11-26 12:29:39,635] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:29:39,635] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:29:39,636] [DBTune-job_ddpg_11] Iteration 73, objective value: [2147483647].
+[INFO] [2024-11-26 12:29:39,658] [autotune] [step 57] generate knobs: {'innodb_adaptive_hash_index_parts': 316, 'innodb_compression_failure_threshold_pct': 64, 'innodb_online_alter_log_max_size': 9783537741297514000, 'innodb_open_files': 322209, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 569, 'max_delayed_threads': 8097, 'max_heap_table_size': 603095694, 'query_alloc_block_size': 79318979, 'table_open_cache': 144054}
+
+[INFO] [2024-11-26 12:29:39,696] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:29:39,697] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:29:39,698] [DBTune-job_ddpg_11] Iteration 74, objective value: [2147483647].
+[INFO] [2024-11-26 12:29:39,719] [autotune] [step 58] generate knobs: {'innodb_adaptive_hash_index_parts': 413, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 1302416789817870000, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 298, 'max_delayed_threads': 1404, 'max_heap_table_size': 513436326, 'query_alloc_block_size': 134217728, 'table_open_cache': 155384}
+
+[INFO] [2024-11-26 12:29:39,754] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:29:39,756] [autotune] generated config file done
+[INFO] [2024-11-26 12:29:39,783] [autotune] wait for connection
+[INFO] [2024-11-26 12:29:42,796] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:29:42,797] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:29:42,797] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:29:42,797] [autotune] mysql is up
+[INFO] [2024-11-26 12:29:42,798] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:29:48,278] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732624188.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:32:58,949] [autotune] internal metrics: [9086066.542857142, 32939475.62857143, 1219073053.2571428, 0.0, 0.0, 74410.91428571429, 0.0, 3383858673.3714285, 0.0, 206534.34285714285, 0.0, 620374.5428571429, 24955.085714285713, 851864.0, 14731.828571428572, 0.0, 152657196.2, 59669.22857142857, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2576226.714285714, 2875322.0, 0.0, 0.0, 0.0, 0.0, 755722.1714285715, 14479808654.657143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 74408.28571428571, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:33:01,314] [DBTune-job_ddpg_11] Iteration 75, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:33:01,330] [autotune] [step 59] generate knobs: {'innodb_adaptive_hash_index_parts': 360, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 4168758964584818000, 'innodb_open_files': 150337, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 339, 'max_delayed_threads': 4065, 'max_heap_table_size': 805625019, 'query_alloc_block_size': 134217728, 'table_open_cache': 167017}
+
+[INFO] [2024-11-26 12:33:06,362] [autotune] Close db successfully
+[INFO] [2024-11-26 12:33:06,362] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:33:06,367] [autotune] generated config file done
+[INFO] [2024-11-26 12:33:06,403] [autotune] wait for connection
+[INFO] [2024-11-26 12:33:09,418] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:33:09,419] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:33:09,419] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:33:09,419] [autotune] mysql is up
+[INFO] [2024-11-26 12:33:09,420] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:33:14,812] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732624394.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:36:25,526] [autotune] internal metrics: [9840631.485714287, 33760742.54285714, 1219837483.8857143, 0.0, 0.0, 74456.91428571429, 0.0, 3440824905.142857, 0.0, 210011.2857142857, 0.0, 615972.1714285715, 25880.542857142857, 851864.0, 15804.942857142858, 0.0, 157723844.5142857, 58648.68571428571, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2681928.8, 3004939.4857142856, 0.0, 0.0, 0.0, 0.0, 778308.8285714285, 14911766360.714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 74454.28571428571, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:36:28,312] [DDPG_Optimizer] Save model_params to job_ddpg_11_30
+[INFO] [2024-11-26 12:36:28,312] [DBTune-job_ddpg_11] Iteration 76, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:36:28,328] [autotune] [step 60] generate knobs: {'innodb_adaptive_hash_index_parts': 191, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 8031701595202125000, 'innodb_open_files': 80181, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 389, 'max_delayed_threads': 5238, 'max_heap_table_size': 659368307, 'query_alloc_block_size': 134217728, 'table_open_cache': 173740}
+
+[INFO] [2024-11-26 12:36:33,362] [autotune] Close db successfully
+[INFO] [2024-11-26 12:36:33,363] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:36:33,368] [autotune] generated config file done
+[INFO] [2024-11-26 12:36:33,405] [autotune] wait for connection
+[INFO] [2024-11-26 12:36:35,416] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:36:35,417] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 12:36:35,417] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:36:35,417] [autotune] mysql is up
+[INFO] [2024-11-26 12:36:35,417] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:36:40,826] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732624600.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:39:51,672] [autotune] internal metrics: [14981994.971428571, 43842915.428571425, 1318632067.6571429, 0.0, 0.0, 80485.54285714286, 0.0, 3829423425.8285713, 0.0, 233729.45714285714, 0.0, 584922.4857142858, 33212.05714285714, 851864.0, 15912.714285714286, 0.0, 212609719.7142857, 64566.91428571429, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3337608.8571428573, 3813373.057142857, 0.0, 0.0, 0.0, 0.0, 897179.4, 17184781342.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 80482.91428571429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:39:54,247] [DBTune-job_ddpg_11] Iteration 77, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:39:54,269] [autotune] [step 61] generate knobs: {'innodb_adaptive_hash_index_parts': 309, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 12927456185978670000, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 140, 'max_delayed_threads': 4485, 'max_heap_table_size': 291427233, 'query_alloc_block_size': 134217728, 'table_open_cache': 108868}
+
+[INFO] [2024-11-26 12:39:59,307] [autotune] Close db successfully
+[INFO] [2024-11-26 12:39:59,308] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:39:59,314] [autotune] generated config file done
+[INFO] [2024-11-26 12:39:59,355] [autotune] wait for connection
+[INFO] [2024-11-26 12:40:01,376] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:40:01,377] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 12:40:01,377] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:40:01,377] [autotune] mysql is up
+[INFO] [2024-11-26 12:40:01,377] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:40:06,791] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732624806.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:43:17,643] [autotune] internal metrics: [10582129.8, 36012119.22857143, 1232531338.9714286, 0.0, 0.0, 75233.0, 0.0, 3509130269.257143, 0.0, 214180.3142857143, 0.0, 610173.0285714286, 27510.657142857144, 851864.0, 16310.942857142858, 0.0, 168900677.42857143, 58913.514285714286, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2897543.285714286, 3238198.257142857, 0.0, 0.0, 0.0, 0.0, 815408.4857142858, 15622346526.114286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 75229.05714285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:43:20,397] [DBTune-job_ddpg_11] Iteration 78, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:43:20,413] [autotune] [step 62] generate knobs: {'innodb_adaptive_hash_index_parts': 496, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 10462673664826182000, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 76, 'max_delayed_threads': 0, 'max_heap_table_size': 337316357, 'query_alloc_block_size': 134217728, 'table_open_cache': 198715}
+
+[INFO] [2024-11-26 12:43:25,449] [autotune] Close db successfully
+[INFO] [2024-11-26 12:43:25,451] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:43:25,455] [autotune] generated config file done
+[INFO] [2024-11-26 12:43:25,489] [autotune] wait for connection
+[INFO] [2024-11-26 12:43:28,505] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:43:28,506] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:43:28,507] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:43:28,507] [autotune] mysql is up
+[INFO] [2024-11-26 12:43:28,507] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:43:33,949] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732625013.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:46:44,778] [autotune] internal metrics: [6705308.942857143, 29787089.057142857, 1145041715.2, 0.0, 0.0, 69893.05714285714, 0.0, 3363634731.885714, 0.0, 205299.9714285714, 0.0, 622443.3714285714, 24120.657142857144, 851864.0, 14399.314285714287, 0.0, 135074430.22857141, 55486.514285714286, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1905065.0285714285, 2179556.2285714285, 0.0, 0.0, 0.0, 0.0, 558725.8571428572, 10732146580.428572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 69889.77142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:46:47,117] [DBTune-job_ddpg_11] Iteration 79, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:46:47,141] [autotune] [step 63] generate knobs: {'innodb_adaptive_hash_index_parts': 272, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 8281064189279116000, 'innodb_open_files': 324646, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 493, 'max_delayed_threads': 7636, 'max_heap_table_size': 524454846, 'query_alloc_block_size': 72974211, 'table_open_cache': 129015}
+
+[INFO] [2024-11-26 12:46:52,177] [autotune] Close db successfully
+[INFO] [2024-11-26 12:46:52,178] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:46:52,179] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 12:46:52,180] [DBTune-job_ddpg_11] Iteration 80, objective value: [2147483647].
+[INFO] [2024-11-26 12:46:52,214] [autotune] [step 64] generate knobs: {'innodb_adaptive_hash_index_parts': 273, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 8209221721413768000, 'innodb_open_files': 325731, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 489, 'max_delayed_threads': 7589, 'max_heap_table_size': 522641561, 'query_alloc_block_size': 72408288, 'table_open_cache': 126959}
+
+[INFO] [2024-11-26 12:46:52,266] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:46:52,270] [autotune] generated config file done
+[INFO] [2024-11-26 12:46:52,304] [autotune] wait for connection
+[INFO] [2024-11-26 12:46:55,317] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:46:55,317] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:46:55,317] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:46:55,318] [autotune] mysql is up
+[INFO] [2024-11-26 12:46:55,319] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:47:00,855] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732625220.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:50:11,573] [autotune] internal metrics: [11807373.971428571, 38496069.942857146, 1309728065.8285713, 0.0, 0.0, 79943.4, 0.0, 3593590725.4857144, 0.0, 219335.37142857144, 0.0, 603692.8285714285, 28939.8, 851968.0, 16422.657142857144, 0.0, 182443670.82857144, 63515.485714285714, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3017891.7714285715, 3400063.714285714, 0.0, 0.0, 0.0, 0.0, 842441.3714285714, 16146427523.342857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 79940.77142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:50:14,243] [DBTune-job_ddpg_11] Iteration 81, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:50:14,261] [autotune] [step 65] generate knobs: {'innodb_adaptive_hash_index_parts': 450, 'innodb_compression_failure_threshold_pct': 74, 'innodb_online_alter_log_max_size': 11338427086401010000, 'innodb_open_files': 185123, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 85, 'max_delayed_threads': 1886, 'max_heap_table_size': 410146702, 'query_alloc_block_size': 78678944, 'table_open_cache': 140082}
+
+[INFO] [2024-11-26 12:50:19,299] [autotune] Close db successfully
+[INFO] [2024-11-26 12:50:19,301] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:50:19,304] [autotune] generated config file done
+[INFO] [2024-11-26 12:50:19,331] [autotune] wait for connection
+[INFO] [2024-11-26 12:50:21,340] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:50:21,341] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 12:50:21,341] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:50:21,341] [autotune] mysql is up
+[INFO] [2024-11-26 12:50:21,341] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:50:26,974] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732625426.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:53:37,641] [autotune] internal metrics: [13103474.57142857, 20772235.114285715, 1363970340.5714285, 0.0, 0.0, 83254.08571428571, 0.0, 3981143478.857143, 0.0, 242989.7142857143, 0.0, 578799.9428571429, 30178.314285714285, 851968.0, 8635.514285714286, 0.0, 111881303.82857142, 74613.31428571428, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2317211.8857142855, 2843238.9714285713, 0.0, 0.0, 0.0, 0.0, 434834.71428571426, 8370358972.342857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 83249.4857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:53:39,765] [DDPG_Optimizer] Save model_params to job_ddpg_11_35
+[INFO] [2024-11-26 12:53:39,766] [DBTune-job_ddpg_11] Iteration 82, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:53:39,781] [autotune] [step 66] generate knobs: {'innodb_adaptive_hash_index_parts': 402, 'innodb_compression_failure_threshold_pct': 72, 'innodb_online_alter_log_max_size': 13277017585051078000, 'innodb_open_files': 244376, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 279, 'max_delayed_threads': 3690, 'max_heap_table_size': 215682837, 'query_alloc_block_size': 85693786, 'table_open_cache': 126355}
+
+[INFO] [2024-11-26 12:53:44,817] [autotune] Close db successfully
+[INFO] [2024-11-26 12:53:44,818] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:53:44,822] [autotune] generated config file done
+[INFO] [2024-11-26 12:53:44,861] [autotune] wait for connection
+[INFO] [2024-11-26 12:53:47,875] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:53:47,876] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:53:47,876] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:53:47,876] [autotune] mysql is up
+[INFO] [2024-11-26 12:53:47,877] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:53:53,516] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732625633.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 12:57:04,234] [autotune] internal metrics: [31328886.171428572, 22490307.514285713, 1327309970.2857144, 0.0, 0.0, 81016.5142857143, 0.0, 4160555300.571429, 0.0, 253940.14285714287, 0.0, 565304.5142857142, 32723.285714285714, 851968.0, 6125.885714285714, 0.0, 170920438.2, 74884.05714285714, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2474056.1142857145, 3290454.257142857, 0.0, 0.0, 0.0, 0.0, 469267.02857142856, 8986949391.971428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 81013.88571428572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 12:57:06,858] [DBTune-job_ddpg_11] Iteration 83, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 12:57:06,874] [autotune] [step 67] generate knobs: {'innodb_adaptive_hash_index_parts': 242, 'innodb_compression_failure_threshold_pct': 45, 'innodb_online_alter_log_max_size': 8371049105411804000, 'innodb_open_files': 349884, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 471, 'max_delayed_threads': 8243, 'max_heap_table_size': 433263181, 'query_alloc_block_size': 68924922, 'table_open_cache': 132163}
+
+[INFO] [2024-11-26 12:57:11,910] [autotune] Close db successfully
+[INFO] [2024-11-26 12:57:11,910] [autotune] mysql is shut down
+[INFO] [2024-11-26 12:57:11,913] [autotune] generated config file done
+[INFO] [2024-11-26 12:57:11,941] [autotune] wait for connection
+[INFO] [2024-11-26 12:57:14,950] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 12:57:14,951] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 12:57:14,951] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 12:57:14,951] [autotune] mysql is up
+[INFO] [2024-11-26 12:57:14,951] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 12:57:20,529] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732625840.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:00:31,208] [autotune] internal metrics: [12043252.771428572, 18200875.2, 1171861386.9714286, 0.0, 0.0, 71526.71428571429, 0.0, 4513625819.428572, 0.0, 275489.85714285716, 0.0, 538917.5428571429, 37456.6, 851864.0, 3005.7714285714287, 0.0, 101365801.08571428, 68515.68571428572, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2607234.0, 3516677.0, 0.0, 0.0, 0.0, 0.0, 610938.4857142858, 11737514881.342857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 71526.71428571429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:00:33,700] [DBTune-job_ddpg_11] Iteration 84, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:00:33,715] [autotune] [step 68] generate knobs: {'innodb_adaptive_hash_index_parts': 214, 'innodb_compression_failure_threshold_pct': 40, 'innodb_online_alter_log_max_size': 7729686813604870000, 'innodb_open_files': 325837, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 418, 'max_delayed_threads': 7780, 'max_heap_table_size': 383796288, 'query_alloc_block_size': 63290605, 'table_open_cache': 122695}
+
+[INFO] [2024-11-26 13:00:38,749] [autotune] Close db successfully
+[INFO] [2024-11-26 13:00:38,750] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:00:38,754] [autotune] generated config file done
+[INFO] [2024-11-26 13:00:38,795] [autotune] wait for connection
+[INFO] [2024-11-26 13:00:41,812] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:00:41,813] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:00:41,813] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:00:41,813] [autotune] mysql is up
+[INFO] [2024-11-26 13:00:41,814] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:00:47,460] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732626047.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:03:58,186] [autotune] internal metrics: [18094309.62857143, 17119084.65714286, 1247852251.4285715, 0.0, 0.0, 76168.11428571428, 0.0, 4738125941.028571, 0.0, 289192.2571428571, 0.0, 520441.9142857143, 42229.828571428574, 851864.0, 3706.942857142857, 0.0, 112559616.54285714, 72458.54285714286, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2870233.742857143, 3847479.4285714286, 0.0, 0.0, 0.0, 0.0, 503588.9428571428, 9648975102.457144, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 76166.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:04:00,627] [DBTune-job_ddpg_11] Iteration 85, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:04:00,645] [autotune] [step 69] generate knobs: {'innodb_adaptive_hash_index_parts': 209, 'innodb_compression_failure_threshold_pct': 41, 'innodb_online_alter_log_max_size': 7471723310369292000, 'innodb_open_files': 309985, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 421, 'max_delayed_threads': 7683, 'max_heap_table_size': 389114287, 'query_alloc_block_size': 62882872, 'table_open_cache': 120967}
+
+[INFO] [2024-11-26 13:04:05,681] [autotune] Close db successfully
+[INFO] [2024-11-26 13:04:05,681] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:04:05,685] [autotune] generated config file done
+[INFO] [2024-11-26 13:04:05,712] [autotune] wait for connection
+[INFO] [2024-11-26 13:04:07,722] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:04:07,722] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:04:07,722] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:04:07,723] [autotune] mysql is up
+[INFO] [2024-11-26 13:04:07,723] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:04:13,148] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732626253.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:07:23,872] [autotune] internal metrics: [31711285.485714287, 18390534.514285713, 1260643006.1714287, 0.0, 0.0, 76946.82857142857, 0.0, 4832599361.828571, 0.0, 294958.45714285714, 0.0, 512986.5714285714, 43918.91428571429, 851864.0, 3043.885714285714, 0.0, 137334086.25714287, 73900.31428571428, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2997875.2, 4015203.314285714, 0.0, 0.0, 0.0, 0.0, 502278.6, 9587847542.457144, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 76945.5142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:07:26,784] [DBTune-job_ddpg_11] Iteration 86, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:07:26,802] [autotune] [step 70] generate knobs: {'innodb_adaptive_hash_index_parts': 223, 'innodb_compression_failure_threshold_pct': 43, 'innodb_online_alter_log_max_size': 7728834694129267000, 'innodb_open_files': 322348, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 430, 'max_delayed_threads': 7846, 'max_heap_table_size': 413311005, 'query_alloc_block_size': 63876861, 'table_open_cache': 119095}
+
+[INFO] [2024-11-26 13:07:31,840] [autotune] Close db successfully
+[INFO] [2024-11-26 13:07:31,841] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:07:31,845] [autotune] generated config file done
+[INFO] [2024-11-26 13:07:31,879] [autotune] wait for connection
+[INFO] [2024-11-26 13:07:34,893] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:07:34,894] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:07:34,894] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:07:34,894] [autotune] mysql is up
+[INFO] [2024-11-26 13:07:34,895] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:07:40,361] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732626460.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:10:51,186] [autotune] internal metrics: [29727478.971428573, 19842253.114285715, 1241607606.857143, 0.0, 0.0, 75785.0, 0.0, 4656638010.514286, 0.0, 284218.6285714286, 0.0, 527014.3142857143, 40735.05714285714, 851968.0, 3014.3142857142857, 0.0, 138276668.97142857, 72767.4, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2834565.342857143, 3786626.685714286, 0.0, 0.0, 0.0, 0.0, 571838.4857142858, 10912432341.971428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 75780.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:10:53,555] [DDPG_Optimizer] Save model_params to job_ddpg_11_40
+[INFO] [2024-11-26 13:10:53,555] [DBTune-job_ddpg_11] Iteration 87, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:10:53,576] [autotune] [step 71] generate knobs: {'innodb_adaptive_hash_index_parts': 316, 'innodb_compression_failure_threshold_pct': 72, 'innodb_online_alter_log_max_size': 8769570540779864000, 'innodb_open_files': 196600, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 12827, 'max_heap_table_size': 16384, 'query_alloc_block_size': 75790206, 'table_open_cache': 131523}
+
+[INFO] [2024-11-26 13:10:58,619] [autotune] Close db successfully
+[INFO] [2024-11-26 13:10:58,621] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:10:58,626] [autotune] generated config file done
+[INFO] [2024-11-26 13:10:58,667] [autotune] wait for connection
+[INFO] [2024-11-26 13:11:00,677] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:11:00,678] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:11:00,678] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:11:00,678] [autotune] mysql is up
+[INFO] [2024-11-26 13:11:00,678] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:11:06,220] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732626666.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:14:17,118] [autotune] internal metrics: [16743672.085714286, 20275876.714285713, 1233909467.4285715, 2196392.2285714285, 0.0, 75316.45714285714, 134.05714285714285, 4438880607.085714, 49152.0, 270927.77142857143, 3.0, 546909.0857142857, 34027.142857142855, 851864.0, 3643.8571428571427, 0.0, 116474836.22857143, 71670.62857142858, 13958643712.0, 0.0, 1206.5142857142857, 0.0, 5250.571428571428, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 44.68571428571428, 0.0, 0.0, 16384.0, 2645496.1428571427, 3398857.2, 0.0, 0.0, 0.0, 0.0, 505530.8, 9724209885.942858, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 75313.82857142857, 134.05714285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:14:19,326] [DBTune-job_ddpg_11] Iteration 88, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:14:19,347] [autotune] [step 72] generate knobs: {'innodb_adaptive_hash_index_parts': 190, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 4699488935610701000, 'innodb_open_files': 238101, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 275, 'max_delayed_threads': 6080, 'max_heap_table_size': 331849656, 'query_alloc_block_size': 95087803, 'table_open_cache': 232996}
+
+[INFO] [2024-11-26 13:14:24,382] [autotune] Close db successfully
+[INFO] [2024-11-26 13:14:24,383] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:14:24,386] [autotune] generated config file done
+[INFO] [2024-11-26 13:14:24,417] [autotune] wait for connection
+[INFO] [2024-11-26 13:14:27,432] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:14:27,433] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:14:27,433] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:14:27,433] [autotune] mysql is up
+[INFO] [2024-11-26 13:14:27,433] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:14:32,946] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732626872.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:17:43,833] [autotune] internal metrics: [18799089.42857143, 24767185.285714287, 1363238209.8285713, 0.0, 0.0, 83209.4, 0.0, 4607960678.4, 0.0, 281247.6, 0.0, 529326.8, 41289.6, 851864.0, 3746.3714285714286, 0.0, 142589935.2, 79463.02857142857, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3127856.742857143, 3929093.942857143, 0.0, 0.0, 0.0, 0.0, 659703.0857142857, 12657702730.885714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 83206.11428571428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:17:46,207] [DBTune-job_ddpg_11] Iteration 89, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:17:46,225] [autotune] [step 73] generate knobs: {'innodb_adaptive_hash_index_parts': 20, 'innodb_compression_failure_threshold_pct': 79, 'innodb_online_alter_log_max_size': 9709612253630192000, 'innodb_open_files': 240551, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 535, 'max_delayed_threads': 4726, 'max_heap_table_size': 695985668, 'query_alloc_block_size': 119908438, 'table_open_cache': 250000}
+
+[INFO] [2024-11-26 13:17:51,258] [autotune] Close db successfully
+[INFO] [2024-11-26 13:17:51,261] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,261] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,263] [DBTune-job_ddpg_11] Iteration 90, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,284] [autotune] [step 74] generate knobs: {'innodb_adaptive_hash_index_parts': 80, 'innodb_compression_failure_threshold_pct': 83, 'innodb_online_alter_log_max_size': 2370172245530840000, 'innodb_open_files': 369877, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 563, 'max_delayed_threads': 7435, 'max_heap_table_size': 744009832, 'query_alloc_block_size': 118626095, 'table_open_cache': 213461}
+
+[INFO] [2024-11-26 13:17:51,324] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,325] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,325] [DBTune-job_ddpg_11] Iteration 91, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,341] [autotune] [step 75] generate knobs: {'innodb_adaptive_hash_index_parts': 267, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 9321845115798744000, 'innodb_open_files': 394526, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 549, 'max_delayed_threads': 8957, 'max_heap_table_size': 559823202, 'query_alloc_block_size': 79262243, 'table_open_cache': 144939}
+
+[INFO] [2024-11-26 13:17:51,380] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,381] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,382] [DBTune-job_ddpg_11] Iteration 92, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,412] [autotune] [step 76] generate knobs: {'innodb_adaptive_hash_index_parts': 266, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9338896301382812000, 'innodb_open_files': 391542, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 554, 'max_delayed_threads': 8836, 'max_heap_table_size': 559355561, 'query_alloc_block_size': 78309147, 'table_open_cache': 142888}
+
+[INFO] [2024-11-26 13:17:51,450] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,450] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,452] [DBTune-job_ddpg_11] Iteration 93, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,479] [autotune] [step 77] generate knobs: {'innodb_adaptive_hash_index_parts': 269, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 9313118312859566000, 'innodb_open_files': 393552, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 549, 'max_delayed_threads': 8747, 'max_heap_table_size': 562826868, 'query_alloc_block_size': 77234979, 'table_open_cache': 140279}
+
+[INFO] [2024-11-26 13:17:51,526] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,527] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,528] [DBTune-job_ddpg_11] Iteration 94, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,557] [autotune] [step 78] generate knobs: {'innodb_adaptive_hash_index_parts': 112, 'innodb_compression_failure_threshold_pct': 33, 'innodb_online_alter_log_max_size': 3395655703322642000, 'innodb_open_files': 226627, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 928, 'max_delayed_threads': 0, 'max_heap_table_size': 278392104, 'query_alloc_block_size': 1024, 'table_open_cache': 85205}
+
+[INFO] [2024-11-26 13:17:51,605] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,606] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,607] [DBTune-job_ddpg_11] Iteration 95, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,628] [autotune] [step 79] generate knobs: {'innodb_adaptive_hash_index_parts': 272, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9245480917167696000, 'innodb_open_files': 388019, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 555, 'max_delayed_threads': 8856, 'max_heap_table_size': 547499870, 'query_alloc_block_size': 78003421, 'table_open_cache': 140715}
+
+[INFO] [2024-11-26 13:17:51,674] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,675] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,676] [DBTune-job_ddpg_11] Iteration 96, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,696] [autotune] [step 80] generate knobs: {'innodb_adaptive_hash_index_parts': 272, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9269627234333786000, 'innodb_open_files': 389654, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 551, 'max_delayed_threads': 8710, 'max_heap_table_size': 543847126, 'query_alloc_block_size': 78271131, 'table_open_cache': 139228}
+
+[INFO] [2024-11-26 13:17:51,739] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,739] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,740] [DBTune-job_ddpg_11] Iteration 97, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,769] [autotune] [step 81] generate knobs: {'innodb_adaptive_hash_index_parts': 273, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9224902506709130000, 'innodb_open_files': 388428, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 562, 'max_delayed_threads': 8746, 'max_heap_table_size': 535848496, 'query_alloc_block_size': 78566081, 'table_open_cache': 140994}
+
+[INFO] [2024-11-26 13:17:51,816] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,816] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,817] [DBTune-job_ddpg_11] Iteration 98, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,841] [autotune] [step 82] generate knobs: {'innodb_adaptive_hash_index_parts': 275, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9332002379947932000, 'innodb_open_files': 388924, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 560, 'max_delayed_threads': 8713, 'max_heap_table_size': 540742469, 'query_alloc_block_size': 78254571, 'table_open_cache': 141701}
+
+[INFO] [2024-11-26 13:17:51,887] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,888] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,888] [DBTune-job_ddpg_11] Iteration 99, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,908] [autotune] [step 83] generate knobs: {'innodb_adaptive_hash_index_parts': 210, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 8581885453856027000, 'innodb_open_files': 244352, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 0, 'max_heap_table_size': 16384, 'query_alloc_block_size': 61475767, 'table_open_cache': 82332}
+
+[INFO] [2024-11-26 13:17:51,951] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:51,952] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:51,953] [DBTune-job_ddpg_11] Iteration 100, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:51,985] [autotune] [step 84] generate knobs: {'innodb_adaptive_hash_index_parts': 273, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9602307871717246000, 'innodb_open_files': 391099, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 557, 'max_delayed_threads': 8851, 'max_heap_table_size': 535999117, 'query_alloc_block_size': 78533945, 'table_open_cache': 143203}
+
+[INFO] [2024-11-26 13:17:52,034] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,035] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,036] [DBTune-job_ddpg_11] Iteration 101, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,067] [autotune] [step 85] generate knobs: {'innodb_adaptive_hash_index_parts': 275, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9515186077022584000, 'innodb_open_files': 385677, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 557, 'max_delayed_threads': 8865, 'max_heap_table_size': 523855751, 'query_alloc_block_size': 79302851, 'table_open_cache': 142804}
+
+[INFO] [2024-11-26 13:17:52,114] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,115] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,116] [DBTune-job_ddpg_11] Iteration 102, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,148] [autotune] [step 86] generate knobs: {'innodb_adaptive_hash_index_parts': 358, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 6496693022096200000, 'innodb_open_files': 55233, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 2381, 'max_heap_table_size': 16384, 'query_alloc_block_size': 68680756, 'table_open_cache': 204844}
+
+[INFO] [2024-11-26 13:17:52,195] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,195] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,197] [DBTune-job_ddpg_11] Iteration 103, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,228] [autotune] [step 87] generate knobs: {'innodb_adaptive_hash_index_parts': 275, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 9417178043711216000, 'innodb_open_files': 388569, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 563, 'max_delayed_threads': 8895, 'max_heap_table_size': 524709114, 'query_alloc_block_size': 78663032, 'table_open_cache': 146676}
+
+[INFO] [2024-11-26 13:17:52,276] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,277] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,278] [DBTune-job_ddpg_11] Iteration 104, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,301] [autotune] [step 88] generate knobs: {'innodb_adaptive_hash_index_parts': 278, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 9265990058559212000, 'innodb_open_files': 387205, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 565, 'max_delayed_threads': 8743, 'max_heap_table_size': 531780846, 'query_alloc_block_size': 77892742, 'table_open_cache': 146468}
+
+[INFO] [2024-11-26 13:17:52,346] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,347] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,348] [DBTune-job_ddpg_11] Iteration 105, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,376] [autotune] [step 89] generate knobs: {'innodb_adaptive_hash_index_parts': 275, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 9423772898697884000, 'innodb_open_files': 388741, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 560, 'max_delayed_threads': 8886, 'max_heap_table_size': 539044063, 'query_alloc_block_size': 76299458, 'table_open_cache': 146212}
+
+[INFO] [2024-11-26 13:17:52,416] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,416] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,417] [DBTune-job_ddpg_11] Iteration 106, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,441] [autotune] [step 90] generate knobs: {'innodb_adaptive_hash_index_parts': 283, 'innodb_compression_failure_threshold_pct': 52, 'innodb_online_alter_log_max_size': 3037309777088518000, 'innodb_open_files': 255739, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 953, 'max_delayed_threads': 7015, 'max_heap_table_size': 216661062, 'query_alloc_block_size': 3616346, 'table_open_cache': 208234}
+
+[INFO] [2024-11-26 13:17:52,481] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,481] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,482] [DBTune-job_ddpg_11] Iteration 107, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,502] [autotune] [step 91] generate knobs: {'innodb_adaptive_hash_index_parts': 273, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 9353199813973936000, 'innodb_open_files': 384541, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 549, 'max_delayed_threads': 9095, 'max_heap_table_size': 547805209, 'query_alloc_block_size': 77640800, 'table_open_cache': 143303}
+
+[INFO] [2024-11-26 13:17:52,542] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,542] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,543] [DBTune-job_ddpg_11] Iteration 108, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,571] [autotune] [step 92] generate knobs: {'innodb_adaptive_hash_index_parts': 274, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 9334012282401354000, 'innodb_open_files': 388612, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 555, 'max_delayed_threads': 9100, 'max_heap_table_size': 549921529, 'query_alloc_block_size': 78503585, 'table_open_cache': 142791}
+
+[INFO] [2024-11-26 13:17:52,609] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,610] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,611] [DBTune-job_ddpg_11] Iteration 109, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,635] [autotune] [step 93] generate knobs: {'innodb_adaptive_hash_index_parts': 139, 'innodb_compression_failure_threshold_pct': 65, 'innodb_online_alter_log_max_size': 5135167178151059000, 'innodb_open_files': 209171, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 748, 'max_delayed_threads': 14132, 'max_heap_table_size': 712272908, 'query_alloc_block_size': 34577280, 'table_open_cache': 143359}
+
+[INFO] [2024-11-26 13:17:52,675] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,676] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,676] [DBTune-job_ddpg_11] Iteration 110, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,698] [autotune] [step 94] generate knobs: {'innodb_adaptive_hash_index_parts': 179, 'innodb_compression_failure_threshold_pct': 89, 'innodb_online_alter_log_max_size': 5994094263732478000, 'innodb_open_files': 295798, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 583, 'max_delayed_threads': 11937, 'max_heap_table_size': 576853534, 'query_alloc_block_size': 38594625, 'table_open_cache': 161423}
+
+[INFO] [2024-11-26 13:17:52,735] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,736] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,737] [DBTune-job_ddpg_11] Iteration 111, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,757] [autotune] [step 95] generate knobs: {'innodb_adaptive_hash_index_parts': 278, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 9250289070028098000, 'innodb_open_files': 395745, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 550, 'max_delayed_threads': 9040, 'max_heap_table_size': 553514306, 'query_alloc_block_size': 79325739, 'table_open_cache': 144001}
+
+[INFO] [2024-11-26 13:17:52,801] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,802] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,803] [DBTune-job_ddpg_11] Iteration 112, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,824] [autotune] [step 96] generate knobs: {'innodb_adaptive_hash_index_parts': 303, 'innodb_compression_failure_threshold_pct': 59, 'innodb_online_alter_log_max_size': 6676632617864055000, 'innodb_open_files': 578071, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 773, 'max_delayed_threads': 5390, 'max_heap_table_size': 128289946, 'query_alloc_block_size': 80575505, 'table_open_cache': 152973}
+
+[INFO] [2024-11-26 13:17:52,863] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,864] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,865] [DBTune-job_ddpg_11] Iteration 113, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,886] [autotune] [step 97] generate knobs: {'innodb_adaptive_hash_index_parts': 357, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 5510588479167269000, 'innodb_open_files': 551603, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 699, 'max_heap_table_size': 16384, 'query_alloc_block_size': 37846971, 'table_open_cache': 99606}
+
+[INFO] [2024-11-26 13:17:52,930] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,930] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,931] [DBTune-job_ddpg_11] Iteration 114, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:52,953] [autotune] [step 98] generate knobs: {'innodb_adaptive_hash_index_parts': 274, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 9490869335961372000, 'innodb_open_files': 400223, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 549, 'max_delayed_threads': 8855, 'max_heap_table_size': 544574027, 'query_alloc_block_size': 78224563, 'table_open_cache': 141632}
+
+[INFO] [2024-11-26 13:17:52,993] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:52,994] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:52,995] [DBTune-job_ddpg_11] Iteration 115, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,018] [autotune] [step 99] generate knobs: {'innodb_adaptive_hash_index_parts': 272, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 9509519207632572000, 'innodb_open_files': 400358, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 553, 'max_delayed_threads': 8968, 'max_heap_table_size': 544432653, 'query_alloc_block_size': 76785030, 'table_open_cache': 140873}
+
+[INFO] [2024-11-26 13:17:53,055] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,055] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:53,056] [DBTune-job_ddpg_11] Iteration 116, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,078] [autotune] [step 100] generate knobs: {'innodb_adaptive_hash_index_parts': 273, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 9382332404458554000, 'innodb_open_files': 404913, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 554, 'max_delayed_threads': 9101, 'max_heap_table_size': 547545821, 'query_alloc_block_size': 76703511, 'table_open_cache': 141178}
+
+[INFO] [2024-11-26 13:17:53,122] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,123] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:53,124] [DBTune-job_ddpg_11] Iteration 117, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,145] [autotune] [step 101] generate knobs: {'innodb_adaptive_hash_index_parts': 275, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 9293512967866690000, 'innodb_open_files': 404720, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 553, 'max_delayed_threads': 9185, 'max_heap_table_size': 553987515, 'query_alloc_block_size': 76495416, 'table_open_cache': 141636}
+
+[INFO] [2024-11-26 13:17:53,189] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,189] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:53,190] [DBTune-job_ddpg_11] Iteration 118, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,211] [autotune] [step 102] generate knobs: {'innodb_adaptive_hash_index_parts': 274, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 9393259324908288000, 'innodb_open_files': 401478, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 551, 'max_delayed_threads': 9171, 'max_heap_table_size': 558555253, 'query_alloc_block_size': 77220763, 'table_open_cache': 142091}
+
+[INFO] [2024-11-26 13:17:53,254] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,255] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:53,256] [DBTune-job_ddpg_11] Iteration 119, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,277] [autotune] [step 103] generate knobs: {'innodb_adaptive_hash_index_parts': 270, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9451281514388354000, 'innodb_open_files': 402159, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 543, 'max_delayed_threads': 9158, 'max_heap_table_size': 554727920, 'query_alloc_block_size': 77065388, 'table_open_cache': 142650}
+
+[INFO] [2024-11-26 13:17:53,310] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,311] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:53,312] [DBTune-job_ddpg_11] Iteration 120, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,333] [autotune] [step 104] generate knobs: {'innodb_adaptive_hash_index_parts': 231, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 6675596330630821000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 532, 'max_delayed_threads': 12769, 'max_heap_table_size': 854931147, 'query_alloc_block_size': 24070990, 'table_open_cache': 124926}
+
+[INFO] [2024-11-26 13:17:53,373] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,373] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:53,375] [DBTune-job_ddpg_11] Iteration 121, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,406] [autotune] [step 105] generate knobs: {'innodb_adaptive_hash_index_parts': 276, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9486273388338120000, 'innodb_open_files': 402914, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 542, 'max_delayed_threads': 9089, 'max_heap_table_size': 547524702, 'query_alloc_block_size': 77515009, 'table_open_cache': 145349}
+
+[INFO] [2024-11-26 13:17:53,445] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,445] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:53,446] [DBTune-job_ddpg_11] Iteration 122, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,469] [autotune] [step 106] generate knobs: {'innodb_adaptive_hash_index_parts': 278, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9482536157244474000, 'innodb_open_files': 396770, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 538, 'max_delayed_threads': 8959, 'max_heap_table_size': 549384833, 'query_alloc_block_size': 78256659, 'table_open_cache': 145988}
+
+[INFO] [2024-11-26 13:17:53,506] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,506] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:17:53,508] [DBTune-job_ddpg_11] Iteration 123, objective value: [2147483647].
+[INFO] [2024-11-26 13:17:53,537] [autotune] [step 107] generate knobs: {'innodb_adaptive_hash_index_parts': 390, 'innodb_compression_failure_threshold_pct': 87, 'innodb_online_alter_log_max_size': 10908329951548602000, 'innodb_open_files': 477850, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 329, 'max_delayed_threads': 0, 'max_heap_table_size': 258067806, 'query_alloc_block_size': 62578095, 'table_open_cache': 250000}
+
+[INFO] [2024-11-26 13:17:53,571] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:17:53,573] [autotune] generated config file done
+[INFO] [2024-11-26 13:17:53,614] [autotune] wait for connection
+[INFO] [2024-11-26 13:17:56,633] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:17:56,634] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:17:56,634] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:17:56,635] [autotune] mysql is up
+[INFO] [2024-11-26 13:17:56,635] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:18:02,114] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732627082.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:21:12,799] [autotune] internal metrics: [16020015.2, 15238502.8, 1173368714.9714286, 0.0, 0.0, 71622.0, 0.0, 4394229057.828571, 0.0, 268202.45714285714, 0.0, 549972.4285714285, 33689.114285714284, 851864.0, 2485.9714285714285, 0.0, 95871021.57142857, 69134.71428571429, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2591854.2285714285, 3315499.942857143, 0.0, 0.0, 0.0, 0.0, 461617.8857142857, 8867879994.742857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 71619.37142857142, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:21:14,969] [DBTune-job_ddpg_11] Iteration 124, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:21:14,991] [autotune] [step 108] generate knobs: {'innodb_adaptive_hash_index_parts': 278, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 9640105692636998000, 'innodb_open_files': 393707, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 541, 'max_delayed_threads': 8739, 'max_heap_table_size': 556522964, 'query_alloc_block_size': 78653072, 'table_open_cache': 148591}
+
+[INFO] [2024-11-26 13:21:20,032] [autotune] Close db successfully
+[INFO] [2024-11-26 13:21:20,033] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:21:20,033] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:21:20,034] [DBTune-job_ddpg_11] Iteration 125, objective value: [2147483647].
+[INFO] [2024-11-26 13:21:20,058] [autotune] [step 109] generate knobs: {'innodb_adaptive_hash_index_parts': 277, 'innodb_compression_failure_threshold_pct': 53, 'innodb_online_alter_log_max_size': 9619103971213132000, 'innodb_open_files': 392378, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 543, 'max_delayed_threads': 8706, 'max_heap_table_size': 553550466, 'query_alloc_block_size': 79699768, 'table_open_cache': 147770}
+
+[INFO] [2024-11-26 13:21:20,099] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:21:20,099] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:21:20,100] [DBTune-job_ddpg_11] Iteration 126, objective value: [2147483647].
+[INFO] [2024-11-26 13:21:20,122] [autotune] [step 110] generate knobs: {'innodb_adaptive_hash_index_parts': 277, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 9537986595171720000, 'innodb_open_files': 386999, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 544, 'max_delayed_threads': 8755, 'max_heap_table_size': 554976108, 'query_alloc_block_size': 80537170, 'table_open_cache': 146992}
+
+[INFO] [2024-11-26 13:21:20,167] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:21:20,167] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:21:20,168] [DBTune-job_ddpg_11] Iteration 127, objective value: [2147483647].
+[INFO] [2024-11-26 13:21:20,187] [autotune] [step 111] generate knobs: {'innodb_adaptive_hash_index_parts': 344, 'innodb_compression_failure_threshold_pct': 69, 'innodb_online_alter_log_max_size': 9241877826172146000, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 462, 'max_delayed_threads': 0, 'max_heap_table_size': 272184135, 'query_alloc_block_size': 134217728, 'table_open_cache': 200859}
+
+[INFO] [2024-11-26 13:21:20,226] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:21:20,229] [autotune] generated config file done
+[INFO] [2024-11-26 13:21:20,263] [autotune] wait for connection
+[INFO] [2024-11-26 13:21:22,276] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:21:22,277] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:21:22,277] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:21:22,277] [autotune] mysql is up
+[INFO] [2024-11-26 13:21:22,278] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:21:28,179] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732627288.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:24:38,877] [autotune] internal metrics: [17119403.37142857, 20786004.22857143, 1384793000.2285714, 0.0, 0.0, 84523.68571428572, 0.0, 4309846308.571428, 0.0, 263052.14285714284, 0.0, 554741.4, 34070.485714285714, 851864.0, 8025.685714285714, 0.0, 121363697.82857142, 76494.05714285714, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2596757.1714285715, 3252422.1142857145, 0.0, 0.0, 0.0, 0.0, 490315.3142857143, 9406331167.885714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 84521.05714285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:24:41,378] [DBTune-job_ddpg_11] Iteration 128, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:24:41,568] [autotune] [step 112] generate knobs: {'innodb_adaptive_hash_index_parts': 287, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 9783389307582408000, 'innodb_open_files': 393964, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 566, 'max_delayed_threads': 9091, 'max_heap_table_size': 573336660, 'query_alloc_block_size': 81197661, 'table_open_cache': 147752}
+
+[INFO] [2024-11-26 13:24:46,603] [autotune] Close db successfully
+[INFO] [2024-11-26 13:24:46,605] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:46,605] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:46,607] [DBTune-job_ddpg_11] Iteration 129, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:46,637] [autotune] [step 113] generate knobs: {'innodb_adaptive_hash_index_parts': 289, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9781721352428228000, 'innodb_open_files': 392007, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 565, 'max_delayed_threads': 8992, 'max_heap_table_size': 570163652, 'query_alloc_block_size': 81344244, 'table_open_cache': 148655}
+
+[INFO] [2024-11-26 13:24:46,670] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:46,671] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:46,672] [DBTune-job_ddpg_11] Iteration 130, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:46,693] [autotune] [step 114] generate knobs: {'innodb_adaptive_hash_index_parts': 286, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9706912959033282000, 'innodb_open_files': 387353, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 572, 'max_delayed_threads': 9074, 'max_heap_table_size': 579573941, 'query_alloc_block_size': 81619257, 'table_open_cache': 147761}
+
+[INFO] [2024-11-26 13:24:46,724] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:46,725] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:46,725] [DBTune-job_ddpg_11] Iteration 131, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:46,748] [autotune] [step 115] generate knobs: {'innodb_adaptive_hash_index_parts': 288, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9736007066702872000, 'innodb_open_files': 388816, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 574, 'max_delayed_threads': 9062, 'max_heap_table_size': 577654034, 'query_alloc_block_size': 81311204, 'table_open_cache': 148505}
+
+[INFO] [2024-11-26 13:24:46,782] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:46,782] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:46,783] [DBTune-job_ddpg_11] Iteration 132, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:46,806] [autotune] [step 116] generate knobs: {'innodb_adaptive_hash_index_parts': 228, 'innodb_compression_failure_threshold_pct': 24, 'innodb_online_alter_log_max_size': 13101175309574622000, 'innodb_open_files': 10, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 751, 'max_delayed_threads': 1534, 'max_heap_table_size': 949201709, 'query_alloc_block_size': 43872165, 'table_open_cache': 236613}
+
+[INFO] [2024-11-26 13:24:46,840] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:46,840] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:46,841] [DBTune-job_ddpg_11] Iteration 133, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:46,863] [autotune] [step 117] generate knobs: {'innodb_adaptive_hash_index_parts': 284, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9645868219310076000, 'innodb_open_files': 393082, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 577, 'max_delayed_threads': 9165, 'max_heap_table_size': 575199927, 'query_alloc_block_size': 80375715, 'table_open_cache': 149192}
+
+[INFO] [2024-11-26 13:24:46,896] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:46,897] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:46,897] [DBTune-job_ddpg_11] Iteration 134, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:46,920] [autotune] [step 118] generate knobs: {'innodb_adaptive_hash_index_parts': 279, 'innodb_compression_failure_threshold_pct': 49, 'innodb_online_alter_log_max_size': 1077706768082516000, 'innodb_open_files': 150402, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 778, 'max_delayed_threads': 1081, 'max_heap_table_size': 610755801, 'query_alloc_block_size': 79365251, 'table_open_cache': 125611}
+
+[INFO] [2024-11-26 13:24:46,951] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:46,952] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:46,953] [DBTune-job_ddpg_11] Iteration 135, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:46,975] [autotune] [step 119] generate knobs: {'innodb_adaptive_hash_index_parts': 287, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9647864927655488000, 'innodb_open_files': 400715, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 574, 'max_delayed_threads': 9070, 'max_heap_table_size': 575235767, 'query_alloc_block_size': 82953759, 'table_open_cache': 147767}
+
+[INFO] [2024-11-26 13:24:47,009] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,009] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,010] [DBTune-job_ddpg_11] Iteration 136, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,032] [autotune] [step 120] generate knobs: {'innodb_adaptive_hash_index_parts': 289, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9671771551859410000, 'innodb_open_files': 407565, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 573, 'max_delayed_threads': 9095, 'max_heap_table_size': 573990666, 'query_alloc_block_size': 81567706, 'table_open_cache': 149652}
+
+[INFO] [2024-11-26 13:24:47,065] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,066] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,066] [DBTune-job_ddpg_11] Iteration 137, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,089] [autotune] [step 121] generate knobs: {'innodb_adaptive_hash_index_parts': 290, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9711663937425644000, 'innodb_open_files': 405551, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 580, 'max_delayed_threads': 9053, 'max_heap_table_size': 565703560, 'query_alloc_block_size': 80680809, 'table_open_cache': 149461}
+
+[INFO] [2024-11-26 13:24:47,119] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,120] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,121] [DBTune-job_ddpg_11] Iteration 138, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,143] [autotune] [step 122] generate knobs: {'innodb_adaptive_hash_index_parts': 377, 'innodb_compression_failure_threshold_pct': 33, 'innodb_online_alter_log_max_size': 9401627687913210000, 'innodb_open_files': 592681, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 0, 'max_heap_table_size': 411746293, 'query_alloc_block_size': 114321784, 'table_open_cache': 190278}
+
+[INFO] [2024-11-26 13:24:47,181] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,181] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,183] [DBTune-job_ddpg_11] Iteration 139, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,217] [autotune] [step 123] generate knobs: {'innodb_adaptive_hash_index_parts': 511, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 9988100291383296000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 0, 'max_heap_table_size': 424719727, 'query_alloc_block_size': 97891061, 'table_open_cache': 142568}
+
+[INFO] [2024-11-26 13:24:47,253] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,254] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,255] [DBTune-job_ddpg_11] Iteration 140, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,277] [autotune] [step 124] generate knobs: {'innodb_adaptive_hash_index_parts': 291, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9822072233247786000, 'innodb_open_files': 408891, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 575, 'max_delayed_threads': 9153, 'max_heap_table_size': 564875733, 'query_alloc_block_size': 81867568, 'table_open_cache': 148835}
+
+[INFO] [2024-11-26 13:24:47,311] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,311] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,312] [DBTune-job_ddpg_11] Iteration 141, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,341] [autotune] [step 125] generate knobs: {'innodb_adaptive_hash_index_parts': 286, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9661197573798926000, 'innodb_open_files': 411323, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 575, 'max_delayed_threads': 9223, 'max_heap_table_size': 559063534, 'query_alloc_block_size': 82051126, 'table_open_cache': 149679}
+
+[INFO] [2024-11-26 13:24:47,378] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,378] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,379] [DBTune-job_ddpg_11] Iteration 142, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,405] [autotune] [step 126] generate knobs: {'innodb_adaptive_hash_index_parts': 289, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 9680550031721622000, 'innodb_open_files': 408842, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 570, 'max_delayed_threads': 9169, 'max_heap_table_size': 562887795, 'query_alloc_block_size': 81163653, 'table_open_cache': 150633}
+
+[INFO] [2024-11-26 13:24:47,439] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,439] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,440] [DBTune-job_ddpg_11] Iteration 143, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,464] [autotune] [step 127] generate knobs: {'innodb_adaptive_hash_index_parts': 288, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 9670839168226750000, 'innodb_open_files': 405654, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 582, 'max_delayed_threads': 9136, 'max_heap_table_size': 566608570, 'query_alloc_block_size': 81780880, 'table_open_cache': 149599}
+
+[INFO] [2024-11-26 13:24:47,499] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,500] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,501] [DBTune-job_ddpg_11] Iteration 144, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,529] [autotune] [step 128] generate knobs: {'innodb_adaptive_hash_index_parts': 284, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9811122223109036000, 'innodb_open_files': 402405, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 571, 'max_delayed_threads': 9225, 'max_heap_table_size': 568567005, 'query_alloc_block_size': 82068582, 'table_open_cache': 149996}
+
+[INFO] [2024-11-26 13:24:47,568] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,568] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,569] [DBTune-job_ddpg_11] Iteration 145, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,590] [autotune] [step 129] generate knobs: {'innodb_adaptive_hash_index_parts': 281, 'innodb_compression_failure_threshold_pct': 55, 'innodb_online_alter_log_max_size': 9718888811069758000, 'innodb_open_files': 400265, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 567, 'max_delayed_threads': 9202, 'max_heap_table_size': 560749524, 'query_alloc_block_size': 81410499, 'table_open_cache': 147592}
+
+[INFO] [2024-11-26 13:24:47,624] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,624] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,625] [DBTune-job_ddpg_11] Iteration 146, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,643] [autotune] [step 130] generate knobs: {'innodb_adaptive_hash_index_parts': 284, 'innodb_compression_failure_threshold_pct': 54, 'innodb_online_alter_log_max_size': 9753689370453388000, 'innodb_open_files': 403744, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 570, 'max_delayed_threads': 9258, 'max_heap_table_size': 560488408, 'query_alloc_block_size': 80621601, 'table_open_cache': 146530}
+
+[INFO] [2024-11-26 13:24:47,682] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,683] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,683] [DBTune-job_ddpg_11] Iteration 147, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,702] [autotune] [step 131] generate knobs: {'innodb_adaptive_hash_index_parts': 280, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 7375229850706498000, 'innodb_open_files': 479085, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 554, 'max_delayed_threads': 9430, 'max_heap_table_size': 259798612, 'query_alloc_block_size': 72224489, 'table_open_cache': 72039}
+
+[INFO] [2024-11-26 13:24:47,734] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,735] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,737] [DBTune-job_ddpg_11] Iteration 148, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,772] [autotune] [step 132] generate knobs: {'innodb_adaptive_hash_index_parts': 252, 'innodb_compression_failure_threshold_pct': 0, 'innodb_online_alter_log_max_size': 6311504370358629000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 766, 'max_delayed_threads': 9769, 'max_heap_table_size': 370063025, 'query_alloc_block_size': 92619806, 'table_open_cache': 99167}
+
+[INFO] [2024-11-26 13:24:47,812] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,813] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,814] [DBTune-job_ddpg_11] Iteration 149, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,840] [autotune] [step 133] generate knobs: {'innodb_adaptive_hash_index_parts': 139, 'innodb_compression_failure_threshold_pct': 2, 'innodb_online_alter_log_max_size': 3126431303778344000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 876, 'max_delayed_threads': 14903, 'max_heap_table_size': 390407259, 'query_alloc_block_size': 68089913, 'table_open_cache': 75976}
+
+[INFO] [2024-11-26 13:24:47,874] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,874] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,875] [DBTune-job_ddpg_11] Iteration 150, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,899] [autotune] [step 134] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 40, 'innodb_online_alter_log_max_size': 10203184043097524000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 548, 'max_delayed_threads': 13128, 'max_heap_table_size': 584887331, 'query_alloc_block_size': 35628372, 'table_open_cache': 171250}
+
+[INFO] [2024-11-26 13:24:47,936] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:47,937] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:24:47,938] [DBTune-job_ddpg_11] Iteration 151, objective value: [2147483647].
+[INFO] [2024-11-26 13:24:47,961] [autotune] [step 135] generate knobs: {'innodb_adaptive_hash_index_parts': 55, 'innodb_compression_failure_threshold_pct': 31, 'innodb_online_alter_log_max_size': 15425674775844822000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 360, 'max_delayed_threads': 16384, 'max_heap_table_size': 509111496, 'query_alloc_block_size': 52283033, 'table_open_cache': 179188}
+
+[INFO] [2024-11-26 13:24:47,998] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:24:48,002] [autotune] generated config file done
+[INFO] [2024-11-26 13:24:48,037] [autotune] wait for connection
+[INFO] [2024-11-26 13:24:51,049] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:24:51,050] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:24:51,050] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:24:51,050] [autotune] mysql is up
+[INFO] [2024-11-26 13:24:51,051] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:24:56,501] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732627496.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:28:07,141] [autotune] internal metrics: [53020021.22857143, 55951908.77142857, 1440897901.7142856, 0.0, 0.0, 87948.71428571429, 0.0, 4640209539.657143, 0.0, 283215.34285714285, 0.0, 516805.97142857144, 51841.97142857143, 851864.0, 18156.2, 0.0, 370302662.74285716, 69802.37142857142, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3184948.657142857, 4070589.942857143, 0.0, 0.0, 0.0, 0.0, 1024534.3428571429, 19511929408.37143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 87941.4857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:28:10,197] [DDPG_Optimizer] Save model_params to job_ddpg_11_45
+[INFO] [2024-11-26 13:28:10,198] [DBTune-job_ddpg_11] Iteration 152, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:28:10,219] [autotune] [step 136] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 43, 'innodb_online_alter_log_max_size': 18225462296408416000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 312, 'max_delayed_threads': 16384, 'max_heap_table_size': 572089831, 'query_alloc_block_size': 31546839, 'table_open_cache': 239136}
+
+[INFO] [2024-11-26 13:28:15,255] [autotune] Close db successfully
+[INFO] [2024-11-26 13:28:15,257] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:28:15,260] [autotune] generated config file done
+[INFO] [2024-11-26 13:28:15,289] [autotune] wait for connection
+[INFO] [2024-11-26 13:28:17,300] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:28:17,301] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:28:17,301] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:28:17,302] [autotune] mysql is up
+[INFO] [2024-11-26 13:28:17,302] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:28:22,827] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732627702.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:31:33,881] [autotune] internal metrics: [146248945.4, 34730205.68571428, 1699501553.3714285, 0.0, 0.0, 103733.94285714286, 0.0, 4885545428.114285, 0.0, 298190.0, 0.0, 484508.1142857143, 69269.85714285714, 851968.0, 20270.22857142857, 0.0, 597545680.3428571, 83459.11428571428, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1121876.9142857143, 6311142.828571429, 0.0, 0.0, 0.0, 0.0, 93577.14285714286, 2094962432.2857144, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 103726.05714285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:31:37,792] [DBTune-job_ddpg_11] Iteration 153, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:31:37,824] [autotune] [step 137] generate knobs: {'innodb_adaptive_hash_index_parts': 283, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 9900735505199462000, 'innodb_open_files': 397146, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 561, 'max_delayed_threads': 9484, 'max_heap_table_size': 577667346, 'query_alloc_block_size': 80142813, 'table_open_cache': 150786}
+
+[INFO] [2024-11-26 13:31:42,869] [autotune] Close db successfully
+[INFO] [2024-11-26 13:31:42,872] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:31:42,872] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:31:42,873] [DBTune-job_ddpg_11] Iteration 154, objective value: [2147483647].
+[INFO] [2024-11-26 13:31:42,913] [autotune] [step 138] generate knobs: {'innodb_adaptive_hash_index_parts': 281, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 9789207909214526000, 'innodb_open_files': 392525, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 559, 'max_delayed_threads': 9541, 'max_heap_table_size': 582140621, 'query_alloc_block_size': 80777952, 'table_open_cache': 150078}
+
+[INFO] [2024-11-26 13:31:42,966] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:31:42,966] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:31:42,967] [DBTune-job_ddpg_11] Iteration 155, objective value: [2147483647].
+[INFO] [2024-11-26 13:31:42,992] [autotune] [step 139] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 87, 'innodb_online_alter_log_max_size': 11229692243278052000, 'innodb_open_files': 510104, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 15003, 'max_heap_table_size': 610810712, 'query_alloc_block_size': 84587771, 'table_open_cache': 250000}
+
+[INFO] [2024-11-26 13:31:43,029] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:31:43,032] [autotune] generated config file done
+[INFO] [2024-11-26 13:31:43,068] [autotune] wait for connection
+[INFO] [2024-11-26 13:31:46,084] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:31:46,085] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:31:46,085] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:31:46,085] [autotune] mysql is up
+[INFO] [2024-11-26 13:31:46,085] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:31:51,850] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732627911.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:35:02,692] [autotune] internal metrics: [145620131.97142857, 34636856.571428575, 1750750705.3714285, 0.0, 0.0, 106859.97142857143, 0.0, 4848852289.828571, 0.0, 295950.45714285714, 0.0, 487070.0, 68947.54285714286, 851968.0, 20374.714285714286, 0.0, 593825670.2, 86476.71428571429, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1115991.5428571429, 6119990.485714286, 0.0, 0.0, 0.0, 0.0, 94541.17142857143, 2104280292.1714287, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 106857.34285714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:35:06,857] [DBTune-job_ddpg_11] Iteration 156, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:35:06,885] [autotune] [step 140] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 11315976212114120000, 'innodb_open_files': 528252, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 13709, 'max_heap_table_size': 632527437, 'query_alloc_block_size': 92508054, 'table_open_cache': 250000}
+
+[INFO] [2024-11-26 13:35:11,930] [autotune] Close db successfully
+[INFO] [2024-11-26 13:35:11,930] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:35:11,934] [autotune] generated config file done
+[INFO] [2024-11-26 13:35:11,965] [autotune] wait for connection
+[INFO] [2024-11-26 13:35:13,978] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:35:13,978] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:35:13,979] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:35:13,979] [autotune] mysql is up
+[INFO] [2024-11-26 13:35:13,979] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:35:19,593] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732628119.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:38:30,373] [autotune] internal metrics: [147778919.2, 35919652.0, 1782447659.8857143, 0.0, 0.0, 108795.25714285714, 0.0, 4840167833.6, 0.0, 295420.4, 0.0, 487299.1142857143, 69144.4857142857, 851864.0, 20849.17142857143, 0.0, 606908862.0571429, 87939.5142857143, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1147582.3714285714, 6185135.685714286, 0.0, 0.0, 0.0, 0.0, 96861.54285714286, 2140848280.6571429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 108790.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:38:33,585] [DBTune-job_ddpg_11] Iteration 157, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:38:33,978] [autotune] [step 141] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 13138157294815798000, 'innodb_open_files': 351894, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 27, 'max_delayed_threads': 13672, 'max_heap_table_size': 776701749, 'query_alloc_block_size': 95158642, 'table_open_cache': 243321}
+
+[INFO] [2024-11-26 13:38:39,029] [autotune] Close db successfully
+[INFO] [2024-11-26 13:38:39,030] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:38:39,035] [autotune] generated config file done
+[INFO] [2024-11-26 13:38:39,074] [autotune] wait for connection
+[INFO] [2024-11-26 13:38:41,085] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:38:41,085] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:38:41,085] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:38:41,085] [autotune] mysql is up
+[INFO] [2024-11-26 13:38:41,086] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:38:46,465] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732628326.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:41:57,331] [autotune] internal metrics: [142702320.42857143, 33341950.0, 1902280235.8857143, 0.0, 0.0, 116111.88571428572, 0.0, 5263108622.6285715, 0.0, 321234.65714285715, 0.0, 449931.17142857146, 80698.14285714286, 851864.0, 20435.82857142857, 0.0, 574625613.2285714, 95672.11428571428, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1080199.6, 7453896.514285714, 0.0, 0.0, 0.0, 0.0, 85632.28571428571, 1923244496.6857142, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 116106.62857142858, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:42:01,164] [DBTune-job_ddpg_11] Iteration 158, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:42:01,205] [autotune] [step 142] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 7099006801494996000, 'innodb_open_files': 556073, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 160, 'max_delayed_threads': 3310, 'max_heap_table_size': 993475209, 'query_alloc_block_size': 74955508, 'table_open_cache': 247877}
+
+[INFO] [2024-11-26 13:42:06,255] [autotune] Close db successfully
+[INFO] [2024-11-26 13:42:06,255] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:42:06,258] [autotune] generated config file done
+[INFO] [2024-11-26 13:42:06,296] [autotune] wait for connection
+[INFO] [2024-11-26 13:42:08,305] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:42:08,305] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:42:08,305] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:42:08,306] [autotune] mysql is up
+[INFO] [2024-11-26 13:42:08,306] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:42:13,716] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732628533.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:45:25,019] [autotune] internal metrics: [144596463.08571428, 34615726.8, 1704604935.3142858, 0.0, 0.0, 104042.14285714286, 0.0, 4812998948.571428, 0.0, 293762.0571428572, 0.0, 489142.14285714284, 68959.62857142858, 851864.0, 20379.97142857143, 0.0, 590962751.7714286, 83656.25714285714, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1102905.2, 6028470.857142857, 0.0, 0.0, 0.0, 0.0, 94382.8, 2103236375.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 104036.88571428572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:45:29,122] [DDPG_Optimizer] Save model_params to job_ddpg_11_50
+[INFO] [2024-11-26 13:45:29,122] [DBTune-job_ddpg_11] Iteration 159, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:45:29,152] [autotune] [step 143] generate knobs: {'innodb_adaptive_hash_index_parts': 348, 'innodb_compression_failure_threshold_pct': 71, 'innodb_online_alter_log_max_size': 12101297217392944000, 'innodb_open_files': 461752, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 672, 'max_delayed_threads': 11283, 'max_heap_table_size': 725091976, 'query_alloc_block_size': 94661918, 'table_open_cache': 178667}
+
+[INFO] [2024-11-26 13:45:34,204] [autotune] Close db successfully
+[INFO] [2024-11-26 13:45:34,205] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:45:34,206] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:45:34,208] [DBTune-job_ddpg_11] Iteration 160, objective value: [2147483647].
+[INFO] [2024-11-26 13:45:34,242] [autotune] [step 144] generate knobs: {'innodb_adaptive_hash_index_parts': 96, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 13175086503624934000, 'innodb_open_files': 447556, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 0, 'max_delayed_threads': 11893, 'max_heap_table_size': 735845476, 'query_alloc_block_size': 41351628, 'table_open_cache': 205686}
+
+[INFO] [2024-11-26 13:45:34,278] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:45:34,281] [autotune] generated config file done
+[INFO] [2024-11-26 13:45:34,311] [autotune] wait for connection
+[INFO] [2024-11-26 13:45:36,319] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:45:36,320] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:45:36,320] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:45:36,320] [autotune] mysql is up
+[INFO] [2024-11-26 13:45:36,320] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:45:41,884] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732628741.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:48:52,724] [autotune] internal metrics: [19687896.171428572, 15719359.2, 1087106486.857143, 0.0, 0.0, 66356.31428571428, 0.0, 4362195997.257143, 0.0, 266247.3142857143, 0.0, 552433.4571428571, 33183.22857142857, 851864.0, 3091.8571428571427, 0.0, 108047955.6, 63261.171428571426, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3741725.4285714286, 4277920.485714286, 0.0, 0.0, 0.0, 0.0, 741423.4, 14270253020.171429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 66355.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:48:54,789] [DBTune-job_ddpg_11] Iteration 161, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:48:54,812] [autotune] [step 145] generate knobs: {'innodb_adaptive_hash_index_parts': 344, 'innodb_compression_failure_threshold_pct': 68, 'innodb_online_alter_log_max_size': 12000229250532412000, 'innodb_open_files': 446987, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 651, 'max_delayed_threads': 10945, 'max_heap_table_size': 696138690, 'query_alloc_block_size': 90671580, 'table_open_cache': 171972}
+
+[INFO] [2024-11-26 13:48:59,845] [autotune] Close db successfully
+[INFO] [2024-11-26 13:48:59,846] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:48:59,847] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:48:59,848] [DBTune-job_ddpg_11] Iteration 162, objective value: [2147483647].
+[INFO] [2024-11-26 13:48:59,889] [autotune] [step 146] generate knobs: {'innodb_adaptive_hash_index_parts': 345, 'innodb_compression_failure_threshold_pct': 67, 'innodb_online_alter_log_max_size': 12052028219068072000, 'innodb_open_files': 447866, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 658, 'max_delayed_threads': 10995, 'max_heap_table_size': 698544285, 'query_alloc_block_size': 92230937, 'table_open_cache': 172066}
+
+[INFO] [2024-11-26 13:48:59,928] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:48:59,929] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:48:59,930] [DBTune-job_ddpg_11] Iteration 163, objective value: [2147483647].
+[INFO] [2024-11-26 13:48:59,957] [autotune] [step 147] generate knobs: {'innodb_adaptive_hash_index_parts': 344, 'innodb_compression_failure_threshold_pct': 68, 'innodb_online_alter_log_max_size': 12083897487455628000, 'innodb_open_files': 445371, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 650, 'max_delayed_threads': 11056, 'max_heap_table_size': 708949503, 'query_alloc_block_size': 92404159, 'table_open_cache': 171500}
+
+[INFO] [2024-11-26 13:48:59,998] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:48:59,998] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:49:00,000] [DBTune-job_ddpg_11] Iteration 164, objective value: [2147483647].
+[INFO] [2024-11-26 13:49:00,034] [autotune] [step 148] generate knobs: {'innodb_adaptive_hash_index_parts': 345, 'innodb_compression_failure_threshold_pct': 67, 'innodb_online_alter_log_max_size': 12089729283195756000, 'innodb_open_files': 448722, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 648, 'max_delayed_threads': 11112, 'max_heap_table_size': 708322376, 'query_alloc_block_size': 91673389, 'table_open_cache': 170559}
+
+[INFO] [2024-11-26 13:49:00,075] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:49:00,076] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:49:00,077] [DBTune-job_ddpg_11] Iteration 165, objective value: [2147483647].
+[INFO] [2024-11-26 13:49:00,113] [autotune] [step 149] generate knobs: {'innodb_adaptive_hash_index_parts': 274, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 15985252289646872000, 'innodb_open_files': 622860, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 510, 'max_delayed_threads': 16384, 'max_heap_table_size': 934250449, 'query_alloc_block_size': 8081072, 'table_open_cache': 69793}
+
+[INFO] [2024-11-26 13:49:00,157] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:49:00,158] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:49:00,159] [DBTune-job_ddpg_11] Iteration 166, objective value: [2147483647].
+[INFO] [2024-11-26 13:49:00,186] [autotune] [step 150] generate knobs: {'innodb_adaptive_hash_index_parts': 344, 'innodb_compression_failure_threshold_pct': 67, 'innodb_online_alter_log_max_size': 11932708402794622000, 'innodb_open_files': 451650, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 659, 'max_delayed_threads': 11100, 'max_heap_table_size': 712567111, 'query_alloc_block_size': 91887707, 'table_open_cache': 169130}
+
+[INFO] [2024-11-26 13:49:00,229] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:49:00,230] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:49:00,232] [DBTune-job_ddpg_11] Iteration 167, objective value: [2147483647].
+[INFO] [2024-11-26 13:49:00,271] [autotune] [step 151] generate knobs: {'innodb_adaptive_hash_index_parts': 431, 'innodb_compression_failure_threshold_pct': 87, 'innodb_online_alter_log_max_size': 13512281724965590000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 485, 'max_delayed_threads': 16384, 'max_heap_table_size': 1056593542, 'query_alloc_block_size': 70739164, 'table_open_cache': 129325}
+
+[INFO] [2024-11-26 13:49:00,319] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:49:00,323] [autotune] generated config file done
+[INFO] [2024-11-26 13:49:00,360] [autotune] wait for connection
+[INFO] [2024-11-26 13:49:03,374] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:49:03,374] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:49:03,375] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:49:03,375] [autotune] mysql is up
+[INFO] [2024-11-26 13:49:03,375] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:49:09,061] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732628949.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:52:19,734] [autotune] internal metrics: [9985427.0, 30891334.828571428, 1208866289.3714285, 0.0, 0.0, 73787.28571428571, 0.0, 4099321270.857143, 0.0, 250202.7142857143, 0.0, 573514.4571428571, 28146.77142857143, 851864.0, 6925.628571428571, 0.0, 148881796.8, 66861.0, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3011427.4571428574, 3408476.4571428574, 0.0, 0.0, 0.0, 0.0, 906959.6571428571, 17430799659.085712, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 73785.31428571428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:52:22,046] [DBTune-job_ddpg_11] Iteration 168, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:52:22,070] [autotune] [step 152] generate knobs: {'innodb_adaptive_hash_index_parts': 512, 'innodb_compression_failure_threshold_pct': 84, 'innodb_online_alter_log_max_size': 12518232129997036000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 344, 'max_delayed_threads': 16384, 'max_heap_table_size': 839440567, 'query_alloc_block_size': 68833131, 'table_open_cache': 160916}
+
+[INFO] [2024-11-26 13:52:27,107] [autotune] Close db successfully
+[INFO] [2024-11-26 13:52:27,109] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:52:27,113] [autotune] generated config file done
+[INFO] [2024-11-26 13:52:27,146] [autotune] wait for connection
+[INFO] [2024-11-26 13:52:30,158] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:52:30,159] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:52:30,159] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:52:30,159] [autotune] mysql is up
+[INFO] [2024-11-26 13:52:30,159] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:52:35,979] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732629155.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:55:46,701] [autotune] internal metrics: [7845414.342857143, 21406567.885714285, 1180259357.2571428, 0.0, 0.0, 72039.94285714286, 0.0, 3846302690.742857, 0.0, 234759.6857142857, 0.0, 591383.9428571429, 25824.342857142856, 851968.0, 10961.8, 0.0, 103513817.74285714, 61071.57142857143, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 41.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2314541.257142857, 2703451.5428571426, 0.0, 0.0, 0.0, 0.0, 472333.9142857143, 9083724414.085714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 72037.97142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:55:48,906] [DBTune-job_ddpg_11] Iteration 169, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:55:49,099] [autotune] [step 153] generate knobs: {'innodb_adaptive_hash_index_parts': 321, 'innodb_compression_failure_threshold_pct': 61, 'innodb_online_alter_log_max_size': 11219583357524896000, 'innodb_open_files': 421172, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 604, 'max_delayed_threads': 10313, 'max_heap_table_size': 658909562, 'query_alloc_block_size': 85688570, 'table_open_cache': 158999}
+
+[INFO] [2024-11-26 13:55:54,132] [autotune] Close db successfully
+[INFO] [2024-11-26 13:55:54,133] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:55:54,134] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:55:54,135] [DBTune-job_ddpg_11] Iteration 170, objective value: [2147483647].
+[INFO] [2024-11-26 13:55:54,173] [autotune] [step 154] generate knobs: {'innodb_adaptive_hash_index_parts': 319, 'innodb_compression_failure_threshold_pct': 61, 'innodb_online_alter_log_max_size': 11287232847815776000, 'innodb_open_files': 419412, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 607, 'max_delayed_threads': 10352, 'max_heap_table_size': 656938520, 'query_alloc_block_size': 85049351, 'table_open_cache': 159450}
+
+[INFO] [2024-11-26 13:55:54,207] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:55:54,207] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:55:54,208] [DBTune-job_ddpg_11] Iteration 171, objective value: [2147483647].
+[INFO] [2024-11-26 13:55:54,235] [autotune] [step 155] generate knobs: {'innodb_adaptive_hash_index_parts': 317, 'innodb_compression_failure_threshold_pct': 61, 'innodb_online_alter_log_max_size': 11254511459952618000, 'innodb_open_files': 420340, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 602, 'max_delayed_threads': 10507, 'max_heap_table_size': 661061657, 'query_alloc_block_size': 85250670, 'table_open_cache': 160154}
+
+[INFO] [2024-11-26 13:55:54,270] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:55:54,270] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:55:54,271] [DBTune-job_ddpg_11] Iteration 172, objective value: [2147483647].
+[INFO] [2024-11-26 13:55:54,298] [autotune] [step 156] generate knobs: {'innodb_adaptive_hash_index_parts': 318, 'innodb_compression_failure_threshold_pct': 61, 'innodb_online_alter_log_max_size': 11144083372968460000, 'innodb_open_files': 420186, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 598, 'max_delayed_threads': 10490, 'max_heap_table_size': 654984822, 'query_alloc_block_size': 84816281, 'table_open_cache': 158492}
+
+[INFO] [2024-11-26 13:55:54,328] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:55:54,329] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:55:54,329] [DBTune-job_ddpg_11] Iteration 173, objective value: [2147483647].
+[INFO] [2024-11-26 13:55:54,354] [autotune] [step 157] generate knobs: {'innodb_adaptive_hash_index_parts': 322, 'innodb_compression_failure_threshold_pct': 61, 'innodb_online_alter_log_max_size': 11136164709144856000, 'innodb_open_files': 422848, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 601, 'max_delayed_threads': 10453, 'max_heap_table_size': 653519692, 'query_alloc_block_size': 85052167, 'table_open_cache': 158637}
+
+[INFO] [2024-11-26 13:55:54,387] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:55:54,388] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:55:54,389] [DBTune-job_ddpg_11] Iteration 174, objective value: [2147483647].
+[INFO] [2024-11-26 13:55:54,423] [autotune] [step 158] generate knobs: {'innodb_adaptive_hash_index_parts': 470, 'innodb_compression_failure_threshold_pct': 64, 'innodb_online_alter_log_max_size': 11473578732776666000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 431, 'max_delayed_threads': 12511, 'max_heap_table_size': 546601068, 'query_alloc_block_size': 68248767, 'table_open_cache': 156712}
+
+[INFO] [2024-11-26 13:55:54,460] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:55:54,464] [autotune] generated config file done
+[INFO] [2024-11-26 13:55:54,495] [autotune] wait for connection
+[INFO] [2024-11-26 13:55:57,509] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:55:57,510] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 13:55:57,510] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:55:57,510] [autotune] mysql is up
+[INFO] [2024-11-26 13:55:57,510] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:56:02,888] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732629362.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 13:59:13,615] [autotune] internal metrics: [11703316.714285715, 21931635.542857144, 1172755017.142857, 0.0, 0.0, 71580.6, 0.0, 4102639264.9142857, 0.0, 250405.22857142857, 0.0, 573359.1142857143, 28099.685714285715, 851864.0, 3700.3714285714286, 0.0, 113974683.65714286, 67876.28571428571, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 40.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2940579.5714285714, 3419178.0285714287, 0.0, 0.0, 0.0, 0.0, 703072.5428571429, 13549377456.114286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 71570.74285714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 13:59:15,784] [DBTune-job_ddpg_11] Iteration 175, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 13:59:15,808] [autotune] [step 159] generate knobs: {'innodb_adaptive_hash_index_parts': 299, 'innodb_compression_failure_threshold_pct': 58, 'innodb_online_alter_log_max_size': 10711390297365216000, 'innodb_open_files': 405644, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 572, 'max_delayed_threads': 9638, 'max_heap_table_size': 602800722, 'query_alloc_block_size': 80409827, 'table_open_cache': 149727}
+
+[INFO] [2024-11-26 13:59:20,844] [autotune] Close db successfully
+[INFO] [2024-11-26 13:59:20,845] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:59:20,845] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:59:20,846] [DBTune-job_ddpg_11] Iteration 176, objective value: [2147483647].
+[INFO] [2024-11-26 13:59:20,875] [autotune] [step 160] generate knobs: {'innodb_adaptive_hash_index_parts': 296, 'innodb_compression_failure_threshold_pct': 59, 'innodb_online_alter_log_max_size': 10721903802430656000, 'innodb_open_files': 404000, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 571, 'max_delayed_threads': 9621, 'max_heap_table_size': 605258285, 'query_alloc_block_size': 80118893, 'table_open_cache': 149263}
+
+[INFO] [2024-11-26 13:59:20,915] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:59:20,916] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 13:59:20,917] [DBTune-job_ddpg_11] Iteration 177, objective value: [2147483647].
+[INFO] [2024-11-26 13:59:20,944] [autotune] [step 161] generate knobs: {'innodb_adaptive_hash_index_parts': 428, 'innodb_compression_failure_threshold_pct': 84, 'innodb_online_alter_log_max_size': 18446700000000000000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 295, 'max_delayed_threads': 6384, 'max_heap_table_size': 216699077, 'query_alloc_block_size': 60354699, 'table_open_cache': 82168}
+
+[INFO] [2024-11-26 13:59:20,982] [autotune] mysql is shut down
+[INFO] [2024-11-26 13:59:20,986] [autotune] generated config file done
+[INFO] [2024-11-26 13:59:21,016] [autotune] wait for connection
+[INFO] [2024-11-26 13:59:23,025] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 13:59:23,025] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-26 13:59:23,025] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 13:59:23,026] [autotune] mysql is up
+[INFO] [2024-11-26 13:59:23,026] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 13:59:28,486] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732629568.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 14:02:39,383] [autotune] internal metrics: [9920646.514285713, 31042837.8, 1236547291.4285715, 0.0, 0.0, 75475.4857142857, 0.0, 4087366100.114286, 0.0, 249473.0285714286, 0.0, 574307.0, 28187.942857142858, 851968.0, 7680.685714285714, 0.0, 149317360.94285715, 67789.54285714286, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 3005532.2285714285, 3400979.1142857145, 0.0, 0.0, 0.0, 0.0, 915382.2571428572, 17588633377.228573, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 75474.17142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 14:02:41,746] [DDPG_Optimizer] Save model_params to job_ddpg_11_55
+[INFO] [2024-11-26 14:02:41,747] [DBTune-job_ddpg_11] Iteration 178, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 14:02:41,771] [autotune] [step 162] generate knobs: {'innodb_adaptive_hash_index_parts': 292, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 10446859426867990000, 'innodb_open_files': 399808, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 565, 'max_delayed_threads': 9424, 'max_heap_table_size': 590651532, 'query_alloc_block_size': 78089588, 'table_open_cache': 146613}
+
+[INFO] [2024-11-26 14:02:46,807] [autotune] Close db successfully
+[INFO] [2024-11-26 14:02:46,808] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:02:46,808] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:02:46,809] [DBTune-job_ddpg_11] Iteration 179, objective value: [2147483647].
+[INFO] [2024-11-26 14:02:46,841] [autotune] [step 163] generate knobs: {'innodb_adaptive_hash_index_parts': 295, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 10411620163393048000, 'innodb_open_files': 401310, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 573, 'max_delayed_threads': 9395, 'max_heap_table_size': 590481230, 'query_alloc_block_size': 77663272, 'table_open_cache': 147214}
+
+[INFO] [2024-11-26 14:02:46,877] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:02:46,878] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:02:46,879] [DBTune-job_ddpg_11] Iteration 180, objective value: [2147483647].
+[INFO] [2024-11-26 14:02:46,907] [autotune] [step 164] generate knobs: {'innodb_adaptive_hash_index_parts': 512, 'innodb_compression_failure_threshold_pct': 43, 'innodb_online_alter_log_max_size': 14097564659696832000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 962, 'max_delayed_threads': 1578, 'max_heap_table_size': 528592830, 'query_alloc_block_size': 24209505, 'table_open_cache': 32061}
+
+[INFO] [2024-11-26 14:02:46,945] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:02:46,945] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:02:46,946] [DBTune-job_ddpg_11] Iteration 181, objective value: [2147483647].
+[INFO] [2024-11-26 14:02:46,975] [autotune] [step 165] generate knobs: {'innodb_adaptive_hash_index_parts': 512, 'innodb_compression_failure_threshold_pct': 36, 'innodb_online_alter_log_max_size': 15106371864473832000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 836, 'max_delayed_threads': 3389, 'max_heap_table_size': 553526658, 'query_alloc_block_size': 6924008, 'table_open_cache': 72215}
+
+[INFO] [2024-11-26 14:02:47,013] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:02:47,013] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:02:47,014] [DBTune-job_ddpg_11] Iteration 182, objective value: [2147483647].
+[INFO] [2024-11-26 14:02:47,264] [autotune] [step 166] generate knobs: {'innodb_adaptive_hash_index_parts': 512, 'innodb_compression_failure_threshold_pct': 10, 'innodb_online_alter_log_max_size': 11878951208728574000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_ignored', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 619, 'max_delayed_threads': 14413, 'max_heap_table_size': 548070677, 'query_alloc_block_size': 17089325, 'table_open_cache': 49007}
+
+[INFO] [2024-11-26 14:02:47,304] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:02:47,304] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:02:47,305] [DBTune-job_ddpg_11] Iteration 183, objective value: [2147483647].
+[INFO] [2024-11-26 14:02:47,333] [autotune] [step 167] generate knobs: {'innodb_adaptive_hash_index_parts': 299, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 10345013007634906000, 'innodb_open_files': 390678, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 572, 'max_delayed_threads': 9615, 'max_heap_table_size': 593623390, 'query_alloc_block_size': 78454178, 'table_open_cache': 145057}
+
+[INFO] [2024-11-26 14:02:47,369] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:02:47,369] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:02:47,370] [DBTune-job_ddpg_11] Iteration 184, objective value: [2147483647].
+[INFO] [2024-11-26 14:02:47,398] [autotune] [step 168] generate knobs: {'innodb_adaptive_hash_index_parts': 512, 'innodb_compression_failure_threshold_pct': 3, 'innodb_online_alter_log_max_size': 12740859612965604000, 'innodb_open_files': 474538, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 482, 'max_delayed_threads': 16251, 'max_heap_table_size': 433284621, 'query_alloc_block_size': 60528126, 'table_open_cache': 65134}
+
+[INFO] [2024-11-26 14:02:47,441] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:02:47,444] [autotune] generated config file done
+[INFO] [2024-11-26 14:02:47,479] [autotune] wait for connection
+[INFO] [2024-11-26 14:02:50,493] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 14:02:50,494] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 14:02:50,494] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 14:02:50,494] [autotune] mysql is up
+[INFO] [2024-11-26 14:02:50,495] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 14:02:55,900] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_job_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_job.txt /root/OpAdviserPrivate/autotune/job_query/queries-mysql-new ./log/1732629775.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-26 14:06:06,538] [autotune] internal metrics: [10001101.17142857, 15720697.8, 1081378640.4571428, 0.0, 0.0, 66003.42857142857, 0.0, 4140706318.6285715, 0.0, 252728.65714285715, 0.0, 571796.7714285714, 27442.571428571428, 851968.0, 3153.6285714285714, 0.0, 85630370.8, 62846.514285714286, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 41.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 2462185.4857142856, 3020098.4571428574, 0.0, 0.0, 0.0, 0.0, 464202.4285714286, 8938489190.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 66002.77142857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 14:06:08,610] [DBTune-job_ddpg_11] Iteration 185, objective value: [-35.68421052631579].
+[INFO] [2024-11-26 14:06:08,639] [autotune] [step 169] generate knobs: {'innodb_adaptive_hash_index_parts': 300, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 10226881760591298000, 'innodb_open_files': 388235, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 566, 'max_delayed_threads': 9493, 'max_heap_table_size': 585538778, 'query_alloc_block_size': 78891278, 'table_open_cache': 147014}
+
+[INFO] [2024-11-26 14:06:13,678] [autotune] Close db successfully
+[INFO] [2024-11-26 14:06:13,680] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:13,681] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:13,682] [DBTune-job_ddpg_11] Iteration 186, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:13,712] [autotune] [step 170] generate knobs: {'innodb_adaptive_hash_index_parts': 297, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 10072945002937346000, 'innodb_open_files': 391563, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 563, 'max_delayed_threads': 9498, 'max_heap_table_size': 588101810, 'query_alloc_block_size': 79190004, 'table_open_cache': 146257}
+
+[INFO] [2024-11-26 14:06:13,749] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:13,749] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:13,750] [DBTune-job_ddpg_11] Iteration 187, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:13,779] [autotune] [step 171] generate knobs: {'innodb_adaptive_hash_index_parts': 292, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 10104246924680500000, 'innodb_open_files': 391472, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 562, 'max_delayed_threads': 9492, 'max_heap_table_size': 593612382, 'query_alloc_block_size': 78785183, 'table_open_cache': 145909}
+
+[INFO] [2024-11-26 14:06:13,821] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:13,822] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:13,823] [DBTune-job_ddpg_11] Iteration 188, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:13,852] [autotune] [step 172] generate knobs: {'innodb_adaptive_hash_index_parts': 512, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 6355253833499594000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 515, 'max_delayed_threads': 12992, 'max_heap_table_size': 746889852, 'query_alloc_block_size': 69358111, 'table_open_cache': 173173}
+
+[INFO] [2024-11-26 14:06:13,892] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:13,893] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:13,893] [DBTune-job_ddpg_11] Iteration 189, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:13,922] [autotune] [step 173] generate knobs: {'innodb_adaptive_hash_index_parts': 293, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 10197998758649854000, 'innodb_open_files': 390669, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 563, 'max_delayed_threads': 9468, 'max_heap_table_size': 588502380, 'query_alloc_block_size': 78469401, 'table_open_cache': 148261}
+
+[INFO] [2024-11-26 14:06:13,964] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:13,965] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:13,966] [DBTune-job_ddpg_11] Iteration 190, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,000] [autotune] [step 174] generate knobs: {'innodb_adaptive_hash_index_parts': 292, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 10162661638873844000, 'innodb_open_files': 389798, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 567, 'max_delayed_threads': 9518, 'max_heap_table_size': 585370268, 'query_alloc_block_size': 79135244, 'table_open_cache': 148611}
+
+[INFO] [2024-11-26 14:06:14,039] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,040] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,041] [DBTune-job_ddpg_11] Iteration 191, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,070] [autotune] [step 175] generate knobs: {'innodb_adaptive_hash_index_parts': 288, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 10191870095479518000, 'innodb_open_files': 389832, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 570, 'max_delayed_threads': 9330, 'max_heap_table_size': 579931567, 'query_alloc_block_size': 79566649, 'table_open_cache': 149492}
+
+[INFO] [2024-11-26 14:06:14,111] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,112] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,113] [DBTune-job_ddpg_11] Iteration 192, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,156] [autotune] [step 176] generate knobs: {'innodb_adaptive_hash_index_parts': 285, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 10271066629296570000, 'innodb_open_files': 392843, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 578, 'max_delayed_threads': 9307, 'max_heap_table_size': 580708195, 'query_alloc_block_size': 80245836, 'table_open_cache': 148999}
+
+[INFO] [2024-11-26 14:06:14,196] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,196] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,198] [DBTune-job_ddpg_11] Iteration 193, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,239] [autotune] [step 177] generate knobs: {'innodb_adaptive_hash_index_parts': 1, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 18446700000000000000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 1706, 'max_heap_table_size': 207494626, 'query_alloc_block_size': 134217728, 'table_open_cache': 245560}
+
+[INFO] [2024-11-26 14:06:14,286] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,286] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,287] [DBTune-job_ddpg_11] Iteration 194, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,319] [autotune] [step 178] generate knobs: {'innodb_adaptive_hash_index_parts': 13, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 13334548294007796000, 'innodb_open_files': 562044, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 0, 'max_heap_table_size': 245707755, 'query_alloc_block_size': 111808347, 'table_open_cache': 73600}
+
+[INFO] [2024-11-26 14:06:14,364] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,364] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,366] [DBTune-job_ddpg_11] Iteration 195, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,406] [autotune] [step 179] generate knobs: {'innodb_adaptive_hash_index_parts': 19, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 8732923905783926000, 'innodb_open_files': 655350, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 6132, 'max_heap_table_size': 631749016, 'query_alloc_block_size': 99082820, 'table_open_cache': 54092}
+
+[INFO] [2024-11-26 14:06:14,453] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,454] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,455] [DBTune-job_ddpg_11] Iteration 196, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,783] [autotune] [step 180] generate knobs: {'innodb_adaptive_hash_index_parts': 287, 'innodb_compression_failure_threshold_pct': 57, 'innodb_online_alter_log_max_size': 10240529965817956000, 'innodb_open_files': 386561, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 575, 'max_delayed_threads': 9392, 'max_heap_table_size': 592610606, 'query_alloc_block_size': 79998518, 'table_open_cache': 145191}
+
+[INFO] [2024-11-26 14:06:14,828] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,829] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,830] [DBTune-job_ddpg_11] Iteration 197, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,872] [autotune] [step 181] generate knobs: {'innodb_adaptive_hash_index_parts': 358, 'innodb_compression_failure_threshold_pct': 100, 'innodb_online_alter_log_max_size': 9755913677161962000, 'innodb_open_files': 508092, 'innodb_stats_method': 'nulls_equal', 'innodb_stats_persistent': 'ON', 'innodb_thread_concurrency': 1000, 'max_delayed_threads': 10713, 'max_heap_table_size': 742174660, 'query_alloc_block_size': 133236576, 'table_open_cache': 131967}
+
+[INFO] [2024-11-26 14:06:14,909] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,909] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,911] [DBTune-job_ddpg_11] Iteration 198, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:14,951] [autotune] [step 182] generate knobs: {'innodb_adaptive_hash_index_parts': 290, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 10179663346552878000, 'innodb_open_files': 383389, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 574, 'max_delayed_threads': 9427, 'max_heap_table_size': 594651599, 'query_alloc_block_size': 80195540, 'table_open_cache': 147225}
+
+[INFO] [2024-11-26 14:06:14,985] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:14,985] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:14,986] [DBTune-job_ddpg_11] Iteration 199, objective value: [2147483647].
+[INFO] [2024-11-26 14:06:15,015] [autotune] [step 183] generate knobs: {'innodb_adaptive_hash_index_parts': 288, 'innodb_compression_failure_threshold_pct': 56, 'innodb_online_alter_log_max_size': 10177057510221034000, 'innodb_open_files': 382430, 'innodb_stats_method': 'nulls_unequal', 'innodb_stats_persistent': 'OFF', 'innodb_thread_concurrency': 570, 'max_delayed_threads': 9488, 'max_heap_table_size': 592653485, 'query_alloc_block_size': 80003806, 'table_open_cache': 147084}
+
+[INFO] [2024-11-26 14:06:15,058] [autotune] mysql is shut down
+[INFO] [2024-11-26 14:06:15,059] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 14:06:15,060] [DBTune-job_ddpg_11] Iteration 200, objective value: [2147483647].

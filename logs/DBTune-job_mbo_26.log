@@ -2747,3 +2747,5 @@
 [INFO] [2024-11-24 10:58:27,388] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
 [INFO] [2024-11-24 23:43:27,195] [DBTune-job_mbo_26] Load 200 iterations from repo/history_job_mbo_26.json
 [INFO] [2024-11-24 23:43:27,366] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-11-26 17:34:21,104] [DBTune-job_mbo_26] Load 200 iterations from repo/history_job_mbo_26.json
+[INFO] [2024-11-26 17:34:21,268] [BO_Optimizer] === [BO auto selection] === acq_type: ei.

@@ -2020,3 +2020,5 @@
 [INFO] [2024-11-24 11:05:11,463] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
 [INFO] [2024-11-24 23:50:12,395] [DBTune-job_smac_5] Load 200 iterations from repo/history_job_smac_5.json
 [INFO] [2024-11-24 23:50:12,464] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-11-26 17:34:31,957] [DBTune-job_smac_5] Load 200 iterations from repo/history_job_smac_5.json
+[INFO] [2024-11-26 17:34:32,033] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
