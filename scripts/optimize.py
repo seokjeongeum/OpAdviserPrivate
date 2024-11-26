@@ -9,12 +9,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, default='scripts/cluster.ini', help='config file')
     # 2024-11-19 code for clusters
-    parser.add_argument('--knob_config_file', type=str,default='scripts/experiment/gen_knobs/SYSBENCH_randomforest.json')
-    parser.add_argument('--knob_num', type=int,default=118)
-    parser.add_argument('--dbname', type=str,default='sbread')
-    parser.add_argument('--workload', type=str,default='sysbench')
-    parser.add_argument('--oltpbench_config_xml', type=str,default='/oltpbench/config/sample_twitter_config.xml')
-    parser.add_argument('--task_id', type=str, default="sysbench_ddpg_118")
+    parser.add_argument('--knob_config_file', type=str,default='scripts/experiment/gen_knobs/moreworkloads/ycsb_lhs_shap.json')
+    parser.add_argument('--knob_num', type=int,default=26)
+    parser.add_argument('--dbname', type=str,default='ycsb')
+    parser.add_argument('--workload', type=str,default='oltpbench_ycsb')
+    parser.add_argument('--oltpbench_config_xml', type=str,default='/oltpbench/config/sample_ycsb_config.xml')
+    parser.add_argument('--task_id', type=str, default="ycsb_ddpg_26")
     parser.add_argument('--optimize_method', type=str, default='DDPG')
     parser.add_argument('--workload_type', type=str, default='read')
     # 2024-11-19 code for clusters
