@@ -230,7 +230,7 @@ class DDPG_Optimizer:
                 _reward = 0
             return _reward
 
-        if external_metrics == 0 or self.default_external_metrics == 0:
+        if external_metrics == 0 or self.default_external_metrics == 0 or self.last_external_metrics == 0:
             # bad case, not enough time to restart mysql or bad knobs
             return 0
         # tps
