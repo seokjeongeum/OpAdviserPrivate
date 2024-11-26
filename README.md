@@ -5,7 +5,7 @@ Setup dev container using .devcontainer/devcontainer.json
 Fix workspaceMount attribute and mounts attribute in .devcontainer/devcontainer.json to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
 ## Prepare workload
 ```shell
-rm -rf /var/lib/mysql/*
+rm -rf /var/lib/mysql
 apt update
 apt install -y mysql-server-5.7 \
     git  \
@@ -30,7 +30,8 @@ apt install -y mysql-server-5.7 \
 ```
 ```shell
 echo '[mysqld]
-port=3307' | sudo tee -a /etc/mysql/my.cnf
+port=3307
+innodb_log_checksums = 0' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';"

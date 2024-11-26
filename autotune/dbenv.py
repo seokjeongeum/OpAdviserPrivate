@@ -104,6 +104,10 @@ class DBEnv:
             wl = dict(JOB_WORKLOAD)
         elif self.args['workload'] == 'tpch':
             wl = dict(TPCH_WORKLOAD)
+        #2024-11-26 demo
+        elif self.args['workload'] == 'demo':
+            wl = dict(JOB_WORKLOAD)
+        #2024-11-26 demo              
         else:
             raise ValueError('Invalid workload!')
         return wl
@@ -211,6 +215,14 @@ class DBEnv:
                                               dirname + '/tpch_query/queries-{}-new'.format(self.db.args['db']),
                                               filename,
                                               self.db.sock)
+        #2024-11-26 demo
+        elif self.workload['name']=='demo':
+            cmd = self.workload['cmd'].format(dirname + '/cli/run_job_{}.sh'.format(self.db.args['db']),
+                                              dirname + '/cli/selectedList_demo.txt',
+                                              dirname + '/demo_query/queries-{}-new'.format(self.db.args['db']),
+                                              filename,
+                                              self.db.sock)
+        #2024-11-26 demo
         else:
             raise ValueError('Invalid workload name!')
 
