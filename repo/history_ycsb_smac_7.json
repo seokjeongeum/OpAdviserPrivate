@@ -10591,12 +10591,6 @@
       "trial_state": 0,
       "elapsed_time": 420.8302090167999,
       "iter_time": 1.1885137557983398
-    },
-    {
-      "configuration": {
-        "binlog_cache_size": 94319452,
-        "completion_type": "NO_CHAIN",
-        "innodb_log_file_size": 156571712,
-        "innodb_thread_concurrency": 62,
-        "lower_case_table_names": 1,
-        "max_allowed_packet": 3
+    }
+  ]
+}
