@@ -12,7 +12,7 @@ from .knobs import initialize_knobs, get_default_knobs
 import psutil
 import multiprocessing as mp
 from .resource_monitor import ResourceMonitor
-from autotune.workload import SYSBENCH_WORKLOAD, JOB_WORKLOAD, OLTPBENCH_WORKLOADS, TPCH_WORKLOAD
+from autotune.workload import DEMO_WORKLOAD, SYSBENCH_WORKLOAD, JOB_WORKLOAD, OLTPBENCH_WORKLOADS, TPCH_WORKLOAD
 from autotune.utils.constants import MAXINT, SUCCESS, FAILED, TIMEOUT
 from autotune.utils.parser import is_number
 from autotune.database.postgresqldb import PostgresqlDB
@@ -106,7 +106,7 @@ class DBEnv:
             wl = dict(TPCH_WORKLOAD)
         #2024-11-26 demo
         elif self.args['workload'] == 'demo':
-            wl = dict(JOB_WORKLOAD)
+            wl = dict(DEMO_WORKLOAD)
         #2024-11-26 demo              
         else:
             raise ValueError('Invalid workload!')
@@ -141,6 +141,20 @@ class DBEnv:
                 BENCHMARK_WARMING_TIME = 0
             TIMEOUT_TIME = BENCHMARK_RUNNING_TIME + BENCHMARK_WARMING_TIME
             RESTART_FREQUENCY = 30000
+
+        #2024-11-26 demo
+        elif self.args['workload'] == 'demo':
+            try:
+                BENCHMARK_RUNNING_TIME = int(self.args['workload_time'])
+            except:
+                BENCHMARK_RUNNING_TIME = 240
+            try:
+                BENCHMARK_WARMING_TIME = int(self.args['workload_warmup_time'])
+            except:
+                BENCHMARK_WARMING_TIME = 0
+            TIMEOUT_TIME = BENCHMARK_RUNNING_TIME + BENCHMARK_WARMING_TIME
+            RESTART_FREQUENCY = 30000
+        #2024-11-26 demo
 
         else:
             raise ValueError('Invalid workload nmae!')
@@ -217,7 +231,7 @@ class DBEnv:
                                               self.db.sock)
         #2024-11-26 demo
         elif self.workload['name']=='demo':
-            cmd = self.workload['cmd'].format(dirname + '/cli/run_job_{}.sh'.format(self.db.args['db']),
+            cmd = self.workload['cmd'].format(dirname + '/cli/run_demo_{}.sh'.format(self.db.args['db']),
                                               dirname + '/cli/selectedList_demo.txt',
                                               dirname + '/demo_query/queries-{}-new'.format(self.db.args['db']),
                                               filename,
