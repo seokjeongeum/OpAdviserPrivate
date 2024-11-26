@@ -176,7 +176,7 @@ class DBEnv:
             if not os.path.exists('results/{}.summary'.format(filename)):
                 print("benchmark result file does not exist!")
             result = parse_oltpbench('results/{}.summary'.format(filename))
-        elif self.workload['name'] == 'job' or self.workload['name'] == 'tpch':
+        elif self.workload['name'] == 'job' or self.workload['name'] == 'tpch'or self.workload['name'] == 'demo':
             for _ in range(60):
                 if os.path.exists(filename):
                     break
@@ -287,6 +287,7 @@ class DBEnv:
             print("[{}] clear processlist".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
         # stop Internal Metrics Collection
+        time.sleep(5)
         self.db.set_im_alive(False)
         im.join()
 
