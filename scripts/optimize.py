@@ -33,7 +33,8 @@ if __name__ == '__main__':
         #2024-11-22 softmax weight
         parser.add_argument('--softmax_weight', type=bool, default=True)
         #2024-11-22 softmax weight
-        # 2024-11-19 code for clusters
+        parser.add_argument('--workload_type', type=str, default='read')
+    # 2024-11-19 code for clusters
         opt = parser.parse_args()
 
 

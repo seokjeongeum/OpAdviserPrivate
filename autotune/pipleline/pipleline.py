@@ -119,9 +119,9 @@ class PipleLine(BOBase):
             self.space_step_limit = 3
             self.space_step = 0
 
-        # if self.space_transfer:
+        if self.space_transfer:
         # 2024-11-20: ground truth
-        if True:
+        # if True:
         # 2024-11-20: ground truth
             self.initial_configurations = self.get_max_distence_best()
 

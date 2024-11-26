@@ -6,7 +6,7 @@ chmod +x ./job.sh
 export PYTHONPATH="."
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
-  for knob_num in 26; do
+  for knob_num in 5 11 26; do
 
     python3 scripts/optimize.py \
     --config=scripts/cluster.ini \

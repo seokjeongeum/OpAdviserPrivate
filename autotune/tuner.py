@@ -134,9 +134,9 @@ class DBTuner:
         else:
             raise ValueError('Invalid string %s for transfer framework!' % self.transfer_framework)
 
-        # if len(self.hcL)==0 and self.space_transfer:
+        if len(self.hcL)==0 and self.space_transfer:
         # 2024-11-20: ground truth
-        if True:
+        # if True:
         # 2024-11-20: ground truth
             self.load_history(-1)
 

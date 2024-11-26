@@ -13,7 +13,7 @@ cd dbgen || return
 
 make
 
-./dbgen -s 10000
+./dbgen -s 100
 
 mysql -ppassword -e"DROP DATABASE tpch;"
 
