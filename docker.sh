@@ -25,8 +25,10 @@ sudo usermod -a -G docker $USER
 sudo chmod 666 /var/run/docker.sock
 cat ubuntu.tar.gz.part* > ubuntu.tar.gz
 docker load < ubuntu.tar.gz
-mkdir /mnt/nvme0n1/jeseok
-mkdir /mnt/nvme0n1/jeseok/mysql
-mkdir /mnt/nvme0n1/jeseok/lib
-mkdir /mnt/nvme0n1/jeseok/root
+mkdir /mnt/sdd1/jeseok
+mkdir /mnt/sdd1/jeseok/mysql
+mkdir /mnt/sdb1/jeseok
+mkdir /mnt/sdb1/jeseok/lib
+mkdir /mnt/sdc1/jeseok
+mkdir /mnt/sdc1/jeseok/root
 newgrp docker
