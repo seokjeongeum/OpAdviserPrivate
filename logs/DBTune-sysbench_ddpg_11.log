@@ -9275,3 +9275,297 @@
 [INFO] [2024-11-26 12:51:31,792] [autotune] mysql is shut down
 [INFO] [2024-11-26 12:51:31,793] [autotune] innodb_thread_concurrency is set too large
 [INFO] [2024-11-26 12:51:31,794] [DBTune-sysbench_ddpg_11] Iteration 200, objective value: [2147483647].
+[WARNING] [2024-11-27 02:33:04,391] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-27 02:33:04,416] [DBTune-sysbench_ddpg_11] Load 163 iterations from repo/history_sysbench_ddpg_11.json
+[INFO] [2024-11-27 02:33:04,526] [DDPG_Optimizer] Load state mean and var.
+[INFO] [2024-11-27 02:33:05,481] [DDPG] Finish Initializing Networks
+[INFO] [2024-11-27 02:33:05,482] [DDPG] DDPG Initialzed!
+[INFO] [2024-11-27 02:33:05,514] [DDPG_Optimizer] New Episode-1, initialize
+[INFO] [2024-11-27 02:33:05,595] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_5
+[INFO] [2024-11-27 02:33:05,669] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_10
+[INFO] [2024-11-27 02:33:05,741] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_15
+[INFO] [2024-11-27 02:33:05,752] [DDPG_Optimizer] New Episode-2, initialize
+[INFO] [2024-11-27 02:33:06,485] [DDPG_Optimizer] New Episode-3, initialize
+[INFO] [2024-11-27 02:33:06,486] [DDPG_Optimizer] New Episode-4, initialize
+[INFO] [2024-11-27 02:33:06,576] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_20
+[INFO] [2024-11-27 02:33:06,577] [DDPG_Optimizer] New Episode-5, initialize
+[INFO] [2024-11-27 02:33:06,577] [DDPG_Optimizer] New Episode-6, initialize
+[INFO] [2024-11-27 02:33:06,578] [DDPG_Optimizer] New Episode-7, initialize
+[INFO] [2024-11-27 02:33:06,578] [DDPG_Optimizer] New Episode-8, initialize
+[INFO] [2024-11-27 02:33:06,579] [DDPG_Optimizer] New Episode-9, initialize
+[INFO] [2024-11-27 02:33:06,579] [DDPG_Optimizer] New Episode-10, initialize
+[INFO] [2024-11-27 02:33:06,580] [DDPG_Optimizer] New Episode-11, initialize
+[INFO] [2024-11-27 02:33:06,580] [DDPG_Optimizer] New Episode-12, initialize
+[INFO] [2024-11-27 02:33:06,581] [DDPG_Optimizer] New Episode-13, initialize
+[INFO] [2024-11-27 02:33:06,581] [DDPG_Optimizer] New Episode-14, initialize
+[INFO] [2024-11-27 02:33:06,582] [DDPG_Optimizer] New Episode-15, initialize
+[INFO] [2024-11-27 02:33:06,582] [DDPG_Optimizer] New Episode-16, initialize
+[INFO] [2024-11-27 02:33:06,583] [DDPG_Optimizer] New Episode-17, initialize
+[INFO] [2024-11-27 02:33:06,583] [DDPG_Optimizer] New Episode-18, initialize
+[INFO] [2024-11-27 02:33:06,584] [DDPG_Optimizer] New Episode-19, initialize
+[INFO] [2024-11-27 02:33:06,679] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_35
+[INFO] [2024-11-27 02:33:06,679] [DDPG_Optimizer] New Episode-20, initialize
+[INFO] [2024-11-27 02:33:06,765] [DDPG_Optimizer] New Episode-21, initialize
+[INFO] [2024-11-27 02:33:06,850] [DDPG_Optimizer] New Episode-22, initialize
+[INFO] [2024-11-27 02:33:06,941] [DDPG_Optimizer] New Episode-23, initialize
+[INFO] [2024-11-27 02:33:06,941] [DDPG_Optimizer] New Episode-24, initialize
+[INFO] [2024-11-27 02:33:07,031] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_40
+[INFO] [2024-11-27 02:33:07,031] [DDPG_Optimizer] New Episode-25, initialize
+[INFO] [2024-11-27 02:33:07,119] [DDPG_Optimizer] New Episode-26, initialize
+[INFO] [2024-11-27 02:33:07,206] [DDPG_Optimizer] New Episode-27, initialize
+[INFO] [2024-11-27 02:33:07,306] [DDPG_Optimizer] New Episode-28, initialize
+[INFO] [2024-11-27 02:33:07,406] [DDPG_Optimizer] New Episode-29, initialize
+[INFO] [2024-11-27 02:33:08,516] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_45
+[INFO] [2024-11-27 02:33:08,516] [DDPG_Optimizer] New Episode-30, initialize
+[INFO] [2024-11-27 02:33:09,584] [DDPG_Optimizer] New Episode-31, initialize
+[INFO] [2024-11-27 02:33:09,670] [DDPG_Optimizer] New Episode-32, initialize
+[INFO] [2024-11-27 02:33:09,756] [DDPG_Optimizer] New Episode-33, initialize
+[INFO] [2024-11-27 02:33:09,756] [DDPG_Optimizer] New Episode-34, initialize
+[INFO] [2024-11-27 02:33:09,757] [DDPG_Optimizer] New Episode-35, initialize
+[INFO] [2024-11-27 02:33:09,757] [DDPG_Optimizer] New Episode-36, initialize
+[INFO] [2024-11-27 02:33:09,758] [DDPG_Optimizer] New Episode-37, initialize
+[INFO] [2024-11-27 02:33:09,758] [DDPG_Optimizer] New Episode-38, initialize
+[INFO] [2024-11-27 02:33:09,759] [DDPG_Optimizer] New Episode-39, initialize
+[INFO] [2024-11-27 02:33:09,760] [DDPG_Optimizer] New Episode-40, initialize
+[INFO] [2024-11-27 02:33:09,845] [DDPG_Optimizer] New Episode-41, initialize
+[INFO] [2024-11-27 02:33:09,931] [DDPG_Optimizer] New Episode-42, initialize
+[INFO] [2024-11-27 02:33:10,016] [DDPG_Optimizer] New Episode-43, initialize
+[INFO] [2024-11-27 02:33:10,017] [DDPG_Optimizer] New Episode-44, initialize
+[INFO] [2024-11-27 02:33:10,018] [DDPG_Optimizer] New Episode-45, initialize
+[INFO] [2024-11-27 02:33:10,018] [DDPG_Optimizer] New Episode-46, initialize
+[INFO] [2024-11-27 02:33:10,019] [DDPG_Optimizer] New Episode-47, initialize
+[INFO] [2024-11-27 02:33:10,019] [DDPG_Optimizer] New Episode-48, initialize
+[INFO] [2024-11-27 02:33:10,020] [DDPG_Optimizer] New Episode-49, initialize
+[INFO] [2024-11-27 02:33:10,130] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_65
+[INFO] [2024-11-27 02:33:10,130] [DDPG_Optimizer] New Episode-50, initialize
+[INFO] [2024-11-27 02:33:10,131] [DDPG_Optimizer] New Episode-51, initialize
+[INFO] [2024-11-27 02:33:10,131] [DDPG_Optimizer] New Episode-52, initialize
+[INFO] [2024-11-27 02:33:10,132] [DDPG_Optimizer] New Episode-53, initialize
+[INFO] [2024-11-27 02:33:10,132] [DDPG_Optimizer] New Episode-54, initialize
+[INFO] [2024-11-27 02:33:10,133] [DDPG_Optimizer] New Episode-55, initialize
+[INFO] [2024-11-27 02:33:10,133] [DDPG_Optimizer] New Episode-56, initialize
+[INFO] [2024-11-27 02:33:10,134] [DDPG_Optimizer] New Episode-57, initialize
+[INFO] [2024-11-27 02:33:10,134] [DDPG_Optimizer] New Episode-58, initialize
+[INFO] [2024-11-27 02:33:10,135] [DDPG_Optimizer] New Episode-59, initialize
+[INFO] [2024-11-27 02:33:10,135] [DDPG_Optimizer] New Episode-60, initialize
+[INFO] [2024-11-27 02:33:10,136] [DDPG_Optimizer] New Episode-61, initialize
+[INFO] [2024-11-27 02:33:10,136] [DDPG_Optimizer] New Episode-62, initialize
+[INFO] [2024-11-27 02:33:10,137] [DDPG_Optimizer] New Episode-63, initialize
+[INFO] [2024-11-27 02:33:10,137] [DDPG_Optimizer] New Episode-64, initialize
+[INFO] [2024-11-27 02:33:10,138] [DDPG_Optimizer] New Episode-65, initialize
+[INFO] [2024-11-27 02:33:10,138] [DDPG_Optimizer] New Episode-66, initialize
+[INFO] [2024-11-27 02:33:10,139] [DDPG_Optimizer] New Episode-67, initialize
+[INFO] [2024-11-27 02:33:10,139] [DDPG_Optimizer] New Episode-68, initialize
+[INFO] [2024-11-27 02:33:10,140] [DDPG_Optimizer] New Episode-69, initialize
+[INFO] [2024-11-27 02:33:10,140] [DDPG_Optimizer] New Episode-70, initialize
+[INFO] [2024-11-27 02:33:10,141] [DDPG_Optimizer] New Episode-71, initialize
+[INFO] [2024-11-27 02:33:10,141] [DDPG_Optimizer] New Episode-72, initialize
+[INFO] [2024-11-27 02:33:10,142] [DDPG_Optimizer] New Episode-73, initialize
+[INFO] [2024-11-27 02:33:10,142] [DDPG_Optimizer] New Episode-74, initialize
+[INFO] [2024-11-27 02:33:10,148] [autotune] [step 1] generate knobs: {'general_log': 'ON', 'innodb_buffer_pool_size': 14980198642, 'innodb_doublewrite': 'OFF', 'innodb_random_read_ahead': 'OFF', 'innodb_spin_wait_delay': 1909, 'innodb_thread_concurrency': 270, 'log_output': 'FILE', 'max_heap_table_size': 1005099416, 'query_prealloc_size': 55955969, 'sort_buffer_size': 45194695, 'tmp_table_size': 995249995}
+
+[INFO] [2024-11-27 02:33:12,176] [autotune] Close db successfully
+[INFO] [2024-11-27 02:33:12,176] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:33:12,179] [autotune] generated config file done
+[INFO] [2024-11-27 02:33:12,205] [autotune] wait for connection
+[INFO] [2024-11-27 02:33:24,245] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 02:33:24,246] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-27 02:33:24,246] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 02:33:24,246] [autotune] mysql is up
+[INFO] [2024-11-27 02:33:24,247] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 02:33:29,541] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_sysbench.sh write localhost 3307 root password 150 800000 10 80 180 ./log/1732674809.log sbrw
+[INFO] [2024-11-27 02:36:40,405] [autotune] internal metrics: [184.65714285714284, 1830655.4285714286, 5158625514.057143, 4664769345.828571, 32629.77142857143, 314894.3142857143, 184772.14285714287, 5277862180.571428, 4323358895.542857, 322134.14285714284, 263877.82857142854, 594584.8571428572, 671.1142857142858, 917392.0, 0.0, 0.0, 10215952.057142857, 309663.45714285714, 15032385536.0, 0.0, 5370417.2, 98175.17142857143, 98181.74285714286, 196325.37142857144, 183.0, 16239.971428571429, 30.885714285714286, 16376.657142857142, 0.0, 0.0, 0.0, 0.0, -2.6285714285714286, 110413.8, 0.0, 0.0, 16384.0, 0.0, 46953.514285714286, 0.0, 0.0, 32244.02857142857, 1856.4285714285713, 0.0, 30882.428571428572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 17644485.485714287, 16.428571428571427, 6779683.057142857, 22986.2, 19622.942857142858, 314820.71428571426, 208174.9714285714, 1637289618.2857144, 2769.2, 0.0, 0.0, 19290.97142857143].
+[INFO] [2024-11-27 02:36:40,644] [DDPG_Optimizer] Save model_params to sysbench_ddpg_11_90
+[INFO] [2024-11-27 02:36:40,644] [DBTune-sysbench_ddpg_11] Iteration 164, objective value: [-885.8899999999999].
+[INFO] [2024-11-27 02:36:40,699] [autotune] [step 2] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 13958643712, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'OFF', 'innodb_spin_wait_delay': 6, 'innodb_thread_concurrency': 0, 'log_output': 'FILE', 'max_heap_table_size': 16777216, 'query_prealloc_size': 8192, 'sort_buffer_size': 262144, 'tmp_table_size': 16777216}
+
+[INFO] [2024-11-27 02:37:20,856] [autotune] Close db successfully
+[INFO] [2024-11-27 02:37:20,858] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:37:20,860] [autotune] generated config file done
+[INFO] [2024-11-27 02:37:20,906] [autotune] wait for connection
+[INFO] [2024-11-27 02:37:22,921] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 02:37:22,921] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-27 02:37:22,921] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 02:37:22,921] [autotune] mysql is up
+[INFO] [2024-11-27 02:37:22,922] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 02:37:28,318] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_sysbench.sh write localhost 3307 root password 150 800000 10 80 180 ./log/1732675048.log sbrw
+[INFO] [2024-11-27 02:40:39,447] [autotune] internal metrics: [0.0, 189838.7142857143, 645211750.4, 2086413472.9142857, 1161.1714285714286, 39403.6, 59640.31428571429, 2976988715.885714, 565820971.8857143, 181700.88571428572, 34534.4, 670225.6857142857, 41.25714285714286, 851968.0, 0.0, 0.0, 1118031.3142857142, 38543.4, 13958643712.0, 0.0, 516489.3142857143, 10725.885714285714, 10731.8, 21445.2, 176.0, 2197.4857142857145, 0.0, 2198.1428571428573, 0.0, 0.0, 0.0, 0.0, 0.0, 12061.857142857143, 59409.0, 555.9428571428572, 16384.0, 2190.2571428571428, 16708.514285714286, 0.0, 383.1142857142857, 13769181.314285714, 1248.5714285714287, 434.37142857142857, 10975244.485714287, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1578993.3714285714, 0.0, 539579.3428571429, 2102.2, 30775.97142857143, 39570.514285714286, 62767.0, 132572525.71428572, 566.4571428571429, 0.0, 0.0, 3088.0285714285715].
+[WARNING] [2024-11-27 02:40:39,449] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-27 02:40:39,450] [DDPG_Optimizer] New Episode-75, initialize
+[INFO] [2024-11-27 02:40:39,450] [DBTune-sysbench_ddpg_11] Iteration 165, objective value: [-93.20055555555554].
+[INFO] [2024-11-27 02:40:39,478] [autotune] [step 3] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10326012615, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4572, 'innodb_thread_concurrency': 831, 'log_output': 'FILE', 'max_heap_table_size': 16384, 'query_prealloc_size': 120953738, 'sort_buffer_size': 130216762, 'tmp_table_size': 2072856}
+
+[INFO] [2024-11-27 02:40:46,505] [autotune] Close db successfully
+[INFO] [2024-11-27 02:40:46,507] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:46,507] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:46,509] [DBTune-sysbench_ddpg_11] Iteration 166, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:46,553] [autotune] [step 4] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10314512656, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4552, 'innodb_thread_concurrency': 832, 'log_output': 'FILE', 'max_heap_table_size': 16384, 'query_prealloc_size': 120966457, 'sort_buffer_size': 129823346, 'tmp_table_size': 445298}
+
+[INFO] [2024-11-27 02:40:46,584] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:46,585] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:46,586] [DBTune-sysbench_ddpg_11] Iteration 167, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:46,616] [autotune] [step 5] generate knobs: {'general_log': 'ON', 'innodb_buffer_pool_size': 10307921510, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 2075, 'innodb_thread_concurrency': 1000, 'log_output': 'FILE', 'max_heap_table_size': 16384, 'query_prealloc_size': 95997261, 'sort_buffer_size': 55341705, 'tmp_table_size': 1024}
+
+[INFO] [2024-11-27 02:40:46,649] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:46,650] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:46,650] [DBTune-sysbench_ddpg_11] Iteration 168, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:46,680] [autotune] [step 6] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10310561958, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4559, 'innodb_thread_concurrency': 826, 'log_output': 'FILE', 'max_heap_table_size': 2586428, 'query_prealloc_size': 120730088, 'sort_buffer_size': 129439431, 'tmp_table_size': 3316481}
+
+[INFO] [2024-11-27 02:40:46,712] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:46,713] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:46,714] [DBTune-sysbench_ddpg_11] Iteration 169, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:46,740] [autotune] [step 7] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10310469480, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4552, 'innodb_thread_concurrency': 827, 'log_output': 'FILE', 'max_heap_table_size': 1754595, 'query_prealloc_size': 120900709, 'sort_buffer_size': 129771494, 'tmp_table_size': 4003372}
+
+[INFO] [2024-11-27 02:40:46,771] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:46,771] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:46,772] [DBTune-sysbench_ddpg_11] Iteration 170, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:46,804] [autotune] [step 8] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10328002744, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4532, 'innodb_thread_concurrency': 826, 'log_output': 'FILE', 'max_heap_table_size': 534614, 'query_prealloc_size': 121258775, 'sort_buffer_size': 129882331, 'tmp_table_size': 1113618}
+
+[INFO] [2024-11-27 02:40:46,835] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:46,835] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:46,836] [DBTune-sysbench_ddpg_11] Iteration 171, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:46,859] [autotune] [step 9] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10322287780, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4534, 'innodb_thread_concurrency': 825, 'log_output': 'FILE', 'max_heap_table_size': 1396166, 'query_prealloc_size': 121151838, 'sort_buffer_size': 130138917, 'tmp_table_size': 2024655}
+
+[INFO] [2024-11-27 02:40:46,887] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:46,887] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:46,888] [DBTune-sysbench_ddpg_11] Iteration 172, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:46,924] [autotune] [step 10] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10311542069, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4539, 'innodb_thread_concurrency': 824, 'log_output': 'FILE', 'max_heap_table_size': 4468418, 'query_prealloc_size': 121111856, 'sort_buffer_size': 129795288, 'tmp_table_size': 2013971}
+
+[INFO] [2024-11-27 02:40:46,959] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:46,960] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:46,961] [DBTune-sysbench_ddpg_11] Iteration 173, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,123] [autotune] [step 11] generate knobs: {'general_log': 'ON', 'innodb_buffer_pool_size': 10307921510, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 1919, 'innodb_thread_concurrency': 796, 'log_output': 'FILE', 'max_heap_table_size': 437481293, 'query_prealloc_size': 53888487, 'sort_buffer_size': 71962827, 'tmp_table_size': 427387080}
+
+[INFO] [2024-11-27 02:40:47,155] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,156] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,157] [DBTune-sysbench_ddpg_11] Iteration 174, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,200] [autotune] [step 12] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10325420486, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4553, 'innodb_thread_concurrency': 826, 'log_output': 'FILE', 'max_heap_table_size': 4729812, 'query_prealloc_size': 120746639, 'sort_buffer_size': 129989457, 'tmp_table_size': 3579822}
+
+[INFO] [2024-11-27 02:40:47,227] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,228] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,229] [DBTune-sysbench_ddpg_11] Iteration 175, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,259] [autotune] [step 13] generate knobs: {'general_log': 'ON', 'innodb_buffer_pool_size': 12625031866, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4077, 'innodb_thread_concurrency': 957, 'log_output': 'FILE', 'max_heap_table_size': 275227704, 'query_prealloc_size': 82532707, 'sort_buffer_size': 134027263, 'tmp_table_size': 1024}
+
+[INFO] [2024-11-27 02:40:47,295] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,295] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,296] [DBTune-sysbench_ddpg_11] Iteration 176, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,325] [autotune] [step 14] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10338586654, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4551, 'innodb_thread_concurrency': 826, 'log_output': 'FILE', 'max_heap_table_size': 427228, 'query_prealloc_size': 120557914, 'sort_buffer_size': 130466772, 'tmp_table_size': 1024}
+
+[INFO] [2024-11-27 02:40:47,357] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,357] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,358] [DBTune-sysbench_ddpg_11] Iteration 177, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,387] [autotune] [step 15] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10344276223, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4550, 'innodb_thread_concurrency': 826, 'log_output': 'FILE', 'max_heap_table_size': 16384, 'query_prealloc_size': 120273564, 'sort_buffer_size': 130808377, 'tmp_table_size': 2611659}
+
+[INFO] [2024-11-27 02:40:47,419] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,419] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,420] [DBTune-sysbench_ddpg_11] Iteration 178, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,450] [autotune] [step 16] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 12631478048, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 3812, 'innodb_thread_concurrency': 1000, 'log_output': 'NONE', 'max_heap_table_size': 16384, 'query_prealloc_size': 25439475, 'sort_buffer_size': 134217728, 'tmp_table_size': 241273434}
+
+[INFO] [2024-11-27 02:40:47,481] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,482] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,482] [DBTune-sysbench_ddpg_11] Iteration 179, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,512] [autotune] [step 17] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 12967623680, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 3838, 'innodb_thread_concurrency': 746, 'log_output': 'NONE', 'max_heap_table_size': 16384, 'query_prealloc_size': 73831958, 'sort_buffer_size': 134217728, 'tmp_table_size': 167801328}
+
+[INFO] [2024-11-27 02:40:47,544] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,545] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,545] [DBTune-sysbench_ddpg_11] Iteration 180, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,575] [autotune] [step 18] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10360021839, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4544, 'innodb_thread_concurrency': 824, 'log_output': 'FILE', 'max_heap_table_size': 365147, 'query_prealloc_size': 121055548, 'sort_buffer_size': 130840057, 'tmp_table_size': 705970}
+
+[INFO] [2024-11-27 02:40:47,606] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,606] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,607] [DBTune-sysbench_ddpg_11] Iteration 181, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,637] [autotune] [step 19] generate knobs: {'general_log': 'ON', 'innodb_buffer_pool_size': 12871214536, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 3731, 'innodb_thread_concurrency': 893, 'log_output': 'FILE', 'max_heap_table_size': 16384, 'query_prealloc_size': 102096545, 'sort_buffer_size': 134217728, 'tmp_table_size': 127096918}
+
+[INFO] [2024-11-27 02:40:47,661] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,662] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,662] [DBTune-sysbench_ddpg_11] Iteration 182, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,693] [autotune] [step 20] generate knobs: {'general_log': 'ON', 'innodb_buffer_pool_size': 12059850761, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 3707, 'innodb_thread_concurrency': 1000, 'log_output': 'FILE', 'max_heap_table_size': 4101613, 'query_prealloc_size': 92339452, 'sort_buffer_size': 134217728, 'tmp_table_size': 35836437}
+
+[INFO] [2024-11-27 02:40:47,725] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,726] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,727] [DBTune-sysbench_ddpg_11] Iteration 183, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,757] [autotune] [step 21] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10344536396, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4551, 'innodb_thread_concurrency': 825, 'log_output': 'FILE', 'max_heap_table_size': 16384, 'query_prealloc_size': 121412990, 'sort_buffer_size': 130790541, 'tmp_table_size': 3809661}
+
+[INFO] [2024-11-27 02:40:47,787] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,788] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,788] [DBTune-sysbench_ddpg_11] Iteration 184, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,819] [autotune] [step 22] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10331962064, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4541, 'innodb_thread_concurrency': 823, 'log_output': 'FILE', 'max_heap_table_size': 3221655, 'query_prealloc_size': 121469867, 'sort_buffer_size': 130663628, 'tmp_table_size': 2899176}
+
+[INFO] [2024-11-27 02:40:47,850] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,851] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,852] [DBTune-sysbench_ddpg_11] Iteration 185, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,892] [autotune] [step 23] generate knobs: {'general_log': 'ON', 'innodb_buffer_pool_size': 10331084824, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 1881, 'innodb_thread_concurrency': 957, 'log_output': 'NONE', 'max_heap_table_size': 612160707, 'query_prealloc_size': 134217728, 'sort_buffer_size': 134217728, 'tmp_table_size': 408892986}
+
+[INFO] [2024-11-27 02:40:47,928] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:47,928] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:47,929] [DBTune-sysbench_ddpg_11] Iteration 186, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:47,968] [autotune] [step 24] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10314084856, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4518, 'innodb_thread_concurrency': 826, 'log_output': 'FILE', 'max_heap_table_size': 6541616, 'query_prealloc_size': 121161333, 'sort_buffer_size': 130756030, 'tmp_table_size': 4895195}
+
+[INFO] [2024-11-27 02:40:48,000] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,000] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,001] [DBTune-sysbench_ddpg_11] Iteration 187, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,032] [autotune] [step 25] generate knobs: {'general_log': 'ON', 'innodb_buffer_pool_size': 10307921510, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 1195, 'innodb_thread_concurrency': 772, 'log_output': 'NONE', 'max_heap_table_size': 565938053, 'query_prealloc_size': 97377249, 'sort_buffer_size': 134217728, 'tmp_table_size': 161419142}
+
+[INFO] [2024-11-27 02:40:48,060] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,060] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,061] [DBTune-sysbench_ddpg_11] Iteration 188, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,094] [autotune] [step 26] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10307921510, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4522, 'innodb_thread_concurrency': 822, 'log_output': 'FILE', 'max_heap_table_size': 388649, 'query_prealloc_size': 120444921, 'sort_buffer_size': 130707498, 'tmp_table_size': 6253819}
+
+[INFO] [2024-11-27 02:40:48,120] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,121] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,122] [DBTune-sysbench_ddpg_11] Iteration 189, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,152] [autotune] [step 27] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10314840058, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4532, 'innodb_thread_concurrency': 821, 'log_output': 'FILE', 'max_heap_table_size': 16384, 'query_prealloc_size': 120546523, 'sort_buffer_size': 131016982, 'tmp_table_size': 7015918}
+
+[INFO] [2024-11-27 02:40:48,179] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,180] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,180] [DBTune-sysbench_ddpg_11] Iteration 190, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,211] [autotune] [step 28] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10330763966, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4521, 'innodb_thread_concurrency': 821, 'log_output': 'FILE', 'max_heap_table_size': 1866668, 'query_prealloc_size': 120475383, 'sort_buffer_size': 131012855, 'tmp_table_size': 7337965}
+
+[INFO] [2024-11-27 02:40:48,238] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,238] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,239] [DBTune-sysbench_ddpg_11] Iteration 191, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,270] [autotune] [step 29] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10339688605, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4519, 'innodb_thread_concurrency': 821, 'log_output': 'FILE', 'max_heap_table_size': 1552699, 'query_prealloc_size': 120848680, 'sort_buffer_size': 131445717, 'tmp_table_size': 7106294}
+
+[INFO] [2024-11-27 02:40:48,296] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,296] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,297] [DBTune-sysbench_ddpg_11] Iteration 192, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,328] [autotune] [step 30] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10343380866, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4528, 'innodb_thread_concurrency': 822, 'log_output': 'FILE', 'max_heap_table_size': 2979936, 'query_prealloc_size': 120652980, 'sort_buffer_size': 131246030, 'tmp_table_size': 9151225}
+
+[INFO] [2024-11-27 02:40:48,354] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,355] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,356] [DBTune-sysbench_ddpg_11] Iteration 193, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,387] [autotune] [step 31] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 13528724666, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'OFF', 'innodb_spin_wait_delay': 2451, 'innodb_thread_concurrency': 628, 'log_output': 'FILE', 'max_heap_table_size': 550442609, 'query_prealloc_size': 63508724, 'sort_buffer_size': 134217728, 'tmp_table_size': 321773485}
+
+[INFO] [2024-11-27 02:40:48,412] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,413] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,414] [DBTune-sysbench_ddpg_11] Iteration 194, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,445] [autotune] [step 32] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10338836443, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4541, 'innodb_thread_concurrency': 822, 'log_output': 'FILE', 'max_heap_table_size': 8220629, 'query_prealloc_size': 120459256, 'sort_buffer_size': 130898731, 'tmp_table_size': 1024}
+
+[INFO] [2024-11-27 02:40:48,473] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,473] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,474] [DBTune-sysbench_ddpg_11] Iteration 195, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,505] [autotune] [step 33] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 12245794946, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'OFF', 'innodb_spin_wait_delay': 2649, 'innodb_thread_concurrency': 650, 'log_output': 'FILE', 'max_heap_table_size': 756700710, 'query_prealloc_size': 96384965, 'sort_buffer_size': 134217728, 'tmp_table_size': 1024}
+
+[INFO] [2024-11-27 02:40:48,532] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,533] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,534] [DBTune-sysbench_ddpg_11] Iteration 196, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,567] [autotune] [step 34] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10341259706, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4566, 'innodb_thread_concurrency': 825, 'log_output': 'FILE', 'max_heap_table_size': 4634529, 'query_prealloc_size': 120863760, 'sort_buffer_size': 130919558, 'tmp_table_size': 1911660}
+
+[INFO] [2024-11-27 02:40:48,594] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,594] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,595] [DBTune-sysbench_ddpg_11] Iteration 197, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,626] [autotune] [step 35] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10323297631, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4550, 'innodb_thread_concurrency': 823, 'log_output': 'FILE', 'max_heap_table_size': 3397571, 'query_prealloc_size': 121113576, 'sort_buffer_size': 130740034, 'tmp_table_size': 2364890}
+
+[INFO] [2024-11-27 02:40:48,651] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,651] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,652] [DBTune-sysbench_ddpg_11] Iteration 198, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,678] [autotune] [step 36] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10338594722, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'ON', 'innodb_spin_wait_delay': 4561, 'innodb_thread_concurrency': 825, 'log_output': 'FILE', 'max_heap_table_size': 5934993, 'query_prealloc_size': 120720040, 'sort_buffer_size': 130755998, 'tmp_table_size': 5386836}
+
+[INFO] [2024-11-27 02:40:48,707] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,708] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,708] [DBTune-sysbench_ddpg_11] Iteration 199, objective value: [2147483647].
+[INFO] [2024-11-27 02:40:48,731] [autotune] [step 37] generate knobs: {'general_log': 'OFF', 'innodb_buffer_pool_size': 10895361037, 'innodb_doublewrite': 'ON', 'innodb_random_read_ahead': 'OFF', 'innodb_spin_wait_delay': 5118, 'innodb_thread_concurrency': 898, 'log_output': 'FILE', 'max_heap_table_size': 241610937, 'query_prealloc_size': 90974144, 'sort_buffer_size': 99482467, 'tmp_table_size': 91479832}
+
+[INFO] [2024-11-27 02:40:48,761] [autotune] mysql is shut down
+[INFO] [2024-11-27 02:40:48,762] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-27 02:40:48,762] [DBTune-sysbench_ddpg_11] Iteration 200, objective value: [2147483647].
