@@ -326,6 +326,96 @@
       "trial_state": 0,
       "elapsed_time": 290.99106073379517,
       "iter_time": 0.008034467697143555
+    },
+    {
+      "configuration": {
+        "binlog_cache_size": 32768,
+        "completion_type": "NO_CHAIN",
+        "innodb_log_file_size": 50331648,
+        "innodb_thread_concurrency": 0,
+        "lower_case_table_names": 0,
+        "max_allowed_packet": 4194304,
+        "transaction_alloc_block_size": 8192
+      },
+      "external_metrics": {},
+      "internal_metrics": [],
+      "resource": {},
+      "context": null,
+      "trial_state": 1,
+      "elapsed_time": 609.3806664943695,
+      "iter_time": 0.055303335189819336
+    },
+    {
+      "configuration": {
+        "binlog_cache_size": 3457144130,
+        "completion_type": "RELEASE",
+        "innodb_log_file_size": 880248565,
+        "innodb_thread_concurrency": 970,
+        "lower_case_table_names": 0,
+        "max_allowed_packet": 497424421,
+        "transaction_alloc_block_size": 115476
+      },
+      "external_metrics": {},
+      "internal_metrics": [],
+      "resource": {},
+      "context": null,
+      "trial_state": 1,
+      "elapsed_time": 607.3699498176575,
+      "iter_time": 0.0061473846435546875
+    },
+    {
+      "configuration": {
+        "binlog_cache_size": 3980667014,
+        "completion_type": "NO_CHAIN",
+        "innodb_log_file_size": 276755069,
+        "innodb_thread_concurrency": 581,
+        "lower_case_table_names": 2,
+        "max_allowed_packet": 809010915,
+        "transaction_alloc_block_size": 130076
+      },
+      "external_metrics": {},
+      "internal_metrics": [],
+      "resource": {},
+      "context": null,
+      "trial_state": 1,
+      "elapsed_time": 607.3763604164124,
+      "iter_time": 0.006079673767089844
+    },
+    {
+      "configuration": {
+        "binlog_cache_size": 350186174,
+        "completion_type": "CHAIN",
+        "innodb_log_file_size": 894645123,
+        "innodb_thread_concurrency": 740,
+        "lower_case_table_names": 2,
+        "max_allowed_packet": 270338755,
+        "transaction_alloc_block_size": 11827
+      },
+      "external_metrics": {},
+      "internal_metrics": [],
+      "resource": {},
+      "context": null,
+      "trial_state": 1,
+      "elapsed_time": 607.3342981338501,
+      "iter_time": 0.005093812942504883
+    },
+    {
+      "configuration": {
+        "binlog_cache_size": 1388458651,
+        "completion_type": "CHAIN",
+        "innodb_log_file_size": 441523718,
+        "innodb_thread_concurrency": 167,
+        "lower_case_table_names": 0,
+        "max_allowed_packet": 1030496211,
+        "transaction_alloc_block_size": 115624
+      },
+      "external_metrics": {},
+      "internal_metrics": [],
+      "resource": {},
+      "context": null,
+      "trial_state": 1,
+      "elapsed_time": 607.3323991298676,
+      "iter_time": 0.004883766174316406
     }
   ]
 }

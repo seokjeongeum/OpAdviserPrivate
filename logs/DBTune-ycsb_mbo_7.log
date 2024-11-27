@@ -7620,3 +7620,5 @@
 [INFO] [2024-11-24 06:46:05,523] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh ycsb /oltpbench/config/sample_ycsb_config.xml 1732430765
 [INFO] [2024-11-24 06:49:08,474] [autotune] internal metrics: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2274574336.0, 0.0, 138829.0, 0.0, 582023.0, 0.0, 720852.0, 0.0, 0.0, 0.0, 0.0, 11811160064.0, 0.0, 0.0, 0.0, 0.0, 0.0, 20.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
 [INFO] [2024-11-24 06:49:08,476] [DBTune-ycsb_mbo_7] Iteration 200, objective value: [-0.0].
+[INFO] [2024-11-26 02:10:42,917] [DBTune-ycsb_mbo_7] Load 200 iterations from repo/history_ycsb_mbo_7.json
+[INFO] [2024-11-26 02:10:42,993] [BO_Optimizer] === [BO auto selection] === acq_type: ei.

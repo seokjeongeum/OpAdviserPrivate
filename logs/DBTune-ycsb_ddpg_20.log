@@ -4915,3 +4915,19 @@
 [INFO] [2024-11-21 14:44:04,373] [autotune] mysql is shut down
 [INFO] [2024-11-21 14:44:04,374] [autotune] innodb_thread_concurrency is set too large
 [INFO] [2024-11-21 14:44:04,375] [DBTune-ycsb_ddpg_20] Iteration 200, objective value: [2147483647].
+[INFO] [2024-11-26 02:10:01,905] [DBTune-ycsb_ddpg_20] Load 200 iterations from repo/history_ycsb_ddpg_20.json
+[INFO] [2024-11-26 02:10:02,032] [DDPG_Optimizer] Calculate state mean and var.
+[INFO] [2024-11-26 02:10:02,890] [DDPG] Finish Initializing Networks
+[INFO] [2024-11-26 02:10:02,891] [DDPG] DDPG Initialzed!
+[INFO] [2024-11-26 02:10:02,980] [DDPG_Optimizer] New Episode-1, initialize
+[INFO] [2024-11-26 02:10:03,051] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_5
+[INFO] [2024-11-26 02:10:03,122] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_10
+[INFO] [2024-11-26 02:10:03,193] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_15
+[INFO] [2024-11-26 02:10:05,209] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_20
+[INFO] [2024-11-26 02:10:05,653] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_25
+[INFO] [2024-11-26 02:10:08,179] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_30
+[INFO] [2024-11-26 02:10:08,626] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_35
+[INFO] [2024-11-26 02:10:09,095] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_40
+[INFO] [2024-11-26 02:10:11,625] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_45
+[INFO] [2024-11-26 02:10:11,902] [DDPG_Optimizer] Save model_params to ycsb_ddpg_20_65
+[INFO] [2024-11-26 02:10:12,204] [DDPG_Optimizer] New Episode-2, initialize
