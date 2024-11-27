@@ -2734,3 +2734,5 @@
 [INFO] [2024-11-25 17:50:08,890] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh tpcc /oltpbench/config/sample_tpcc_config.xml 1732557008
 [INFO] [2024-11-25 17:53:27,402] [autotune] internal metrics: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 8011776.0, 0.0, 489.0, 0.0, 916957.0, 2.0, 917448.0, 0.0, 0.0, 0.0, 0.0, 15032385536.0, 0.0, 0.0, 0.0, 0.0, 0.0, 19.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
 [INFO] [2024-11-25 17:53:27,412] [DBTune-tpcc_smac_138] Iteration 200, objective value: [-8254.601016157625].
+[INFO] [2024-11-27 08:33:05,340] [DBTune-tpcc_smac_138] Load 200 iterations from repo/history_tpcc_smac_138.json
+[INFO] [2024-11-27 08:33:06,123] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
