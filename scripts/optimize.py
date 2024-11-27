@@ -4,10 +4,12 @@ from autotune.database.postgresqldb import PostgresqlDB
 from autotune.dbenv import DBEnv
 from autotune.tuner import DBTuner
 import argparse
-
-if __name__ == '__main__':
+def f():
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, default='scripts/demo.ini', help='config file')
+    parser.add_argument('run')
+    parser.add_argument('--no-debugger', action='store_true')
+    parser.add_argument('--no-reload', action='store_true')
     # 2024-11-19 code for clusters
     # parser.add_argument('--knob_config_file', type=str,default='scripts/experiment/gen_knobs/moreworkloads/ycsb_lhs_shap.json')
     # parser.add_argument('--knob_num', type=int,default=26)
@@ -45,3 +47,5 @@ if __name__ == '__main__':
     # tuner.f()
 #code for error case analysis
 
+if __name__ == '__main__':
+    f()

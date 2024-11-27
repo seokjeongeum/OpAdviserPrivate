@@ -33,3 +33,5 @@ ipympl==0.9.3
 jupyter
 cma
 hiplot
+MarkupSafe==2.0.0 
+Flask
