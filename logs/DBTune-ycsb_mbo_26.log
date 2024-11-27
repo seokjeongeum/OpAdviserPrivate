@@ -9578,3 +9578,7 @@
 [INFO] [2024-11-23 12:19:00,603] [DBTune-ycsb_mbo_26] Iteration 200, objective value: [-0.0].
 [INFO] [2024-11-26 04:04:42,819] [DBTune-ycsb_mbo_26] Load 200 iterations from repo/history_ycsb_mbo_26.json
 [INFO] [2024-11-26 04:04:43,058] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-11-26 10:25:17,620] [DBTune-ycsb_mbo_26] Load 200 iterations from repo/history_ycsb_mbo_26.json
+[INFO] [2024-11-26 10:25:17,847] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-11-27 05:35:14,510] [DBTune-ycsb_mbo_26] Load 200 iterations from repo/history_ycsb_mbo_26.json
+[INFO] [2024-11-27 05:35:14,686] [BO_Optimizer] === [BO auto selection] === acq_type: ei.

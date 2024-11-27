@@ -7005,3 +7005,7 @@
 [INFO] [2024-11-24 23:33:03,743] [DBTune-ycsb_smac_26] Iteration 200, objective value: [-3898.9580295336973].
 [INFO] [2024-11-26 04:05:06,348] [DBTune-ycsb_smac_26] Load 200 iterations from repo/history_ycsb_smac_26.json
 [INFO] [2024-11-26 04:05:06,550] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-11-26 10:25:42,007] [DBTune-ycsb_smac_26] Load 200 iterations from repo/history_ycsb_smac_26.json
+[INFO] [2024-11-26 10:25:42,189] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-11-27 05:35:38,154] [DBTune-ycsb_smac_26] Load 200 iterations from repo/history_ycsb_smac_26.json
+[INFO] [2024-11-27 05:35:38,395] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
