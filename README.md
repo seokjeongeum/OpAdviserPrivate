@@ -30,7 +30,8 @@ apt install -y \
   sudo \
 
 echo '[mysqld]
-port=3308' | sudo tee -a /etc/mysql/my.cnf
+port=3308
+innodb_log_checksums = 0' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';"
