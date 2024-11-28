@@ -4,7 +4,8 @@ from autotune.database.postgresqldb import PostgresqlDB
 from autotune.dbenv import DBEnv
 from autotune.tuner import DBTuner
 import argparse
-def f():
+
+if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, default='scripts/demo.ini', help='config file')
     parser.add_argument('run')
@@ -46,6 +47,3 @@ def f():
 #code for error case analysis
     # tuner.f()
 #code for error case analysis
-
-if __name__ == '__main__':
-    f()
