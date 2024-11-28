@@ -9,6 +9,14 @@ from autotune.dbenv import DBEnv
 from autotune.tuner import DBTuner
 from autotune.utils.config import parse_args
 
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="password",
+    database="voter",
+    port=3307,
+)
 app = Flask(__name__)
 
 
@@ -32,14 +40,6 @@ env = DBEnv(args_db, args_tune, db)
 tuner = DBTuner(args_db, args_tune, env)
 
 
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="password",
-    database="voter",
-)
-
-
 @app.post("/tune")
 def tune():
     queries = request.get_json()
@@ -55,7 +55,9 @@ set @query_time_ms= timestampdiff(microsecond, @query_start, current_timestamp(6
 SELECT @query_name, @query_time_ms;
 """
             )
-    tuner.tune()
+    return {
+        "results": tuner.tune(),
+    }
 
 
 @app.post("/query")
