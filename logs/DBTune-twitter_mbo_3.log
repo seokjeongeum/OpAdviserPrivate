@@ -7536,3 +7536,814 @@
 [INFO] [2024-11-26 07:08:41,895] [autotune] mysql is shut down
 [INFO] [2024-11-26 07:08:41,897] [autotune] generated config file done
 [INFO] [2024-11-26 07:08:41,938] [autotune] wait for connection
+[INFO] [2024-11-26 15:40:21,416] [DBTune-twitter_mbo_3] Load 142 iterations from repo/history_twitter_mbo_3.json
+[INFO] [2024-11-26 15:40:21,464] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-11-26 15:40:24,595] [autotune] [step 1] generate knobs: {'innodb_io_capacity_max': 21989, 'innodb_log_file_size': 345056165, 'innodb_thread_concurrency': 340}
+
+[INFO] [2024-11-26 15:40:27,637] [autotune] Close db successfully
+[INFO] [2024-11-26 15:40:27,637] [autotune] mysql is shut down
+[INFO] [2024-11-26 15:40:27,642] [autotune] generated config file done
+[INFO] [2024-11-26 15:40:27,668] [autotune] wait for connection
+[INFO] [2024-11-26 15:40:33,692] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 15:40:33,693] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-11-26 15:40:33,693] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 15:40:33,693] [autotune] mysql is up
+[INFO] [2024-11-26 15:40:33,694] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 15:40:38,926] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732635638
+[INFO] [2024-11-26 15:44:11,054] [autotune] internal metrics: [6920827.485714286, 13002351.457142858, 10231559431.314285, 203326098.2857143, 211.6, 624607.7142857143, 5897.857142857143, 11574010090.057142, 856181.0285714286, 706421.4285714285, 52.25714285714286, 94535.5142857143, 50907.0, 851864.0, 35.48571428571429, 0.0, 67535177.31428571, 624471.0285714286, 13958643712.0, 0.0, 115338.42857142857, 0.0, 16199.228571428572, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16705.22857142857, 5897.857142857143, 548.7142857142857, 16384.0, 56717.34285714286, 181938.54285714286, 0.0, 0.0, 0.0, 0.0, 167217.88571428572, 3908608218.0857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1281228.8, 0.0, 15626.2, 1765.0857142857142, 2959.7714285714287, 624580.1142857143, 8256.342857142858, 10057040.457142858, 1780.857142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 15:44:11,057] [DBTune-twitter_mbo_3] Iteration 143, objective value: [-14107.822953575382].
+[INFO] [2024-11-26 15:44:12,755] [BO_Optimizer] Sample random config. rand_prob=0.100000.
+[INFO] [2024-11-26 15:44:12,756] [autotune] [step 2] generate knobs: {'innodb_io_capacity_max': 6828, 'innodb_log_file_size': 1048320024, 'innodb_thread_concurrency': 488}
+
+[INFO] [2024-11-26 15:44:16,785] [autotune] Close db successfully
+[INFO] [2024-11-26 15:44:16,785] [autotune] mysql is shut down
+[INFO] [2024-11-26 15:44:16,789] [autotune] generated config file done
+[INFO] [2024-11-26 15:44:16,819] [autotune] wait for connection
+[INFO] [2024-11-26 15:44:32,858] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 15:44:32,859] [autotune] finish 16 seconds waiting for connection
+[INFO] [2024-11-26 15:44:32,859] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 15:44:32,859] [autotune] mysql is up
+[INFO] [2024-11-26 15:44:32,860] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 15:44:38,167] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732635878
+[INFO] [2024-11-26 15:48:11,001] [autotune] internal metrics: [7366832.971428571, 12620402.942857143, 7894339701.028571, 328584045.71428573, 208.31428571428572, 481853.28571428574, 9721.771428571428, 11799213787.428572, 1264844.8, 720166.8285714285, 77.2, 79796.57142857143, 51900.57142857143, 851864.0, 36.142857142857146, 0.0, 67184321.51428571, 481792.17142857146, 13958643712.0, 0.0, 114263.34285714285, 0.0, 16051.371428571429, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16552.77142857143, 9721.771428571428, 612.4571428571429, 16384.0, 46523.08571428571, 162672.42857142858, 0.0, 0.0, 0.0, 0.0, 137358.62857142856, 3491006691.457143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1299061.0285714285, 0.0, 15491.485714285714, 1773.6285714285714, 3171.3714285714286, 481840.14285714284, 12126.914285714285, 10012964.57142857, 1789.4, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 15:48:11,004] [DBTune-twitter_mbo_3] Iteration 144, objective value: [-14446.620316611596].
+[INFO] [2024-11-26 15:48:14,193] [autotune] [step 3] generate knobs: {'innodb_io_capacity_max': 32344, 'innodb_log_file_size': 682060900, 'innodb_thread_concurrency': 341}
+
+[INFO] [2024-11-26 15:48:17,237] [autotune] Close db successfully
+[INFO] [2024-11-26 15:48:17,238] [autotune] mysql is shut down
+[INFO] [2024-11-26 15:48:17,243] [autotune] generated config file done
+[INFO] [2024-11-26 15:48:17,267] [autotune] wait for connection
+[INFO] [2024-11-26 15:48:29,296] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 15:48:29,297] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 15:48:29,297] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 15:48:29,297] [autotune] mysql is up
+[INFO] [2024-11-26 15:48:29,298] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 15:48:34,592] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732636114
+[INFO] [2024-11-26 15:52:09,109] [autotune] internal metrics: [7659410.057142857, 12603223.257142857, 8028804125.257143, 424029198.62857145, 231.97142857142856, 490064.9428571428, 12625.685714285713, 11800652302.62857, 1713298.2857142857, 720254.6285714286, 104.57142857142857, 79379.2, 52334.114285714284, 851968.0, 43.371428571428574, 0.0, 67911754.34285714, 489998.5714285714, 13958643712.0, 0.0, 116873.5142857143, 0.0, 16379.285714285714, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16891.2, 12625.685714285713, 680.8, 16384.0, 38497.4, 142485.65714285715, 0.0, 1.3142857142857143, 25088.4, 1.3142857142857143, 113360.42857142857, 3163306278.142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1318575.5428571429, 0.0, 16209.085714285715, 1801.8857142857144, 3308.057142857143, 490054.4285714286, 15128.085714285715, 10302654.17142857, 1817.6571428571428, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 15:52:09,113] [DBTune-twitter_mbo_3] Iteration 145, objective value: [-14634.052118486085].
+[INFO] [2024-11-26 15:52:12,393] [autotune] [step 4] generate knobs: {'innodb_io_capacity_max': 30516, 'innodb_log_file_size': 429277332, 'innodb_thread_concurrency': 339}
+
+[INFO] [2024-11-26 15:52:15,433] [autotune] Close db successfully
+[INFO] [2024-11-26 15:52:15,434] [autotune] mysql is shut down
+[INFO] [2024-11-26 15:52:15,438] [autotune] generated config file done
+[INFO] [2024-11-26 15:52:15,467] [autotune] wait for connection
+[INFO] [2024-11-26 15:52:23,492] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 15:52:23,493] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-11-26 15:52:23,494] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 15:52:23,494] [autotune] mysql is up
+[INFO] [2024-11-26 15:52:23,494] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 15:52:28,832] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732636348
+[INFO] [2024-11-26 15:56:02,060] [autotune] internal metrics: [7507665.257142857, 12608581.6, 8050025150.171429, 451903327.0857143, 193.85714285714286, 491358.85714285716, 13483.914285714285, 11790750281.142857, 1759173.4857142856, 719650.2571428572, 107.37142857142857, 80113.0, 52204.6, 851968.0, 31.542857142857144, 0.0, 67527264.0, 491309.5714285714, 13958643712.0, 0.0, 114986.2, 0.0, 16155.857142857143, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16661.85714285714, 13483.914285714285, 716.2857142857143, 16384.0, 42932.45714285714, 149501.9714285714, 0.0, 0.0, 0.0, 0.0, 128831.54285714286, 3326758097.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1336407.7714285713, 0.0, 15283.171428571428, 1816.3428571428572, 3413.2, 491350.3142857143, 16035.6, 10054348.8, 1832.1142857142856, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 15:56:02,063] [DBTune-twitter_mbo_3] Iteration 146, objective value: [-14531.348081799038].
+[INFO] [2024-11-26 15:56:05,527] [autotune] [step 5] generate knobs: {'innodb_io_capacity_max': 27296, 'innodb_log_file_size': 588515839, 'innodb_thread_concurrency': 341}
+
+[INFO] [2024-11-26 15:56:08,566] [autotune] Close db successfully
+[INFO] [2024-11-26 15:56:08,567] [autotune] mysql is shut down
+[INFO] [2024-11-26 15:56:08,571] [autotune] generated config file done
+[INFO] [2024-11-26 15:56:08,601] [autotune] wait for connection
+[INFO] [2024-11-26 15:56:18,632] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 15:56:18,633] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-11-26 15:56:18,634] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 15:56:18,634] [autotune] mysql is up
+[INFO] [2024-11-26 15:56:18,634] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 15:56:23,933] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732636583
+[INFO] [2024-11-26 15:59:55,790] [autotune] internal metrics: [7478442.771428571, 12517771.028571429, 8003577914.514286, 500235059.2, 253.65714285714284, 488522.6285714286, 14951.971428571429, 11783248281.6, 1819560.2285714287, 719192.3142857143, 111.05714285714286, 80606.28571428571, 52065.02857142857, 851864.0, 44.68571428571428, 0.0, 67116599.0, 488476.6285714286, 13958643712.0, 0.0, 115063.08571428571, 0.0, 16038.885714285714, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16540.285714285714, 14951.971428571429, 749.8, 16384.0, 42139.94285714286, 147769.74285714285, 0.0, 0.0, 0.0, 0.0, 128338.68571428572, 3287619799.571429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1325641.142857143, 0.0, 16408.85714285714, 1829.4857142857143, 3509.8, 488502.9142857143, 17560.17142857143, 10280784.457142858, 1845.2571428571428, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 15:59:55,793] [DBTune-twitter_mbo_3] Iteration 147, objective value: [-14438.297226258957].
+[INFO] [2024-11-26 15:59:59,358] [autotune] [step 6] generate knobs: {'innodb_io_capacity_max': 21980, 'innodb_log_file_size': 616922714, 'innodb_thread_concurrency': 337}
+
+[INFO] [2024-11-26 16:00:02,405] [autotune] Close db successfully
+[INFO] [2024-11-26 16:00:02,406] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:00:02,410] [autotune] generated config file done
+[INFO] [2024-11-26 16:00:02,441] [autotune] wait for connection
+[INFO] [2024-11-26 16:00:14,481] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:00:14,482] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 16:00:14,482] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:00:14,483] [autotune] mysql is up
+[INFO] [2024-11-26 16:00:14,483] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:00:19,778] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732636819
+[INFO] [2024-11-26 16:03:53,126] [autotune] internal metrics: [7576517.4, 12589529.057142857, 8000401759.085714, 538368102.4, 197.8, 488332.0571428572, 16120.371428571429, 11793230818.742857, 1823305.142857143, 719801.6571428571, 111.28571428571429, 79892.4857142857, 52273.77142857143, 851968.0, 32.2, 0.0, 67636425.94285715, 488285.4, 13958643712.0, 0.0, 115893.71428571429, 0.0, 16285.971428571429, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16794.6, 16120.371428571429, 834.5714285714286, 16384.0, 41804.8, 148371.6857142857, 0.0, 0.0, 0.0, 0.0, 123347.02857142857, 3230233680.457143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1336071.3142857142, 0.0, 15444.828571428572, 1829.4857142857143, 3653.057142857143, 488316.28571428574, 18821.885714285716, 10127360.0, 1845.9142857142858, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:03:53,128] [DBTune-twitter_mbo_3] Iteration 148, objective value: [-14570.824249290787].
+[INFO] [2024-11-26 16:03:56,535] [autotune] [step 7] generate knobs: {'innodb_io_capacity_max': 32455, 'innodb_log_file_size': 585768034, 'innodb_thread_concurrency': 339}
+
+[INFO] [2024-11-26 16:03:59,578] [autotune] Close db successfully
+[INFO] [2024-11-26 16:03:59,579] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:03:59,584] [autotune] generated config file done
+[INFO] [2024-11-26 16:03:59,612] [autotune] wait for connection
+[INFO] [2024-11-26 16:04:11,639] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:04:11,640] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 16:04:11,642] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:04:11,642] [autotune] mysql is up
+[INFO] [2024-11-26 16:04:11,643] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:04:16,924] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732637056
+[INFO] [2024-11-26 16:07:49,292] [autotune] internal metrics: [7576221.685714286, 12619501.342857143, 8064452432.457143, 538446160.4571428, 189.25714285714287, 492247.97142857144, 16125.628571428571, 11793609523.2, 1944546.7428571428, 719824.8, 118.68571428571428, 79787.0, 52252.114285714284, 851864.0, 28.914285714285715, 0.0, 67752522.05714285, 492200.65714285715, 13958643712.0, 0.0, 115182.02857142857, 0.0, 16201.2, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16707.85714285714, 16125.628571428571, 839.8285714285714, 16384.0, 41036.6, 146214.94285714286, 0.0, 0.0, 0.0, 0.0, 125194.91428571429, 3245757742.0571427, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1320594.2857142857, 0.0, 15185.914285714285, 1836.057142857143, 3670.1428571428573, 492237.45714285714, 18841.6, 10033488.457142858, 1851.8285714285714, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:07:49,294] [DBTune-twitter_mbo_3] Iteration 149, objective value: [-14577.457769137325].
+[INFO] [2024-11-26 16:07:52,295] [autotune] [step 8] generate knobs: {'innodb_io_capacity_max': 8044, 'innodb_log_file_size': 920840180, 'innodb_thread_concurrency': 494}
+
+[INFO] [2024-11-26 16:07:55,344] [autotune] Close db successfully
+[INFO] [2024-11-26 16:07:55,344] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:07:55,349] [autotune] generated config file done
+[INFO] [2024-11-26 16:07:55,379] [autotune] wait for connection
+[INFO] [2024-11-26 16:08:09,423] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:08:09,424] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-26 16:08:09,424] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:08:09,425] [autotune] mysql is up
+[INFO] [2024-11-26 16:08:09,425] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:08:14,735] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732637294
+[INFO] [2024-11-26 16:11:46,141] [autotune] internal metrics: [7249473.828571429, 12851733.657142857, 8034661171.2, 542297921.8285714, 199.77142857142857, 490425.71428571426, 16241.285714285714, 11776239674.514286, 1280292.5714285714, 718764.6, 78.14285714285714, 81096.2, 52107.08571428571, 851968.0, 38.114285714285714, 0.0, 67735678.82857142, 490371.82857142854, 13958643712.0, 0.0, 115843.11428571428, 0.0, 16259.685714285713, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16767.657142857144, 16241.285714285714, 810.9142857142857, 16384.0, 52641.74285714285, 170401.74285714285, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 152298.11428571428, 3593748950.542857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1315547.4285714286, 0.0, 15433.657142857142, 1824.8857142857144, 3625.457142857143, 490405.34285714285, 18906.657142857144, 10095396.57142857, 1840.6571428571428, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:11:46,143] [DBTune-twitter_mbo_3] Iteration 150, objective value: [-14524.40357610993].
+[INFO] [2024-11-26 16:11:47,492] [BO_Optimizer] Sample random config. rand_prob=0.100000.
+[INFO] [2024-11-26 16:11:47,493] [autotune] [step 9] generate knobs: {'innodb_io_capacity_max': 33807, 'innodb_log_file_size': 574189742, 'innodb_thread_concurrency': 50}
+
+[INFO] [2024-11-26 16:11:50,527] [autotune] Close db successfully
+[INFO] [2024-11-26 16:11:50,527] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:11:50,531] [autotune] generated config file done
+[INFO] [2024-11-26 16:11:50,563] [autotune] wait for connection
+[INFO] [2024-11-26 16:12:00,592] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:12:00,592] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-11-26 16:12:00,592] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:12:00,593] [autotune] mysql is up
+[INFO] [2024-11-26 16:12:00,593] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:12:05,961] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732637525
+[INFO] [2024-11-26 16:15:40,207] [autotune] internal metrics: [7571251.714285715, 12563859.085714286, 8009079661.714286, 567019446.8571428, 258.25714285714287, 488860.4, 16986.485714285714, 11796715461.485714, 2011955.2, 720014.3428571429, 122.8, 79592.71428571429, 52256.885714285716, 851864.0, 36.8, 0.0, 67534723.88571429, 488813.7428571429, 13958643712.0, 0.0, 116618.54285714286, 0.0, 16245.228571428572, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16753.2, 16986.485714285714, 830.6285714285714, 16384.0, 39155.857142857145, 143352.42857142858, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 113901.25714285714, 3138483887.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1344146.2857142857, 0.0, 16586.285714285714, 1838.0285714285715, 3650.4285714285716, 488847.9142857143, 19680.77142857143, 10398208.0, 1853.8, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:15:40,209] [DBTune-twitter_mbo_3] Iteration 151, objective value: [-14546.812115057062].
+[INFO] [2024-11-26 16:15:43,128] [autotune] [step 10] generate knobs: {'innodb_io_capacity_max': 31817, 'innodb_log_file_size': 474925686, 'innodb_thread_concurrency': 46}
+
+[INFO] [2024-11-26 16:15:46,173] [autotune] Close db successfully
+[INFO] [2024-11-26 16:15:46,174] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:15:46,179] [autotune] generated config file done
+[INFO] [2024-11-26 16:15:46,214] [autotune] wait for connection
+[INFO] [2024-11-26 16:15:54,237] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:15:54,238] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-11-26 16:15:54,238] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:15:54,238] [autotune] mysql is up
+[INFO] [2024-11-26 16:15:54,239] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:15:59,537] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732637759
+[INFO] [2024-11-26 16:19:32,383] [autotune] internal metrics: [7531767.285714285, 12525171.114285715, 8055106998.857142, 596880018.2857143, 252.34285714285716, 491671.0, 17896.628571428573, 11758428394.057142, 704980.1142857143, 717677.4571428571, 43.02857142857143, 82283.94285714286, 51902.57142857143, 851864.0, 24.97142857142857, 0.0, 67285857.31428571, 491631.5714285714, 13958643712.0, 0.0, 117382.14285714286, 0.0, 16384.542857142857, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16896.457142857143, 17896.628571428573, 831.9428571428572, 16384.0, 38057.77142857143, 141683.94285714286, 0.0, 0.0, 0.0, 0.0, 112050.08571428571, 3144268816.714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1345155.657142857, 0.0, 16575.114285714284, 1845.9142857142858, 3661.6, 491644.71428571426, 20609.314285714285, 10435218.285714285, 1861.6857142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:19:32,386] [DBTune-twitter_mbo_3] Iteration 152, objective value: [-14476.29313904129].
+[INFO] [2024-11-26 16:19:35,333] [autotune] [step 11] generate knobs: {'innodb_io_capacity_max': 1668, 'innodb_log_file_size': 993681398, 'innodb_thread_concurrency': 491}
+
+[INFO] [2024-11-26 16:19:38,380] [autotune] Close db successfully
+[INFO] [2024-11-26 16:19:38,381] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:19:38,385] [autotune] generated config file done
+[INFO] [2024-11-26 16:19:38,405] [autotune] wait for connection
+[INFO] [2024-11-26 16:19:53,445] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:19:53,446] [autotune] finish 15 seconds waiting for connection
+[INFO] [2024-11-26 16:19:53,446] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:19:53,446] [autotune] mysql is up
+[INFO] [2024-11-26 16:19:53,446] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:19:58,746] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732637998
+[INFO] [2024-11-26 16:23:31,933] [autotune] internal metrics: [7119287.914285715, 12928112.057142857, 8094835858.285714, 598219790.6285714, 204.37142857142857, 494091.9142857143, 17946.571428571428, 11780039358.171429, 1665550.6285714286, 718996.5142857142, 101.65714285714286, 80898.5142857143, 51968.828571428574, 851864.0, 21.02857142857143, 0.0, 67669467.74285714, 494051.17142857146, 13958643712.0, 0.0, 115653.85714285714, 0.0, 16238.657142857142, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16746.628571428573, 17946.571428571428, 831.2857142857143, 16384.0, 58670.37142857143, 180849.65714285715, 0.0, 0.0, 0.0, 0.0, 169688.08571428573, 3864641463.428571, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1341118.1714285715, 0.0, 15494.771428571428, 1850.5142857142857, 3689.8571428571427, 494074.17142857146, 20648.085714285713, 10138463.085714286, 1866.2857142857142, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:23:31,935] [DBTune-twitter_mbo_3] Iteration 153, objective value: [-14473.878153689846].
+[INFO] [2024-11-26 16:23:35,440] [autotune] [step 12] generate knobs: {'innodb_io_capacity_max': 39296, 'innodb_log_file_size': 855983108, 'innodb_thread_concurrency': 47}
+
+[INFO] [2024-11-26 16:23:38,493] [autotune] Close db successfully
+[INFO] [2024-11-26 16:23:38,493] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:23:38,498] [autotune] generated config file done
+[INFO] [2024-11-26 16:23:38,527] [autotune] wait for connection
+[INFO] [2024-11-26 16:23:52,565] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:23:52,566] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-26 16:23:52,566] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:23:52,566] [autotune] mysql is up
+[INFO] [2024-11-26 16:23:52,566] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:23:57,898] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732638237
+[INFO] [2024-11-26 16:27:30,239] [autotune] internal metrics: [7449801.857142857, 12404722.742857143, 8087536084.114285, 594562165.0285715, 189.25714285714287, 493653.6, 17838.14285714286, 11770168700.342857, 1746534.4, 718394.0285714286, 106.6, 81635.5142857143, 51834.31428571429, 851864.0, 55.857142857142854, 0.0, 66613295.91428571, 493578.02857142856, 13958643712.0, 0.0, 115113.68571428572, 0.0, 16190.685714285713, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16696.685714285715, 17838.14285714286, 828.0, 16384.0, 36973.485714285714, 138602.6, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 110645.11428571428, 3075122334.9714284, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1347510.857142857, 0.0, 15189.2, 1795.9714285714285, 3628.0857142857144, 493642.4285714286, 20484.457142857143, 10033824.914285714, 1811.7428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:27:30,242] [DBTune-twitter_mbo_3] Iteration 154, objective value: [-14328.093703957476].
+[INFO] [2024-11-26 16:27:33,873] [autotune] [step 13] generate knobs: {'innodb_io_capacity_max': 7437, 'innodb_log_file_size': 1046343338, 'innodb_thread_concurrency': 491}
+
+[INFO] [2024-11-26 16:27:36,913] [autotune] Close db successfully
+[INFO] [2024-11-26 16:27:36,914] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:27:36,919] [autotune] generated config file done
+[INFO] [2024-11-26 16:27:36,949] [autotune] wait for connection
+[INFO] [2024-11-26 16:27:52,995] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:27:52,996] [autotune] finish 16 seconds waiting for connection
+[INFO] [2024-11-26 16:27:52,996] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:27:52,996] [autotune] mysql is up
+[INFO] [2024-11-26 16:27:52,996] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:27:58,300] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732638478
+[INFO] [2024-11-26 16:31:31,278] [autotune] internal metrics: [6859230.857142857, 13078431.514285713, 7963213824.0, 593011097.6, 187.94285714285715, 486053.0857142857, 17789.514285714286, 11772867847.314285, 1269994.0571428572, 718558.8, 77.51428571428572, 81309.17142857143, 51995.94285714286, 851864.0, 39.42857142857143, 0.0, 67522161.28571428, 485995.9142857143, 13958643712.0, 0.0, 114806.8, 0.0, 16149.285714285714, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16653.97142857143, 17789.514285714286, 845.7428571428571, 16384.0, 70226.88571428572, 205432.05714285714, 0.0, 0.0, 0.0, 0.0, 187586.6857142857, 4179948287.3142858, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1377455.5428571429, 0.0, 15133.342857142858, 1863.6571428571428, 3724.0285714285715, 486043.22857142857, 20523.22857142857, 10075882.057142857, 1880.0857142857142, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:31:31,281] [DBTune-twitter_mbo_3] Iteration 155, objective value: [-14399.351323267012].
+[INFO] [2024-11-26 16:31:34,477] [autotune] [step 14] generate knobs: {'innodb_io_capacity_max': 37722, 'innodb_log_file_size': 543030154, 'innodb_thread_concurrency': 47}
+
+[INFO] [2024-11-26 16:31:37,518] [autotune] Close db successfully
+[INFO] [2024-11-26 16:31:37,520] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:31:37,525] [autotune] generated config file done
+[INFO] [2024-11-26 16:31:37,554] [autotune] wait for connection
+[INFO] [2024-11-26 16:31:47,581] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:31:47,582] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-11-26 16:31:47,582] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:31:47,582] [autotune] mysql is up
+[INFO] [2024-11-26 16:31:47,583] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:31:52,865] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732638712
+[INFO] [2024-11-26 16:35:27,319] [autotune] internal metrics: [7522230.171428571, 12436506.114285715, 8037955759.542857, 591618165.0285715, 187.28571428571428, 490620.22857142857, 17751.4, 11793354869.028572, 2298909.257142857, 719809.2285714286, 140.31428571428572, 79981.28571428571, 52073.4, 851864.0, 30.885714285714286, 0.0, 66931306.4, 490570.28571428574, 13958643712.0, 0.0, 114312.62857142858, 0.0, 16078.314285714287, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16580.371428571427, 17751.4, 823.4, 16384.0, 35554.71428571428, 136239.51428571428, 0.0, 0.0, 0.0, 0.0, 106148.94285714286, 3040548624.571429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1310837.0285714285, 0.0, 15051.857142857143, 1790.7142857142858, 3632.0285714285715, 490601.82857142854, 20386.542857142857, 9932214.857142856, 1806.4857142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:35:27,323] [DBTune-twitter_mbo_3] Iteration 156, objective value: [-14405.847269771812].
+[INFO] [2024-11-26 16:35:30,718] [autotune] [step 15] generate knobs: {'innodb_io_capacity_max': 27986, 'innodb_log_file_size': 695443620, 'innodb_thread_concurrency': 46}
+
+[INFO] [2024-11-26 16:35:33,764] [autotune] Close db successfully
+[INFO] [2024-11-26 16:35:33,765] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:35:33,769] [autotune] generated config file done
+[INFO] [2024-11-26 16:35:33,795] [autotune] wait for connection
+[INFO] [2024-11-26 16:35:45,838] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:35:45,839] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 16:35:45,839] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:35:45,839] [autotune] mysql is up
+[INFO] [2024-11-26 16:35:45,840] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:35:51,164] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732638951
+[INFO] [2024-11-26 16:39:24,486] [autotune] internal metrics: [7166796.714285715, 12825635.228571428, 8045503166.171429, 595402971.4285715, 194.5142857142857, 491082.85714285716, 17863.77142857143, 11763692339.2, 798602.9714285714, 717998.8, 48.74285714285714, 81985.2, 51880.02857142857, 851864.0, 46.0, 0.0, 67421772.85714285, 491021.7428571429, 13958643712.0, 0.0, 114678.0, 0.0, 16107.885714285714, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16611.914285714287, 17863.77142857143, 850.3428571428572, 16384.0, 53933.68571428571, 172929.11428571428, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 159744.85714285713, 3710281479.9714284, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1347510.857142857, 0.0, 15216.8, 1833.4285714285713, 3689.8571428571427, 491059.85714285716, 20570.542857142857, 10034834.285714285, 1849.2, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:39:24,488] [DBTune-twitter_mbo_3] Iteration 157, objective value: [-14433.335120028847].
+[INFO] [2024-11-26 16:39:27,661] [autotune] [step 16] generate knobs: {'innodb_io_capacity_max': 6208, 'innodb_log_file_size': 659232114, 'innodb_thread_concurrency': 491}
+
+[INFO] [2024-11-26 16:39:30,697] [autotune] Close db successfully
+[INFO] [2024-11-26 16:39:30,697] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:39:30,701] [autotune] generated config file done
+[INFO] [2024-11-26 16:39:30,727] [autotune] wait for connection
+[INFO] [2024-11-26 16:39:41,760] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:39:41,760] [autotune] finish 11 seconds waiting for connection
+[INFO] [2024-11-26 16:39:41,760] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:39:41,760] [autotune] mysql is up
+[INFO] [2024-11-26 16:39:41,760] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:39:47,065] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732639187
+[INFO] [2024-11-26 16:43:19,503] [autotune] internal metrics: [7188812.314285714, 12728786.17142857, 7978039471.542857, 598205659.4285715, 206.34285714285716, 486967.82857142854, 17947.22857142857, 11785085630.171429, 2119621.4857142856, 719304.5428571429, 129.37142857142857, 80664.5142857143, 51998.828571428574, 851968.0, 55.857142857142854, 0.0, 67111616.54285714, 486898.82857142854, 13958643712.0, 0.0, 115096.6, 0.0, 16133.514285714286, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16636.22857142857, 17947.22857142857, 839.8285714285714, 16384.0, 54307.6, 172139.88571428572, 0.0, 0.0, 695.9142857142857, 0.6571428571428571, 159506.3142857143, 3699263968.0571427, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1353903.5428571429, 0.0, 15443.514285714286, 1829.4857142857143, 3707.6, 486932.34285714285, 20636.914285714287, 10102462.17142857, 1845.9142857142858, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:43:19,505] [DBTune-twitter_mbo_3] Iteration 158, objective value: [-14381.485953854828].
+[INFO] [2024-11-26 16:43:22,777] [autotune] [step 17] generate knobs: {'innodb_io_capacity_max': 36498, 'innodb_log_file_size': 1058961507, 'innodb_thread_concurrency': 342}
+
+[INFO] [2024-11-26 16:43:25,815] [autotune] Close db successfully
+[INFO] [2024-11-26 16:43:25,817] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:43:25,822] [autotune] generated config file done
+[INFO] [2024-11-26 16:43:25,852] [autotune] wait for connection
+[INFO] [2024-11-26 16:43:41,896] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:43:41,897] [autotune] finish 16 seconds waiting for connection
+[INFO] [2024-11-26 16:43:41,897] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:43:41,898] [autotune] mysql is up
+[INFO] [2024-11-26 16:43:41,898] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:43:47,239] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732639427
+[INFO] [2024-11-26 16:47:21,750] [autotune] internal metrics: [6581875.828571429, 13109177.914285714, 8067230222.6285715, 604509520.4571428, 241.82857142857142, 492422.77142857143, 18136.485714285714, 11749903564.8, 1092578.7428571428, 717157.1428571428, 66.68571428571428, 83209.25714285714, 51497.514285714286, 851864.0, 31.542857142857144, 0.0, 66889914.28571428, 492372.82857142854, 13958643712.0, 0.0, 115070.31428571428, 0.0, 16055.314285714287, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16557.371428571427, 18136.485714285714, 814.8571428571429, 16384.0, 78441.82857142857, 222588.74285714285, 0.0, 0.0, 0.0, 0.0, 202888.25714285715, 4413888151.828571, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1336071.3142857142, 0.0, 16087.514285714286, 1813.7142857142858, 3706.285714285714, 492399.1142857143, 20786.742857142857, 10205081.6, 1829.4857142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:47:21,753] [DBTune-twitter_mbo_3] Iteration 159, objective value: [-14205.903591431541].
+[INFO] [2024-11-26 16:47:24,979] [autotune] [step 18] generate knobs: {'innodb_io_capacity_max': 23798, 'innodb_log_file_size': 476701970, 'innodb_thread_concurrency': 337}
+
+[INFO] [2024-11-26 16:47:28,022] [autotune] Close db successfully
+[INFO] [2024-11-26 16:47:28,025] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:47:28,029] [autotune] generated config file done
+[INFO] [2024-11-26 16:47:28,053] [autotune] wait for connection
+[INFO] [2024-11-26 16:47:37,077] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:47:37,078] [autotune] finish 9 seconds waiting for connection
+[INFO] [2024-11-26 16:47:37,078] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:47:37,078] [autotune] mysql is up
+[INFO] [2024-11-26 16:47:37,079] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:47:42,368] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732639662
+[INFO] [2024-11-26 16:51:15,487] [autotune] internal metrics: [7380543.6, 12397946.942857143, 7957152212.114285, 619452591.5428572, 266.8, 485687.71428571426, 18588.6, 11781412805.485714, 1700659.2, 719080.3428571429, 103.8, 80910.8, 51872.77142857143, 851864.0, 47.97142857142857, 0.0, 66401174.8, 485623.3142857143, 13958643712.0, 0.0, 115793.82857142857, 0.0, 16115.114285714286, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16618.485714285714, 18588.6, 843.7714285714286, 16384.0, 39820.22857142857, 144667.37142857144, 0.0, 0.0, 0.0, 0.0, 117245.45714285714, 3173605353.5142856, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1325304.6857142858, 0.0, 16622.428571428572, 1813.057142857143, 3747.6857142857143, 485666.02857142856, 21267.114285714284, 10332935.314285714, 1829.4857142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:51:15,492] [DBTune-twitter_mbo_3] Iteration 160, objective value: [-14290.233492091935].
+[INFO] [2024-11-26 16:51:19,110] [autotune] [step 19] generate knobs: {'innodb_io_capacity_max': 24091, 'innodb_log_file_size': 874272699, 'innodb_thread_concurrency': 339}
+
+[INFO] [2024-11-26 16:51:22,159] [autotune] Close db successfully
+[INFO] [2024-11-26 16:51:22,163] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:51:22,167] [autotune] generated config file done
+[INFO] [2024-11-26 16:51:22,196] [autotune] wait for connection
+[INFO] [2024-11-26 16:51:36,227] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:51:36,227] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-26 16:51:36,227] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:51:36,228] [autotune] mysql is up
+[INFO] [2024-11-26 16:51:36,228] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:51:41,556] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732639901
+[INFO] [2024-11-26 16:55:14,650] [autotune] internal metrics: [7151342.028571429, 12766202.57142857, 8007087835.428572, 623446337.8285714, 258.25714285714287, 488732.9142857143, 18714.77142857143, 11794657162.971428, 2319506.285714286, 719888.7428571428, 141.57142857142858, 79997.82857142857, 51977.42857142857, 851864.0, 42.05714285714286, 0.0, 67163486.14285715, 488675.0857142857, 13958643712.0, 0.0, 114363.22857142857, 0.0, 15923.228571428572, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16422.657142857144, 18714.77142857143, 936.4285714285714, 16384.0, 54022.4, 172350.82857142857, 0.0, 3.2857142857142856, 62721.0, 3.2857142857142856, 160516.34285714285, 3721802312.714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1325977.6, 0.0, 16278.742857142857, 1794.0, 3917.2285714285713, 488713.2, 21463.6, 10192632.685714286, 1809.7714285714285, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:55:14,653] [DBTune-twitter_mbo_3] Iteration 161, objective value: [-14376.993458433948].
+[INFO] [2024-11-26 16:55:17,774] [autotune] [step 20] generate knobs: {'innodb_io_capacity_max': 30597, 'innodb_log_file_size': 701065227, 'innodb_thread_concurrency': 48}
+
+[INFO] [2024-11-26 16:55:20,823] [autotune] Close db successfully
+[INFO] [2024-11-26 16:55:20,824] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:55:20,828] [autotune] generated config file done
+[INFO] [2024-11-26 16:55:20,854] [autotune] wait for connection
+[INFO] [2024-11-26 16:55:32,894] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:55:32,895] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 16:55:32,896] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:55:32,896] [autotune] mysql is up
+[INFO] [2024-11-26 16:55:32,896] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:55:38,245] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732640138
+[INFO] [2024-11-26 16:59:09,805] [autotune] internal metrics: [7340331.057142857, 12477773.371428572, 8046773628.342857, 626627203.6571429, 235.9142857142857, 491162.3714285714, 18813.342857142856, 11791060640.914286, 2430449.3714285716, 719669.1714285715, 148.34285714285716, 80304.45714285714, 51890.28571428572, 851864.0, 24.314285714285713, 0.0, 66609288.657142855, 491120.97142857144, 13958643712.0, 0.0, 114478.88571428572, 0.0, 15995.514285714286, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16495.6, 18813.342857142856, 937.7428571428571, 16384.0, 41978.28571428572, 149323.88571428572, 0.0, 0.0, 0.0, 0.0, 125479.45714285714, 3267775956.8285713, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1336071.3142857142, 0.0, 15908.114285714286, 1809.1142857142856, 3945.4857142857145, 491149.8857142857, 21581.885714285716, 10143173.485714287, 1825.5428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 16:59:09,808] [DBTune-twitter_mbo_3] Iteration 162, objective value: [-14313.04463759539].
+[INFO] [2024-11-26 16:59:13,551] [autotune] [step 21] generate knobs: {'innodb_io_capacity_max': 39566, 'innodb_log_file_size': 813956619, 'innodb_thread_concurrency': 341}
+
+[INFO] [2024-11-26 16:59:16,589] [autotune] Close db successfully
+[INFO] [2024-11-26 16:59:16,590] [autotune] mysql is shut down
+[INFO] [2024-11-26 16:59:16,594] [autotune] generated config file done
+[INFO] [2024-11-26 16:59:16,621] [autotune] wait for connection
+[INFO] [2024-11-26 16:59:29,658] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 16:59:29,659] [autotune] finish 13 seconds waiting for connection
+[INFO] [2024-11-26 16:59:29,659] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 16:59:29,660] [autotune] mysql is up
+[INFO] [2024-11-26 16:59:29,660] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 16:59:34,985] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732640374
+[INFO] [2024-11-26 17:03:09,585] [autotune] internal metrics: [6938383.714285715, 12656057.542857142, 7916863488.0, 625775630.6285714, 208.97142857142856, 483233.28571428574, 18790.342857142856, 11778295164.342857, 1662741.9428571428, 718890.0571428571, 101.48571428571428, 81281.17142857143, 51692.74285714285, 851864.0, 38.77142857142857, 0.0, 66176150.68571428, 483174.14285714284, 13958643712.0, 0.0, 114045.82857142857, 0.0, 15993.542857142857, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16491.657142857144, 18790.342857142856, 935.7714285714286, 16384.0, 56166.0, 175399.3142857143, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 165544.8, 3746728573.885714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1353230.6285714286, 0.0, 15392.914285714285, 1824.2285714285715, 3959.285714285714, 483224.0857142857, 21568.742857142857, 10045600.914285714, 1840.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:03:09,589] [DBTune-twitter_mbo_3] Iteration 163, objective value: [-14160.621316262917].
+[INFO] [2024-11-26 17:03:12,879] [autotune] [step 22] generate knobs: {'innodb_io_capacity_max': 30607, 'innodb_log_file_size': 730146554, 'innodb_thread_concurrency': 40}
+
+[INFO] [2024-11-26 17:03:15,922] [autotune] Close db successfully
+[INFO] [2024-11-26 17:03:15,923] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:03:15,928] [autotune] generated config file done
+[INFO] [2024-11-26 17:03:15,954] [autotune] wait for connection
+[INFO] [2024-11-26 17:03:27,988] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:03:27,989] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 17:03:27,990] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:03:27,990] [autotune] mysql is up
+[INFO] [2024-11-26 17:03:27,991] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:03:33,313] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732640613
+[INFO] [2024-11-26 17:07:06,432] [autotune] internal metrics: [6961601.885714286, 12803116.257142857, 8061610042.514286, 623719204.5714285, 198.45714285714286, 492067.9142857143, 18729.22857142857, 11789498543.542856, 2198732.8, 719573.8857142857, 134.2, 80518.2, 51771.77142857143, 851864.0, 23.0, 0.0, 66800596.08571429, 492025.85714285716, 13958643712.0, 0.0, 113963.02857142857, 0.0, 16004.714285714286, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16505.457142857143, 18729.22857142857, 951.5428571428571, 16384.0, 58165.68571428571, 179241.62857142856, 0.0, 1.3142857142857143, 25088.4, 1.3142857142857143, 170322.22857142857, 3830218377.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1343809.8285714285, 0.0, 15188.542857142857, 1824.2285714285715, 3965.8571428571427, 492049.5142857143, 21524.057142857142, 9991431.314285714, 1840.6571428571428, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:07:06,435] [DBTune-twitter_mbo_3] Iteration 164, objective value: [-14270.82891803297].
+[INFO] [2024-11-26 17:07:10,085] [autotune] [step 23] generate knobs: {'innodb_io_capacity_max': 1495, 'innodb_log_file_size': 728733724, 'innodb_thread_concurrency': 494}
+
+[INFO] [2024-11-26 17:07:13,123] [autotune] Close db successfully
+[INFO] [2024-11-26 17:07:13,124] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:07:13,128] [autotune] generated config file done
+[INFO] [2024-11-26 17:07:13,154] [autotune] wait for connection
+[INFO] [2024-11-26 17:07:25,189] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:07:25,191] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 17:07:25,191] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:07:25,192] [autotune] mysql is up
+[INFO] [2024-11-26 17:07:25,192] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:07:30,491] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732640850
+[INFO] [2024-11-26 17:11:03,553] [autotune] internal metrics: [6968916.542857143, 12623974.514285713, 8002382818.742857, 615767712.9142857, 187.94285714285715, 488454.28571428574, 18492.0, 11778744554.057142, 1485794.7428571428, 718917.5142857142, 90.68571428571428, 81373.42857142857, 51573.02857142857, 851864.0, 45.34285714285714, 0.0, 66144122.2, 488387.2571428571, 13958643712.0, 0.0, 112047.45714285714, 0.0, 15749.742857142857, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16243.914285714285, 18492.0, 937.0857142857143, 16384.0, 54521.171428571426, 172735.91428571427, 0.0, 0.0, 0.0, 0.0, 162709.22857142857, 3740510115.142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1326986.9714285715, 0.0, 14824.485714285714, 1811.7428571428572, 3944.8285714285716, 488443.77142857143, 21259.22857142857, 9813781.942857143, 1827.5142857142857, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:11:03,557] [DBTune-twitter_mbo_3] Iteration 165, objective value: [-14149.679272526308].
+[INFO] [2024-11-26 17:11:07,041] [autotune] [step 24] generate knobs: {'innodb_io_capacity_max': 17731, 'innodb_log_file_size': 621900237, 'innodb_thread_concurrency': 41}
+
+[INFO] [2024-11-26 17:11:10,082] [autotune] Close db successfully
+[INFO] [2024-11-26 17:11:10,082] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:11:10,086] [autotune] generated config file done
+[INFO] [2024-11-26 17:11:10,111] [autotune] wait for connection
+[INFO] [2024-11-26 17:11:21,142] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:11:21,143] [autotune] finish 11 seconds waiting for connection
+[INFO] [2024-11-26 17:11:21,143] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:11:21,144] [autotune] mysql is up
+[INFO] [2024-11-26 17:11:21,144] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:11:26,476] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732641086
+[INFO] [2024-11-26 17:14:58,959] [autotune] internal metrics: [7247505.028571429, 12348531.771428572, 7985263879.314285, 616018373.4857143, 185.31428571428572, 487407.45714285714, 18505.8, 11793122216.22857, 2260992.0, 719795.0857142857, 138.02857142857144, 80491.85714285714, 51681.22857142857, 851968.0, 40.08571428571429, 0.0, 65873590.28571428, 487351.6, 13958643712.0, 0.0, 112510.74285714286, 0.0, 15822.685714285713, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16314.885714285714, 18496.6, 935.7714285714286, 16384.0, 41292.885714285716, 144692.34285714285, 0.0, 15.771428571428572, 338407.54285714286, 19.057142857142857, 121822.45714285714, 3152488256.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1293341.2571428572, 0.0, 14815.942857142858, 1789.4, 3926.4285714285716, 487391.6857142857, 21242.8, 9784510.17142857, 1805.1714285714286, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:14:58,962] [DBTune-twitter_mbo_3] Iteration 166, objective value: [-14137.80266990803].
+[INFO] [2024-11-26 17:15:02,240] [autotune] [step 25] generate knobs: {'innodb_io_capacity_max': 25389, 'innodb_log_file_size': 1063326436, 'innodb_thread_concurrency': 41}
+
+[INFO] [2024-11-26 17:15:05,282] [autotune] Close db successfully
+[INFO] [2024-11-26 17:15:05,282] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:15:05,286] [autotune] generated config file done
+[INFO] [2024-11-26 17:15:05,311] [autotune] wait for connection
+[INFO] [2024-11-26 17:15:22,369] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:15:22,370] [autotune] finish 17 seconds waiting for connection
+[INFO] [2024-11-26 17:15:22,371] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:15:22,371] [autotune] mysql is up
+[INFO] [2024-11-26 17:15:22,371] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:15:27,658] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732641327
+[INFO] [2024-11-26 17:18:58,715] [autotune] internal metrics: [6554635.285714285, 12866878.82857143, 7930181807.542857, 611943204.5714285, 184.65714285714284, 484041.5714285714, 18378.97142857143, 11793423213.714285, 2282525.257142857, 719813.4285714285, 139.31428571428572, 80541.5142857143, 51508.97142857143, 851864.0, 28.914285714285715, 0.0, 65922393.0, 483995.5714285714, 13958643712.0, 0.0, 111215.5142857143, 0.0, 15640.657142857142, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16130.228571428572, 18378.97142857143, 941.0285714285715, 16384.0, 73346.34285714285, 210606.4, 0.0, 0.0, 0.0, 0.0, 195595.2857142857, 4258095412.285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1299397.4857142856, 0.0, 14643.114285714286, 1773.6285714285714, 3896.8571428571427, 484031.71428571426, 21112.685714285715, 9692657.371428572, 1790.057142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:18:58,719] [DBTune-twitter_mbo_3] Iteration 167, objective value: [-14027.645115918669].
+[INFO] [2024-11-26 17:19:02,299] [autotune] [step 26] generate knobs: {'innodb_io_capacity_max': 5927, 'innodb_log_file_size': 792715912, 'innodb_thread_concurrency': 489}
+
+[INFO] [2024-11-26 17:19:05,347] [autotune] Close db successfully
+[INFO] [2024-11-26 17:19:05,350] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:19:05,354] [autotune] generated config file done
+[INFO] [2024-11-26 17:19:05,379] [autotune] wait for connection
+[INFO] [2024-11-26 17:19:18,412] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:19:18,413] [autotune] finish 13 seconds waiting for connection
+[INFO] [2024-11-26 17:19:18,413] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:19:18,413] [autotune] mysql is up
+[INFO] [2024-11-26 17:19:18,413] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:19:23,731] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732641563
+[INFO] [2024-11-26 17:22:56,666] [autotune] internal metrics: [6974788.771428571, 12398562.685714286, 7986717374.171429, 617874944.0, 184.0, 487498.14285714284, 18556.4, 11764756362.971428, 1317273.6, 718063.6857142857, 80.4, 82478.94285714286, 51321.25714285715, 851864.0, 25.62857142857143, 0.0, 65332080.91428571, 487450.82857142854, 13958643712.0, 0.0, 112489.05714285714, 0.0, 15823.342857142858, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16317.514285714286, 18556.4, 953.5142857142857, 16384.0, 48231.65714285714, 159537.85714285713, 0.0, 0.0, 0.0, 0.0, 145951.42857142858, 3477687223.885714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1329005.7142857143, 0.0, 14785.714285714286, 1790.057142857143, 3961.2571428571428, 487474.4857142857, 21318.371428571427, 9810753.82857143, 1805.8285714285714, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:22:56,669] [DBTune-twitter_mbo_3] Iteration 168, objective value: [-13974.240792099192].
+[INFO] [2024-11-26 17:23:00,100] [autotune] [step 27] generate knobs: {'innodb_io_capacity_max': 11298, 'innodb_log_file_size': 668563761, 'innodb_thread_concurrency': 495}
+
+[INFO] [2024-11-26 17:23:04,144] [autotune] Close db successfully
+[INFO] [2024-11-26 17:23:04,145] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:23:04,149] [autotune] generated config file done
+[INFO] [2024-11-26 17:23:04,180] [autotune] wait for connection
+[INFO] [2024-11-26 17:23:15,209] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:23:15,209] [autotune] finish 11 seconds waiting for connection
+[INFO] [2024-11-26 17:23:15,210] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:23:15,210] [autotune] mysql is up
+[INFO] [2024-11-26 17:23:15,210] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:23:20,550] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732641800
+[INFO] [2024-11-26 17:26:54,079] [autotune] internal metrics: [7108238.714285715, 12261606.228571428, 7947193080.685715, 615044666.5142857, 183.34285714285716, 485089.0571428572, 18472.285714285714, 11766130746.514286, 1084620.8, 718147.6, 66.2, 82456.77142857143, 51363.6, 851968.0, 28.914285714285715, 0.0, 65172702.74285714, 485043.0571428572, 13958643712.0, 0.0, 111885.14285714286, 0.0, 15736.6, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16228.142857142857, 18472.285714285714, 937.0857142857143, 16384.0, 42901.57142857143, 149055.77142857143, 0.0, 0.0, 0.0, 0.0, 131822.2, 3266496638.3428574, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1309154.7428571428, 0.0, 14704.885714285714, 1759.1714285714286, 3872.542857142857, 485076.5714285714, 21186.942857142858, 9736733.257142857, 1774.942857142857, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:26:54,082] [DBTune-twitter_mbo_3] Iteration 169, objective value: [-13981.499922694751].
+[INFO] [2024-11-26 17:26:57,368] [autotune] [step 28] generate knobs: {'innodb_io_capacity_max': 23498, 'innodb_log_file_size': 78329610, 'innodb_thread_concurrency': 48}
+
+[INFO] [2024-11-26 17:27:00,411] [autotune] Close db successfully
+[INFO] [2024-11-26 17:27:00,412] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:27:00,416] [autotune] generated config file done
+[INFO] [2024-11-26 17:27:00,447] [autotune] wait for connection
+[INFO] [2024-11-26 17:27:04,460] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:27:04,461] [autotune] finish 4 seconds waiting for connection
+[INFO] [2024-11-26 17:27:04,461] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:27:04,462] [autotune] mysql is up
+[INFO] [2024-11-26 17:27:04,462] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:27:09,770] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732642029
+[INFO] [2024-11-26 17:30:40,987] [autotune] internal metrics: [7214071.571428572, 12089183.114285715, 7850476456.228572, 611648468.1142857, 182.02857142857144, 479189.22857142857, 18370.428571428572, 11773270893.714285, 1244247.7714285713, 718583.5714285715, 75.94285714285714, 81796.34285714285, 51484.42857142857, 851864.0, 24.314285714285713, 0.0, 64814377.85714286, 479148.4857142857, 13958643712.0, 0.0, 110933.6, 0.0, 15601.885714285714, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16089.485714285714, 18370.428571428572, 943.0, 16384.0, 35301.05714285714, 133883.0, 0.0, 0.0, 0.0, 0.0, 105667.25714285714, 2946355756.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1300070.4, 0.0, 14575.42857142857, 1786.7714285714285, 3938.9142857142856, 479164.9142857143, 21118.6, 9678189.714285715, 1802.5428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:30:40,990] [DBTune-twitter_mbo_3] Iteration 170, objective value: [-13933.255777260047].
+[INFO] [2024-11-26 17:30:44,629] [autotune] [step 29] generate knobs: {'innodb_io_capacity_max': 23601, 'innodb_log_file_size': 651882319, 'innodb_thread_concurrency': 339}
+
+[INFO] [2024-11-26 17:30:47,672] [autotune] Close db successfully
+[INFO] [2024-11-26 17:30:47,673] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:30:47,677] [autotune] generated config file done
+[INFO] [2024-11-26 17:30:47,709] [autotune] wait for connection
+[INFO] [2024-11-26 17:30:58,740] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:30:58,741] [autotune] finish 11 seconds waiting for connection
+[INFO] [2024-11-26 17:30:58,742] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:30:58,742] [autotune] mysql is up
+[INFO] [2024-11-26 17:30:58,743] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:31:04,062] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732642264
+[INFO] [2024-11-26 17:34:35,623] [autotune] internal metrics: [6694671.114285714, 12477406.685714286, 7862815012.571428, 607642945.8285714, 184.0, 479933.1142857143, 18252.14285714286, 11786614023.314285, 2407511.7714285715, 719397.8, 146.94285714285715, 81016.94285714286, 51449.2, 851864.0, 16.428571428571427, 0.0, 64847905.942857146, 479894.34285714285, 13958643712.0, 0.0, 109511.54285714286, 0.0, 15387.0, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15866.057142857142, 18252.14285714286, 941.0285714285715, 16384.0, 59263.114285714284, 180064.37142857144, 0.0, 0.0, 126.17142857142858, 0.6571428571428571, 166970.14285714287, 3728421901.3142858, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1271135.0857142857, 0.0, 14468.971428571429, 1750.6285714285714, 3873.2, 479918.0, 20962.2, 9548653.714285715, 1766.4, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:34:35,627] [DBTune-twitter_mbo_3] Iteration 171, objective value: [-13848.262179962101].
+[INFO] [2024-11-26 17:34:39,356] [autotune] [step 30] generate knobs: {'innodb_io_capacity_max': 23017, 'innodb_log_file_size': 864018664, 'innodb_thread_concurrency': 334}
+
+[INFO] [2024-11-26 17:34:42,394] [autotune] Close db successfully
+[INFO] [2024-11-26 17:34:42,395] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:34:42,400] [autotune] generated config file done
+[INFO] [2024-11-26 17:34:42,430] [autotune] wait for connection
+[INFO] [2024-11-26 17:34:56,468] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:34:56,468] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-26 17:34:56,468] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:34:56,468] [autotune] mysql is up
+[INFO] [2024-11-26 17:34:56,469] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:35:01,799] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732642501
+[INFO] [2024-11-26 17:38:32,867] [autotune] internal metrics: [6446053.6, 12538044.542857142, 7879255654.4, 603350089.1428572, 181.37142857142857, 480939.85714285716, 18121.371428571427, 11769950090.971428, 1834539.8857142858, 718380.8285714285, 111.97142857142858, 82476.31428571428, 51110.91428571429, 851968.0, 30.885714285714286, 0.0, 64409437.22857143, 480893.85714285716, 13958643712.0, 0.0, 109218.45714285714, 0.0, 15348.228571428572, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15824.657142857142, 18121.371428571427, 938.4, 16384.0, 68496.62857142858, 199291.7142857143, 0.0, 0.0, 0.0, 0.0, 185188.11428571428, 4037917089.142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1295360.0, 0.0, 14384.857142857143, 1752.6, 3887.0, 480910.28571428574, 20833.4, 9540915.2, 1768.3714285714286, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:38:32,870] [DBTune-twitter_mbo_3] Iteration 172, objective value: [-13705.131238693479].
+[INFO] [2024-11-26 17:38:36,017] [autotune] [step 31] generate knobs: {'innodb_io_capacity_max': 31716, 'innodb_log_file_size': 489613082, 'innodb_thread_concurrency': 342}
+
+[INFO] [2024-11-26 17:38:39,046] [autotune] Close db successfully
+[INFO] [2024-11-26 17:38:39,046] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:38:39,050] [autotune] generated config file done
+[INFO] [2024-11-26 17:38:39,071] [autotune] wait for connection
+[INFO] [2024-11-26 17:38:48,100] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:38:48,101] [autotune] finish 9 seconds waiting for connection
+[INFO] [2024-11-26 17:38:48,101] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:38:48,102] [autotune] mysql is up
+[INFO] [2024-11-26 17:38:48,102] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:38:53,402] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732642733
+[INFO] [2024-11-26 17:42:24,314] [autotune] internal metrics: [6979750.2, 11895839.2, 7752758535.314285, 606133599.0857143, 193.85714285714286, 473219.0857142857, 18206.8, 11772574807.77143, 1684275.2, 718540.9142857143, 102.8, 82152.22857142857, 51170.77142857143, 851864.0, 34.17142857142857, 0.0, 63451787.54285714, 473167.82857142854, 13958643712.0, 0.0, 108919.45714285714, 0.0, 15272.0, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15753.685714285713, 18206.8, 944.9714285714285, 16384.0, 39324.08571428571, 140241.51428571428, 0.0, 0.0, 0.0, 0.0, 116460.17142857143, 3050036169.257143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1266761.142857143, 0.0, 14551.771428571428, 1740.7714285714285, 3895.542857142857, 473209.8857142857, 20910.942857142858, 9525101.714285715, 1756.5428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:42:24,317] [DBTune-twitter_mbo_3] Iteration 173, objective value: [-13618.96483515932].
+[INFO] [2024-11-26 17:42:28,174] [autotune] [step 32] generate knobs: {'innodb_io_capacity_max': 35928, 'innodb_log_file_size': 960641537, 'innodb_thread_concurrency': 339}
+
+[INFO] [2024-11-26 17:42:31,219] [autotune] Close db successfully
+[INFO] [2024-11-26 17:42:31,220] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:42:31,224] [autotune] generated config file done
+[INFO] [2024-11-26 17:42:31,255] [autotune] wait for connection
+[INFO] [2024-11-26 17:42:46,294] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:42:46,295] [autotune] finish 15 seconds waiting for connection
+[INFO] [2024-11-26 17:42:46,295] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:42:46,295] [autotune] mysql is up
+[INFO] [2024-11-26 17:42:46,295] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:42:51,602] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732642971
+[INFO] [2024-11-26 17:46:23,311] [autotune] internal metrics: [6562701.714285715, 12236199.114285715, 7797709209.6, 611859090.2857143, 203.71428571428572, 475960.6857142857, 18378.314285714285, 11755013968.457144, 1246120.2285714287, 717469.1142857143, 76.05714285714286, 83362.28571428571, 51032.485714285714, 851864.0, 42.714285714285715, 0.0, 63597756.71428572, 475897.6, 13958643712.0, 0.0, 109665.31428571428, 0.0, 15354.142857142857, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15833.857142857143, 18378.314285714285, 945.6285714285714, 16384.0, 56510.34285714286, 173088.8, 0.0, 1.3142857142857143, 25446.542857142857, 1.9714285714285715, 162076.4, 3612593846.114286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1294014.1714285715, 0.0, 14793.6, 1736.8285714285714, 3867.285714285714, 475940.3142857143, 21079.17142857143, 9630412.8, 1752.6, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:46:23,314] [DBTune-twitter_mbo_3] Iteration 174, objective value: [-13564.739840262455].
+[INFO] [2024-11-26 17:46:26,673] [autotune] [step 33] generate knobs: {'innodb_io_capacity_max': 34412, 'innodb_log_file_size': 363786995, 'innodb_thread_concurrency': 49}
+
+[INFO] [2024-11-26 17:46:29,712] [autotune] Close db successfully
+[INFO] [2024-11-26 17:46:29,712] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:46:29,716] [autotune] generated config file done
+[INFO] [2024-11-26 17:46:29,747] [autotune] wait for connection
+[INFO] [2024-11-26 17:46:37,766] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:46:37,767] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-11-26 17:46:37,767] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:46:37,767] [autotune] mysql is up
+[INFO] [2024-11-26 17:46:37,767] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:46:43,099] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732643203
+[INFO] [2024-11-26 17:50:14,060] [autotune] internal metrics: [6985538.971428571, 11804776.285714285, 7743337735.314285, 612876536.6857142, 217.5142857142857, 472644.7428571429, 18409.85714285714, 11785950237.257143, 2316229.4857142856, 719357.3142857143, 141.37142857142857, 81436.6, 51070.02857142857, 851864.0, 39.42857142857143, 0.0, 63122370.37142857, 472588.8857142857, 13958643712.0, 0.0, 108987.14285714286, 0.0, 15226.0, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15703.085714285715, 18409.85714285714, 946.9428571428572, 16384.0, 36129.05714285714, 132949.85714285713, 0.0, 1.9714285714285715, 37632.6, 1.9714285714285715, 106994.68571428572, 2878668363.3142858, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1278537.142857143, 0.0, 14940.8, 1737.4857142857143, 3898.8285714285716, 472627.0, 21112.685714285715, 9614262.857142856, 1753.2571428571428, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:50:14,062] [DBTune-twitter_mbo_3] Iteration 175, objective value: [-13566.123412811781].
+[INFO] [2024-11-26 17:50:15,936] [BO_Optimizer] Sample random config. rand_prob=0.100000.
+[INFO] [2024-11-26 17:50:15,936] [autotune] [step 34] generate knobs: {'innodb_io_capacity_max': 22740, 'innodb_log_file_size': 39174150, 'innodb_thread_concurrency': 222}
+
+[INFO] [2024-11-26 17:50:18,967] [autotune] Close db successfully
+[INFO] [2024-11-26 17:50:18,968] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:50:18,973] [autotune] generated config file done
+[INFO] [2024-11-26 17:50:18,999] [autotune] wait for connection
+[INFO] [2024-11-26 17:50:22,010] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:50:22,010] [autotune] finish 3 seconds waiting for connection
+[INFO] [2024-11-26 17:50:22,010] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:50:22,011] [autotune] mysql is up
+[INFO] [2024-11-26 17:50:22,011] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:50:27,441] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732643427
+[INFO] [2024-11-26 17:53:58,130] [autotune] internal metrics: [6983412.457142857, 11763031.942857143, 7754567328.914286, 615996167.3142858, 225.4, 473332.1142857143, 18504.485714285714, 11762639550.171429, 1693169.3714285714, 717934.5428571429, 103.34285714285714, 82994.11428571428, 51039.25714285715, 851968.0, 33.51428571428571, 0.0, 62971552.8, 473275.6, 13958643712.0, 0.0, 109271.68571428572, 0.0, 15248.342857142858, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15724.771428571428, 18504.485714285714, 935.1142857142858, 16384.0, 35930.6, 132540.45714285714, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 106710.8, 2899721690.6285715, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1265751.7714285713, 0.0, 15085.371428571429, 1725.6571428571428, 3839.0285714285715, 473317.0, 21184.314285714285, 9632768.0, 1742.0857142857142, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:53:58,132] [DBTune-twitter_mbo_3] Iteration 176, objective value: [-13535.549491372381].
+[INFO] [2024-11-26 17:53:59,914] [BO_Optimizer] Sample random config. rand_prob=0.100000.
+[INFO] [2024-11-26 17:53:59,915] [autotune] [step 35] generate knobs: {'innodb_io_capacity_max': 21814, 'innodb_log_file_size': 530052146, 'innodb_thread_concurrency': 225}
+
+[INFO] [2024-11-26 17:54:02,944] [autotune] Close db successfully
+[INFO] [2024-11-26 17:54:02,946] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:54:02,950] [autotune] generated config file done
+[INFO] [2024-11-26 17:54:02,981] [autotune] wait for connection
+[INFO] [2024-11-26 17:54:12,009] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:54:12,010] [autotune] finish 9 seconds waiting for connection
+[INFO] [2024-11-26 17:54:12,010] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:54:12,011] [autotune] mysql is up
+[INFO] [2024-11-26 17:54:12,011] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:54:17,321] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732643657
+[INFO] [2024-11-26 17:57:48,190] [autotune] internal metrics: [6903660.285714285, 11657821.4, 7647051776.0, 614906719.0857143, 231.31428571428572, 466763.3142857143, 18471.628571428573, 11768516256.914286, 1674444.8, 718293.2, 102.2, 82803.08571428571, 50871.57142857143, 851968.0, 30.228571428571428, 0.0, 62364856.17142857, 466716.65714285715, 13958643712.0, 0.0, 108552.77142857143, 0.0, 15131.371428571429, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15605.828571428572, 18471.628571428573, 931.8285714285714, 16384.0, 35084.857142857145, 129667.42857142857, 0.0, 1.9714285714285715, 37632.6, 1.9714285714285715, 107467.82857142857, 2814068263.9714284, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1279546.5142857144, 0.0, 15111.0, 1723.0285714285715, 3834.4285714285716, 466742.28571428574, 21144.885714285716, 9620319.085714286, 1738.8, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 17:57:48,193] [DBTune-twitter_mbo_3] Iteration 177, objective value: [-13389.625234195304].
+[INFO] [2024-11-26 17:57:52,040] [autotune] [step 36] generate knobs: {'innodb_io_capacity_max': 23401, 'innodb_log_file_size': 259936000, 'innodb_thread_concurrency': 41}
+
+[INFO] [2024-11-26 17:57:55,084] [autotune] Close db successfully
+[INFO] [2024-11-26 17:57:55,087] [autotune] mysql is shut down
+[INFO] [2024-11-26 17:57:55,092] [autotune] generated config file done
+[INFO] [2024-11-26 17:57:55,130] [autotune] wait for connection
+[INFO] [2024-11-26 17:58:01,151] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 17:58:01,152] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-11-26 17:58:01,152] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 17:58:01,152] [autotune] mysql is up
+[INFO] [2024-11-26 17:58:01,152] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 17:58:06,456] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732643886
+[INFO] [2024-11-26 18:01:38,542] [autotune] internal metrics: [6723258.8, 11659468.2, 7742368738.742857, 609723596.8, 247.74285714285713, 472577.0571428572, 18317.2, 11772224658.285715, 2419214.6285714284, 718519.5428571429, 147.65714285714284, 82614.62857142858, 50729.74285714285, 851864.0, 44.02857142857143, 0.0, 61886837.31428572, 472515.28571428574, 13958643712.0, 0.0, 106647.71428571429, 0.0, 14827.114285714286, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15290.4, 18317.2, 929.2, 16384.0, 38782.6, 137849.51428571428, 0.0, 0.0, 0.0, 0.0, 113414.31428571428, 2942351260.7714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1235134.1714285715, 0.0, 15179.342857142858, 1688.2, 3853.4857142857145, 472564.5714285714, 20955.628571428573, 9497512.228571428, 1703.9714285714285, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:01:38,544] [DBTune-twitter_mbo_3] Iteration 178, objective value: [-13243.906148472322].
+[INFO] [2024-11-26 18:01:42,382] [autotune] [step 37] generate knobs: {'innodb_io_capacity_max': 6718, 'innodb_log_file_size': 571588110, 'innodb_thread_concurrency': 497}
+
+[INFO] [2024-11-26 18:01:45,431] [autotune] Close db successfully
+[INFO] [2024-11-26 18:01:45,432] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:01:45,436] [autotune] generated config file done
+[INFO] [2024-11-26 18:01:45,461] [autotune] wait for connection
+[INFO] [2024-11-26 18:01:55,490] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:01:55,490] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-11-26 18:01:55,491] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:01:55,491] [autotune] mysql is up
+[INFO] [2024-11-26 18:01:55,491] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:02:00,796] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732644120
+[INFO] [2024-11-26 18:05:32,101] [autotune] internal metrics: [6254104.142857143, 11972759.085714286, 7634497887.085714, 604672702.1714286, 236.57142857142858, 465998.4, 18165.4, 11763914693.485714, 1994634.9714285715, 718012.3714285714, 121.74285714285715, 83309.8, 50541.74285714285, 851864.0, 30.885714285714286, 0.0, 61775997.68571428, 465945.82857142854, 13958643712.0, 0.0, 105673.17142857143, 0.0, 14715.4, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15176.714285714286, 18165.4, 939.0571428571428, 16384.0, 58736.08571428571, 178468.17142857143, 0.0, 0.0, 0.0, 0.0, 164431.6, 3651275041.0857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1234124.8, 0.0, 14951.314285714287, 1703.3142857142857, 3930.3714285714286, 465982.6285714286, 20829.457142857143, 9420463.542857142, 1719.7428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:05:32,104] [DBTune-twitter_mbo_3] Iteration 179, objective value: [-13147.188015852722].
+[INFO] [2024-11-26 18:05:35,890] [autotune] [step 38] generate knobs: {'innodb_io_capacity_max': 18344, 'innodb_log_file_size': 398226558, 'innodb_thread_concurrency': 336}
+
+[INFO] [2024-11-26 18:05:39,935] [autotune] Close db successfully
+[INFO] [2024-11-26 18:05:39,936] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:05:39,952] [autotune] generated config file done
+[INFO] [2024-11-26 18:05:39,982] [autotune] wait for connection
+[INFO] [2024-11-26 18:05:48,005] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:05:48,005] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-11-26 18:05:48,005] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:05:48,006] [autotune] mysql is up
+[INFO] [2024-11-26 18:05:48,006] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:05:53,323] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732644353
+[INFO] [2024-11-26 18:09:23,702] [autotune] internal metrics: [6641778.342857143, 11528715.82857143, 7692939146.971429, 608232755.2, 233.28571428571428, 469573.2571428571, 18275.14285714286, 11767542579.2, 2253970.285714286, 718233.8, 137.57142857142858, 83101.71428571429, 50528.4, 851864.0, 17.085714285714285, 0.0, 61173322.114285715, 469531.2, 13958643712.0, 0.0, 105953.77142857143, 0.0, 14765.342857142858, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15222.057142857142, 18275.14285714286, 926.5714285714286, 16384.0, 37120.02857142857, 134093.94285714286, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 110378.31428571428, 2879612502.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1220666.5142857144, 0.0, 14852.085714285715, 1684.2571428571428, 3887.0, 469538.4285714286, 20905.02857142857, 9384462.628571428, 1700.6857142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:09:23,708] [DBTune-twitter_mbo_3] Iteration 180, objective value: [-13106.868274825341].
+[INFO] [2024-11-26 18:09:27,417] [autotune] [step 39] generate knobs: {'innodb_io_capacity_max': 30909, 'innodb_log_file_size': 839343125, 'innodb_thread_concurrency': 343}
+
+[INFO] [2024-11-26 18:09:31,462] [autotune] Close db successfully
+[INFO] [2024-11-26 18:09:31,463] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:09:31,468] [autotune] generated config file done
+[INFO] [2024-11-26 18:09:31,505] [autotune] wait for connection
+[INFO] [2024-11-26 18:09:45,544] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:09:45,545] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-26 18:09:45,545] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:09:45,545] [autotune] mysql is up
+[INFO] [2024-11-26 18:09:45,546] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:09:50,876] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732644590
+[INFO] [2024-11-26 18:13:20,912] [autotune] internal metrics: [5978941.342857143, 12049597.485714287, 7612318632.228572, 599170618.5142857, 228.68571428571428, 464653.22857142857, 18003.742857142857, 11747873821.257143, 945590.8571428572, 717033.3428571429, 57.714285714285715, 84486.6, 50344.142857142855, 851864.0, 25.62857142857143, 0.0, 61311878.057142854, 464605.9142857143, 13958643712.0, 0.0, 103764.17142857143, 0.0, 14462.4, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14912.542857142857, 18003.742857142857, 933.8, 16384.0, 69973.88571428572, 200363.51428571428, 0.0, 0.0, 0.0, 0.0, 181851.8, 3947252651.1714287, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1210236.342857143, 0.0, 14564.914285714285, 1659.2857142857142, 3876.4857142857145, 464642.0571428572, 20617.85714285714, 9215897.6, 1675.057142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:13:20,916] [DBTune-twitter_mbo_3] Iteration 181, objective value: [-13011.563334312454].
+[INFO] [2024-11-26 18:13:24,696] [autotune] [step 40] generate knobs: {'innodb_io_capacity_max': 33969, 'innodb_log_file_size': 681110568, 'innodb_thread_concurrency': 44}
+
+[INFO] [2024-11-26 18:13:28,740] [autotune] Close db successfully
+[INFO] [2024-11-26 18:13:28,743] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:13:28,747] [autotune] generated config file done
+[INFO] [2024-11-26 18:13:28,777] [autotune] wait for connection
+[INFO] [2024-11-26 18:13:40,811] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:13:40,812] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 18:13:40,812] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:13:40,812] [autotune] mysql is up
+[INFO] [2024-11-26 18:13:40,813] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:13:46,148] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732644826
+[INFO] [2024-11-26 18:17:15,968] [autotune] internal metrics: [6487081.0, 11569130.771428572, 7661328325.485714, 599266172.3428571, 218.17142857142858, 467635.34285714285, 18008.342857142856, 11764173092.571428, 2436534.8571428573, 718028.0857142857, 148.71428571428572, 83563.4, 50272.42857142857, 851864.0, 24.97142857142857, 0.0, 60905922.14285714, 467584.7428571429, 13958643712.0, 0.0, 103496.05714285714, 0.0, 14449.914285714285, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14901.371428571429, 18008.342857142856, 935.7714285714286, 16384.0, 41730.54285714286, 144501.77142857143, 0.0, 0.0, 0.0, 0.0, 125785.02857142857, 3074586188.542857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1208890.5142857144, 0.0, 14361.857142857143, 1652.057142857143, 3873.2, 467620.22857142857, 20614.571428571428, 9160718.628571428, 1667.8285714285714, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:17:15,971] [DBTune-twitter_mbo_3] Iteration 182, objective value: [-13029.973798668127].
+[INFO] [2024-11-26 18:17:19,877] [autotune] [step 41] generate knobs: {'innodb_io_capacity_max': 23304, 'innodb_log_file_size': 432299115, 'innodb_thread_concurrency': 46}
+
+[INFO] [2024-11-26 18:17:22,921] [autotune] Close db successfully
+[INFO] [2024-11-26 18:17:22,922] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:17:22,928] [autotune] generated config file done
+[INFO] [2024-11-26 18:17:22,959] [autotune] wait for connection
+[INFO] [2024-11-26 18:17:30,982] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:17:30,983] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-11-26 18:17:30,983] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:17:30,984] [autotune] mysql is up
+[INFO] [2024-11-26 18:17:30,984] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:17:36,253] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732645056
+[INFO] [2024-11-26 18:21:05,725] [autotune] internal metrics: [6558843.628571428, 11251676.228571428, 7488577770.057143, 602095104.0, 207.65714285714284, 457091.4857142857, 18094.428571428572, 11751403871.085714, 1352850.2857142857, 717248.7714285714, 82.57142857142857, 84235.08571428571, 50380.05714285714, 851864.0, 35.48571428571429, 0.0, 59916048.8, 457031.6857142857, 13958643712.0, 0.0, 104249.8, 0.0, 14581.342857142858, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 15036.742857142857, 18094.428571428572, 935.1142857142858, 16384.0, 35207.74285714285, 127855.02857142857, 0.0, 0.0, 0.0, 0.0, 104818.22857142857, 2774202553.2285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1206198.857142857, 0.0, 14267.228571428572, 1648.7714285714285, 3868.6, 457079.65714285715, 20698.685714285715, 9168793.6, 1664.5428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:21:05,728] [DBTune-twitter_mbo_3] Iteration 183, objective value: [-12859.627424638285].
+[INFO] [2024-11-26 18:21:09,809] [autotune] [step 42] generate knobs: {'innodb_io_capacity_max': 26162, 'innodb_log_file_size': 840036840, 'innodb_thread_concurrency': 39}
+
+[INFO] [2024-11-26 18:21:12,858] [autotune] Close db successfully
+[INFO] [2024-11-26 18:21:12,859] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:21:12,863] [autotune] generated config file done
+[INFO] [2024-11-26 18:21:12,894] [autotune] wait for connection
+[INFO] [2024-11-26 18:21:26,930] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:21:26,931] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-26 18:21:26,931] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:21:26,931] [autotune] mysql is up
+[INFO] [2024-11-26 18:21:26,931] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:21:32,238] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732645292
+[INFO] [2024-11-26 18:25:02,187] [autotune] internal metrics: [6105816.571428572, 11591235.085714286, 7524979741.257143, 590152221.2571429, 190.57142857142858, 459311.97142857144, 17737.6, 11749400341.942858, 1972633.6, 717126.4285714285, 120.4, 84558.4857142857, 50178.94285714286, 851864.0, 36.8, 0.0, 59981287.31428572, 459241.65714285715, 13958643712.0, 0.0, 101805.88571428572, 0.0, 14265.257142857143, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14714.742857142857, 17737.6, 937.0857142857143, 16384.0, 55048.857142857145, 170507.54285714286, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 143885.37142857144, 3276949029.742857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1175244.8, 0.0, 13743.485714285714, 1623.8, 3847.5714285714284, 459298.17142857146, 20316.885714285716, 8918469.485714287, 1639.5714285714287, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:25:02,189] [DBTune-twitter_mbo_3] Iteration 184, objective value: [-12782.310959853765].
+[INFO] [2024-11-26 18:25:04,435] [BO_Optimizer] Sample random config. rand_prob=0.100000.
+[INFO] [2024-11-26 18:25:04,436] [autotune] [step 43] generate knobs: {'innodb_io_capacity_max': 31137, 'innodb_log_file_size': 698228421, 'innodb_thread_concurrency': 807}
+
+[INFO] [2024-11-26 18:25:08,469] [autotune] Close db successfully
+[INFO] [2024-11-26 18:25:08,469] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:25:08,474] [autotune] generated config file done
+[INFO] [2024-11-26 18:25:08,502] [autotune] wait for connection
+[INFO] [2024-11-26 18:25:20,537] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:25:20,538] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-26 18:25:20,538] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:25:20,539] [autotune] mysql is up
+[INFO] [2024-11-26 18:25:20,539] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:25:25,969] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732645525
+[INFO] [2024-11-26 18:28:54,923] [autotune] internal metrics: [6252301.6, 11080003.57142857, 7481170329.6, 587200482.7428571, 187.28571428571428, 456629.5142857143, 17649.542857142857, 11722484706.742857, 1247992.6857142858, 715483.6571428571, 76.17142857142858, 86684.37142857142, 49695.885714285716, 851864.0, 40.08571428571429, 0.0, 58436121.68571428, 456569.71428571426, 13958643712.0, 0.0, 100695.97142857143, 0.0, 14113.457142857143, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14553.742857142857, 17649.542857142857, 929.2, 16384.0, 36374.828571428574, 129191.0, 0.0, 0.0, 0.0, 0.0, 109836.17142857143, 2733020129.285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1189039.5428571429, 0.0, 13565.4, 1623.8, 3831.8, 456606.5142857143, 20221.6, 8851850.971428571, 1640.2285714285715, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:28:54,927] [DBTune-twitter_mbo_3] Iteration 185, objective value: [-12515.315429222308].
+[INFO] [2024-11-26 18:28:58,612] [autotune] [step 44] generate knobs: {'innodb_io_capacity_max': 39950, 'innodb_log_file_size': 850954407, 'innodb_thread_concurrency': 52}
+
+[INFO] [2024-11-26 18:29:01,656] [autotune] Close db successfully
+[INFO] [2024-11-26 18:29:01,657] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:29:01,661] [autotune] generated config file done
+[INFO] [2024-11-26 18:29:01,692] [autotune] wait for connection
+[INFO] [2024-11-26 18:29:15,736] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:29:15,737] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-26 18:29:15,737] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:29:15,737] [autotune] mysql is up
+[INFO] [2024-11-26 18:29:15,737] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:29:21,035] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732645761
+[INFO] [2024-11-26 18:32:50,860] [autotune] internal metrics: [6376794.685714286, 11041969.457142858, 7504609280.0, 590316075.8857143, 184.0, 458079.17142857146, 17743.514285714286, 11718949507.657143, 1163732.1142857142, 715267.8857142857, 71.02857142857142, 86804.11428571428, 49791.91428571429, 851864.0, 23.0, 0.0, 58636323.54285714, 458039.0857142857, 13958643712.0, 0.0, 101922.2, 0.0, 14298.771428571428, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14749.57142857143, 17743.514285714286, 929.2, 16384.0, 32819.68571428571, 123738.68571428572, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 98794.85714285714, 2625959415.1714287, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1168515.657142857, 0.0, 13635.057142857142, 1613.942857142857, 3821.285714285714, 458063.4, 20305.057142857142, 8888524.8, 1629.7142857142858, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:32:50,863] [DBTune-twitter_mbo_3] Iteration 186, objective value: [-12561.731609724182].
+[INFO] [2024-11-26 18:32:55,036] [autotune] [step 45] generate knobs: {'innodb_io_capacity_max': 37602, 'innodb_log_file_size': 1072287933, 'innodb_thread_concurrency': 40}
+
+[INFO] [2024-11-26 18:32:58,065] [autotune] Close db successfully
+[INFO] [2024-11-26 18:32:58,066] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:32:58,070] [autotune] generated config file done
+[INFO] [2024-11-26 18:32:58,096] [autotune] wait for connection
+[INFO] [2024-11-26 18:33:15,150] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:33:15,151] [autotune] finish 17 seconds waiting for connection
+[INFO] [2024-11-26 18:33:15,151] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:33:15,151] [autotune] mysql is up
+[INFO] [2024-11-26 18:33:15,152] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:33:20,473] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732646000
+[INFO] [2024-11-26 18:36:50,593] [autotune] internal metrics: [6076127.514285714, 11200614.257142857, 7488857702.4, 583870566.4, 175.45714285714286, 457114.4857142857, 17550.314285714285, 11726760930.742857, 1794282.0571428572, 715744.6285714286, 109.51428571428572, 86312.97142857143, 49806.31428571429, 851864.0, 34.17142857142857, 0.0, 58411334.91428571, 457048.1142857143, 13958643712.0, 0.0, 100457.42857142857, 0.0, 14107.542857142857, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14543.885714285714, 17550.314285714285, 929.2, 16384.0, 44181.68571428571, 144056.88571428572, 0.0, 0.0, 0.0, 0.0, 126660.34285714285, 2953323001.3714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1174908.342857143, 0.0, 13350.514285714286, 1606.7142857142858, 3813.4, 457102.0, 20104.628571428573, 8773792.914285714, 1622.4857142857143, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:36:50,596] [DBTune-twitter_mbo_3] Iteration 187, objective value: [-12454.596314304425].
+[INFO] [2024-11-26 18:36:54,604] [autotune] [step 46] generate knobs: {'innodb_io_capacity_max': 37954, 'innodb_log_file_size': 921858409, 'innodb_thread_concurrency': 346}
+
+[INFO] [2024-11-26 18:36:57,654] [autotune] Close db successfully
+[INFO] [2024-11-26 18:36:57,657] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:36:57,661] [autotune] generated config file done
+[INFO] [2024-11-26 18:36:57,685] [autotune] wait for connection
+[INFO] [2024-11-26 18:37:12,717] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:37:12,717] [autotune] finish 15 seconds waiting for connection
+[INFO] [2024-11-26 18:37:12,718] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:37:12,718] [autotune] mysql is up
+[INFO] [2024-11-26 18:37:12,718] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:37:18,035] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732646238
+[INFO] [2024-11-26 18:40:47,391] [autotune] internal metrics: [6192399.085714285, 11223747.0, 7610391405.714286, 581838365.2571429, 174.14285714285714, 464536.9142857143, 17487.885714285716, 11704422517.028572, 938569.1428571428, 714381.2285714286, 57.285714285714285, 87882.91428571429, 49599.74285714285, 851864.0, 19.714285714285715, 0.0, 58817216.571428575, 464494.2, 13958643712.0, 0.0, 100226.11428571428, 0.0, 14076.0, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14517.6, 17487.885714285716, 933.1428571428571, 16384.0, 40478.02857142857, 139836.05714285714, 0.0, 1.3142857142857143, 25088.4, 1.3142857142857143, 124248.62857142858, 2982139598.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1196105.142857143, 0.0, 13295.971428571429, 1625.7714285714285, 3841.657142857143, 464531.65714285715, 20065.2, 8787251.2, 1641.5428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:40:47,395] [DBTune-twitter_mbo_3] Iteration 188, objective value: [-12538.661608081979].
+[INFO] [2024-11-26 18:40:51,276] [autotune] [step 47] generate knobs: {'innodb_io_capacity_max': 22115, 'innodb_log_file_size': 1073725330, 'innodb_thread_concurrency': 341}
+
+[INFO] [2024-11-26 18:40:54,322] [autotune] Close db successfully
+[INFO] [2024-11-26 18:40:54,323] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:40:54,327] [autotune] generated config file done
+[INFO] [2024-11-26 18:40:54,357] [autotune] wait for connection
+[INFO] [2024-11-26 18:41:11,396] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:41:11,396] [autotune] finish 17 seconds waiting for connection
+[INFO] [2024-11-26 18:41:11,397] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:41:11,397] [autotune] mysql is up
+[INFO] [2024-11-26 18:41:11,397] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:41:16,749] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732646476
+[INFO] [2024-11-26 18:44:45,584] [autotune] internal metrics: [6139393.285714285, 10928614.942857143, 7326766109.257143, 574689323.8857143, 170.2, 447221.2, 17275.628571428573, 11735094769.37143, 1811602.2857142857, 716253.3142857143, 110.57142857142857, 85865.2, 49745.4, 851864.0, 32.857142857142854, 0.0, 57557551.25714286, 447171.2571428571, 13958643712.0, 0.0, 98478.11428571428, 0.0, 13834.828571428572, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14265.257142857143, 17275.628571428573, 937.7428571428571, 16384.0, 37695.68571428571, 130540.11428571428, 0.0, 0.0, 0.0, 0.0, 114850.17142857143, 2776316951.114286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1142272.0, 0.0, 13057.42857142857, 1587.6571428571428, 3812.0857142857144, 447205.4285714286, 19819.428571428572, 8593451.885714285, 1603.4285714285713, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:44:45,587] [DBTune-twitter_mbo_3] Iteration 189, objective value: [-12328.46611457566].
+[INFO] [2024-11-26 18:44:47,878] [BO_Optimizer] Sample random config. rand_prob=0.100000.
+[INFO] [2024-11-26 18:44:47,879] [autotune] [step 48] generate knobs: {'innodb_io_capacity_max': 37528, 'innodb_log_file_size': 216595463, 'innodb_thread_concurrency': 149}
+
+[INFO] [2024-11-26 18:44:50,911] [autotune] Close db successfully
+[INFO] [2024-11-26 18:44:50,912] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:44:50,916] [autotune] generated config file done
+[INFO] [2024-11-26 18:44:50,944] [autotune] wait for connection
+[INFO] [2024-11-26 18:44:56,963] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:44:56,964] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-11-26 18:44:56,964] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:44:56,965] [autotune] mysql is up
+[INFO] [2024-11-26 18:44:56,965] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:45:02,377] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732646702
+[INFO] [2024-11-26 18:48:31,064] [autotune] internal metrics: [6220182.428571428, 10888583.771428572, 7476616045.714286, 569100770.7428571, 164.28571428571428, 456367.3142857143, 17106.085714285713, 11724504619.885714, 1493284.5714285714, 715607.0285714286, 91.14285714285714, 86656.2, 49704.828571428574, 851968.0, 24.314285714285713, 0.0, 57649764.82857143, 456323.9428571428, 13958643712.0, 0.0, 98093.68571428572, 0.0, 13792.771428571428, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14220.57142857143, 17106.085714285713, 925.9142857142857, 16384.0, 34258.828571428574, 123199.17142857143, 0.0, 1.3142857142857143, 25088.4, 1.3142857142857143, 99681.34285714285, 2650991927.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1155730.2857142857, 0.0, 12904.314285714287, 1588.9714285714285, 3790.4, 456350.22857142857, 19642.0, 8560479.085714286, 1604.7428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:48:31,067] [DBTune-twitter_mbo_3] Iteration 190, objective value: [-12358.030808944945].
+[INFO] [2024-11-26 18:48:35,225] [autotune] [step 49] generate knobs: {'innodb_io_capacity_max': 25596, 'innodb_log_file_size': 796554698, 'innodb_thread_concurrency': 222}
+
+[INFO] [2024-11-26 18:48:38,253] [autotune] Close db successfully
+[INFO] [2024-11-26 18:48:38,256] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:48:38,261] [autotune] generated config file done
+[INFO] [2024-11-26 18:48:38,284] [autotune] wait for connection
+[INFO] [2024-11-26 18:48:51,313] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:48:51,314] [autotune] finish 13 seconds waiting for connection
+[INFO] [2024-11-26 18:48:51,314] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:48:51,314] [autotune] mysql is up
+[INFO] [2024-11-26 18:48:51,314] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:48:56,615] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732646936
+[INFO] [2024-11-26 18:52:25,510] [autotune] internal metrics: [6258923.628571428, 10659779.771428572, 7430071910.4, 565165568.0, 158.37142857142857, 453527.14285714284, 16991.742857142857, 11715480312.685715, 1926758.4, 715056.1428571428, 117.6, 87344.88571428572, 49462.885714285716, 851864.0, 19.057142857142857, 0.0, 56891092.74285714, 453482.45714285714, 13958643712.0, 0.0, 96143.28571428571, 0.0, 13509.542857142857, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13928.8, 16991.742857142857, 930.5142857142857, 16384.0, 26451.314285714285, 108668.42857142857, 0.0, 1.9714285714285715, 37632.6, 1.9714285714285715, 80018.31428571428, 2307065348.9714284, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1125785.6, 0.0, 12632.914285714285, 1533.1142857142856, 3743.0857142857144, 453514.65714285715, 19473.77142857143, 8372063.085714285, 1548.8857142857144, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:52:25,513] [DBTune-twitter_mbo_3] Iteration 191, objective value: [-12176.806808663303].
+[INFO] [2024-11-26 18:52:29,672] [autotune] [step 50] generate knobs: {'innodb_io_capacity_max': 37322, 'innodb_log_file_size': 209347788, 'innodb_thread_concurrency': 151}
+
+[INFO] [2024-11-26 18:52:33,715] [autotune] Close db successfully
+[INFO] [2024-11-26 18:52:33,718] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:52:33,723] [autotune] generated config file done
+[INFO] [2024-11-26 18:52:33,752] [autotune] wait for connection
+[INFO] [2024-11-26 18:52:39,770] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:52:39,771] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-11-26 18:52:39,771] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:52:39,771] [autotune] mysql is up
+[INFO] [2024-11-26 18:52:39,772] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:52:45,094] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732647165
+[INFO] [2024-11-26 18:56:12,621] [autotune] internal metrics: [6137373.228571429, 10541085.971428571, 7306804779.885715, 573658755.6571429, 161.65714285714284, 446000.22857142857, 17246.714285714286, 11689108626.285715, 743365.4857142858, 713446.5714285715, 45.371428571428574, 89234.65714285715, 49286.71428571428, 851968.0, 21.685714285714287, 0.0, 56125420.114285715, 445958.17142857146, 13958643712.0, 0.0, 97704.0, 0.0, 13714.57142857143, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14145.657142857142, 17246.714285714286, 925.2571428571429, 16384.0, 30348.17142857143, 113990.62857142858, 0.0, 0.0, 0.0, 0.0, 89136.17142857143, 2414562164.114286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1135879.3142857142, 0.0, 12860.285714285714, 1569.9142857142858, 3769.3714285714286, 445991.02857142856, 19760.942857142858, 8510010.514285713, 1586.3428571428572, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 18:56:12,624] [DBTune-twitter_mbo_3] Iteration 192, objective value: [-12036.316503230855].
+[INFO] [2024-11-26 18:56:16,734] [autotune] [step 51] generate knobs: {'innodb_io_capacity_max': 24110, 'innodb_log_file_size': 480272292, 'innodb_thread_concurrency': 51}
+
+[INFO] [2024-11-26 18:56:19,784] [autotune] Close db successfully
+[INFO] [2024-11-26 18:56:19,785] [autotune] mysql is shut down
+[INFO] [2024-11-26 18:56:19,788] [autotune] generated config file done
+[INFO] [2024-11-26 18:56:19,813] [autotune] wait for connection
+[INFO] [2024-11-26 18:56:28,835] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 18:56:28,835] [autotune] finish 9 seconds waiting for connection
+[INFO] [2024-11-26 18:56:28,835] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 18:56:28,836] [autotune] mysql is up
+[INFO] [2024-11-26 18:56:28,836] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 18:56:34,151] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732647394
+[INFO] [2024-11-26 19:00:03,255] [autotune] internal metrics: [6163846.228571429, 10670402.485714287, 7330028397.714286, 564971768.6857142, 159.02857142857144, 447418.34285714285, 16986.485714285714, 11732353960.22857, 2348061.257142857, 716086.0, 143.31428571428572, 86254.02857142857, 49523.857142857145, 851864.0, 28.257142857142856, 0.0, 56673881.4, 447369.71428571426, 13958643712.0, 0.0, 96141.31428571428, 0.0, 13499.028571428571, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13918.285714285714, 16986.485714285714, 929.8571428571429, 16384.0, 29889.485714285714, 114688.5142857143, 0.0, 0.0, 0.0, 0.0, 90117.28571428571, 2435971093.114286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1100214.857142857, 0.0, 12635.542857142857, 1544.942857142857, 3753.6, 447398.6285714286, 19479.685714285715, 8350529.828571429, 1560.7142857142858, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 19:00:03,257] [DBTune-twitter_mbo_3] Iteration 193, objective value: [-12148.095974728398].
+[INFO] [2024-11-26 19:00:08,228] [autotune] [step 52] generate knobs: {'innodb_io_capacity_max': 23045, 'innodb_log_file_size': 247047065, 'innodb_thread_concurrency': 223}
+
+[INFO] [2024-11-26 19:00:11,278] [autotune] Close db successfully
+[INFO] [2024-11-26 19:00:11,279] [autotune] mysql is shut down
+[INFO] [2024-11-26 19:00:11,283] [autotune] generated config file done
+[INFO] [2024-11-26 19:00:11,310] [autotune] wait for connection
+[INFO] [2024-11-26 19:00:17,328] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 19:00:17,329] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-11-26 19:00:17,329] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 19:00:17,329] [autotune] mysql is up
+[INFO] [2024-11-26 19:00:17,330] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 19:00:22,630] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732647622
+[INFO] [2024-11-26 19:03:51,105] [autotune] internal metrics: [6010268.0, 10512947.771428572, 7235454332.342857, 563240696.6857142, 155.74285714285713, 441648.6285714286, 16935.22857142857, 11710606306.742857, 1873861.4857142856, 714758.6285714286, 114.37142857142857, 87942.68571428572, 49162.57142857143, 851864.0, 28.914285714285715, 0.0, 55671944.885714285, 441605.2571428571, 13958643712.0, 0.0, 95235.77142857143, 0.0, 13372.857142857143, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13794.742857142857, 16935.22857142857, 927.8857142857142, 16384.0, 30842.342857142856, 115124.2, 0.0, 0.0, 0.0, 0.0, 88966.62857142858, 2438452381.0857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1120402.2857142857, 0.0, 12492.942857142858, 1529.1714285714286, 3733.885714285714, 441616.4285714286, 19410.685714285715, 8299051.885714286, 1544.942857142857, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 19:03:51,107] [DBTune-twitter_mbo_3] Iteration 194, objective value: [-11917.204895638324].
+[INFO] [2024-11-26 19:03:55,737] [autotune] [step 53] generate knobs: {'innodb_io_capacity_max': 26778, 'innodb_log_file_size': 798556522, 'innodb_thread_concurrency': 336}
+
+[INFO] [2024-11-26 19:03:59,790] [autotune] Close db successfully
+[INFO] [2024-11-26 19:03:59,790] [autotune] mysql is shut down
+[INFO] [2024-11-26 19:03:59,795] [autotune] generated config file done
+[INFO] [2024-11-26 19:03:59,832] [autotune] wait for connection
+[INFO] [2024-11-26 19:04:12,866] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 19:04:12,866] [autotune] finish 13 seconds waiting for connection
+[INFO] [2024-11-26 19:04:12,867] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 19:04:12,867] [autotune] mysql is up
+[INFO] [2024-11-26 19:04:12,867] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 19:04:18,154] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732647858
+[INFO] [2024-11-26 19:07:47,335] [autotune] internal metrics: [5630500.542857143, 10739752.742857143, 7217775528.228572, 554355872.9142857, 154.42857142857142, 440566.3142857143, 16667.77142857143, 11705585781.028572, 1490475.8857142858, 714452.2571428572, 90.97142857142858, 88309.71428571429, 49102.0, 851864.0, 22.34285714285714, 0.0, 55479300.17142857, 440528.2, 13958643712.0, 0.0, 93676.37142857142, 0.0, 13150.742857142857, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13567.371428571429, 16667.77142857143, 929.2, 16384.0, 47093.485714285714, 147085.65714285715, 0.0, 0.0, 0.0, 0.0, 130088.65714285715, 2928101376.8285713, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1109972.1142857142, 0.0, 12305.0, 1512.7428571428572, 3720.7428571428572, 440551.85714285716, 19128.77142857143, 8177927.314285714, 1529.1714285714286, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 19:07:47,338] [DBTune-twitter_mbo_3] Iteration 195, objective value: [-11807.642515272451].
+[INFO] [2024-11-26 19:07:52,867] [autotune] [step 54] generate knobs: {'innodb_io_capacity_max': 14732, 'innodb_log_file_size': 965556387, 'innodb_thread_concurrency': 332}
+
+[INFO] [2024-11-26 19:07:55,913] [autotune] Close db successfully
+[INFO] [2024-11-26 19:07:55,914] [autotune] mysql is shut down
+[INFO] [2024-11-26 19:07:55,917] [autotune] generated config file done
+[INFO] [2024-11-26 19:07:55,940] [autotune] wait for connection
+[INFO] [2024-11-26 19:08:11,983] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 19:08:11,984] [autotune] finish 16 seconds waiting for connection
+[INFO] [2024-11-26 19:08:11,984] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 19:08:11,984] [autotune] mysql is up
+[INFO] [2024-11-26 19:08:11,984] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 19:08:17,252] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732648097
+[INFO] [2024-11-26 19:11:44,969] [autotune] internal metrics: [5791966.457142857, 10494919.057142857, 7162068992.0, 560603882.0571429, 155.74285714285713, 437166.9142857143, 16856.371428571427, 11709930817.828571, 1271398.4, 714717.4571428571, 77.6, 88260.91428571429, 48989.57142857143, 851968.0, 19.714285714285715, 0.0, 55009223.54285714, 437135.3714285714, 13958643712.0, 0.0, 94827.68571428572, 0.0, 13316.342857142858, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13731.0, 16856.371428571427, 922.6285714285714, 16384.0, 37354.62857142857, 126538.77142857143, 0.0, 0.0, 0.0, 0.0, 106756.8, 2557753746.457143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1098869.0285714285, 0.0, 12439.714285714286, 1525.8857142857144, 3720.7428571428572, 437147.2, 19323.942857142858, 8245891.657142857, 1542.3142857142857, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 19:11:44,972] [DBTune-twitter_mbo_3] Iteration 196, objective value: [-11734.195702422618].
+[INFO] [2024-11-26 19:11:50,484] [autotune] [step 55] generate knobs: {'innodb_io_capacity_max': 36739, 'innodb_log_file_size': 17080653, 'innodb_thread_concurrency': 220}
+
+[INFO] [2024-11-26 19:11:53,508] [autotune] Close db successfully
+[INFO] [2024-11-26 19:11:53,511] [autotune] mysql is shut down
+[INFO] [2024-11-26 19:11:53,511] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-11-26 19:11:53,513] [DBTune-twitter_mbo_3] Iteration 197, objective value: [2147483647].
+[INFO] [2024-11-26 19:11:57,719] [autotune] [step 56] generate knobs: {'innodb_io_capacity_max': 17593, 'innodb_log_file_size': 201470036, 'innodb_thread_concurrency': 221}
+
+[INFO] [2024-11-26 19:11:57,771] [autotune] mysql is shut down
+[INFO] [2024-11-26 19:11:57,775] [autotune] generated config file done
+[INFO] [2024-11-26 19:11:57,799] [autotune] wait for connection
+[INFO] [2024-11-26 19:12:03,816] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 19:12:03,816] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-11-26 19:12:03,816] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 19:12:03,817] [autotune] mysql is up
+[INFO] [2024-11-26 19:12:03,817] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 19:12:09,131] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732648329
+[INFO] [2024-11-26 19:15:36,797] [autotune] internal metrics: [5851690.885714286, 10283221.142857144, 7067688725.942857, 551578755.6571429, 152.45714285714286, 431409.6857142857, 16584.97142857143, 11684536085.942858, 691404.8, 713167.4857142858, 42.2, 90033.91428571429, 48662.57142857143, 851864.0, 34.17142857142857, 0.0, 54377420.77142857, 431363.02857142856, 13958643712.0, 0.0, 93296.54285714286, 0.0, 13097.514285714286, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13506.914285714285, 16584.97142857143, 933.1428571428571, 16384.0, 31548.114285714284, 113610.14285714286, 0.0, 9.857142857142858, 220004.2, 11.82857142857143, 92684.08571428571, 2379159050.714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1085410.7428571428, 0.0, 12236.657142857142, 1502.2285714285715, 3715.4857142857145, 431376.17142857146, 19038.742857142857, 8114336.914285715, 1518.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 19:15:36,801] [DBTune-twitter_mbo_3] Iteration 198, objective value: [-11626.015020809851].
+[INFO] [2024-11-26 19:15:41,815] [autotune] [step 57] generate knobs: {'innodb_io_capacity_max': 26891, 'innodb_log_file_size': 842737037, 'innodb_thread_concurrency': 42}
+
+[INFO] [2024-11-26 19:15:44,863] [autotune] Close db successfully
+[INFO] [2024-11-26 19:15:44,863] [autotune] mysql is shut down
+[INFO] [2024-11-26 19:15:44,867] [autotune] generated config file done
+[INFO] [2024-11-26 19:15:44,896] [autotune] wait for connection
+[INFO] [2024-11-26 19:15:58,929] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 19:15:58,929] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-26 19:15:58,930] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 19:15:58,930] [autotune] mysql is up
+[INFO] [2024-11-26 19:15:58,930] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 19:16:04,225] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732648564
+[INFO] [2024-11-26 19:19:31,425] [autotune] internal metrics: [5718245.542857143, 10349225.228571428, 7033246281.142858, 547664076.8, 150.4857142857143, 429312.7428571429, 16467.342857142856, 11719306678.857143, 2079831.7714285713, 715289.6857142857, 126.94285714285714, 87792.5142857143, 48885.68571428571, 851968.0, 15.771428571428572, 0.0, 54257887.14285714, 429275.9428571428, 13958643712.0, 0.0, 92027.6, 0.0, 12922.057142857142, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13325.542857142857, 16467.342857142856, 933.8, 16384.0, 36941.94285714286, 127190.0, 0.0, 0.0, 0.0, 0.0, 105390.6, 2527186743.8285713, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1102570.0571428572, 0.0, 12080.257142857143, 1508.142857142857, 3725.342857142857, 429294.34285714285, 18927.685714285715, 8054111.085714285, 1523.9142857142858, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 19:19:31,428] [DBTune-twitter_mbo_3] Iteration 199, objective value: [-11576.584301414041].
+[INFO] [2024-11-26 19:19:37,207] [autotune] [step 58] generate knobs: {'innodb_io_capacity_max': 34886, 'innodb_log_file_size': 57565021, 'innodb_thread_concurrency': 340}
+
+[INFO] [2024-11-26 19:19:40,246] [autotune] Close db successfully
+[INFO] [2024-11-26 19:19:40,249] [autotune] mysql is shut down
+[INFO] [2024-11-26 19:19:40,254] [autotune] generated config file done
+[INFO] [2024-11-26 19:19:40,279] [autotune] wait for connection
+[INFO] [2024-11-26 19:19:44,296] [autotune] Connected to MySQL db
+[INFO] [2024-11-26 19:19:44,297] [autotune] finish 4 seconds waiting for connection
+[INFO] [2024-11-26 19:19:44,297] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-26 19:19:44,297] [autotune] mysql is up
+[INFO] [2024-11-26 19:19:44,298] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-26 19:19:49,602] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732648789
+[INFO] [2024-11-26 19:23:16,204] [autotune] internal metrics: [5843293.257142857, 10062431.657142857, 7033881512.228572, 547411733.9428571, 149.82857142857142, 429337.0571428572, 16462.085714285713, 11703754049.828571, 1675849.142857143, 714340.4, 102.28571428571429, 88950.25714285714, 48573.28571428572, 851864.0, 21.685714285714287, 0.0, 53528557.14285714, 429287.77142857143, 13958643712.0, 0.0, 91804.82857142857, 0.0, 12889.857142857143, 0.0, 23.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13297.942857142858, 16462.085714285713, 931.1714285714286, 16384.0, 26896.2, 105226.31428571428, 0.0, 0.6571428571428571, 12544.2, 0.6571428571428571, 79907.91428571429, 2198293587.3142858, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1059503.5428571429, 0.0, 12036.228571428572, 1466.7428571428572, 3678.6857142857143, 429323.2571428571, 18879.057142857142, 7973697.828571429, 1483.1714285714286, 0.0, 0.0, 0.0].
+[INFO] [2024-11-26 19:23:16,207] [DBTune-twitter_mbo_3] Iteration 200, objective value: [-11456.67878628286].
