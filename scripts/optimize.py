@@ -9,14 +9,14 @@ if __name__ == '__main__':
     #2024-11-22 softmax weight
     for dbname,workload,workload_type in [
         # ('sbread','sysbench','read'),
-        ('sbwrite','sysbench','write'),
-        ('sbrw','sysbench','readwrite'),
-        ('tatp','oltpbench_tatp',''),
-        ('tpcc','oltpbench_tpcc',''),
+        # ('sbwrite','sysbench','write'),
+        # ('sbrw','sysbench','readwrite'),
+        # ('tatp','oltpbench_tatp',''),
+        # ('tpcc','oltpbench_tpcc',''),
         # ('twitter','oltpbench_twitter',''),
         ('voter','oltpbench_voter',''),
         # ('wikipedia','oltpbench_wikipedia',''),
-        ('ycsb','oltpbench_ycsb',''),
+        # ('ycsb','oltpbench_ycsb',''),
     ]:
         #2024-11-22 softmax weight
         parser = argparse.ArgumentParser()
