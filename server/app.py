@@ -1,5 +1,7 @@
 import argparse
+import time
 from flask import Flask, request
+import mysql
 
 from autotune.database.mysqldb import MysqlDB
 from autotune.database.postgresqldb import PostgresqlDB
@@ -30,8 +32,16 @@ env = DBEnv(args_db, args_tune, db)
 tuner = DBTuner(args_db, args_tune, env)
 
 
-@app.post("/")
-def hello_world():
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="password",
+    database="voter",
+)
+
+
+@app.post("/tune")
+def tune():
     queries = request.get_json()
     for i, query in enumerate(queries):
         with open(
@@ -48,4 +58,27 @@ SELECT @query_name, @query_time_ms;
     tuner.tune()
 
 
-app.run(debug=True)
+@app.post("/query")
+def query():
+    query = request.get_json()
+    cursor = mydb.cursor()
+    start_time = time.time()
+    cursor.execute(query)
+    end_time = time.time()
+    return {
+        "results": cursor.fetchall(),
+        "query_time": end_time - start_time,
+    }
+
+
+@app.post("/knobs")
+def knobs():
+    cursor = mydb.cursor()
+    cursor.execute("SHOW VARIABLES;")
+    return {
+        "results": cursor.fetchall(),
+    }
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
