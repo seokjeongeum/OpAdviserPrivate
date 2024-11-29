@@ -31,4 +31,3 @@ for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
     --optimize_method="$optimize_method"
   done
 done
-# USE THIS YCSB 7
