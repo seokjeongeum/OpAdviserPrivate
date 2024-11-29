@@ -29,7 +29,7 @@ export PYTHONPATH="."
 db="write"
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
-  for knob_num in 96 170; do
+  for knob_num in 170; do
     python3 scripts/optimize.py \
     --config=scripts/cluster.ini \
     --knob_config_file=scripts/experiment/gen_knobs/SYSBENCH_randomforest.json \

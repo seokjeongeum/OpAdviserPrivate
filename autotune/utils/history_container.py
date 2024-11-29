@@ -678,6 +678,7 @@ class HistoryContainer(object):
         n_calls = len(losses)
         iterations = range(1, n_calls + 1)
         mins = [np.min(losses[:i]) for i in iterations]
+        mins=np.clip(mins,None,0)
         max_mins = max(mins)
         cliped_losses = np.clip(losses, None, max_mins)
         return plot_convergence(iterations, mins, cliped_losses, xlabel, ylabel, ax, name, alpha, yscale, color,

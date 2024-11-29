@@ -19,7 +19,7 @@ export PYTHONPATH="."
 workload="twitter"
 for optimize_method in "DDPG" "GA" "MBO" "SMAC"; do
   lowercase="${optimize_method,,}"
-  for knob_num in 3 28 47; do
+  for knob_num in 52 125; do
     python3 scripts/optimize.py \
     --config=scripts/cluster.ini \
     --knob_config_file=scripts/experiment/gen_knobs/moreworkloads/${workload}_shap.json \
