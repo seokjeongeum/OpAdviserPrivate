@@ -12,9 +12,9 @@ if __name__ == '__main__':
         # ('sbwrite','sysbench','write'),
         # ('sbrw','sysbench','readwrite'),
         # ('tatp','oltpbench_tatp',''),
-        # ('tpcc','oltpbench_tpcc',''),
+        ('tpcc','oltpbench_tpcc',''),
         # ('twitter','oltpbench_twitter',''),
-        ('voter','oltpbench_voter',''),
+        # ('voter','oltpbench_voter',''),
         # ('wikipedia','oltpbench_wikipedia',''),
         # ('ycsb','oltpbench_ycsb',''),
     ]:
