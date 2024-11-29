@@ -64,4 +64,4 @@ sysbench  \
     prepare
 cd ~/OpAdviserPrivate
 export PYTHONPATH="."
-python scripts/optimize.py --dbname=sbwrite --workload=sbwrite --workload_type=write
+python scripts/optimize.py --dbname=sbwrite --workload=sysbench --workload_type=write
