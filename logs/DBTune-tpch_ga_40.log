@@ -12952,3 +12952,999 @@
 [INFO] [2024-11-26 12:24:11,736] [autotune] 1040: Too many connections
 [INFO] [2024-11-26 12:24:12,739] [autotune] 1040: Too many connections
 [INFO] [2024-11-26 12:24:13,741] [autotune] 1040: Too many connections
+[INFO] [2024-11-27 20:46:46,567] [DBTune-tpch_ga_40] Load 166 iterations from repo/history_tpch_ga_40.json
+[INFO] [2024-11-27 20:46:46,822] [autotune] [step 1] generate knobs: {'binlog_cache_size': 3867266517, 'binlog_group_commit_sync_delay': 633102, 'binlog_row_image': 'full', 'connect_timeout': 8794488, 'default_week_format': 5, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 60, 'innodb_adaptive_max_sleep_delay': 404508, 'innodb_buffer_pool_size': 15022106251, 'innodb_change_buffer_max_size': 43, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 54048679, 'innodb_ft_total_cache_size': 942516622, 'innodb_io_capacity_max': 14954, 'innodb_log_file_size': 1009711696, 'innodb_log_files_in_group': 10, 'innodb_log_write_ahead_size': 5018, 'innodb_lru_scan_depth': 3196, 'innodb_max_dirty_pages_pct_lwm': 48, 'innodb_online_alter_log_max_size': 8271945638424445000, 'innodb_purge_batch_size': 4973, 'innodb_purge_rseg_truncate_frequency': 23, 'innodb_sort_buffer_size': 1277368, 'innodb_stats_transient_sample_pages': 89, 'innodb_sync_array_size': 184, 'innodb_thread_concurrency': 366, 'join_buffer_size': 799047048, 'key_cache_age_threshold': 21656, 'max_allowed_packet': 330778465, 'max_heap_table_size': 582555632, 'net_read_timeout': 31, 'query_cache_limit': 85407118, 'query_prealloc_size': 33622556, 'sort_buffer_size': 79184564, 'table_open_cache_instances': 63, 'tmp_table_size': 522635933, 'transaction_alloc_block_size': 118861, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 20:46:48,876] [autotune] Close db successfully
+[INFO] [2024-11-27 20:46:48,877] [autotune] mysql is shut down
+[INFO] [2024-11-27 20:46:48,883] [autotune] generated config file done
+[INFO] [2024-11-27 20:46:48,912] [autotune] wait for connection
+[INFO] [2024-11-27 20:47:20,003] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:21,006] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:22,008] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:23,011] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:24,013] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:25,015] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:26,018] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:27,021] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:28,023] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:29,025] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:30,027] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:31,035] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:32,038] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:33,040] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:34,042] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:35,045] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:36,047] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:37,049] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:38,052] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:39,054] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:40,057] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:41,059] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:42,061] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:43,064] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:44,066] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:45,069] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:46,071] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:47,073] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:48,076] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:49,079] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:50,081] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:47:51,096] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 20:47:51,097] [autotune] finish 62 seconds waiting for connection
+[INFO] [2024-11-27 20:47:51,097] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 20:47:51,097] [autotune] mysql is up
+[INFO] [2024-11-27 20:47:51,098] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 20:47:56,463] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732740476.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 20:51:07,353] [autotune] internal metrics: [8253841.771428571, 12390020.485714287, 57964072140.8, 0.0, 0.0, 3540086.4, 0.0, 13767793517.714285, 0.0, 840319.4285714285, 0.0, 55688.8, 21383.77142857143, 917392.0, 905922.6857142857, 74017.28571428571, 235704983.74285713, 2632541.8857142855, 15032385536.0, 0.0, 0.0, 0.0, 0.0, 0.0, 38.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1387199.657142857, 3104589.285714286, 0.0, 0.0, 0.0, 0.0, 469003.5142857143, 9020662147.971428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3539030.3714285716, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 20:51:07,476] [DBTune-tpch_ga_40] Iteration 167, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 20:51:07,597] [autotune] [step 2] generate knobs: {'binlog_cache_size': 3413689396, 'binlog_group_commit_sync_delay': 502637, 'binlog_row_image': 'noblob', 'connect_timeout': 15532039, 'default_week_format': 1, 'div_precision_increment': 22, 'innodb_adaptive_flushing_lwm': 19, 'innodb_adaptive_max_sleep_delay': 24315, 'innodb_buffer_pool_size': 13755047973, 'innodb_change_buffer_max_size': 9, 'innodb_change_buffering': 'changes', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 23517531, 'innodb_ft_total_cache_size': 1417318627, 'innodb_io_capacity_max': 29934, 'innodb_log_file_size': 1023549935, 'innodb_log_files_in_group': 4, 'innodb_log_write_ahead_size': 9286, 'innodb_lru_scan_depth': 5903, 'innodb_max_dirty_pages_pct_lwm': 98, 'innodb_online_alter_log_max_size': 1389889780668305000, 'innodb_purge_batch_size': 1529, 'innodb_purge_rseg_truncate_frequency': 25, 'innodb_sort_buffer_size': 18064984, 'innodb_stats_transient_sample_pages': 49, 'innodb_sync_array_size': 382, 'innodb_thread_concurrency': 395, 'join_buffer_size': 906466978, 'key_cache_age_threshold': 27908, 'max_allowed_packet': 75609696, 'max_heap_table_size': 224337726, 'net_read_timeout': 41, 'query_cache_limit': 48136756, 'query_prealloc_size': 34119377, 'sort_buffer_size': 39656324, 'table_open_cache_instances': 21, 'tmp_table_size': 911252409, 'transaction_alloc_block_size': 18791, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 20:51:15,635] [autotune] Close db successfully
+[INFO] [2024-11-27 20:51:15,636] [autotune] mysql is shut down
+[INFO] [2024-11-27 20:51:15,642] [autotune] generated config file done
+[INFO] [2024-11-27 20:51:15,667] [autotune] wait for connection
+[INFO] [2024-11-27 20:51:46,738] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:51:47,741] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:51:48,743] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:51:49,745] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:51:50,777] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 20:51:50,777] [autotune] finish 35 seconds waiting for connection
+[INFO] [2024-11-27 20:51:50,777] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 20:51:50,777] [autotune] mysql is up
+[INFO] [2024-11-27 20:51:50,778] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 20:51:56,299] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732740716.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 20:55:06,974] [autotune] internal metrics: [7235125.771428571, 13653243.57142857, 84720608402.28572, 509530697.14285713, 15870.0, 5176616.571428572, 31099.285714285714, 13283279316.114286, 15470240.914285714, 810746.7714285714, 944.2285714285714, 20008.314285714285, 21108.342857142856, 851864.0, 1075234.2285714287, 91588.62857142858, 263754264.42857143, 4097476.942857143, 13958643712.0, 0.0, 4788454.771428571, 0.0, 1603148.6285714286, 0.0, 29.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 461.3142857142857, 0.0, 0.0, 16384.0, 1382627.2571428572, 2955832.5142857144, 0.0, 0.0, 0.0, 0.0, 530628.4, 10198329794.257143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5174273.857142857, 31624.342857142856, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 20:55:06,981] [DBTune-tpch_ga_40] Iteration 168, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 20:55:07,150] [autotune] [step 3] generate knobs: {'binlog_cache_size': 3867266517, 'binlog_group_commit_sync_delay': 633102, 'binlog_row_image': 'full', 'connect_timeout': 8794488, 'default_week_format': 5, 'div_precision_increment': 15, 'innodb_adaptive_flushing_lwm': 60, 'innodb_adaptive_max_sleep_delay': 404508, 'innodb_buffer_pool_size': 15022106251, 'innodb_change_buffer_max_size': 43, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 54048679, 'innodb_ft_total_cache_size': 942516622, 'innodb_io_capacity_max': 14954, 'innodb_log_file_size': 1009711696, 'innodb_log_files_in_group': 10, 'innodb_log_write_ahead_size': 5018, 'innodb_lru_scan_depth': 3196, 'innodb_max_dirty_pages_pct_lwm': 48, 'innodb_online_alter_log_max_size': 8271945638424445000, 'innodb_purge_batch_size': 4973, 'innodb_purge_rseg_truncate_frequency': 23, 'innodb_sort_buffer_size': 1277368, 'innodb_stats_transient_sample_pages': 50, 'innodb_sync_array_size': 184, 'innodb_thread_concurrency': 366, 'join_buffer_size': 799047048, 'key_cache_age_threshold': 21656, 'max_allowed_packet': 330778465, 'max_heap_table_size': 582555632, 'net_read_timeout': 31, 'query_cache_limit': 85407118, 'query_prealloc_size': 33622556, 'sort_buffer_size': 79184564, 'table_open_cache_instances': 63, 'tmp_table_size': 522635933, 'transaction_alloc_block_size': 118861, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 20:55:18,181] [autotune] Close db successfully
+[INFO] [2024-11-27 20:55:18,183] [autotune] mysql is shut down
+[INFO] [2024-11-27 20:55:18,191] [autotune] generated config file done
+[INFO] [2024-11-27 20:55:18,213] [autotune] wait for connection
+[INFO] [2024-11-27 20:55:49,274] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:50,277] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:51,279] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:52,281] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:53,283] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:54,286] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:55,288] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:56,290] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:57,292] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:58,294] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:55:59,297] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:00,299] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:01,301] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:02,303] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:03,305] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:04,307] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:05,309] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:06,311] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:07,313] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:08,316] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:09,318] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:10,320] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:11,322] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:12,324] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:13,327] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:14,329] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:15,333] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:16,335] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:17,337] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:18,340] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:19,342] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:20,344] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:21,346] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:22,348] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:23,351] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:24,353] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:25,355] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:26,357] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:27,359] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:28,361] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:29,363] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:30,366] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:31,369] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:32,371] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:33,374] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:34,376] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:35,379] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:36,381] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:37,383] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:38,385] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:39,387] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:40,389] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:41,392] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:42,394] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:43,396] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 20:56:44,404] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 20:56:44,405] [autotune] finish 86 seconds waiting for connection
+[INFO] [2024-11-27 20:56:44,405] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 20:56:44,406] [autotune] mysql is up
+[INFO] [2024-11-27 20:56:44,406] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 20:56:49,706] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732741009.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:00:00,660] [autotune] internal metrics: [7527925.628571428, 13544766.371428572, 83529388617.14285, 0.0, 0.0, 5103015.914285715, 0.0, 14297800938.057142, 0.0, 872668.3428571429, 0.0, 21737.0, 22986.14285714286, 917392.0, 1122091.8, 121315.14285714286, 267018413.91428572, 3977342.685714286, 15032385536.0, 0.0, 0.0, 0.0, 0.0, 0.0, 35.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1304240.6285714286, 2976578.5142857144, 0.0, 0.0, 0.0, 0.0, 424653.6, 8170036735.828571, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5100992.571428572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:00:00,726] [DBTune-tpch_ga_40] Iteration 169, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:00:00,857] [autotune] [step 4] generate knobs: {'binlog_cache_size': 3867266517, 'binlog_group_commit_sync_delay': 633102, 'binlog_row_image': 'full', 'connect_timeout': 8794488, 'default_week_format': 5, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 60, 'innodb_adaptive_max_sleep_delay': 404508, 'innodb_buffer_pool_size': 15022106251, 'innodb_change_buffer_max_size': 43, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 54048679, 'innodb_ft_total_cache_size': 942516622, 'innodb_io_capacity_max': 14954, 'innodb_log_file_size': 1009711696, 'innodb_log_files_in_group': 7, 'innodb_log_write_ahead_size': 5018, 'innodb_lru_scan_depth': 3196, 'innodb_max_dirty_pages_pct_lwm': 48, 'innodb_online_alter_log_max_size': 8271945638424445000, 'innodb_purge_batch_size': 4973, 'innodb_purge_rseg_truncate_frequency': 23, 'innodb_sort_buffer_size': 1277368, 'innodb_stats_transient_sample_pages': 50, 'innodb_sync_array_size': 184, 'innodb_thread_concurrency': 366, 'join_buffer_size': 799047048, 'key_cache_age_threshold': 21656, 'max_allowed_packet': 330778465, 'max_heap_table_size': 582555632, 'net_read_timeout': 31, 'query_cache_limit': 85407118, 'query_prealloc_size': 33622556, 'sort_buffer_size': 79184564, 'table_open_cache_instances': 63, 'tmp_table_size': 522635933, 'transaction_alloc_block_size': 118861, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:00:08,914] [autotune] Close db successfully
+[INFO] [2024-11-27 21:00:08,915] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:00:08,920] [autotune] generated config file done
+[INFO] [2024-11-27 21:00:08,939] [autotune] wait for connection
+[INFO] [2024-11-27 21:00:40,001] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:41,004] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:42,006] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:43,008] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:44,011] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:45,013] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:46,015] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:47,018] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:48,021] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:49,023] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:50,025] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:51,028] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:52,030] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:53,032] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:54,035] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:55,037] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:56,040] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:57,042] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:58,044] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:00:59,046] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:00,049] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:01,051] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:02,053] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:03,055] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:04,058] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:05,060] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:06,062] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:07,065] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:08,067] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:09,069] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:10,072] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:11,074] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:12,076] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:13,078] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:01:14,089] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:01:14,090] [autotune] finish 65 seconds waiting for connection
+[INFO] [2024-11-27 21:01:14,090] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:01:14,091] [autotune] mysql is up
+[INFO] [2024-11-27 21:01:14,091] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:01:19,510] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732741279.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:04:30,899] [autotune] internal metrics: [7571985.085714285, 14087953.42857143, 86640610508.8, 0.0, 0.0, 5293841.657142857, 0.0, 14267300483.657143, 0.0, 870806.9142857143, 0.0, 24741.885714285716, 21899.114285714284, 917448.0, 1129200.7714285713, 107961.34285714285, 273688454.6571429, 4160567.257142857, 15032385536.0, 0.0, 0.0, 0.0, 0.0, 0.0, 32.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1360411.8857142858, 3065239.5714285714, 0.0, 0.0, 0.0, 0.0, 456490.85714285716, 8780717927.114286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5291442.428571428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:04:30,929] [DBTune-tpch_ga_40] Iteration 170, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:04:31,062] [autotune] [step 5] generate knobs: {'binlog_cache_size': 3867266517, 'binlog_group_commit_sync_delay': 633102, 'binlog_row_image': 'full', 'connect_timeout': 8794488, 'default_week_format': 5, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 60, 'innodb_adaptive_max_sleep_delay': 404508, 'innodb_buffer_pool_size': 15022106251, 'innodb_change_buffer_max_size': 43, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 54048679, 'innodb_ft_total_cache_size': 942516622, 'innodb_io_capacity_max': 14954, 'innodb_log_file_size': 1009711696, 'innodb_log_files_in_group': 10, 'innodb_log_write_ahead_size': 5018, 'innodb_lru_scan_depth': 3196, 'innodb_max_dirty_pages_pct_lwm': 48, 'innodb_online_alter_log_max_size': 8271945638424445000, 'innodb_purge_batch_size': 4973, 'innodb_purge_rseg_truncate_frequency': 10, 'innodb_sort_buffer_size': 1277368, 'innodb_stats_transient_sample_pages': 50, 'innodb_sync_array_size': 184, 'innodb_thread_concurrency': 366, 'join_buffer_size': 799047048, 'key_cache_age_threshold': 21656, 'max_allowed_packet': 330778465, 'max_heap_table_size': 582555632, 'net_read_timeout': 31, 'query_cache_limit': 85407118, 'query_prealloc_size': 33622556, 'sort_buffer_size': 79184564, 'table_open_cache_instances': 63, 'tmp_table_size': 522635933, 'transaction_alloc_block_size': 118861, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:04:38,100] [autotune] Close db successfully
+[INFO] [2024-11-27 21:04:38,101] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:04:38,106] [autotune] generated config file done
+[INFO] [2024-11-27 21:04:38,131] [autotune] wait for connection
+[INFO] [2024-11-27 21:05:09,195] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:10,197] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:11,199] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:12,202] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:13,204] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:14,206] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:15,208] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:16,210] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:17,212] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:18,215] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:19,217] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:20,219] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:21,221] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:22,223] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:23,225] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:24,227] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:25,229] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:26,232] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:27,234] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:28,237] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:29,239] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:30,242] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:31,244] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:32,246] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:33,248] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:34,251] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:35,253] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:36,255] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:37,258] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:38,260] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:39,262] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:40,264] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:41,266] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:42,269] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:43,271] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:44,273] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:45,276] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:46,278] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:47,280] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:48,282] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:49,285] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:50,287] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:05:51,295] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:05:51,295] [autotune] finish 73 seconds waiting for connection
+[INFO] [2024-11-27 21:05:51,295] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:05:51,295] [autotune] mysql is up
+[INFO] [2024-11-27 21:05:51,296] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:05:56,658] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732741556.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:09:07,995] [autotune] internal metrics: [7321886.371428572, 13930902.2, 87139805242.51428, 0.0, 0.0, 5324312.714285715, 0.0, 14254088894.171429, 0.0, 869999.1714285715, 0.0, 24148.485714285714, 23298.82857142857, 917448.0, 1117370.8857142858, 100297.08571428571, 271691232.5714286, 4203025.257142857, 15032385536.0, 0.0, 0.0, 0.0, 0.0, 0.0, 35.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1301202.0, 2922701.342857143, 0.0, 0.0, 0.0, 0.0, 434767.02857142856, 8356226312.828571, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5321970.657142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:09:08,058] [DBTune-tpch_ga_40] Iteration 171, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:09:08,200] [autotune] [step 6] generate knobs: {'binlog_cache_size': 453098059, 'binlog_group_commit_sync_delay': 456535, 'binlog_row_image': 'noblob', 'connect_timeout': 27855127, 'default_week_format': 2, 'div_precision_increment': 3, 'innodb_adaptive_flushing_lwm': 25, 'innodb_adaptive_max_sleep_delay': 906829, 'innodb_buffer_pool_size': 11752982229, 'innodb_change_buffer_max_size': 33, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 69081278, 'innodb_ft_total_cache_size': 42900940, 'innodb_io_capacity_max': 20479, 'innodb_log_file_size': 450635207, 'innodb_log_files_in_group': 3, 'innodb_log_write_ahead_size': 2414, 'innodb_lru_scan_depth': 3523, 'innodb_max_dirty_pages_pct_lwm': 94, 'innodb_online_alter_log_max_size': 5962027526107310000, 'innodb_purge_batch_size': 2594, 'innodb_purge_rseg_truncate_frequency': 90, 'innodb_sort_buffer_size': 24444475, 'innodb_stats_transient_sample_pages': 98, 'innodb_sync_array_size': 986, 'innodb_thread_concurrency': 252, 'join_buffer_size': 533916582, 'key_cache_age_threshold': 9096, 'max_allowed_packet': 305845884, 'max_heap_table_size': 39622837, 'net_read_timeout': 37, 'query_cache_limit': 67468436, 'query_prealloc_size': 6917131, 'sort_buffer_size': 37422932, 'table_open_cache_instances': 59, 'tmp_table_size': 257228400, 'transaction_alloc_block_size': 19867, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 21:09:17,249] [autotune] Close db successfully
+[INFO] [2024-11-27 21:09:17,249] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:09:17,255] [autotune] generated config file done
+[INFO] [2024-11-27 21:09:17,280] [autotune] wait for connection
+[INFO] [2024-11-27 21:09:29,317] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:09:29,317] [autotune] finish 12 seconds waiting for connection
+[INFO] [2024-11-27 21:09:29,318] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:09:29,318] [autotune] mysql is up
+[INFO] [2024-11-27 21:09:29,319] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:09:34,689] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732741774.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:12:45,890] [autotune] internal metrics: [7124455.685714286, 13073305.142857144, 83014485372.34285, 3902924390.4, 23315.428571428572, 5072540.914285715, 238215.6, 11296025102.62857, 29244971.885714285, 689454.4, 1784.9714285714285, 15420.628571428571, 15976.542857142857, 720852.0, 1027948.2, 77864.2, 257087147.97142857, 4040178.0285714287, 11811160064.0, 0.0, 6114121.542857143, 0.0, 1470392.6285714286, 0.0, 28.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 11726.057142857142, 0.0, 0.0, 16384.0, 1272681.342857143, 2758779.0285714287, 0.0, 0.0, 0.0, 0.0, 485450.4857142857, 9389737597.742857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5069874.885714286, 238740.65714285715, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:12:45,917] [DBTune-tpch_ga_40] Iteration 172, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:12:46,038] [autotune] [step 7] generate knobs: {'binlog_cache_size': 1923216309, 'binlog_group_commit_sync_delay': 552893, 'binlog_row_image': 'minimal', 'connect_timeout': 21196467, 'default_week_format': 6, 'div_precision_increment': 7, 'innodb_adaptive_flushing_lwm': 51, 'innodb_adaptive_max_sleep_delay': 367783, 'innodb_buffer_pool_size': 13665554869, 'innodb_change_buffer_max_size': 32, 'innodb_change_buffering': 'deletes', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 13416255, 'innodb_ft_total_cache_size': 828855682, 'innodb_io_capacity_max': 27863, 'innodb_log_file_size': 922249835, 'innodb_log_files_in_group': 4, 'innodb_log_write_ahead_size': 4007, 'innodb_lru_scan_depth': 7311, 'innodb_max_dirty_pages_pct_lwm': 80, 'innodb_online_alter_log_max_size': 6431736867774387000, 'innodb_purge_batch_size': 481, 'innodb_purge_rseg_truncate_frequency': 121, 'innodb_sort_buffer_size': 26720087, 'innodb_stats_transient_sample_pages': 52, 'innodb_sync_array_size': 858, 'innodb_thread_concurrency': 676, 'join_buffer_size': 789432331, 'key_cache_age_threshold': 6351, 'max_allowed_packet': 581375805, 'max_heap_table_size': 747097795, 'net_read_timeout': 14, 'query_cache_limit': 23482052, 'query_prealloc_size': 131824550, 'sort_buffer_size': 69357534, 'table_open_cache_instances': 17, 'tmp_table_size': 1069719269, 'transaction_alloc_block_size': 126575, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:12:53,084] [autotune] Close db successfully
+[INFO] [2024-11-27 21:12:53,084] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:12:53,092] [autotune] generated config file done
+[INFO] [2024-11-27 21:12:53,115] [autotune] wait for connection
+[INFO] [2024-11-27 21:13:21,170] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:13:21,171] [autotune] finish 28 seconds waiting for connection
+[INFO] [2024-11-27 21:13:21,171] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:13:21,171] [autotune] mysql is up
+[INFO] [2024-11-27 21:13:21,171] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:13:26,497] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732742006.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:16:37,601] [autotune] internal metrics: [7837742.2, 14529599.42857143, 91034826927.54286, 0.0, 0.0, 5562431.057142857, 0.0, 13456583650.742857, 0.0, 821324.7142857143, 0.0, 8095.285714285715, 22444.085714285713, 851864.0, 1186167.1714285715, 127910.22857142857, 276698740.6571429, 4371889.285714285, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 29.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1373079.6285714286, 3047779.942857143, 0.0, 0.0, 0.0, 0.0, 456801.02857142856, 8810636846.257143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5560043.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:16:37,665] [DBTune-tpch_ga_40] Iteration 173, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:16:37,876] [autotune] [step 8] generate knobs: {'binlog_cache_size': 3069163772, 'binlog_group_commit_sync_delay': 41067, 'binlog_row_image': 'noblob', 'connect_timeout': 13671511, 'default_week_format': 5, 'div_precision_increment': 7, 'innodb_adaptive_flushing_lwm': 13, 'innodb_adaptive_max_sleep_delay': 80873, 'innodb_buffer_pool_size': 12582331929, 'innodb_change_buffer_max_size': 35, 'innodb_change_buffering': 'deletes', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 13864664, 'innodb_ft_total_cache_size': 424380864, 'innodb_io_capacity_max': 22014, 'innodb_log_file_size': 768488601, 'innodb_log_files_in_group': 7, 'innodb_log_write_ahead_size': 4955, 'innodb_lru_scan_depth': 9783, 'innodb_max_dirty_pages_pct_lwm': 73, 'innodb_online_alter_log_max_size': 10226002900462084000, 'innodb_purge_batch_size': 3059, 'innodb_purge_rseg_truncate_frequency': 54, 'innodb_sort_buffer_size': 16674246, 'innodb_stats_transient_sample_pages': 36, 'innodb_sync_array_size': 777, 'innodb_thread_concurrency': 14, 'join_buffer_size': 124632161, 'key_cache_age_threshold': 1475, 'max_allowed_packet': 43733200, 'max_heap_table_size': 918546176, 'net_read_timeout': 43, 'query_cache_limit': 63642534, 'query_prealloc_size': 13138469, 'sort_buffer_size': 66000225, 'table_open_cache_instances': 31, 'tmp_table_size': 185974938, 'transaction_alloc_block_size': 57445, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:16:43,917] [autotune] Close db successfully
+[INFO] [2024-11-27 21:16:43,918] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:16:43,924] [autotune] generated config file done
+[INFO] [2024-11-27 21:16:43,945] [autotune] wait for connection
+[INFO] [2024-11-27 21:17:15,009] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:16,011] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:17,014] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:18,016] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:19,018] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:20,020] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:21,022] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:22,025] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:23,027] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:24,029] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:25,031] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:26,033] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:27,036] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:28,038] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:29,040] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:30,042] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:31,045] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:32,047] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:33,049] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:17:34,059] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:17:34,060] [autotune] finish 50 seconds waiting for connection
+[INFO] [2024-11-27 21:17:34,060] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:17:34,061] [autotune] mysql is up
+[INFO] [2024-11-27 21:17:34,061] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:17:39,868] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732742259.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:20:59,597] [autotune] internal metrics: [4378520.514285714, 14315160.57142857, 122665211377.37143, 0.0, 0.0, 7497752.914285715, 0.0, 12256540379.428572, 0.0, 748079.7714285714, 0.0, 11938.0, 26414.22857142857, 786432.0, 1589932.1714285715, 211398.25714285715, 263836708.25714287, 5901098.828571429, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 31.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 693675.4, 1605466.3714285714, 0.0, 0.0, 0.0, 0.0, 289274.28571428574, 5537926663.942857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7493410.514285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:20:59,636] [DBTune-tpch_ga_40] Iteration 174, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:20:59,781] [autotune] [step 9] generate knobs: {'binlog_cache_size': 3867266517, 'binlog_group_commit_sync_delay': 633102, 'binlog_row_image': 'full', 'connect_timeout': 8794488, 'default_week_format': 5, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 60, 'innodb_adaptive_max_sleep_delay': 404508, 'innodb_buffer_pool_size': 15022106251, 'innodb_change_buffer_max_size': 43, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 54048679, 'innodb_ft_total_cache_size': 942516622, 'innodb_io_capacity_max': 14954, 'innodb_log_file_size': 1009711696, 'innodb_log_files_in_group': 10, 'innodb_log_write_ahead_size': 5018, 'innodb_lru_scan_depth': 3196, 'innodb_max_dirty_pages_pct_lwm': 48, 'innodb_online_alter_log_max_size': 8271945638424445000, 'innodb_purge_batch_size': 4973, 'innodb_purge_rseg_truncate_frequency': 23, 'innodb_sort_buffer_size': 1277368, 'innodb_stats_transient_sample_pages': 50, 'innodb_sync_array_size': 184, 'innodb_thread_concurrency': 366, 'join_buffer_size': 799047048, 'key_cache_age_threshold': 18748, 'max_allowed_packet': 330778465, 'max_heap_table_size': 582555632, 'net_read_timeout': 31, 'query_cache_limit': 85407118, 'query_prealloc_size': 33622556, 'sort_buffer_size': 79184564, 'table_open_cache_instances': 63, 'tmp_table_size': 522635933, 'transaction_alloc_block_size': 118861, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:21:06,839] [autotune] Close db successfully
+[INFO] [2024-11-27 21:21:06,840] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:21:06,847] [autotune] generated config file done
+[INFO] [2024-11-27 21:21:06,869] [autotune] wait for connection
+[INFO] [2024-11-27 21:21:37,942] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:38,945] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:39,947] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:40,949] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:41,952] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:42,954] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:43,956] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:44,960] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:45,963] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:46,965] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:47,967] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:48,969] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:49,971] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:50,974] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:51,976] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:52,978] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:53,980] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:54,982] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:55,985] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:56,987] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:57,989] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:58,991] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:21:59,993] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:00,996] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:01,998] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:03,002] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:04,005] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:05,007] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:06,009] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:07,011] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:08,013] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:09,015] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:10,017] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:11,020] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:12,022] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:13,025] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:14,027] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:15,029] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:16,031] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:17,034] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:18,036] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:19,038] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:20,040] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:21,043] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:22,045] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:23,048] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:24,050] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:25,052] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:26,054] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:27,056] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:28,059] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:29,061] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:30,065] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:31,068] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:32,070] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:33,072] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:34,074] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:35,077] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:22:36,086] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:22:36,087] [autotune] finish 89 seconds waiting for connection
+[INFO] [2024-11-27 21:22:36,087] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:22:36,088] [autotune] mysql is up
+[INFO] [2024-11-27 21:22:36,088] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:22:41,634] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732742561.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:25:52,676] [autotune] internal metrics: [6985630.314285714, 14267712.228571428, 93308211317.02856, 0.0, 0.0, 5701600.114285714, 0.0, 14200266517.942858, 0.0, 866715.4857142858, 0.0, 27106.342857142856, 23570.22857142857, 917392.0, 1157875.2, 114430.25714285714, 274374135.9142857, 4539122.285714285, 15032385536.0, 0.0, 0.0, 0.0, 0.0, 0.0, 35.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1265159.6857142858, 2983781.4571428574, 0.0, 0.0, 0.0, 0.0, 427386.0, 8218411495.685715, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5698888.742857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:25:52,722] [DBTune-tpch_ga_40] Iteration 175, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:25:52,899] [autotune] [step 10] generate knobs: {'binlog_cache_size': 3069163772, 'binlog_group_commit_sync_delay': 41067, 'binlog_row_image': 'noblob', 'connect_timeout': 13671511, 'default_week_format': 5, 'div_precision_increment': 7, 'innodb_adaptive_flushing_lwm': 25, 'innodb_adaptive_max_sleep_delay': 80873, 'innodb_buffer_pool_size': 12582331929, 'innodb_change_buffer_max_size': 35, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 13864664, 'innodb_ft_total_cache_size': 424380864, 'innodb_io_capacity_max': 22014, 'innodb_log_file_size': 768488601, 'innodb_log_files_in_group': 7, 'innodb_log_write_ahead_size': 4955, 'innodb_lru_scan_depth': 9783, 'innodb_max_dirty_pages_pct_lwm': 73, 'innodb_online_alter_log_max_size': 10226002900462084000, 'innodb_purge_batch_size': 3059, 'innodb_purge_rseg_truncate_frequency': 54, 'innodb_sort_buffer_size': 16674246, 'innodb_stats_transient_sample_pages': 36, 'innodb_sync_array_size': 777, 'innodb_thread_concurrency': 14, 'join_buffer_size': 124632161, 'key_cache_age_threshold': 1475, 'max_allowed_packet': 43733200, 'max_heap_table_size': 918546176, 'net_read_timeout': 43, 'query_cache_limit': 63642534, 'query_prealloc_size': 13138469, 'sort_buffer_size': 66000225, 'table_open_cache_instances': 31, 'tmp_table_size': 185974938, 'transaction_alloc_block_size': 57445, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:26:00,948] [autotune] Close db successfully
+[INFO] [2024-11-27 21:26:00,950] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:26:00,958] [autotune] generated config file done
+[INFO] [2024-11-27 21:26:00,982] [autotune] wait for connection
+[INFO] [2024-11-27 21:26:32,056] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:33,059] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:34,062] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:35,064] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:36,066] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:37,068] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:38,071] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:39,075] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:40,078] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:41,080] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:42,082] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:43,085] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:44,087] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:26:45,095] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:26:45,095] [autotune] finish 44 seconds waiting for connection
+[INFO] [2024-11-27 21:26:45,096] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:26:45,096] [autotune] mysql is up
+[INFO] [2024-11-27 21:26:45,097] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:26:50,483] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732742810.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:30:01,190] [autotune] internal metrics: [6504669.428571428, 17910512.028571427, 122491384159.08571, 0.0, 0.0, 7486915.314285714, 0.0, 12224838743.77143, 0.0, 746144.8571428572, 0.0, 16259.771428571428, 23931.371428571427, 786336.0, 1634803.857142857, 233372.45714285714, 289554508.51428574, 5845555.8, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 32.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 712208.8, 1633870.0571428572, 0.0, 0.0, 0.0, 0.0, 372944.34285714285, 7155973974.914286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7482584.085714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:30:01,202] [DBTune-tpch_ga_40] Iteration 176, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:30:01,289] [autotune] [step 11] generate knobs: {'binlog_cache_size': 1544005361, 'binlog_group_commit_sync_delay': 293592, 'binlog_row_image': 'noblob', 'connect_timeout': 13238210, 'default_week_format': 2, 'div_precision_increment': 18, 'innodb_adaptive_flushing_lwm': 5, 'innodb_adaptive_max_sleep_delay': 5184, 'innodb_buffer_pool_size': 13642129628, 'innodb_change_buffer_max_size': 9, 'innodb_change_buffering': 'all', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71376419, 'innodb_ft_total_cache_size': 561976406, 'innodb_io_capacity_max': 15086, 'innodb_log_file_size': 104712454, 'innodb_log_files_in_group': 7, 'innodb_log_write_ahead_size': 1082, 'innodb_lru_scan_depth': 4821, 'innodb_max_dirty_pages_pct_lwm': 54, 'innodb_online_alter_log_max_size': 5285740515634871000, 'innodb_purge_batch_size': 2955, 'innodb_purge_rseg_truncate_frequency': 6, 'innodb_sort_buffer_size': 2569482, 'innodb_stats_transient_sample_pages': 83, 'innodb_sync_array_size': 369, 'innodb_thread_concurrency': 127, 'join_buffer_size': 560754492, 'key_cache_age_threshold': 23123, 'max_allowed_packet': 231736866, 'max_heap_table_size': 668829734, 'net_read_timeout': 6, 'query_cache_limit': 6936603, 'query_prealloc_size': 71321051, 'sort_buffer_size': 72577870, 'table_open_cache_instances': 41, 'tmp_table_size': 779634914, 'transaction_alloc_block_size': 127932, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 21:30:12,332] [autotune] Close db successfully
+[INFO] [2024-11-27 21:30:12,332] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:30:12,339] [autotune] generated config file done
+[INFO] [2024-11-27 21:30:12,363] [autotune] wait for connection
+[INFO] [2024-11-27 21:30:20,388] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:30:20,389] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-11-27 21:30:20,389] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:30:20,389] [autotune] mysql is up
+[INFO] [2024-11-27 21:30:20,390] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:30:25,808] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732743025.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:33:37,152] [autotune] internal metrics: [7757470.885714286, 15666468.4, 104228533511.31429, 0.0, 0.0, 6369530.628571428, 0.0, 13347133849.6, 0.0, 814644.1714285715, 0.0, 15431.742857142857, 21787.628571428573, 851864.0, 1302151.5714285714, 136379.48571428572, 292050476.4, 5061759.828571429, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 32.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1281592.857142857, 3032404.7714285715, 0.0, 0.0, 0.0, 0.0, 412441.9142857143, 7951685449.228572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6366458.485714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:33:37,209] [DBTune-tpch_ga_40] Iteration 177, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:33:37,405] [autotune] [step 12] generate knobs: {'binlog_cache_size': 3069163772, 'binlog_group_commit_sync_delay': 41067, 'binlog_row_image': 'minimal', 'connect_timeout': 13671511, 'default_week_format': 5, 'div_precision_increment': 7, 'innodb_adaptive_flushing_lwm': 13, 'innodb_adaptive_max_sleep_delay': 80873, 'innodb_buffer_pool_size': 12582331929, 'innodb_change_buffer_max_size': 35, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 13864664, 'innodb_ft_total_cache_size': 424380864, 'innodb_io_capacity_max': 22014, 'innodb_log_file_size': 768488601, 'innodb_log_files_in_group': 7, 'innodb_log_write_ahead_size': 4955, 'innodb_lru_scan_depth': 9783, 'innodb_max_dirty_pages_pct_lwm': 73, 'innodb_online_alter_log_max_size': 10226002900462084000, 'innodb_purge_batch_size': 3059, 'innodb_purge_rseg_truncate_frequency': 54, 'innodb_sort_buffer_size': 16674246, 'innodb_stats_transient_sample_pages': 36, 'innodb_sync_array_size': 777, 'innodb_thread_concurrency': 14, 'join_buffer_size': 124632161, 'key_cache_age_threshold': 1475, 'max_allowed_packet': 43733200, 'max_heap_table_size': 918546176, 'net_read_timeout': 43, 'query_cache_limit': 63642534, 'query_prealloc_size': 13138469, 'sort_buffer_size': 66000225, 'table_open_cache_instances': 31, 'tmp_table_size': 185974938, 'transaction_alloc_block_size': 57445, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:33:43,448] [autotune] Close db successfully
+[INFO] [2024-11-27 21:33:43,449] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:33:43,455] [autotune] generated config file done
+[INFO] [2024-11-27 21:33:43,479] [autotune] wait for connection
+[INFO] [2024-11-27 21:34:14,543] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:15,545] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:16,547] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:17,550] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:18,552] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:19,554] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:20,556] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:21,558] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:22,560] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:23,563] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:24,566] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:25,568] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:26,570] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:27,572] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:28,574] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:29,576] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:34:30,586] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:34:30,586] [autotune] finish 47 seconds waiting for connection
+[INFO] [2024-11-27 21:34:30,586] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:34:30,587] [autotune] mysql is up
+[INFO] [2024-11-27 21:34:30,587] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:34:35,988] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732743275.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:37:47,135] [autotune] internal metrics: [6442355.857142857, 13253418.142857144, 71283855945.14285, 0.0, 0.0, 4354329.114285714, 0.0, 12132409578.057142, 0.0, 740503.5428571429, 0.0, 20387.571428571428, 25444.77142857143, 786336.0, 953137.7428571428, 51753.28571428572, 255901327.1142857, 3398924.8857142855, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 30.97142857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 781844.9142857143, 1694946.8857142858, 0.0, 0.0, 0.0, 0.0, 372498.14285714284, 7130820467.828571, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4352980.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:37:47,161] [DBTune-tpch_ga_40] Iteration 178, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:37:47,300] [autotune] [step 13] generate knobs: {'binlog_cache_size': 362328550, 'binlog_group_commit_sync_delay': 949146, 'binlog_row_image': 'minimal', 'connect_timeout': 8227543, 'default_week_format': 0, 'div_precision_increment': 28, 'innodb_adaptive_flushing_lwm': 35, 'innodb_adaptive_max_sleep_delay': 539377, 'innodb_buffer_pool_size': 13939865827, 'innodb_change_buffer_max_size': 31, 'innodb_change_buffering': 'inserts', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '2', 'innodb_ft_cache_size': 64394425, 'innodb_ft_total_cache_size': 1093799961, 'innodb_io_capacity_max': 22977, 'innodb_log_file_size': 141631538, 'innodb_log_files_in_group': 9, 'innodb_log_write_ahead_size': 13538, 'innodb_lru_scan_depth': 6447, 'innodb_max_dirty_pages_pct_lwm': 82, 'innodb_online_alter_log_max_size': 12017744141029080000, 'innodb_purge_batch_size': 1034, 'innodb_purge_rseg_truncate_frequency': 36, 'innodb_sort_buffer_size': 14452304, 'innodb_stats_transient_sample_pages': 38, 'innodb_sync_array_size': 40, 'innodb_thread_concurrency': 618, 'join_buffer_size': 361372421, 'key_cache_age_threshold': 19706, 'max_allowed_packet': 413817100, 'max_heap_table_size': 731882321, 'net_read_timeout': 21, 'query_cache_limit': 34989827, 'query_prealloc_size': 66581149, 'sort_buffer_size': 93008233, 'table_open_cache_instances': 23, 'tmp_table_size': 1005718360, 'transaction_alloc_block_size': 6120, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:37:53,339] [autotune] Close db successfully
+[INFO] [2024-11-27 21:37:53,340] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:37:53,345] [autotune] generated config file done
+[INFO] [2024-11-27 21:37:53,369] [autotune] wait for connection
+[INFO] [2024-11-27 21:38:06,408] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:38:06,409] [autotune] finish 13 seconds waiting for connection
+[INFO] [2024-11-27 21:38:06,409] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:38:06,409] [autotune] mysql is up
+[INFO] [2024-11-27 21:38:06,409] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:38:11,865] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732743491.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:41:23,372] [autotune] internal metrics: [7742036.571428572, 13985962.228571428, 86138541085.25714, 0.0, 0.0, 5263096.571428572, 0.0, 13279977237.942858, 0.0, 810545.3428571429, 0.0, 19084.685714285715, 22246.685714285715, 851877.0, 1139163.0571428572, 114576.14285714286, 269993918.0, 4120075.4285714286, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 34.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1400638.8857142858, 3032423.8285714285, 0.0, 0.0, 0.0, 0.0, 502858.2, 9664872634.114286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5260791.314285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:41:23,417] [DBTune-tpch_ga_40] Iteration 179, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:41:23,540] [autotune] [step 14] generate knobs: {'binlog_cache_size': 3312581853, 'binlog_group_commit_sync_delay': 74044, 'binlog_row_image': 'noblob', 'connect_timeout': 20532366, 'default_week_format': 7, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 31, 'innodb_adaptive_max_sleep_delay': 95410, 'innodb_buffer_pool_size': 12277018857, 'innodb_change_buffer_max_size': 34, 'innodb_change_buffering': 'purges', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71157479, 'innodb_ft_total_cache_size': 772433003, 'innodb_io_capacity_max': 4871, 'innodb_log_file_size': 767043498, 'innodb_log_files_in_group': 8, 'innodb_log_write_ahead_size': 9421, 'innodb_lru_scan_depth': 7918, 'innodb_max_dirty_pages_pct_lwm': 49, 'innodb_online_alter_log_max_size': 9642695683760860000, 'innodb_purge_batch_size': 2138, 'innodb_purge_rseg_truncate_frequency': 4, 'innodb_sort_buffer_size': 7298936, 'innodb_stats_transient_sample_pages': 4, 'innodb_sync_array_size': 652, 'innodb_thread_concurrency': 314, 'join_buffer_size': 546073684, 'key_cache_age_threshold': 22855, 'max_allowed_packet': 267676261, 'max_heap_table_size': 440654969, 'net_read_timeout': 46, 'query_cache_limit': 30708770, 'query_prealloc_size': 10339630, 'sort_buffer_size': 38913055, 'table_open_cache_instances': 11, 'tmp_table_size': 998255325, 'transaction_alloc_block_size': 106119, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:41:29,584] [autotune] Close db successfully
+[INFO] [2024-11-27 21:41:29,585] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:41:29,591] [autotune] generated config file done
+[INFO] [2024-11-27 21:41:29,613] [autotune] wait for connection
+[INFO] [2024-11-27 21:42:00,685] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:01,688] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:02,690] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:03,694] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:04,697] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:05,699] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:06,701] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:07,704] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:08,706] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:09,709] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:10,711] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:11,713] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:12,716] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:13,718] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:14,720] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:15,724] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:16,726] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:17,728] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:18,730] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:19,732] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:20,735] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:21,737] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:22,740] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:23,742] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:24,744] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:25,746] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:26,748] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:27,750] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:28,752] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:29,754] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:42:30,765] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:42:30,765] [autotune] finish 61 seconds waiting for connection
+[INFO] [2024-11-27 21:42:30,766] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:42:30,766] [autotune] mysql is up
+[INFO] [2024-11-27 21:42:30,767] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:42:36,207] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732743756.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:45:47,554] [autotune] internal metrics: [7066465.457142857, 14054268.285714285, 95338614432.91429, 0.0, 0.0, 5825683.8, 0.0, 12239208916.114286, 0.0, 747021.7142857143, 0.0, 17268.657142857144, 22045.285714285714, 786336.0, 1260418.4, 133143.7142857143, 276203961.37142855, 4560616.114285714, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 33.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1269129.4857142856, 2920666.8285714285, 0.0, 0.0, 0.0, 0.0, 432022.8, 8310892979.657143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5822597.857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:45:47,575] [DBTune-tpch_ga_40] Iteration 180, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:45:47,716] [autotune] [step 15] generate knobs: {'binlog_cache_size': 1923216309, 'binlog_group_commit_sync_delay': 552893, 'binlog_row_image': 'noblob', 'connect_timeout': 21196467, 'default_week_format': 6, 'div_precision_increment': 7, 'innodb_adaptive_flushing_lwm': 51, 'innodb_adaptive_max_sleep_delay': 367783, 'innodb_buffer_pool_size': 13665554869, 'innodb_change_buffer_max_size': 32, 'innodb_change_buffering': 'deletes', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 13416255, 'innodb_ft_total_cache_size': 828855682, 'innodb_io_capacity_max': 27863, 'innodb_log_file_size': 922249835, 'innodb_log_files_in_group': 4, 'innodb_log_write_ahead_size': 4007, 'innodb_lru_scan_depth': 7311, 'innodb_max_dirty_pages_pct_lwm': 80, 'innodb_online_alter_log_max_size': 6431736867774387000, 'innodb_purge_batch_size': 481, 'innodb_purge_rseg_truncate_frequency': 121, 'innodb_sort_buffer_size': 26720087, 'innodb_stats_transient_sample_pages': 52, 'innodb_sync_array_size': 858, 'innodb_thread_concurrency': 676, 'join_buffer_size': 789432331, 'key_cache_age_threshold': 5710, 'max_allowed_packet': 581375805, 'max_heap_table_size': 747097795, 'net_read_timeout': 14, 'query_cache_limit': 23482052, 'query_prealloc_size': 131824550, 'sort_buffer_size': 69357534, 'table_open_cache_instances': 17, 'tmp_table_size': 1069719269, 'transaction_alloc_block_size': 126575, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:45:54,760] [autotune] Close db successfully
+[INFO] [2024-11-27 21:45:54,762] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:45:54,770] [autotune] generated config file done
+[INFO] [2024-11-27 21:45:54,794] [autotune] wait for connection
+[INFO] [2024-11-27 21:46:25,863] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:46:26,866] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:46:27,869] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:46:28,877] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:46:28,878] [autotune] finish 34 seconds waiting for connection
+[INFO] [2024-11-27 21:46:28,878] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:46:28,879] [autotune] mysql is up
+[INFO] [2024-11-27 21:46:28,879] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:46:34,278] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732743994.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:49:45,742] [autotune] internal metrics: [7552580.314285714, 14562326.457142858, 93668161243.42857, 0.0, 0.0, 5723340.371428572, 0.0, 13235122995.2, 0.0, 807807.6857142857, 0.0, 22608.914285714287, 21447.342857142856, 851864.0, 1201136.2285714287, 120048.82857142857, 277286096.25714284, 4517328.8, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 29.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1378072.6, 3045412.257142857, 0.0, 0.0, 0.0, 0.0, 481299.3142857143, 9258569830.542856, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5720513.342857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:49:45,808] [DBTune-tpch_ga_40] Iteration 181, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:49:45,962] [autotune] [step 16] generate knobs: {'binlog_cache_size': 991684580, 'binlog_group_commit_sync_delay': 241025, 'binlog_row_image': 'noblob', 'connect_timeout': 19236855, 'default_week_format': 6, 'div_precision_increment': 5, 'innodb_adaptive_flushing_lwm': 27, 'innodb_adaptive_max_sleep_delay': 182236, 'innodb_buffer_pool_size': 14318997395, 'innodb_change_buffer_max_size': 21, 'innodb_change_buffering': 'all', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 4054962, 'innodb_ft_total_cache_size': 1352702527, 'innodb_io_capacity_max': 18045, 'innodb_log_file_size': 426826259, 'innodb_log_files_in_group': 8, 'innodb_log_write_ahead_size': 12055, 'innodb_lru_scan_depth': 3411, 'innodb_max_dirty_pages_pct_lwm': 57, 'innodb_online_alter_log_max_size': 9607673344418392000, 'innodb_purge_batch_size': 4806, 'innodb_purge_rseg_truncate_frequency': 109, 'innodb_sort_buffer_size': 50168364, 'innodb_stats_transient_sample_pages': 54, 'innodb_sync_array_size': 601, 'innodb_thread_concurrency': 966, 'join_buffer_size': 651798111, 'key_cache_age_threshold': 8352, 'max_allowed_packet': 318121975, 'max_heap_table_size': 177467701, 'net_read_timeout': 1, 'query_cache_limit': 56827985, 'query_prealloc_size': 53005057, 'sort_buffer_size': 39414467, 'table_open_cache_instances': 1, 'tmp_table_size': 213506226, 'transaction_alloc_block_size': 93533, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:49:54,017] [autotune] Close db successfully
+[INFO] [2024-11-27 21:49:54,019] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:49:54,025] [autotune] generated config file done
+[INFO] [2024-11-27 21:49:54,052] [autotune] wait for connection
+[INFO] [2024-11-27 21:50:25,127] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:50:26,136] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:50:26,137] [autotune] finish 32 seconds waiting for connection
+[INFO] [2024-11-27 21:50:26,137] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:50:26,137] [autotune] mysql is up
+[INFO] [2024-11-27 21:50:26,138] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:50:31,754] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732744231.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:53:42,517] [autotune] internal metrics: [7452560.542857143, 12960817.4, 73977117315.65715, 496449243.4285714, 14647.714285714286, 4519586.085714285, 30300.85714285714, 14158551449.6, 4243924.114285714, 864169.4285714285, 259.0285714285714, 31466.942857142858, 21755.428571428572, 917392.0, 908816.0857142857, 71935.45714285714, 245534845.31428573, 3607476.4, 15032385536.0, 0.0, 4144245.8, 0.0, 1387706.3142857142, 0.0, 33.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 579.6, 0.0, 0.0, 16384.0, 1467521.5714285714, 2985843.5714285714, 0.0, 0.0, 0.0, 0.0, 677791.6, 13010013386.685715, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4517482.571428572, 30825.914285714287, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:53:42,536] [DBTune-tpch_ga_40] Iteration 182, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:53:42,647] [autotune] [step 17] generate knobs: {'binlog_cache_size': 3413689396, 'binlog_group_commit_sync_delay': 502637, 'binlog_row_image': 'noblob', 'connect_timeout': 15532039, 'default_week_format': 1, 'div_precision_increment': 22, 'innodb_adaptive_flushing_lwm': 19, 'innodb_adaptive_max_sleep_delay': 24315, 'innodb_buffer_pool_size': 13735470661, 'innodb_change_buffer_max_size': 9, 'innodb_change_buffering': 'changes', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 23517531, 'innodb_ft_total_cache_size': 1417318627, 'innodb_io_capacity_max': 29934, 'innodb_log_file_size': 1023549935, 'innodb_log_files_in_group': 2, 'innodb_log_write_ahead_size': 9286, 'innodb_lru_scan_depth': 5903, 'innodb_max_dirty_pages_pct_lwm': 98, 'innodb_online_alter_log_max_size': 1389889780668305000, 'innodb_purge_batch_size': 1529, 'innodb_purge_rseg_truncate_frequency': 25, 'innodb_sort_buffer_size': 18064984, 'innodb_stats_transient_sample_pages': 49, 'innodb_sync_array_size': 382, 'innodb_thread_concurrency': 395, 'join_buffer_size': 906466978, 'key_cache_age_threshold': 27908, 'max_allowed_packet': 75609696, 'max_heap_table_size': 224337726, 'net_read_timeout': 41, 'query_cache_limit': 48136756, 'query_prealloc_size': 34119377, 'sort_buffer_size': 39656324, 'table_open_cache_instances': 21, 'tmp_table_size': 911252409, 'transaction_alloc_block_size': 18791, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 21:53:49,677] [autotune] Close db successfully
+[INFO] [2024-11-27 21:53:49,678] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:53:49,684] [autotune] generated config file done
+[INFO] [2024-11-27 21:53:49,706] [autotune] wait for connection
+[INFO] [2024-11-27 21:54:09,760] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:54:09,761] [autotune] finish 20 seconds waiting for connection
+[INFO] [2024-11-27 21:54:09,761] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:54:09,762] [autotune] mysql is up
+[INFO] [2024-11-27 21:54:09,762] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:54:15,316] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732744455.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 21:57:26,043] [autotune] internal metrics: [8266722.428571428, 14728798.485714287, 89173524480.0, 532646648.6857143, 15117.57142857143, 5448883.342857143, 32510.17142857143, 13423824076.8, 1696446.1714285715, 819325.0571428571, 103.54285714285714, 10464.6, 22074.2, 851864.0, 1161149.0857142857, 136700.17142857143, 281477349.45714283, 4283309.714285715, 13958643712.0, 0.0, 4355951.6, 0.0, 1475530.1714285715, 0.0, 27.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.6285714285714286, 0.0, 0.0, 16384.0, 1284055.1714285715, 2960151.9142857143, 0.0, 0.0, 0.0, 0.0, 393313.8, 7603565022.142858, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5446526.828571429, 33035.22857142857, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 21:57:26,067] [DBTune-tpch_ga_40] Iteration 183, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 21:57:26,294] [autotune] [step 18] generate knobs: {'binlog_cache_size': 3867266517, 'binlog_group_commit_sync_delay': 633102, 'binlog_row_image': 'full', 'connect_timeout': 8794488, 'default_week_format': 5, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 60, 'innodb_adaptive_max_sleep_delay': 404508, 'innodb_buffer_pool_size': 15022106251, 'innodb_change_buffer_max_size': 24, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 54048679, 'innodb_ft_total_cache_size': 942516622, 'innodb_io_capacity_max': 14954, 'innodb_log_file_size': 1009711696, 'innodb_log_files_in_group': 10, 'innodb_log_write_ahead_size': 5018, 'innodb_lru_scan_depth': 3196, 'innodb_max_dirty_pages_pct_lwm': 48, 'innodb_online_alter_log_max_size': 8271945638424445000, 'innodb_purge_batch_size': 4973, 'innodb_purge_rseg_truncate_frequency': 23, 'innodb_sort_buffer_size': 1277368, 'innodb_stats_transient_sample_pages': 50, 'innodb_sync_array_size': 184, 'innodb_thread_concurrency': 366, 'join_buffer_size': 799047048, 'key_cache_age_threshold': 21656, 'max_allowed_packet': 330778465, 'max_heap_table_size': 582555632, 'net_read_timeout': 31, 'query_cache_limit': 85407118, 'query_prealloc_size': 33622556, 'sort_buffer_size': 79184564, 'table_open_cache_instances': 63, 'tmp_table_size': 522635933, 'transaction_alloc_block_size': 118861, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 21:57:32,330] [autotune] Close db successfully
+[INFO] [2024-11-27 21:57:32,331] [autotune] mysql is shut down
+[INFO] [2024-11-27 21:57:32,340] [autotune] generated config file done
+[INFO] [2024-11-27 21:57:32,360] [autotune] wait for connection
+[INFO] [2024-11-27 21:58:03,436] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:04,439] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:05,441] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:06,444] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:07,447] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:08,449] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:09,451] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:10,454] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:11,457] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:12,459] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:13,462] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:14,464] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:15,466] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:16,469] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:17,472] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:18,474] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:19,476] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:20,479] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:21,481] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:22,484] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:23,487] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:24,489] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:25,492] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:26,494] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:27,496] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:28,500] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:29,502] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:30,504] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:31,507] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:32,509] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:33,511] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:34,513] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:35,515] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:36,517] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:37,520] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:38,523] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:39,525] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:40,529] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:41,531] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:42,534] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:43,536] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:44,537] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:45,540] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:46,544] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:47,546] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:48,548] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:49,550] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:50,553] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:51,555] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:52,558] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:53,561] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:54,563] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:55,566] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:56,569] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:57,571] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:58,573] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:58:59,575] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:59:00,578] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:59:01,580] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:59:02,582] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:59:03,584] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:59:04,587] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:59:05,589] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 21:59:06,599] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 21:59:06,600] [autotune] finish 94 seconds waiting for connection
+[INFO] [2024-11-27 21:59:06,600] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 21:59:06,600] [autotune] mysql is up
+[INFO] [2024-11-27 21:59:06,601] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 21:59:11,880] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732744751.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:02:22,720] [autotune] internal metrics: [7783475.342857143, 14655030.257142857, 92148763852.8, 0.0, 0.0, 5630690.457142857, 0.0, 14255251221.942858, 0.0, 870071.4285714285, 0.0, 25444.542857142857, 21875.742857142857, 917392.0, 1203258.8, 124231.54285714286, 282623764.0857143, 4423266.028571429, 15032385536.0, 0.0, 0.0, 0.0, 0.0, 0.0, 35.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1317447.2285714287, 2996505.057142857, 0.0, 0.0, 0.0, 0.0, 435278.9428571428, 8368404870.657143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5627993.542857143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:02:22,790] [DBTune-tpch_ga_40] Iteration 184, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:02:22,971] [autotune] [step 19] generate knobs: {'binlog_cache_size': 453098059, 'binlog_group_commit_sync_delay': 456535, 'binlog_row_image': 'minimal', 'connect_timeout': 27855127, 'default_week_format': 2, 'div_precision_increment': 3, 'innodb_adaptive_flushing_lwm': 25, 'innodb_adaptive_max_sleep_delay': 906829, 'innodb_buffer_pool_size': 11752982229, 'innodb_change_buffer_max_size': 33, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 69081278, 'innodb_ft_total_cache_size': 42900940, 'innodb_io_capacity_max': 20479, 'innodb_log_file_size': 450635207, 'innodb_log_files_in_group': 3, 'innodb_log_write_ahead_size': 2414, 'innodb_lru_scan_depth': 3523, 'innodb_max_dirty_pages_pct_lwm': 94, 'innodb_online_alter_log_max_size': 5962027526107310000, 'innodb_purge_batch_size': 2594, 'innodb_purge_rseg_truncate_frequency': 90, 'innodb_sort_buffer_size': 24444475, 'innodb_stats_transient_sample_pages': 98, 'innodb_sync_array_size': 986, 'innodb_thread_concurrency': 252, 'join_buffer_size': 533916582, 'key_cache_age_threshold': 8455, 'max_allowed_packet': 305845884, 'max_heap_table_size': 39622837, 'net_read_timeout': 37, 'query_cache_limit': 67468436, 'query_prealloc_size': 6917131, 'sort_buffer_size': 37422932, 'table_open_cache_instances': 59, 'tmp_table_size': 257228400, 'transaction_alloc_block_size': 19867, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 22:02:31,015] [autotune] Close db successfully
+[INFO] [2024-11-27 22:02:31,016] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:02:31,023] [autotune] generated config file done
+[INFO] [2024-11-27 22:02:31,045] [autotune] wait for connection
+[INFO] [2024-11-27 22:02:46,087] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:02:46,088] [autotune] finish 15 seconds waiting for connection
+[INFO] [2024-11-27 22:02:46,088] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:02:46,089] [autotune] mysql is up
+[INFO] [2024-11-27 22:02:46,089] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:02:51,471] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732744971.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:06:02,540] [autotune] internal metrics: [7046573.085714285, 12733359.228571428, 82380793914.51428, 3686202923.885714, 22821.914285714287, 5034092.142857143, 224987.9714285714, 11350429813.028572, 28949123.65714286, 692775.1428571428, 1766.9142857142858, 11744.942857142858, 16287.714285714286, 720808.0, 1061697.7428571428, 74297.88571428572, 258260213.68571427, 3968253.742857143, 11811160064.0, 0.0, 5974540.457142857, 0.0, 1469558.7142857143, 0.0, 28.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10856.0, 0.0, 0.0, 16384.0, 1241121.4, 2635005.5142857144, 0.0, 0.0, 0.0, 0.0, 537010.5714285715, 10395241041.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5031731.028571429, 225513.0285714286, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:06:02,554] [DBTune-tpch_ga_40] Iteration 185, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:06:02,648] [autotune] [step 20] generate knobs: {'binlog_cache_size': 991684580, 'binlog_group_commit_sync_delay': 241025, 'binlog_row_image': 'noblob', 'connect_timeout': 19236855, 'default_week_format': 6, 'div_precision_increment': 0, 'innodb_adaptive_flushing_lwm': 27, 'innodb_adaptive_max_sleep_delay': 182236, 'innodb_buffer_pool_size': 14318997395, 'innodb_change_buffer_max_size': 21, 'innodb_change_buffering': 'all', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 4054962, 'innodb_ft_total_cache_size': 1352702527, 'innodb_io_capacity_max': 18045, 'innodb_log_file_size': 426826259, 'innodb_log_files_in_group': 10, 'innodb_log_write_ahead_size': 12055, 'innodb_lru_scan_depth': 3411, 'innodb_max_dirty_pages_pct_lwm': 57, 'innodb_online_alter_log_max_size': 9607673344418392000, 'innodb_purge_batch_size': 4806, 'innodb_purge_rseg_truncate_frequency': 109, 'innodb_sort_buffer_size': 50168364, 'innodb_stats_transient_sample_pages': 54, 'innodb_sync_array_size': 601, 'innodb_thread_concurrency': 966, 'join_buffer_size': 651798111, 'key_cache_age_threshold': 8352, 'max_allowed_packet': 318121975, 'max_heap_table_size': 177467701, 'net_read_timeout': 1, 'query_cache_limit': 56827985, 'query_prealloc_size': 53005057, 'sort_buffer_size': 39414467, 'table_open_cache_instances': 1, 'tmp_table_size': 213506226, 'transaction_alloc_block_size': 93533, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:06:08,682] [autotune] Close db successfully
+[INFO] [2024-11-27 22:06:08,683] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:06:08,689] [autotune] generated config file done
+[INFO] [2024-11-27 22:06:08,714] [autotune] wait for connection
+[INFO] [2024-11-27 22:06:39,789] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:06:40,791] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:06:41,794] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:06:42,796] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:06:43,799] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:06:44,809] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:06:44,809] [autotune] finish 36 seconds waiting for connection
+[INFO] [2024-11-27 22:06:44,809] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:06:44,810] [autotune] mysql is up
+[INFO] [2024-11-27 22:06:44,810] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:06:50,226] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732745210.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:10:02,490] [autotune] internal metrics: [7376962.171428571, 13498793.971428571, 82354092675.65715, 612125900.8, 15771.42857142857, 5031664.657142857, 37361.2, 14553275713.828571, 4005185.8285714285, 888261.4571428571, 244.45714285714286, 8055.571428571428, 21131.02857142857, 917448.0, 1089841.2, 99584.74285714286, 268450012.7714286, 3938027.8, 15032385536.0, 0.0, 4807964.028571429, 0.0, 1586047.8, 0.0, 35.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1206.5142857142857, 0.0, 0.0, 16384.0, 1364099.1142857142, 2958888.8857142855, 0.0, 0.0, 0.0, 0.0, 481331.5142857143, 9301537805.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5029540.771428571, 37886.25714285715, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:10:02,530] [DBTune-tpch_ga_40] Iteration 186, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:10:02,808] [autotune] [step 21] generate knobs: {'binlog_cache_size': 3468495124, 'binlog_group_commit_sync_delay': 74044, 'binlog_row_image': 'noblob', 'connect_timeout': 20532366, 'default_week_format': 7, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 31, 'innodb_adaptive_max_sleep_delay': 95410, 'innodb_buffer_pool_size': 12277018857, 'innodb_change_buffer_max_size': 34, 'innodb_change_buffering': 'purges', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71157479, 'innodb_ft_total_cache_size': 772433003, 'innodb_io_capacity_max': 4871, 'innodb_log_file_size': 767043498, 'innodb_log_files_in_group': 8, 'innodb_log_write_ahead_size': 9421, 'innodb_lru_scan_depth': 7918, 'innodb_max_dirty_pages_pct_lwm': 49, 'innodb_online_alter_log_max_size': 9642695683760860000, 'innodb_purge_batch_size': 2138, 'innodb_purge_rseg_truncate_frequency': 4, 'innodb_sort_buffer_size': 7298936, 'innodb_stats_transient_sample_pages': 4, 'innodb_sync_array_size': 652, 'innodb_thread_concurrency': 314, 'join_buffer_size': 546073684, 'key_cache_age_threshold': 27237, 'max_allowed_packet': 267676261, 'max_heap_table_size': 440654969, 'net_read_timeout': 46, 'query_cache_limit': 30708770, 'query_prealloc_size': 10339630, 'sort_buffer_size': 38913055, 'table_open_cache_instances': 11, 'tmp_table_size': 998255325, 'transaction_alloc_block_size': 106119, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:10:09,847] [autotune] Close db successfully
+[INFO] [2024-11-27 22:10:09,848] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:10:09,855] [autotune] generated config file done
+[INFO] [2024-11-27 22:10:09,878] [autotune] wait for connection
+[INFO] [2024-11-27 22:10:40,956] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:41,960] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:42,962] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:43,965] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:44,969] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:45,971] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:46,973] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:47,975] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:48,978] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:49,980] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:50,982] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:51,984] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:52,986] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:53,989] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:54,991] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:55,993] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:56,996] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:57,998] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:10:59,001] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:11:00,004] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:11:01,006] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:11:02,008] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:11:03,010] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:11:04,012] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:11:05,014] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:11:06,026] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:11:06,027] [autotune] finish 56 seconds waiting for connection
+[INFO] [2024-11-27 22:11:06,027] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:11:06,027] [autotune] mysql is up
+[INFO] [2024-11-27 22:11:06,028] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:11:11,459] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732745471.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:14:22,495] [autotune] internal metrics: [7132888.8, 14558478.885714285, 99594673473.82857, 0.0, 0.0, 6085827.6, 0.0, 12465659669.942858, 0.0, 760843.5142857142, 0.0, 2479.4857142857145, 23108.942857142858, 786432.0, 1263652.857142857, 160944.8, 278039981.71428573, 4817102.257142857, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 33.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1225271.7714285713, 2920271.8857142855, 0.0, 0.0, 0.0, 0.0, 397402.54285714286, 7676133562.171429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6083018.314285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:14:22,517] [DBTune-tpch_ga_40] Iteration 187, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:14:22,608] [autotune] [step 22] generate knobs: {'binlog_cache_size': 3312581853, 'binlog_group_commit_sync_delay': 74044, 'binlog_row_image': 'noblob', 'connect_timeout': 20532366, 'default_week_format': 7, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 13, 'innodb_adaptive_max_sleep_delay': 95410, 'innodb_buffer_pool_size': 12277018857, 'innodb_change_buffer_max_size': 34, 'innodb_change_buffering': 'purges', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71157479, 'innodb_ft_total_cache_size': 772433003, 'innodb_io_capacity_max': 4871, 'innodb_log_file_size': 767043498, 'innodb_log_files_in_group': 8, 'innodb_log_write_ahead_size': 9421, 'innodb_lru_scan_depth': 7918, 'innodb_max_dirty_pages_pct_lwm': 49, 'innodb_online_alter_log_max_size': 9642695683760860000, 'innodb_purge_batch_size': 2138, 'innodb_purge_rseg_truncate_frequency': 4, 'innodb_sort_buffer_size': 7298936, 'innodb_stats_transient_sample_pages': 4, 'innodb_sync_array_size': 652, 'innodb_thread_concurrency': 314, 'join_buffer_size': 546073684, 'key_cache_age_threshold': 27237, 'max_allowed_packet': 267676261, 'max_heap_table_size': 440654969, 'net_read_timeout': 46, 'query_cache_limit': 30708770, 'query_prealloc_size': 10339630, 'sort_buffer_size': 38913055, 'table_open_cache_instances': 11, 'tmp_table_size': 998255325, 'transaction_alloc_block_size': 106119, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:14:29,657] [autotune] Close db successfully
+[INFO] [2024-11-27 22:14:29,658] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:14:29,666] [autotune] generated config file done
+[INFO] [2024-11-27 22:14:29,688] [autotune] wait for connection
+[INFO] [2024-11-27 22:14:31,700] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:14:31,700] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-27 22:14:31,700] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:14:31,701] [autotune] mysql is up
+[INFO] [2024-11-27 22:14:31,701] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:14:37,020] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732745677.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:17:48,111] [autotune] internal metrics: [7411271.6, 15079472.914285714, 102652159122.28572, 0.0, 0.0, 6273058.771428571, 0.0, 12354183870.171429, 0.0, 754039.4, 0.0, 9808.8, 22487.657142857144, 786336.0, 1317459.7142857143, 150841.22857142857, 283638520.14285713, 4950163.828571429, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 33.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1247088.9142857143, 2873797.4285714286, 0.0, 0.0, 0.0, 0.0, 415567.28571428574, 8004377788.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6269924.857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:17:48,134] [DBTune-tpch_ga_40] Iteration 188, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:17:48,267] [autotune] [step 23] generate knobs: {'binlog_cache_size': 1923216309, 'binlog_group_commit_sync_delay': 221947, 'binlog_row_image': 'noblob', 'connect_timeout': 21196467, 'default_week_format': 6, 'div_precision_increment': 7, 'innodb_adaptive_flushing_lwm': 51, 'innodb_adaptive_max_sleep_delay': 367783, 'innodb_buffer_pool_size': 13665554869, 'innodb_change_buffer_max_size': 32, 'innodb_change_buffering': 'deletes', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 13416255, 'innodb_ft_total_cache_size': 828855682, 'innodb_io_capacity_max': 27863, 'innodb_log_file_size': 922249835, 'innodb_log_files_in_group': 4, 'innodb_log_write_ahead_size': 4007, 'innodb_lru_scan_depth': 7311, 'innodb_max_dirty_pages_pct_lwm': 80, 'innodb_online_alter_log_max_size': 6431736867774387000, 'innodb_purge_batch_size': 481, 'innodb_purge_rseg_truncate_frequency': 121, 'innodb_sort_buffer_size': 26720087, 'innodb_stats_transient_sample_pages': 52, 'innodb_sync_array_size': 858, 'innodb_thread_concurrency': 676, 'join_buffer_size': 789432331, 'key_cache_age_threshold': 6351, 'max_allowed_packet': 581375805, 'max_heap_table_size': 747097795, 'net_read_timeout': 14, 'query_cache_limit': 23482052, 'query_prealloc_size': 131824550, 'sort_buffer_size': 69357534, 'table_open_cache_instances': 17, 'tmp_table_size': 1069719269, 'transaction_alloc_block_size': 126575, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:17:55,320] [autotune] Close db successfully
+[INFO] [2024-11-27 22:17:55,323] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:17:55,329] [autotune] generated config file done
+[INFO] [2024-11-27 22:17:55,349] [autotune] wait for connection
+[INFO] [2024-11-27 22:18:26,418] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:27,421] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:28,424] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:29,426] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:30,430] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:31,433] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:32,435] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:33,437] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:34,440] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:35,442] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:18:36,451] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:18:36,452] [autotune] finish 41 seconds waiting for connection
+[INFO] [2024-11-27 22:18:36,452] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:18:36,452] [autotune] mysql is up
+[INFO] [2024-11-27 22:18:36,453] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:18:41,901] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732745921.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:21:53,666] [autotune] internal metrics: [7191785.228571429, 14878583.685714286, 100261666113.82857, 0.0, 0.0, 6126360.828571429, 0.0, 13459972798.171429, 0.0, 821531.4857142858, 0.0, 6089.457142857143, 24243.02857142857, 851864.0, 1341411.9142857143, 123444.94285714286, 293260265.2285714, 4779731.857142857, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 29.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1250314.8285714285, 2977802.7714285715, 0.0, 0.0, 0.0, 0.0, 418441.6285714286, 8072075957.257143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6123143.457142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:21:53,718] [DBTune-tpch_ga_40] Iteration 189, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:21:53,891] [autotune] [step 24] generate knobs: {'binlog_cache_size': 206415406, 'binlog_group_commit_sync_delay': 949146, 'binlog_row_image': 'minimal', 'connect_timeout': 8227543, 'default_week_format': 0, 'div_precision_increment': 28, 'innodb_adaptive_flushing_lwm': 35, 'innodb_adaptive_max_sleep_delay': 539377, 'innodb_buffer_pool_size': 13939865827, 'innodb_change_buffer_max_size': 31, 'innodb_change_buffering': 'inserts', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '2', 'innodb_ft_cache_size': 64394425, 'innodb_ft_total_cache_size': 1093799961, 'innodb_io_capacity_max': 22977, 'innodb_log_file_size': 141631538, 'innodb_log_files_in_group': 9, 'innodb_log_write_ahead_size': 13538, 'innodb_lru_scan_depth': 6447, 'innodb_max_dirty_pages_pct_lwm': 82, 'innodb_online_alter_log_max_size': 12017744141029080000, 'innodb_purge_batch_size': 1034, 'innodb_purge_rseg_truncate_frequency': 36, 'innodb_sort_buffer_size': 14452304, 'innodb_stats_transient_sample_pages': 77, 'innodb_sync_array_size': 40, 'innodb_thread_concurrency': 618, 'join_buffer_size': 361372421, 'key_cache_age_threshold': 19706, 'max_allowed_packet': 413817100, 'max_heap_table_size': 731882321, 'net_read_timeout': 21, 'query_cache_limit': 34989827, 'query_prealloc_size': 66581149, 'sort_buffer_size': 93008233, 'table_open_cache_instances': 23, 'tmp_table_size': 1005718360, 'transaction_alloc_block_size': 6120, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:21:59,942] [autotune] Close db successfully
+[INFO] [2024-11-27 22:21:59,944] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:21:59,950] [autotune] generated config file done
+[INFO] [2024-11-27 22:21:59,974] [autotune] wait for connection
+[INFO] [2024-11-27 22:22:14,018] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:22:14,019] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-11-27 22:22:14,019] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:22:14,019] [autotune] mysql is up
+[INFO] [2024-11-27 22:22:14,020] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:22:19,554] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732746139.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:25:30,430] [autotune] internal metrics: [7600507.057142857, 15950292.342857143, 109309703899.42857, 0.0, 0.0, 6680219.885714286, 0.0, 13497081621.942858, 0.0, 823796.5142857142, 0.0, 5477.6, 22693.942857142858, 851968.0, 1402817.3142857142, 143812.42857142858, 302095905.8, 5271291.8, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 34.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1268348.142857143, 2978334.4, 0.0, 0.0, 0.0, 0.0, 406237.17142857146, 7834509303.571428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6676846.114285714, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:25:30,468] [DBTune-tpch_ga_40] Iteration 190, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:25:30,681] [autotune] [step 25] generate knobs: {'binlog_cache_size': 3312581853, 'binlog_group_commit_sync_delay': 74044, 'binlog_row_image': 'minimal', 'connect_timeout': 20532366, 'default_week_format': 7, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 31, 'innodb_adaptive_max_sleep_delay': 95410, 'innodb_buffer_pool_size': 12277018857, 'innodb_change_buffer_max_size': 34, 'innodb_change_buffering': 'purges', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71157479, 'innodb_ft_total_cache_size': 772433003, 'innodb_io_capacity_max': 4871, 'innodb_log_file_size': 767043498, 'innodb_log_files_in_group': 8, 'innodb_log_write_ahead_size': 9421, 'innodb_lru_scan_depth': 7918, 'innodb_max_dirty_pages_pct_lwm': 49, 'innodb_online_alter_log_max_size': 9642695683760860000, 'innodb_purge_batch_size': 2138, 'innodb_purge_rseg_truncate_frequency': 4, 'innodb_sort_buffer_size': 7298936, 'innodb_stats_transient_sample_pages': 4, 'innodb_sync_array_size': 652, 'innodb_thread_concurrency': 314, 'join_buffer_size': 546073684, 'key_cache_age_threshold': 27237, 'max_allowed_packet': 267676261, 'max_heap_table_size': 440654969, 'net_read_timeout': 46, 'query_cache_limit': 30708770, 'query_prealloc_size': 10339630, 'sort_buffer_size': 38913055, 'table_open_cache_instances': 11, 'tmp_table_size': 998255325, 'transaction_alloc_block_size': 106119, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:25:37,739] [autotune] Close db successfully
+[INFO] [2024-11-27 22:25:37,740] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:25:37,747] [autotune] generated config file done
+[INFO] [2024-11-27 22:25:37,767] [autotune] wait for connection
+[INFO] [2024-11-27 22:26:08,846] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:09,849] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:10,851] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:11,854] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:12,856] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:13,859] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:14,861] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:15,863] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:16,866] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:17,869] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:18,871] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:19,875] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:20,877] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:21,880] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:22,882] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:23,884] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:24,886] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:25,889] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:26,892] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:27,894] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:28,897] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:29,899] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:30,901] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:31,904] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:32,906] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:33,909] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:34,911] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:35,913] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:36,916] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:37,918] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:38,922] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:26:39,932] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:26:39,932] [autotune] finish 62 seconds waiting for connection
+[INFO] [2024-11-27 22:26:39,933] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:26:39,933] [autotune] mysql is up
+[INFO] [2024-11-27 22:26:39,934] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:26:45,757] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732746405.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:29:56,623] [autotune] internal metrics: [7475219.485714286, 15176255.6, 104373527698.28572, 0.0, 0.0, 6378765.457142857, 0.0, 12412619512.685715, 0.0, 757606.2, 0.0, 7469.885714285714, 21355.914285714287, 786432.0, 1378991.2857142857, 144031.91428571427, 295623414.6857143, 4993914.428571428, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 33.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1238145.2, 2976019.285714286, 0.0, 0.0, 0.0, 0.0, 413747.0, 7988863604.714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6375517.857142857, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:29:56,659] [DBTune-tpch_ga_40] Iteration 191, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:29:56,967] [autotune] [step 26] generate knobs: {'binlog_cache_size': 453098059, 'binlog_group_commit_sync_delay': 125589, 'binlog_row_image': 'minimal', 'connect_timeout': 27855127, 'default_week_format': 2, 'div_precision_increment': 3, 'innodb_adaptive_flushing_lwm': 25, 'innodb_adaptive_max_sleep_delay': 906829, 'innodb_buffer_pool_size': 11752982229, 'innodb_change_buffer_max_size': 33, 'innodb_change_buffering': 'none', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 69081278, 'innodb_ft_total_cache_size': 42900940, 'innodb_io_capacity_max': 20479, 'innodb_log_file_size': 450635207, 'innodb_log_files_in_group': 3, 'innodb_log_write_ahead_size': 2414, 'innodb_lru_scan_depth': 3523, 'innodb_max_dirty_pages_pct_lwm': 94, 'innodb_online_alter_log_max_size': 5962027526107310000, 'innodb_purge_batch_size': 2594, 'innodb_purge_rseg_truncate_frequency': 90, 'innodb_sort_buffer_size': 24444475, 'innodb_stats_transient_sample_pages': 98, 'innodb_sync_array_size': 986, 'innodb_thread_concurrency': 252, 'join_buffer_size': 533916582, 'key_cache_age_threshold': 9096, 'max_allowed_packet': 305845884, 'max_heap_table_size': 39622837, 'net_read_timeout': 37, 'query_cache_limit': 67468436, 'query_prealloc_size': 6917131, 'sort_buffer_size': 37422932, 'table_open_cache_instances': 59, 'tmp_table_size': 257228400, 'transaction_alloc_block_size': 19867, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 22:30:03,999] [autotune] Close db successfully
+[INFO] [2024-11-27 22:30:04,002] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:30:04,008] [autotune] generated config file done
+[INFO] [2024-11-27 22:30:04,028] [autotune] wait for connection
+[INFO] [2024-11-27 22:30:19,075] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:30:19,076] [autotune] finish 15 seconds waiting for connection
+[INFO] [2024-11-27 22:30:19,076] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:30:19,076] [autotune] mysql is up
+[INFO] [2024-11-27 22:30:19,076] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:30:24,402] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732746624.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:33:35,479] [autotune] internal metrics: [7038634.8, 13559610.57142857, 93059340697.6, 388470725.48571426, 25423.542857142857, 5687011.542857143, 23710.371428571427, 11452314419.2, 226443732.1142857, 698993.8571428572, 13821.028571428571, 7347.085714285714, 14467.4, 720808.0, 1241994.0857142857, 88268.08571428571, 282148202.28571427, 4439801.714285715, 11811160064.0, 4239.228571428572, 7101385.371428572, 0.0, 1713216.1142857142, 0.0, 28.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 13549.628571428571, 0.0, 0.0, 16384.0, 1237842.9142857143, 2714730.742857143, 0.0, 0.0, 0.0, 0.0, 485989.34285714285, 9430836920.714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5684245.628571428, 24235.428571428572, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:33:35,515] [DBTune-tpch_ga_40] Iteration 192, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:33:35,699] [autotune] [step 27] generate knobs: {'binlog_cache_size': 3413689396, 'binlog_group_commit_sync_delay': 502637, 'binlog_row_image': 'noblob', 'connect_timeout': 15532039, 'default_week_format': 1, 'div_precision_increment': 22, 'innodb_adaptive_flushing_lwm': 19, 'innodb_adaptive_max_sleep_delay': 24315, 'innodb_buffer_pool_size': 13735470661, 'innodb_change_buffer_max_size': 9, 'innodb_change_buffering': 'changes', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 23517531, 'innodb_ft_total_cache_size': 1417318627, 'innodb_io_capacity_max': 29934, 'innodb_log_file_size': 1023549935, 'innodb_log_files_in_group': 4, 'innodb_log_write_ahead_size': 9286, 'innodb_lru_scan_depth': 5903, 'innodb_max_dirty_pages_pct_lwm': 98, 'innodb_online_alter_log_max_size': 1389889780668305000, 'innodb_purge_batch_size': 1529, 'innodb_purge_rseg_truncate_frequency': 25, 'innodb_sort_buffer_size': 18064984, 'innodb_stats_transient_sample_pages': 49, 'innodb_sync_array_size': 382, 'innodb_thread_concurrency': 395, 'join_buffer_size': 906466978, 'key_cache_age_threshold': 27908, 'max_allowed_packet': 80619667, 'max_heap_table_size': 224337726, 'net_read_timeout': 41, 'query_cache_limit': 48136756, 'query_prealloc_size': 34119377, 'sort_buffer_size': 39656324, 'table_open_cache_instances': 21, 'tmp_table_size': 911252409, 'transaction_alloc_block_size': 18791, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 22:33:41,742] [autotune] Close db successfully
+[INFO] [2024-11-27 22:33:41,743] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:33:41,748] [autotune] generated config file done
+[INFO] [2024-11-27 22:33:41,770] [autotune] wait for connection
+[INFO] [2024-11-27 22:34:12,833] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:13,836] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:14,838] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:15,840] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:16,842] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:17,846] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:18,848] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:19,850] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:20,852] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:21,855] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:22,857] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:34:23,865] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:34:23,865] [autotune] finish 42 seconds waiting for connection
+[INFO] [2024-11-27 22:34:23,866] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:34:23,866] [autotune] mysql is up
+[INFO] [2024-11-27 22:34:23,867] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:34:29,296] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732746869.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:37:40,393] [autotune] internal metrics: [7295979.171428571, 13576673.942857143, 85375068686.62857, 643596756.1142857, 16327.371428571429, 5216791.0, 39282.02857142857, 13482855628.8, 5453063.314285714, 822928.2, 332.8285714285714, 6965.428571428572, 21970.371428571427, 851864.0, 1130957.3142857142, 119055.88571428572, 268573397.9142857, 4081372.342857143, 13958643712.0, 0.0, 5031158.657142857, 0.0, 1673679.1142857142, 0.0, 29.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 749.8, 0.0, 0.0, 16384.0, 1327222.2285714287, 2907470.0857142857, 0.0, 0.0, 0.0, 0.0, 482425.0, 9298647987.685715, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5214736.114285714, 39807.08571428571, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:37:40,434] [DBTune-tpch_ga_40] Iteration 193, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:37:40,556] [autotune] [step 28] generate knobs: {'binlog_cache_size': 1544005361, 'binlog_group_commit_sync_delay': 293592, 'binlog_row_image': 'noblob', 'connect_timeout': 13238210, 'default_week_format': 2, 'div_precision_increment': 18, 'innodb_adaptive_flushing_lwm': 5, 'innodb_adaptive_max_sleep_delay': 5184, 'innodb_buffer_pool_size': 13642129628, 'innodb_change_buffer_max_size': 9, 'innodb_change_buffering': 'all', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71376419, 'innodb_ft_total_cache_size': 561976406, 'innodb_io_capacity_max': 15086, 'innodb_log_file_size': 104712454, 'innodb_log_files_in_group': 7, 'innodb_log_write_ahead_size': 1082, 'innodb_lru_scan_depth': 4821, 'innodb_max_dirty_pages_pct_lwm': 54, 'innodb_online_alter_log_max_size': 5285740515634871000, 'innodb_purge_batch_size': 2955, 'innodb_purge_rseg_truncate_frequency': 4, 'innodb_sort_buffer_size': 2569482, 'innodb_stats_transient_sample_pages': 83, 'innodb_sync_array_size': 369, 'innodb_thread_concurrency': 127, 'join_buffer_size': 560754492, 'key_cache_age_threshold': 23123, 'max_allowed_packet': 231736866, 'max_heap_table_size': 668829734, 'net_read_timeout': 6, 'query_cache_limit': 26259588, 'query_prealloc_size': 71321051, 'sort_buffer_size': 72577870, 'table_open_cache_instances': 41, 'tmp_table_size': 779634914, 'transaction_alloc_block_size': 127932, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 22:37:49,589] [autotune] Close db successfully
+[INFO] [2024-11-27 22:37:49,590] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:37:49,596] [autotune] generated config file done
+[INFO] [2024-11-27 22:37:49,619] [autotune] wait for connection
+[INFO] [2024-11-27 22:37:59,652] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:37:59,652] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-11-27 22:37:59,653] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:37:59,653] [autotune] mysql is up
+[INFO] [2024-11-27 22:37:59,654] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:38:04,995] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732747084.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:41:16,185] [autotune] internal metrics: [7869252.2, 16175769.228571428, 106913181578.97144, 0.0, 0.0, 6533475.285714285, 0.0, 13539410856.22857, 0.0, 826380.0571428571, 0.0, 2927.0857142857144, 22660.914285714287, 851968.0, 1370253.2571428572, 151642.2857142857, 307480518.6, 5157251.885714286, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 32.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1277654.6, 3052270.2, 0.0, 0.0, 0.0, 0.0, 400756.6, 7752694147.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6530176.428571428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:41:16,207] [DBTune-tpch_ga_40] Iteration 194, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:41:16,345] [autotune] [step 29] generate knobs: {'binlog_cache_size': 3312581853, 'binlog_group_commit_sync_delay': 74044, 'binlog_row_image': 'noblob', 'connect_timeout': 20532366, 'default_week_format': 7, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 31, 'innodb_adaptive_max_sleep_delay': 95410, 'innodb_buffer_pool_size': 12277018857, 'innodb_change_buffer_max_size': 34, 'innodb_change_buffering': 'purges', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71157479, 'innodb_ft_total_cache_size': 772433003, 'innodb_io_capacity_max': 4871, 'innodb_log_file_size': 767043498, 'innodb_log_files_in_group': 8, 'innodb_log_write_ahead_size': 9421, 'innodb_lru_scan_depth': 7918, 'innodb_max_dirty_pages_pct_lwm': 49, 'innodb_online_alter_log_max_size': 9642695683760860000, 'innodb_purge_batch_size': 2138, 'innodb_purge_rseg_truncate_frequency': 4, 'innodb_sort_buffer_size': 7298936, 'innodb_stats_transient_sample_pages': 4, 'innodb_sync_array_size': 652, 'innodb_thread_concurrency': 314, 'join_buffer_size': 546073684, 'key_cache_age_threshold': 26596, 'max_allowed_packet': 267676261, 'max_heap_table_size': 440654969, 'net_read_timeout': 46, 'query_cache_limit': 30708770, 'query_prealloc_size': 10339630, 'sort_buffer_size': 38913055, 'table_open_cache_instances': 11, 'tmp_table_size': 998255325, 'transaction_alloc_block_size': 106119, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:41:22,387] [autotune] Close db successfully
+[INFO] [2024-11-27 22:41:22,387] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:41:22,395] [autotune] generated config file done
+[INFO] [2024-11-27 22:41:22,415] [autotune] wait for connection
+[INFO] [2024-11-27 22:41:53,476] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:41:54,479] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:41:55,481] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:41:56,483] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:41:57,485] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:41:58,488] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:41:59,490] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:00,492] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:01,494] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:02,496] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:03,498] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:04,500] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:05,503] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:06,505] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:07,507] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:08,509] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:09,511] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:10,513] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:11,515] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:12,517] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:13,519] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:14,522] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:15,524] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:16,526] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:17,528] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:18,531] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:19,534] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:20,536] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:21,538] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:22,540] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:23,543] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:24,545] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:42:25,551] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:42:25,552] [autotune] finish 63 seconds waiting for connection
+[INFO] [2024-11-27 22:42:25,552] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:42:25,552] [autotune] mysql is up
+[INFO] [2024-11-27 22:42:25,553] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:42:30,883] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732747350.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:45:42,311] [autotune] internal metrics: [7198156.885714286, 15472853.085714286, 111602048321.82857, 0.0, 0.0, 6820947.685714286, 0.0, 12433480557.714285, 0.0, 758879.4, 0.0, 5988.114285714286, 21468.457142857143, 786336.0, 1451940.0571428572, 162129.62857142856, 300569554.17142856, 5362501.914285715, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 33.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1241177.2571428572, 2949207.8571428573, 0.0, 0.0, 0.0, 0.0, 407165.71428571426, 7843998936.657143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6817470.085714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:45:42,374] [DBTune-tpch_ga_40] Iteration 195, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:45:42,581] [autotune] [step 30] generate knobs: {'binlog_cache_size': 1923216309, 'binlog_group_commit_sync_delay': 552893, 'binlog_row_image': 'noblob', 'connect_timeout': 21196467, 'default_week_format': 6, 'div_precision_increment': 7, 'innodb_adaptive_flushing_lwm': 51, 'innodb_adaptive_max_sleep_delay': 367783, 'innodb_buffer_pool_size': 13665554869, 'innodb_change_buffer_max_size': 32, 'innodb_change_buffering': 'deletes', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 13416255, 'innodb_ft_total_cache_size': 828855682, 'innodb_io_capacity_max': 27863, 'innodb_log_file_size': 922249835, 'innodb_log_files_in_group': 4, 'innodb_log_write_ahead_size': 4007, 'innodb_lru_scan_depth': 7311, 'innodb_max_dirty_pages_pct_lwm': 80, 'innodb_online_alter_log_max_size': 6431736867774387000, 'innodb_purge_batch_size': 481, 'innodb_purge_rseg_truncate_frequency': 121, 'innodb_sort_buffer_size': 26720087, 'innodb_stats_transient_sample_pages': 52, 'innodb_sync_array_size': 858, 'innodb_thread_concurrency': 676, 'join_buffer_size': 789432331, 'key_cache_age_threshold': 15877, 'max_allowed_packet': 581375805, 'max_heap_table_size': 747097795, 'net_read_timeout': 14, 'query_cache_limit': 23482052, 'query_prealloc_size': 131824550, 'sort_buffer_size': 69357534, 'table_open_cache_instances': 17, 'tmp_table_size': 1069719269, 'transaction_alloc_block_size': 126575, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:45:48,633] [autotune] Close db successfully
+[INFO] [2024-11-27 22:45:48,634] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:45:48,640] [autotune] generated config file done
+[INFO] [2024-11-27 22:45:48,665] [autotune] wait for connection
+[INFO] [2024-11-27 22:46:19,726] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:46:20,728] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:46:21,731] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:46:22,733] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:46:23,735] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:46:24,737] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:46:25,779] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:46:25,780] [autotune] finish 37 seconds waiting for connection
+[INFO] [2024-11-27 22:46:25,780] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:46:25,780] [autotune] mysql is up
+[INFO] [2024-11-27 22:46:25,780] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:46:31,169] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732747591.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:49:42,307] [autotune] internal metrics: [7734529.371428572, 15990960.942857143, 108482030094.62857, 0.0, 0.0, 6629809.8, 0.0, 13464761139.2, 0.0, 821823.8857142857, 0.0, 7224.771428571428, 22815.428571428572, 851864.0, 1376156.3714285714, 136044.34285714285, 301120233.3142857, 5247342.228571429, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 29.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1260017.5428571429, 2972849.8857142855, 0.0, 0.0, 0.0, 0.0, 405606.3142857143, 7832037778.771428, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6626493.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:49:42,324] [DBTune-tpch_ga_40] Iteration 196, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:49:42,452] [autotune] [step 31] generate knobs: {'binlog_cache_size': 1544005361, 'binlog_group_commit_sync_delay': 293592, 'binlog_row_image': 'noblob', 'connect_timeout': 13238210, 'default_week_format': 2, 'div_precision_increment': 18, 'innodb_adaptive_flushing_lwm': 5, 'innodb_adaptive_max_sleep_delay': 5184, 'innodb_buffer_pool_size': 13642129628, 'innodb_change_buffer_max_size': 9, 'innodb_change_buffering': 'inserts', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71376419, 'innodb_ft_total_cache_size': 561976406, 'innodb_io_capacity_max': 15086, 'innodb_log_file_size': 104712454, 'innodb_log_files_in_group': 7, 'innodb_log_write_ahead_size': 1082, 'innodb_lru_scan_depth': 4821, 'innodb_max_dirty_pages_pct_lwm': 54, 'innodb_online_alter_log_max_size': 5285740515634871000, 'innodb_purge_batch_size': 2955, 'innodb_purge_rseg_truncate_frequency': 4, 'innodb_sort_buffer_size': 2569482, 'innodb_stats_transient_sample_pages': 83, 'innodb_sync_array_size': 369, 'innodb_thread_concurrency': 127, 'join_buffer_size': 560754492, 'key_cache_age_threshold': 23123, 'max_allowed_packet': 231736866, 'max_heap_table_size': 668829734, 'net_read_timeout': 6, 'query_cache_limit': 6936603, 'query_prealloc_size': 71321051, 'sort_buffer_size': 72577870, 'table_open_cache_instances': 41, 'tmp_table_size': 779634914, 'transaction_alloc_block_size': 127932, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-11-27 22:49:49,488] [autotune] Close db successfully
+[INFO] [2024-11-27 22:49:49,489] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:49:49,495] [autotune] generated config file done
+[INFO] [2024-11-27 22:49:49,519] [autotune] wait for connection
+[INFO] [2024-11-27 22:49:58,543] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:49:58,544] [autotune] finish 9 seconds waiting for connection
+[INFO] [2024-11-27 22:49:58,544] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:49:58,545] [autotune] mysql is up
+[INFO] [2024-11-27 22:49:58,545] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:50:03,965] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732747803.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:53:15,668] [autotune] internal metrics: [7568884.685714286, 16792221.8, 114755206231.77142, 0.0, 0.0, 7013442.571428572, 0.0, 13522944468.114286, 0.0, 825374.9428571429, 0.0, 4484.714285714285, 22004.22857142857, 851864.0, 1384690.0285714285, 144108.8, 301499885.7714286, 5622480.771428571, 13958643712.0, 0.0, 0.0, 0.0, 0.0, 0.0, 32.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1278345.9142857143, 2980138.257142857, 0.0, 0.0, 0.0, 0.0, 386657.6, 7467427136.314285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7010302.085714285, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:53:15,730] [DBTune-tpch_ga_40] Iteration 197, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:53:15,889] [autotune] [step 32] generate knobs: {'binlog_cache_size': 3312581853, 'binlog_group_commit_sync_delay': 181804, 'binlog_row_image': 'noblob', 'connect_timeout': 20532366, 'default_week_format': 7, 'div_precision_increment': 26, 'innodb_adaptive_flushing_lwm': 31, 'innodb_adaptive_max_sleep_delay': 95410, 'innodb_buffer_pool_size': 12277018857, 'innodb_change_buffer_max_size': 34, 'innodb_change_buffering': 'purges', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_ft_cache_size': 71157479, 'innodb_ft_total_cache_size': 772433003, 'innodb_io_capacity_max': 4871, 'innodb_log_file_size': 767043498, 'innodb_log_files_in_group': 8, 'innodb_log_write_ahead_size': 9421, 'innodb_lru_scan_depth': 7918, 'innodb_max_dirty_pages_pct_lwm': 49, 'innodb_online_alter_log_max_size': 9642695683760860000, 'innodb_purge_batch_size': 2138, 'innodb_purge_rseg_truncate_frequency': 4, 'innodb_sort_buffer_size': 7298936, 'innodb_stats_transient_sample_pages': 4, 'innodb_sync_array_size': 652, 'innodb_thread_concurrency': 314, 'join_buffer_size': 546073684, 'key_cache_age_threshold': 27237, 'max_allowed_packet': 267676261, 'max_heap_table_size': 440654969, 'net_read_timeout': 46, 'query_cache_limit': 30708770, 'query_prealloc_size': 10339630, 'sort_buffer_size': 38913055, 'table_open_cache_instances': 11, 'tmp_table_size': 998255325, 'transaction_alloc_block_size': 106119, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:53:22,935] [autotune] Close db successfully
+[INFO] [2024-11-27 22:53:22,936] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:53:22,943] [autotune] generated config file done
+[INFO] [2024-11-27 22:53:22,966] [autotune] wait for connection
+[INFO] [2024-11-27 22:53:54,028] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:53:55,030] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:53:56,032] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:53:57,034] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:53:58,036] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:53:59,039] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:00,041] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:01,043] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:02,045] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:03,047] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:04,049] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:05,051] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:06,054] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:07,056] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:08,058] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:09,060] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:10,063] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:11,065] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:12,067] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:13,069] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:14,071] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:15,073] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:16,076] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:17,079] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:18,084] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:19,088] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:20,090] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:21,094] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:22,097] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:23,099] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-11-27 22:54:24,108] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:54:24,109] [autotune] finish 61 seconds waiting for connection
+[INFO] [2024-11-27 22:54:24,109] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:54:24,109] [autotune] mysql is up
+[INFO] [2024-11-27 22:54:24,110] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:54:29,593] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732748069.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 22:57:40,464] [autotune] internal metrics: [7191739.885714286, 15225202.885714285, 106651326405.48572, 0.0, 0.0, 6518061.342857143, 0.0, 12459311104.0, 0.0, 760455.9142857143, 0.0, 4916.714285714285, 20963.14285714286, 786336.0, 1363031.2571428572, 141519.0, 291663515.2, 5149066.514285714, 12884901888.0, 0.0, 0.0, 0.0, 0.0, 0.0, 33.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16384.0, 1259951.8285714285, 2988069.9714285713, 0.0, 0.0, 0.0, 0.0, 415471.34285714285, 8006841600.714286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6514909.028571429, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 22:57:40,485] [DBTune-tpch_ga_40] Iteration 198, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 22:57:40,634] [autotune] [step 33] generate knobs: {'binlog_cache_size': 1608640123, 'binlog_group_commit_sync_delay': 950715, 'binlog_row_image': 'minimal', 'connect_timeout': 24588336, 'default_week_format': 4, 'div_precision_increment': 13, 'innodb_adaptive_flushing_lwm': 7, 'innodb_adaptive_max_sleep_delay': 459249, 'innodb_buffer_pool_size': 12079961416, 'innodb_change_buffer_max_size': 7, 'innodb_change_buffering': 'deletes', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 77640933, 'innodb_ft_total_cache_size': 1337270061, 'innodb_io_capacity_max': 8572, 'innodb_log_file_size': 198664746, 'innodb_log_files_in_group': 3, 'innodb_log_write_ahead_size': 5341, 'innodb_lru_scan_depth': 5421, 'innodb_max_dirty_pages_pct_lwm': 43, 'innodb_online_alter_log_max_size': 5372216580491266000, 'innodb_purge_batch_size': 3060, 'innodb_purge_rseg_truncate_frequency': 18, 'innodb_sort_buffer_size': 19651885, 'innodb_stats_transient_sample_pages': 37, 'innodb_sync_array_size': 468, 'innodb_thread_concurrency': 785, 'join_buffer_size': 214398193, 'key_cache_age_threshold': 15476, 'max_allowed_packet': 636100717, 'max_heap_table_size': 49891373, 'net_read_timeout': 37, 'query_cache_limit': 22887360, 'query_prealloc_size': 8738736, 'sort_buffer_size': 127358936, 'table_open_cache_instances': 62, 'tmp_table_size': 868010240, 'transaction_alloc_block_size': 40638, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 22:57:46,678] [autotune] Close db successfully
+[INFO] [2024-11-27 22:57:46,679] [autotune] mysql is shut down
+[INFO] [2024-11-27 22:57:46,686] [autotune] generated config file done
+[INFO] [2024-11-27 22:57:46,710] [autotune] wait for connection
+[INFO] [2024-11-27 22:57:54,737] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 22:57:54,738] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-11-27 22:57:54,738] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 22:57:54,738] [autotune] mysql is up
+[INFO] [2024-11-27 22:57:54,739] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 22:58:00,210] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732748280.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 23:01:11,157] [autotune] internal metrics: [7261398.342857143, 12350739.771428572, 77427649506.74286, 2831343381.9428573, 22317.22857142857, 4730927.828571429, 172811.48571428572, 12312275470.62857, 32381337.6, 751481.4285714285, 1976.4, 17641.314285714285, 17309.8, 786432.0, 1022313.8571428572, 64530.77142857143, 251186528.85714287, 3704704.6285714284, 12884901888.0, 0.0, 5776490.742857143, 0.0, 1481442.4857142856, 0.0, 28.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 9236.142857142857, 0.0, 0.0, 16384.0, 1285001.4571428571, 2630603.9714285713, 0.0, 0.0, 0.0, 0.0, 569715.2571428572, 10997005575.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4728723.114285714, 173336.54285714286, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 23:01:11,211] [DBTune-tpch_ga_40] Iteration 199, objective value: [-6.631578947368421].
+[INFO] [2024-11-27 23:01:11,743] [autotune] [step 34] generate knobs: {'binlog_cache_size': 1608640123, 'binlog_group_commit_sync_delay': 950715, 'binlog_row_image': 'noblob', 'connect_timeout': 24588336, 'default_week_format': 4, 'div_precision_increment': 13, 'innodb_adaptive_flushing_lwm': 7, 'innodb_adaptive_max_sleep_delay': 459249, 'innodb_buffer_pool_size': 12079961416, 'innodb_change_buffer_max_size': 7, 'innodb_change_buffering': 'deletes', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_ft_cache_size': 77640933, 'innodb_ft_total_cache_size': 1337270061, 'innodb_io_capacity_max': 8572, 'innodb_log_file_size': 198664746, 'innodb_log_files_in_group': 3, 'innodb_log_write_ahead_size': 5341, 'innodb_lru_scan_depth': 5421, 'innodb_max_dirty_pages_pct_lwm': 43, 'innodb_online_alter_log_max_size': 5372216580491266000, 'innodb_purge_batch_size': 3060, 'innodb_purge_rseg_truncate_frequency': 18, 'innodb_sort_buffer_size': 19651885, 'innodb_stats_transient_sample_pages': 37, 'innodb_sync_array_size': 468, 'innodb_thread_concurrency': 785, 'join_buffer_size': 214398193, 'key_cache_age_threshold': 14835, 'max_allowed_packet': 636100717, 'max_heap_table_size': 49891373, 'net_read_timeout': 37, 'query_cache_limit': 22887360, 'query_prealloc_size': 8738736, 'sort_buffer_size': 127358936, 'table_open_cache_instances': 62, 'tmp_table_size': 868010240, 'transaction_alloc_block_size': 40638, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-11-27 23:01:17,788] [autotune] Close db successfully
+[INFO] [2024-11-27 23:01:17,789] [autotune] mysql is shut down
+[INFO] [2024-11-27 23:01:17,794] [autotune] generated config file done
+[INFO] [2024-11-27 23:01:17,817] [autotune] wait for connection
+[INFO] [2024-11-27 23:01:19,834] [autotune] Connected to MySQL db
+[INFO] [2024-11-27 23:01:19,835] [autotune] finish 2 seconds waiting for connection
+[INFO] [2024-11-27 23:01:19,835] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-11-27 23:01:19,835] [autotune] mysql is up
+[INFO] [2024-11-27 23:01:19,836] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-11-27 23:01:25,146] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_tpch_mysql.sh /root/OpAdviserPrivate/autotune/cli/selectedList_tpch.txt /root/OpAdviserPrivate/autotune/tpch_query/queries-mysql-new ./log/1732748485.log /var/run/mysqld/mysqld.sock
+[INFO] [2024-11-27 23:04:36,842] [autotune] internal metrics: [6831987.028571429, 12106704.514285713, 78607898097.37143, 2952123421.257143, 22823.885714285716, 4803109.057142857, 180182.0, 12490227243.885714, 34016460.8, 762342.8571428572, 2076.2, 6975.371428571429, 17017.542857142857, 786336.0, 1052376.8285714285, 106714.74285714286, 251985609.97142857, 3746853.7714285715, 12884901888.0, 0.0, 5984891.771428571, 0.0, 1528841.5428571429, 0.0, 28.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 9689.57142857143, 0.0, 0.0, 16384.0, 1267338.7714285713, 2621117.4571428574, 0.0, 0.0, 0.0, 0.0, 527009.5142857142, 10168383863.914286, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4800848.485714286, 180710.34285714285, 0.0, 0.0, 0.0, 0.0, 0.0].
+[INFO] [2024-11-27 23:04:38,084] [DBTune-tpch_ga_40] Iteration 200, objective value: [-6.631578947368421].
