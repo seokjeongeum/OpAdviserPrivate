@@ -59,7 +59,7 @@ sysbench  \
     --tables=300  \
     --events=0  \
     --threads=80  \
-    --mysql-db=sbrw  \
+    --mysql-db=sbwrite  \
     oltp_write_only  \
     prepare
 cd ~/OpAdviserPrivate
