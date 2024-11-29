@@ -30,7 +30,7 @@ apt install -y mysql-server-5.7 \
 ```
 ```shell
 echo '[mysqld]
-port=3307' | sudo tee -a /etc/mysql/my.cnf
+port=3308' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
 mysql -ppassword -e"CREATE USER 'root'@'127.0.0.1' IDENTIFIED BY 'password';"
@@ -74,7 +74,7 @@ mysql -ppassword -e"create database sbrw;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3307  \
+    --mysql-port=3308  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -103,7 +103,7 @@ mysql -ppassword -e"create database sbwrite;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3307  \
+    --mysql-port=3308  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -132,7 +132,7 @@ mysql -ppassword -e"create database sbread;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3307  \
+    --mysql-port=3308  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
