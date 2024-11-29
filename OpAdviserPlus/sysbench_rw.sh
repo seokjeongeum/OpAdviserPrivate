@@ -62,5 +62,6 @@ sysbench  \
     --mysql-db=sbrw  \
     oltp_read_write  \
     prepare
+cd ~/OpAdviserPrivate
 export PYTHONPATH="."
 python scripts/optimize.py --dbname=sbrw --workload=sbrw --workload_type=readwrite

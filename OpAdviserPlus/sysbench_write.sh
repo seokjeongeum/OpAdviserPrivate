@@ -62,5 +62,6 @@ sysbench  \
     --mysql-db=sbrw  \
     oltp_write_only  \
     prepare
+cd ~/OpAdviserPrivate
 export PYTHONPATH="."
 python scripts/optimize.py --dbname=sbwrite --workload=sbwrite --workload_type=write
