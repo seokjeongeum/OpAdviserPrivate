@@ -16266,3 +16266,114 @@
 [INFO] [2024-11-28 08:13:59,924] [DDPG_Optimizer] New Episode-91, initialize
 [INFO] [2024-11-28 08:14:00,021] [DDPG_Optimizer] New Episode-92, initialize
 [INFO] [2024-11-28 08:14:00,107] [DDPG_Optimizer] New Episode-93, initialize
+[WARNING] [2024-11-29 00:30:44,019] [HistoryContainer] Repeated configuration detected!
+[INFO] [2024-11-29 00:30:44,052] [DBTune-sysbench_ddpg_18] Load 200 iterations from repo/history_sysbench_ddpg_18.json
+[INFO] [2024-11-29 00:30:44,168] [DDPG_Optimizer] Load state mean and var.
+[INFO] [2024-11-29 00:30:45,088] [DDPG] Finish Initializing Networks
+[INFO] [2024-11-29 00:30:45,088] [DDPG] DDPG Initialzed!
+[INFO] [2024-11-29 00:30:45,161] [DDPG_Optimizer] New Episode-1, initialize
+[INFO] [2024-11-29 00:30:45,204] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_5
+[INFO] [2024-11-29 00:30:45,235] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_10
+[INFO] [2024-11-29 00:30:45,261] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_15
+[INFO] [2024-11-29 00:30:45,262] [DDPG_Optimizer] New Episode-2, initialize
+[INFO] [2024-11-29 00:30:45,262] [DDPG_Optimizer] New Episode-3, initialize
+[INFO] [2024-11-29 00:30:45,263] [DDPG_Optimizer] New Episode-4, initialize
+[INFO] [2024-11-29 00:30:45,270] [DDPG_Optimizer] New Episode-5, initialize
+[INFO] [2024-11-29 00:30:45,366] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_20
+[INFO] [2024-11-29 00:30:45,366] [DDPG_Optimizer] New Episode-6, initialize
+[INFO] [2024-11-29 00:30:45,456] [DDPG_Optimizer] New Episode-7, initialize
+[INFO] [2024-11-29 00:30:45,561] [DDPG_Optimizer] New Episode-8, initialize
+[INFO] [2024-11-29 00:30:45,686] [DDPG_Optimizer] New Episode-9, initialize
+[INFO] [2024-11-29 00:30:45,853] [DDPG_Optimizer] New Episode-10, initialize
+[INFO] [2024-11-29 00:30:45,854] [DDPG_Optimizer] New Episode-11, initialize
+[INFO] [2024-11-29 00:30:45,854] [DDPG_Optimizer] New Episode-12, initialize
+[INFO] [2024-11-29 00:30:45,855] [DDPG_Optimizer] New Episode-13, initialize
+[INFO] [2024-11-29 00:30:45,855] [DDPG_Optimizer] New Episode-14, initialize
+[INFO] [2024-11-29 00:30:45,856] [DDPG_Optimizer] New Episode-15, initialize
+[INFO] [2024-11-29 00:30:45,856] [DDPG_Optimizer] New Episode-16, initialize
+[INFO] [2024-11-29 00:30:45,857] [DDPG_Optimizer] New Episode-17, initialize
+[INFO] [2024-11-29 00:30:45,858] [DDPG_Optimizer] New Episode-18, initialize
+[INFO] [2024-11-29 00:30:45,858] [DDPG_Optimizer] New Episode-19, initialize
+[INFO] [2024-11-29 00:30:45,859] [DDPG_Optimizer] New Episode-20, initialize
+[INFO] [2024-11-29 00:30:45,859] [DDPG_Optimizer] New Episode-21, initialize
+[INFO] [2024-11-29 00:30:45,860] [DDPG_Optimizer] New Episode-22, initialize
+[INFO] [2024-11-29 00:30:45,860] [DDPG_Optimizer] New Episode-23, initialize
+[INFO] [2024-11-29 00:30:45,861] [DDPG_Optimizer] New Episode-24, initialize
+[INFO] [2024-11-29 00:30:45,861] [DDPG_Optimizer] New Episode-25, initialize
+[INFO] [2024-11-29 00:30:45,862] [DDPG_Optimizer] New Episode-26, initialize
+[INFO] [2024-11-29 00:30:45,862] [DDPG_Optimizer] New Episode-27, initialize
+[INFO] [2024-11-29 00:30:45,863] [DDPG_Optimizer] New Episode-28, initialize
+[INFO] [2024-11-29 00:30:45,863] [DDPG_Optimizer] New Episode-29, initialize
+[INFO] [2024-11-29 00:30:45,864] [DDPG_Optimizer] New Episode-30, initialize
+[INFO] [2024-11-29 00:30:45,864] [DDPG_Optimizer] New Episode-31, initialize
+[INFO] [2024-11-29 00:30:45,865] [DDPG_Optimizer] New Episode-32, initialize
+[INFO] [2024-11-29 00:30:45,866] [DDPG_Optimizer] New Episode-33, initialize
+[INFO] [2024-11-29 00:30:45,866] [DDPG_Optimizer] New Episode-34, initialize
+[INFO] [2024-11-29 00:30:45,867] [DDPG_Optimizer] New Episode-35, initialize
+[INFO] [2024-11-29 00:30:45,867] [DDPG_Optimizer] New Episode-36, initialize
+[INFO] [2024-11-29 00:30:45,868] [DDPG_Optimizer] New Episode-37, initialize
+[INFO] [2024-11-29 00:30:45,868] [DDPG_Optimizer] New Episode-38, initialize
+[INFO] [2024-11-29 00:30:45,869] [DDPG_Optimizer] New Episode-39, initialize
+[INFO] [2024-11-29 00:30:45,869] [DDPG_Optimizer] New Episode-40, initialize
+[INFO] [2024-11-29 00:30:45,870] [DDPG_Optimizer] New Episode-41, initialize
+[INFO] [2024-11-29 00:30:45,870] [DDPG_Optimizer] New Episode-42, initialize
+[INFO] [2024-11-29 00:30:45,871] [DDPG_Optimizer] New Episode-43, initialize
+[INFO] [2024-11-29 00:30:45,871] [DDPG_Optimizer] New Episode-44, initialize
+[INFO] [2024-11-29 00:30:45,872] [DDPG_Optimizer] New Episode-45, initialize
+[INFO] [2024-11-29 00:30:45,872] [DDPG_Optimizer] New Episode-46, initialize
+[INFO] [2024-11-29 00:30:45,873] [DDPG_Optimizer] New Episode-47, initialize
+[INFO] [2024-11-29 00:30:45,873] [DDPG_Optimizer] New Episode-48, initialize
+[INFO] [2024-11-29 00:30:45,874] [DDPG_Optimizer] New Episode-49, initialize
+[INFO] [2024-11-29 00:30:45,874] [DDPG_Optimizer] New Episode-50, initialize
+[INFO] [2024-11-29 00:30:45,966] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_65
+[INFO] [2024-11-29 00:30:45,966] [DDPG_Optimizer] New Episode-51, initialize
+[INFO] [2024-11-29 00:30:46,062] [DDPG_Optimizer] New Episode-52, initialize
+[INFO] [2024-11-29 00:30:46,153] [DDPG_Optimizer] New Episode-53, initialize
+[INFO] [2024-11-29 00:30:46,253] [DDPG_Optimizer] New Episode-54, initialize
+[INFO] [2024-11-29 00:30:46,340] [DDPG_Optimizer] New Episode-55, initialize
+[INFO] [2024-11-29 00:30:46,431] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_70
+[INFO] [2024-11-29 00:30:46,431] [DDPG_Optimizer] New Episode-56, initialize
+[INFO] [2024-11-29 00:30:46,522] [DDPG_Optimizer] New Episode-57, initialize
+[INFO] [2024-11-29 00:30:46,622] [DDPG_Optimizer] New Episode-58, initialize
+[INFO] [2024-11-29 00:30:46,711] [DDPG_Optimizer] New Episode-59, initialize
+[INFO] [2024-11-29 00:30:46,799] [DDPG_Optimizer] New Episode-60, initialize
+[INFO] [2024-11-29 00:30:46,890] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_75
+[INFO] [2024-11-29 00:30:46,890] [DDPG_Optimizer] New Episode-61, initialize
+[INFO] [2024-11-29 00:30:46,978] [DDPG_Optimizer] New Episode-62, initialize
+[INFO] [2024-11-29 00:30:47,068] [DDPG_Optimizer] New Episode-63, initialize
+[INFO] [2024-11-29 00:30:47,155] [DDPG_Optimizer] New Episode-64, initialize
+[INFO] [2024-11-29 00:30:47,255] [DDPG_Optimizer] New Episode-65, initialize
+[INFO] [2024-11-29 00:30:47,346] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_80
+[INFO] [2024-11-29 00:30:47,346] [DDPG_Optimizer] New Episode-66, initialize
+[INFO] [2024-11-29 00:30:47,432] [DDPG_Optimizer] New Episode-67, initialize
+[INFO] [2024-11-29 00:30:47,527] [DDPG_Optimizer] New Episode-68, initialize
+[INFO] [2024-11-29 00:30:47,614] [DDPG_Optimizer] New Episode-69, initialize
+[INFO] [2024-11-29 00:30:47,703] [DDPG_Optimizer] New Episode-70, initialize
+[INFO] [2024-11-29 00:30:47,883] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_85
+[INFO] [2024-11-29 00:30:47,883] [DDPG_Optimizer] New Episode-71, initialize
+[INFO] [2024-11-29 00:30:47,976] [DDPG_Optimizer] New Episode-72, initialize
+[INFO] [2024-11-29 00:30:48,064] [DDPG_Optimizer] New Episode-73, initialize
+[INFO] [2024-11-29 00:30:48,155] [DDPG_Optimizer] New Episode-74, initialize
+[INFO] [2024-11-29 00:30:48,246] [DDPG_Optimizer] New Episode-75, initialize
+[INFO] [2024-11-29 00:30:48,339] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_90
+[INFO] [2024-11-29 00:30:48,339] [DDPG_Optimizer] New Episode-76, initialize
+[INFO] [2024-11-29 00:30:48,440] [DDPG_Optimizer] New Episode-77, initialize
+[INFO] [2024-11-29 00:30:48,527] [DDPG_Optimizer] New Episode-78, initialize
+[INFO] [2024-11-29 00:30:48,617] [DDPG_Optimizer] New Episode-79, initialize
+[INFO] [2024-11-29 00:30:48,704] [DDPG_Optimizer] New Episode-80, initialize
+[INFO] [2024-11-29 00:30:48,804] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_95
+[INFO] [2024-11-29 00:30:48,804] [DDPG_Optimizer] New Episode-81, initialize
+[INFO] [2024-11-29 00:30:48,891] [DDPG_Optimizer] New Episode-82, initialize
+[INFO] [2024-11-29 00:30:48,980] [DDPG_Optimizer] New Episode-83, initialize
+[INFO] [2024-11-29 00:30:49,068] [DDPG_Optimizer] New Episode-84, initialize
+[INFO] [2024-11-29 00:30:49,154] [DDPG_Optimizer] New Episode-85, initialize
+[INFO] [2024-11-29 00:30:49,247] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_100
+[INFO] [2024-11-29 00:30:49,247] [DDPG_Optimizer] New Episode-86, initialize
+[INFO] [2024-11-29 00:30:49,334] [DDPG_Optimizer] New Episode-87, initialize
+[INFO] [2024-11-29 00:30:49,421] [DDPG_Optimizer] New Episode-88, initialize
+[INFO] [2024-11-29 00:30:49,508] [DDPG_Optimizer] New Episode-89, initialize
+[INFO] [2024-11-29 00:30:49,595] [DDPG_Optimizer] New Episode-90, initialize
+[INFO] [2024-11-29 00:30:49,688] [DDPG_Optimizer] Save model_params to sysbench_ddpg_18_105
+[INFO] [2024-11-29 00:30:49,689] [DDPG_Optimizer] New Episode-91, initialize
+[INFO] [2024-11-29 00:30:49,801] [DDPG_Optimizer] New Episode-92, initialize
+[INFO] [2024-11-29 00:30:49,966] [DDPG_Optimizer] New Episode-93, initialize
