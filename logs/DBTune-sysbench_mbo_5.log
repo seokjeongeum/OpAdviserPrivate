@@ -2339,3 +2339,5 @@
 [INFO] [2024-11-29 22:38:02,416] [autotune] mysql is shut down
 [INFO] [2024-11-29 22:38:02,417] [autotune] innodb_thread_concurrency is set too large
 [INFO] [2024-11-29 22:38:02,418] [DBTune-sysbench_mbo_5] Iteration 200, objective value: [2147483647].
+[INFO] [2024-12-02 00:47:57,291] [DBTune-sysbench_mbo_5] Load 200 iterations from repo/history_sysbench_mbo_5.json
+[INFO] [2024-12-02 00:47:57,370] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
