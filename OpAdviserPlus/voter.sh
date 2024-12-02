@@ -53,4 +53,5 @@ mysql -ppassword -e"drop database ${workload};"
 mysql -ppassword -e"create database ${workload};"
 /oltpbench/oltpbenchmark -b $workload -c /oltpbench/config/sample_${workload}_config.xml  --create=true --load=true
 export PYTHONPATH="."
+workload="voter"
 python scripts/optimize.py --dbname=$workload --workload=oltpbench_$workload
