@@ -2050,3 +2050,436 @@
 [INFO] [2024-11-28 02:34:12,967] [autotune] mysql is up
 [INFO] [2024-11-28 02:34:12,968] [autotune] sleeping for 5 seconds after restarting mysql
 [INFO] [2024-11-28 02:34:18,250] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1732761258
+[INFO] [2024-12-02 00:43:08,227] [DBTune-twitter_mbo_47] Load 127 iterations from repo/history_twitter_mbo_47.json
+[INFO] [2024-12-02 00:43:08,541] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-12-02 00:48:00,604] [autotune] [step 1] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2990150365, 'binlog_row_image': 'noblob', 'delay_key_write': 'ON', 'div_precision_increment': 7, 'expire_logs_days': 49, 'flush_time': 8, 'innodb_adaptive_flushing_lwm': 12, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14763908641, 'innodb_change_buffer_max_size': 9, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 74, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'OFF', 'innodb_ft_cache_size': 38733841, 'innodb_ft_min_token_size': 3, 'innodb_ft_result_cache_limit': 2356620713, 'innodb_ft_total_cache_size': 622798241, 'innodb_io_capacity_max': 39066, 'innodb_log_file_size': 607304579, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 2160, 'innodb_online_alter_log_max_size': 6354045473107739000, 'innodb_page_cleaners': 3, 'innodb_purge_batch_size': 2146, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 26, 'innodb_thread_concurrency': 216, 'join_buffer_size': 770524836, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 733850500, 'max_heap_table_size': 289022010, 'max_length_for_sort_data': 2797409, 'net_read_timeout': 13, 'net_write_timeout': 49, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 87776763, 'require_secure_transport': 'ON', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 107495129, 'transaction_prealloc_size': 119088, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 00:48:05,682] [autotune] Close db successfully
+[INFO] [2024-12-02 00:48:05,683] [autotune] mysql is shut down
+[INFO] [2024-12-02 00:48:05,685] [autotune] generated config file done
+[INFO] [2024-12-02 00:48:05,706] [autotune] wait for connection
+[INFO] [2024-12-02 00:48:15,745] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 00:48:15,746] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-12-02 00:48:15,746] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 00:48:15,746] [autotune] mysql is up
+[INFO] [2024-12-02 00:48:15,746] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 00:48:20,997] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733100500
+[INFO] [2024-12-02 00:50:56,211] [DBTune-twitter_mbo_47] Iteration 128, objective value: [2147483647].
+[INFO] [2024-12-02 00:51:04,813] [BO_Optimizer] Sample random config. rand_prob=0.100000.
+[INFO] [2024-12-02 00:51:04,832] [autotune] [step 2] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 1525917925, 'binlog_row_image': 'minimal', 'delay_key_write': 'ALL', 'div_precision_increment': 15, 'expire_logs_days': 94, 'flush_time': 7, 'innodb_adaptive_flushing_lwm': 25, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 14221481996, 'innodb_change_buffer_max_size': 25, 'innodb_change_buffering': 'none', 'innodb_compression_pad_pct_max': 23, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'OFF', 'innodb_ft_cache_size': 36288666, 'innodb_ft_min_token_size': 6, 'innodb_ft_result_cache_limit': 3661916204, 'innodb_ft_total_cache_size': 721202843, 'innodb_io_capacity_max': 26676, 'innodb_log_file_size': 420651112, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 6264, 'innodb_online_alter_log_max_size': 3111161844025599000, 'innodb_page_cleaners': 3, 'innodb_purge_batch_size': 1931, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 38, 'innodb_thread_concurrency': 794, 'join_buffer_size': 483827180, 'log_bin_use_v1_row_events': 'ON', 'max_allowed_packet': 855413083, 'max_heap_table_size': 79701053, 'max_length_for_sort_data': 6900867, 'net_read_timeout': 47, 'net_write_timeout': 109, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 133435575, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'OFF', 'tmp_table_size': 707312790, 'transaction_prealloc_size': 80362, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 00:51:08,866] [autotune] Close db successfully
+[INFO] [2024-12-02 00:51:08,866] [autotune] mysql is shut down
+[INFO] [2024-12-02 00:51:08,869] [autotune] generated config file done
+[INFO] [2024-12-02 00:51:08,889] [autotune] wait for connection
+[INFO] [2024-12-02 00:51:16,907] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 00:51:16,908] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-12-02 00:51:16,908] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 00:51:16,908] [autotune] mysql is up
+[INFO] [2024-12-02 00:51:16,908] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 00:51:22,195] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733100682
+[INFO] [2024-12-02 00:57:02,491] [DBTune-twitter_mbo_47] Iteration 129, objective value: [2147483647].
+[INFO] [2024-12-02 01:05:25,628] [autotune] [step 3] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 1242468063, 'binlog_row_image': 'minimal', 'delay_key_write': 'ALL', 'div_precision_increment': 17, 'expire_logs_days': 69, 'flush_time': 3, 'innodb_adaptive_flushing_lwm': 9, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15388887207, 'innodb_change_buffer_max_size': 32, 'innodb_change_buffering': 'inserts', 'innodb_compression_pad_pct_max': 41, 'innodb_disable_sort_file_cache': 'ON', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 26986011, 'innodb_ft_min_token_size': 8, 'innodb_ft_result_cache_limit': 2864649259, 'innodb_ft_total_cache_size': 327145119, 'innodb_io_capacity_max': 18000, 'innodb_log_file_size': 216833528, 'innodb_log_files_in_group': 3, 'innodb_lru_scan_depth': 7733, 'innodb_online_alter_log_max_size': 7225586675700585000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 2922, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 45, 'innodb_thread_concurrency': 324, 'join_buffer_size': 703194284, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 915254807, 'max_heap_table_size': 410891330, 'max_length_for_sort_data': 2171369, 'net_read_timeout': 31, 'net_write_timeout': 48, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 47096042, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 553167792, 'transaction_prealloc_size': 111935, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 01:05:28,662] [autotune] Close db successfully
+[INFO] [2024-12-02 01:05:28,663] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:05:28,667] [autotune] generated config file done
+[INFO] [2024-12-02 01:05:28,695] [autotune] wait for connection
+[INFO] [2024-12-02 01:05:33,711] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:05:33,711] [autotune] finish 5 seconds waiting for connection
+[INFO] [2024-12-02 01:05:33,711] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:05:33,711] [autotune] mysql is up
+[INFO] [2024-12-02 01:05:33,712] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:05:38,999] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733101538
+[INFO] [2024-12-02 01:10:24,470] [DBTune-twitter_mbo_47] Iteration 130, objective value: [2147483647].
+[WARNING] [2024-12-02 01:13:59,114] [autotune.optimizer.acq_maximizer.ei_optimization.LocalSearch] Local search took already 1000 iterations. Is it maybe stuck in a infinite loop?
+[INFO] [2024-12-02 01:14:45,960] [autotune] [step 4] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2296438642, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 21, 'expire_logs_days': 50, 'flush_time': 8, 'innodb_adaptive_flushing_lwm': 18, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14977199632, 'innodb_change_buffer_max_size': 29, 'innodb_change_buffering': 'deletes', 'innodb_compression_pad_pct_max': 56, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 36054924, 'innodb_ft_min_token_size': 3, 'innodb_ft_result_cache_limit': 2757159412, 'innodb_ft_total_cache_size': 997347515, 'innodb_io_capacity_max': 26338, 'innodb_log_file_size': 320871154, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 2434, 'innodb_online_alter_log_max_size': 10727526691460636000, 'innodb_page_cleaners': 3, 'innodb_purge_batch_size': 2613, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 27, 'innodb_thread_concurrency': 783, 'join_buffer_size': 395630289, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 388416333, 'max_heap_table_size': 442695421, 'max_length_for_sort_data': 3225674, 'net_read_timeout': 48, 'net_write_timeout': 72, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 77855264, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 561290601, 'transaction_prealloc_size': 57307, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 01:14:48,992] [autotune] Close db successfully
+[INFO] [2024-12-02 01:14:48,993] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:14:48,996] [autotune] generated config file done
+[INFO] [2024-12-02 01:14:49,019] [autotune] wait for connection
+[INFO] [2024-12-02 01:14:56,036] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:14:56,036] [autotune] finish 7 seconds waiting for connection
+[INFO] [2024-12-02 01:14:56,037] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:14:56,037] [autotune] mysql is up
+[INFO] [2024-12-02 01:14:56,037] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:15:01,329] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733102101
+[INFO] [2024-12-02 01:17:06,508] [DBTune-twitter_mbo_47] Iteration 131, objective value: [2147483647].
+[INFO] [2024-12-02 01:27:09,988] [autotune] [step 5] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 3010893257, 'binlog_row_image': 'noblob', 'delay_key_write': 'ON', 'div_precision_increment': 9, 'expire_logs_days': 26, 'flush_time': 8, 'innodb_adaptive_flushing_lwm': 15, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 14455700349, 'innodb_change_buffer_max_size': 43, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 74, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 10847673, 'innodb_ft_min_token_size': 12, 'innodb_ft_result_cache_limit': 615646259, 'innodb_ft_total_cache_size': 1406485011, 'innodb_io_capacity_max': 32523, 'innodb_log_file_size': 521468357, 'innodb_log_files_in_group': 8, 'innodb_lru_scan_depth': 4722, 'innodb_online_alter_log_max_size': 1023256883345978000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 256, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 10, 'innodb_thread_concurrency': 934, 'join_buffer_size': 711381931, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 590663245, 'max_heap_table_size': 124822559, 'max_length_for_sort_data': 8010728, 'net_read_timeout': 54, 'net_write_timeout': 12, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 117213294, 'require_secure_transport': 'ON', 'session_track_gtids': 'ALL_GTIDS', 'session_track_schema': 'ON', 'tmp_table_size': 479297463, 'transaction_prealloc_size': 4977, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 01:27:12,027] [autotune] Close db successfully
+[INFO] [2024-12-02 01:27:12,027] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:27:12,031] [autotune] generated config file done
+[INFO] [2024-12-02 01:27:12,061] [autotune] wait for connection
+[INFO] [2024-12-02 01:27:23,083] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:27:23,084] [autotune] finish 11 seconds waiting for connection
+[INFO] [2024-12-02 01:27:23,084] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:27:23,084] [autotune] mysql is up
+[INFO] [2024-12-02 01:27:23,084] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:27:28,358] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733102848
+[INFO] [2024-12-02 01:31:08,718] [DBTune-twitter_mbo_47] Iteration 132, objective value: [2147483647].
+[INFO] [2024-12-02 01:34:28,498] [autotune] [step 6] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2422645754, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 19, 'expire_logs_days': 34, 'flush_time': 7, 'innodb_adaptive_flushing_lwm': 14, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15206219050, 'innodb_change_buffer_max_size': 25, 'innodb_change_buffering': 'deletes', 'innodb_compression_pad_pct_max': 62, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 26449982, 'innodb_ft_min_token_size': 7, 'innodb_ft_result_cache_limit': 3055747667, 'innodb_ft_total_cache_size': 830464911, 'innodb_io_capacity_max': 28987, 'innodb_log_file_size': 292752654, 'innodb_log_files_in_group': 4, 'innodb_lru_scan_depth': 4855, 'innodb_online_alter_log_max_size': 8648550333836710000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 3094, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 38, 'innodb_thread_concurrency': 311, 'join_buffer_size': 715937131, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 794766090, 'max_heap_table_size': 200536460, 'max_length_for_sort_data': 4025313, 'net_read_timeout': 13, 'net_write_timeout': 44, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 74356166, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 284321073, 'transaction_prealloc_size': 103860, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 01:34:30,538] [autotune] Close db successfully
+[INFO] [2024-12-02 01:34:30,538] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:34:30,542] [autotune] generated config file done
+[INFO] [2024-12-02 01:34:30,561] [autotune] wait for connection
+[INFO] [2024-12-02 01:34:37,580] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:34:37,580] [autotune] finish 7 seconds waiting for connection
+[INFO] [2024-12-02 01:34:37,581] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:34:37,581] [autotune] mysql is up
+[INFO] [2024-12-02 01:34:37,581] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:34:42,849] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733103282
+[INFO] [2024-12-02 01:37:33,094] [DBTune-twitter_mbo_47] Iteration 133, objective value: [2147483647].
+[WARNING] [2024-12-02 01:39:36,350] [autotune.optimizer.acq_maximizer.ei_optimization.LocalSearch] Local search took already 1000 iterations. Is it maybe stuck in a infinite loop?
+[INFO] [2024-12-02 01:41:08,499] [autotune] [step 7] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2664084243, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 16, 'expire_logs_days': 54, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 33, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15470376588, 'innodb_change_buffer_max_size': 26, 'innodb_change_buffering': 'all', 'innodb_compression_pad_pct_max': 59, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 30659034, 'innodb_ft_min_token_size': 7, 'innodb_ft_result_cache_limit': 2647528111, 'innodb_ft_total_cache_size': 900356417, 'innodb_io_capacity_max': 25620, 'innodb_log_file_size': 451291873, 'innodb_log_files_in_group': 4, 'innodb_lru_scan_depth': 4858, 'innodb_online_alter_log_max_size': 8089340605795420000, 'innodb_page_cleaners': 3, 'innodb_purge_batch_size': 1667, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 41, 'innodb_thread_concurrency': 322, 'join_buffer_size': 618144950, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 629096168, 'max_heap_table_size': 285138721, 'max_length_for_sort_data': 4726739, 'net_read_timeout': 29, 'net_write_timeout': 57, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 53883055, 'require_secure_transport': 'OFF', 'session_track_gtids': 'ALL_GTIDS', 'session_track_schema': 'ON', 'tmp_table_size': 629346088, 'transaction_prealloc_size': 79574, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 01:41:11,536] [autotune] Close db successfully
+[INFO] [2024-12-02 01:41:11,537] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:41:11,539] [autotune] generated config file done
+[INFO] [2024-12-02 01:41:11,558] [autotune] wait for connection
+[INFO] [2024-12-02 01:41:18,574] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:41:18,575] [autotune] finish 7 seconds waiting for connection
+[INFO] [2024-12-02 01:41:18,575] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:41:18,575] [autotune] mysql is up
+[INFO] [2024-12-02 01:41:18,575] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:41:23,847] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733103683
+[INFO] [2024-12-02 01:43:29,011] [DBTune-twitter_mbo_47] Iteration 134, objective value: [2147483647].
+[INFO] [2024-12-02 01:43:57,499] [autotune] [step 8] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 1664769094, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 27, 'expire_logs_days': 37, 'flush_time': 5, 'innodb_adaptive_flushing_lwm': 65, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15581673822, 'innodb_change_buffer_max_size': 40, 'innodb_change_buffering': 'purges', 'innodb_compression_pad_pct_max': 35, 'innodb_disable_sort_file_cache': 'ON', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 21718659, 'innodb_ft_min_token_size': 1, 'innodb_ft_result_cache_limit': 4043597611, 'innodb_ft_total_cache_size': 107512102, 'innodb_io_capacity_max': 23568, 'innodb_log_file_size': 686754922, 'innodb_log_files_in_group': 6, 'innodb_lru_scan_depth': 7296, 'innodb_online_alter_log_max_size': 3177786257388392000, 'innodb_page_cleaners': 3, 'innodb_purge_batch_size': 4811, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 64, 'innodb_thread_concurrency': 740, 'join_buffer_size': 483911817, 'log_bin_use_v1_row_events': 'ON', 'max_allowed_packet': 29560877, 'max_heap_table_size': 474284657, 'max_length_for_sort_data': 4848098, 'net_read_timeout': 31, 'net_write_timeout': 55, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 82556536, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'OFF', 'tmp_table_size': 1006403571, 'transaction_prealloc_size': 67116, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 01:44:01,532] [autotune] Close db successfully
+[INFO] [2024-12-02 01:44:01,532] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:44:01,535] [autotune] generated config file done
+[INFO] [2024-12-02 01:44:01,559] [autotune] wait for connection
+[INFO] [2024-12-02 01:44:12,581] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:44:12,582] [autotune] finish 11 seconds waiting for connection
+[INFO] [2024-12-02 01:44:12,582] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:44:12,582] [autotune] mysql is up
+[INFO] [2024-12-02 01:44:12,582] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:44:17,859] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733103857
+[INFO] [2024-12-02 01:46:23,022] [DBTune-twitter_mbo_47] Iteration 135, objective value: [2147483647].
+[INFO] [2024-12-02 01:46:32,517] [BO_Optimizer] Sample random config. rand_prob=0.100000.
+[INFO] [2024-12-02 01:46:32,522] [autotune] [step 9] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 4088066056, 'binlog_row_image': 'full', 'delay_key_write': 'ON', 'div_precision_increment': 27, 'expire_logs_days': 14, 'flush_time': 9, 'innodb_adaptive_flushing_lwm': 16, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15450957785, 'innodb_change_buffer_max_size': 50, 'innodb_change_buffering': 'deletes', 'innodb_compression_pad_pct_max': 27, 'innodb_disable_sort_file_cache': 'ON', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 30053824, 'innodb_ft_min_token_size': 6, 'innodb_ft_result_cache_limit': 3730396297, 'innodb_ft_total_cache_size': 219603711, 'innodb_io_capacity_max': 7011, 'innodb_log_file_size': 43708080, 'innodb_log_files_in_group': 8, 'innodb_lru_scan_depth': 7029, 'innodb_online_alter_log_max_size': 6812867353992715000, 'innodb_page_cleaners': 2, 'innodb_purge_batch_size': 4017, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 46, 'innodb_thread_concurrency': 829, 'join_buffer_size': 1033342310, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 696289599, 'max_heap_table_size': 570324182, 'max_length_for_sort_data': 850860, 'net_read_timeout': 22, 'net_write_timeout': 98, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 74006245, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 609338042, 'transaction_prealloc_size': 125593, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 01:46:37,565] [autotune] Close db successfully
+[INFO] [2024-12-02 01:46:37,566] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:46:37,570] [autotune] generated config file done
+[INFO] [2024-12-02 01:46:37,598] [autotune] wait for connection
+[INFO] [2024-12-02 01:46:42,613] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:46:42,613] [autotune] finish 5 seconds waiting for connection
+[INFO] [2024-12-02 01:46:42,613] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:46:42,613] [autotune] mysql is up
+[INFO] [2024-12-02 01:46:42,614] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:46:47,903] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733104007
+[INFO] [2024-12-02 01:49:33,146] [DBTune-twitter_mbo_47] Iteration 136, objective value: [2147483647].
+[INFO] [2024-12-02 01:51:40,263] [autotune] [step 10] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 2729832917, 'binlog_row_image': 'noblob', 'delay_key_write': 'ALL', 'div_precision_increment': 12, 'expire_logs_days': 8, 'flush_time': 5, 'innodb_adaptive_flushing_lwm': 25, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 15192063181, 'innodb_change_buffer_max_size': 28, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 72, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 6043129, 'innodb_ft_min_token_size': 8, 'innodb_ft_result_cache_limit': 3061539342, 'innodb_ft_total_cache_size': 1048237745, 'innodb_io_capacity_max': 31592, 'innodb_log_file_size': 317957915, 'innodb_log_files_in_group': 8, 'innodb_lru_scan_depth': 3695, 'innodb_online_alter_log_max_size': 1475736379330665000, 'innodb_page_cleaners': 5, 'innodb_purge_batch_size': 119, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 18, 'innodb_thread_concurrency': 927, 'join_buffer_size': 680220079, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 750885236, 'max_heap_table_size': 52995195, 'max_length_for_sort_data': 7649961, 'net_read_timeout': 7, 'net_write_timeout': 59, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 114691024, 'require_secure_transport': 'ON', 'session_track_gtids': 'ALL_GTIDS', 'session_track_schema': 'ON', 'tmp_table_size': 460189513, 'transaction_prealloc_size': 14893, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 01:51:45,297] [autotune] Close db successfully
+[INFO] [2024-12-02 01:51:45,298] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:51:45,300] [autotune] generated config file done
+[INFO] [2024-12-02 01:51:45,322] [autotune] wait for connection
+[INFO] [2024-12-02 01:51:53,340] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:51:53,341] [autotune] finish 8 seconds waiting for connection
+[INFO] [2024-12-02 01:51:53,341] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:51:53,341] [autotune] mysql is up
+[INFO] [2024-12-02 01:51:53,341] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:51:58,630] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733104318
+[INFO] [2024-12-02 01:54:03,803] [DBTune-twitter_mbo_47] Iteration 137, objective value: [2147483647].
+[INFO] [2024-12-02 01:55:21,946] [autotune] [step 11] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 3948668491, 'binlog_row_image': 'noblob', 'delay_key_write': 'ALL', 'div_precision_increment': 10, 'expire_logs_days': 54, 'flush_time': 5, 'innodb_adaptive_flushing_lwm': 10, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 14748969127, 'innodb_change_buffer_max_size': 29, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 63, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 43988129, 'innodb_ft_min_token_size': 15, 'innodb_ft_result_cache_limit': 3042360060, 'innodb_ft_total_cache_size': 1506579918, 'innodb_io_capacity_max': 39757, 'innodb_log_file_size': 220169630, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 6340, 'innodb_online_alter_log_max_size': 1876905432372598000, 'innodb_page_cleaners': 2, 'innodb_purge_batch_size': 62, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 33, 'innodb_thread_concurrency': 955, 'join_buffer_size': 372406771, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 1070616707, 'max_heap_table_size': 305178703, 'max_length_for_sort_data': 5840739, 'net_read_timeout': 55, 'net_write_timeout': 61, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 83864234, 'require_secure_transport': 'ON', 'session_track_gtids': 'ALL_GTIDS', 'session_track_schema': 'ON', 'tmp_table_size': 205997419, 'transaction_prealloc_size': 15462, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 01:55:25,980] [autotune] Close db successfully
+[INFO] [2024-12-02 01:55:25,981] [autotune] mysql is shut down
+[INFO] [2024-12-02 01:55:25,983] [autotune] generated config file done
+[INFO] [2024-12-02 01:55:26,007] [autotune] wait for connection
+[INFO] [2024-12-02 01:55:32,022] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 01:55:32,023] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-12-02 01:55:32,023] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 01:55:32,023] [autotune] mysql is up
+[INFO] [2024-12-02 01:55:32,023] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 01:55:37,313] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733104537
+[INFO] [2024-12-02 01:59:17,686] [DBTune-twitter_mbo_47] Iteration 138, objective value: [2147483647].
+[INFO] [2024-12-02 02:00:44,255] [autotune] [step 12] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2856690268, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 17, 'expire_logs_days': 30, 'flush_time': 5, 'innodb_adaptive_flushing_lwm': 23, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15012456224, 'innodb_change_buffer_max_size': 29, 'innodb_change_buffering': 'all', 'innodb_compression_pad_pct_max': 69, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 27430163, 'innodb_ft_min_token_size': 6, 'innodb_ft_result_cache_limit': 3087173820, 'innodb_ft_total_cache_size': 817769012, 'innodb_io_capacity_max': 28174, 'innodb_log_file_size': 456822109, 'innodb_log_files_in_group': 4, 'innodb_lru_scan_depth': 4445, 'innodb_online_alter_log_max_size': 7847311736753621000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 2611, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 30, 'innodb_thread_concurrency': 234, 'join_buffer_size': 659848433, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 673846205, 'max_heap_table_size': 380361620, 'max_length_for_sort_data': 4370656, 'net_read_timeout': 25, 'net_write_timeout': 59, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 63880321, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 533645891, 'transaction_prealloc_size': 101776, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:00:48,288] [autotune] Close db successfully
+[INFO] [2024-12-02 02:00:48,291] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:00:48,293] [autotune] generated config file done
+[INFO] [2024-12-02 02:00:48,321] [autotune] wait for connection
+[INFO] [2024-12-02 02:00:55,339] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:00:55,340] [autotune] finish 7 seconds waiting for connection
+[INFO] [2024-12-02 02:00:55,340] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:00:55,340] [autotune] mysql is up
+[INFO] [2024-12-02 02:00:55,340] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:01:00,673] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733104860
+[INFO] [2024-12-02 02:03:05,845] [DBTune-twitter_mbo_47] Iteration 139, objective value: [2147483647].
+[INFO] [2024-12-02 02:06:43,527] [autotune] [step 13] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 1990282518, 'binlog_row_image': 'minimal', 'delay_key_write': 'ON', 'div_precision_increment': 17, 'expire_logs_days': 59, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 4, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 15479840344, 'innodb_change_buffer_max_size': 37, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 52, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 44176554, 'innodb_ft_min_token_size': 8, 'innodb_ft_result_cache_limit': 1231832461, 'innodb_ft_total_cache_size': 121494127, 'innodb_io_capacity_max': 21221, 'innodb_log_file_size': 60920129, 'innodb_log_files_in_group': 9, 'innodb_lru_scan_depth': 5468, 'innodb_online_alter_log_max_size': 11712608691018844000, 'innodb_page_cleaners': 5, 'innodb_purge_batch_size': 3036, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 82, 'innodb_thread_concurrency': 955, 'join_buffer_size': 746563111, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 75831143, 'max_heap_table_size': 207362178, 'max_length_for_sort_data': 8338905, 'net_read_timeout': 54, 'net_write_timeout': 77, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 31857612, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 452321681, 'transaction_prealloc_size': 127306, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:06:46,571] [autotune] Close db successfully
+[INFO] [2024-12-02 02:06:46,572] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:06:46,575] [autotune] generated config file done
+[INFO] [2024-12-02 02:06:46,604] [autotune] wait for connection
+[INFO] [2024-12-02 02:06:51,619] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:06:51,620] [autotune] finish 5 seconds waiting for connection
+[INFO] [2024-12-02 02:06:51,620] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:06:51,620] [autotune] mysql is up
+[INFO] [2024-12-02 02:06:51,621] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:06:56,939] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733105216
+[INFO] [2024-12-02 02:09:47,176] [DBTune-twitter_mbo_47] Iteration 140, objective value: [2147483647].
+[INFO] [2024-12-02 02:10:57,994] [autotune] [step 14] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 1281221946, 'binlog_row_image': 'full', 'delay_key_write': 'ON', 'div_precision_increment': 3, 'expire_logs_days': 54, 'flush_time': 7, 'innodb_adaptive_flushing_lwm': 30, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14767027743, 'innodb_change_buffer_max_size': 24, 'innodb_change_buffering': 'deletes', 'innodb_compression_pad_pct_max': 59, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 59872872, 'innodb_ft_min_token_size': 2, 'innodb_ft_result_cache_limit': 3534721945, 'innodb_ft_total_cache_size': 1275312195, 'innodb_io_capacity_max': 31831, 'innodb_log_file_size': 251047038, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 4878, 'innodb_online_alter_log_max_size': 9248242883777650000, 'innodb_page_cleaners': 2, 'innodb_purge_batch_size': 2660, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 25, 'innodb_thread_concurrency': 801, 'join_buffer_size': 392397777, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 90635185, 'max_heap_table_size': 272189682, 'max_length_for_sort_data': 1708284, 'net_read_timeout': 3, 'net_write_timeout': 99, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 102311748, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 222394764, 'transaction_prealloc_size': 90209, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:11:03,027] [autotune] Close db successfully
+[INFO] [2024-12-02 02:11:03,027] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:11:03,030] [autotune] generated config file done
+[INFO] [2024-12-02 02:11:03,050] [autotune] wait for connection
+[INFO] [2024-12-02 02:11:09,065] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:11:09,066] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-12-02 02:11:09,066] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:11:09,066] [autotune] mysql is up
+[INFO] [2024-12-02 02:11:09,066] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:11:14,366] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733105474
+[INFO] [2024-12-02 02:13:19,531] [DBTune-twitter_mbo_47] Iteration 141, objective value: [2147483647].
+[INFO] [2024-12-02 02:14:25,898] [autotune] [step 15] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 3354118274, 'binlog_row_image': 'noblob', 'delay_key_write': 'ALL', 'div_precision_increment': 0, 'expire_logs_days': 49, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 1, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14567334716, 'innodb_change_buffer_max_size': 43, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 67, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 27834837, 'innodb_ft_min_token_size': 3, 'innodb_ft_result_cache_limit': 3028266323, 'innodb_ft_total_cache_size': 1112901936, 'innodb_io_capacity_max': 38070, 'innodb_log_file_size': 742897174, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 3331, 'innodb_online_alter_log_max_size': 6816159153180061000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 4615, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 33, 'innodb_thread_concurrency': 217, 'join_buffer_size': 885857815, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 44281765, 'max_heap_table_size': 114828272, 'max_length_for_sort_data': 3130896, 'net_read_timeout': 15, 'net_write_timeout': 51, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 86121360, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 487959215, 'transaction_prealloc_size': 70273, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:14:29,931] [autotune] Close db successfully
+[INFO] [2024-12-02 02:14:29,932] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:14:29,934] [autotune] generated config file done
+[INFO] [2024-12-02 02:14:29,958] [autotune] wait for connection
+[INFO] [2024-12-02 02:14:40,980] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:14:40,980] [autotune] finish 11 seconds waiting for connection
+[INFO] [2024-12-02 02:14:40,981] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:14:40,981] [autotune] mysql is up
+[INFO] [2024-12-02 02:14:40,981] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:14:46,316] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733105686
+[INFO] [2024-12-02 02:16:51,496] [DBTune-twitter_mbo_47] Iteration 142, objective value: [2147483647].
+[INFO] [2024-12-02 02:17:01,857] [autotune] [step 16] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 3429839284, 'binlog_row_image': 'noblob', 'delay_key_write': 'ALL', 'div_precision_increment': 18, 'expire_logs_days': 92, 'flush_time': 1, 'innodb_adaptive_flushing_lwm': 51, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15071836941, 'innodb_change_buffer_max_size': 6, 'innodb_change_buffering': 'purges', 'innodb_compression_pad_pct_max': 11, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 27517879, 'innodb_ft_min_token_size': 14, 'innodb_ft_result_cache_limit': 1596229119, 'innodb_ft_total_cache_size': 1135585791, 'innodb_io_capacity_max': 4977, 'innodb_log_file_size': 140593621, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 3173, 'innodb_online_alter_log_max_size': 14081191592774588000, 'innodb_page_cleaners': 5, 'innodb_purge_batch_size': 3005, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 59, 'innodb_thread_concurrency': 379, 'join_buffer_size': 182156736, 'log_bin_use_v1_row_events': 'ON', 'max_allowed_packet': 591551145, 'max_heap_table_size': 635981195, 'max_length_for_sort_data': 3991114, 'net_read_timeout': 3, 'net_write_timeout': 65, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 45396466, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 669498453, 'transaction_prealloc_size': 79771, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:17:05,889] [autotune] Close db successfully
+[INFO] [2024-12-02 02:17:05,889] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:17:05,892] [autotune] generated config file done
+[INFO] [2024-12-02 02:17:05,914] [autotune] wait for connection
+[INFO] [2024-12-02 02:17:11,929] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:17:11,929] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-12-02 02:17:11,930] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:17:11,930] [autotune] mysql is up
+[INFO] [2024-12-02 02:17:11,930] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:17:17,257] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733105837
+[INFO] [2024-12-02 02:22:57,537] [DBTune-twitter_mbo_47] Iteration 143, objective value: [2147483647].
+[INFO] [2024-12-02 02:23:56,909] [autotune] [step 17] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 1300254888, 'binlog_row_image': 'full', 'delay_key_write': 'ON', 'div_precision_increment': 26, 'expire_logs_days': 51, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 1, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14613849491, 'innodb_change_buffer_max_size': 30, 'innodb_change_buffering': 'deletes', 'innodb_compression_pad_pct_max': 47, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 1744100, 'innodb_ft_min_token_size': 5, 'innodb_ft_result_cache_limit': 3002008118, 'innodb_ft_total_cache_size': 372873386, 'innodb_io_capacity_max': 20773, 'innodb_log_file_size': 357732169, 'innodb_log_files_in_group': 6, 'innodb_lru_scan_depth': 4641, 'innodb_online_alter_log_max_size': 9263568939739498000, 'innodb_page_cleaners': 3, 'innodb_purge_batch_size': 3006, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 35, 'innodb_thread_concurrency': 657, 'join_buffer_size': 535384384, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 950007670, 'max_heap_table_size': 366240428, 'max_length_for_sort_data': 2037276, 'net_read_timeout': 43, 'net_write_timeout': 72, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 54017367, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 311409559, 'transaction_prealloc_size': 97029, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:24:00,942] [autotune] Close db successfully
+[INFO] [2024-12-02 02:24:00,942] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:24:00,944] [autotune] generated config file done
+[INFO] [2024-12-02 02:24:00,967] [autotune] wait for connection
+[INFO] [2024-12-02 02:24:07,984] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:24:07,984] [autotune] finish 7 seconds waiting for connection
+[INFO] [2024-12-02 02:24:07,984] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:24:07,985] [autotune] mysql is up
+[INFO] [2024-12-02 02:24:07,985] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:24:13,257] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733106253
+[INFO] [2024-12-02 02:26:43,472] [DBTune-twitter_mbo_47] Iteration 144, objective value: [2147483647].
+[INFO] [2024-12-02 02:26:57,903] [autotune] [step 18] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 821520446, 'binlog_row_image': 'minimal', 'delay_key_write': 'ALL', 'div_precision_increment': 22, 'expire_logs_days': 20, 'flush_time': 5, 'innodb_adaptive_flushing_lwm': 11, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 13645746625, 'innodb_change_buffer_max_size': 0, 'innodb_change_buffering': 'inserts', 'innodb_compression_pad_pct_max': 61, 'innodb_disable_sort_file_cache': 'ON', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 6528372, 'innodb_ft_min_token_size': 8, 'innodb_ft_result_cache_limit': 468522273, 'innodb_ft_total_cache_size': 731872308, 'innodb_io_capacity_max': 33971, 'innodb_log_file_size': 766232017, 'innodb_log_files_in_group': 8, 'innodb_lru_scan_depth': 1007, 'innodb_online_alter_log_max_size': 10369958517138582000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 4311, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 44, 'innodb_thread_concurrency': 702, 'join_buffer_size': 784201969, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 949750093, 'max_heap_table_size': 838574533, 'max_length_for_sort_data': 3957191, 'net_read_timeout': 31, 'net_write_timeout': 86, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 99138723, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OWN_GTID', 'session_track_schema': 'ON', 'tmp_table_size': 383912253, 'transaction_prealloc_size': 40643, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:27:01,933] [autotune] Close db successfully
+[INFO] [2024-12-02 02:27:01,934] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:27:01,936] [autotune] generated config file done
+[INFO] [2024-12-02 02:27:01,958] [autotune] wait for connection
+[INFO] [2024-12-02 02:27:16,991] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:27:16,991] [autotune] finish 15 seconds waiting for connection
+[INFO] [2024-12-02 02:27:16,992] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:27:16,992] [autotune] mysql is up
+[INFO] [2024-12-02 02:27:16,992] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:27:22,276] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733106442
+[INFO] [2024-12-02 02:29:27,444] [DBTune-twitter_mbo_47] Iteration 145, objective value: [2147483647].
+[INFO] [2024-12-02 02:29:42,986] [autotune] [step 19] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 1019268546, 'binlog_row_image': 'minimal', 'delay_key_write': 'ALL', 'div_precision_increment': 23, 'expire_logs_days': 16, 'flush_time': 4, 'innodb_adaptive_flushing_lwm': 12, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14848648151, 'innodb_change_buffer_max_size': 15, 'innodb_change_buffering': 'inserts', 'innodb_compression_pad_pct_max': 44, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 5696579, 'innodb_ft_min_token_size': 5, 'innodb_ft_result_cache_limit': 2110864672, 'innodb_ft_total_cache_size': 350379709, 'innodb_io_capacity_max': 11780, 'innodb_log_file_size': 462625531, 'innodb_log_files_in_group': 6, 'innodb_lru_scan_depth': 9776, 'innodb_online_alter_log_max_size': 15399155577282182000, 'innodb_page_cleaners': 6, 'innodb_purge_batch_size': 4391, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 4, 'innodb_thread_concurrency': 988, 'join_buffer_size': 58549297, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 1072047041, 'max_heap_table_size': 616541648, 'max_length_for_sort_data': 5001429, 'net_read_timeout': 37, 'net_write_timeout': 11, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 35157239, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 309721463, 'transaction_prealloc_size': 9775, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:29:47,017] [autotune] Close db successfully
+[INFO] [2024-12-02 02:29:47,017] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:29:47,020] [autotune] generated config file done
+[INFO] [2024-12-02 02:29:47,048] [autotune] wait for connection
+[INFO] [2024-12-02 02:29:57,067] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:29:57,067] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-12-02 02:29:57,067] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:29:57,067] [autotune] mysql is up
+[INFO] [2024-12-02 02:29:57,068] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:30:02,368] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733106602
+[INFO] [2024-12-02 02:33:17,689] [DBTune-twitter_mbo_47] Iteration 146, objective value: [2147483647].
+[WARNING] [2024-12-02 02:35:33,419] [autotune.optimizer.acq_maximizer.ei_optimization.LocalSearch] Local search took already 1000 iterations. Is it maybe stuck in a infinite loop?
+[INFO] [2024-12-02 02:36:14,403] [autotune] [step 20] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 659535691, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 30, 'expire_logs_days': 70, 'flush_time': 9, 'innodb_adaptive_flushing_lwm': 0, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14958544386, 'innodb_change_buffer_max_size': 18, 'innodb_change_buffering': 'deletes', 'innodb_compression_pad_pct_max': 37, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 8538442, 'innodb_ft_min_token_size': 2, 'innodb_ft_result_cache_limit': 3099389599, 'innodb_ft_total_cache_size': 993186018, 'innodb_io_capacity_max': 25834, 'innodb_log_file_size': 225935435, 'innodb_log_files_in_group': 8, 'innodb_lru_scan_depth': 3541, 'innodb_online_alter_log_max_size': 12675607052296420000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 4124, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 46, 'innodb_thread_concurrency': 777, 'join_buffer_size': 446835627, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 782214038, 'max_heap_table_size': 224256482, 'max_length_for_sort_data': 1132071, 'net_read_timeout': 29, 'net_write_timeout': 74, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 101156266, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 227782854, 'transaction_prealloc_size': 81057, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:36:17,447] [autotune] Close db successfully
+[INFO] [2024-12-02 02:36:17,448] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:36:17,450] [autotune] generated config file done
+[INFO] [2024-12-02 02:36:17,472] [autotune] wait for connection
+[INFO] [2024-12-02 02:36:24,486] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:36:24,486] [autotune] finish 7 seconds waiting for connection
+[INFO] [2024-12-02 02:36:24,487] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:36:24,487] [autotune] mysql is up
+[INFO] [2024-12-02 02:36:24,487] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:36:29,774] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733106989
+[INFO] [2024-12-02 02:39:10,007] [DBTune-twitter_mbo_47] Iteration 147, objective value: [2147483647].
+[INFO] [2024-12-02 02:39:35,657] [autotune] [step 21] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 534315775, 'binlog_row_image': 'minimal', 'delay_key_write': 'ON', 'div_precision_increment': 21, 'expire_logs_days': 42, 'flush_time': 3, 'innodb_adaptive_flushing_lwm': 53, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14877401426, 'innodb_change_buffer_max_size': 17, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 67, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 41592526, 'innodb_ft_min_token_size': 9, 'innodb_ft_result_cache_limit': 3542683859, 'innodb_ft_total_cache_size': 126958308, 'innodb_io_capacity_max': 15289, 'innodb_log_file_size': 1055010441, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 4539, 'innodb_online_alter_log_max_size': 6682438704636006000, 'innodb_page_cleaners': 1, 'innodb_purge_batch_size': 4050, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 52, 'innodb_thread_concurrency': 677, 'join_buffer_size': 556565041, 'log_bin_use_v1_row_events': 'ON', 'max_allowed_packet': 475862786, 'max_heap_table_size': 358196124, 'max_length_for_sort_data': 2755672, 'net_read_timeout': 31, 'net_write_timeout': 22, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 76770478, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'OFF', 'tmp_table_size': 244353683, 'transaction_prealloc_size': 25529, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:39:40,684] [autotune] Close db successfully
+[INFO] [2024-12-02 02:39:40,684] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:39:40,687] [autotune] generated config file done
+[INFO] [2024-12-02 02:39:40,711] [autotune] wait for connection
+[INFO] [2024-12-02 02:39:54,745] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:39:54,746] [autotune] finish 14 seconds waiting for connection
+[INFO] [2024-12-02 02:39:54,746] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:39:54,746] [autotune] mysql is up
+[INFO] [2024-12-02 02:39:54,746] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:39:59,991] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733107199
+[INFO] [2024-12-02 02:43:20,315] [DBTune-twitter_mbo_47] Iteration 148, objective value: [2147483647].
+[INFO] [2024-12-02 02:43:31,651] [autotune] [step 22] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2211071552, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 6, 'expire_logs_days': 95, 'flush_time': 0, 'innodb_adaptive_flushing_lwm': 60, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 15081449068, 'innodb_change_buffer_max_size': 7, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 11, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'OFF', 'innodb_ft_cache_size': 39861533, 'innodb_ft_min_token_size': 16, 'innodb_ft_result_cache_limit': 3099502632, 'innodb_ft_total_cache_size': 1107701503, 'innodb_io_capacity_max': 8743, 'innodb_log_file_size': 316686477, 'innodb_log_files_in_group': 10, 'innodb_lru_scan_depth': 398, 'innodb_online_alter_log_max_size': 15126591797079200000, 'innodb_page_cleaners': 6, 'innodb_purge_batch_size': 2472, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 18, 'innodb_thread_concurrency': 296, 'join_buffer_size': 347903084, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 883938814, 'max_heap_table_size': 478384264, 'max_length_for_sort_data': 3574415, 'net_read_timeout': 53, 'net_write_timeout': 28, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 95757851, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 991909742, 'transaction_prealloc_size': 68364, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:43:35,678] [autotune] Close db successfully
+[INFO] [2024-12-02 02:43:35,679] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:43:35,681] [autotune] generated config file done
+[INFO] [2024-12-02 02:43:35,711] [autotune] wait for connection
+[INFO] [2024-12-02 02:43:45,734] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:43:45,735] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-12-02 02:43:45,736] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:43:45,736] [autotune] mysql is up
+[INFO] [2024-12-02 02:43:45,737] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:43:51,048] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733107431
+[INFO] [2024-12-02 02:46:26,253] [DBTune-twitter_mbo_47] Iteration 149, objective value: [2147483647].
+[INFO] [2024-12-02 02:48:08,050] [autotune] [step 23] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2900427314, 'binlog_row_image': 'noblob', 'delay_key_write': 'OFF', 'div_precision_increment': 11, 'expire_logs_days': 10, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 0, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14211737961, 'innodb_change_buffer_max_size': 30, 'innodb_change_buffering': 'all', 'innodb_compression_pad_pct_max': 63, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 20268659, 'innodb_ft_min_token_size': 2, 'innodb_ft_result_cache_limit': 3315610605, 'innodb_ft_total_cache_size': 165082345, 'innodb_io_capacity_max': 27794, 'innodb_log_file_size': 93216118, 'innodb_log_files_in_group': 4, 'innodb_lru_scan_depth': 6302, 'innodb_online_alter_log_max_size': 6936800086891692000, 'innodb_page_cleaners': 5, 'innodb_purge_batch_size': 2633, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 30, 'innodb_thread_concurrency': 118, 'join_buffer_size': 628892917, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 711036442, 'max_heap_table_size': 359489747, 'max_length_for_sort_data': 4672339, 'net_read_timeout': 3, 'net_write_timeout': 19, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 40267990, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 327373768, 'transaction_prealloc_size': 105447, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:48:12,082] [autotune] Close db successfully
+[INFO] [2024-12-02 02:48:12,082] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:48:12,085] [autotune] generated config file done
+[INFO] [2024-12-02 02:48:12,108] [autotune] wait for connection
+[INFO] [2024-12-02 02:48:17,119] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:48:17,119] [autotune] finish 5 seconds waiting for connection
+[INFO] [2024-12-02 02:48:17,119] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:48:17,119] [autotune] mysql is up
+[INFO] [2024-12-02 02:48:17,120] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:48:22,408] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733107702
+[INFO] [2024-12-02 02:51:02,674] [DBTune-twitter_mbo_47] Iteration 150, objective value: [2147483647].
+[INFO] [2024-12-02 02:51:17,841] [autotune] [step 24] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 952431928, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 9, 'expire_logs_days': 84, 'flush_time': 0, 'innodb_adaptive_flushing_lwm': 59, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15002110258, 'innodb_change_buffer_max_size': 15, 'innodb_change_buffering': 'purges', 'innodb_compression_pad_pct_max': 5, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_flush_sync': 'OFF', 'innodb_ft_cache_size': 21316252, 'innodb_ft_min_token_size': 5, 'innodb_ft_result_cache_limit': 2654010782, 'innodb_ft_total_cache_size': 833182452, 'innodb_io_capacity_max': 10103, 'innodb_log_file_size': 556042118, 'innodb_log_files_in_group': 7, 'innodb_lru_scan_depth': 6776, 'innodb_online_alter_log_max_size': 15879563301996380000, 'innodb_page_cleaners': 8, 'innodb_purge_batch_size': 3160, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 76, 'innodb_thread_concurrency': 948, 'join_buffer_size': 859339669, 'log_bin_use_v1_row_events': 'ON', 'max_allowed_packet': 1030137956, 'max_heap_table_size': 13683591, 'max_length_for_sort_data': 1521253, 'net_read_timeout': 22, 'net_write_timeout': 62, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 44301270, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 8344902, 'transaction_prealloc_size': 124439, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 02:51:21,877] [autotune] Close db successfully
+[INFO] [2024-12-02 02:51:21,879] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:51:21,883] [autotune] generated config file done
+[INFO] [2024-12-02 02:51:21,910] [autotune] wait for connection
+[INFO] [2024-12-02 02:51:31,931] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:51:31,931] [autotune] finish 10 seconds waiting for connection
+[INFO] [2024-12-02 02:51:31,931] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:51:31,931] [autotune] mysql is up
+[INFO] [2024-12-02 02:51:31,931] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:51:37,229] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733107897
+[INFO] [2024-12-02 02:53:42,391] [DBTune-twitter_mbo_47] Iteration 151, objective value: [2147483647].
+[INFO] [2024-12-02 02:56:09,408] [autotune] [step 25] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 1964984018, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 4, 'expire_logs_days': 38, 'flush_time': 5, 'innodb_adaptive_flushing_lwm': 57, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 13120211621, 'innodb_change_buffer_max_size': 23, 'innodb_change_buffering': 'deletes', 'innodb_compression_pad_pct_max': 64, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'OFF', 'innodb_ft_cache_size': 42781429, 'innodb_ft_min_token_size': 6, 'innodb_ft_result_cache_limit': 3056056075, 'innodb_ft_total_cache_size': 1406939881, 'innodb_io_capacity_max': 28873, 'innodb_log_file_size': 735171184, 'innodb_log_files_in_group': 9, 'innodb_lru_scan_depth': 3321, 'innodb_online_alter_log_max_size': 15726012256461392000, 'innodb_page_cleaners': 5, 'innodb_purge_batch_size': 2589, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 68, 'innodb_thread_concurrency': 228, 'join_buffer_size': 915468627, 'log_bin_use_v1_row_events': 'ON', 'max_allowed_packet': 192493135, 'max_heap_table_size': 391326381, 'max_length_for_sort_data': 3123881, 'net_read_timeout': 25, 'net_write_timeout': 23, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 38817511, 'require_secure_transport': 'ON', 'session_track_gtids': 'ALL_GTIDS', 'session_track_schema': 'ON', 'tmp_table_size': 1043590109, 'transaction_prealloc_size': 65280, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 02:56:14,440] [autotune] Close db successfully
+[INFO] [2024-12-02 02:56:14,443] [autotune] mysql is shut down
+[INFO] [2024-12-02 02:56:14,448] [autotune] generated config file done
+[INFO] [2024-12-02 02:56:14,482] [autotune] wait for connection
+[INFO] [2024-12-02 02:56:31,514] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 02:56:31,514] [autotune] finish 17 seconds waiting for connection
+[INFO] [2024-12-02 02:56:31,514] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 02:56:31,514] [autotune] mysql is up
+[INFO] [2024-12-02 02:56:31,515] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 02:56:36,842] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733108196
+[INFO] [2024-12-02 02:58:42,014] [DBTune-twitter_mbo_47] Iteration 152, objective value: [2147483647].
+[INFO] [2024-12-02 03:00:15,031] [autotune] [step 26] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2196413649, 'binlog_row_image': 'full', 'delay_key_write': 'ALL', 'div_precision_increment': 21, 'expire_logs_days': 37, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 9, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 15051283222, 'innodb_change_buffer_max_size': 28, 'innodb_change_buffering': 'deletes', 'innodb_compression_pad_pct_max': 62, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 22279531, 'innodb_ft_min_token_size': 7, 'innodb_ft_result_cache_limit': 3397440124, 'innodb_ft_total_cache_size': 926806929, 'innodb_io_capacity_max': 29419, 'innodb_log_file_size': 104544023, 'innodb_log_files_in_group': 4, 'innodb_lru_scan_depth': 6131, 'innodb_online_alter_log_max_size': 5887798639013547000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 3032, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 36, 'innodb_thread_concurrency': 230, 'join_buffer_size': 665800625, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 768046500, 'max_heap_table_size': 152213293, 'max_length_for_sort_data': 3606739, 'net_read_timeout': 17, 'net_write_timeout': 50, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 72419116, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 229793381, 'transaction_prealloc_size': 109534, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 03:00:17,084] [autotune] Close db successfully
+[INFO] [2024-12-02 03:00:17,084] [autotune] mysql is shut down
+[INFO] [2024-12-02 03:00:17,086] [autotune] generated config file done
+[INFO] [2024-12-02 03:00:17,106] [autotune] wait for connection
+[INFO] [2024-12-02 03:00:22,117] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 03:00:22,118] [autotune] finish 5 seconds waiting for connection
+[INFO] [2024-12-02 03:00:22,118] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 03:00:22,118] [autotune] mysql is up
+[INFO] [2024-12-02 03:00:22,118] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 03:00:27,377] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733108427
+[INFO] [2024-12-02 03:03:07,614] [DBTune-twitter_mbo_47] Iteration 153, objective value: [2147483647].
+[INFO] [2024-12-02 03:03:58,695] [autotune] [step 27] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 2397612562, 'binlog_row_image': 'noblob', 'delay_key_write': 'ON', 'div_precision_increment': 7, 'expire_logs_days': 3, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 33, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 14139363123, 'innodb_change_buffer_max_size': 28, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 67, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'OFF', 'innodb_flush_log_at_trx_commit': '2', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 46772983, 'innodb_ft_min_token_size': 10, 'innodb_ft_result_cache_limit': 2577335946, 'innodb_ft_total_cache_size': 1351041125, 'innodb_io_capacity_max': 34728, 'innodb_log_file_size': 6818895, 'innodb_log_files_in_group': 5, 'innodb_lru_scan_depth': 7105, 'innodb_online_alter_log_max_size': 535369167606328000, 'innodb_page_cleaners': 1, 'innodb_purge_batch_size': 3908, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 16, 'innodb_thread_concurrency': 903, 'join_buffer_size': 801293601, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 1044024349, 'max_heap_table_size': 42377297, 'max_length_for_sort_data': 2595772, 'net_read_timeout': 54, 'net_write_timeout': 100, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 122559776, 'require_secure_transport': 'ON', 'session_track_gtids': 'ALL_GTIDS', 'session_track_schema': 'ON', 'tmp_table_size': 345851318, 'transaction_prealloc_size': 33292, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 03:04:02,728] [autotune] Close db successfully
+[INFO] [2024-12-02 03:04:02,729] [autotune] mysql is shut down
+[INFO] [2024-12-02 03:04:02,729] [autotune] innodb_thread_concurrency is set too large
+[INFO] [2024-12-02 03:04:02,731] [DBTune-twitter_mbo_47] Iteration 154, objective value: [2147483647].
+[INFO] [2024-12-02 03:04:14,475] [autotune] [step 28] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 1232659901, 'binlog_row_image': 'noblob', 'delay_key_write': 'ALL', 'div_precision_increment': 3, 'expire_logs_days': 21, 'flush_time': 0, 'innodb_adaptive_flushing_lwm': 63, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 14246155101, 'innodb_change_buffer_max_size': 12, 'innodb_change_buffering': 'all', 'innodb_compression_pad_pct_max': 24, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_flush_sync': 'OFF', 'innodb_ft_cache_size': 38950610, 'innodb_ft_min_token_size': 14, 'innodb_ft_result_cache_limit': 1086938652, 'innodb_ft_total_cache_size': 779446006, 'innodb_io_capacity_max': 496, 'innodb_log_file_size': 784163704, 'innodb_log_files_in_group': 9, 'innodb_lru_scan_depth': 2186, 'innodb_online_alter_log_max_size': 5035676430074466000, 'innodb_page_cleaners': 2, 'innodb_purge_batch_size': 1878, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 70, 'innodb_thread_concurrency': 821, 'join_buffer_size': 109277548, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 392562128, 'max_heap_table_size': 355777506, 'max_length_for_sort_data': 5619741, 'net_read_timeout': 27, 'net_write_timeout': 28, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 10454058, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 414188229, 'transaction_prealloc_size': 124437, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 03:04:14,509] [autotune] mysql is shut down
+[INFO] [2024-12-02 03:04:14,512] [autotune] generated config file done
+[INFO] [2024-12-02 03:04:14,534] [autotune] wait for connection
+[INFO] [2024-12-02 03:04:30,571] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 03:04:30,572] [autotune] finish 16 seconds waiting for connection
+[INFO] [2024-12-02 03:04:30,572] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 03:04:30,572] [autotune] mysql is up
+[INFO] [2024-12-02 03:04:30,573] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 03:04:35,861] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733108675
+[INFO] [2024-12-02 03:07:06,101] [DBTune-twitter_mbo_47] Iteration 155, objective value: [2147483647].
+[INFO] [2024-12-02 03:07:59,642] [autotune] [step 29] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2288102010, 'binlog_row_image': 'minimal', 'delay_key_write': 'ON', 'div_precision_increment': 2, 'expire_logs_days': 83, 'flush_time': 5, 'innodb_adaptive_flushing_lwm': 24, 'innodb_api_disable_rowlock': 'ON', 'innodb_buffer_pool_size': 14860904704, 'innodb_change_buffer_max_size': 18, 'innodb_change_buffering': 'purges', 'innodb_compression_pad_pct_max': 41, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 30637094, 'innodb_ft_min_token_size': 5, 'innodb_ft_result_cache_limit': 3314456314, 'innodb_ft_total_cache_size': 1588362818, 'innodb_io_capacity_max': 17916, 'innodb_log_file_size': 787260289, 'innodb_log_files_in_group': 3, 'innodb_lru_scan_depth': 7995, 'innodb_online_alter_log_max_size': 18225728377586604000, 'innodb_page_cleaners': 6, 'innodb_purge_batch_size': 978, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 16, 'innodb_thread_concurrency': 512, 'join_buffer_size': 839210396, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 216708913, 'max_heap_table_size': 672714528, 'max_length_for_sort_data': 1460964, 'net_read_timeout': 50, 'net_write_timeout': 78, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 86567993, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OWN_GTID', 'session_track_schema': 'ON', 'tmp_table_size': 741081789, 'transaction_prealloc_size': 41171, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 03:08:03,675] [autotune] Close db successfully
+[INFO] [2024-12-02 03:08:03,676] [autotune] mysql is shut down
+[INFO] [2024-12-02 03:08:03,679] [autotune] generated config file done
+[INFO] [2024-12-02 03:08:03,700] [autotune] wait for connection
+[INFO] [2024-12-02 03:08:12,720] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 03:08:12,721] [autotune] finish 9 seconds waiting for connection
+[INFO] [2024-12-02 03:08:12,721] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 03:08:12,721] [autotune] mysql is up
+[INFO] [2024-12-02 03:08:12,721] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 03:08:18,012] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733108898
+[INFO] [2024-12-02 03:13:58,276] [DBTune-twitter_mbo_47] Iteration 156, objective value: [2147483647].
+[INFO] [2024-12-02 03:16:08,653] [autotune] [step 30] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 2782193827, 'binlog_row_image': 'noblob', 'delay_key_write': 'OFF', 'div_precision_increment': 11, 'expire_logs_days': 16, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 3, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14477334358, 'innodb_change_buffer_max_size': 33, 'innodb_change_buffering': 'all', 'innodb_compression_pad_pct_max': 60, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 14037849, 'innodb_ft_min_token_size': 2, 'innodb_ft_result_cache_limit': 3226739398, 'innodb_ft_total_cache_size': 271395455, 'innodb_io_capacity_max': 27731, 'innodb_log_file_size': 314995356, 'innodb_log_files_in_group': 4, 'innodb_lru_scan_depth': 5506, 'innodb_online_alter_log_max_size': 8661016566887533000, 'innodb_page_cleaners': 5, 'innodb_purge_batch_size': 3341, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 22, 'innodb_thread_concurrency': 152, 'join_buffer_size': 708801388, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 726754571, 'max_heap_table_size': 311513475, 'max_length_for_sort_data': 5161953, 'net_read_timeout': 7, 'net_write_timeout': 23, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 32307588, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 302433151, 'transaction_prealloc_size': 88103, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 03:16:11,694] [autotune] Close db successfully
+[INFO] [2024-12-02 03:16:11,696] [autotune] mysql is shut down
+[INFO] [2024-12-02 03:16:11,699] [autotune] generated config file done
+[INFO] [2024-12-02 03:16:11,724] [autotune] wait for connection
+[INFO] [2024-12-02 03:16:17,740] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 03:16:17,740] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-12-02 03:16:17,740] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 03:16:17,740] [autotune] mysql is up
+[INFO] [2024-12-02 03:16:17,740] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 03:16:23,046] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733109383
+[INFO] [2024-12-02 03:22:03,329] [DBTune-twitter_mbo_47] Iteration 157, objective value: [2147483647].
+[INFO] [2024-12-02 03:24:55,617] [autotune] [step 31] generate knobs: {'autocommit': 'ON', 'binlog_cache_size': 154758620, 'binlog_row_image': 'full', 'delay_key_write': 'ON', 'div_precision_increment': 4, 'expire_logs_days': 1, 'flush_time': 0, 'innodb_adaptive_flushing_lwm': 60, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14004754958, 'innodb_change_buffer_max_size': 26, 'innodb_change_buffering': 'all', 'innodb_compression_pad_pct_max': 46, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '1', 'innodb_flush_sync': 'ON', 'innodb_ft_cache_size': 7765647, 'innodb_ft_min_token_size': 3, 'innodb_ft_result_cache_limit': 3123483572, 'innodb_ft_total_cache_size': 652679767, 'innodb_io_capacity_max': 5298, 'innodb_log_file_size': 19223930, 'innodb_log_files_in_group': 2, 'innodb_lru_scan_depth': 2036, 'innodb_online_alter_log_max_size': 198385594418616000, 'innodb_page_cleaners': 4, 'innodb_purge_batch_size': 3764, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 12, 'innodb_thread_concurrency': 12, 'join_buffer_size': 23703013, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 37425056, 'max_heap_table_size': 22525040, 'max_length_for_sort_data': 74808, 'net_read_timeout': 34, 'net_write_timeout': 67, 'offline_mode': 'OFF', 'query_cache_wlock_invalidate': 'OFF', 'query_prealloc_size': 51611, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 18023770, 'transaction_prealloc_size': 78658, 'updatable_views_with_limit': 'YES'}
+
+[INFO] [2024-12-02 03:24:58,661] [autotune] Close db successfully
+[INFO] [2024-12-02 03:24:58,661] [autotune] mysql is shut down
+[INFO] [2024-12-02 03:24:58,664] [autotune] generated config file done
+[INFO] [2024-12-02 03:24:58,688] [autotune] wait for connection
+[INFO] [2024-12-02 03:25:29,738] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:30,740] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:31,743] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:32,744] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:33,746] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:34,748] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:35,750] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:36,754] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:37,757] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:38,761] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:39,764] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:40,766] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:41,773] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:42,776] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:43,780] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:44,782] [autotune] 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2 No such file or directory)
+[INFO] [2024-12-02 03:25:45,791] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 03:25:45,791] [autotune] finish 47 seconds waiting for connection
+[INFO] [2024-12-02 03:25:45,791] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 03:25:45,791] [autotune] mysql is up
+[INFO] [2024-12-02 03:25:45,792] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 03:25:51,064] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733109951
+[INFO] [2024-12-02 03:27:56,231] [DBTune-twitter_mbo_47] Iteration 158, objective value: [2147483647].
+[WARNING] [2024-12-02 03:29:36,877] [autotune.optimizer.acq_maximizer.ei_optimization.LocalSearch] Local search took already 1000 iterations. Is it maybe stuck in a infinite loop?
+[INFO] [2024-12-02 03:29:55,781] [autotune] [step 32] generate knobs: {'autocommit': 'OFF', 'binlog_cache_size': 4091835330, 'binlog_row_image': 'noblob', 'delay_key_write': 'ALL', 'div_precision_increment': 3, 'expire_logs_days': 32, 'flush_time': 6, 'innodb_adaptive_flushing_lwm': 9, 'innodb_api_disable_rowlock': 'OFF', 'innodb_buffer_pool_size': 14656262538, 'innodb_change_buffer_max_size': 10, 'innodb_change_buffering': 'changes', 'innodb_compression_pad_pct_max': 71, 'innodb_disable_sort_file_cache': 'OFF', 'innodb_doublewrite': 'ON', 'innodb_flush_log_at_trx_commit': '0', 'innodb_flush_sync': 'OFF', 'innodb_ft_cache_size': 17001033, 'innodb_ft_min_token_size': 7, 'innodb_ft_result_cache_limit': 3602074708, 'innodb_ft_total_cache_size': 965341736, 'innodb_io_capacity_max': 39412, 'innodb_log_file_size': 428836372, 'innodb_log_files_in_group': 4, 'innodb_lru_scan_depth': 3534, 'innodb_online_alter_log_max_size': 8472007671126759000, 'innodb_page_cleaners': 5, 'innodb_purge_batch_size': 3646, 'innodb_rollback_on_timeout': 'OFF', 'innodb_stats_transient_sample_pages': 67, 'innodb_thread_concurrency': 258, 'join_buffer_size': 465551016, 'log_bin_use_v1_row_events': 'OFF', 'max_allowed_packet': 1068237318, 'max_heap_table_size': 64522849, 'max_length_for_sort_data': 6333367, 'net_read_timeout': 6, 'net_write_timeout': 37, 'offline_mode': 'ON', 'query_cache_wlock_invalidate': 'ON', 'query_prealloc_size': 104438130, 'require_secure_transport': 'OFF', 'session_track_gtids': 'OFF', 'session_track_schema': 'ON', 'tmp_table_size': 867582405, 'transaction_prealloc_size': 130999, 'updatable_views_with_limit': 'NO'}
+
+[INFO] [2024-12-02 03:30:00,814] [autotune] Close db successfully
+[INFO] [2024-12-02 03:30:00,814] [autotune] mysql is shut down
+[INFO] [2024-12-02 03:30:00,816] [autotune] modify innodb_thread_concurrency
+[INFO] [2024-12-02 03:30:00,818] [autotune] generated config file done
+[INFO] [2024-12-02 03:30:00,834] [autotune] wait for connection
+[INFO] [2024-12-02 03:30:06,848] [autotune] Connected to MySQL db
+[INFO] [2024-12-02 03:30:06,849] [autotune] finish 6 seconds waiting for connection
+[INFO] [2024-12-02 03:30:06,849] [autotune] /usr/sbin/mysqld --defaults-file=scripts/template/experiment_normandy.cnf
+[INFO] [2024-12-02 03:30:06,849] [autotune] mysql is up
+[INFO] [2024-12-02 03:30:06,849] [autotune] sleeping for 5 seconds after restarting mysql
+[INFO] [2024-12-02 03:30:11,868] [autotune] [2024-12-02 03:30:11] Knobs applied online!
+[INFO] [2024-12-02 03:30:12,115] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh twitter /oltpbench/config/sample_twitter_config.xml 1733110212
