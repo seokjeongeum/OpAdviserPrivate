@@ -7,16 +7,16 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='scripts/config.ini', help='config file')
+    parser.add_argument('--config', type=str, default='scripts/tpcc.ini', help='config file')
     # 2024-11-19 code for clusters
     # parser.add_argument('--knob_config_file', type=str,default='scripts/experiment/gen_knobs/SYSBENCH_randomforest.json')
     # parser.add_argument('--knob_num', type=int,default=118)
-    parser.add_argument('--dbname', type=str,default='twitter')
-    parser.add_argument('--workload', type=str,default='oltpbench_twitter')
+    parser.add_argument('--dbname', type=str,default='tpcc')
+    parser.add_argument('--workload', type=str,default='oltpbench_tpcc')
     # parser.add_argument('--optimize_method', type=str, default='DDPG')
     parser.add_argument('--workload_type', type=str, default='read')
     #2024-11-22 softmax weight
-    parser.add_argument('--softmax_weight', type=bool, default=True)
+    parser.add_argument('--softmax_weight', type=bool, default=False)
     #2024-11-22 softmax weight
     # parser.add_argument('--workload_type', type=str, default='read')
     # 2024-11-19 code for clusters
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     args_db['workload'] = opt.workload
     args_db['oltpbench_config_xml'] = f'/oltpbench/config/sample_{opt.dbname}_config.xml'
     args_db['workload_type'] = opt.workload_type
-    args_tune['task_id'] = f"{opt.dbname}_ddpg_softmax"
+    args_tune['task_id'] = f"{opt.dbname}_ddpg"
     # args_tune['optimize_method'] = opt.optimize_method
     # args_tune['initial_tunable_knob_num']=opt.knob_num
     #2024-11-22 softmax weight
