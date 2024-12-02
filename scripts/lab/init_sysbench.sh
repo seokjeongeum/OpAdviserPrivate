@@ -2,7 +2,7 @@
 # create tpcc database
 MYSQL_BIN=mysql
 RDS_HOST='localhost'
-MYSQL_PORT=3306
+MYSQL_PORT=3307
 SOCK='/data1/ruike/mysql/base/mysql.sock'
 DBNAME=sbtest
 TABLE_SIZE=800000

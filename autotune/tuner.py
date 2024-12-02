@@ -135,6 +135,9 @@ class DBTuner:
             raise ValueError('Invalid string %s for transfer framework!' % self.transfer_framework)
 
         if len(self.hcL)==0 and self.space_transfer:
+        # 2024-11-20: ground truth
+        # if True:
+        # 2024-11-20: ground truth
             self.load_history(-1)
 
         if self.auto_optimizer and self.args_tune['auto_optimizer_type'] == 'learned':
@@ -231,19 +234,19 @@ class DBTuner:
 # ''')
 #         print(s)
 
-        # history = bo.run()
+        history = bo.run()
 #2024-11-11: code for experiment
-        history,history2 = bo.run()
+        # history,history2 = bo.run()
 #2024-11-11: code for experiment
         if history.num_objs == 1:
             import matplotlib.pyplot as plt
             history.plot_convergence()
             plt.savefig('%s.png' % history.task_id)
 #2024-11-11: code for experiment
-        if history2.num_objs == 1:
-            import matplotlib.pyplot as plt
-            history2.plot_convergence()
-            plt.savefig('%s.png' % history2.task_id)
+        # if history2.num_objs == 1:
+        #     import matplotlib.pyplot as plt
+        #     history2.plot_convergence()
+        #     plt.savefig('%s.png' % history2.task_id)
 #2024-11-11: code for experiment
 
 

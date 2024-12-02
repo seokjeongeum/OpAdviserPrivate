@@ -30,4 +30,5 @@ sysbench ${run_script} \
         --threads=$9 \
         --time=${10} \
         --db-ps-mode=disable \
+        --mysql-ignore-errors="all" \
         run > ${11}

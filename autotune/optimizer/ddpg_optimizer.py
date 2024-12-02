@@ -36,6 +36,8 @@ def action2config(action, config_space):
         if type(config_space.get_hyperparameters_dict()[key]) == CategoricalHyperparameter:
             action[i] = np.round( action[i] * (config_space.get_hyperparameters_dict()[key].num_choices - 1))
         knob_dict[key] = transform(action[i])
+        if knob_dict[key] is None:
+            knob_dict[key]=config_space.get_hyperparameters_dict()[key].default_value
         if not type(config_space.get_hyperparameters_dict()[key]) == CategoricalHyperparameter:
             if knob_dict[key] < config_space.get_hyperparameters_dict()[key].lower:
                 knob_dict[key] = config_space.get_hyperparameters_dict()[key].lower
@@ -228,7 +230,7 @@ class DDPG_Optimizer:
                 _reward = 0
             return _reward
 
-        if external_metrics == 0 or self.default_external_metrics == 0:
+        if external_metrics == 0 or self.default_external_metrics == 0 or self.last_external_metrics == 0:
             # bad case, not enough time to restart mysql or bad knobs
             return 0
         # tps
