@@ -32,7 +32,7 @@ if __name__ == '__main__':
     args_db['workload'] = opt.workload
     args_db['oltpbench_config_xml'] = f'/oltpbench/config/sample_{opt.dbname}_config.xml'
     args_db['workload_type'] = opt.workload_type
-    args_tune['task_id'] = f"{opt.dbname}_smac_softmax"
+    args_tune['task_id'] = f"{opt.dbname}_ddpg_softmax"
     # args_tune['optimize_method'] = opt.optimize_method
     # args_tune['initial_tunable_knob_num']=opt.knob_num
     #2024-11-22 softmax weight
