@@ -82,9 +82,10 @@ class PipleLine(BOBase):
                  only_range = False,
                  advisor_kwargs: dict = None,
                  #  latent_dim=0,
-                 #2024-11-22 softmax weight
-                 softmax_weight=False,
-                 #2024-11-22 softmax weight
+                 #2024-12-03 softmax transformer
+                 softmax_weight=True,
+                 transformer=True,
+                 #2024-12-03 softmax transformer
                  **kwargs
                  ):
 
@@ -240,6 +241,9 @@ class PipleLine(BOBase):
                                                 params=kwargs['params'],
                                                 batch_size=kwargs['batch_size'],
                                                 mean_var_file=kwargs['mean_var_file']
+                                                #2024-12-03 softmax transformer
+                                                ,transformer=transformer,
+                                                #2024-12-03 softmax transformer
                                                 )
             else:
                 raise ValueError('Invalid advisor type!')
@@ -289,12 +293,16 @@ class PipleLine(BOBase):
                                   params=kwargs['params'],
                                   batch_size=kwargs['batch_size'],
                                   mean_var_file=kwargs['mean_var_file']
+                                    #2024-12-03 softmax transformer
+                                    ,transformer=transformer,
+                                    #2024-12-03 softmax transformer
                                   )
             self.optimizer_list = [SMAC, MBO, DDPG, GA]
             self.optimizer = SMAC
-    #2024-11-22 softmax weight
+        #2024-12-03 softmax transformer
         self.softmax_weight=softmax_weight
-    #2024-11-22 softmax weight
+        self.transformer=transformer
+        #2024-12-03 softmax transformer
 
 
     def get_max_distence_best(self):
@@ -368,7 +376,11 @@ class PipleLine(BOBase):
                                                         task_id=self.history_container.task_id,
                                                         params=self.optimizer.params,
                                                         batch_size=self.optimizer.batch_size,
-                                                        mean_var_file=self.optimizer.mean_var_file)
+                                                        mean_var_file=self.optimizer.mean_var_file
+                                                        #2024-12-03 softmax transformer
+                                                        ,transformer=self.transformer,
+                                                        #2024-12-03 softmax transformer
+                                    )
                         if self.auto_optimizer:
                             self.optimizer_list[-2] = self.optimizer
 
@@ -543,7 +555,11 @@ class PipleLine(BOBase):
                                                 task_id=self.history_container.task_id,
                                                 params=self.optimizer.params,
                                                 batch_size=self.optimizer.batch_size,
-                                                mean_var_file=self.optimizer.mean_var_file)
+                                                mean_var_file=self.optimizer.mean_var_file
+                                                #2024-12-03 softmax transformer
+                                                ,transformer=self.transformer,
+                                                #2024-12-03 softmax transformer
+                                                )
         _, trial_state, constraints, objs = self.evaluate(config)
 #2024-11-11: code for experiment
         # _, trial_state, constraints, objs,_, trial_state2, constraints2, objs2 = self.evaluate(config,config2)
@@ -677,17 +693,17 @@ class PipleLine(BOBase):
         similarity_threhold = np.quantile(similarity_list, 0.5)
         candidate_list, weight = list(), list()
         surrogate_list = self.history_bo_data + [self.history_container]
-        #2024-11-22 softmax weight
+        #2024-12-03 softmax transformer
         softmax_weight=list()
-        #2024-11-22 softmax weight
+        #2024-12-03 softmax transformer
         for i in range(len(surrogate_list)):
             if similarity_list[i] > similarity_threhold:
                 candidate_list.append(i)
                 weight.append(similarity_list[i] / sum(similarity_list))
-                #2024-11-22 softmax weight
+                #2024-12-03 softmax transformer
                 softmax_weight.append(similarity_list[i])
-                #2024-11-22 softmax weight
-        #2024-11-22 softmax weight
+                #2024-12-03 softmax transformer
+        #2024-12-03 softmax transformer
         with open(f'{self.task_id}_weights','a')as f:
             f.write(f'''{weight}
 ''')
@@ -696,7 +712,7 @@ class PipleLine(BOBase):
             with open(f'{self.task_id}_softmax_weights','a')as f:
                 f.write(f'''{weight}
 ''')
-        #2024-11-22 softmax weight
+        #2024-12-03 softmax transformer
         if not len(candidate_list):
             self.logger.info("Remain the space:{}".format(self.config_space))
             return self.config_space
@@ -725,10 +741,10 @@ class PipleLine(BOBase):
         quantile_min = 1 / 1e9
         quantile_max = 1 - 1 / 1e9
         for j in range(len(surrogate_list)):
-            #2024-11-22 softmax weight
+            #2024-12-03 softmax transformer
             # if not j in sample_list:
             #     continue
-            #2024-11-22 softmax weight
+            #2024-12-03 softmax transformer
             quantile = quantile_max - (1 - 2 * max(similarity_list[j] - 0.5, 0)) * (quantile_max - quantile_min)
             ys_source = - surrogate_list[j].get_transformed_perfs()
             performance_threshold = np.quantile(ys_source, quantile)
@@ -752,14 +768,14 @@ class PipleLine(BOBase):
                         important_dict[key] = important_dict[key] + similarity_list[j] / sum(
                             [similarity_list[i] for i in sample_list])
 
-        #2024-11-22 softmax weight
+        #2024-12-03 softmax transformer
         with open(f'{self.task_id}_sample_list','a')as f:
             f.write(f'''{sample_list}
 ''')
         with open(f'{self.task_id}_pruned_space_list','a')as f:
             f.write(f'''{pruned_space_list}
 ''')
-        #2024-11-22 softmax weight
+        #2024-12-03 softmax transformer
 
 #code for error case analysis
 #         with open(

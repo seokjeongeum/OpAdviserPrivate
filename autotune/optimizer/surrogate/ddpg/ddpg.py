@@ -70,27 +70,45 @@ class Normalizer(object):
         return self.normalize(x)
 
 
+import torch.nn as nn
+
+class TransformerBlock(nn.Module):
+    def __init__(self, embed_dim, num_heads, ff_dim, dropout=0.1):
+        super(TransformerBlock, self).__init__()
+        self.attention = nn.MultiheadAttention(embed_dim, num_heads)
+        self.norm1 = nn.LayerNorm(embed_dim)
+        self.norm2 = nn.LayerNorm(embed_dim)
+        self.ff = nn.Sequential(
+            nn.Linear(embed_dim, ff_dim),
+            nn.ReLU(),
+            nn.Linear(ff_dim, embed_dim)
+        )
+        self.dropout = nn.Dropout(dropout)
+        
+    def forward(self, x):
+        # x shape: (seq_len, batch_size, embed_dim)
+        attended, _ = self.attention(x, x, x)
+        x = self.norm1(x + self.dropout(attended))
+        feedforward = self.ff(x)
+        return self.norm2(x + self.dropout(feedforward))
+
+# Modify the Actor class to include Transformer
 class Actor(nn.Module):
 
-    def __init__(self, n_states, n_actions, noisy=False):
+    def __init__(self, n_states, n_actions, noisy=False,transformer=True):
         super(Actor, self).__init__()
-        '''
-        self.layers = nn.Sequential(
-            nn.Linear(n_states, 128),
-            nn.LeakyReLU(negative_slope=0.2),
-            nn.BatchNorm1d(128),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Dropout(0.3),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Linear(128, 64),
-            nn.Linear(64, n_actions)
+        
+        # Initial embedding layer
+        self.embed = nn.Linear(n_states, 128)
+        
+        # Add transformer block
+        self.transformer = TransformerBlock(
+            embed_dim=128,
+            num_heads=4,
+            ff_dim=256
         )
-        '''
-        # copy from https://github.com/cmu-db/ottertune/blob/master/server/analysis/ddpg/ddpg.py
+        
         self.layers = nn.Sequential(
-            nn.Linear(n_states, 128),
             nn.LeakyReLU(negative_slope=0.2),
             nn.BatchNorm1d(128),
             nn.Linear(128, 128),
@@ -103,13 +121,10 @@ class Actor(nn.Module):
             nn.BatchNorm1d(64),
             nn.Linear(64, n_actions)
         )
-#        if noisy:
-#            self.out = NoisyLinear(64, n_actions)
-#        else:
-#            self.out = nn.Linear(64, n_actions)
 
         self.act = nn.Sigmoid()
         self._init_weights()
+        self.use_transformer=transformer
 
     def _init_weights(self):
         for m in self.layers:
@@ -117,36 +132,45 @@ class Actor(nn.Module):
                 m.weight.data.normal_(0.0, 1e-2)
                 m.bias.data.uniform_(-0.1, 0.1)
 
-    def sample_noise(self):
-        self.out.sample_noise()
 
     def forward(self, states):
-        actions = self.act(self.layers(states))
+        # Embed the states
+        x = self.embed(states)
+        # Add sequence dimension for transformer
+        x = x.unsqueeze(0)  # shape: (1, batch_size, embed_dim)
+        if self.use_transformer:
+            # Apply transformer
+            x = self.transformer(x)
+            # Remove sequence dimension
+            x = x.squeeze(0)
+        # Apply remaining layers
+        actions = self.act(self.layers(x))
         return actions
 
 
 class Critic(nn.Module):
 
-    def __init__(self, n_states, n_actions):
+    def __init__(self, n_states, n_actions,transformer):
         super(Critic, self).__init__()
         self.act = nn.Tanh()
-        '''
+        
+        # State pathway
         self.state_input = nn.Linear(n_states, 128)
-        self.action_input = nn.Linear(n_actions, 128)
-        self.layers = nn.Sequential(
-            nn.Linear(256, 256),
-            nn.LeakyReLU(negative_slope=0.2),
-            nn.BatchNorm1d(256),
-            nn.Linear(256, 256),
-            nn.Linear(256, 64),
-            nn.Tanh(),
-            nn.Dropout(0.3),
-            nn.BatchNorm1d(64),
-            nn.Linear(64, 1),
+        self.state_transformer = TransformerBlock(
+            embed_dim=128,
+            num_heads=4,
+            ff_dim=256
         )
-        '''
-        self.state_input = nn.Linear(n_states, 128)
+        
+        # Action pathway
         self.action_input = nn.Linear(n_actions, 128)
+        self.action_transformer = TransformerBlock(
+            embed_dim=128,
+            num_heads=4,
+            ff_dim=256
+        )
+        
+        # Combined layers
         self.layers = nn.Sequential(
             nn.Linear(128 * 2, 256),
             nn.LeakyReLU(negative_slope=0.2),
@@ -159,6 +183,7 @@ class Critic(nn.Module):
             nn.Linear(64, 1)
         )
         self._init_weights()
+        self.use_transformer=transformer
 
     def _init_weights(self):
         self.state_input.weight.data.normal_(0.0, 1e-2)
@@ -173,9 +198,21 @@ class Critic(nn.Module):
                 m.bias.data.uniform_(-0.1, 0.1)
 
     def forward(self, states, actions):
+        # Process states
         states = self.act(self.state_input(states))
-        actions = self.act(self.action_input(actions))
+        states = states.unsqueeze(0)
+        if self.use_transformer:
+            states = self.state_transformer(states)
+            states = states.squeeze(0)
 
+        # Process actions
+        actions = self.act(self.action_input(actions))
+        actions = actions.unsqueeze(0)
+        if self.use_transformer:
+            actions = self.action_transformer(actions)
+            actions = actions.squeeze(0)
+
+        # Combine and process through remaining layers
         _input = torch.cat([states, actions], dim=1)
         value = self.layers(_input)
         return value
@@ -183,7 +220,7 @@ class Critic(nn.Module):
 
 class DDPG(object):
 
-    def __init__(self, n_states, n_actions, opt, mean=None, var=None, ouprocess=True, supervised=False, debug=False):
+    def __init__(self, n_states, n_actions, opt, mean=None, var=None, ouprocess=True, supervised=False, debug=False,transformer=True):
         """ DDPG Algorithms
         Args:
             n_states: int, dimension of states
@@ -211,6 +248,7 @@ class DDPG(object):
             var = np.zeros(n_states)
 
         self.normalizer = Normalizer(mean, var)
+        self.transformer=transformer
 
         if supervised:
             self._build_actor()
@@ -235,7 +273,7 @@ class DDPG(object):
             noisy = False
         else:
             noisy = True
-        self.actor = Actor(self.n_states, self.n_actions, noisy=noisy)
+        self.actor = Actor(self.n_states, self.n_actions, noisy=noisy,transformer=self.transformer)
         self.actor_criterion = nn.MSELoss()
         self.actor_optimizer = optimizer.Adam(lr=self.alr, params=self.actor.parameters())
 
@@ -244,10 +282,10 @@ class DDPG(object):
             noisy = False
         else:
             noisy = True
-        self.actor = Actor(self.n_states, self.n_actions, noisy=noisy)
-        self.target_actor = Actor(self.n_states, self.n_actions)
-        self.critic = Critic(self.n_states, self.n_actions)
-        self.target_critic = Critic(self.n_states, self.n_actions)
+        self.actor = Actor(self.n_states, self.n_actions, noisy=noisy,transformer=self.transformer)
+        self.target_actor = Actor(self.n_states, self.n_actions,transformer=self.transformer)
+        self.critic = Critic(self.n_states, self.n_actions,transformer=self.transformer)
+        self.target_critic = Critic(self.n_states, self.n_actions,transformer=self.transformer)
 
         # if model params are provided, load them
         if len(self.model_name):
