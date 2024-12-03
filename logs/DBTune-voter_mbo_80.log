@@ -3486,3 +3486,5 @@
 [INFO] [2024-11-30 11:11:56,665] [DBTune-voter_mbo_80] Iteration 200, objective value: [-3251.8318275726056].
 [INFO] [2024-12-02 00:32:18,968] [DBTune-voter_mbo_80] Load 200 iterations from repo/history_voter_mbo_80.json
 [INFO] [2024-12-02 00:32:19,604] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-12-02 01:10:42,991] [DBTune-voter_mbo_80] Load 200 iterations from repo/history_voter_mbo_80.json
+[INFO] [2024-12-02 01:10:43,482] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
