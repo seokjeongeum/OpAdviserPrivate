@@ -2,6 +2,7 @@ import os
 import math
 import pdb
 
+import sympy
 import torch
 import pickle
 import logging
@@ -72,41 +73,43 @@ class Normalizer(object):
 
 import torch.nn as nn
 
-class TransformerBlock(nn.Module):
-    def __init__(self, embed_dim, num_heads, ff_dim, dropout=0.1):
-        super(TransformerBlock, self).__init__()
-        self.attention = nn.MultiheadAttention(embed_dim, num_heads)
-        self.norm1 = nn.LayerNorm(embed_dim)
-        self.norm2 = nn.LayerNorm(embed_dim)
-        self.ff = nn.Sequential(
-            nn.Linear(embed_dim, ff_dim),
-            nn.ReLU(),
-            nn.Linear(ff_dim, embed_dim)
-        )
-        self.dropout = nn.Dropout(dropout)
+class PositionalEncoding(nn.Module):
+    def __init__(self, d_model, max_len=5000):
+        super().__init__()
+        # Handle odd dimensions by padding to even
+        d_even = d_model + (d_model % 2)
         
+        position = torch.arange(0, max_len).unsqueeze(1)
+        div_term = torch.exp(torch.arange(0, d_even, 2) * -(math.log(10000.0) / d_even))
+        
+        pe = torch.zeros(max_len, d_even)
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        
+        # Trim back to original dimension if odd
+        if d_model % 2:
+            pe = pe[:, :d_model]
+            
+        pe = pe.unsqueeze(0)
+        self.register_buffer('pe', pe)
     def forward(self, x):
-        # x shape: (seq_len, batch_size, embed_dim)
-        attended, _ = self.attention(x, x, x)
-        x = self.norm1(x + self.dropout(attended))
-        feedforward = self.ff(x)
-        return self.norm2(x + self.dropout(feedforward))
+        return x + self.pe[:, :x.size(1)]
 
 # Modify the Actor class to include Transformer
 class Actor(nn.Module):
 
     def __init__(self, n_states, n_actions, noisy=False,transformer=True):
         super(Actor, self).__init__()
+
+        # Add positional encoding
+        self.pos_encoder = PositionalEncoding(n_states)
+
+        # Add transformer encoder
+        encoder_layer = nn.TransformerEncoderLayer(d_model=n_states, nhead=13)
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=2)
         
         # Initial embedding layer
         self.embed = nn.Linear(n_states, 128)
-        
-        # Add transformer block
-        self.transformer = TransformerBlock(
-            embed_dim=128,
-            num_heads=4,
-            ff_dim=256
-        )
         
         self.layers = nn.Sequential(
             nn.LeakyReLU(negative_slope=0.2),
@@ -123,28 +126,42 @@ class Actor(nn.Module):
         )
 
         self.act = nn.Sigmoid()
-        self._init_weights()
         self.use_transformer=transformer
+        self._init_weights()
 
     def _init_weights(self):
+        # Initialize embedding layer
+        nn.init.xavier_uniform_(self.embed.weight)
+        nn.init.zeros_(self.embed.bias)
+        
+        # Initialize transformer weights if using transformer
+        if self.use_transformer:
+            for name, param in self.transformer_encoder.named_parameters():
+                if 'norm' in name:
+                    if 'weight' in name:
+                        nn.init.ones_(param)
+                elif 'weight' in name:
+                    nn.init.xavier_uniform_(param)
+                elif 'bias' in name:
+                    nn.init.zeros_(param)
+        
+        # Initialize sequential layers
         for m in self.layers:
             if isinstance(m, nn.Linear):
-                m.weight.data.normal_(0.0, 1e-2)
-                m.bias.data.uniform_(-0.1, 0.1)
-
+                nn.init.xavier_uniform_(m.weight)
+                nn.init.zeros_(m.bias)
 
     def forward(self, states):
-        # Embed the states
-        x = self.embed(states)
-        # Add sequence dimension for transformer
-        x = x.unsqueeze(0)  # shape: (1, batch_size, embed_dim)
         if self.use_transformer:
+            # Apply positional encoding
+            states = self.pos_encoder(states)
             # Apply transformer
-            x = self.transformer(x)
-            # Remove sequence dimension
-            x = x.squeeze(0)
+            states = self.transformer_encoder(states)
+            states = states.squeeze(1)  # Remove sequence dimension
+        # Embed the states
+        states = self.embed(states)
         # Apply remaining layers
-        actions = self.act(self.layers(x))
+        actions = self.act(self.layers(states))
         return actions
 
 
@@ -154,21 +171,19 @@ class Critic(nn.Module):
         super(Critic, self).__init__()
         self.act = nn.Tanh()
         
-        # State pathway
-        self.state_input = nn.Linear(n_states, 128)
-        self.state_transformer = TransformerBlock(
-            embed_dim=128,
-            num_heads=4,
-            ff_dim=256
-        )
+        # Add positional encoding for states and actions
+        self.state_pos_encoder = PositionalEncoding(n_states)
+        self.action_pos_encoder = PositionalEncoding(n_actions)
+
+        # Add transformer encoders
+        state_encoder_layer = nn.TransformerEncoderLayer(d_model=n_states, nhead=13)
+        self.state_transformer = nn.TransformerEncoder(state_encoder_layer, num_layers=2)
         
-        # Action pathway
+        action_encoder_layer = nn.TransformerEncoderLayer(d_model=n_actions, nhead=sympy.divisors(n_actions)[-2])
+        self.action_transformer = nn.TransformerEncoder(action_encoder_layer, num_layers=2)
+        
+        self.state_input = nn.Linear(n_states, 128)
         self.action_input = nn.Linear(n_actions, 128)
-        self.action_transformer = TransformerBlock(
-            embed_dim=128,
-            num_heads=4,
-            ff_dim=256
-        )
         
         # Combined layers
         self.layers = nn.Sequential(
@@ -182,35 +197,52 @@ class Critic(nn.Module):
             nn.BatchNorm1d(64),
             nn.Linear(64, 1)
         )
-        self._init_weights()
         self.use_transformer=transformer
+        self._init_weights()
 
     def _init_weights(self):
-        self.state_input.weight.data.normal_(0.0, 1e-2)
-        self.state_input.bias.data.uniform_(-0.1, 0.1)
+        # Initialize input layers
+        nn.init.xavier_uniform_(self.state_input.weight)
+        nn.init.zeros_(self.state_input.bias)
 
-        self.action_input.weight.data.normal_(0.0, 1e-2)
-        self.action_input.bias.data.uniform_(-0.1, 0.1)
-
+        nn.init.xavier_uniform_(self.action_input.weight)
+        nn.init.zeros_(self.action_input.bias)
+                
+        # Initialize transformer weights if using transformer
+        if self.use_transformer:
+            for transformer in [self.state_transformer, self.action_transformer]:
+                for name, param in transformer.named_parameters():
+                    if 'norm' in name:
+                        if 'weight' in name:
+                            nn.init.ones_(param)
+                    elif 'weight' in name:
+                        nn.init.xavier_uniform_(param)
+                    elif 'bias' in name:
+                        nn.init.zeros_(param)
+        
+        # Initialize sequential layers
         for m in self.layers:
             if isinstance(m, nn.Linear):
-                m.weight.data.normal_(0.0, 1e-2)
-                m.bias.data.uniform_(-0.1, 0.1)
+                nn.init.xavier_uniform_(m.weight)
+                nn.init.zeros_(m.bias)
 
     def forward(self, states, actions):
         # Process states
+        if self.use_transformer:
+            # Apply positional encoding
+            states = self.state_pos_encoder(states)
+            states = self.state_transformer(states)
+            states = states.squeeze(1)
+
+            # Apply positional encoding
+            actions = self.action_pos_encoder(actions)
+            actions = self.action_transformer(actions)
+            actions = actions.squeeze(1)
         states = self.act(self.state_input(states))
         states = states.unsqueeze(0)
-        if self.use_transformer:
-            states = self.state_transformer(states)
-            states = states.squeeze(0)
 
-        # Process actions
         actions = self.act(self.action_input(actions))
         actions = actions.unsqueeze(0)
-        if self.use_transformer:
-            actions = self.action_transformer(actions)
-            actions = actions.squeeze(0)
 
         # Combine and process through remaining layers
         _input = torch.cat([states, actions], dim=1)
