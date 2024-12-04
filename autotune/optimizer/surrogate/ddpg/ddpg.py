@@ -153,11 +153,13 @@ class Actor(nn.Module):
 
     def forward(self, states):
         if self.use_transformer:
+            # Add dimension
+            states = states.unsqueeze(0)  # (batch_size, features) -> (1, batch_size, features)
             # Apply positional encoding
             states = self.pos_encoder(states)
             # Apply transformer
             states = self.transformer_encoder(states)
-            states = states.squeeze(1)  # Remove sequence dimension
+            states = states.squeeze(0)  # Remove dimension
         # Embed the states
         states = self.embed(states)
         # Apply remaining layers
@@ -229,21 +231,28 @@ class Critic(nn.Module):
     def forward(self, states, actions):
         # Process states
         if self.use_transformer:
+            # Add dimension 
+            states = states.unsqueeze(0)  # (batch_size, features) -> (1, batch_size, features)
             # Apply positional encoding
             states = self.state_pos_encoder(states)
             states = self.state_transformer(states)
-            states = states.squeeze(1)
+            states = states.squeeze(0)  # Remove dimension
 
+            # Add dimension 
+            actions = actions.unsqueeze(0)  # (batch_size, features) -> (1, batch_size, features)
             # Apply positional encoding
             actions = self.action_pos_encoder(actions)
             actions = self.action_transformer(actions)
-            actions = actions.squeeze(1)
+            actions = actions.squeeze(0)  # Remove dimension
+        # (batch_size, 65)
         states = self.act(self.state_input(states))
-
+        # (batch_size, 128)
+        # (batch_size, ~197)
         actions = self.act(self.action_input(actions))
+        # (batch_size, 128)
 
         # Combine and process through remaining layers
-        _input = torch.cat([states, actions], dim=1)
+        _input = torch.cat([states, actions], dim=1) # (batch_size, 256)
         value = self.layers(_input)
         return value
 
