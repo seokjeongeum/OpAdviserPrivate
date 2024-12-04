@@ -11,8 +11,8 @@ if __name__ == '__main__':
     # 2024-11-19 code for clusters
     # parser.add_argument('--knob_config_file', type=str,default='scripts/experiment/gen_knobs/SYSBENCH_randomforest.json')
     # parser.add_argument('--knob_num', type=int,default=118)
-    parser.add_argument('--dbname', type=str,default='tpcc')
-    parser.add_argument('--workload', type=str,default='oltpbench_tpcc')
+    parser.add_argument('--dbname', type=str,default='wikipedia')
+    parser.add_argument('--workload', type=str,default='oltpbench_wikipedia')
     # parser.add_argument('--optimize_method', type=str, default='DDPG')
     parser.add_argument('--workload_type', type=str, default='read')
     #2024-12-03 softmax transformer
