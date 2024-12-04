@@ -10543,3 +10543,5 @@
 [INFO] [2024-12-02 08:20:05,466] [DBTune-sysbench_mbo_8] Iteration 200, objective value: [-140.18999999999997].
 [INFO] [2024-12-03 00:45:09,948] [DBTune-sysbench_mbo_8] Load 200 iterations from repo/history_sysbench_mbo_8.json
 [INFO] [2024-12-03 00:45:10,042] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-12-04 00:32:26,711] [DBTune-sysbench_mbo_8] Load 200 iterations from repo/history_sysbench_mbo_8.json
+[INFO] [2024-12-04 00:32:26,845] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
