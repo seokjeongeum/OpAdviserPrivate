@@ -239,10 +239,8 @@ class Critic(nn.Module):
             actions = self.action_transformer(actions)
             actions = actions.squeeze(1)
         states = self.act(self.state_input(states))
-        states = states.unsqueeze(0)
 
         actions = self.act(self.action_input(actions))
-        actions = actions.unsqueeze(0)
 
         # Combine and process through remaining layers
         _input = torch.cat([states, actions], dim=1)
