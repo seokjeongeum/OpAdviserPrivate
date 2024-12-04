@@ -2825,3 +2825,5 @@
 [INFO] [2024-11-27 20:22:44,749] [DBTune-twitter_smac_6] Iteration 200, objective value: [-1650.1821648366158].
 [INFO] [2024-12-02 00:03:18,037] [DBTune-twitter_smac_6] Load 200 iterations from repo/history_twitter_smac_6.json
 [INFO] [2024-12-02 00:03:18,154] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-12-03 06:24:24,765] [DBTune-twitter_smac_6] Load 200 iterations from repo/history_twitter_smac_6.json
+[INFO] [2024-12-03 06:24:24,835] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
