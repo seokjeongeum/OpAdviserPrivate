@@ -100,14 +100,15 @@ class Actor(nn.Module):
 
     def __init__(self, n_states, n_actions, noisy=False,transformer=True):
         super(Actor, self).__init__()
+        if transformer:
+            self.encoder=nn.Linear(1,256)
+            # Add positional encoding
+            self.pos_encoder = PositionalEncoding(256)
 
-        # Add positional encoding
-        self.pos_encoder = PositionalEncoding(n_states)
-
-        # Add transformer encoder
-        encoder_layer = nn.TransformerEncoderLayer(d_model=n_states, nhead=13)
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=2)
-        
+            # Add transformer encoder
+            encoder_layer = nn.TransformerEncoderLayer(d_model=256, nhead=8)
+            self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=1)
+            self.decoder=nn.Linear(256,1)        
         # Initial embedding layer
         self.embed = nn.Linear(n_states, 128)
         
@@ -130,12 +131,10 @@ class Actor(nn.Module):
         self._init_weights()
 
     def _init_weights(self):
-        # Initialize embedding layer
-        nn.init.xavier_uniform_(self.embed.weight)
-        nn.init.zeros_(self.embed.bias)
-        
         # Initialize transformer weights if using transformer
         if self.use_transformer:
+            nn.init.xavier_uniform_(self.encoder.weight)
+            nn.init.zeros_(self.encoder.bias)
             for name, param in self.transformer_encoder.named_parameters():
                 if 'norm' in name:
                     if 'weight' in name:
@@ -144,7 +143,12 @@ class Actor(nn.Module):
                     nn.init.xavier_uniform_(param)
                 elif 'bias' in name:
                     nn.init.zeros_(param)
+            nn.init.xavier_uniform_(self.decoder.weight)
+            nn.init.zeros_(self.decoder.bias)
         
+        # Initialize embedding layer
+        nn.init.xavier_uniform_(self.embed.weight)
+        nn.init.zeros_(self.embed.bias)
         # Initialize sequential layers
         for m in self.layers:
             if isinstance(m, nn.Linear):
@@ -153,13 +157,20 @@ class Actor(nn.Module):
 
     def forward(self, states):
         if self.use_transformer:
-            # Add dimension
-            states = states.unsqueeze(0)  # (batch_size, features) -> (1, batch_size, features)
+            # x shape: (b,n)
+            b,n=states.shape
+            # reshape to (b*n, 1)
+            states=states.reshape(-1,1)
+            # apply linear transformation
+            states = self.encoder(states)
+            # reshape to (b,n,m)
+            states= states.reshape(b, n, -1)
             # Apply positional encoding
             states = self.pos_encoder(states)
             # Apply transformer
             states = self.transformer_encoder(states)
-            states = states.squeeze(0)  # Remove dimension
+            states=self.decoder(states)
+            states=states.reshape(b,n)
         # Embed the states
         states = self.embed(states)
         # Apply remaining layers
@@ -173,21 +184,21 @@ class Critic(nn.Module):
         super(Critic, self).__init__()
         self.act = nn.Tanh()
         
-        # Add positional encoding for states and actions
-        self.state_pos_encoder = PositionalEncoding(n_states)
-        self.action_pos_encoder = PositionalEncoding(n_actions)
+        if transformer:
+            self.state_encoder=nn.Linear(1,256)
+            self.action_encoder=nn.Linear(1,256)
+            # Add positional encoding for states and actions
+            self.state_pos_encoder = PositionalEncoding(256)
+            self.action_pos_encoder = PositionalEncoding(256)
 
-        # Add transformer encoders
-        state_encoder_layer = nn.TransformerEncoderLayer(d_model=n_states, nhead=13)
-        self.state_transformer = nn.TransformerEncoder(state_encoder_layer, num_layers=2)
-        
-        divisors=sympy.divisors(n_actions)
-        if len(divisors)>=2:
-            nhead=divisors[-2]
-        else:
-            nhead=1
-        action_encoder_layer = nn.TransformerEncoderLayer(d_model=n_actions, nhead=nhead)
-        self.action_transformer = nn.TransformerEncoder(action_encoder_layer, num_layers=2)
+            # Add transformer encoders
+            state_encoder_layer = nn.TransformerEncoderLayer(d_model=256, nhead=8)
+            self.state_transformer = nn.TransformerEncoder(state_encoder_layer, num_layers=1)
+
+            action_encoder_layer = nn.TransformerEncoderLayer(d_model=256, nhead=8)
+            self.action_transformer = nn.TransformerEncoder(action_encoder_layer, num_layers=1)
+            self.state_decoder=nn.Linear(256,1)
+            self.action_decoder=nn.Linear(256,1)
         
         self.state_input = nn.Linear(n_states, 128)
         self.action_input = nn.Linear(n_actions, 128)
@@ -208,15 +219,12 @@ class Critic(nn.Module):
         self._init_weights()
 
     def _init_weights(self):
-        # Initialize input layers
-        nn.init.xavier_uniform_(self.state_input.weight)
-        nn.init.zeros_(self.state_input.bias)
-
-        nn.init.xavier_uniform_(self.action_input.weight)
-        nn.init.zeros_(self.action_input.bias)
-                
         # Initialize transformer weights if using transformer
         if self.use_transformer:
+            nn.init.xavier_uniform_(self.state_encoder.weight)
+            nn.init.zeros_(self.state_encoder.bias)
+            nn.init.xavier_uniform_(self.action_encoder.weight)
+            nn.init.zeros_(self.action_encoder.bias)
             for transformer in [self.state_transformer, self.action_transformer]:
                 for name, param in transformer.named_parameters():
                     if 'norm' in name:
@@ -226,7 +234,17 @@ class Critic(nn.Module):
                         nn.init.xavier_uniform_(param)
                     elif 'bias' in name:
                         nn.init.zeros_(param)
+            nn.init.xavier_uniform_(self.state_decoder.weight)
+            nn.init.zeros_(self.state_decoder.bias)
+            nn.init.xavier_uniform_(self.action_decoder.weight)
+            nn.init.zeros_(self.action_decoder.bias)
         
+        # Initialize input layers
+        nn.init.xavier_uniform_(self.state_input.weight)
+        nn.init.zeros_(self.state_input.bias)
+
+        nn.init.xavier_uniform_(self.action_input.weight)
+        nn.init.zeros_(self.action_input.bias)
         # Initialize sequential layers
         for m in self.layers:
             if isinstance(m, nn.Linear):
@@ -236,19 +254,33 @@ class Critic(nn.Module):
     def forward(self, states, actions):
         # Process states
         if self.use_transformer:
-            # Add dimension 
-            states = states.unsqueeze(0)  # (batch_size, features) -> (1, batch_size, features)
+            # x shape: (b,n)
+            b,n=states.shape
+            # reshape to (b*n, 1)
+            states=states.reshape(-1,1)
+            # apply linear transformation
+            states = self.state_encoder(states)
+            # reshape to (b,n,m)
+            states= states.reshape(b, n, -1)
             # Apply positional encoding
             states = self.state_pos_encoder(states)
             states = self.state_transformer(states)
-            states = states.squeeze(0)  # Remove dimension
+            states=self.state_decoder(states)
+            states=states.reshape(b,n)
 
-            # Add dimension 
-            actions = actions.unsqueeze(0)  # (batch_size, features) -> (1, batch_size, features)
+            # x shape: (b,n)
+            b,n=actions.shape
+            # reshape to (b*n, 1)
+            actions=actions.reshape(-1,1)
+            # apply linear transformation
+            actions = self.action_encoder(actions)
+            # reshape to (b,n,m)
+            actions= actions.reshape(b, n, -1)
             # Apply positional encoding
             actions = self.action_pos_encoder(actions)
             actions = self.action_transformer(actions)
-            actions = actions.squeeze(0)  # Remove dimension
+            actions=self.action_decoder(actions)
+            actions=actions.reshape(b,n)
         # (batch_size, 65)
         states = self.act(self.state_input(states))
         # (batch_size, 128)
