@@ -181,7 +181,12 @@ class Critic(nn.Module):
         state_encoder_layer = nn.TransformerEncoderLayer(d_model=n_states, nhead=13)
         self.state_transformer = nn.TransformerEncoder(state_encoder_layer, num_layers=2)
         
-        action_encoder_layer = nn.TransformerEncoderLayer(d_model=n_actions, nhead=sympy.divisors(n_actions)[-2])
+        divisors=sympy.divisors(n_actions)
+        if len(divisors)>=2:
+            nhead=divisors[-2]
+        else:
+            nhead=1
+        action_encoder_layer = nn.TransformerEncoderLayer(d_model=n_actions, nhead=nhead)
         self.action_transformer = nn.TransformerEncoder(action_encoder_layer, num_layers=2)
         
         self.state_input = nn.Linear(n_states, 128)
