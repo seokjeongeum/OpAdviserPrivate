@@ -8349,3 +8349,5 @@
 [INFO] [2024-11-26 19:23:16,207] [DBTune-twitter_mbo_3] Iteration 200, objective value: [-11456.67878628286].
 [INFO] [2024-12-02 00:42:44,958] [DBTune-twitter_mbo_3] Load 200 iterations from repo/history_twitter_mbo_3.json
 [INFO] [2024-12-02 00:42:45,016] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
+[INFO] [2024-12-03 05:56:54,413] [DBTune-twitter_mbo_3] Load 200 iterations from repo/history_twitter_mbo_3.json
+[INFO] [2024-12-03 05:56:54,464] [BO_Optimizer] === [BO auto selection] === acq_type: ei.
