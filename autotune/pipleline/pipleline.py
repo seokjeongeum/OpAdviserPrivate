@@ -707,16 +707,18 @@ class PipleLine(BOBase):
         with open(f'{self.task_id}_weights','a')as f:
             f.write(f'''{weight}
 ''')
+        #2024-12-03 softmax transformer
+        if not len(candidate_list):
+            self.logger.info("Remain the space:{}".format(self.config_space))
+            return self.config_space
+
+        #2024-12-03 softmax transformer
         if self.softmax_weight:
             weight=softmax(softmax_weight).tolist()
             with open(f'{self.task_id}_softmax_weights','a')as f:
                 f.write(f'''{weight}
 ''')
         #2024-12-03 softmax transformer
-        if not len(candidate_list):
-            self.logger.info("Remain the space:{}".format(self.config_space))
-            return self.config_space
-
         ### determine the number of sampled task
         if len(surrogate_list) > 60:
             k = int(len(surrogate_list) / 10)
