@@ -15,10 +15,10 @@ if __name__ == '__main__':
     parser.add_argument('--workload', type=str,default='oltpbench_wikipedia')
     # parser.add_argument('--optimize_method', type=str, default='DDPG')
     parser.add_argument('--workload_type', type=str, default='read')
-    #2024-12-03 softmax transformer
+    #2024-12-06 softmax transformer
     parser.add_argument('--softmax_weight', type=bool, default=True)
     parser.add_argument('--transformer', type=bool, default=True)
-    #2024-12-03 softmax transformer
+    #2024-12-06 softmax transformer
     # parser.add_argument('--workload_type', type=str, default='read')
     # 2024-11-19 code for clusters
     opt = parser.parse_args()
@@ -36,10 +36,10 @@ if __name__ == '__main__':
     args_tune['task_id'] = f"{opt.dbname}_ddpg_softmax_transformer3"
     # args_tune['optimize_method'] = opt.optimize_method
     # args_tune['initial_tunable_knob_num']=opt.knob_num
-    #2024-12-03 softmax transformer
+    #2024-12-06 softmax transformer
     args_tune['softmax_weight']=opt.softmax_weight
     args_tune['transformer']=opt.transformer
-    #2024-12-03 softmax transformer
+    #2024-12-06 softmax transformer
     # 2024-11-19 code for clusters
     if args_db['db'] == 'mysql':
         db = MysqlDB(args_db)
