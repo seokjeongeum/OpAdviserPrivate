@@ -2791,3 +2791,4 @@
 [INFO] [2024-11-23 02:46:28,540] [autotune] sleeping for 5 seconds after restarting mysql
 [INFO] [2024-11-23 02:46:34,395] [autotune] [DBG]. bash /root/OpAdviserPrivate/autotune/cli/run_oltpbench.sh ycsb /oltpbench/config/sample_ycsb_config.xml 1732329994
 [INFO] [2024-11-23 02:52:15,226] [DBTune-ycsb_ga_174] Iteration 200, objective value: [2147483647].
+[INFO] [2024-11-26 06:11:46,659] [DBTune-ycsb_ga_174] Load 200 iterations from repo/history_ycsb_ga_174.json
