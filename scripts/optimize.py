@@ -16,8 +16,8 @@ if __name__ == '__main__':
     # parser.add_argument('--optimize_method', type=str, default='DDPG')
     parser.add_argument('--workload_type', type=str, default='read')
     #2024-12-06 softmax transformer
-    parser.add_argument('--softmax_weight', type=bool, default=False)
-    parser.add_argument('--transformer', type=bool, default=False)
+    parser.add_argument('--softmax_weight', action='store_true')
+    parser.add_argument('--transformer', action='store_true')
     #2024-12-06 softmax transformer
     # parser.add_argument('--workload_type', type=str, default='read')
     # 2024-11-19 code for clusters
