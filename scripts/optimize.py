@@ -16,8 +16,8 @@ if __name__ == '__main__':
     # parser.add_argument('--optimize_method', type=str, default='DDPG')
     parser.add_argument('--workload_type', type=str, default='read')
     #2024-12-06 softmax transformer
-    parser.add_argument('--softmax_weight', type=bool, default=True)
-    parser.add_argument('--transformer', type=bool, default=True)
+    parser.add_argument('--softmax_weight', type=bool, default=False)
+    parser.add_argument('--transformer', type=bool, default=False)
     #2024-12-06 softmax transformer
     # parser.add_argument('--workload_type', type=str, default='read')
     # 2024-11-19 code for clusters
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     args_db['workload'] = opt.workload
     args_db['oltpbench_config_xml'] = f'/oltpbench/config/sample_{opt.dbname}_config.xml'
     args_db['workload_type'] = opt.workload_type
-    args_tune['task_id'] = f"{opt.dbname}_ddpg_{opt.softmax_weight}_transformer"
+    args_tune['task_id'] = f"{opt.dbname}_ddpg_softmax_{opt.softmax_weight}_transformer_{opt.transformer}"
     # args_tune['optimize_method'] = opt.optimize_method
     # args_tune['initial_tunable_knob_num']=opt.knob_num
     #2024-12-06 softmax transformer
