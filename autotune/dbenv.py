@@ -185,10 +185,10 @@ class DBEnv:
                 print("benchmark result file does not exist!")
             dirname, _ = os.path.split(os.path.abspath(__file__))
             select_file = dirname + '/cli/selectedList_{}.txt'.format(self.workload['name'])
-            result = parse_job(filename, select_file, timeout=TIMEOUT_TIME)
+            result,latL = parse_job(filename, select_file, timeout=TIMEOUT_TIME)
         else:
             raise ValueError('Invalid workload name!')
-        return result
+        return result,latL
 
     def get_benchmark_cmd(self):
         timestamp = int(time.time())
@@ -308,12 +308,12 @@ class DBEnv:
         else:
             cpu, avg_read_io, avg_write_io, avg_virtual_memory, avg_physical_memory = 0, 0, 0, 0, 0
 
-        external_metrics = self.get_external_metrics(filename)
+        external_metrics,latL = self.get_external_metrics(filename)
         internal_metrics, dirty_pages, hit_ratio, page_data = self.db._post_handle(internal_metrics)
         logger.info('internal metrics: {}.'.format(list(internal_metrics)))
 
         return benchmark_timeout, external_metrics, internal_metrics, (
-            cpu, avg_read_io, avg_write_io, avg_virtual_memory, avg_physical_memory, dirty_pages, hit_ratio, page_data)
+            cpu, avg_read_io, avg_write_io, avg_virtual_memory, avg_physical_memory, dirty_pages, hit_ratio, page_data),latL
 
 
     def apply_knobs(self, knobs):
@@ -391,7 +391,7 @@ class DBEnv:
 
             raise Exception('Get states failed!')
 
-        timeout, external_metrics, internal_metrics, resource = s
+        timeout, external_metrics, internal_metrics, resource,latL = s
 
         format_str = '{}|tps_{}|lat_{}|qps_{}|tpsVar_{}|latVar_{}|qpsVar_{}|cpu_{}|readIO_{}|writeIO_{}|virtaulMem_{}|physical_{}|dirty_{}|hit_{}|data_{}|{}|65d\n'
         res = format_str.format(knobs, str(external_metrics[0]), str(external_metrics[1]), str(external_metrics[2]),
@@ -400,7 +400,7 @@ class DBEnv:
                                 resource[0], resource[1], resource[2], resource[3], resource[4],
                                 resource[5], resource[6], resource[7], list(internal_metrics))
 
-        return timeout, external_metrics, internal_metrics, resource
+        return timeout, external_metrics, internal_metrics, resource,latL
 
     def get_objs(self, res):
         objs = []
@@ -456,7 +456,7 @@ class DBEnv:
                 knobs[k] = self.knobs_detail[k]['default']
 
         try:
-            timeout, metrics, internal_metrics, resource = self.step_GP(knobs, collect_resource=True)
+            timeout, metrics, internal_metrics, resource,latL = self.step_GP(knobs, collect_resource=True)
 
             if timeout:
                 trial_state = TIMEOUT
@@ -487,7 +487,7 @@ class DBEnv:
             res = dict(external_metrics, **resource)
             objs = self.get_objs(res)
             constraints = self.get_constraints(res)
-            return objs, constraints, external_metrics, resource, list(internal_metrics), self.info, trial_state
+            return objs, constraints, external_metrics, resource, list(internal_metrics), self.info, trial_state,latL
 
         except:
-            return None, None, {}, {}, [], self.info, FAILED
+            return None, None, {}, {}, [], self.info, FAILED,[]

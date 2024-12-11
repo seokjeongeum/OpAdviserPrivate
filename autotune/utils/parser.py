@@ -138,7 +138,7 @@ def parse_job(file_path, select_file, timeout=4):
     tps = len(latL) * 60. / total_time
 
     lat_var = statistics.variance(latL)
-    return [tps, lat, tps, -1, lat_var, -1]
+    return [tps, lat, tps, -1, lat_var, -1],latL
 
 def parse_cloudbench(file_path):
     f = open(file_path)

@@ -5,7 +5,6 @@ Setup dev container using .devcontainer/devcontainer.json
 Fix workspaceMount attribute and mounts attribute in .devcontainer/devcontainer.json to mount directories to SSDs (performances may degrade if code and /var/lib/mysql is in slow disk)
 ## Prepare workload
 ```shell
-rm -rf /var/lib/mysql
 apt update
 apt install -y mysql-server-5.7 \
     git  \
@@ -59,6 +58,17 @@ python scripts/optimize.py --config=scripts/sysbench_rw.ini
 python scripts/optimize.py --config=scripts/sysbench_wo.ini
 python scripts/optimize.py --config=scripts/sysbench_ro.ini
 python scripts/optimize.py --config=scripts/twitter.ini
+```
+### Demo
+```shell
+service mysql stop
+/usr/sbin/mysqld --defaults-file=initial.cnf
+export PYTHONPATH=.
+export FLASK_RUN_PORT=12345
+export FLASK_ENV=development
+export FLASK_DEBUG=1
+export FLASK_APP=server/app.py
+flask run
 ```
 ### Find ground truth
 ```shell

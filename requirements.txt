@@ -35,3 +35,4 @@ cma
 hiplot
 MarkupSafe==2.0.0 
 Flask
+flask_cors

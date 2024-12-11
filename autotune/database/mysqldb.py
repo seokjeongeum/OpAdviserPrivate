@@ -388,6 +388,7 @@ class MysqlDB:
         return internal_metrics
 
     def _post_handle(self, metrics):
+        return [],0,0,0
         def do(metric_name, metric_values):
             metric_type = 'counter'
             if metric_name in self.value_type_metrics:
