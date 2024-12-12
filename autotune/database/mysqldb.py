@@ -357,7 +357,7 @@ class MysqlDB:
         and returns the lookup result.
         """
         _counter = 0
-        _period = 5
+        _period = 1
         count = (BENCHMARK_RUNNING_TIME + BENCHMARK_WARMING_TIME) / _period - 1
         warmup = BENCHMARK_WARMING_TIME / _period
 
@@ -369,7 +369,7 @@ class MysqlDB:
                 timer.cancel()
             if counter > warmup:
                 try:
-                    # print('collect internal metrics {}'.format(counter))
+                    print('collect internal metrics {}'.format(counter))
                     db_conn = MysqlConnector(**self.connection_info)
 
                     sql = 'SELECT NAME, COUNT from information_schema.INNODB_METRICS where status="enabled" ORDER BY NAME'
@@ -388,7 +388,6 @@ class MysqlDB:
         return internal_metrics
 
     def _post_handle(self, metrics):
-        return [],0,0,0
         def do(metric_name, metric_values):
             metric_type = 'counter'
             if metric_name in self.value_type_metrics:

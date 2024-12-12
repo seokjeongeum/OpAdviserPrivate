@@ -6,6 +6,8 @@ import numpy as np
 from multiprocessing import Manager
 from multiprocessing.connection import Client
 import sys
+
+from autotune.dbconnector import MysqlConnector
 from .knobs import logger
 from .utils.parser import parse_sysbench, parse_oltpbench, parse_job
 from .knobs import initialize_knobs, get_default_knobs
@@ -280,6 +282,14 @@ class DBEnv:
             #benchmark_timeout = True
             print("[{}] benchmark timeout!".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
+        db_conn = MysqlConnector(**self.db.connection_info)
+
+        sql = 'SELECT NAME, COUNT from information_schema.INNODB_METRICS where status="enabled" ORDER BY NAME'
+        res = db_conn.fetch_results(sql, json=False)
+        internal_metrics=[]
+        for (k, v) in res:
+            internal_metrics.append(v)
+
         # terminate Benchmark
         if not self.remote_mode:
             subprocess.Popen(self.db.clear_cmd, shell=True, stderr=subprocess.STDOUT, stdout=subprocess.PIPE,
@@ -287,7 +297,6 @@ class DBEnv:
             print("[{}] clear processlist".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
         # stop Internal Metrics Collection
-        time.sleep(10)
         self.db.set_im_alive(False)
         im.join()
 
@@ -309,7 +318,9 @@ class DBEnv:
             cpu, avg_read_io, avg_write_io, avg_virtual_memory, avg_physical_memory = 0, 0, 0, 0, 0
 
         external_metrics,latL = self.get_external_metrics(filename)
-        internal_metrics, dirty_pages, hit_ratio, page_data = self.db._post_handle(internal_metrics)
+        
+        # internal_metrics, dirty_pages, hit_ratio, page_data = self.db._post_handle(internal_metrics)
+        dirty_pages, hit_ratio, page_data = 0,0,0
         logger.info('internal metrics: {}.'.format(list(internal_metrics)))
 
         return benchmark_timeout, external_metrics, internal_metrics, (
@@ -456,7 +467,7 @@ class DBEnv:
                 knobs[k] = self.knobs_detail[k]['default']
 
         try:
-            timeout, metrics, internal_metrics, resource,latL = self.step_GP(knobs, collect_resource=True)
+            timeout, metrics, internal_metrics, resource,latL = self.step_GP(knobs, collect_resource=False)
 
             if timeout:
                 trial_state = TIMEOUT
@@ -491,3 +502,4 @@ class DBEnv:
 
         except:
             return None, None, {}, {}, [], self.info, FAILED,[]
+        
