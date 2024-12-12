@@ -20,6 +20,10 @@ if __name__ == '__main__':
     # parser.add_argument('--task_id', type=str, default="ycsb_ddpg_26")
     # parser.add_argument('--optimize_method', type=str, default='DDPG')
     # parser.add_argument('--workload_type', type=str, default='read')
+    #2024-12-06 softmax transformer
+    parser.add_argument('--softmax_weight', action='store_true')
+    parser.add_argument('--transformer', action='store_true')
+    #2024-12-06 softmax transformer
     # 2024-11-19 code for clusters
     opt = parser.parse_args()
 
@@ -44,6 +48,7 @@ if __name__ == '__main__':
     env = DBEnv(args_db, args_tune, db)
     tuner = DBTuner(args_db, args_tune, env)
     tuner.tune()
-#code for error case analysis
+    #code for error case analysis
     # tuner.f()
-#code for error case analysis
+    #code for error case analysis
+

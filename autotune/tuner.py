@@ -200,6 +200,10 @@ class DBTuner:
                        only_knob=eval(self.args_tune['only_knob']),
                        only_range=eval(self.args_tune['only_range']),
                     #    latent_dim=int(self.args_tune['latent_dim'])
+                 #2024-11-22 softmax weight
+                 softmax_weight=self.args_tune['softmax_weight'],
+                 transformer=self.args_tune['transformer'],
+                 #2024-11-22 softmax weight
                        )
         
 #         id=self.args_tune['task_id']

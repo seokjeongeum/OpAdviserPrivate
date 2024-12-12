@@ -287,7 +287,7 @@ class DBEnv:
             print("[{}] clear processlist".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
         # stop Internal Metrics Collection
-        time.sleep(5)
+        time.sleep(10)
         self.db.set_im_alive(False)
         im.join()
 
