@@ -62,9 +62,9 @@ python scripts/optimize.py --config=scripts/twitter.ini
 ### Demo
 ```shell
 service mysql stop
-/usr/sbin/mysqld --defaults-file=initial.cnf
+/usr/sbin/mysqld --defaults-file=initial2.cnf
 export PYTHONPATH=.
-export FLASK_RUN_PORT=12345
+export FLASK_RUN_PORT=1234
 export FLASK_ENV=development
 export FLASK_DEBUG=1
 export FLASK_APP=server/app.py
