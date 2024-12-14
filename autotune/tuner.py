@@ -253,8 +253,6 @@ class DBTuner:
         #     history2.plot_convergence()
         #     plt.savefig('%s.png' % history2.task_id)
         #2024-11-11: code for experiment    
-        # pprint.pprint(sorted(bo.tuning_result,key=lambda x:x[0][0]))
-        return sorted(bo.tuning_result,key=lambda x:x[0][0])[0]
 
 
     @staticmethod

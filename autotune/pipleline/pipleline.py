@@ -300,6 +300,7 @@ class PipleLine(BOBase):
             self.optimizer_list = [SMAC, MBO, DDPG, GA]
             self.optimizer = SMAC
         self.tuning_result=list()
+        self.max_iterations=self.iteration_id+1
         #2024-12-06 softmax transformer
         self.softmax_weight=softmax_weight
         self.transformer=transformer

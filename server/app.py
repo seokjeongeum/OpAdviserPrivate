@@ -55,8 +55,6 @@ opt = parser.parse_args()
 
 
 args_db, args_tune = parse_args(opt.config)
-args_tune["max_runs"] = int(args_tune["max_runs"])
-args_tune["initial_runs"] = int(args_tune["initial_runs"])
 if args_db["db"] == "mysql":
     db = MysqlDB(args_db)
 elif args_db["db"] == "postgresql":
@@ -64,9 +62,7 @@ elif args_db["db"] == "postgresql":
 
 env = DBEnv(args_db, args_tune, db)
 tuner = DBTuner(args_db, args_tune, env)
-
 queries = list()
-
 times = list()
 
 
@@ -100,8 +96,6 @@ SELECT @query_name, @query_time_ms;
 """
                 )
         while True:
-            tuner.args_tune["max_runs"] += 1
-            tuner.args_tune["initial_runs"] += 1
             tuner.tune()
             try:
                 mydb = mysql.connector.connect(**dbconfig)
@@ -121,6 +115,7 @@ SELECT @query_name, @query_time_ms;
                 for i in range(len(times)):
                     if execution_times[i] > times[i]:
                         b = False
+                continue
                 if b:
                     return {
                         "execution_times": execution_times,
