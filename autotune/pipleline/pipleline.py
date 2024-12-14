@@ -326,7 +326,7 @@ class PipleLine(BOBase):
 
 
     def run(self):
-        compact_space = None
+        compact_space = self.config_space
         #2024-11-11: code for experiment
         # compact_space2=  None
         #2024-11-11: code for experiment
@@ -343,7 +343,7 @@ class PipleLine(BOBase):
                 if self.space_transfer:
                     f = open('space.record','a')
                     time_b = time.time()
-                    compact_space = self.get_compact_space()
+                    # compact_space = self.get_compact_space()
                     #2024-11-11: code for experiment
                     # compact_space,compact_space2=  self.get_compact_space()
                     #2024-11-11: code for experiment
@@ -392,8 +392,8 @@ class PipleLine(BOBase):
 
 
             f = open('all.record', 'a')
-            _ , _, _, objs,latL = self.iterate(compact_space)
-            self.tuning_result.append((objs,latL))
+            config, _, _, objs,latL = self.iterate(compact_space)
+            self.tuning_result.append((objs,config))
             #2024-11-11: code for experiment
             # _ , _, _, objs,_ , _, _, objs2 = self.iterate(compact_space,compact_space2)
             #2024-11-11: code for experiment

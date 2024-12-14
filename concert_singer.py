@@ -1,40 +1,152 @@
 import random
-import string
+from typing import List, Tuple
 
-def random_string(length=10):
-    letters = string.ascii_letters
-    return ''.join(random.choice(letters) for i in range(length))
+import mysql.connector
+import psycopg2
+import tqdm
 
-def generate_stadium_row(stadium_id):
-    location = random_string(10)
-    name = random_string(15)
-    capacity = random.randint(2000, 60000)
-    highest = random.randint(1000, capacity)
-    lowest = random.randint(100, highest)
-    average = random.randint(lowest, highest)
-    return f"INSERT INTO stadium VALUES ({stadium_id}, '{location}', '{name}', {capacity}, {highest}, {lowest}, {average});"
 
-def generate_singer_row(singer_id):
-    name = random_string(10)
-    country = random.choice(['United States', 'France', 'Netherlands', 'China'])
-    song_name = random_string(8)
-    song_release_year = str(random.randint(1990, 2023))
-    age = random.randint(20, 60)
-    is_male = 'TRUE' if random.choice([True, False]) else 'FALSE'
-    return f"INSERT INTO singer VALUES ({singer_id}, '{name}', '{country}', '{song_name}', '{song_release_year}', {age}, {is_male});"
+def generate_random_data(num_rows: int) -> Tuple[List[tuple]]:
+    # Stadium data
+    locations = [
+        "Raith Rovers",
+        "Ayr United",
+        "East Fife",
+        "Queen's Park",
+        "Stirling Albion",
+        "Arbroath",
+        "Alloa Athletic",
+        "Peterhead",
+        "Brechin City",
+    ]
+    stadium_names = [
+        "Stark's Park",
+        "Somerset Park",
+        "Bayview Stadium",
+        "Hampden Park",
+        "Forthbank Stadium",
+        "Gayfield Park",
+        "Recreation Park",
+        "Balmoor",
+        "Glebe Park",
+    ]
 
-def generate_concert_row(concert_id, stadium_id):
-    concert_name = random_string(12)
-    theme = random_string(15)
-    year = str(random.randint(2010, 2023))
-    return f"INSERT INTO concert VALUES ({concert_id}, '{concert_name}', '{theme}', {stadium_id}, '{year}');"
+    # Singer data
+    singer_names = [
+        "Joe Sharp",
+        "Timbaland",
+        "Justin Brown",
+        "Rose White",
+        "John Nizinik",
+        "Tribal King",
+    ]
+    countries = ["Netherlands", "United States", "France"]
+    songs = ["You", "Dangerous", "Hey Oh", "Sun", "Gentleman", "Love"]
 
-def generate_singer_in_concert_row(concert_id, singer_id):
-    return f"INSERT INTO singer_in_concert VALUES ({concert_id}, {singer_id});"
+    # Concert data
+    concert_names = ["Super bootcamp", "Home Visits", "Week 2"]
+    themes = [
+        "Free choice",
+        "Bleeding Love",
+        "Wide Awake",
+        "Happy Tonight",
+        "Party All Night",
+    ]
 
-# Example usage:
-for i in range(10, 200):  # Generate 10 rows
-    print(generate_stadium_row(i))
-    print(generate_singer_row(i))
-    print(generate_concert_row(i, i))
-    print(generate_singer_in_concert_row(i, i))
+    stadium_data = []
+    singer_data = []
+    concert_data = []
+    singer_concert_data = []
+
+    # Generate stadium data
+    for _ in tqdm.tqdm(range(35020, num_rows)):
+        stadium_id = random.randint(11, 100)
+        capacity = random.randint(2000, 60000)
+        highest = random.randint(500, capacity)
+        lowest = random.randint(100, highest)
+        average = random.randint(lowest, highest)
+        stadium_data.append(
+            (
+                _,
+                random.choice(locations),
+                random.choice(stadium_names),
+                capacity,
+                highest,
+                lowest,
+                average,
+            )
+        )
+
+    # # Generate singer data
+    # for _ in range(num_rows):
+    #     singer_data.append(
+    #         (
+    #             random.randint(7, 100),
+    #             random.choice(singer_names),
+    #             random.choice(countries),
+    #             random.choice(songs),
+    #             str(random.randint(1990, 2023)),
+    #             random.randint(20, 60),
+    #             random.choice([True, False]),
+    #         )
+    #     )
+
+    # Generate concert data
+    # for _ in tqdm.tqdm(range(22_000_000, num_rows)):
+    #     concert_data.append(
+    #         (
+    #             _,
+    #             random.choice(concert_names),
+    #             random.choice(themes),
+    #             random.randint(1, 7),
+    #             str(random.randint(2010, 2023)),
+    #         )
+    #     )
+
+    # Generate singer_in_concert data
+    # for _ in range(num_rows):
+    #     singer_concert_data.append((random.randint(1, 10), random.randint(1, 6)))
+
+    return stadium_data, singer_data, concert_data, singer_concert_data
+
+
+def insert_to_mysql(data: Tuple[List[tuple]]) -> None:
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="concert_singer",
+        port=3308,
+    )
+    cursor = conn.cursor()
+
+    stadium_data, singer_data, concert_data, singer_concert_data = data
+    batch_size = 1000
+
+    try:
+        for i in tqdm.tqdm(range(0, len(stadium_data), batch_size)):
+            # batch = concert_data[i : i + batch_size]
+            # cursor.executemany(
+            #     """
+            #     INSERT INTO concert (concert_ID, concert_Name, Theme, Stadium_ID, Year)
+            #     VALUES (%s, %s, %s, %s, %s)
+            # """,
+            #     batch,
+            # )
+            batch = stadium_data[i : i + batch_size]
+            cursor.executemany(
+                """
+                INSERT INTO stadium (Stadium_ID, Location, Name, Capacity, Highest, Lowest, Average)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """,
+                batch,
+            )
+            conn.commit()
+    finally:
+        cursor.close()
+        conn.close()
+
+
+# Generate and insert data
+random_data = generate_random_data(500_000)
+insert_to_mysql(random_data)

@@ -2,6 +2,7 @@ import os
 import pdb
 import time
 import subprocess
+import traceback
 import numpy as np
 from multiprocessing import Manager
 from multiprocessing.connection import Client
@@ -501,5 +502,6 @@ class DBEnv:
             return objs, constraints, external_metrics, resource, list(internal_metrics), self.info, trial_state,latL
 
         except:
+            traceback.print_exc()
             return None, None, {}, {}, [], self.info, FAILED,[]
         

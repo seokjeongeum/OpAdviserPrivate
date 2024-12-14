@@ -29,7 +29,7 @@ apt install -y mysql-server-5.7 \
 ```
 ```shell
 echo '[mysqld]
-port=3307
+port=3308
 innodb_log_checksums = 0' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
@@ -62,11 +62,9 @@ python scripts/optimize.py --config=scripts/twitter.ini
 ### Demo
 ```shell
 service mysql stop
-/usr/sbin/mysqld --defaults-file=initial2.cnf
+/usr/sbin/mysqld --defaults-file=initial2.cnf & disown
 export PYTHONPATH=.
 export FLASK_RUN_PORT=1234
-export FLASK_ENV=development
-export FLASK_DEBUG=1
 export FLASK_APP=server/app.py
 flask run
 ```
@@ -85,7 +83,7 @@ mysql -ppassword -e"create database sbrw;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3307  \
+    --mysql-port=3308  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -114,7 +112,7 @@ mysql -ppassword -e"create database sbwrite;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3307  \
+    --mysql-port=3308  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -143,7 +141,7 @@ mysql -ppassword -e"create database sbread;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3307  \
+    --mysql-port=3308  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
