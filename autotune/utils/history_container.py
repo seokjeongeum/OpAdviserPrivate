@@ -705,7 +705,7 @@ class HistoryContainer(object):
             performance_threshold = np.quantile(y, quantile_threshold)
             if performance_threshold <  - self.get_default_performance() and not respect:
                 performance_threshold = - self.get_default_performance()
-
+        performance_threshold=np.nextafter(performance_threshold, -np.inf)
         X = convert_configurations_to_array(self.configurations)
 
         X_bad = X[y<performance_threshold]

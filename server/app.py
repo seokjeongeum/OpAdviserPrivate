@@ -115,7 +115,6 @@ SELECT @query_name, @query_time_ms;
                 for i in range(len(times)):
                     if execution_times[i] > times[i]:
                         b = False
-                continue
                 if b:
                     return {
                         "execution_times": execution_times,
