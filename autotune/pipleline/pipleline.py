@@ -117,7 +117,7 @@ class PipleLine(BOBase):
         self.knob_config_file = knob_config_file
         self.auto_optimizer = auto_optimizer
         if space_transfer or auto_optimizer:
-            self.space_step_limit = initial_runs
+            self.space_step_limit = 3
             self.space_step = 0
 
         if self.space_transfer:
@@ -344,7 +344,7 @@ class PipleLine(BOBase):
                 if self.space_transfer:
                     f = open('space.record','a')
                     time_b = time.time()
-                    # compact_space = self.get_compact_space()
+                    compact_space = self.get_compact_space()
                     #2024-11-11: code for experiment
                     # compact_space,compact_space2=  self.get_compact_space()
                     #2024-11-11: code for experiment

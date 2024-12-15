@@ -6,6 +6,7 @@ import pickle
 import pdb
 import copy
 from autotune.optimizer.surrogate.ddpg.ddpg import DDPG
+from autotune.utils.constants import FAILED
 from autotune.utils.history_container import Observation, HistoryContainer
 from autotune.utils.config_space import Configuration, CategoricalHyperparameter
 from autotune.utils.config_space.util import configs2space, max_min_distance
@@ -116,7 +117,8 @@ class DDPG_Optimizer:
                                       IM=history_container.internal_metrics[i],
                                       info=history_container.info, context=history_container.contexts[i])
                 try:
-                    self.update(observation)
+                    if not observation.trial_state == FAILED:
+                        self.update(observation)
                 except:
                     pass
 
