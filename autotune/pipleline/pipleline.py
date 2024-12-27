@@ -40,7 +40,7 @@ from autotune.optimizer.bo_optimizer import BO_Optimizer
 from autotune.optimizer.ddpg_optimizer import DDPG_Optimizer
 import pdb
 from autotune.knobs import ts, logger
-
+from scipy.special import softmax
 class PipleLine(BOBase):
     """
     Basic Advisor Class, which adopts a policy to sample a configuration.
@@ -81,7 +81,11 @@ class PipleLine(BOBase):
                  only_knob = False,
                  only_range = False,
                  advisor_kwargs: dict = None,
-                #  latent_dim=0,
+                 #  latent_dim=0,
+                 #2024-12-27 softmax transformer
+                 softmax_weight=True,
+                 transformer=True,
+                 #2024-12-27 softmax transformer
                  **kwargs
                  ):
 
@@ -113,7 +117,7 @@ class PipleLine(BOBase):
         self.knob_config_file = knob_config_file
         self.auto_optimizer = auto_optimizer
         if space_transfer or auto_optimizer:
-            self.space_step_limit = 3
+            self.space_step_limit = initial_runs
             self.space_step = 0
 
         if self.space_transfer:
@@ -237,6 +241,9 @@ class PipleLine(BOBase):
                                                 params=kwargs['params'],
                                                 batch_size=kwargs['batch_size'],
                                                 mean_var_file=kwargs['mean_var_file']
+                                                #2024-12-27 softmax transformer
+                                                ,transformer=transformer,
+                                                #2024-12-27 softmax transformer
                                                 )
             else:
                 raise ValueError('Invalid advisor type!')
@@ -286,9 +293,16 @@ class PipleLine(BOBase):
                                   params=kwargs['params'],
                                   batch_size=kwargs['batch_size'],
                                   mean_var_file=kwargs['mean_var_file']
+                                    #2024-12-27 softmax transformer
+                                    ,transformer=transformer,
+                                    #2024-12-27 softmax transformer
                                   )
             self.optimizer_list = [SMAC, MBO, DDPG, GA]
             self.optimizer = SMAC
+        #2024-12-27 softmax transformer
+        self.softmax_weight=softmax_weight
+        self.transformer=transformer
+        #2024-12-27 softmax transformer
 
 
     def get_max_distence_best(self):
@@ -362,7 +376,11 @@ class PipleLine(BOBase):
                                                         task_id=self.history_container.task_id,
                                                         params=self.optimizer.params,
                                                         batch_size=self.optimizer.batch_size,
-                                                        mean_var_file=self.optimizer.mean_var_file)
+                                                        mean_var_file=self.optimizer.mean_var_file
+                                                        #2024-12-27 softmax transformer
+                                                        ,transformer=self.transformer,
+                                                        #2024-12-27 softmax transformer
+                                    )
                         if self.auto_optimizer:
                             self.optimizer_list[-2] = self.optimizer
 
@@ -537,7 +555,11 @@ class PipleLine(BOBase):
                                                 task_id=self.history_container.task_id,
                                                 params=self.optimizer.params,
                                                 batch_size=self.optimizer.batch_size,
-                                                mean_var_file=self.optimizer.mean_var_file)
+                                                mean_var_file=self.optimizer.mean_var_file
+                                                #2024-12-27 softmax transformer
+                                                ,transformer=self.transformer,
+                                                #2024-12-27 softmax transformer
+                                                )
         _, trial_state, constraints, objs = self.evaluate(config)
 #2024-11-11: code for experiment
         # _, trial_state, constraints, objs,_, trial_state2, constraints2, objs2 = self.evaluate(config,config2)
@@ -666,20 +688,34 @@ class PipleLine(BOBase):
         rank_loss_list = self.rgpe.get_ranking_loss(self.history_container)
         similarity_list = [1 - i for i in rank_loss_list]
 
+        #2024-12-27 softmax transformer
+        with open(f'{self.task_id}_similarity_list','a')as f:
+            f.write(f'''{similarity_list}
+''')
+        #2024-12-27 softmax transformer
+        
         ### filter unsimilar task
         sample_list = list()
         similarity_threhold = np.quantile(similarity_list, 0.5)
         candidate_list, weight = list(), list()
         surrogate_list = self.history_bo_data + [self.history_container]
+        #2024-12-27 softmax transformer
+        softmax_weight=np.array()
+        #2024-12-27 softmax transformer
         for i in range(len(surrogate_list)):
             if similarity_list[i] > similarity_threhold:
                 candidate_list.append(i)
                 weight.append(similarity_list[i] / sum(similarity_list))
-
+                #2024-12-27 softmax transformer
+                softmax_weight.append(similarity_list[i])
+                #2024-12-27 softmax transformer
         if not len(candidate_list):
             self.logger.info("Remain the space:{}".format(self.config_space))
-            return self.config_space
-
+            return self.config_space        
+        #2024-12-27 softmax transformer
+        if self.softmax_weight:
+            weight=softmax(softmax_weight/.5).tolist()
+        #2024-12-27 softmax transformer
         ### determine the number of sampled task
         if len(surrogate_list) > 60:
             k = int(len(surrogate_list) / 10)
@@ -704,8 +740,10 @@ class PipleLine(BOBase):
         quantile_min = 1 / 1e9
         quantile_max = 1 - 1 / 1e9
         for j in range(len(surrogate_list)):
-            if not j in sample_list:
-                continue
+            #2024-12-27 softmax transformer
+            # if not j in sample_list:
+            #     continue
+            #2024-12-27 softmax transformer
             quantile = quantile_max - (1 - 2 * max(similarity_list[j] - 0.5, 0)) * (quantile_max - quantile_min)
             ys_source = - surrogate_list[j].get_transformed_perfs()
             performance_threshold = np.quantile(ys_source, quantile)
@@ -718,8 +756,8 @@ class PipleLine(BOBase):
             self.logger.info(pruned_space)
             pruned_space_list.append(pruned_space)
 #code for error case analysis
-            # if not j in sample_list:
-            #     continue
+            if not j in sample_list:
+                continue
 #code for error case analysis
             total_imporve = sum([pruned_space[key][2] for key in list(pruned_space.keys())])
             for key in pruned_space.keys():
@@ -728,6 +766,12 @@ class PipleLine(BOBase):
                         # print((key,pruned_space[key] ))
                         important_dict[key] = important_dict[key] + similarity_list[j] / sum(
                             [similarity_list[i] for i in sample_list])
+
+        #2024-12-27 softmax transformer
+        with open(f'{self.task_id}_sample_list','a')as f:
+            f.write(f'''{sample_list}
+''')
+        #2024-12-27 softmax transformer
 
 #code for error case analysis
 #         with open(
@@ -839,7 +883,7 @@ class PipleLine(BOBase):
 # ''')
 # #         st+=(f'''not_sampled_important_spaces={not_sampled.tolist()}
 # # ''')
-#         pruned_space_list=np.array(pruned_space_list)[sample_list].tolist()
+        pruned_space_list=np.array(pruned_space_list)[sample_list].tolist()
 #         count_arrays={}
 #         count_arrays2={}
 #         values_dicts={}

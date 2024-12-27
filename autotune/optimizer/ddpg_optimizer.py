@@ -55,7 +55,11 @@ class DDPG_Optimizer:
                  init_strategy="random_explore_first",
                  mean_var_file='',
                  batch_size=16,
-                 params=''):
+                 params=''
+                 #2024-12-27 softmax transformer
+                 ,transformer=True,
+                 #2024-12-27 softmax transformer
+                 ):
 
         self.task_id = task_id
         self.config_space = config_space
@@ -78,6 +82,9 @@ class DDPG_Optimizer:
         self.score = 0
         self.episode_init = True
         create_output_folders()
+        #2024-12-27 softmax transformer
+        self.transformer=transformer
+        #2024-12-27 softmax transformer
         self.initialize(history_container)
 
     def initialize(self, history_container):
@@ -133,7 +140,11 @@ class DDPG_Optimizer:
                           opt=ddpg_opt,
                           ouprocess=True,
                           mean=self.state_mean,
-                          var=self.state_var)
+                          var=self.state_var
+                        #2024-12-27 softmax transformer
+                        ,transformer=self.transformer
+                        #2024-12-27 softmax transformer
+                        )
 
         return True
 

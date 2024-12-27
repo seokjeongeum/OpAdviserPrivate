@@ -2,6 +2,7 @@ import os
 import math
 import pdb
 
+import sympy
 import torch
 import pickle
 import logging
@@ -70,27 +71,48 @@ class Normalizer(object):
         return self.normalize(x)
 
 
+import torch.nn as nn
+
+class PositionalEncoding(nn.Module):
+    def __init__(self, d_model, max_len=5000):
+        super().__init__()
+        # Handle odd dimensions by padding to even
+        d_even = d_model + (d_model % 2)
+        
+        position = torch.arange(0, max_len).unsqueeze(1)
+        div_term = torch.exp(torch.arange(0, d_even, 2) * -(math.log(10000.0) / d_even))
+        
+        pe = torch.zeros(max_len, d_even)
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        
+        # Trim back to original dimension if odd
+        if d_model % 2:
+            pe = pe[:, :d_model]
+            
+        pe = pe.unsqueeze(0)
+        self.register_buffer('pe', pe)
+    def forward(self, x):
+        return x + self.pe[:, :x.size(1)]
+
+# Modify the Actor class to include Transformer
 class Actor(nn.Module):
 
-    def __init__(self, n_states, n_actions, noisy=False):
+    def __init__(self, n_states, n_actions, noisy=False,transformer=True):
         super(Actor, self).__init__()
-        '''
+        if transformer:
+            self.encoder=nn.Linear(1,256)
+            # Add positional encoding
+            self.pos_encoder = PositionalEncoding(256)
+
+            # Add transformer encoder
+            encoder_layer = nn.TransformerEncoderLayer(d_model=256, nhead=8)
+            self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=1)
+            self.decoder=nn.Linear(256,1)        
+        # Initial embedding layer
+        self.embed = nn.Linear(n_states, 128)
+        
         self.layers = nn.Sequential(
-            nn.Linear(n_states, 128),
-            nn.LeakyReLU(negative_slope=0.2),
-            nn.BatchNorm1d(128),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Dropout(0.3),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Linear(128, 64),
-            nn.Linear(64, n_actions)
-        )
-        '''
-        # copy from https://github.com/cmu-db/ottertune/blob/master/server/analysis/ddpg/ddpg.py
-        self.layers = nn.Sequential(
-            nn.Linear(n_states, 128),
             nn.LeakyReLU(negative_slope=0.2),
             nn.BatchNorm1d(128),
             nn.Linear(128, 128),
@@ -103,50 +125,85 @@ class Actor(nn.Module):
             nn.BatchNorm1d(64),
             nn.Linear(64, n_actions)
         )
-#        if noisy:
-#            self.out = NoisyLinear(64, n_actions)
-#        else:
-#            self.out = nn.Linear(64, n_actions)
 
         self.act = nn.Sigmoid()
+        self.use_transformer=transformer
         self._init_weights()
 
     def _init_weights(self):
+        # Initialize transformer weights if using transformer
+        if self.use_transformer:
+            nn.init.xavier_uniform_(self.encoder.weight)
+            nn.init.zeros_(self.encoder.bias)
+            for name, param in self.transformer_encoder.named_parameters():
+                if 'norm' in name:
+                    if 'weight' in name:
+                        nn.init.ones_(param)
+                elif 'weight' in name:
+                    nn.init.xavier_uniform_(param)
+                elif 'bias' in name:
+                    nn.init.zeros_(param)
+            nn.init.xavier_uniform_(self.decoder.weight)
+            nn.init.zeros_(self.decoder.bias)
+        
+        # Initialize embedding layer
+        nn.init.xavier_uniform_(self.embed.weight)
+        nn.init.zeros_(self.embed.bias)
+        # Initialize sequential layers
         for m in self.layers:
             if isinstance(m, nn.Linear):
-                m.weight.data.normal_(0.0, 1e-2)
-                m.bias.data.uniform_(-0.1, 0.1)
-
-    def sample_noise(self):
-        self.out.sample_noise()
+                nn.init.xavier_uniform_(m.weight)
+                nn.init.zeros_(m.bias)
 
     def forward(self, states):
+        if self.use_transformer:
+            # x shape: (b,n)
+            b,n=states.shape
+            # reshape to (b*n, 1)
+            states=states.reshape(-1,1)
+            # apply linear transformation
+            states = self.encoder(states)
+            # reshape to (b,n,m)
+            states= states.reshape(b, n, -1)
+            # Apply positional encoding
+            states = self.pos_encoder(states)
+            # Apply transformer
+            states = self.transformer_encoder(states)
+            states=self.decoder(states)
+            states=states.reshape(b,n)
+        # Embed the states
+        states = self.embed(states)
+        # Apply remaining layers
         actions = self.act(self.layers(states))
         return actions
 
 
 class Critic(nn.Module):
 
-    def __init__(self, n_states, n_actions):
+    def __init__(self, n_states, n_actions,transformer):
         super(Critic, self).__init__()
         self.act = nn.Tanh()
-        '''
+        
+        if transformer:
+            self.state_encoder=nn.Linear(1,256)
+            self.action_encoder=nn.Linear(1,256)
+            # Add positional encoding for states and actions
+            self.state_pos_encoder = PositionalEncoding(256)
+            self.action_pos_encoder = PositionalEncoding(256)
+
+            # Add transformer encoders
+            state_encoder_layer = nn.TransformerEncoderLayer(d_model=256, nhead=8)
+            self.state_transformer = nn.TransformerEncoder(state_encoder_layer, num_layers=1)
+
+            action_encoder_layer = nn.TransformerEncoderLayer(d_model=256, nhead=8)
+            self.action_transformer = nn.TransformerEncoder(action_encoder_layer, num_layers=1)
+            self.state_decoder=nn.Linear(256,1)
+            self.action_decoder=nn.Linear(256,1)
+        
         self.state_input = nn.Linear(n_states, 128)
         self.action_input = nn.Linear(n_actions, 128)
-        self.layers = nn.Sequential(
-            nn.Linear(256, 256),
-            nn.LeakyReLU(negative_slope=0.2),
-            nn.BatchNorm1d(256),
-            nn.Linear(256, 256),
-            nn.Linear(256, 64),
-            nn.Tanh(),
-            nn.Dropout(0.3),
-            nn.BatchNorm1d(64),
-            nn.Linear(64, 1),
-        )
-        '''
-        self.state_input = nn.Linear(n_states, 128)
-        self.action_input = nn.Linear(n_actions, 128)
+        
+        # Combined layers
         self.layers = nn.Sequential(
             nn.Linear(128 * 2, 256),
             nn.LeakyReLU(negative_slope=0.2),
@@ -158,32 +215,88 @@ class Critic(nn.Module):
             nn.BatchNorm1d(64),
             nn.Linear(64, 1)
         )
+        self.use_transformer=transformer
         self._init_weights()
 
     def _init_weights(self):
-        self.state_input.weight.data.normal_(0.0, 1e-2)
-        self.state_input.bias.data.uniform_(-0.1, 0.1)
+        # Initialize transformer weights if using transformer
+        if self.use_transformer:
+            nn.init.xavier_uniform_(self.state_encoder.weight)
+            nn.init.zeros_(self.state_encoder.bias)
+            nn.init.xavier_uniform_(self.action_encoder.weight)
+            nn.init.zeros_(self.action_encoder.bias)
+            for transformer in [self.state_transformer, self.action_transformer]:
+                for name, param in transformer.named_parameters():
+                    if 'norm' in name:
+                        if 'weight' in name:
+                            nn.init.ones_(param)
+                    elif 'weight' in name:
+                        nn.init.xavier_uniform_(param)
+                    elif 'bias' in name:
+                        nn.init.zeros_(param)
+            nn.init.xavier_uniform_(self.state_decoder.weight)
+            nn.init.zeros_(self.state_decoder.bias)
+            nn.init.xavier_uniform_(self.action_decoder.weight)
+            nn.init.zeros_(self.action_decoder.bias)
+        
+        # Initialize input layers
+        nn.init.xavier_uniform_(self.state_input.weight)
+        nn.init.zeros_(self.state_input.bias)
 
-        self.action_input.weight.data.normal_(0.0, 1e-2)
-        self.action_input.bias.data.uniform_(-0.1, 0.1)
-
+        nn.init.xavier_uniform_(self.action_input.weight)
+        nn.init.zeros_(self.action_input.bias)
+        # Initialize sequential layers
         for m in self.layers:
             if isinstance(m, nn.Linear):
-                m.weight.data.normal_(0.0, 1e-2)
-                m.bias.data.uniform_(-0.1, 0.1)
+                nn.init.xavier_uniform_(m.weight)
+                nn.init.zeros_(m.bias)
 
     def forward(self, states, actions):
-        states = self.act(self.state_input(states))
-        actions = self.act(self.action_input(actions))
+        # Process states
+        if self.use_transformer:
+            # x shape: (b,n)
+            b,n=states.shape
+            # reshape to (b*n, 1)
+            states=states.reshape(-1,1)
+            # apply linear transformation
+            states = self.state_encoder(states)
+            # reshape to (b,n,m)
+            states= states.reshape(b, n, -1)
+            # Apply positional encoding
+            states = self.state_pos_encoder(states)
+            states = self.state_transformer(states)
+            states=self.state_decoder(states)
+            states=states.reshape(b,n)
 
-        _input = torch.cat([states, actions], dim=1)
+            # x shape: (b,n)
+            b,n=actions.shape
+            # reshape to (b*n, 1)
+            actions=actions.reshape(-1,1)
+            # apply linear transformation
+            actions = self.action_encoder(actions)
+            # reshape to (b,n,m)
+            actions= actions.reshape(b, n, -1)
+            # Apply positional encoding
+            actions = self.action_pos_encoder(actions)
+            actions = self.action_transformer(actions)
+            actions=self.action_decoder(actions)
+            actions=actions.reshape(b,n)
+        # (batch_size, 65)
+        states = self.act(self.state_input(states))
+        # (batch_size, 128)
+        # (batch_size, ~197)
+        actions = self.act(self.action_input(actions))
+        # (batch_size, 128)
+
+        # Combine and process through remaining layers
+        _input = torch.cat([states, actions], dim=1) # (batch_size, 256)
         value = self.layers(_input)
         return value
 
 
 class DDPG(object):
 
-    def __init__(self, n_states, n_actions, opt, mean=None, var=None, ouprocess=True, supervised=False, debug=False):
+    def __init__(self, n_states, n_actions, opt, mean=None, var=None, ouprocess=True, supervised=False, debug=False,transformer=True):
         """ DDPG Algorithms
         Args:
             n_states: int, dimension of states
@@ -211,6 +324,7 @@ class DDPG(object):
             var = np.zeros(n_states)
 
         self.normalizer = Normalizer(mean, var)
+        self.transformer=transformer
 
         if supervised:
             self._build_actor()
@@ -235,7 +349,7 @@ class DDPG(object):
             noisy = False
         else:
             noisy = True
-        self.actor = Actor(self.n_states, self.n_actions, noisy=noisy)
+        self.actor = Actor(self.n_states, self.n_actions, noisy=noisy,transformer=self.transformer)
         self.actor_criterion = nn.MSELoss()
         self.actor_optimizer = optimizer.Adam(lr=self.alr, params=self.actor.parameters())
 
@@ -244,10 +358,10 @@ class DDPG(object):
             noisy = False
         else:
             noisy = True
-        self.actor = Actor(self.n_states, self.n_actions, noisy=noisy)
-        self.target_actor = Actor(self.n_states, self.n_actions)
-        self.critic = Critic(self.n_states, self.n_actions)
-        self.target_critic = Critic(self.n_states, self.n_actions)
+        self.actor = Actor(self.n_states, self.n_actions, noisy=noisy,transformer=self.transformer)
+        self.target_actor = Actor(self.n_states, self.n_actions,transformer=self.transformer)
+        self.critic = Critic(self.n_states, self.n_actions,transformer=self.transformer)
+        self.target_critic = Critic(self.n_states, self.n_actions,transformer=self.transformer)
 
         # if model params are provided, load them
         if len(self.model_name):
