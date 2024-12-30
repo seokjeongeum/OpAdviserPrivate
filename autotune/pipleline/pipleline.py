@@ -700,7 +700,8 @@ class PipleLine(BOBase):
         candidate_list, weight = list(), list()
         surrogate_list = self.history_bo_data + [self.history_container]
         #2024-12-27 softmax transformer
-        softmax_weight=np.array()
+        # Initialize softmax_weight as an empty numpy array
+        softmax_weight = []
         #2024-12-27 softmax transformer
         for i in range(len(surrogate_list)):
             if similarity_list[i] > similarity_threhold:
@@ -713,6 +714,7 @@ class PipleLine(BOBase):
             self.logger.info("Remain the space:{}".format(self.config_space))
             return self.config_space        
         #2024-12-27 softmax transformer
+        softmax_weight=np.array(softmax_weight)
         if self.softmax_weight:
             weight=softmax(softmax_weight/.5).tolist()
         #2024-12-27 softmax transformer

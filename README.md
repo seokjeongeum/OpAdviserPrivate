@@ -5,6 +5,8 @@ Fix mounts attribute in .devcontainer/devcontainer.json to mount directories to 
 Setup dev container using .devcontainer/devcontainer.json
 ## After Creating Dev Container
 ```shell
+rm -rf /var/lib/mysql
+
 apt update
 apt install -y \
   mysql-server-5.7 \
@@ -27,6 +29,7 @@ apt install -y \
   libmysqlclient-dev \
   automake \
   sudo \
+  || true
 
 echo '[mysqld]
 port=3308
