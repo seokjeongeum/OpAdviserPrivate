@@ -981,7 +981,7 @@ class MESMO_Optimizer(AcquisitionFunctionMaximizer):
             rng: Union[bool, np.random.RandomState] = None,
             num_mc=1000,
             num_opt=1000,
-            rand_prob=0.0,
+            rand_prob=0.0
     ):
         super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
@@ -1084,7 +1084,7 @@ class USeMO_Optimizer(AcquisitionFunctionMaximizer):
             acquisition_function: AbstractAcquisitionFunction,
             config_space: ConfigurationSpace,
             rng: Union[bool, np.random.RandomState] = None,
-            rand_prob=0.0,
+            rand_prob=0.0
     ):
         super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)
@@ -1153,7 +1153,7 @@ class batchMCOptimizer(AcquisitionFunctionMaximizer):
             config_space: ConfigurationSpace,
             rng: Union[bool, np.random.RandomState] = None,
             batch_size=None,
-            rand_prob=0.0,
+            rand_prob=0.0
     ):
         super().__init__(acquisition_function, config_space, rng)
         self.random_chooser = ChooserProb(prob=rand_prob, rng=rng)

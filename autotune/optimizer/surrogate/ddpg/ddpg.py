@@ -2,7 +2,6 @@ import os
 import math
 import pdb
 
-import sympy
 import torch
 import pickle
 import logging
@@ -125,6 +124,10 @@ class Actor(nn.Module):
             nn.BatchNorm1d(64),
             nn.Linear(64, n_actions)
         )
+#        if noisy:
+#            self.out = NoisyLinear(64, n_actions)
+#        else:
+#            self.out = nn.Linear(64, n_actions)
 
         self.act = nn.Sigmoid()
         self.use_transformer=transformer
@@ -281,15 +284,11 @@ class Critic(nn.Module):
             actions = self.action_transformer(actions)
             actions=self.action_decoder(actions)
             actions=actions.reshape(b,n)
-        # (batch_size, 65)
         states = self.act(self.state_input(states))
-        # (batch_size, 128)
-        # (batch_size, ~197)
         actions = self.act(self.action_input(actions))
-        # (batch_size, 128)
 
         # Combine and process through remaining layers
-        _input = torch.cat([states, actions], dim=1) # (batch_size, 256)
+        _input = torch.cat([states, actions], dim=1)
         value = self.layers(_input)
         return value
 

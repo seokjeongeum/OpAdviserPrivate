@@ -565,7 +565,7 @@ class PipleLine(BOBase):
         # _, trial_state, constraints, objs,_, trial_state2, constraints2, objs2 = self.evaluate(config,config2)
 #2024-11-11: code for experiment
         
-        return config, trial_state, constraints, objs    
+        return config, trial_state, constraints, objs
 #2024-11-11: code for experiment
         # return config, trial_state, constraints, objs,config2, trial_state2, constraints2, objs2
 #2024-11-11: code for experiment
