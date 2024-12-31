@@ -24,7 +24,7 @@ apt install -y \
   sudo 
 
 echo '[mysqld]
-port=3308
+port=3309
 innodb_log_checksums = 0' | sudo tee -a /etc/mysql/my.cnf
 service mysql start 
 mysql -e"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"

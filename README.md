@@ -39,7 +39,7 @@ mysql -ppassword -e"create database sbrw;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3308  \
+    --mysql-port=3309  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -69,7 +69,7 @@ mysql -ppassword -e"create database sbwrite;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3308  \
+    --mysql-port=3309  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -129,7 +129,7 @@ mysql -ppassword -e"create database sbrw;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3308  \
+    --mysql-port=3309  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -158,7 +158,7 @@ mysql -ppassword -e"create database sbwrite;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3308  \
+    --mysql-port=3309  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
@@ -187,7 +187,7 @@ mysql -ppassword -e"create database sbread;"
 sysbench  \
     --db-driver=mysql  \
     --mysql-host=localhost  \
-    --mysql-port=3308  \
+    --mysql-port=3309  \
     --mysql-user=root  \
     --mysql-password=password  \
     --table_size=800000  \
