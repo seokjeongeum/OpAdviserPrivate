@@ -15,7 +15,7 @@
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
 	// "workspaceMount": "source=/mnt/sdd1/jeseok/OpAdviser,target=/workspaces/${localWorkspaceFolder},type=bind",
-	"workspaceFolder": "/root",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolder}",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -38,11 +38,11 @@
 		"--dns=141.223.1.2",
 		"--dns=1.0.0.1"
 	],
-	"mounts": [
-		"source=/mnt/sdd/jeseok/mysql,target=/var/lib/mysql,type=bind,consistency=cached",
-		"source=/mnt/sdd/jeseok/lib,target=/usr/local/lib,type=bind,consistency=cached",
-		"source=/mnt/sdd/jeseok/root,target=/root,type=bind,consistency=cached"
-	],
+	// "mounts": [
+	// 	"source=/mnt/sdd/jeseok/mysql,target=/var/lib/mysql,type=bind,consistency=cached",
+	// 	"source=/mnt/sdd/jeseok/lib,target=/usr/local/lib,type=bind,consistency=cached",
+	// 	"source=/mnt/sdd/jeseok/root,target=/root,type=bind,consistency=cached"
+	// ],
 	"containerEnv": {
 		"DOCKER_CLI_EXPERIMENTAL": "enabled"
 	},
