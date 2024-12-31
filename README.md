@@ -152,6 +152,25 @@ export PYTHONPATH="."
 python scripts/optimize.py --dbname=tpcc --workload=oltpbench_tpcc --softmax_weight --transformer
 python scripts/optimize.py --dbname=tpcc --workload=oltpbench_tpcc
 ```
+### YCSB
+```shell
+cd /
+rm -rf oltpbench && \
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
+cd /oltpbench && \
+    ant bootstrap && \
+    ant resolve && \
+    ant build && \
+    chmod 777 /oltpbench/*
+cd ~/OpAdviserPrivate
+mysql -ppassword -e"drop database ycsb;"
+mysql -ppassword -e"create database ycsb;"
+/oltpbench/oltpbenchmark -b ycsb -c /oltpbench/config/sample_ycsb_config.xml  --create=true --load=true
+export PYTHONPATH="."
+python scripts/optimize.py --dbname=ycsb --workload=oltpbench_ycsb --softmax_weight --transformer
+python scripts/optimize.py --dbname=ycsb --workload=oltpbench_ycsb
+```
 ## Find ground truth
 ```shell
 cd /
