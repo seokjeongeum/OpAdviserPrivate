@@ -40,3 +40,4 @@ python -m pip install --upgrade pip
 python -m pip install --user --upgrade setuptools
 python -m pip install --upgrade wheel
 python -m pip install -r requirements.txt
+mkdir -p "$(dirname "/var/log/mysql/base/mysql-slow.log")" && touch "/var/log/mysql/base/mysql-slow.log"
