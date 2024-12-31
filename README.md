@@ -21,8 +21,27 @@ mysql -ppassword -e"create database wikipedia;"
 /oltpbench/oltpbenchmark -b wikipedia -c /oltpbench/config/sample_wikipedia_config.xml  --create=true --load=true
 
 export PYTHONPATH="."
-python scripts/optimize.py 
 python scripts/optimize.py --softmax_weight --transformer
+python scripts/optimize.py 
+```
+### Twitter
+```shell
+cd /
+rm -rf oltpbench && \
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
+cd /oltpbench && \
+    ant bootstrap && \
+    ant resolve && \
+    ant build && \
+    chmod 777 /oltpbench/*
+cd ~/OpAdviserPrivate
+mysql -ppassword -e"drop database twitter;"
+mysql -ppassword -e"create database twitter;"
+/oltpbench/oltpbenchmark -b twitter -c /oltpbench/config/sample_twitter_config.xml  --create=true --load=true
+export PYTHONPATH="."
+python scripts/optimize.py --dbname=twitter --workload=oltpbench_twitter --softmax_weight --transformer
+python scripts/optimize.py --dbname=twitter --workload=oltpbench_twitter 
 ```
 ### Sysbench RW
 ```shell
@@ -51,8 +70,8 @@ sysbench  \
     prepare
 cd ~/OpAdviserPrivate
 export PYTHONPATH="."
-python scripts/optimize.py --dbname=sbrw --workload=sysbench --workload_type=sbrw
 python scripts/optimize.py --dbname=sbrw --workload=sysbench --workload_type=sbrw --softmax_weight --transformer
+python scripts/optimize.py --dbname=sbrw --workload=sysbench --workload_type=sbrw 
 ```
 ### Sysbench WO
 ```shell
@@ -81,8 +100,8 @@ sysbench  \
     prepare
 cd ~/OpAdviserPrivate
 export PYTHONPATH="."
-python scripts/optimize.py --dbname=sbwrite --workload=sysbench --workload_type=sbwrite
 python scripts/optimize.py --dbname=sbwrite --workload=sysbench --workload_type=sbwrite --softmax_weight --transformer
+python scripts/optimize.py --dbname=sbwrite --workload=sysbench --workload_type=sbwrite
 ```
 ### Sysbench RO
 ```shell
@@ -111,8 +130,8 @@ sysbench  \
     prepare
 cd ~/OpAdviserPrivate
 export PYTHONPATH="."
-python scripts/optimize.py --dbname=sbread --workload=sysbench --workload_type=sbread
 python scripts/optimize.py --dbname=sbread --workload=sysbench --workload_type=sbread --softmax_weight --transformer
+python scripts/optimize.py --dbname=sbread --workload=sysbench --workload_type=sbread
 ```
 ## Find ground truth
 ```shell
