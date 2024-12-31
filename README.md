@@ -171,6 +171,25 @@ export PYTHONPATH="."
 python scripts/optimize.py --dbname=ycsb --workload=oltpbench_ycsb --softmax_weight --transformer
 python scripts/optimize.py --dbname=ycsb --workload=oltpbench_ycsb
 ```
+### TATP
+```shell
+cd /
+rm -rf oltpbench && \
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
+cd /oltpbench && \
+    ant bootstrap && \
+    ant resolve && \
+    ant build && \
+    chmod 777 /oltpbench/*
+cd ~/OpAdviserPrivate
+mysql -ppassword -e"drop database tatp;"
+mysql -ppassword -e"create database tatp;"
+/oltpbench/oltpbenchmark -b tatp -c /oltpbench/config/sample_tatp_config.xml  --create=true --load=true
+export PYTHONPATH="."
+python scripts/optimize.py --dbname=tatp --workload=oltpbench_tatp --softmax_weight --transformer
+python scripts/optimize.py --dbname=tatp --workload=oltpbench_tatp
+```
 ## Find ground truth
 ```shell
 cd /
