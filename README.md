@@ -190,6 +190,25 @@ export PYTHONPATH="."
 python scripts/optimize.py --dbname=tatp --workload=oltpbench_tatp --softmax_weight --transformer
 python scripts/optimize.py --dbname=tatp --workload=oltpbench_tatp
 ```
+### Voter
+```shell
+cd /
+rm -rf oltpbench && \
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
+cd /oltpbench && \
+    ant bootstrap && \
+    ant resolve && \
+    ant build && \
+    chmod 777 /oltpbench/*
+cd ~/OpAdviserPrivate
+mysql -ppassword -e"drop database voter;"
+mysql -ppassword -e"create database voter;"
+/oltpbench/oltpbenchmark -b voter -c /oltpbench/config/sample_voter_config.xml  --create=true --load=true
+export PYTHONPATH="."
+python scripts/optimize.py --dbname=voter --workload=oltpbench_voter --softmax_weight --transformer
+python scripts/optimize.py --dbname=voter --workload=oltpbench_voter
+```
 ## Find ground truth
 ```shell
 cd /
