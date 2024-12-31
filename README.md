@@ -54,6 +54,36 @@ export PYTHONPATH="."
 python scripts/optimize.py --dbname=sbrw --workload=sysbench --workload_type=sbrw
 python scripts/optimize.py --dbname=sbrw --workload=sysbench --workload_type=sbrw --softmax_weight --transformer
 ```
+### Sysbench WO
+```shell
+cd /
+rm -rf sysbench
+git clone https://github.com/akopytov/sysbench.git && \
+    cd sysbench && \
+    git checkout ead2689ac6f61c5e7ba7c6e19198b86bd3a51d3c && \
+    ./autogen.sh && \
+    ./configure && \
+    make && make install
+mysql -ppassword -e"drop database sbwrite;"
+mysql -ppassword -e"create database sbwrite;"
+sysbench  \
+    --db-driver=mysql  \
+    --mysql-host=localhost  \
+    --mysql-port=3308  \
+    --mysql-user=root  \
+    --mysql-password=password  \
+    --table_size=800000  \
+    --tables=300  \
+    --events=0  \
+    --threads=80  \
+    --mysql-db=sbwrite  \
+    oltp_write_only  \
+    prepare
+cd ~/OpAdviserPrivate
+export PYTHONPATH="."
+python scripts/optimize.py --dbname=sbwrite --workload=sysbench --workload_type=sbwrite
+python scripts/optimize.py --dbname=sbwrite --workload=sysbench --workload_type=sbwrite --softmax_weight --transformer
+```
 ## Find ground truth
 ```shell
 cd /
