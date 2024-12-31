@@ -133,6 +133,25 @@ export PYTHONPATH="."
 python scripts/optimize.py --dbname=twitter --workload=oltpbench_twitter --softmax_weight --transformer
 python scripts/optimize.py --dbname=twitter --workload=oltpbench_twitter 
 ```
+### TPC-C
+```shell
+cd /
+rm -rf oltpbench && \
+  git clone https://github.com/seokjeongeum/oltpbench.git
+
+cd /oltpbench && \
+    ant bootstrap && \
+    ant resolve && \
+    ant build && \
+    chmod 777 /oltpbench/*
+cd ~/OpAdviserPrivate
+mysql -ppassword -e"drop database tpcc;"
+mysql -ppassword -e"create database tpcc;"
+/oltpbench/oltpbenchmark -b tpcc -c /oltpbench/config/sample_tpcc_config.xml  --create=true --load=true
+export PYTHONPATH="."
+python scripts/optimize.py --dbname=tpcc --workload=oltpbench_tpcc --softmax_weight --transformer
+python scripts/optimize.py --dbname=tpcc --workload=oltpbench_tpcc
+```
 ## Find ground truth
 ```shell
 cd /
