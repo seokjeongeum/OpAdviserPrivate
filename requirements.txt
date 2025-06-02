@@ -23,7 +23,7 @@ smac==1.2
 #aliyun-python-sdk-rds
 dynaconf==3.2.5
 shap==0.44.1
-lightgbm==4.4.0
+lightgbm==4.6.0
 paramiko==3.4.0
 xgboost==2.1.0
 dill==0.3.8
