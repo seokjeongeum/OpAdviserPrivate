@@ -33,8 +33,8 @@ and variable_name!='session_track_system_variables';
         data = cursor.fetchall()
         pprint.pprint(data)
         break
-    except:
-        pass
+    except Exception as e:
+        print(e)
     finally:
         if "cursor" in locals():
             cursor.close()
@@ -71,12 +71,12 @@ def query():
     query = request.get_json()
     if query == "conduct tuning":
         with open(
-            "/root/OpAdviserPrivate/autotune/cli/selectedList_demo.txt", "w"
+            "/workspaces/OpAdviserPrivate/autotune/cli/selectedList_demo.txt", "w"
         ) as _:
             pass
         for i, q in enumerate(queries):
             with open(
-                f"/root/OpAdviserPrivate/autotune/demo_query/queries-mysql-new/{i}.sql",
+                f"/workspaces/OpAdviserPrivate/autotune/demo_query/queries-mysql-new/{i}.sql",
                 "w",
             ) as f1:
                 f1.write(
@@ -89,7 +89,7 @@ SELECT @query_name, @query_time_ms;
 """
                 )
             with open(
-                "/root/OpAdviserPrivate/autotune/cli/selectedList_demo.txt", "a"
+                "/workspaces/OpAdviserPrivate/autotune/cli/selectedList_demo.txt", "a"
             ) as f2:
                 f2.write(
                     f"""{i}.sql
@@ -170,4 +170,4 @@ and variable_name!='session_track_system_variables';
 
 
 if __name__ == "__main__":
-    app.run(debug=False, use_reloader=False, port=12345)
+    app.run(debug=False, use_reloader=False, port=1234)

@@ -1,4 +1,4 @@
-drop database concert_singer;
+drop database if exists concert_singer;
 create database concert_singer;
 use concert_singer;
 SET FOREIGN_KEY_CHECKS = 1;

@@ -111,13 +111,30 @@ def generate_random_data(num_rows: int) -> Tuple[List[tuple]]:
 
 
 def insert_to_mysql(data: Tuple[List[tuple]]) -> None:
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="password",
-        database="concert_singer",
-        port=3308,
-    )
+    try:
+        conn = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="password",
+            database="concert_singer",
+            port=3308,
+        )
+    except mysql.connector.Error as err:
+        if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
+            conn = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="password",
+                port=3308,
+            )
+            cursor = conn.cursor()
+            with open("/workspaces/OpAdviserPrivate/concert_singer.sql", "r") as f:
+                for result in cursor.execute(f.read(), multi=True):
+                    if result.with_rows:
+                        print(f"Executed: {result.statement}")
+            conn.database = "concert_singer"
+        else:
+            raise
     cursor = conn.cursor()
 
     stadium_data, singer_data, concert_data, singer_concert_data = data
