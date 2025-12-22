@@ -286,10 +286,32 @@ if [ -f "$MODEL_OUTPUT_DIR/training_metadata.json" ]; then
     log "Training Results:"
     python3 -c "
 import json
+import math
 m = json.load(open('$MODEL_OUTPUT_DIR/training_metadata.json'))
-print(f\"  CPU MAPE:      {m['test_metrics']['cpu_mape']:.2f}%\")
-print(f\"  Read I/O MAPE: {m['test_metrics']['read_io_mape']:.2f}%\")
-print(f\"  Write I/O MAPE: {m['test_metrics']['write_io_mape']:.2f}%\")
+cpu_mape = m['test_metrics']['cpu_mape']
+read_io_mape = m['test_metrics']['read_io_mape']
+write_io_mape = m['test_metrics']['write_io_mape']
+combined_io_mape = m['test_metrics'].get('combined_io_mape')
+if combined_io_mape is None:
+    # Calculate combined I/O MAPE if not present
+    if math.isinf(read_io_mape) and math.isinf(write_io_mape):
+        combined_io_mape = float('inf')
+    elif math.isinf(read_io_mape):
+        combined_io_mape = write_io_mape
+    elif math.isinf(write_io_mape):
+        combined_io_mape = read_io_mape
+    else:
+        combined_io_mape = (read_io_mape + write_io_mape) / 2.0
+
+cpu_str = f'{cpu_mape:.2f}' if not math.isinf(cpu_mape) else 'inf'
+read_str = f'{read_io_mape:.2f}' if not math.isinf(read_io_mape) else 'inf'
+write_str = f'{write_io_mape:.2f}' if not math.isinf(write_io_mape) else 'inf'
+combined_str = f'{combined_io_mape:.2f}' if not math.isinf(combined_io_mape) else 'inf'
+
+print(f\"  CPU MAPE:      {cpu_str}%\")
+print(f\"  Read I/O MAPE: {read_str}%\")
+print(f\"  Write I/O MAPE: {write_str}%\")
+print(f\"  I/O MAPE (combined): {combined_str}%\")
 print(f\"  All <10% MAPE: {'✓ PASS' if m['test_metrics']['all_pass'] else '✗ FAIL'}\")
 "
 fi

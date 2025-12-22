@@ -2,7 +2,7 @@
 # =============================================================================
 # Disk I/O Prediction Accuracy Evaluation Script
 # =============================================================================
-# Evaluates Disk I/O (ReadIO and WriteIO) prediction accuracy using trained models.
+# Evaluates Disk I/O (WriteIO only) prediction accuracy using trained models.
 #
 # Usage (via Docker):
 #   docker compose up -d

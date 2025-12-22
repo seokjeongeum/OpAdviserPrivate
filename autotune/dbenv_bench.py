@@ -170,8 +170,8 @@ class BenchEnv(DBEnv):
         resource_model_path = 'resource_models/resource_predictor.joblib'
         if os.path.exists(resource_model_path):
             try:
-                import joblib
-                resource_model_data = joblib.load(resource_model_path)
+                from autotune.utils.resource_model_loader import load_or_retrain_resource_models
+                resource_model_data = load_or_retrain_resource_models(resource_model_path)
                 self.resource_models = {
                     'model_cpu': resource_model_data['model_cpu'],
                     'model_read_io': resource_model_data['model_read_io'],

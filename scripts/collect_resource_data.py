@@ -103,7 +103,14 @@ latent_dim = 0
     return config_path
 
 
-def collect_data(config_file, num_samples=60, output_dir='resource_data'):
+def collect_data(
+    config_file: str,
+    num_samples: int = 60,
+    output_dir: str = 'resource_data',
+    append: bool = True,
+    workload_time_s: int = 30,
+    workload_warmup_time_s: int = 5,
+) -> list:
     """
     Collect resource data (CPU, ReadIO, WriteIO) for model training.
     
@@ -115,6 +122,13 @@ def collect_data(config_file, num_samples=60, output_dir='resource_data'):
         Number of samples to collect (default: 60)
     output_dir : str
         Directory to save collected data
+    append : bool
+        If True, append to existing data; if False, overwrite (default: True)
+    
+    Returns:
+    --------
+    collected_data : list
+        List of collected data points
     """
     print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting data collection...")
     print(f"Target: {num_samples} samples")
@@ -123,9 +137,12 @@ def collect_data(config_file, num_samples=60, output_dir='resource_data'):
     # Parse configuration
     args_db, args_tune = parse_args(config_file)
     
-    # Override settings for fast collection
-    args_db['workload_time'] = '30'
-    args_db['workload_warmup_time'] = '5'
+    # Override settings for collection.
+    #
+    # NOTE: Longer runs reduce metric noise and typically improve CPU MAPE,
+    # but take more time per sample.
+    args_db['workload_time'] = str(int(workload_time_s))
+    args_db['workload_warmup_time'] = str(int(workload_warmup_time_s))
     args_db['online_mode'] = 'True'
     args_tune['max_runs'] = str(num_samples)
     args_tune['initial_runs'] = str(num_samples)  # Use random sampling
@@ -217,7 +234,7 @@ def collect_data(config_file, num_samples=60, output_dir='resource_data'):
             
             # Save intermediate results every 10 samples
             if (i + 1) % 10 == 0:
-                save_data(collected_data, output_dir, intermediate=True)
+                save_data(collected_data, output_dir, intermediate=True, append=append)
         
         except Exception as e:
             print(f"  Error collecting sample {i+1}: {e}")
@@ -229,7 +246,7 @@ def collect_data(config_file, num_samples=60, output_dir='resource_data'):
     print(f"\n[{time.strftime('%Y-%m-%d %H:%M:%S')}] Collection complete!")
     print(f"Collected {len(collected_data)} valid samples out of {num_samples} attempts")
     
-    save_data(collected_data, output_dir, intermediate=False)
+    save_data(collected_data, output_dir, intermediate=False, append=append)
     
     total_time = time.time() - start_time
     print(f"Total time: {total_time/60:.1f} minutes")
@@ -238,8 +255,50 @@ def collect_data(config_file, num_samples=60, output_dir='resource_data'):
     return collected_data
 
 
-def save_data(data, output_dir, intermediate=False):
-    """Save collected data to JSON file."""
+def load_existing_data(output_dir: str) -> list:
+    """
+    Load existing data from output directory if available.
+    
+    Parameters:
+    -----------
+    output_dir : str
+        Directory containing existing data file
+    
+    Returns:
+    --------
+    existing_data : list
+        List of existing data points, empty if no file exists
+    """
+    filename = os.path.join(output_dir, 'resource_data.json')
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r') as f:
+                existing = json.load(f)
+            existing_data = existing.get('data', [])
+            print(f"  Loaded {len(existing_data)} existing samples from {filename}")
+            return existing_data
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"  Warning: Could not load existing data: {e}")
+            return []
+    return []
+
+
+def save_data(data: list, output_dir: str, intermediate: bool = False, 
+              append: bool = True) -> None:
+    """
+    Save collected data to JSON file.
+    
+    Parameters:
+    -----------
+    data : list
+        New data points to save
+    output_dir : str
+        Output directory path
+    intermediate : bool
+        If True, save to intermediate file (default: False)
+    append : bool
+        If True, append to existing data; if False, overwrite (default: True)
+    """
     os.makedirs(output_dir, exist_ok=True)
     
     if intermediate:
@@ -247,19 +306,27 @@ def save_data(data, output_dir, intermediate=False):
     else:
         filename = os.path.join(output_dir, 'resource_data.json')
     
+    # Load and merge with existing data if append mode
+    if append and not intermediate:
+        existing_data = load_existing_data(output_dir)
+        combined_data = existing_data + data
+        print(f"  Accumulated: {len(existing_data)} existing + {len(data)} new = {len(combined_data)} total samples")
+    else:
+        combined_data = data
+    
     output = {
         'info': {
-            'num_samples': len(data),
+            'num_samples': len(combined_data),
             'collection_time': time.strftime('%Y-%m-%d %H:%M:%S'),
             'metrics': ['cpu', 'readIO', 'writeIO']
         },
-        'data': data
+        'data': combined_data
     }
     
     with open(filename, 'w') as f:
         json.dump(output, f, indent=2)
     
-    print(f"  Saved to {filename}")
+    print(f"  Saved {len(combined_data)} samples to {filename}")
 
 
 def main():
@@ -270,8 +337,27 @@ def main():
                        help='Number of samples to collect (default: 60)')
     parser.add_argument('--output_dir', type=str, default='resource_data',
                        help='Output directory (default: resource_data)')
+    parser.add_argument('--no-append', dest='append', action='store_false',
+                       help='Overwrite existing data instead of appending (default: append)')
+    parser.add_argument('--workload_time', type=int, default=30,
+                       help='Benchmark run time in seconds per sample (default: 30). '
+                            'Increase (e.g., 90-180) to reduce CPU measurement noise.')
+    parser.add_argument('--workload_warmup_time', type=int, default=5,
+                       help='Warmup time in seconds per sample (default: 5). '
+                            'Increase (e.g., 10-30) for more stable CPU readings.')
+    parser.set_defaults(append=True)
     
     args = parser.parse_args()
+    
+    # Show existing data info
+    if args.append:
+        existing = load_existing_data(args.output_dir)
+        if existing:
+            print(f"Append mode: Will add to {len(existing)} existing samples")
+        else:
+            print("Append mode: No existing data found, starting fresh")
+    else:
+        print("Overwrite mode: Will replace any existing data")
     
     # Create config if not provided
     if args.config is None:
@@ -279,7 +365,14 @@ def main():
         args.config = create_collection_config(args.output_dir)
     
     # Collect data
-    collect_data(args.config, args.num_samples, args.output_dir)
+    collect_data(
+        args.config,
+        args.num_samples,
+        args.output_dir,
+        args.append,
+        workload_time_s=args.workload_time,
+        workload_warmup_time_s=args.workload_warmup_time,
+    )
 
 
 if __name__ == '__main__':

@@ -122,41 +122,46 @@ def evaluate_all_models(y_cpu_true: np.ndarray, y_cpu_pred: np.ndarray,
                         y_read_io_true: np.ndarray, y_read_io_pred: np.ndarray,
                         y_write_io_true: np.ndarray, y_write_io_pred: np.ndarray) -> Dict[str, Dict[str, float]]:
     """
-    Evaluate all three resource prediction models.
+    Evaluate CPU and Write I/O resource prediction models.
+    
+    NOTE: Read I/O is not printed or used in the summary because it's typically ~0
+    in most datasets, making MAPE meaningless.
     
     Parameters:
     -----------
     y_cpu_true, y_cpu_pred : np.ndarray
         CPU actual and predicted values
     y_read_io_true, y_read_io_pred : np.ndarray
-        Read I/O actual and predicted values
+        Read I/O actual and predicted values (computed but not printed)
     y_write_io_true, y_write_io_pred : np.ndarray
         Write I/O actual and predicted values
     
     Returns:
     --------
     all_metrics : dict
-        Dictionary containing metrics for all three models
+        Dictionary containing metrics for all models
     """
     cpu_metrics = evaluate_model(y_cpu_true, y_cpu_pred, "CPU")
     read_io_metrics = evaluate_model(y_read_io_true, y_read_io_pred, "Read I/O")
     write_io_metrics = evaluate_model(y_write_io_true, y_write_io_pred, "Write I/O")
     
+    # Print CPU and WriteIO only (skip ReadIO as it's typically ~0 and MAPE is meaningless)
     print_evaluation_results(cpu_metrics, "CPU Usage")
-    print_evaluation_results(read_io_metrics, "Read I/O")
     print_evaluation_results(write_io_metrics, "Write I/O")
     
-    # Summary
+    # Summary uses WriteIO only for I/O metric
+    write_io_mape = write_io_metrics['mape']
+    
     print(f"\n{'='*60}")
     print("Summary")
     print(f"{'='*60}")
-    print(f"CPU MAPE:      {cpu_metrics['mape']:.2f}% {'✓' if cpu_metrics['mape'] < 10 else '✗'}")
-    print(f"Read I/O MAPE: {read_io_metrics['mape']:.2f}% {'✓' if read_io_metrics['mape'] < 10 else '✗'}")
-    print(f"Write I/O MAPE: {write_io_metrics['mape']:.2f}% {'✓' if write_io_metrics['mape'] < 10 else '✗'}")
+    cpu_mape_str = f"{cpu_metrics['mape']:.2f}" if not np.isinf(cpu_metrics['mape']) else "inf"
+    write_io_mape_str = f"{write_io_mape:.2f}" if not np.isinf(write_io_mape) else "inf"
     
-    all_pass = (cpu_metrics['mape'] < 10 and 
-                read_io_metrics['mape'] < 10 and 
-                write_io_metrics['mape'] < 10)
+    print(f"CPU MAPE:      {cpu_mape_str}% {'✓' if cpu_metrics['mape'] < 10 else '✗'}")
+    print(f"WriteIO MAPE:  {write_io_mape_str}% {'✓' if write_io_mape < 10 else '✗'}")
+    
+    all_pass = (cpu_metrics['mape'] < 10 and write_io_mape < 10)
     
     print(f"\nAll models <10% MAPE: {'✓ PASS' if all_pass else '✗ FAIL'}")
     print(f"{'='*60}\n")

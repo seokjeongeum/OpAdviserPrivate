@@ -9,7 +9,7 @@
 #      docker compose up -d
 #
 #   2. Run the evaluation:
-#      docker exec -it Tuning.sh sh /root/Tuning/eval_performance.sh
+#      docker exec -it OpAdviser sh /root/OpAdviser/eval_performance.sh
 #
 # Or manually inside the container:
 #   sh /root/Tuning/eval_performance.sh

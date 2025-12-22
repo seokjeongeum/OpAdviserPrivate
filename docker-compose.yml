@@ -1,13 +1,18 @@
-version: '3.8'
-
 services:
   tuning:
     # Use pre-built image from Docker Hub
     image: hyukkyukang/opadviser:latest
-    container_name: Tuning.sh
+    container_name: OpAdviser
     # Keep container running
     stdin_open: true
     tty: true
+    # Install tzdata and configure timezone on startup
+    command: >
+      sh -c "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata &&
+             ln -snf /usr/share/zoneinfo/Asia/Seoul /etc/localtime &&
+             echo 'Asia/Seoul' > /etc/timezone &&
+             dpkg-reconfigure -f noninteractive tzdata &&
+             exec tail -f /dev/null"
     # Mount volumes for persistence
     volumes:
       # Persist MySQL data
@@ -28,6 +33,7 @@ services:
           memory: 4G
     # Environment variables
     environment:
+      - TZ=Asia/Seoul
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_SOCK=/var/run/mysqld/mysqld.sock
       - PYTHONPATH=/root/OpAdviser

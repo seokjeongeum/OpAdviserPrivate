@@ -9,7 +9,7 @@
 #      docker compose up -d
 #
 #   2. Run the evaluation:
-#      docker exec -it Tuning.sh sh /root/Tuning/eval_time.sh
+#      docker exec -it OpAdviser sh /root/OpAdviser/eval_time.sh
 #
 # Or manually inside the container:
 #   sh /root/Tuning/eval_time.sh
@@ -460,6 +460,8 @@ PYEOF
     echo "📈 TIME ANALYSIS"
     echo "--------------------------------------------------------------------------------"
     echo "  Expected time:          $((EXPECTED_TIME / 60)) minutes ($((EXPECTED_TIME / 3600))h $(((EXPECTED_TIME % 3600) / 60))m)"
+    echo "  Start time:            $(date -d @${TUNING_START_TIME} '+%Y-%m-%d %H:%M:%S %Z')"
+    echo "  End time:              $(date -d @${TUNING_END_TIME} '+%Y-%m-%d %H:%M:%S %Z')"
     echo "  Actual time:           $((TUNING_DURATION / 60)) minutes ($((TUNING_DURATION / 3600))h $(((TUNING_DURATION % 3600) / 60))m)"
     if [ "$EFFICIENCY" != "N/A" ] && [ $TUNING_DURATION -gt 0 ]; then
         echo "  Time efficiency:       ${EFFICIENCY}%"
